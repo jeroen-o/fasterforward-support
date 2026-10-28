@@ -761,10 +761,7 @@ def render_article(cats, feeds, p):
             figs.append(f'<figure><a href="{esc(src)}" target="_blank" rel="noopener"><img src="{esc(src)}" alt="{esc(im["alt"])}" loading="lazy" onerror="this.closest(\'figure\').remove()"></a>'
                         f'{f"<figcaption>{esc(im["alt"])}</figcaption>" if im["alt"] else ""}</figure>')
         imgs = '<section class="figs"><h2>Afbeeldingen bij dit artikel</h2>' + "".join(figs) + "</section>"
-    shot = ""
-    if p["shot"]:
-        shot = (f'<details class="orig"><summary>Schermafbeelding van de oorspronkelijke pagina</summary>'
-                f'<img src="{pg.rel("bronnen/offline-archief/shots/" + p["shot"])}" alt="Schermafbeelding van {esc(p["t"])}" loading="lazy"></details>')
+    shot = ""  # screenshots van de Wayback-opname worden niet meer getoond; de echte afbeeldingen staan in het artikel
     if p["path"] in REPLAYS:
         imgs = (f'<p class="replay"><a class="btn-out" href="{esc(REPLAYS[p["path"]])}" target="_blank" rel="noopener">'
                 f'<svg class="ic"><use href="#i-play"/></svg> Bekijk de webinar-replay</a></p>') + imgs
