@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Microsoft 365 e-mail en kalendersynchronisatie instellen - Blinqx Support</title>
+<meta name="description" content="Lees hier hoe je de office 365 kalender en e-mail instelt en hoe je deze kunt authenticeren.">
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="icon" href="../../assets/favicon.png">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
+    <symbol id="i-mail-o" viewBox="0 0 24 24"><path d="M2 5h20v14H2zm2 2v.4l8 5.6 8-5.6V7zm16 2.8-8 5.6-8-5.6V17h16z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><path d="M10 2a8 8 0 0 1 6.32 12.9l5.4 5.4-1.42 1.42-5.4-5.4A8 8 0 1 1 10 2zm0 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 64 64"><circle cx="7" cy="12" r="6"/><circle cx="7" cy="32" r="6"/><circle cx="7" cy="52" r="6"/><rect x="18" y="7" width="44" height="10" rx="2"/><rect x="18" y="27" width="44" height="10" rx="2"/><rect x="18" y="47" width="44" height="10" rx="2"/></symbol>
+    <symbol id="i-home" viewBox="0 0 64 64"><path d="M32 6 2 32l4 5 4-3.4V58h18V42h8v16h18V33.6l4 3.4 4-5-10-8.7V10h-8v7.4z"/></symbol>
+    <symbol id="i-car" viewBox="0 0 64 64"><path d="M16 10h32a6 6 0 0 1 5.7 4.1L58 27a7 7 0 0 1 4 6.3V48a3 3 0 0 1-3 3h-3v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H20v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H5a3 3 0 0 1-3-3V33.3A7 7 0 0 1 6 27l4.3-12.9A6 6 0 0 1 16 10zm1.5 7-3.3 10h35.6l-3.3-10zM13 34a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm38 0a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 64 64"><path d="M4 12a4 4 0 0 1 4-4h16l6 6h22a4 4 0 0 1 4 4v6H18a6 6 0 0 0-5.6 3.9L4 50z"/><path d="M18 28h44l-10 26H6z"/></symbol>
+    <symbol id="i-desktop" viewBox="0 0 64 64"><path d="M2 6h60v40H38v6h8v6H18v-6h8v-6H2zm6 6v28h48V12z"/></symbol>
+    <symbol id="i-comments" viewBox="0 0 64 64"><path d="M26 4c13.8 0 24 8.6 24 19s-10.2 19-24 19c-2.6 0-5-.3-7.3-.8C14.6 44 9.6 46 3 46c3-3 4.8-6.2 5.3-9.6C4.4 33 2 28.2 2 23 2 12.6 12.2 4 26 4z"/><path d="M54 24.5c5 3.4 8 8.3 8 13.5 0 4.2-1.8 8-4.8 11 .4 3.6 2 6.8 4.8 9.5-6 0-10.6-1.8-14.3-4.4-2.1.5-4.4.7-6.7.7-7 0-13.1-2.4-17-6.2 14.3-.4 30-8.8 30-24.1z"/></symbol>
+    <symbol id="i-envelope" viewBox="0 0 64 64"><path d="M4 12h56a2 2 0 0 1 2 2v3L32 37 2 17v-3a2 2 0 0 1 2-2z"/><path d="M2 23.5 32 43.5l30-20V50a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-euro" viewBox="0 0 64 64"><path d="M42 6c5 0 9.5 1.2 13 3.2l-2.6 8.2A19 19 0 0 0 42 14.5c-7.4 0-12.7 4.6-14.6 11.5H46l-2 7H26.3l-.05 2 .05 2H42l-2 7H27.4c1.9 7 7.2 11.5 14.6 11.5 4 0 7.6-1 10.4-2.9L55 61c-3.6 2-8 3-13 3-12.7 0-22.2-8-24.4-20H10l2-7h5.06L17 35l.06-2H10l2-7h5.6C19.8 14 29.3 6 42 6z"/></symbol>
+    <symbol id="i-file" viewBox="0 0 64 64"><path d="M10 2h28v18h18v38a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm32 0 14 14H42zM16 30v6h32v-6zm0 10v6h32v-6zm0 10v6h32v-6z"/></symbol>
+    <symbol id="i-rss" viewBox="0 0 64 64"><circle cx="11" cy="53" r="8"/><path d="M3 23a38 38 0 0 1 38 38H31A28 28 0 0 0 3 33z"/><path d="M3 3a58 58 0 0 1 58 58H51A48 48 0 0 0 3 13z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="rgba(0,0,0,.65)"/><path d="M26 20v24l20-12z" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="item"><svg class="ic"><use href="#i-phone"/></svg><a class="tel" href="tel:+31850180069">085 018 00 69</a></span>
+    <span class="sep" aria-hidden="true"></span>
+    <span class="item"><svg class="ic"><use href="#i-mail-o"/></svg><a class="mail" href="mailto:support-eblinqx@blinqx.tech">support-eblinqx@blinqx.tech</a></span>
+    <a class="li" href="https://www.linkedin.com/company/blinqx/" target="_blank" rel="noopener" aria-label="Blinqx op LinkedIn">in</a>
+  </div>
+</div>
+<header class="site">
+  <div class="wrap">
+    <div class="head-row">
+      <a class="brand" href="../../index.html" aria-label="Blinqx support — home">
+        <img src="../../assets/logo-mark.png" alt="Blinqx" width="470" height="119">
+        <span>powered by Faster Forward</span>
+      </a>
+      <nav class="main" aria-label="Hoofdmenu"><ul><li><a href="../../index.html">Home</a></li><li><a href="../../nieuws/index.html">Nieuws</a></li><li><a href="../../tips/index.html">Tips</a></li><li><a href="../../releasenotes/index.html">Release notes</a></li><li><a href="../../trainingen/index.html">Trainingen</a></li><li><a href="../../contact/index.html">Contact support</a></li></ul></nav>
+    </div>
+    <div class="search-row">
+      <form class="search" action="../../zoeken/index.html" method="get" role="search">
+        <label class="field">
+          <svg class="ic"><use href="#i-search"/></svg>
+          <input type="search" name="q" placeholder="Zoek hier op onderwerp" aria-label="Zoek op onderwerp">
+        </label>
+        <button type="submit">Zoeken</button>
+      </form>
+      <div class="status">Mogelijke incidenten en de systeemstatus vind je op onze <a href="#" title="URL statuspagina nog invullen">statuspagina</a>.</div>
+    </div>
+  </div>
+</header>
+<div class="crumbs"><div class="wrap"><nav aria-label="Kruimelpad"><a href="../../kennisbank/index.html">Kennisbank</a><span class="sep" aria-hidden="true">›</span><a href="../../categorien/eblinqx/index.html">Basis</a><span class="sep" aria-hidden="true">›</span><a href="../../categorien/artikelen-kalender/index.html">Kalender</a><span class="sep" aria-hidden="true">›</span><span aria-current="page">Microsoft 365 e-mail en kalendersynchronisatie instellen</span></nav></div></div>
+<main class="article">
+  <div class="wrap cols">
+    <article>
+      <h1>Microsoft 365 e-mail en kalendersynchronisatie instellen</h1>
+      <p class="meta">Laatste update: 8 december 2025</p>
+      <div class="content"><ul><li>Microsoft 365 e-mail</li><li>Microsoft 365 e-mailbox aanmaken</li><li>Microsoft 365 e-mailbox authenticeren</li><li>Toestemming verlenen</li><li>Gekoppelde e-mailaccount terug zien</li><li>Toegang Office365 intrekken en opnieuw authenticeren</li><li>Microsoft 365 kalender</li><li>Synchronisatie kalender instellen</li><li>Google kalender synchronisatie vs. Office365 kalender synchronisatie</li><li>Aandachtspunten</li><li>Melding synchronisatie niet meer mogelijk</li><li>Microsoft 365 e-mail</li><li>Microsoft 365 e-mailbox aanmaken</li></ul>
+<p>Binnen eBlinqx heb je verschillende type e-mailboxen. Deze e-mailboxen kunnen aangemaakt worden in de e-mailmanager. Indien het gewenst is dat een bestaande e-mailbox bijvoorbeeld van type IMAP naar Office 365 wordt aangepast dan kan je hiervoor een e-mail sturen naar <a href="mailto:support-eblinqx@blinqx.tech">support-eblinqx@blinqx.tech</a>.</p><nav class="toc" aria-label="Inhoud"><ul><li><a href="#microsoft-365-e-mailbox-authenticeren">Microsoft 365 e-mailbox authenticeren</a></li><li><a href="#toestemming-verlenen">Toestemming verlenen</a></li><li><a href="#gekoppelde-e-mailaccount-terug-zien">Gekoppelde e-mailaccount terug zien</a></li><li><a href="#toegang-office365-intrekken-en-opnieuw-authenticeren">Toegang Office365 intrekken en opnieuw authenticeren</a></li></ul></nav>
+<p>Wanneer je een compleet nieuwe e-mailbox met type Office 365 wilt aanmaken dan kan je hier lezen hoe je dit kunt doen. De e-mailbox zal geauthenticeerd moeten worden, zodat eBlinqx de e-mail op kan halen. Hieronder lees je hoe je dit kunt doen.</p>
+<h2 id="microsoft-365-e-mailbox-authenticeren">Microsoft 365 e-mailbox authenticeren</h2>
+<p>Door een nieuwe authenticatie van Microsoft 365 is het noodzakelijk om je e-mailaccount te authenticeren.</p>
+<p>Hiervoor zie je de volgende melding in eBlinqx verschijnen wanneer je jouw e-mailbox opent.</p>
+<p>Klik op de link om doorgeleid te worden naar Microsoft 365 en zo de e-mailbox te authenticeren.</p>
+<h2 id="toestemming-verlenen">Toestemming verlenen</h2>
+<p>Je dient in Microsoft 365 toestemming te verlenen, zodat eBlinqx de e-mail op kan halen. Dit kan door op de link in de e-mailbox te drukken. Vanuit daar word je doorgeleid naar Microsoft 365.</p>
+<p>Het kan zijn dat jij zelf niet toestemming mag verlenen, maar dat de beheerder van Microsoft 365 dit dient te doen. Wanneer dit het geval is en er geen toestemming is verleend door de beheerder, dan krijg je de volgende melding te zien:</p>
+<p>Voor deze melding moet je contact opnemen met jullie eigen Office 365 leverancier om de settings juist te zetten. In de melding staat &#x27;Hebt u een beheerdersaccount? Meld u aan met dat account&#x27; is niet wenselijk want dan wordt het beheerdersaccount aan jouw mailbox in eBlinqx gekoppeld. Je wilt je eigen account koppelen aan eBlinqx. Wij kunnen jullie hier niet bij helpen. Dit zijn instellingen in Microsoft 365. Mogelijk kan de volgende informatie hierbij helpen:</p>
+<h2 id="gekoppelde-e-mailaccount-terug-zien">Gekoppelde e-mailaccount terug zien</h2>
+<p>In de e-mailmanager kan je per e-mailbox zien met welk microsoft e-mailaccount deze gekoppeld is. Dus welke e-mailbox wordt opgehaald in eBlinqx. Dit kan je zien via e-mailmanager – betreffende mailbox – gekoppelde Office365 account. Hier wordt een melding getoond als het gekoppelde e-mailadres niet overeenkomt met het afzenderadres. Ook kan je hier zien als er geen account is gekoppeld.</p>
+<h2 id="toegang-office365-intrekken-en-opnieuw-authenticeren">Toegang Office365 intrekken en opnieuw authenticeren</h2>
+<p>Het is mogelijk om het authenticeren ongedaan te maken en de toegang Office365 in te trekken. Zo kan je een verkeerde koppeling tussen de mailbox in eBlinqx en de mailbox van Microsoft ongedaan maken. Om dit te doen ga je in de e-mailmodule naar de betreffende mailbox. Vervolgens klik je op het hamburgermenu en &#x27;Toegang Office365 intrekken&#x27;.</p>
+<p>Daarnaast is het mogelijk om de e-mailbox opnieuw te authenticeren. Ook hiervoor ga je in de e-mailmodule naar de juiste mailbox en het hamburgermenu. Om daarna te klikken op &#x27;Opnieuw authenticeren&#x27;.</p>
+<ul><li>Microsoft 365 kalender</li><li>Synchronisatie kalender instellen</li></ul>
+<p>Het is mogelijk om je Microsoft 365 kalender te synchroniseren met je eBlinqx kalender. Het instellen van de synchronisatie kan op 2 manieren, namelijk via de kalendermodule of &#x27;Mijn instellingen&#x27;.</p>
+<p>Via Kalendermodule:</p>
+<ul><li>Ga naar de kalendermodule</li><li>Klik op het hamburgermenu naast &#x27;Kalender&#x27;</li><li>Kies voor instellingen</li><li>Daar staat &#x27;Office 365 kalender synchronisatie&#x27;</li><li>Klik op het + icoon</li><li>Doorloop de aanwijzingen in de pop-up van Microsoft om te authenticeren voor de Microsoft 365 kalender</li></ul>
+<p>Via &#x27;Mijn instellingen&#x27;:</p>
+<ul><li>Ga rechtsboven in naar het poppetje – mijn instellingen</li><li>Kies het tabblad Instellingen</li><li>Kies het tabblad Kalender</li><li>Onderin staat &#x27;Office 365 kalender synchronisatie&#x27;</li><li>Klik op het + icoon</li><li>Doorloop de aanwijzingen in de pop-up van Microsoft om te authenticeren voor de Microsoft 365 kalender</li><li>Google kalender synchronisatie vs. Office365 kalender synchronisatie</li></ul>
+<p>Het is niet mogelijk om de synchronisatie in te stellen voor zowel een Google kalender als Microsoft Office365 kalender.</p>
+<p>Aandachtspunten<br>Afspraken worden maximaal één jaar vooruit getoond in de Office kalender<br>Afspraken die je had ingepland voor dat je de verbinding hebt gelegd worden niet getoond in de Office kalender<br>Taken in eBlinqx worden tot 13 maanden in de toekomst ingepland vanaf het moment dat je de verbinding tot stand brengt<br>Er is geen maximaal aantal afspraken, alleen een tijdslimiet.<br>Als de synchronisatie staat ingesteld dan is het mogelijk om direct vanuit het maken van een afspraak een link voor de afspraak online te genereren. Hier lees je er meer over.<br>Melding synchronisatie niet meer mogelijk</p>
+<p>Wanneer je de synchronisatie van de kalender hebt ingesteld, maar het is niet meer mogelijk om de kalender te synchroniseren, bijvoorbeeld door een storing, dan wordt er een melding getoond in de kalender van eBlinqx. Deze melding geeft aan dat de kalender niet gesynchroniseerd kan worden op dit moment.</p></div>
+      <section class="figs"><h2>Afbeeldingen bij dit artikel</h2><figure><a href="https://web.archive.org/web/20221002102915im_/https://support.fasterforward.nl/wp-content/uploads/2020/05/karin.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20221002102915im_/https://support.fasterforward.nl/wp-content/uploads/2020/05/karin.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20221002102915im_/https://support.fasterforward.nl/wp-content/uploads/2020/05/Schermafbeelding-2020-05-18-om-16.22.30.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20221002102915im_/https://support.fasterforward.nl/wp-content/uploads/2020/05/Schermafbeelding-2020-05-18-om-16.22.30.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20221002102915im_/https://support.fasterforward.nl/wp-content/uploads/2020/05/InkedInkedoffice365_LI.jpg" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20221002102915im_/https://support.fasterforward.nl/wp-content/uploads/2020/05/InkedInkedoffice365_LI.jpg" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20221002102915im_/https://support.fasterforward.nl/wp-content/uploads/2021/08/image-5-1024x101.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20221002102915im_/https://support.fasterforward.nl/wp-content/uploads/2021/08/image-5-1024x101.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20221002102915im_/https://support.fasterforward.nl/wp-content/uploads/2021/08/Kalendersynchronisatie.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20221002102915im_/https://support.fasterforward.nl/wp-content/uploads/2021/08/Kalendersynchronisatie.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure></section>
+      <details class="orig"><summary>Schermafbeelding van de oorspronkelijke pagina</summary><img src="../../bronnen/offline-archief/shots/office-365-authenticatie.jpg" alt="Schermafbeelding van Microsoft 365 e-mail en kalendersynchronisatie instellen" loading="lazy"></details>
+      <p class="src">Bron: <a href="https://web.archive.org/web/20260114014826/https://support.fasterforward.nl/kennisbank/office-365-authenticatie/" target="_blank" rel="noopener">Wayback Machine-archief</a></p>
+    </article>
+    <aside class="related"><h2>Gerelateerd:</h2><ul><li><a href="../../kennisbank/hoe-maak-en-afspraak-agenda/index.html">Afspraak maken en uitnodigingen</a></li><li><a href="../../kennisbank/collega-toegang-agenda/index.html">Collega toegang geven tot kalender</a></li><li><a href="../../kennisbank/collega-uitnodigen-afspraak/index.html">Personen uitnodigen bij een afspraak</a></li><li><a href="../../kennisbank/koppelen-google-agenda/index.html">Koppelen Google Agenda</a></li><li><a href="../../kennisbank/locatie-in-een-afspraak/index.html">Locatie in een afspraak</a></li></ul></aside>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span>Copyright © 2024 Blinqx powered by Faster Forward</span>
+    <nav aria-label="Beleid">
+      <a href="../../supportbeleid/index.html">Supportbeleid</a>
+      <a href="../../opdrachtenbeleid/index.html">Opdrachtenbeleid</a>
+      <a href="../../klachtenbeleid/index.html">Klachtenbeleid</a>
+      <a href="../../wensenbeleid/index.html">Wensenbeleid</a>
+      <a href="../../video/index.html">Video's &amp; e-learning</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vergoedingsgroep aanmaken - Blinqx Support</title>
+<meta name="description" content="Beschikbaar in: eBlinqx Compleet, Verzekering Provinciaal, Hypotheek Totaal Voor het maken van controle journaalposten vanuit de ADN batch moet er...">
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="icon" href="../../assets/favicon.png">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
+    <symbol id="i-mail-o" viewBox="0 0 24 24"><path d="M2 5h20v14H2zm2 2v.4l8 5.6 8-5.6V7zm16 2.8-8 5.6-8-5.6V17h16z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><path d="M10 2a8 8 0 0 1 6.32 12.9l5.4 5.4-1.42 1.42-5.4-5.4A8 8 0 1 1 10 2zm0 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 64 64"><circle cx="7" cy="12" r="6"/><circle cx="7" cy="32" r="6"/><circle cx="7" cy="52" r="6"/><rect x="18" y="7" width="44" height="10" rx="2"/><rect x="18" y="27" width="44" height="10" rx="2"/><rect x="18" y="47" width="44" height="10" rx="2"/></symbol>
+    <symbol id="i-home" viewBox="0 0 64 64"><path d="M32 6 2 32l4 5 4-3.4V58h18V42h8v16h18V33.6l4 3.4 4-5-10-8.7V10h-8v7.4z"/></symbol>
+    <symbol id="i-car" viewBox="0 0 64 64"><path d="M16 10h32a6 6 0 0 1 5.7 4.1L58 27a7 7 0 0 1 4 6.3V48a3 3 0 0 1-3 3h-3v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H20v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H5a3 3 0 0 1-3-3V33.3A7 7 0 0 1 6 27l4.3-12.9A6 6 0 0 1 16 10zm1.5 7-3.3 10h35.6l-3.3-10zM13 34a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm38 0a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 64 64"><path d="M4 12a4 4 0 0 1 4-4h16l6 6h22a4 4 0 0 1 4 4v6H18a6 6 0 0 0-5.6 3.9L4 50z"/><path d="M18 28h44l-10 26H6z"/></symbol>
+    <symbol id="i-desktop" viewBox="0 0 64 64"><path d="M2 6h60v40H38v6h8v6H18v-6h8v-6H2zm6 6v28h48V12z"/></symbol>
+    <symbol id="i-comments" viewBox="0 0 64 64"><path d="M26 4c13.8 0 24 8.6 24 19s-10.2 19-24 19c-2.6 0-5-.3-7.3-.8C14.6 44 9.6 46 3 46c3-3 4.8-6.2 5.3-9.6C4.4 33 2 28.2 2 23 2 12.6 12.2 4 26 4z"/><path d="M54 24.5c5 3.4 8 8.3 8 13.5 0 4.2-1.8 8-4.8 11 .4 3.6 2 6.8 4.8 9.5-6 0-10.6-1.8-14.3-4.4-2.1.5-4.4.7-6.7.7-7 0-13.1-2.4-17-6.2 14.3-.4 30-8.8 30-24.1z"/></symbol>
+    <symbol id="i-envelope" viewBox="0 0 64 64"><path d="M4 12h56a2 2 0 0 1 2 2v3L32 37 2 17v-3a2 2 0 0 1 2-2z"/><path d="M2 23.5 32 43.5l30-20V50a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-euro" viewBox="0 0 64 64"><path d="M42 6c5 0 9.5 1.2 13 3.2l-2.6 8.2A19 19 0 0 0 42 14.5c-7.4 0-12.7 4.6-14.6 11.5H46l-2 7H26.3l-.05 2 .05 2H42l-2 7H27.4c1.9 7 7.2 11.5 14.6 11.5 4 0 7.6-1 10.4-2.9L55 61c-3.6 2-8 3-13 3-12.7 0-22.2-8-24.4-20H10l2-7h5.06L17 35l.06-2H10l2-7h5.6C19.8 14 29.3 6 42 6z"/></symbol>
+    <symbol id="i-file" viewBox="0 0 64 64"><path d="M10 2h28v18h18v38a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm32 0 14 14H42zM16 30v6h32v-6zm0 10v6h32v-6zm0 10v6h32v-6z"/></symbol>
+    <symbol id="i-rss" viewBox="0 0 64 64"><circle cx="11" cy="53" r="8"/><path d="M3 23a38 38 0 0 1 38 38H31A28 28 0 0 0 3 33z"/><path d="M3 3a58 58 0 0 1 58 58H51A48 48 0 0 0 3 13z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="rgba(0,0,0,.65)"/><path d="M26 20v24l20-12z" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="item"><svg class="ic"><use href="#i-phone"/></svg><a class="tel" href="tel:+31850180069">085 018 00 69</a></span>
+    <span class="sep" aria-hidden="true"></span>
+    <span class="item"><svg class="ic"><use href="#i-mail-o"/></svg><a class="mail" href="mailto:support-eblinqx@blinqx.tech">support-eblinqx@blinqx.tech</a></span>
+    <a class="li" href="https://www.linkedin.com/company/blinqx/" target="_blank" rel="noopener" aria-label="Blinqx op LinkedIn">in</a>
+  </div>
+</div>
+<header class="site">
+  <div class="wrap">
+    <div class="head-row">
+      <a class="brand" href="../../index.html" aria-label="Blinqx support — home">
+        <img src="../../assets/logo-mark.png" alt="Blinqx" width="470" height="119">
+        <span>powered by Faster Forward</span>
+      </a>
+      <nav class="main" aria-label="Hoofdmenu"><ul><li><a href="../../index.html">Home</a></li><li><a href="../../nieuws/index.html">Nieuws</a></li><li><a href="../../tips/index.html">Tips</a></li><li><a href="../../releasenotes/index.html">Release notes</a></li><li><a href="../../trainingen/index.html">Trainingen</a></li><li><a href="../../contact/index.html">Contact support</a></li></ul></nav>
+    </div>
+    <div class="search-row">
+      <form class="search" action="../../zoeken/index.html" method="get" role="search">
+        <label class="field">
+          <svg class="ic"><use href="#i-search"/></svg>
+          <input type="search" name="q" placeholder="Zoek hier op onderwerp" aria-label="Zoek op onderwerp">
+        </label>
+        <button type="submit">Zoeken</button>
+      </form>
+      <div class="status">Mogelijke incidenten en de systeemstatus vind je op onze <a href="#" title="URL statuspagina nog invullen">statuspagina</a>.</div>
+    </div>
+  </div>
+</header>
+<div class="crumbs"><div class="wrap"><nav aria-label="Kruimelpad"><a href="../../kennisbank/index.html">Kennisbank</a><span class="sep" aria-hidden="true">›</span><a href="../../categorien/boekhouding/index.html">Boekhouding</a><span class="sep" aria-hidden="true">›</span><a href="../../categorien/vergoedingen/index.html">Vergoedingen</a><span class="sep" aria-hidden="true">›</span><span aria-current="page">Vergoedingsgroep aanmaken</span></nav></div></div>
+<main class="article">
+  <div class="wrap cols">
+    <article>
+      <h1>Vergoedingsgroep aanmaken</h1>
+      <p class="meta">Laatste update: 15 oktober 2025</p>
+      <div class="content"><p>Voor het maken van controle journaalposten vanuit de ADN batch moet er een vergoedingsgroep met juiste instellingen aanwezig zijn. In de vergoedingsgroepen worden ook de regelingen opgenomen die de uiteindelijke uitkomst van een vergoeding bepalen en in welke administratie er geboekt wordt.</p><nav class="toc" aria-label="Inhoud"><ul><li><a href="#artikeltype-kies-het-type-dienst-contract-enz">Artikeltype kies het type (dienst, contract, enz.)</a></li><li><a href="#betalingsprofiel-hoe-wordt-de-factuur-verwerkt">Betalingsprofiel hoe wordt de factuur verwerkt?</a></li><li><a href="#regelingen">Regelingen</a></li><li><a href="#formule">Formule</a></li><li><a href="#de-meest-gebruikte-formule-voor-adn-is-adn">De meest gebruikte formule voor ADN is &#x27;=adn&#x27;</a></li><li><a href="#voorwaarden">Voorwaarden</a></li><li><a href="#maatschappij-aan-vergoedingsgroep-koppelen">Maatschappij aan vergoedingsgroep koppelen</a></li><li><a href="#vergoedingengroep-schadeverzekering">Vergoedingengroep schadeverzekering</a></li><li><a href="#vergoedingsgroep-niet-gevonden">Vergoedingsgroep niet gevonden</a></li></ul></nav>
+<ul><li>Vergoedingsgroep aanmaken</li><li>Regelingen</li><li>Formule</li><li>Voorwaarden</li><li>Maatschappij aan vergoedingsgroep koppelen</li><li>Vergoedingengroep schadeverzekering</li><li>Vergoedingsgroep niet gevonden</li><li>Vergoedingsgroep aanmaken</li></ul>
+<p>De vergoedingsgroep maak je aan via Producten – Productbeheer – Vergoedingengroep. Deze zijn afhankelijk van de administratie en moeten dus per administratie aangemaakt worden.</p>
+<h2 id="artikeltype-kies-het-type-dienst-contract-enz">Artikeltype kies het type (dienst, contract, enz.)</h2>
+<p>Naam die herkenbaar is voor de vergoedingsgroep.</p>
+<p>Type wordt meestal &#x27;normaal&#x27; of &#x27;handmatig&#x27; gekozen. Bij normaal wordt de vergoeding automatisch aangemaakt, bij handmatig kan de vergoeding handmatig onder een product opgevoerd worden. Bij vergoedingsgroepen die gelden voor het verwerken van ADN berichten dan kies je hier ADN.</p>
+<p>Interval is afhankelijk of het eenmalige facturatie betreft of bijvoorbeeld maandelijks bij een abonnement. Bij ADN vergoedingsgroepen kies je hier voor &#x27;Eenmalig&#x27;.</p>
+<p>Boeken in de administratie bepaald in welke administratie er geboekt moet worden, Kantoor of Centrale organisatie.</p>
+<h2 id="betalingsprofiel-hoe-wordt-de-factuur-verwerkt">Betalingsprofiel hoe wordt de factuur verwerkt?</h2>
+<p>Particulier/zakelijk kan je instellen in vergoedingsgroepen met artikeltype schadeverzekering. Je kan een aparte vergoedingsgroep maken voor de particuliere producten en een aparte vergoedingsgroep voor de zakelijke producten als je de omzet wilt boeken op aparte grootboekrekeningen voor particulier en zakelijk.</p>
+<p>Startdatum: De startdatum van de vergoedingengroep is een belangrijke datum. Wanneer de aanvraagdatum van een offerte voor de ingangsdatum ligt van de vergoedingengroep, dan zal de vergoeding niet automatisch worden uitgerekend! De startdatum moet dus altijd vóór de startdatum van de offerte liggen voordat de vergoedingen automatisch berekend kunnen worden.</p>
+<p>Cluster: De vergoedingen hangen samen met het cluster (&#x27;Inkoop via&#x27;) wat geselecteerd wordt in de offerte. Vaak heb je vergoedingsgroepen voor het cluster &#x27;Rechtstreeks&#x27; en bijvoorbeeld &#x27;DAK&#x27;. Zo kan je bijvoorbeeld twee vergoedingsgroepen Schadeverzekering particulier hebben. In de ene vergoedingsgroep staat dan het cluster op &#x27;Rechtstreeks&#x27; en in de andere op &#x27;DAK&#x27;. Wanneer een andere clusterorganisatie wordt ingesteld in de offerte dan is ingegeven in de vergoedingengroep, zullen de vergoedingen niet automatisch worden berekend.</p>
+<p>Klikken op opslaan.</p>
+<h2 id="regelingen">Regelingen</h2>
+<p>Onder het tabblad Regelingen kan je instellen hoe de verdeling wilt instellen. Per regel kan gekozen worden van welk vergoedingstype de vergoeding is. Dit stel je in onder type. Aan elke regel zit een formule vast.</p>
+<h2 id="formule">Formule</h2>
+<p>Deze formules kunnen bestaan uit een aantal elementen en moeten altijd beginnen met een &#x27;=&#x27;. Na opslaan van de formules, zal de uitkomst van de desbetreffende formule worden getoond. De waarden die hiervoor worden gebruikt zijn aan de linkerkant in het grijze vlak zichtbaar.</p>
+<h2 id="de-meest-gebruikte-formule-voor-adn-is-adn">De meest gebruikte formule voor ADN is &#x27;=adn&#x27;</h2>
+<p>Heel soms worden vergoedingsgroepen ook gebruikt voor facturatie. De meest gebruikte formule voor facturatie is &#x27;=verkoopprijs&#x27;</p>
+<p>In de formule kan het ook zo ingesteld worden dat een deel van de provisie gaat naar de deelnemer en een deel naar de centrale organisatie:</p>
+<p>&#x27;Boek restant op&#x27; is waar de omzet/provisie op geboekt wordt.</p>
+<h2 id="voorwaarden">Voorwaarden</h2>
+<p>Ook kan je voorwaarden op de formule instellen. Met deze voorwaarden kan je ervoor zorgen dat bepaalde zaken buiten de formule vallen, bijvoorbeeld deelnemers/kantoren.</p>
+<p>Let op!: Om de vergoedingsregelingen in te stellen voor verdere doorboekingen is uitgebreide kennis nodig van de mogelijkheden van het vergoedingensysteem. Blinqx kan je op weg helpen met een cursus, of één van onze consultants kan je helpen met invoer hiervan. Neem hiervoor contact op met support.</p>
+<h2 id="maatschappij-aan-vergoedingsgroep-koppelen">Maatschappij aan vergoedingsgroep koppelen</h2>
+<p>Nu moet alleen de maatschappijen nog aan de vergoedingsgroep gekoppeld worden. Hiervoor ga je naar het tabblad Organisaties. Je selecteert hier links de maatschappijen. Met het pijltje zet je de maatschappijen naar rechts om te koppelen. Betreft een vergoedingsgroepen voor het artikeltype Schadeverzekering dan kan je de AFD branches koppelen. Het is dan niet noodzakelijk om de organisaties te koppelen.</p>
+<h2 id="vergoedingengroep-schadeverzekering">Vergoedingengroep schadeverzekering</h2>
+<p>In bovenstaande punten lees je dat de betreffende maatschappij niet is opgenomen in de vergoedingengroep. Wat betreft de vergoedingengroep schadeverzekering is het ook mogelijk om AFD Branches te koppelen. Indien er dan een nieuwe maatschappij bij komt hoef je deze niet toe te voegen bij organisaties, omdat de match wordt gemaakt op de AFD branches.</p>
+<p>Het koppelen van de AFD branches doe je onder tabblad AFD Branches. Rechts staan de beschikbare branches. Hier selecteer je de branches die horen bij een schadeverzekering. Via de pijl in het midden verplaats je deze branches naar Gekoppelde AFD branches. Vervolgens opslaan door middel van het vinkje.</p>
+<h2 id="vergoedingsgroep-niet-gevonden">Vergoedingsgroep niet gevonden</h2>
+<p>Indien een vergoedingsgroep niet correct is ingericht kan er geen controle journaalpost gemaakt worden. Hier lees je meer over de oorzaak en hoe je dit kunt controleren en oplossen.</p></div>
+      <section class="figs"><h2>Afbeeldingen bij dit artikel</h2><figure><a href="https://web.archive.org/web/20240714221656im_/https://support.fasterforward.nl/wp-content/uploads/2024/06/image-32.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20240714221656im_/https://support.fasterforward.nl/wp-content/uploads/2024/06/image-32.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20240714221656im_/https://support.fasterforward.nl/wp-content/uploads/2024/06/image-34.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20240714221656im_/https://support.fasterforward.nl/wp-content/uploads/2024/06/image-34.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20240714221656im_/https://support.fasterforward.nl/wp-content/uploads/2024/06/image-35.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20240714221656im_/https://support.fasterforward.nl/wp-content/uploads/2024/06/image-35.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20240714221656im_/https://support.fasterforward.nl/wp-content/uploads/2024/06/image-33.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20240714221656im_/https://support.fasterforward.nl/wp-content/uploads/2024/06/image-33.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20240714221656im_/https://support.fasterforward.nl/wp-content/uploads/2024/06/image-36.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20240714221656im_/https://support.fasterforward.nl/wp-content/uploads/2024/06/image-36.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure></section>
+      <details class="orig"><summary>Schermafbeelding van de oorspronkelijke pagina</summary><img src="../../bronnen/offline-archief/shots/vergoedingsgroep-aanmaken.jpg" alt="Schermafbeelding van Vergoedingsgroep aanmaken" loading="lazy"></details>
+      <p class="src">Bron: <a href="https://web.archive.org/web/20260629231220/https://support.fasterforward.nl/kennisbank/vergoedingsgroep-aanmaken/" target="_blank" rel="noopener">Wayback Machine-archief</a></p>
+    </article>
+    <aside class="related"><h2>Gerelateerd:</h2><ul><li><a href="../../kennisbank/vergoedingstypen/index.html">Vergoedingstypen aanmaken</a></li></ul></aside>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span>Copyright © 2024 Blinqx powered by Faster Forward</span>
+    <nav aria-label="Beleid">
+      <a href="../../supportbeleid/index.html">Supportbeleid</a>
+      <a href="../../opdrachtenbeleid/index.html">Opdrachtenbeleid</a>
+      <a href="../../klachtenbeleid/index.html">Klachtenbeleid</a>
+      <a href="../../wensenbeleid/index.html">Wensenbeleid</a>
+      <a href="../../video/index.html">Video's &amp; e-learning</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

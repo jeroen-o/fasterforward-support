@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Instellen van de boekhouding in Elements - Blinqx Support</title>
+<meta name="description" content="Faster Forward Elements is voorzien van een template administratie. In deze template is een standaardrekeningschema opgenomen en zijn de overige stamgegevens, zoals de dagboeken, BTW codes e.d., al aangemaakt. Het is uit…">
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="icon" href="../../assets/favicon.png">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
+    <symbol id="i-mail-o" viewBox="0 0 24 24"><path d="M2 5h20v14H2zm2 2v.4l8 5.6 8-5.6V7zm16 2.8-8 5.6-8-5.6V17h16z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><path d="M10 2a8 8 0 0 1 6.32 12.9l5.4 5.4-1.42 1.42-5.4-5.4A8 8 0 1 1 10 2zm0 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 64 64"><circle cx="7" cy="12" r="6"/><circle cx="7" cy="32" r="6"/><circle cx="7" cy="52" r="6"/><rect x="18" y="7" width="44" height="10" rx="2"/><rect x="18" y="27" width="44" height="10" rx="2"/><rect x="18" y="47" width="44" height="10" rx="2"/></symbol>
+    <symbol id="i-home" viewBox="0 0 64 64"><path d="M32 6 2 32l4 5 4-3.4V58h18V42h8v16h18V33.6l4 3.4 4-5-10-8.7V10h-8v7.4z"/></symbol>
+    <symbol id="i-car" viewBox="0 0 64 64"><path d="M16 10h32a6 6 0 0 1 5.7 4.1L58 27a7 7 0 0 1 4 6.3V48a3 3 0 0 1-3 3h-3v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H20v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H5a3 3 0 0 1-3-3V33.3A7 7 0 0 1 6 27l4.3-12.9A6 6 0 0 1 16 10zm1.5 7-3.3 10h35.6l-3.3-10zM13 34a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm38 0a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 64 64"><path d="M4 12a4 4 0 0 1 4-4h16l6 6h22a4 4 0 0 1 4 4v6H18a6 6 0 0 0-5.6 3.9L4 50z"/><path d="M18 28h44l-10 26H6z"/></symbol>
+    <symbol id="i-desktop" viewBox="0 0 64 64"><path d="M2 6h60v40H38v6h8v6H18v-6h8v-6H2zm6 6v28h48V12z"/></symbol>
+    <symbol id="i-comments" viewBox="0 0 64 64"><path d="M26 4c13.8 0 24 8.6 24 19s-10.2 19-24 19c-2.6 0-5-.3-7.3-.8C14.6 44 9.6 46 3 46c3-3 4.8-6.2 5.3-9.6C4.4 33 2 28.2 2 23 2 12.6 12.2 4 26 4z"/><path d="M54 24.5c5 3.4 8 8.3 8 13.5 0 4.2-1.8 8-4.8 11 .4 3.6 2 6.8 4.8 9.5-6 0-10.6-1.8-14.3-4.4-2.1.5-4.4.7-6.7.7-7 0-13.1-2.4-17-6.2 14.3-.4 30-8.8 30-24.1z"/></symbol>
+    <symbol id="i-envelope" viewBox="0 0 64 64"><path d="M4 12h56a2 2 0 0 1 2 2v3L32 37 2 17v-3a2 2 0 0 1 2-2z"/><path d="M2 23.5 32 43.5l30-20V50a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-euro" viewBox="0 0 64 64"><path d="M42 6c5 0 9.5 1.2 13 3.2l-2.6 8.2A19 19 0 0 0 42 14.5c-7.4 0-12.7 4.6-14.6 11.5H46l-2 7H26.3l-.05 2 .05 2H42l-2 7H27.4c1.9 7 7.2 11.5 14.6 11.5 4 0 7.6-1 10.4-2.9L55 61c-3.6 2-8 3-13 3-12.7 0-22.2-8-24.4-20H10l2-7h5.06L17 35l.06-2H10l2-7h5.6C19.8 14 29.3 6 42 6z"/></symbol>
+    <symbol id="i-file" viewBox="0 0 64 64"><path d="M10 2h28v18h18v38a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm32 0 14 14H42zM16 30v6h32v-6zm0 10v6h32v-6zm0 10v6h32v-6z"/></symbol>
+    <symbol id="i-rss" viewBox="0 0 64 64"><circle cx="11" cy="53" r="8"/><path d="M3 23a38 38 0 0 1 38 38H31A28 28 0 0 0 3 33z"/><path d="M3 3a58 58 0 0 1 58 58H51A48 48 0 0 0 3 13z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="rgba(0,0,0,.65)"/><path d="M26 20v24l20-12z" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="item"><svg class="ic"><use href="#i-phone"/></svg><a class="tel" href="tel:+31850180069">085 018 00 69</a></span>
+    <span class="sep" aria-hidden="true"></span>
+    <span class="item"><svg class="ic"><use href="#i-mail-o"/></svg><a class="mail" href="mailto:support-eblinqx@blinqx.tech">support-eblinqx@blinqx.tech</a></span>
+    <a class="li" href="https://www.linkedin.com/company/blinqx/" target="_blank" rel="noopener" aria-label="Blinqx op LinkedIn">in</a>
+  </div>
+</div>
+<header class="site">
+  <div class="wrap">
+    <div class="head-row">
+      <a class="brand" href="../../index.html" aria-label="Blinqx support — home">
+        <img src="../../assets/logo-mark.png" alt="Blinqx" width="470" height="119">
+        <span>powered by Faster Forward</span>
+      </a>
+      <nav class="main" aria-label="Hoofdmenu"><ul><li><a href="../../index.html">Home</a></li><li><a href="../../nieuws/index.html">Nieuws</a></li><li><a href="../../tips/index.html">Tips</a></li><li><a href="../../releasenotes/index.html">Release notes</a></li><li><a href="../../trainingen/index.html">Trainingen</a></li><li><a href="../../contact/index.html">Contact support</a></li></ul></nav>
+    </div>
+    <div class="search-row">
+      <form class="search" action="../../zoeken/index.html" method="get" role="search">
+        <label class="field">
+          <svg class="ic"><use href="#i-search"/></svg>
+          <input type="search" name="q" placeholder="Zoek hier op onderwerp" aria-label="Zoek op onderwerp">
+        </label>
+        <button type="submit">Zoeken</button>
+      </form>
+      <div class="status">Mogelijke incidenten en de systeemstatus vind je op onze <a href="#" title="URL statuspagina nog invullen">statuspagina</a>.</div>
+    </div>
+  </div>
+</header>
+<div class="crumbs"><div class="wrap"><nav aria-label="Kruimelpad"><a href="../../kennisbank/index.html">Kennisbank</a><span class="sep" aria-hidden="true">›</span><a href="../../kennisbank/overig/index.html">Overig</a><span class="sep" aria-hidden="true">›</span><a href="../../kennisbank/overig/overige-kennisbankartikelen/index.html">Overige kennisbankartikelen</a><span class="sep" aria-hidden="true">›</span><span aria-current="page">Instellen van de boekhouding in Elements</span></nav></div></div>
+<main class="article">
+  <div class="wrap cols">
+    <article>
+      <h1>Instellen van de boekhouding in Elements</h1>
+      <p class="meta">Laatste update: 17 oktober 2018</p>
+      <div class="content"><p>Faster Forward Elements is voorzien van een template administratie. In deze template is een standaardrekeningschema opgenomen en zijn de overige stamgegevens, zoals de dagboeken, BTW codes e.d., al aangemaakt. Het is uiteraard mogelijk om deze gegevens aan te passen en/of uit te breiden met uw specifieke wensen. Hieronder zullen wij kort de belangrijkste zaken behandelen.<br>Het aanmaken en/of muteren van de stamgegevens treft u aan in het menu onder Financieel -&gt; Stamgegevens.<br>Selecteer administratie<br>Het is mogelijk om voor meerdere bedrijven de administraties te voeren binnen Elements. Voordat u gaat beginnen met het wijzigen van de stamgegevens dient u eerst de juiste administratie te selecteren.<br>Administraties onderhoud<br>In dit onderdeel is het mogelijk om de tenaamstelling van de administratie aan te passen en om een aantal standaardinstellingen te definiëren. De meeste van deze instellingen spreken voor zich. Indien u over dit onderdeel vragen heeft kunt u contact opnemen met onze helpdesk door uw vragen te mailen naar <a href="mailto:support@fasterforward.nl">support@fasterforward.nl</a><br>Verdichtingen onderhoud<br>Hier is het mogelijk de manier waarop u de cijfers wilt presenteren te definiëren. In de template is een algemeen gangbaar model opgenomen zoals deze in de praktijk het meest wordt gehanteerd. Dit model sluit aan op de manier waarop de cijfers worden gepresenteerd in de jaarrekening. U kunt dit model aanpassen op de wijze zoals u wenst. Het toevoegen van extra rubrieken kan eenvoudig door op het + icoontje te klikken. Het aanpassen van de bestaande omschrijvingen kan door op het blauwe wijzig icoontje achter de omschrijving te klikken.<br>De grootboekrekeningen die niet gekoppeld zijn aan een verdichting worden zichtbaar in het scherm. U koppelt deze rekeningen als volgt. Klik op de verdichting waaronder u deze rekening wilt rubriceren en klik vervolgens op het blauwe pijltje achter de grootboekrekening.</p>
+<p>Let op: Grootboekrekeningen die niet gekoppeld zijn aan een verdichting zijn niet zichtbaar in de rapportages.<br>Rekeningschema onderhoud<br>Hier kunt u rekeningen toevoegen, de omschrijving aanpassen of het rekeningnummer aanpassen. Het is ook mogelijk om rekeningen te verwijderen. Voorwaarde hiervoor is uiteraard wel dat er op deze rekening nog niet is geboekt. Verder zijn grootboekrekeningen pas te verwijderen als ze niet gekoppeld zijn onder een verdichting. Bij onderhoud verdichtingen kunnen de grootboekrekeningen ontkoppeld worden.<br>Met het + icoon bovenaan maakt u een nieuwe grootboekrekening aan. “Geblokkeerd Ja/Nee” geeft aan of er nog gebruik mag worden gemaakt van deze grootboekrekening tijdens het boeken. “Afdrukken Verdicht/Niet verdicht” geeft aan of 1 saldo per grootboekrekening moet worden afgedrukt (verdicht) of dat elke regel moet worden afgedrukt (niet verdicht). Sla op met het groene vinkje. Let op, na het aanmaken van een grootboekrekening dient deze eerst gekoppeld te worden aan een verdichting.</p>
+<p>Dagboeken onderhoud<br>We kennen in Faster Forward Elements 6 soorten dagboeken:</p>
+<ul><li>Kas</li><li>Bank</li><li>Rekening Courant (alleen voor de verzekeringsbranche)</li><li>Verkoop</li><li>Inkoop</li><li>Memoriaal</li></ul>
+<p>Om een dagboek te wijzigen of te verwijderen klikt u op het wijzig/verwijder icoontje achter het specifieke dagboek. U kunt op dit scherm nieuwe dagboeken toevoegen.<br>De meeste opties bij het aanmaken van een dagboek spreken voor zich. Hierbij nog wat Elements specifieke opties:</p>
+<p>Automatisch verlaten; indien u deze optie aanvinkt wordt de boeking automatisch afgesloten indien het saldo gelijk is aan nul. Een nieuwe boeking wordt vervolgens geopend.<br>Hoofd ja/nee; Deze optie is alleen van toepassing bij dagboeken van het type ‘Bank’ op deze wijze specificeert u het bankboek als hoofdbetaalmiddel bij het elektronisch bankieren.<br>Niet toegewezen; Deze rekening is van belang bij het importeren van bankafschriften. Op deze rekening worden alle betalingen en ontvangsten geboekt die niet automatisch kunnen worden toegewezen aan een grootboekrekening.</p>
+<p>BTW codes onderhoud<br>De BTW codes stelt u in bij ‘onderhoud BTW-codes’. De reeds aanwezige BTW-codes wijzigen of verwijderen is mogelijk door te klikken op het wijzig/verwijder icoontje achter de specifieke BTW-code. Na het klikken op het + icoontje bovenaan kunt u nieuwe BTW-codes aanmaken.<br>Periodes onderhoud<br>Hier kunt u een nieuw boekjaar openen en een boekjaar afsluiten. Let Op: het is alleen mogelijk een boekjaar af te sluiten als het volgend boekjaar geopend is. U opent een boekjaar door op het + icoontje te klikken. Binnen het boekjaar kan aangeven worden hoeveel perioden er aangemaakt moeten worden. Na afloop van een periode kan ook de periode in een boekjaar worden afgesloten. Hiermee kan voorkomen worden dat reeds gerapporteerde/afgesloten periodes alsnog worden gemuteerd.<br>Let op: periode 0 is bedoeld voor het boeken van de openingsbalans. In deze periode is het mogelijk om het saldo van de tegenrekening van de dagboeken (kas- en bankboeken) te boeken. In alle overige periodes is dat niet mogelijk.<br>Kostenplaatsen onderhoud<br>Indien u gebruik maakt van kostenplaatsenadministratie kan onder deze functie de kostenplaatsen worden gedefinieerd. Druk op het +icoontje om kostenplaatsen toe te voegen.<br>Let op: De kostenplaatsen worden pas zichtbaar bij het inboeken indien bij onderhoud administraties de optie “kostenplaatsen aan” op ja staat.</p>
+<p>Tagged: instellenboekhouding</p></div>
+      <section class="figs"><h2>Afbeeldingen bij dit artikel</h2><figure><a href="https://web.archive.org/web/20190818141728im_/http://support.fasterforward.nl/wp-content/uploads/2017/01/boekhouden_verdichting.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20190818141728im_/http://support.fasterforward.nl/wp-content/uploads/2017/01/boekhouden_verdichting.png" alt="boekhoudinginstellen" loading="lazy" onerror="this.closest('figure').remove()"></a><figcaption>boekhoudinginstellen</figcaption></figure><figure><a href="https://web.archive.org/web/20190818141728im_/http://support.fasterforward.nl/wp-content/uploads/2017/01/boekhouden_rekeningschema.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20190818141728im_/http://support.fasterforward.nl/wp-content/uploads/2017/01/boekhouden_rekeningschema.png" alt="boekhoudinginstellen2" loading="lazy" onerror="this.closest('figure').remove()"></a><figcaption>boekhoudinginstellen2</figcaption></figure></section>
+      
+      <p class="src">Bron: <a href="https://web.archive.org/web/20190818141728/https://support.fasterforward.nl/kennisbank/instellen-boekhouding-elements/" target="_blank" rel="noopener">Wayback Machine-archief</a></p>
+    </article>
+    <aside class="related"><h2>Gerelateerd:</h2><ul><li><a href="../../kennisbank/aandachtspunten-product-aanmaken-in-dossier/index.html">Aandachtspunten product aanmaken in dossier</a></li><li><a href="../../kennisbank/aandachtspunten-gebruikersaccount-nieuwe-collega/index.html">Aandachtspunten voor nieuwe collega</a></li><li><a href="../../kennisbank/aanspreken-met-u-of-jij/index.html">Aanspreken met u of jij instellen</a></li><li><a href="../../kennisbank/administratie-instellen-elements/index.html">Administratie instellen in Elements</a></li><li><a href="../../kennisbank/adn-batch-verwerken-met-zonder-tussenrekening/index.html">ADN batch verwerken zonder mutatievoorstellen</a></li><li><a href="../../kennisbank/adn-berichten-ontvangen/index.html">ADN berichten ontvangen (inrichten)</a></li></ul></aside>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span>Copyright © 2024 Blinqx powered by Faster Forward</span>
+    <nav aria-label="Beleid">
+      <a href="../../supportbeleid/index.html">Supportbeleid</a>
+      <a href="../../opdrachtenbeleid/index.html">Opdrachtenbeleid</a>
+      <a href="../../klachtenbeleid/index.html">Klachtenbeleid</a>
+      <a href="../../wensenbeleid/index.html">Wensenbeleid</a>
+      <a href="../../video/index.html">Video's &amp; e-learning</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

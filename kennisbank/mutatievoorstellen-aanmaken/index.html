@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mutatievoorstellen aanmaken - Blinqx Support</title>
+<meta name="description" content="Leer hoe je een mutatievoorstel aanmaakt voor een polis/pakket en deze communiceert naar de klant. Ontdek waar je verwerkte en toekomstige mutaties bekijkt.">
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="icon" href="../../assets/favicon.png">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
+    <symbol id="i-mail-o" viewBox="0 0 24 24"><path d="M2 5h20v14H2zm2 2v.4l8 5.6 8-5.6V7zm16 2.8-8 5.6-8-5.6V17h16z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><path d="M10 2a8 8 0 0 1 6.32 12.9l5.4 5.4-1.42 1.42-5.4-5.4A8 8 0 1 1 10 2zm0 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 64 64"><circle cx="7" cy="12" r="6"/><circle cx="7" cy="32" r="6"/><circle cx="7" cy="52" r="6"/><rect x="18" y="7" width="44" height="10" rx="2"/><rect x="18" y="27" width="44" height="10" rx="2"/><rect x="18" y="47" width="44" height="10" rx="2"/></symbol>
+    <symbol id="i-home" viewBox="0 0 64 64"><path d="M32 6 2 32l4 5 4-3.4V58h18V42h8v16h18V33.6l4 3.4 4-5-10-8.7V10h-8v7.4z"/></symbol>
+    <symbol id="i-car" viewBox="0 0 64 64"><path d="M16 10h32a6 6 0 0 1 5.7 4.1L58 27a7 7 0 0 1 4 6.3V48a3 3 0 0 1-3 3h-3v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H20v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H5a3 3 0 0 1-3-3V33.3A7 7 0 0 1 6 27l4.3-12.9A6 6 0 0 1 16 10zm1.5 7-3.3 10h35.6l-3.3-10zM13 34a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm38 0a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 64 64"><path d="M4 12a4 4 0 0 1 4-4h16l6 6h22a4 4 0 0 1 4 4v6H18a6 6 0 0 0-5.6 3.9L4 50z"/><path d="M18 28h44l-10 26H6z"/></symbol>
+    <symbol id="i-desktop" viewBox="0 0 64 64"><path d="M2 6h60v40H38v6h8v6H18v-6h8v-6H2zm6 6v28h48V12z"/></symbol>
+    <symbol id="i-comments" viewBox="0 0 64 64"><path d="M26 4c13.8 0 24 8.6 24 19s-10.2 19-24 19c-2.6 0-5-.3-7.3-.8C14.6 44 9.6 46 3 46c3-3 4.8-6.2 5.3-9.6C4.4 33 2 28.2 2 23 2 12.6 12.2 4 26 4z"/><path d="M54 24.5c5 3.4 8 8.3 8 13.5 0 4.2-1.8 8-4.8 11 .4 3.6 2 6.8 4.8 9.5-6 0-10.6-1.8-14.3-4.4-2.1.5-4.4.7-6.7.7-7 0-13.1-2.4-17-6.2 14.3-.4 30-8.8 30-24.1z"/></symbol>
+    <symbol id="i-envelope" viewBox="0 0 64 64"><path d="M4 12h56a2 2 0 0 1 2 2v3L32 37 2 17v-3a2 2 0 0 1 2-2z"/><path d="M2 23.5 32 43.5l30-20V50a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-euro" viewBox="0 0 64 64"><path d="M42 6c5 0 9.5 1.2 13 3.2l-2.6 8.2A19 19 0 0 0 42 14.5c-7.4 0-12.7 4.6-14.6 11.5H46l-2 7H26.3l-.05 2 .05 2H42l-2 7H27.4c1.9 7 7.2 11.5 14.6 11.5 4 0 7.6-1 10.4-2.9L55 61c-3.6 2-8 3-13 3-12.7 0-22.2-8-24.4-20H10l2-7h5.06L17 35l.06-2H10l2-7h5.6C19.8 14 29.3 6 42 6z"/></symbol>
+    <symbol id="i-file" viewBox="0 0 64 64"><path d="M10 2h28v18h18v38a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm32 0 14 14H42zM16 30v6h32v-6zm0 10v6h32v-6zm0 10v6h32v-6z"/></symbol>
+    <symbol id="i-rss" viewBox="0 0 64 64"><circle cx="11" cy="53" r="8"/><path d="M3 23a38 38 0 0 1 38 38H31A28 28 0 0 0 3 33z"/><path d="M3 3a58 58 0 0 1 58 58H51A48 48 0 0 0 3 13z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="rgba(0,0,0,.65)"/><path d="M26 20v24l20-12z" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="item"><svg class="ic"><use href="#i-phone"/></svg><a class="tel" href="tel:+31850180069">085 018 00 69</a></span>
+    <span class="sep" aria-hidden="true"></span>
+    <span class="item"><svg class="ic"><use href="#i-mail-o"/></svg><a class="mail" href="mailto:support-eblinqx@blinqx.tech">support-eblinqx@blinqx.tech</a></span>
+    <a class="li" href="https://www.linkedin.com/company/blinqx/" target="_blank" rel="noopener" aria-label="Blinqx op LinkedIn">in</a>
+  </div>
+</div>
+<header class="site">
+  <div class="wrap">
+    <div class="head-row">
+      <a class="brand" href="../../index.html" aria-label="Blinqx support — home">
+        <img src="../../assets/logo-mark.png" alt="Blinqx" width="470" height="119">
+        <span>powered by Faster Forward</span>
+      </a>
+      <nav class="main" aria-label="Hoofdmenu"><ul><li><a href="../../index.html">Home</a></li><li><a href="../../nieuws/index.html">Nieuws</a></li><li><a href="../../tips/index.html">Tips</a></li><li><a href="../../releasenotes/index.html">Release notes</a></li><li><a href="../../trainingen/index.html">Trainingen</a></li><li><a href="../../contact/index.html">Contact support</a></li></ul></nav>
+    </div>
+    <div class="search-row">
+      <form class="search" action="../../zoeken/index.html" method="get" role="search">
+        <label class="field">
+          <svg class="ic"><use href="#i-search"/></svg>
+          <input type="search" name="q" placeholder="Zoek hier op onderwerp" aria-label="Zoek op onderwerp">
+        </label>
+        <button type="submit">Zoeken</button>
+      </form>
+      <div class="status">Mogelijke incidenten en de systeemstatus vind je op onze <a href="#" title="URL statuspagina nog invullen">statuspagina</a>.</div>
+    </div>
+  </div>
+</header>
+<div class="crumbs"><div class="wrap"><nav aria-label="Kruimelpad"><a href="../../kennisbank/index.html">Kennisbank</a><span class="sep" aria-hidden="true">›</span><a href="../../categorien/verzekeringen/index.html">Verzekeringen</a><span class="sep" aria-hidden="true">›</span><a href="../../categorien/producten-verzekeringen/index.html">Producten verzekeringen</a><span class="sep" aria-hidden="true">›</span><span aria-current="page">Mutatievoorstellen aanmaken</span></nav></div></div>
+<main class="article">
+  <div class="wrap cols">
+    <article>
+      <h1>Mutatievoorstellen aanmaken</h1>
+      <p class="meta">Laatste update: 15 oktober 2025</p>
+      <div class="content"><p>Als je met je klant een wijziging in zijn verzekering hebt besproken en je hebt deze aangevraagd bij de maatschappij, dan leg je dit al vast in eBlinqx. Zodra je later de mutatie via ADN/Aplaza ontvangt van de maatschappij, worden deze gegevens gecontroleerd met de gegevens die je al in eBlinqx had vastgelegd.</p><nav class="toc" aria-label="Inhoud"><ul><li><a href="#mutatievoorstel-aanmaken">Mutatievoorstel aanmaken</a></li><li><a href="#vul-gegevens-van-voorstel-in">Vul gegevens van voorstel in</a></li><li><a href="#rappeltaak-nieuwe-polis">Rappeltaak nieuwe polis</a></li><li><a href="#mutatie-communiceren-naar-klant">Mutatie communiceren naar klant</a></li><li><a href="#concept-e-mail-klaarzetten">Concept e-mail klaarzetten</a></li><li><a href="#dit-is-een-voorbeeld-workflow-is-afhankelijk-van-jouw-inrich">Dit is een voorbeeld. Workflow is afhankelijk van jouw inrichting</a></li><li><a href="#mutatievoorstellen-aangemaakt-door-verwerking-adn-en-aplaza">Mutatievoorstellen aangemaakt door verwerking ADN en Aplaza</a></li><li><a href="#polisnummer-wijzigen">Polisnummer wijzigen</a></li><li><a href="#maatschappij-volgend-of-maatschappij-controlerend">Maatschappij volgend of maatschappij controlerend</a></li><li><a href="#mutaties-in-behandeling">Mutaties in behandeling</a></li><li><a href="#maatschappij-volgend">Maatschappij volgend</a></li><li><a href="#maatschappij-controlerend">Maatschappij controlerend</a></li><li><a href="#royeren-of-opschorten">Royeren of opschorten</a></li><li><a href="#pakket-of-polisonderdeel-terug-op-lopend-zetten">Pakket of polisonderdeel terug op lopend zetten</a></li><li><a href="#overzicht-verwerkte-mutatievoorstellen">Overzicht verwerkte mutatievoorstellen</a></li><li><a href="#overzicht-met-toekomstige-mutaties-bekijken">Overzicht met toekomstige mutaties bekijken</a></li></ul></nav>
+<p>Je kan mutatievoorstellen aanmaken voor zowel een polisdeel als een verzekeringspakket. Mutaties in dekkingen zijn bijvoorbeeld alleen mogelijk voor een polis, maar een royement kan ook gelden voor een volledig pakket.</p>
+<p>Per mutatiedatum wordt vastgelegd welke gegevens er worden gewijzigd en wat voor soort mutatie het is.</p>
+<p>In dit artikel leggen we uit hoe je een mutatievoorstel aanmaakt, zowel voor polissen en pakketten.</p>
+<ul><li>Inhoud</li><li>Mutatievoorstel voor één polisdeel aanmaken</li><li>Mutatievoorstel aanmaken</li><li>Vul gegevens van voorstel in</li><li>Rappeltaak – Herinnering instellen</li><li>Mutatie communiceren naar klant</li><li>Concept e-mail klaarzetten</li><li>Mutatievoorstellen aangemaakt door verwerking ADN en Aplaza</li><li>Polisnummer wijzigen</li><li>Maatschappij volgend of maatschappij controlerend</li><li>Mutaties in behandeling</li><li>Maatschappij volgend</li><li>Maatschappij controlerend</li><li>Mutatievoorstel voor pakket aanmaken</li><li>Royeren of opschorten</li><li>Pakket of polisonderdeel terug op lopend zetten</li><li>Overzicht verwerkte mutatievoorstellen</li><li>Overzicht met toekomstige mutaties bekijken</li><li>Mutatievoorstel voor één polisdeel aanmaken</li></ul>
+<p>Bij een wijziging op één polis van een pakket, maak je hiervoor één mutatievoorstel aan bij de polis. De volgende opties zijn mogelijk:</p>
+<ul><li>Mutatievoorstel aanmaken. Onderstaande opties zijn afhankelijk van de branche waaronder het product valt</li><li>Dekking toevoegen</li><li>Verzekerde objecten aanpassen</li><li>Verzekerde personen aanpassen</li><li>Premieopbouw aanpassen</li><li>Overige mutatie(s)</li><li>Polis royeren</li><li>Polis opschorten</li><li>Polis lopend zetten (deze optie komt zichtbaar als de polis geroyeerd is)</li></ul>
+<p>Volg de onderstaande stappen om een mutatievoorstel aan te maken.</p>
+<h2 id="mutatievoorstel-aanmaken">Mutatievoorstel aanmaken</h2>
+<p>Ga in het klantdossier naar de verzekering waarvoor je een mutatievoorstel wilt aanmaken. Zodra je met je muis op het koffertje gaat staan, verschijnt er een menu. Klik hier op &#x27;Mutatievoorstel aanmaken&#x27;.</p>
+<h2 id="vul-gegevens-van-voorstel-in">Vul gegevens van voorstel in</h2>
+<p>Vul nu de mutatie in die je verwacht. In dit voorbeeld verwachten we een mutatie van de maatschappij die per 1 juli 2024 ingaat. Het verzekerd bedrag wordt gewijzigd naar € 30 en het eigen risico wordt aangepast naar € 5. Vul de gegevens in en klik op &#x27;Opslaan&#x27;.</p>
+<ul><li>Rappeltaak – Herinnering instellen</li><li>Rappeltaak bestaand product</li></ul>
+<p>De verzekeraar moet voor de ingangsdatum de mutatie aan jou doorgeven via ADN/Aplaza. Om te controleren of hij dit tijdig doet, kan je er voor kiezen om een rappeltaak aan te maken. Standaard staat ingesteld dat de rappeltaak automatisch staat aangevinkt. Wil je dit niet dan kan de setting zo aangepast worden dat deze niet automatisch wordt aangevinkt. Stuur hiervoor een e-mail naar Support. Of je vinkt handmatig de rappeldatum uit. Wil je de taak op een andere datum dan pas je de datum aan.</p>
+<p>De taak wordt direct aangemaakt en komt te staan op de rappeldatum die je hebt aangegeven. De taakverantwoordelijke van deze taak is degene die als behandelaar staat geselecteerd in het product.</p>
+<h2 id="rappeltaak-nieuwe-polis">Rappeltaak nieuwe polis</h2>
+<p>Bovenstaande geldt ook voor de rappeltaak die wordt aangemaakt als je een nieuwe polis aanmaakt alleen de ingangsdatum is van invloed op de datum van de taak. Bij het aanmaken van een nieuwe polis krijgt de rappeltaak als startdatum de ingangsdatum van de polis. Verander je tijdens het aanmaken van de nieuwe polis de ingangsdatum (deze staat onder het blok Looptijd) dan verandert de datum van de rappeldatum mee. Andersom is het niet zo, wijzig je de rappeldatum dan verandert de ingangsdatum niet. De taak wordt direct na het opslaan van de nieuwe polis aangemaakt. Wijzig je naderhand, na het aanmaken, de ingangsdatum van het polisonderdeel dan reageert de rappeltaak hier niet meer op.</p>
+<h2 id="mutatie-communiceren-naar-klant">Mutatie communiceren naar klant</h2>
+<p>Het is ook mogelijk om direct de workflow te starten via de knop &#x27;Opslaan en workflow starten&#x27;. Hiermee kan je bijvoorbeeld direct de klant informeren dat je zijn mutatie hebt doorgegeven aan de maatschappij.</p>
+<p>Als je een mutatie al had aangemaakt, kan je de workflow ook opstarten door op &#x27;Workflows doorzetten&#x27; te klikken bij de polis of het pakket.</p>
+<p>Let op: wanneer je net begint met mutatievoorstellen dan kan het zijn dat er nog een oude schadeworkflow onder de bestaande producten staat. Voor het juist opstellen van de e-mails is het belangrijk dat de nieuwe schadeworkflows onder het product komen te staan. Voordat je een mutatievoorstel aanmaakt in deze bestaande producten, is het goed om eerst te kiezen voor &#x27;Workflows doorzetten&#x27;. Je krijgt dan de stap &#x27;Klik hier om nieuw mutatievoorstellen workflow te starten&#x27;. Daarna kan je een mutatievoorstel aanmaken.</p>
+<h2 id="concept-e-mail-klaarzetten">Concept e-mail klaarzetten</h2>
+<p>Vanuit de workflow is het mogelijk om een concept e-mail klaar te zetten.</p>
+<h2 id="dit-is-een-voorbeeld-workflow-is-afhankelijk-van-jouw-inrich">Dit is een voorbeeld. Workflow is afhankelijk van jouw inrichting</h2>
+<p>Je ziet nu de concept e-mail in het &#x27;Communicatie&#x27; tabblad van het klantdossier.</p>
+<p>De informatie van de specifieke polis wordt met tags automatisch opgehaald en gevuld in deze e-mail. Gebruik hiervoor de tags die beginnen met &#x27;offertedeel&#x27;, zoals [offertedeel-&gt;polisnummer], [offertedeel-&gt;product-&gt;naam] of [offertedeel-&gt;product-&gt;categorie].</p>
+<h2 id="mutatievoorstellen-aangemaakt-door-verwerking-adn-en-aplaza">Mutatievoorstellen aangemaakt door verwerking ADN en Aplaza</h2>
+<p>Hierboven is beschreven hoe je zelf handmatig een mutatievoorstel kunt aanmaken. Door het verwerken van Aplaza en ADN berichten worden er ook mutatievoorstellen aangemaakt, bijvoorbeeld bij een prolongatie op hoofdvervaldatum.</p>
+<p>Ook worden er voorstellen gemaakt bij bijvoorbeeld het royeren van een polis.</p>
+<h2 id="polisnummer-wijzigen">Polisnummer wijzigen</h2>
+<p>Een andere reden dat er een mutatievoorstel wordt aangemaakt, is bij het wijzigen van het polisnummer door de maatschappij. Maatschappijen hebben de mogelijkheid om in één ADN bericht het oude polisnummer en het nieuwe polisnummer mee te sturen. Wanneer in het ADN bericht het oude en nieuwe polisnummer wordt meegestuurd zal eBlinqx dit als een mutatievoorstel verwerken. In het mutatievoorstel in dit polisnummer zichtbaar. In de poliskaart komt dan het nieuwe polisnummer en eventuele andere wijzigingen, bijvoorbeeld dekkingen, te staan. Voor de duidelijkheid maken we in dit geval ook een (systeem)registratie aan.</p>
+<h2 id="maatschappij-volgend-of-maatschappij-controlerend">Maatschappij volgend of maatschappij controlerend</h2>
+<p>Er zijn twee werkwijzen hoe om te gaan met mutatievoorstellen en mutatieconflicten, namelijk maatschappij volgend en maatschappij controlerend. Bij maatschappij volgend is de mutatie afgerond als de mutatie van de maatschappij is doorgevoerd. Er ontstaan minder mutatieconflicten. Bij maatschappij controlerend is de mutatie afgerond als de mutatie van de maatschappij is gecontroleerd en is goedgekeurd. Bij deze werkwijze ontstaan er meer mutatieconflicten, omdat je de maatschappij controleert. Ook ga je anders om met mutaties die in behandeling staan. Voordat je gaat werken met mutatieconflicten, geef je aan een medewerker van Blinqx door of je maatschappij volgend of controlerend wilt werken.</p>
+<h2 id="mutaties-in-behandeling">Mutaties in behandeling</h2>
+<p>Nadat je een mutatievoorstel hebt aangemaakt, zie je aan de rechterzijde van het product dat er een mutatie gepland staat op een bepaalde datum. Deze mutatie zie je ook terug in het tabblad &#x27;Mutatievoorstellen&#x27;.</p>
+<h2 id="maatschappij-volgend">Maatschappij volgend</h2>
+<p>In de productkaart staat de mutatiedatum.</p>
+<p>Bij het product op de startpagina van het dossier staat een klokje in het producticoon als er een mutatie in behandeling. Ook is hier de mutatiedatum terug te vinden. Het klokje in het producticoon is ook terug te zien in Track and Trace.</p>
+<h2 id="maatschappij-controlerend">Maatschappij controlerend</h2>
+<p>Naast het klokje en de mutatiedatum zie je, als je werkt met de werkwijze maatschappij controlerend, ook aan het -icoon dat een mutatie &#x27;In behandeling&#x27; is.</p>
+<p>Betekenis van de kolommen:</p>
+<p>Rappel: of er een herinneringstaak is/wordt aangemaakt. De rappeltaak wordt aangemaakt in de nacht van de rappeldatum. Als je voor die tijd hebt aangegeven dat de mutatie bevestigd is (via het zandlopericoon) dan wordt de taak niet aangemaakt.<br>Ontvangen via ADN: ADN bericht is binnengekomen en gekoppeld aan de polis (via ADN).<br>Gecontroleerd door kantoor: de maatschappij heeft de mutatie verwerkt. De gebruiker dient op het zandloper te klikken als deze het polisblad heeft gecontroleerd als dat is binnengekomen (via Aplaza of e-mail).</p>
+<p>Klik op onderstaande knop voor meer informatie over het afronden van mutaties in behandeling.</p>
+<ul><li>MUTATIE IN BEHANDELING AFRONDEN</li><li>Mutatievoorstel voor pakket aanmaken</li></ul>
+<p>Het is ook mogelijk om een volledig verzekeringspakket in één keer aan te passen. Je hebt hiervoor de volgende opties:</p>
+<ul><li>Royement (alle lopende polissen royeren)</li><li>Opschorten (alle lopende polissen opschorten)</li></ul>
+<p>Hiervoor ga je in het product naar naar het koffertje.</p>
+<h2 id="royeren-of-opschorten">Royeren of opschorten</h2>
+<p>Bij het royeren of opschorten van een pakket verschijnt er een pop-up. In deze pop-up kan je aangeven of het pakket direct geroyeerd dient te worden of vanaf een bepaalde datum. Om te controleren of hij dit tijdig doet, kan je er voor kiezen om een rappeltaak aan te maken. Standaard staat ingesteld dat de rappeltaak automatisch staat aangevinkt. Wil je dit niet dan kan de setting zo aangepast worden dat deze niet automatisch wordt aangevinkt. Of je vinkt handmatig de rappeldatum uit. Wil je de taak op een andere datum dan pas je de datum aan. Wanneer deze taak wordt aangemaakt is afhankelijk van de setting (zie hierboven). Bij &#x27;maatschappij volgend&#x27; wordt de taak direct aangemaakt en komt te staan op de rappeldatum die je hebt aangegeven. Bij &#x27;maatschappij controlerend&#x27; wordt de rappeltaak pas aangemaakt op de dag van de rappeldatum mits het voorstel niet is afgehandeld. De taakverantwoordelijke van deze taak is degene die als behandelaar staat geselecteerd in het product.</p>
+<p>Deze wijziging is ook zichtbaar in het tabblad Mutatievoorstellen.</p>
+<h2 id="pakket-of-polisonderdeel-terug-op-lopend-zetten">Pakket of polisonderdeel terug op lopend zetten</h2>
+<p>Het kan zijn dat een pakket en/of polisonderdeel geroyeerd is, maar dat deze terug actief worden. De status van het pakket en/of polisonderdeel staat dan nog op geroyeerd.</p>
+<p>Door middel van een mutatievoorstel kan je het pakket/polisonderdeel weer terug op lopend zetten. Dit door te klikken op het koffertje en dan te kiezen voor &#x27;Polis lopend zetten&#x27;. Deze optie is alleen zichtbaar wanneer het pakketonderdeel geroyeerd is.</p>
+<h2 id="overzicht-verwerkte-mutatievoorstellen">Overzicht verwerkte mutatievoorstellen</h2>
+<p>Per klantdossier kan je alle mutatievoorstellen bekijken. In het tabblad &#x27;Mutatievoorstellen&#x27; onder de verzekering zie je de reeds aangemaakt en verwerkte mutatievoorstellen. Via het filter kan je instellen welke mutatievoorstellen je wilt zien.</p>
+<p>Hier zie je ook wanneer er een conflict is. Als je maatschappij controlerend werkt, zie je hier ook de kolommen Ontvangen via ADN en Gecontroleerd door kantoor terug met bijbehorende status (zandloper of vinkje). Ook hier kan je zandlopers afvinken.</p>
+<p>Via het vergrootglas kan je verschillende informatie ophalen over het mutatievoorstel. In de pop-up zie je het laatst verwerkte mutatievoorstel vóór het gekozen mutatievoorstel, het gekozen mutatievoorstel en indien gewenst de huidige polis (deze kan je aan- of uitvinken). Onder het gekozen mutatievoorstel worden de velden gearceerd die verschillend zijn met het laatst verwerkte mutatievoorstel.</p>
+<h2 id="overzicht-met-toekomstige-mutaties-bekijken">Overzicht met toekomstige mutaties bekijken</h2>
+<p>In het &#x27;Overzicht toekomstige mutaties&#x27; zie je de toekomstige mutaties van alle verzekeringen in jouw eBlinqxomgeving. Aan de linkerkant filter en zoek je eenvoudig naar toekomstige mutaties.</p></div>
+      <section class="figs"><h2>Afbeeldingen bij dit artikel</h2><figure><a href="https://web.archive.org/web/20241203210900im_/https://support.fasterforward.nl/wp-content/uploads/2024/06/image-8.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20241203210900im_/https://support.fasterforward.nl/wp-content/uploads/2024/06/image-8.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20241203210900im_/https://support.fasterforward.nl/wp-content/uploads/2024/06/image-9.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20241203210900im_/https://support.fasterforward.nl/wp-content/uploads/2024/06/image-9.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20241203210900im_/https://support.fasterforward.nl/wp-content/uploads/2024/06/image-10.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20241203210900im_/https://support.fasterforward.nl/wp-content/uploads/2024/06/image-10.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20241203210900im_/https://support.fasterforward.nl/wp-content/uploads/2024/06/image-11.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20241203210900im_/https://support.fasterforward.nl/wp-content/uploads/2024/06/image-11.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20241203210900im_/https://support.fasterforward.nl/wp-content/uploads/2024/06/image-13.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20241203210900im_/https://support.fasterforward.nl/wp-content/uploads/2024/06/image-13.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20241203210900im_/https://support.fasterforward.nl/wp-content/uploads/2024/06/image-14.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20241203210900im_/https://support.fasterforward.nl/wp-content/uploads/2024/06/image-14.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure></section>
+      <details class="orig"><summary>Schermafbeelding van de oorspronkelijke pagina</summary><img src="../../bronnen/offline-archief/shots/mutatievoorstellen-aanmaken.jpg" alt="Schermafbeelding van Mutatievoorstellen aanmaken" loading="lazy"></details>
+      <p class="src">Bron: <a href="https://web.archive.org/web/20260629231220/https://support.fasterforward.nl/kennisbank/mutatievoorstellen-aanmaken/" target="_blank" rel="noopener">Wayback Machine-archief</a></p>
+    </article>
+    <aside class="related"><h2>Gerelateerd:</h2><ul><li><a href="../../kennisbank/hoe-maak-ik-een-nieuwe-verzekeringsmaatschappij-aan/index.html">Verzekeringsmaatschappij toevoegen ook voor ADN</a></li><li><a href="../../kennisbank/schadeverzekering-opvoeren/index.html">Schadeverzekering toevoegen</a></li><li><a href="../../kennisbank/mutatie-in-behandeling-afronden/index.html">Mutatie in behandeling afronden</a></li><li><a href="../../kennisbank/velden-pakketonderdeel-verzekering/index.html">Velden pakketonderdeel verzekering</a></li><li><a href="../../kennisbank/dekking-toevoegen-en-instellingen-wijzigen/index.html">Dekking toevoegen en instellingen wijzigen</a></li></ul></aside>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span>Copyright © 2024 Blinqx powered by Faster Forward</span>
+    <nav aria-label="Beleid">
+      <a href="../../supportbeleid/index.html">Supportbeleid</a>
+      <a href="../../opdrachtenbeleid/index.html">Opdrachtenbeleid</a>
+      <a href="../../klachtenbeleid/index.html">Klachtenbeleid</a>
+      <a href="../../wensenbeleid/index.html">Wensenbeleid</a>
+      <a href="../../video/index.html">Video's &amp; e-learning</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

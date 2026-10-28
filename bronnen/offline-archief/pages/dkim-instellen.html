@@ -1,0 +1,78 @@
+<!doctype html><html lang="nl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DKIM instellen — Support eBlinqx archief</title>
+<style>
+:root{--bg:#fff;--fg:#1a1a1a;--muted:#666;--line:#e3e3e3;--accent:#f2a900;--accent2:#1a1a1a;}
+*{box-sizing:border-box}
+body{font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--fg);margin:0;line-height:1.5}
+header.site{background:#1a1a1a;color:#fff;padding:14px 24px;position:sticky;top:0;z-index:10}
+header.site a{color:#fff;text-decoration:none;font-weight:600}
+header.site .path{color:#bbb;font-size:13px;margin-top:2px}
+header.site .path a{color:#bbb}
+main{max-width:980px;margin:0 auto;padding:24px}
+h1{font-size:1.5rem;margin:0 0 4px}
+h2{font-size:1.1rem;color:var(--accent2);border-bottom:2px solid var(--accent);padding-bottom:4px;margin-top:32px}
+h3{font-size:0.95rem;color:var(--muted);margin:18px 0 6px}
+ul.pagelist{list-style:none;padding:0;margin:0 0 6px;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:2px 16px}
+ul.pagelist li a{display:block;padding:3px 0;text-decoration:none;color:#0b5ed7;font-size:14px}
+ul.pagelist li a:hover{text-decoration:underline}
+.meta{color:var(--muted);font-size:13px;margin-bottom:18px}
+.meta a{color:var(--muted)}
+.shot{border:1px solid var(--line);border-radius:6px;max-width:100%;display:block;margin:16px 0;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.textbox{white-space:pre-wrap;background:#fafafa;border:1px solid var(--line);border-radius:6px;padding:16px;font-size:14px}
+.badge{display:inline-block;background:#fff4de;border:1px solid var(--accent);color:#7a5200;font-size:12px;border-radius:10px;padding:1px 9px;margin-right:4px}
+footer{color:var(--muted);font-size:12px;text-align:center;padding:30px 10px}
+.topcount{color:var(--muted);font-size:14px;margin-bottom:24px}
+.backlink{display:inline-block;margin-bottom:16px;color:#0b5ed7;text-decoration:none;font-size:14px}
+</style></head><body>
+<header class="site"><a href="../index.html">Support eBlinqx — offline archief</a>
+<div class="path"><a href="../index.html">Archief</a> › E-mail › Ongewenste e-mail</div></header>
+<main>
+<h1>DKIM instellen</h1><div class="meta"><span class="badge">Artikel</span> Oorspronkelijke URL: <a href="https://support.fasterforward.nl/kennisbank/dkim-instellen/" target="_blank" rel="noopener">https://support.fasterforward.nl/kennisbank/dkim-instellen/</a><br>Wayback-capture: <a href="https://web.archive.org/web/20240423003110/https://support.fasterforward.nl/kennisbank/dkim-instellen/" target="_blank" rel="noopener">https://web.archive.org/web/20240423003110/https://support.fasterforward.nl/kennisbank/dkim-instellen/</a></div><img class="shot" src="../shots/dkim-instellen.jpg" alt="Schermafbeelding van DKIM instellen" loading="lazy"><h3>Tekstinhoud</h3><div class="textbox">DKIM instellen
+
+Een DKIM key is een extra beveiliging naast het SPF record om te verifiëren dat de e-mail daadwerkelijk afkomstig is van de afzender die genoemd wordt. Het instellen van de DKIM is alleen van belang voor e-mails die verstuurd worden, niet voor inkomende e-mails.
+
+Instellen
+DKIM sleutel aanmaken en gegevens versturen naar hostingpartij
+Velden invullen
+Sleutel verwerken in de e-mailmanager
+
+Instellen
+
+Het instellen van de DKIM moet op 2 verschillende plekken gebeuren, namelijk in Elements en in de DNS van jouw domein. Het instellen in de DNS moet door jouw e-mailbeheerder/hostingpartij gebeuren. In Elements kan je de DKIM sleutel en bijbehorende gegevens aanmaken om vervolgens deze gegevens toe te sturen naar jouw hostingpartij. In dit artikel vind je de stappen voor het instellen van de DKIM in Elements.
+
+DKIM sleutel aanmaken en gegevens versturen naar hostingpartij
+
+Ga naar de beheermodule voor het aanmaken van de DKIM sleutel: Beheer – Email – DKIM sleutels. Let op: hiervoor dienen de juiste rechten aan te staan.
+
+Klik op het groene plus teken bovenaan rechts van het pijltje.
+
+Onderstaand scherm DKIM Sleutels verschijnt:
+
+Velden invullen
+
+Naam
+Optie 1: Als het om de DKIM sleutel voor een specifiek persoon gaat, vul je hier het domeinnaam in gevolgd door de naam van de persoon. Voorbeeld: ditismijndomein.nl – Janssen
+Optie 2: als het gaat om de DKIM sleutel voor de gehele organisatie, vul je hier alleen het domeinnaam in. Voorbeeld: ditismijndomein.nl
+Domein: de domeinnaam. Voorbeeld: ditismijndomein.nl
+Selector: de naam die je aan de DKIM sleutel wilt geven, bijvoorbeeld: key1. Indien je bij &#x27;Naam&#x27; voor optie 1 hebt gekozen, vul je hier een naam in uniek voor die persoon. Bijvoorbeeld: key2 of Janssen.
+Geheime sleutel: klik op de knop &quot;Genereer geheime sleutel&quot;. In het &quot;Geheime sleutel&quot; veld staat nu je geheime sleutel aangegeven. In de rechterkolom onder het kopje DNS geeft Elements precies aan wat je in je DNS record moet zetten.
+Wachtwoord van de geheime sleutel: dit veld is optioneel.
+
+Een voorbeeld van een volledig ingevuld DKIM Sleutel scherm:
+
+En in de rechterkolom:
+
+Maak van bovenstaande schermen een printscreen en stuur deze naar jouw hostingpartij. Kopieer hierbij ook de regels die staan onder &#x27;Neem het volgende op in de DNS:&#x27; en plak deze los in de e-mail erbij.
+
+Sleutel verwerken in de e-mailmanager
+
+De aangemaakte DKIM sleutel moet gekoppeld worden aan de e-mailadressen in Elements. Indien je e-mailadressen van meerdere domeinen in Elements hebt staan, zal voor elk domein een aparte sleutel aangemaakt moeten worden. Voor het koppelen ga je naar Beheer – E-mailmanager en neem je de volgende stappen:
+
+Selecteer het betreffende e-mailadres en ga vervolgens naar het tabblad Beveiliging. Het is de middelste box met naam &quot;DKIM&quot;.
+Selecteer in het dropdown menu, de naam die je eerder aan het veld &quot;naam&quot; gaf. In ons bovenstaande voorbeeld was dat: ditismijndomein.nl – Janssen of ditismijndomein.nl
+Klik hierna op de knop &quot;Sla DKIM sleutel op&quot;.
+
+Laatste update: 11 september 2023
+Was deze informatie nuttig?
+Ja Nee</div></main><footer>Offline archief van support.fasterforward.nl, samengesteld uit de Wayback Machine (web.archive.org) — oktober 2026.</footer></body></html>

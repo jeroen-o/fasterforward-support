@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Klanten verifiëren en controleren met zkr. - Blinqx Support</title>
+<meta name="description" content="Leads aanmaken vanaf je contactformulier met leadinbox">
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="icon" href="../../assets/favicon.png">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
+    <symbol id="i-mail-o" viewBox="0 0 24 24"><path d="M2 5h20v14H2zm2 2v.4l8 5.6 8-5.6V7zm16 2.8-8 5.6-8-5.6V17h16z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><path d="M10 2a8 8 0 0 1 6.32 12.9l5.4 5.4-1.42 1.42-5.4-5.4A8 8 0 1 1 10 2zm0 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 64 64"><circle cx="7" cy="12" r="6"/><circle cx="7" cy="32" r="6"/><circle cx="7" cy="52" r="6"/><rect x="18" y="7" width="44" height="10" rx="2"/><rect x="18" y="27" width="44" height="10" rx="2"/><rect x="18" y="47" width="44" height="10" rx="2"/></symbol>
+    <symbol id="i-home" viewBox="0 0 64 64"><path d="M32 6 2 32l4 5 4-3.4V58h18V42h8v16h18V33.6l4 3.4 4-5-10-8.7V10h-8v7.4z"/></symbol>
+    <symbol id="i-car" viewBox="0 0 64 64"><path d="M16 10h32a6 6 0 0 1 5.7 4.1L58 27a7 7 0 0 1 4 6.3V48a3 3 0 0 1-3 3h-3v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H20v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H5a3 3 0 0 1-3-3V33.3A7 7 0 0 1 6 27l4.3-12.9A6 6 0 0 1 16 10zm1.5 7-3.3 10h35.6l-3.3-10zM13 34a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm38 0a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 64 64"><path d="M4 12a4 4 0 0 1 4-4h16l6 6h22a4 4 0 0 1 4 4v6H18a6 6 0 0 0-5.6 3.9L4 50z"/><path d="M18 28h44l-10 26H6z"/></symbol>
+    <symbol id="i-desktop" viewBox="0 0 64 64"><path d="M2 6h60v40H38v6h8v6H18v-6h8v-6H2zm6 6v28h48V12z"/></symbol>
+    <symbol id="i-comments" viewBox="0 0 64 64"><path d="M26 4c13.8 0 24 8.6 24 19s-10.2 19-24 19c-2.6 0-5-.3-7.3-.8C14.6 44 9.6 46 3 46c3-3 4.8-6.2 5.3-9.6C4.4 33 2 28.2 2 23 2 12.6 12.2 4 26 4z"/><path d="M54 24.5c5 3.4 8 8.3 8 13.5 0 4.2-1.8 8-4.8 11 .4 3.6 2 6.8 4.8 9.5-6 0-10.6-1.8-14.3-4.4-2.1.5-4.4.7-6.7.7-7 0-13.1-2.4-17-6.2 14.3-.4 30-8.8 30-24.1z"/></symbol>
+    <symbol id="i-envelope" viewBox="0 0 64 64"><path d="M4 12h56a2 2 0 0 1 2 2v3L32 37 2 17v-3a2 2 0 0 1 2-2z"/><path d="M2 23.5 32 43.5l30-20V50a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-euro" viewBox="0 0 64 64"><path d="M42 6c5 0 9.5 1.2 13 3.2l-2.6 8.2A19 19 0 0 0 42 14.5c-7.4 0-12.7 4.6-14.6 11.5H46l-2 7H26.3l-.05 2 .05 2H42l-2 7H27.4c1.9 7 7.2 11.5 14.6 11.5 4 0 7.6-1 10.4-2.9L55 61c-3.6 2-8 3-13 3-12.7 0-22.2-8-24.4-20H10l2-7h5.06L17 35l.06-2H10l2-7h5.6C19.8 14 29.3 6 42 6z"/></symbol>
+    <symbol id="i-file" viewBox="0 0 64 64"><path d="M10 2h28v18h18v38a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm32 0 14 14H42zM16 30v6h32v-6zm0 10v6h32v-6zm0 10v6h32v-6z"/></symbol>
+    <symbol id="i-rss" viewBox="0 0 64 64"><circle cx="11" cy="53" r="8"/><path d="M3 23a38 38 0 0 1 38 38H31A28 28 0 0 0 3 33z"/><path d="M3 3a58 58 0 0 1 58 58H51A48 48 0 0 0 3 13z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="rgba(0,0,0,.65)"/><path d="M26 20v24l20-12z" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="item"><svg class="ic"><use href="#i-phone"/></svg><a class="tel" href="tel:+31850180069">085 018 00 69</a></span>
+    <span class="sep" aria-hidden="true"></span>
+    <span class="item"><svg class="ic"><use href="#i-mail-o"/></svg><a class="mail" href="mailto:support-eblinqx@blinqx.tech">support-eblinqx@blinqx.tech</a></span>
+    <a class="li" href="https://www.linkedin.com/company/blinqx/" target="_blank" rel="noopener" aria-label="Blinqx op LinkedIn">in</a>
+  </div>
+</div>
+<header class="site">
+  <div class="wrap">
+    <div class="head-row">
+      <a class="brand" href="../../index.html" aria-label="Blinqx support — home">
+        <img src="../../assets/logo-mark.png" alt="Blinqx" width="470" height="119">
+        <span>powered by Faster Forward</span>
+      </a>
+      <nav class="main" aria-label="Hoofdmenu"><ul><li><a href="../../index.html">Home</a></li><li><a href="../../nieuws/index.html">Nieuws</a></li><li><a href="../../tips/index.html">Tips</a></li><li><a href="../../releasenotes/index.html">Release notes</a></li><li><a href="../../trainingen/index.html">Trainingen</a></li><li><a href="../../contact/index.html">Contact support</a></li></ul></nav>
+    </div>
+    <div class="search-row">
+      <form class="search" action="../../zoeken/index.html" method="get" role="search">
+        <label class="field">
+          <svg class="ic"><use href="#i-search"/></svg>
+          <input type="search" name="q" placeholder="Zoek hier op onderwerp" aria-label="Zoek op onderwerp">
+        </label>
+        <button type="submit">Zoeken</button>
+      </form>
+      <div class="status">Mogelijke incidenten en de systeemstatus vind je op onze <a href="#" title="URL statuspagina nog invullen">statuspagina</a>.</div>
+    </div>
+  </div>
+</header>
+<div class="crumbs"><div class="wrap"><nav aria-label="Kruimelpad"><a href="../../kennisbank/index.html">Kennisbank</a><span class="sep" aria-hidden="true">›</span><a href="../../categorien/koppelingen-elements/index.html">Koppelingen</a><span class="sep" aria-hidden="true">›</span><a href="../../categorien/koppelingen-elements2/index.html">Overige koppelingen</a><span class="sep" aria-hidden="true">›</span><span aria-current="page">Klanten verifiëren en controleren met zkr.</span></nav></div></div>
+<main class="article">
+  <div class="wrap cols">
+    <article>
+      <h1>Klanten verifiëren en controleren met zkr.</h1>
+      <p class="meta">Laatste update: 21 november 2025</p>
+      <div class="content"><p>Voor levensverzekeringen ben je volgens de WWFT verplicht om klanten te identificeren en te verifiëren. Dit doe je eenvoudig met een identificatie, verificatie en pep- en sanctiecheck via zkr. (voorheen DebiteurenZeker).</p><nav class="toc" aria-label="Inhoud"><ul><li><a href="#2-klant-e-mailen-om-zich-te-identificeren">2. Klant e-mailen om zich te identificeren</a></li><li><a href="#2-klant-e-mailen-om-zich-te-identificeren-2">2. Klant e-mailen om zich te identificeren</a></li><li><a href="#pep-en-sanctiecheck">PEP- en sanctiecheck</a></li><li><a href="#aard-en-doel-en-verklaring-inbreng-eigen-vermogen">Aard en doel en verklaring inbreng eigen vermogen</a></li><li><a href="#meerdere-klanten-in-n-keer-uitnodigen">Meerdere klanten in één keer uitnodigen</a></li><li><a href="#wil-je-in-n-keer-een-grote-groep-klanten-controleren">Wil je in één keer een grote groep klanten controleren?</a></li><li><a href="#1-filter-selectie">1. Filter selectie</a></li><li><a href="#2-nodig-klant-uit-voor-identificatie">2. Nodig klant uit voor identificatie</a></li><li><a href="#resultaten-bekijken-en-controleren">Resultaten bekijken en controleren</a></li><li><a href="#foutmelding-en-verzoek-opnieuw-in-wachtrij-zetten">Foutmelding en verzoek opnieuw in wachtrij zetten</a></li><li><a href="#resultaten-ophalen-met-tags">Resultaten ophalen met tags</a></li><li><a href="#credits">Credits</a></li><li><a href="#vastlegging-acties-in-dossierhistorie">Vastlegging acties in dossierhistorie</a></li></ul></nav>
+<p>De verantwoordelijkheid voor het uitvoeren van het klantonderzoek ligt bij jouw organisatie. Ook zonder identificatie, verificatie en/of controles kun je in eBlinqx een levensverzekering aanmaken.</p>
+<p>Als organisatie beslis je na de controles zelf wat je met de ontvangen informatie doet. Als een persoon bijvoorbeeld negatief in de media staat, controleer je deze info en bepaal je zelf of je deze persoon als klant wilt.</p>
+<ul><li>Inrichten</li><li>Type controles</li><li>Controles opstarten</li><li>Voor een bestaand dossier</li><li>Via workflow</li><li>Handmatig opstarten vanuit de tabel Klantonderzoek</li><li>1. identificatie opstarten</li><li>2. Klant e-mailen om zich te identificeren</li><li>Bij aanmaken nieuw dossier</li><li>Identificatie/verificatie</li><li>1. Identificatie opstarten</li><li>2. Klant e-mailen om zich te identificeren</li><li>PEP- en sanctiecheck</li><li>Aard en doel en verklaring inbreng eigen vermogen</li><li>Aanpassen en verwijderen</li><li>Meerdere klanten in één keer uitnodigen</li><li>1. Filter selectie</li><li>2. Nodig klant uit voor identificatie</li><li>Resultaten bekijken en controleren</li><li>Foutmelding en verzoek opnieuw in wachtrij zetten</li><li>Resultaten ophalen met tags</li><li>Credits</li><li>Inrichten</li></ul>
+<p>Als je de software van zkr. nog niet gebruikt, neem dan contact op met zkr. via <a href="mailto:marketing@zkr.nl">marketing@zkr.nl</a> of 070 – 262 00 70.</p>
+<p>Gebruik je de software van zkr. al? Stuur dan een e-mail naar <a href="mailto:support@zkr.nl">support@zkr.nl</a> en we nemen contact op om de koppeling in te richten. Hieraan zijn kosten verbonden, afhankelijk van de inrichting op maat.</p>
+<p>Type controles<br>TYPE UITLEG<br>iDIN Controle van bankgegevens via IDIN en noodzakelijk volgens WWFT. iDIN is een dienst van de banken waarmee particulieren of een UBO (uiteindelijk belang hebbende), zich bij andere organisaties met de veilige en vertrouwde inlogmiddelen van hun eigen bank kunnen identificeren.<br>Identificatie Klant maakt foto van voor- en achterkant van paspoort, identiteitskaart of rijbewijs. Automatische controle op echtheid, MRZ, geldigheid en gestolen/vermist status. Volledig digitaal en AVG/GPDR-compliant. Dekt alle west Europese landen.<br>Identificatie plus Bovenstaande identificatie, inclusief verificatie door een persoon die ook nog een handmatige controle uitvoert. Hierdoor is er een wereldwijde dekking.<br>Identificatie met selfie Identificatie, inclusief gezichtsverificatie en controle of een levend persoon de selfie maakt. De biometrie van de selfie word vergeleken met de biometrie van de foto op het document, waardoor de persoon ook wordt geverifieerd. Dekt alle west Europese landen.<br>Identificatie met selfie plus Bovenstaande identificatie, inclusief verificatie door een persoon die ook nog een handmatige controle uitvoert. Hierdoor wereldwijde dekking.<br>PEP- en sanctie controle (inclusief negatieve media) Uitgebreide controle in meer dan 2.500 internationale bronnen die gecontroleerd moeten worden volgens WWFT. Onder andere lijsten met politiek prominent personen (PEP), sanctielijsten, centraal insolventie registers, uitgesloten bestuurders en gezochte criminelen door interpol. Daarnaast ook controle van nieuwssites of de persoon negatief in de media staat.<br>Verklaring inbreng eigen vermogen Deze vul je zelf in als de inbreng van een grote som eigen geld verdacht is.<br>Vanuit de Wwft is het verplicht om te registeren hoe iemand aan het geld komt voor de oprichting/aankoop van zijn of haar bedrijf/huis. Hierbij dient een financiering los van het eigen geld genoteerd te worden. Daarnaast dient er doorgevraagd te worden over het eigen geld hoe de opbouw hiervan is. Denk bijvoorbeeld aan een combinatie van een gift, spaargeld en winst uit onderneming.<br>Doel en aard van relatie Deze controle wordt niet door zkr. uitgevoerd.<br>Hier geef je automatisch invullen aan als je een product, bijvoorbeeld een hypotheek, een rechterdeel én een bronvermelding hebt in een klantdossier. Daarnaast kun je deze handmatig invullen of aanpassen.<br>Controles opstarten</p>
+<p>Het opstarten van de controle identificatie en PEP- en sanctiecheck kan op drie manieren, namelijk vanuit de workflow of handmatig vanuit een klantdossier of via SMART. Hieronder lees je meer je over deze mogelijkheden. Hierbij zit ook een verschil tussen het opstarten van de controles bij een bestaande klant en bij een nieuwe klant.</p>
+<ul><li>Voor een bestaand dossier</li><li>Via workflow</li></ul>
+<p>Het is mogelijk om de verificatie en PEP- en sanctiecheck vanuit een workflow op te laten starten. Bij de inrichting van zkr. hoort een standaard workflow die naar wens op maat gemaakt kan worden. De workflow wordt automatisch opgestart wanneer je een nieuwe dienst aanmaakt. Indien er al een dienst aanwezig is en de workflow staat er niet onder dan kan je deze onder de dienst handmatig toevoegen via het tabblad Workflow en het plusicoon (indien je hier de rechten toe hebt). Heb je deze mogelijkheid niet dan kan je handmatig het verzoek opstarten van het klantonderzoektabel (zie hieronder).</p>
+<p>In de workflow kan je de keuze maken om een identificatie/verificatieverzoek te versturen. Je maakt de keuze welke indentificatiecheck je wilt uitvoeren en vervolgens wordt er een concept e-mail klaargezet met daarin de link. Deze conceptmail verstuur je naar de klant.</p>
+<p>Of je maakt de keuze om een PEP en sanctielijstcheck uit te voeren. Er wordt dan automatisch een verzoek verstuurd naar zkr.</p>
+<ul><li>Handmatig opstarten vanuit de tabel Klantonderzoek</li><li>1. identificatie opstarten</li></ul>
+<p>Voor identificatie ga je naar de klantonderzoektabel onder een persoon. Dit via het tabblad Partijen &amp; Objecten – klikken op de betreffende persoon. Hier voeg je handmatig een nieuwe controle toe door op het plusicoon te klikken.</p>
+<p>Je krijgt dan een pop-up te zien, waarin je een keuze kan maken welke controle je wilt uitvoeren.</p>
+<h2 id="2-klant-e-mailen-om-zich-te-identificeren">2. Klant e-mailen om zich te identificeren</h2>
+<p>Je gaat hierna de klant uitnodigen om zich te identificeren. Hiervoor stuur je een e-mail naar de klant. In deze e-mail voeg je de standaardtekst &#x27;Persoonscheck – klant – Verzoek tot indentificatie (zkr)&#x27; toe. In deze standaardtekst staat een tag. Deze tag wordt een unieke URL. De klant klikt hierop en start de identificatie.</p>
+<ul><li>Bij aanmaken nieuw dossier</li><li>Identificatie/verificatie</li><li>1. Identificatie opstarten</li></ul>
+<p>Wanneer je een dossier aanmaakt en een persoon opvoert, kan je gelijk de identificatie opstarten.</p>
+<p>Vul de gegevens van de personen in<br>Vink &#x27;Identificatie/verificatie via zkr&#x27; aan. Er worden nu meer invulvelden gekleurd, deze zijn namelijk verplicht voor de werking van zkr.<br>Kies het &#x27;Soort identificatie&#x27; die je wilt uitvoeren.<br>Sla op als je alles hebt ingevuld.</p>
+<p>Het dossier wordt nu aangemaakt en er wordt een melding naar naar zkr. gestuurd. Zkr. gaat de klantgegevens nu controleren. Dit kan 1 uur duren.</p>
+<p>Tijdens de controle zie je aan de &#x27;In behandeling&#x27; melding in de klantonderzoektabel dat het klantonderzoek in behandeling is.</p>
+<h2 id="2-klant-e-mailen-om-zich-te-identificeren-2">2. Klant e-mailen om zich te identificeren</h2>
+<p>Je gaat hierna de klant uitnodigen om zich te identificeren. Hiervoor stuur je een e-mail naar de klant. In deze e-mail voeg je de standaardtekst &#x27;Persoonscheck – klant – Verzoek tot identificatie (zkr)&#x27; toe. In deze standaardtekst staat een tag. Deze tag wordt een unieke URL. De klant klikt hierop en start de identificatie.</p>
+<h2 id="pep-en-sanctiecheck">PEP- en sanctiecheck</h2>
+<p>De identificatie/verificatie en PEP- en sanctiecheck kan je handmatig of via zkr. laten verlopen. Voor de PEP- en sanctiecheck ga je naar de workflow (zie hierboven) of naar de klantonderzoektabel onder een persoon. Dit via het tabblad Partijen &amp; Objecten – klikken op de betreffende persoon. Hier voeg je handmatig een nieuwe controle toe door op het plusicoon te klikken. Wanneer je de check via zkr. laat verlopen dan wordt er direct de call naar zkr. uitgevoerd. Het resultaat wordt in het klantonderzoektabel opgeslagen. Wanneer het resultaat &#x27;Bevinding&#x27; of &#x27;Fout&#x27; is dan kan je inloggen in zkr. om te bekijken wat deze bevinding of fout is.</p>
+<h2 id="aard-en-doel-en-verklaring-inbreng-eigen-vermogen">Aard en doel en verklaring inbreng eigen vermogen</h2>
+<p>Aard en doel van de relatie en verklaring inbreng eigen vermogen kan je alleen handmatig opvoeren. Dit loopt niet via zkr. De aard en doel van de relatie kan op 2 manieren gevuld worden, namelijk:</p>
+<p>In het dossier is een dienst aanwezig, waarbij de bronvermelding is gevuld (deze moet ongelijk zijn aan onbekend) en een rechterdeel is aangemaakt.<br>In de pop-up het vrije tekstveld vullen. Is deze gevuld dan krijgt de controle een groene vink. Is deze leeg dan komt er een rood kruis te staan.<br>Aanpassen en verwijderen</p>
+<p>Het aanpassen en verwijderen van de controleresultaten is alleen mogelijk bij de controles die handmatig zijn uitgevoerd en de bron niet zkr. is.</p>
+<h2 id="meerdere-klanten-in-n-keer-uitnodigen">Meerdere klanten in één keer uitnodigen</h2>
+<h2 id="wil-je-in-n-keer-een-grote-groep-klanten-controleren">Wil je in één keer een grote groep klanten controleren?</h2>
+<p>In SMART kun je een selectie ophalen, zodat je in één keer al je klanten kan uitnodigen om zich te identificeren. Dit is bijvoorbeeld handig als je een portefeuille hebt overgekocht. Dit is de selectie WWFT Klantencontrole.</p>
+<p>LET OP: als je met de SMART selectie gaat werken, wordt de verificatie of andere controles alleen correct uitgevoerd als de benodigde klantgegevens volledig zijn ingevuld.</p>
+<p>Daarnaast kan het even duren voordat je in eBlinqx het resultaat van de controle ziet. Het kan 1 uur duren voordat zkr. alle controles heeft uitgevoerd.</p>
+<h2 id="1-filter-selectie">1. Filter selectie</h2>
+<p>Klik in SMART de selectie WWFT Klantencontrole aan. In deze selectie kan je filteren. Gebruik hiervoor eerst de filters aan de linkerkant van het scherm. Als je nog specifieker wilt filteren, gebruik dan de filtervelden.</p>
+<p>Onder het informatie-icoon kan je vinden hoe je in deze velden kunt filteren:</p>
+<p>LET OP: e-mailadres moet gevuld zijn om te kunnen uitnodigen (controleer dit via de filterveld in kolom E-mailadres)</p>
+<p>Selecteer bijvoorbeeld klanten waarbij de klom &#x27;Identificatie&#x27; nog leeg is, omdat deze zich nog niet hebben geïdentificeerd. Daarnaast kun je bijvoorbeeld filteren op Dossierstatus: Klant, aan de linkerkant.</p>
+<h2 id="2-nodig-klant-uit-voor-identificatie">2. Nodig klant uit voor identificatie</h2>
+<p>Nadat je de personen geselecteerd hebt met de blauwe vinkjes, voer je een controle uit met één van de blauwe knoppen bovenaan. Klik op &#x27;Identiteit check&#x27; of &#x27;PEP- en sanctie check&#x27; om klanten uit te nodigen.</p>
+<p>Als je op &#x27;Identiteit check&#x27; klikt, opent er een pop-up waarmee je de klant met een e-mail uitnodigt om zich te identificeren. Voeg hier de tag [selectie-&gt;identificatielink] toe, zodat de klant een URL ziet in de e-mail waarmee hij/zij de identificatie opstart.</p>
+<h2 id="resultaten-bekijken-en-controleren">Resultaten bekijken en controleren</h2>
+<p>Zodra je de identificatie, verificatie en/of andere controles hebt uitgevoerd, zie je de resultaten op de startpagina van het klantdossier in de tabel Klantonderzoek.</p>
+<p>Als je op de persoon klikt, ga je naar de tabel Klantonderzoek onder de persoon. Hier kan je de resultaten, bron en status voor die persoon bekijken.</p>
+<p>In eBlinqx kan je niet terugzien waarom een resultaat fout is. Om dit te achterhalen moet je inloggen in zkr. Hier kan je meer informatie vinden over het resultaat en waarom deze fout is.</p>
+<h2 id="foutmelding-en-verzoek-opnieuw-in-wachtrij-zetten">Foutmelding en verzoek opnieuw in wachtrij zetten</h2>
+<p>Indien het verwerken van het verzoek niet goed is gegaan dan komt er in het dossier een melding te staan dat het klantonderzoek niet goed is gegaan en je wordt doorwezen naar de tabel klantonderzoek.</p>
+<p>In deze tabel verschijnt er onder de kolom Status de status &#x27;Foutmelding&#x27;. Als je hier met je muis op gaat staan, zie je wat de foutmelding is.</p>
+<p>Je kunt het verzoek nogmaals bij Zkr. indienen via de ronde pijltjes achter het verzoek. De foutmelding wordt dan gewist en het verzoek opnieuw in de wachtrij gezet.</p>
+<h2 id="resultaten-ophalen-met-tags">Resultaten ophalen met tags</h2>
+<p>Gebruik tags om resultaten op te halen van uitgevoerde controles. Zie een voorbeeld hier rechts.</p>
+<p>[dossier-&gt;eerste persoon-&gt;klantonderzoek-&gt;identificatie verificatie-&gt;resultaat] (Goed/Fout/Bevinding/In behandeling/)</p>
+<h2 id="credits">Credits</h2>
+<p>Om verzoeken bij Zkr. in te dienen neem je credits af bij Zkr. Werkt de link in de e-mail niet dan kan het zijn dat jouw credits op zijn of zijn verlopen. Hiervan wordt dan ook een beheerdersmelding getoond, zodat de beheerder van jouw omgeving hierop wordt geattendeerd. Heb je hier vragen over neem dan contact op met Zkr.</p>
+<h2 id="vastlegging-acties-in-dossierhistorie">Vastlegging acties in dossierhistorie</h2>
+<p>De uitgevoerde checks worden ook vastgelegd in de dossierhistorie.</p></div>
+      <section class="figs"><h2>Afbeeldingen bij dit artikel</h2><figure><a href="https://web.archive.org/web/20230321233658im_/https://support.fasterforward.nl/wp-content/uploads/2023/01/Toevoegen-workflow-zkr.-1024x171.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20230321233658im_/https://support.fasterforward.nl/wp-content/uploads/2023/01/Toevoegen-workflow-zkr.-1024x171.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20230321233658im_/https://support.fasterforward.nl/wp-content/uploads/2022/11/klantonderzoek-in-dossier.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20230321233658im_/https://support.fasterforward.nl/wp-content/uploads/2022/11/klantonderzoek-in-dossier.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20230321233658im_/https://support.fasterforward.nl/wp-content/uploads/2022/11/identificatie-debiteurenzeker-nieuw-dossier.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20230321233658im_/https://support.fasterforward.nl/wp-content/uploads/2022/11/identificatie-debiteurenzeker-nieuw-dossier.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20230321233658im_/https://support.fasterforward.nl/wp-content/uploads/2022/11/image-7.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20230321233658im_/https://support.fasterforward.nl/wp-content/uploads/2022/11/image-7.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20230321233658im_/https://support.fasterforward.nl/wp-content/uploads/2022/11/SMART-debiteurenzeker-selectie.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20230321233658im_/https://support.fasterforward.nl/wp-content/uploads/2022/11/SMART-debiteurenzeker-selectie.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20230321233658im_/https://support.fasterforward.nl/wp-content/uploads/2022/11/SMART-DebiteurenZeker-1.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20230321233658im_/https://support.fasterforward.nl/wp-content/uploads/2022/11/SMART-DebiteurenZeker-1.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure></section>
+      <details class="orig"><summary>Schermafbeelding van de oorspronkelijke pagina</summary><img src="../../bronnen/offline-archief/shots/klanten-verifieren-met-debiteurenzeker.jpg" alt="Schermafbeelding van Klanten verifiëren en controleren met zkr." loading="lazy"></details>
+      <p class="src">Bron: <a href="https://web.archive.org/web/20260629231220/https://support.fasterforward.nl/kennisbank/klanten-verifieren-met-debiteurenzeker/" target="_blank" rel="noopener">Wayback Machine-archief</a></p>
+    </article>
+    <aside class="related"><h2>Gerelateerd:</h2><ul><li><a href="../../kennisbank/leadinbox-gebruiken-vanaf-contactformulier-op-website/index.html">Leads aanmaken vanaf je contactformulier met leadinbox</a></li><li><a href="../../kennisbank/contaqt/index.html">Contaqt koppeling</a></li><li><a href="../../kennisbank/differ-koppeling/index.html">Differ koppeling</a></li><li><a href="../../kennisbank/online-formulieren-versturen/index.html">Digitale formulieren versturen</a></li><li><a href="../../kennisbank/gemakkelijk-formulieren-toesturen-met-finly/index.html">Gemakkelijk formulieren toesturen met Finly</a></li><li><a href="../../kennisbank/gemakkelijk-klantgegevens-exporteren-naar-yes-co/index.html">Gemakkelijk klantgegevens exporteren naar Yes-co</a></li></ul></aside>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span>Copyright © 2024 Blinqx powered by Faster Forward</span>
+    <nav aria-label="Beleid">
+      <a href="../../supportbeleid/index.html">Supportbeleid</a>
+      <a href="../../opdrachtenbeleid/index.html">Opdrachtenbeleid</a>
+      <a href="../../klachtenbeleid/index.html">Klachtenbeleid</a>
+      <a href="../../wensenbeleid/index.html">Wensenbeleid</a>
+      <a href="../../video/index.html">Video's &amp; e-learning</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ga veilig om met je (klant)gegevens - Blinqx Support</title>
+<meta name="description" content="In het begin van 2021 vertelde Dimitri Duine in zijn blog over beveiliging van persoonsgegevens binnen jouw advieskantoor. Hierin kwam naar voren dat de meeste datalekken worden veroorzaakt door menselijke fouten.">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.png">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
+    <symbol id="i-mail-o" viewBox="0 0 24 24"><path d="M2 5h20v14H2zm2 2v.4l8 5.6 8-5.6V7zm16 2.8-8 5.6-8-5.6V17h16z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><path d="M10 2a8 8 0 0 1 6.32 12.9l5.4 5.4-1.42 1.42-5.4-5.4A8 8 0 1 1 10 2zm0 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 64 64"><circle cx="7" cy="12" r="6"/><circle cx="7" cy="32" r="6"/><circle cx="7" cy="52" r="6"/><rect x="18" y="7" width="44" height="10" rx="2"/><rect x="18" y="27" width="44" height="10" rx="2"/><rect x="18" y="47" width="44" height="10" rx="2"/></symbol>
+    <symbol id="i-home" viewBox="0 0 64 64"><path d="M32 6 2 32l4 5 4-3.4V58h18V42h8v16h18V33.6l4 3.4 4-5-10-8.7V10h-8v7.4z"/></symbol>
+    <symbol id="i-car" viewBox="0 0 64 64"><path d="M16 10h32a6 6 0 0 1 5.7 4.1L58 27a7 7 0 0 1 4 6.3V48a3 3 0 0 1-3 3h-3v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H20v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H5a3 3 0 0 1-3-3V33.3A7 7 0 0 1 6 27l4.3-12.9A6 6 0 0 1 16 10zm1.5 7-3.3 10h35.6l-3.3-10zM13 34a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm38 0a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 64 64"><path d="M4 12a4 4 0 0 1 4-4h16l6 6h22a4 4 0 0 1 4 4v6H18a6 6 0 0 0-5.6 3.9L4 50z"/><path d="M18 28h44l-10 26H6z"/></symbol>
+    <symbol id="i-desktop" viewBox="0 0 64 64"><path d="M2 6h60v40H38v6h8v6H18v-6h8v-6H2zm6 6v28h48V12z"/></symbol>
+    <symbol id="i-comments" viewBox="0 0 64 64"><path d="M26 4c13.8 0 24 8.6 24 19s-10.2 19-24 19c-2.6 0-5-.3-7.3-.8C14.6 44 9.6 46 3 46c3-3 4.8-6.2 5.3-9.6C4.4 33 2 28.2 2 23 2 12.6 12.2 4 26 4z"/><path d="M54 24.5c5 3.4 8 8.3 8 13.5 0 4.2-1.8 8-4.8 11 .4 3.6 2 6.8 4.8 9.5-6 0-10.6-1.8-14.3-4.4-2.1.5-4.4.7-6.7.7-7 0-13.1-2.4-17-6.2 14.3-.4 30-8.8 30-24.1z"/></symbol>
+    <symbol id="i-envelope" viewBox="0 0 64 64"><path d="M4 12h56a2 2 0 0 1 2 2v3L32 37 2 17v-3a2 2 0 0 1 2-2z"/><path d="M2 23.5 32 43.5l30-20V50a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-euro" viewBox="0 0 64 64"><path d="M42 6c5 0 9.5 1.2 13 3.2l-2.6 8.2A19 19 0 0 0 42 14.5c-7.4 0-12.7 4.6-14.6 11.5H46l-2 7H26.3l-.05 2 .05 2H42l-2 7H27.4c1.9 7 7.2 11.5 14.6 11.5 4 0 7.6-1 10.4-2.9L55 61c-3.6 2-8 3-13 3-12.7 0-22.2-8-24.4-20H10l2-7h5.06L17 35l.06-2H10l2-7h5.6C19.8 14 29.3 6 42 6z"/></symbol>
+    <symbol id="i-file" viewBox="0 0 64 64"><path d="M10 2h28v18h18v38a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm32 0 14 14H42zM16 30v6h32v-6zm0 10v6h32v-6zm0 10v6h32v-6z"/></symbol>
+    <symbol id="i-rss" viewBox="0 0 64 64"><circle cx="11" cy="53" r="8"/><path d="M3 23a38 38 0 0 1 38 38H31A28 28 0 0 0 3 33z"/><path d="M3 3a58 58 0 0 1 58 58H51A48 48 0 0 0 3 13z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="rgba(0,0,0,.65)"/><path d="M26 20v24l20-12z" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="item"><svg class="ic"><use href="#i-phone"/></svg><a class="tel" href="tel:+31850180069">085 018 00 69</a></span>
+    <span class="sep" aria-hidden="true"></span>
+    <span class="item"><svg class="ic"><use href="#i-mail-o"/></svg><a class="mail" href="mailto:support-eblinqx@blinqx.tech">support-eblinqx@blinqx.tech</a></span>
+    <a class="li" href="https://www.linkedin.com/company/blinqx/" target="_blank" rel="noopener" aria-label="Blinqx op LinkedIn">in</a>
+  </div>
+</div>
+<header class="site">
+  <div class="wrap">
+    <div class="head-row">
+      <a class="brand" href="../index.html" aria-label="Blinqx support — home">
+        <img src="../assets/logo-mark.png" alt="Blinqx" width="470" height="119">
+        <span>powered by Faster Forward</span>
+      </a>
+      <nav class="main" aria-label="Hoofdmenu"><ul><li><a href="../index.html">Home</a></li><li><a href="../nieuws/index.html">Nieuws</a></li><li><a href="../tips/index.html" aria-current="page">Tips</a></li><li><a href="../releasenotes/index.html">Release notes</a></li><li><a href="../trainingen/index.html">Trainingen</a></li><li><a href="../contact/index.html">Contact support</a></li></ul></nav>
+    </div>
+    <div class="search-row">
+      <form class="search" action="../zoeken/index.html" method="get" role="search">
+        <label class="field">
+          <svg class="ic"><use href="#i-search"/></svg>
+          <input type="search" name="q" placeholder="Zoek hier op onderwerp" aria-label="Zoek op onderwerp">
+        </label>
+        <button type="submit">Zoeken</button>
+      </form>
+      <div class="status">Mogelijke incidenten en de systeemstatus vind je op onze <a href="#" title="URL statuspagina nog invullen">statuspagina</a>.</div>
+    </div>
+  </div>
+</header>
+<div class="crumbs"><div class="wrap"><nav aria-label="Kruimelpad"><a href="../tips/index.html">Tips</a><span class="sep" aria-hidden="true">›</span><span aria-current="page">Ga veilig om met je (klant)gegevens</span></nav></div></div>
+<main class="article">
+  <div class="wrap cols">
+    <article>
+      <h1>Ga veilig om met je (klant)gegevens</h1>
+      <p class="meta">Geplaatst op 15 september 2021</p>
+      <div class="content"><p>In het begin van 2021 vertelde Dimitri Duine in zijn blog over beveiliging van persoonsgegevens binnen jouw advieskantoor. Hierin kwam naar voren dat de meeste datalekken worden veroorzaakt door menselijke fouten.</p><nav class="toc" aria-label="Inhoud"><ul><li><a href="#veelvoorkomende-fouten-op-kantoor">Veelvoorkomende fouten op kantoor</a></li><li><a href="#sla-wachtwoorden-veilig-op">Sla wachtwoorden veilig op</a></li><li><a href="#lees-hier-meer-tips-over-wachtwoorden">Lees hier meer tips over wachtwoorden »</a></li><li><a href="#let-altijd-op-bij-het-versturen-van-klantgegevens">Let altijd op bij het versturen van klantgegevens</a></li><li><a href="#laat-geen-informatie-rondslingeren">Laat geen informatie rondslingeren</a></li><li><a href="#gevaren-op-het-internet">Gevaren op het internet</a></li></ul></nav>
+<p>Als Faster Forward vinden wij het belangrijk dat onze gebruikers veilig gebruik maken van onze software. Daarom zijn wij continu bezig met het veilig houden van onze software en het bewust maken van de risico&#x27;s bij onze medewerkers. Daarnaast zijn wij onlangs ISO 22301 gecertificeerd.</p>
+<p>Via dit artikel geven we je een beeld van de risico&#x27;s die je kan lopen wanneer je niet zorgvuldig omgaat met klantgegevens en het internet. Het gevaar ligt altijd om de hoek en een fout is zo gemaakt.</p>
+<h2 id="veelvoorkomende-fouten-op-kantoor">Veelvoorkomende fouten op kantoor</h2>
+<p>De meest voorkomende fouten die op de werkvloer plaats vinden zijn voornamelijk menselijke fouten. Denk hierbij aan het omgaan met wachtwoorden of het versturen van een verkeerde e-mail.</p>
+<h2 id="sla-wachtwoorden-veilig-op">Sla wachtwoorden veilig op</h2>
+<p>Wachtwoorden worden weleens opgeslagen in een kladblok bestand op de computer of opgeschreven op een papiertje. Om veilig om te gaan met wachtenwoorden raden wij ten alle tijden een wachtwoordmanager aan. Hierin kan je veilig en snel wachtwoorden opslaan. Ook heeft een goede wachtwoordmanager de optie om wachtwoorden te genereren. Zo ben je altijd verzekerd van een sterk wachtwoord.</p>
+<h2 id="lees-hier-meer-tips-over-wachtwoorden">Lees hier meer tips over wachtwoorden »</h2>
+<h2 id="let-altijd-op-bij-het-versturen-van-klantgegevens">Let altijd op bij het versturen van klantgegevens</h2>
+<p>Een fout is immers zo gemaakt. Let bijvoorbeeld op dat je persoonlijk gegevens niet naar de verkeerde persoon stuurt. Mail daarom altijd vanuit het bijbehorende klantdossier. Laat de klant daarnaast de Digimap gebruiken om documenten te uploaden. Dit klantportaal heeft een beveiligde verbinding met Elements. Het is belangrijk om bewust te zijn van deze fouten en ervoor te zorgen dat de kans op fouten minimaal is.</p>
+<h2 id="laat-geen-informatie-rondslingeren">Laat geen informatie rondslingeren</h2>
+<p>Ook het laten rondslingeren van persoonsgevoelige informatie is een veelvoorkomend probleem. Een &quot;Clean Desk Policy&quot; komt als het goed is wel bekend bij je voor. Hierbij hou je het bureau opgeruimd en leg papieren, formulieren en contracten in een afsluitbare locatie. Hetzelfde geld voor documenten uit de printer. Zorg dat deze niet blijven liggen, maar berg deze na het printen direct op. Tot slot: vergendel je computer wanneer je je werkplek verlaat. Zo voorkom je dat informatie kwijtraken of in de verkeerde handen valt.</p>
+<h2 id="gevaren-op-het-internet">Gevaren op het internet</h2>
+<p>Het internet brengt veel voordelen met zich mee maar ook nadelen. Let daarom goed op welke webpagina&#x27;s je raadpleegt en met wat voor bedrijven je gegevens deelt.</p>
+<p>Internetcriminelen houden zich bezig met hacken, DDoS-aanvallen, randsomware, virussen, malware, enzovoort. Veelvoorkomende methodes die zij hiervoor gebruiken zijn oplichtingen via internet, afpersing via e-mail en phishing.</p>
+<p>Maar wat houden deze termen allemaal in? Hieronder een korte omschrijving.</p>
+<p>Hacken Hacken is wanneer een persoon zonder toestemming binnendringt in een computernetwerk of software door de beveiliging te omzeilen.<br>DDos-aanval DDoS is een cyberaanval waarbij ontzettend veel verkeer naar computers, netwerken of servers worden verstuurd waardoor deze onbruikbaar worden voor de normale gebruiker.<br>Randsomware Dit is een software die ervoor zorgt dat je computer wordt geblokkeerd. Er verschijnt een melding in beeld waarop staat dat je &quot;losgeld&quot; moet betalen om weer gebruik te kunnen maken van uw computer.<br>Virus Een computervirus is een schadelijke software wat zich nestelt in een computer. Vanuit hier kunnen ze het systeem beschadigen of openstellen voor andere virussen.<br>Malware Malware en een computervirus lijken veel op elkaar. In plaats van het systeem te beschadigen probeert malware het computersysteem te verstoren en toegang te krijgen tot gevoelige informatie en documenten.<br>Oplichting Via internet worden steeds meer mensen het slachtoffer van oplichting. Via verschillende trucs proberen kwaadwilligen gegevens en goederen van nietsvermoedende gebruikers te stelen.<br>Afpersing Helaas komt afpersing ook steeds vaker voor. De afperser probeert het slachtoffer geld afhandig te maken door te dreigen. Vaak dreigen ze met imagoschade of beeldmateriaal.<br>Phishing Phishing is een vorm van internetfraude. Het is een vorm van oplichting waarbij ze als het waren een vishengel uitgooien om zo de vis (het slachtoffer) binnen te halen. Vaak gebruiken ze hiervoor een valse website om zo inlognamen, wachtwoorden en creditcardgegevens buit te maken.<br>Benieuwd naar al onze tips?</p>
+<p>Bekijk onze tips pagina voor meer tips over Elements. Je kan je hier ook aanmelden om iedere twee weken een tip in je mailbox te ontvangen.</p></div>
+      <section class="figs"><h2>Afbeeldingen bij dit artikel</h2><figure><a href="https://web.archive.org/web/20211025181036im_/https://support.fasterforward.nl/wp-content/uploads/2021/04/awareness-support.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20211025181036im_/https://support.fasterforward.nl/wp-content/uploads/2021/04/awareness-support.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20211025181036im_/https://support.fasterforward.nl/wp-content/uploads/2021/04/awareness-support-clean-desk.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20211025181036im_/https://support.fasterforward.nl/wp-content/uploads/2021/04/awareness-support-clean-desk.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20211025181036im_/https://support.fasterforward.nl/wp-content/uploads/2021/04/awareness-support-hack.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20211025181036im_/https://support.fasterforward.nl/wp-content/uploads/2021/04/awareness-support-hack.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure></section>
+      <details class="orig"><summary>Schermafbeelding van de oorspronkelijke pagina</summary><img src="../bronnen/offline-archief/shots/ga-veilig-om-met-je-klantgegevens.jpg" alt="Schermafbeelding van Ga veilig om met je (klant)gegevens" loading="lazy"></details>
+      <p class="src">Bron: <a href="https://web.archive.org/web/20260629231220/https://support.fasterforward.nl/ga-veilig-om-met-je-klantgegevens/" target="_blank" rel="noopener">Wayback Machine-archief</a></p>
+    </article>
+    <aside class="related"><h2>Gerelateerd:</h2><ul><li><a href="../informeer-jouw-klanten-over-kosten-en-veranderingen-in-2022/index.html">Informeer jouw klanten over stijgende kosten en veranderingen</a></li><li><a href="../3-tips-om-elements-optimaal-te-gebruiken/index.html">3 tips om Elements optimaal te gebruiken</a></li><li><a href="../zo-adviseer-je-de-millennial/index.html">Zo communiceer je met de digitale millennial</a></li><li><a href="../tip-voor-2020-organiseer-inkomende-e-mails-met-mailingregels/index.html">Tip voor 2020: organiseer inkomende e-mails met mailingregels</a></li><li><a href="../tip-eenvoudig-bestanden-uploaden-die-je-gedownload-hebt/index.html">Tip: eenvoudig bestanden uploaden die je gedownload hebt</a></li><li><a href="../kent-digimap-tips-al/index.html">Ken je onze Digimap tips al?</a></li></ul></aside>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span>Copyright © 2024 Blinqx powered by Faster Forward</span>
+    <nav aria-label="Beleid">
+      <a href="../supportbeleid/index.html">Supportbeleid</a>
+      <a href="../opdrachtenbeleid/index.html">Opdrachtenbeleid</a>
+      <a href="../klachtenbeleid/index.html">Klachtenbeleid</a>
+      <a href="../wensenbeleid/index.html">Wensenbeleid</a>
+      <a href="../video/index.html">Video's &amp; e-learning</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

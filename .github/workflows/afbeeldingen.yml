@@ -1,0 +1,36 @@
+name: Afbeeldingen ophalen en site bouwen
+
+# Handmatig starten via Actions -> "Afbeeldingen ophalen en site bouwen" -> Run workflow.
+# Haalt de afbeeldingen van support.fasterforward.nl op uit de Wayback Machine,
+# zet ze in wp-content/uploads/ en bouwt de site opnieuw, zodat de pagina's
+# lokale kopieën gebruiken in plaats van Wayback-links.
+on:
+  workflow_dispatch:
+    inputs:
+      max:
+        description: "Maximaal aantal afbeeldingen (0 = alles)"
+        default: "0"
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Afbeeldingen downloaden
+        run: python3 tools/download_afbeeldingen.py --max "${{ inputs.max }}"
+      - name: Site bouwen
+        run: python3 tools/build.py
+      - name: Committen
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "Afbeeldingen uit Wayback Machine toegevoegd"
+          git push

@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ockto koppeling verbeterd, bezoekdatums inzichtelijk en meer... - Blinqx Support</title>
+<meta name="description" content="Ook in de zomer hebben we continu doorontwikkeld. Ons team van programmeurs is druk bezig geweest om Elements elke dag een beetje beter te maken. Het resultaat: nieuwe features, verbeteringen in bestaande modules, geopti…">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.png">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
+    <symbol id="i-mail-o" viewBox="0 0 24 24"><path d="M2 5h20v14H2zm2 2v.4l8 5.6 8-5.6V7zm16 2.8-8 5.6-8-5.6V17h16z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><path d="M10 2a8 8 0 0 1 6.32 12.9l5.4 5.4-1.42 1.42-5.4-5.4A8 8 0 1 1 10 2zm0 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 64 64"><circle cx="7" cy="12" r="6"/><circle cx="7" cy="32" r="6"/><circle cx="7" cy="52" r="6"/><rect x="18" y="7" width="44" height="10" rx="2"/><rect x="18" y="27" width="44" height="10" rx="2"/><rect x="18" y="47" width="44" height="10" rx="2"/></symbol>
+    <symbol id="i-home" viewBox="0 0 64 64"><path d="M32 6 2 32l4 5 4-3.4V58h18V42h8v16h18V33.6l4 3.4 4-5-10-8.7V10h-8v7.4z"/></symbol>
+    <symbol id="i-car" viewBox="0 0 64 64"><path d="M16 10h32a6 6 0 0 1 5.7 4.1L58 27a7 7 0 0 1 4 6.3V48a3 3 0 0 1-3 3h-3v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H20v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H5a3 3 0 0 1-3-3V33.3A7 7 0 0 1 6 27l4.3-12.9A6 6 0 0 1 16 10zm1.5 7-3.3 10h35.6l-3.3-10zM13 34a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm38 0a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 64 64"><path d="M4 12a4 4 0 0 1 4-4h16l6 6h22a4 4 0 0 1 4 4v6H18a6 6 0 0 0-5.6 3.9L4 50z"/><path d="M18 28h44l-10 26H6z"/></symbol>
+    <symbol id="i-desktop" viewBox="0 0 64 64"><path d="M2 6h60v40H38v6h8v6H18v-6h8v-6H2zm6 6v28h48V12z"/></symbol>
+    <symbol id="i-comments" viewBox="0 0 64 64"><path d="M26 4c13.8 0 24 8.6 24 19s-10.2 19-24 19c-2.6 0-5-.3-7.3-.8C14.6 44 9.6 46 3 46c3-3 4.8-6.2 5.3-9.6C4.4 33 2 28.2 2 23 2 12.6 12.2 4 26 4z"/><path d="M54 24.5c5 3.4 8 8.3 8 13.5 0 4.2-1.8 8-4.8 11 .4 3.6 2 6.8 4.8 9.5-6 0-10.6-1.8-14.3-4.4-2.1.5-4.4.7-6.7.7-7 0-13.1-2.4-17-6.2 14.3-.4 30-8.8 30-24.1z"/></symbol>
+    <symbol id="i-envelope" viewBox="0 0 64 64"><path d="M4 12h56a2 2 0 0 1 2 2v3L32 37 2 17v-3a2 2 0 0 1 2-2z"/><path d="M2 23.5 32 43.5l30-20V50a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-euro" viewBox="0 0 64 64"><path d="M42 6c5 0 9.5 1.2 13 3.2l-2.6 8.2A19 19 0 0 0 42 14.5c-7.4 0-12.7 4.6-14.6 11.5H46l-2 7H26.3l-.05 2 .05 2H42l-2 7H27.4c1.9 7 7.2 11.5 14.6 11.5 4 0 7.6-1 10.4-2.9L55 61c-3.6 2-8 3-13 3-12.7 0-22.2-8-24.4-20H10l2-7h5.06L17 35l.06-2H10l2-7h5.6C19.8 14 29.3 6 42 6z"/></symbol>
+    <symbol id="i-file" viewBox="0 0 64 64"><path d="M10 2h28v18h18v38a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm32 0 14 14H42zM16 30v6h32v-6zm0 10v6h32v-6zm0 10v6h32v-6z"/></symbol>
+    <symbol id="i-rss" viewBox="0 0 64 64"><circle cx="11" cy="53" r="8"/><path d="M3 23a38 38 0 0 1 38 38H31A28 28 0 0 0 3 33z"/><path d="M3 3a58 58 0 0 1 58 58H51A48 48 0 0 0 3 13z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="rgba(0,0,0,.65)"/><path d="M26 20v24l20-12z" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="item"><svg class="ic"><use href="#i-phone"/></svg><a class="tel" href="tel:+31850180069">085 018 00 69</a></span>
+    <span class="sep" aria-hidden="true"></span>
+    <span class="item"><svg class="ic"><use href="#i-mail-o"/></svg><a class="mail" href="mailto:support-eblinqx@blinqx.tech">support-eblinqx@blinqx.tech</a></span>
+    <a class="li" href="https://www.linkedin.com/company/blinqx/" target="_blank" rel="noopener" aria-label="Blinqx op LinkedIn">in</a>
+  </div>
+</div>
+<header class="site">
+  <div class="wrap">
+    <div class="head-row">
+      <a class="brand" href="../index.html" aria-label="Blinqx support — home">
+        <img src="../assets/logo-mark.png" alt="Blinqx" width="470" height="119">
+        <span>powered by Faster Forward</span>
+      </a>
+      <nav class="main" aria-label="Hoofdmenu"><ul><li><a href="../index.html">Home</a></li><li><a href="../nieuws/index.html">Nieuws</a></li><li><a href="../tips/index.html">Tips</a></li><li><a href="../releasenotes/index.html" aria-current="page">Release notes</a></li><li><a href="../trainingen/index.html">Trainingen</a></li><li><a href="../contact/index.html">Contact support</a></li></ul></nav>
+    </div>
+    <div class="search-row">
+      <form class="search" action="../zoeken/index.html" method="get" role="search">
+        <label class="field">
+          <svg class="ic"><use href="#i-search"/></svg>
+          <input type="search" name="q" placeholder="Zoek hier op onderwerp" aria-label="Zoek op onderwerp">
+        </label>
+        <button type="submit">Zoeken</button>
+      </form>
+      <div class="status">Mogelijke incidenten en de systeemstatus vind je op onze <a href="#" title="URL statuspagina nog invullen">statuspagina</a>.</div>
+    </div>
+  </div>
+</header>
+<div class="crumbs"><div class="wrap"><nav aria-label="Kruimelpad"><a href="../releasenotes/index.html">Release notes</a><span class="sep" aria-hidden="true">›</span><span aria-current="page">Ockto koppeling verbeterd, bezoekdatums inzichtelijk en meer...</span></nav></div></div>
+<main class="article">
+  <div class="wrap cols">
+    <article>
+      <h1>Ockto koppeling verbeterd, bezoekdatums inzichtelijk en meer...</h1>
+      <p class="meta">Geplaatst op 17 september 2021 · Laatste update: 8 oktober 2021</p>
+      <div class="content"><p>Ook in de zomer hebben we continu doorontwikkeld. Ons team van programmeurs is druk bezig geweest om Elements elke dag een beetje beter te maken. Het resultaat: nieuwe features, verbeteringen in bestaande modules, geoptimaliseerde koppelingen en nog veel meer.</p><nav class="toc" aria-label="Inhoud"><ul><li><a href="#inhoud-update">Inhoud update</a></li><li><a href="#koppeling-met-ockto-verbeterd-en-uitgebreid">Koppeling met Ockto verbeterd en uitgebreid</a></li><li><a href="#uitbreidingen">Uitbreidingen</a></li><li><a href="#inzicht-in-persoon">Inzicht in persoon</a></li><li><a href="#stuur-samengevoegde-gegevens-naar-adviespakket">Stuur samengevoegde gegevens naar adviespakket</a></li><li><a href="#ockto-bestand-versturen-naar-dias-advies-en-findesk">Ockto bestand versturen naar DIAS Advies en Findesk</a></li><li><a href="#bezoekdatums-inzichtelijk">Bezoekdatums inzichtelijk</a></li><li><a href="#productoverzicht-van-klant-te-downloaden">Productoverzicht van klant te downloaden</a></li><li><a href="#zoeken-naar-facturen-verbeterd">Zoeken naar facturen verbeterd</a></li><li><a href="#filteren-op-meerdere-factuurstatussen">Filteren op meerdere factuurstatussen</a></li><li><a href="#filteren-op-nog-niet-verzonden-facturen">Filteren op nog niet verzonden facturen</a></li><li><a href="#duidelijk-wanneer-nieuwsbrief-niet-wordt-verzonden">Duidelijk wanneer nieuwsbrief niet wordt verzonden</a></li><li><a href="#eenvoudiger-meerdere-personen-toevoegen-aan-afspraak">Eenvoudiger meerdere personen toevoegen aan afspraak</a></li><li><a href="#sneller-documenten-toevoegen">Sneller documenten toevoegen</a></li><li><a href="#openstaande-betalingen-zonder-soort-ook-zichtbaar">Openstaande betalingen zonder soort ook zichtbaar</a></li><li><a href="#op-te-halen-api-datasets-gedocumenteerd">Op te halen API datasets gedocumenteerd</a></li><li><a href="#leveranciersdossiers-ook-te-verwijderen">Leveranciersdossiers ook te verwijderen</a></li><li><a href="#handel-mislukte-uitgaande-hdn-berichten-sneller-af">Handel mislukte uitgaande HDN berichten sneller af</a></li><li><a href="#polisdelen-aanmaken-verbeterd">Polisdelen aanmaken verbeterd</a></li><li><a href="#geroyeerde-of-be-indigde-polissen-niet-getoond-in-overzicht">Geroyeerde of beëindigde polissen niet getoond in overzicht</a></li><li><a href="#betaallinks-te-vernieuwen-in-facturenoverzicht">Betaallinks te vernieuwen in facturenoverzicht</a></li><li><a href="#bepaal-wie-een-dienst-of-contract-mag-factureren">Bepaal wie een dienst of contract mag factureren</a></li><li><a href="#volledige-voornamen-verstuurd-naar-adviesbox">Volledige voornamen verstuurd naar Adviesbox</a></li><li><a href="#eenvoudiger-een-foutmelding-doorgeven">Eenvoudiger een foutmelding doorgeven</a></li><li><a href="#dekking-omschrijving-zakelijke-schadeverzekering-aan-te-pass">Dekking omschrijving zakelijke schadeverzekering aan te passen</a></li><li><a href="#dekkingen-bijgewerkt-volgens-sivi-normen">Dekkingen bijgewerkt volgens SIVI normen</a></li><li><a href="#overige-verbeteringen">Overige verbeteringen</a></li><li><a href="#laatste-5-releasenotes">Laatste 5 releasenotes</a></li></ul></nav>
+<p>Op dinsdag 21 september 2021 worden onderstaande verbeteringen en uitbreidingen gelanceerd. Lees snel verder!</p>
+<h2 id="inhoud-update">Inhoud update</h2>
+<p>Koppeling met Ockto verbeterd en uitgebreidProductoverzicht van klant te downloadenOverzichtelijker zoeken binnen facturenDuidelijk wanneer nieuwsbrief niet wordt verzondenEenvoudiger personen toevoegen aan afspraakSneller documenten toevoegenBetaallinks te vernieuwen in het facturenoverzichtEn nog veel meer…!</p>
+<h2 id="koppeling-met-ockto-verbeterd-en-uitgebreid">Koppeling met Ockto verbeterd en uitgebreid</h2>
+<p>Achter de schermen is hard gewerkt aan de koppeling tussen Ockto en Elements. De verbinding is verbeterd, waardoor de koppeling voldoet aan de actuele veiligheidseisen. Daarnaast zijn er nieuwe functies toegevoegd. Bovendien zijn er nu meer mogelijkheden om de koppeling in de toekomst uit te breiden.</p>
+<h2 id="uitbreidingen">Uitbreidingen</h2>
+<h2 id="inzicht-in-persoon">Inzicht in persoon</h2>
+<p>Je weet nu welke persoon uit het dossier zijn gegevens via de Ockto app heeft doorgegeven. Hiermee herken je ook welk bestand bij een bepaald persoon hoort. Het is belangrijk om het bestand te matchen aan de juiste persoon.</p>
+<h2 id="stuur-samengevoegde-gegevens-naar-adviespakket">Stuur samengevoegde gegevens naar adviespakket</h2>
+<p>Als de eerste en de tweede aanvrager beide hun gegevens via Ockto hebben aangeleverd, kun je deze gegevens nu samenvoegen en samengevoegd naar het adviespakket sturen. Hierdoor bereken je in het adviespakket gelijk een hypotheek op basis van o.a. het inkomen van beide personen.</p>
+<p>Daarnaast kan je nu kiezen welk brondatabestand je naar het adviespakket stuurt, terwijl je voorheen alleen het meest recente bestand kon versturen.</p>
+<h2 id="ockto-bestand-versturen-naar-dias-advies-en-findesk">Ockto bestand versturen naar DIAS Advies en Findesk</h2>
+<p>Het is nu ook mogelijk om het Ockto brondatabestand in Elements door te sturen naar DIAS Advies en Findesk advies. Dit was al mogelijk voor Figlo en Adviesbox. In het adviespakket beslis je of je de Ockto data meestuurt naar de maatschappij of niet.</p>
+<h2 id="bezoekdatums-inzichtelijk">Bezoekdatums inzichtelijk</h2>
+<p>De laatste en volgende bezoekdatum zijn nu in te vullen in de dossiersamenvatting op de startpagina van een dossier. Hierdoor zien alle collega’s direct wanneer het laatste bezoek bij een klant is geweest en wanneer de eerstvolgende is.</p>
+<p>Beide bezoekdatums zijn ook via de Elements API op te halen.</p>
+<p>Dossierinformatie verduidelijkt bij koppelen e-mails en schademeldingen</p>
+<p>Wanneer je een e-mail koppelt aan een dossier, wordt nu het adres getoond i.p.v. de klantnaam. Door de combinatie van de dossieromschrijving (inclusief klantnaam) en het adres weet je zeker dat je de e-mail aan het juiste dossier koppelt.</p>
+<p>Wanneer je een schademelding koppelt, wordt nu ook het verzekerd object getoond. Zo weet je zeker dat je de schademelding aan het juiste schadeverzekering/polis koppelt.</p>
+<h2 id="productoverzicht-van-klant-te-downloaden">Productoverzicht van klant te downloaden</h2>
+<p>Naast de dossiersamenvatting kan je nu ook een productoverzicht van een klant opslaan als PDF of afdrukken. Zo bied je je klant een duidelijk overzicht van al zijn of haar lopende hypotheken, verzekeringen, diensten en meer. Gearchiveerde producten worden hierbij uitgesloten.</p>
+<p>De dossiersamenvatting en het productoverzicht deel je nu ook in je eigen huisstijl met de klant. Voeg je huisstijl kleuren toe aan je organisatie om deze te tonen in het PDF bestand.</p>
+<h2 id="zoeken-naar-facturen-verbeterd">Zoeken naar facturen verbeterd</h2>
+<p>Het zoeken naar facturen is verbeterd op twee locaties in Elements:</p>
+<p>Het algemene facturenoverzicht met alle facturen van je organisatie.Het facturenoverzicht binnen een klantdossier.</p>
+<p>Daarnaast heeft filteren op facturen heeft een nieuwe look-and-feel gekregen. Hierdoor werkt het zoeken gebruiksvriendelijker en ziet er overzichtelijker uit.</p>
+<h2 id="filteren-op-meerdere-factuurstatussen">Filteren op meerdere factuurstatussen</h2>
+<p>Het is nu mogelijk om op meerdere factuurstatussen tegelijk te filteren. Zo zie je bijvoorbeeld alle facturen waarbij een tweede herinnering is verzonden of er een deurwaarder van toepassing is.</p>
+<h2 id="filteren-op-nog-niet-verzonden-facturen">Filteren op nog niet verzonden facturen</h2>
+<p>Je kan nu in het facturenoverzicht filteren op facturen die nog niet verzonden zijn. Dit zijn facturen die je bijvoorbeeld van de maatschappij ontvangt, maar die je niet direct doorberekend aan de klant. Dit is bijvoorbeeld het geval wanneer het bedrag van de factuur €0 is of als de factuur eerst op een tussenrekening wordt geboekt.</p>
+<h2 id="duidelijk-wanneer-nieuwsbrief-niet-wordt-verzonden">Duidelijk wanneer nieuwsbrief niet wordt verzonden</h2>
+<p>Je krijgt nu een foutmelding wanneer je een incorrecte campagne gaat versturen. Deze verschijnt wanneer je een incorrecte tag hebt ingevoerd bij ‘E-mailadres afzender’ of ‘E-mailadres ‘ontvanger’. De tag moet namelijk gegevens ophalen uit een klantdossier of uit een kolom in de selectie van de campagne.</p>
+<p>Dankzij deze melding denk je niet meer dat je nieuwsbrief is verzonden (100% uitgevoerd), terwijl er eigenlijk geen e-mails verzonden zijn.</p>
+<h2 id="eenvoudiger-meerdere-personen-toevoegen-aan-afspraak">Eenvoudiger meerdere personen toevoegen aan afspraak</h2>
+<p>Je voegt nu eenvoudiger meerdere personen toe bij het aanmaken van een agenda afspraak. Wanneer je aan de linkerkant iemand toevoegt, voeg je daarna eenvoudig meerdere personen toe. Het scherm wordt namelijk niet meer ververst, waardoor je nu minder moet zoeken.</p>
+<h2 id="sneller-documenten-toevoegen">Sneller documenten toevoegen</h2>
+<p>Je uploadt nu ook documenten zonder ze handmatig in te delen in een bepaalde categorie. Als je een document uploadt, wordt het document automatisch ingedeeld als Soort document: ‘Anders n.l.’, zodat je dit niet meer handmatig hoeft te doen. Uiteraard kun je het soort document nog wel zelf aanpassen.</p>
+<h2 id="openstaande-betalingen-zonder-soort-ook-zichtbaar">Openstaande betalingen zonder soort ook zichtbaar</h2>
+<p>Als je in het betalingsherinneringen overzicht de soort boeking filtert op ‘Overig’ zie je nu ook de openstaande betalingen die geen soort boeking hebben (oftewel: leeg zijn).</p>
+<p>Daarnaast is hier ook de werking van het laadscherm verbeterd, zodat altijd duidelijk is of de resultaten nog aan het laden zijn.</p>
+<h2 id="op-te-halen-api-datasets-gedocumenteerd">Op te halen API datasets gedocumenteerd</h2>
+<p>De generieke datasets die je via de Elements API kan ophalen, zijn duidelijk gedocumenteerd. Dit zijn datasets met overzichten van o.a. taken, schadeproducten, afspraken per adviseur en HDN aanvragen.</p>
+<p>Met deze datasets kan je grote hoeveelheden data ophalen met slechts één API bevraging. Hiermee wordt informatie uit Elements efficiënter naar een externe software tool gestuurd. Bekijk onze API documentatie voor meer informatie.</p>
+<h2 id="leveranciersdossiers-ook-te-verwijderen">Leveranciersdossiers ook te verwijderen</h2>
+<p>Om je Elements omgeving schoon te houden, is het handig dat je overbodige dossiers kunt verwijderen. Denk hierbij aan leveranciersdossiers die per ongeluk of verkeerd zijn aangemaakt. Daarom is het vanaf nu mogelijk om ook leveranciersdossiers permanent te verwijderen.</p>
+<p>Om dit niet voor iedere medewerker mogelijk te maken, heb je hiervoor een speciaal recht nodig. Als interne Elements beheerder kan je deze aanvragen bij <a href="mailto:support@fasterforward.nl">support@fasterforward.nl</a>.</p>
+<h2 id="handel-mislukte-uitgaande-hdn-berichten-sneller-af">Handel mislukte uitgaande HDN berichten sneller af</h2>
+<p>Behoud het overzicht van mislukte uitgaande HDN berichten door meerdere berichten tegelijk te markeren als ‘afgehandeld’. Dit doe je bijvoorbeeld wanneer meerdere berichten gecontroleerd, opgelost of niet meer van toepassing zijn.</p>
+<p>Je markeert deze met de checkboxes aan de linkerkant. Klik op de knop “Geselecteerde meldingen markeren als afgehandeld” om de berichten af te vinken.</p>
+<h2 id="polisdelen-aanmaken-verbeterd">Polisdelen aanmaken verbeterd</h2>
+<p>Het toevoegen van een nieuw polisdeel vanuit een ADN batch werd bij specifieke dekkingen soms niet aan de correcte polis gematcht. Dit is opgelost. Het toevoegen van polisdelen werkt nu correct voor alle dekkingen.</p>
+<p>Daarnaast verdwijnt het groene plus-icoon zodra je een polisdeel hebt toegevoegd. Zo weet je precies welke polisdelen uit de batch je nog wel en niet moet verwerken.</p>
+<h2 id="geroyeerde-of-be-indigde-polissen-niet-getoond-in-overzicht">Geroyeerde of beëindigde polissen niet getoond in overzicht</h2>
+<p>In het niet-ontvangen overzicht van de ADN prolongaties worden geroyeerde of beëindigde polissen niet meer getoond.</p>
+<p>In dit tabblad staat welke prolongaties je nog zou moeten ontvangen, maar wat je nog niet hebt ontvangen van de maatschappij. Zo hoef je dit niet zelf uit te zoeken en weet je precies op welke polissen je actie moet ondernemen.</p>
+<h2 id="betaallinks-te-vernieuwen-in-facturenoverzicht">Betaallinks te vernieuwen in facturenoverzicht</h2>
+<p>Het is nu ook mogelijk om vanuit het facturenoverzicht Mollie betaallinks te vernieuwen. Dit was al mogelijk vanuit een dossier.</p>
+<p>Betaallinks zijn vaak maar 30 dagen geldig, waardoor je deze moet vernieuwen als de klant de factuur niet binnen 30 dagen betaalt.</p>
+<h2 id="bepaal-wie-een-dienst-of-contract-mag-factureren">Bepaal wie een dienst of contract mag factureren</h2>
+<p>Je kunt nu per gebruiker instellen of zij voor diensten en/of contracten wel of niet mogen factureren vanuit de productkaart. Zo kunnen bepaalde gebruikers bijvoorbeeld wel facturen versturen voor contracten, maar niet voor diensten. Dit wordt ingesteld met rechten.</p>
+<p>Deze rechten kunnen alleen worden ingesteld door een medewerker van Faster Forward (aanvragen via <a href="mailto:support@fasterforward.nl">support@fasterforward.nl</a>).</p>
+<h2 id="volledige-voornamen-verstuurd-naar-adviesbox">Volledige voornamen verstuurd naar Adviesbox</h2>
+<p>Je ziet nu de volledige voornamen (geboortenamen) van je klant in Adviesbox. Deze worden nu namelijk meegestuurd zodra je een klantdossier exporteert uit Elements en vervolgens opent in Adviesbox. Zo bevat o.a. het adviesrapport direct de juiste namen, zonder dat je deze handmatig moet invullen.</p>
+<h2 id="eenvoudiger-een-foutmelding-doorgeven">Eenvoudiger een foutmelding doorgeven</h2>
+<p>De foutcode van een foutmelding in Elements is nu eenvoudig te kopiëren via de ‘kopieer’ knop. Deel de foutmelding met onze supportafdeling door deze code te mailen naar <a href="mailto:support@fasterforward.nl">support@fasterforward.nl</a>.</p>
+<h2 id="dekking-omschrijving-zakelijke-schadeverzekering-aan-te-pass">Dekking omschrijving zakelijke schadeverzekering aan te passen</h2>
+<p>Bij zakelijke schadeverzekeringen kan je nu zelf de omschrijving van de dekking aanpassen (bijv. ‘glas van schuur’). Hierdoor is de dekking herkenbaarder voor zowel jouw organisatie als je klant. Deze omschrijving wordt namelijk getoond in zowel Elements als de Digimap. Daarnaast kan deze dekking worden opgehaald via tags en de Elements API.</p>
+<h2 id="dekkingen-bijgewerkt-volgens-sivi-normen">Dekkingen bijgewerkt volgens SIVI normen</h2>
+<p>De volgende dekkingen (voor verzekeringen) zijn beschikbaar volgens de SIVI standaard en nu ook in Elements te vewerken via ADN en Aplaza.</p>
+<p>LandmeetapparatuurMultimediaRechtsbijstand vaartuigenTransport computer/elektronicaTransport landmeetapparatuurTransport multimedia</p>
+<h2 id="overige-verbeteringen">Overige verbeteringen</h2>
+<p>In de Digimap wordt bij de tweede persoon nu zijn/haar eigen adres getoond i.p.v. de eerste persoon.De naamgeving van ‘Scenario Advies’ is aangepast naar ‘DIAS Advies’.Bij het aanklikken van productnamen staan deze alfabetische volgorde gesorteerd (i.p.v. op productnummer).Bij het aanmaken van een dossier zijn de velden ‘Fax’ en ‘Relatietype’ verwijderd omdat deze overbodig zijn.Wanneer je als centrale organisatie per periode verschillende afspraken hebt met je deelnemers (bijv. uitbetaling van provisie), kun je dit nu verwerken in je boekhouding. Je kan namelijk nu ‘maand’ toevoegen als voorwaarde in de formule van de vergoedingsgroep.Voor consumptief krediet en bankgaranties kan je nu ook ADN berichten inlezen via een CSV bestand.Bij een zakelijke aanvrager (alleen een organisatie in een dossier) is het niet meer verplicht om een aanvrager in te voeren. Dit geldt voor contracten, diensten. levensverzekeringen en inkomensverzekeringen.In de uitvallijst bij het verwerken van maatschappijbestanden worden geen gearchiveerde hypotheken meer getoond.Wanneer je een e-mail terugzet uit de prullenbak, wordt deze geplaatst in de map van waaruit deze is verwijderd.</p>
+<h2 id="laatste-5-releasenotes">Laatste 5 releasenotes</h2>
+<p>Ockto koppeling verbeterd, bezoekdatums inzichtelijk...<br>Verbind je Office 365 kalender,...<br>Doelgerichte klantselecties, saldo deelnemers inzichtelijk...<br>Financieel overzicht vernieuwd en verzekeringen...<br>Elements is vernieuwd voor HDN21</p></div>
+      <section class="figs"><h2>Afbeeldingen bij dit artikel</h2><figure><a href="https://web.archive.org/web/20211025164845im_/https://support.fasterforward.nl/wp-content/uploads/2021/09/WP-release-sept.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20211025164845im_/https://support.fasterforward.nl/wp-content/uploads/2021/09/WP-release-sept.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20211025164845im_/https://support.fasterforward.nl/wp-content/uploads/2021/09/ockto-match-CLEAN-1024x231.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20211025164845im_/https://support.fasterforward.nl/wp-content/uploads/2021/09/ockto-match-CLEAN-1024x231.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20211025164845im_/https://support.fasterforward.nl/wp-content/uploads/2021/09/brondata-combi-release.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20211025164845im_/https://support.fasterforward.nl/wp-content/uploads/2021/09/brondata-combi-release.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20211025164845im_/https://support.fasterforward.nl/wp-content/uploads/2021/09/ockto-dias-findesk-mockup.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20211025164845im_/https://support.fasterforward.nl/wp-content/uploads/2021/09/ockto-dias-findesk-mockup.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20211025164845im_/https://support.fasterforward.nl/wp-content/uploads/2021/09/bezoekdata-release.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20211025164845im_/https://support.fasterforward.nl/wp-content/uploads/2021/09/bezoekdata-release.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20211025164845im_/https://support.fasterforward.nl/wp-content/uploads/2021/09/mail-koppelen-release-1024x285.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20211025164845im_/https://support.fasterforward.nl/wp-content/uploads/2021/09/mail-koppelen-release-1024x285.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure></section>
+      
+      <p class="src">Bron: <a href="https://web.archive.org/web/20211025164845/https://support.fasterforward.nl/ockto-bezoekdatums-meer/" target="_blank" rel="noopener">Wayback Machine-archief</a></p>
+    </article>
+    <aside class="related"><h2>Gerelateerd:</h2><ul><li><a href="../kleine-update-omtrent-verzekeringen/index.html">Nieuwe features voor verzekeringen</a></li><li><a href="../verbeteringen-nieuwe-e-mailmodule/index.html">Optimalisaties e-mailmodule</a></li><li><a href="../verbeteringen-e-mailmodule-najaar-2021/index.html">E-mailmodule is vernieuwd met nieuwe features</a></li><li><a href="../schadeverzekering-opvoeren-wordt-verbeterd/index.html">Update: Schadeverzekering opvoeren is verbeterd</a></li><li><a href="../update-verzekeringen-vermogen-bancair-en-stukken-toevoegen/index.html">Update: verzekeringen, vermogen &amp; bancair en stukken toevoegen</a></li><li><a href="../update-track-trace-hypoheekdatums-shared-office-365-en-meer/index.html">Update: Track &amp; Trace, hypoheekdatums, Shared Office 365 en meer</a></li></ul></aside>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span>Copyright © 2024 Blinqx powered by Faster Forward</span>
+    <nav aria-label="Beleid">
+      <a href="../supportbeleid/index.html">Supportbeleid</a>
+      <a href="../opdrachtenbeleid/index.html">Opdrachtenbeleid</a>
+      <a href="../klachtenbeleid/index.html">Klachtenbeleid</a>
+      <a href="../wensenbeleid/index.html">Wensenbeleid</a>
+      <a href="../video/index.html">Video's &amp; e-learning</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>Afbeeldingen support.fasterforward.nl</title>
+<style>
+  :root{color-scheme: light dark;}
+  body{font-family: system-ui, Arial, sans-serif; margin:0; padding:24px; background:#f5f5f7; color:#1d1d1f;}
+  h1{font-size:1.3rem; margin-bottom:4px;}
+  p.meta{color:#555; margin-top:0; margin-bottom:24px; font-size:0.9rem;}
+  .grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(260px,1fr)); gap:16px;}
+  .card{background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,.12); display:flex; flex-direction:column;}
+  .card img{width:100%; height:160px; object-fit:cover; background:#eee; display:block;}
+  .card .body{padding:10px 12px; font-size:0.82rem;}
+  .card .title{font-weight:600; margin:0 0 6px 0;}
+  .card a{color:#0066cc; word-break:break-all; text-decoration:none;}
+  .card a:hover{text-decoration:underline;}
+  .card .label{color:#777; font-size:0.72rem; text-transform:uppercase; letter-spacing:.03em; margin-top:6px;}
+  .dl{display:inline-block; margin-top:8px; padding:6px 10px; background:#0066cc; color:#fff !important; border-radius:6px; font-size:0.78rem; font-weight:600; text-decoration:none !important;}
+  .dl:hover{background:#004c99;}
+  .note{color:#777; font-size:0.78rem; max-width:640px; margin:0 0 20px 0;}
+  @media (prefers-color-scheme: dark){
+    body{background:#1a1a1a; color:#eee;}
+    .card{background:#2a2a2a; box-shadow:none;}
+    .card img{background:#333;}
+    .card .label{color:#999;}
+    .note{color:#999;}
+  }
+</style>
+</head>
+<body>
+<h1>Afbeeldingen van support.fasterforward.nl</h1>
+<p class="meta">26 unieke afbeeldingen gevonden via Google Afbeeldingen, met bronpagina.</p>
+<p class="note">Klik "Downloaden" per afbeelding om op te slaan. Omdat het bestand van een ander domein komt, opent de browser het mogelijk eerst in een tab in plaats van direct te downloaden &mdash; gebruik dan rechtermuisklik &rarr; "Afbeelding opslaan als" op die pagina.</p>
+<div class="grid" id="grid"></div>
+<script>
+const items = [
+ {img:"https://support.fasterforward.nl/wp-content/uploads/2025/10/image-91.png", page:"https://support.fasterforward.nl/kennisbank/formule-en-aanstellingsnummers-opvoeren-serviceprovider/", title:"Formule en aanstellingsnummers opvoeren serviceprovider"},
+ {img:"https://support.fasterforward.nl/wp-content/uploads/2025/10/image-95.png", page:"https://support.fasterforward.nl/kennisbank/formule-en-aanstellingsnummers-opvoeren-serviceprovider/", title:"Formule en aanstellingsnummers opvoeren serviceprovider"},
+ {img:"https://support.fasterforward.nl/wp-content/uploads/2025/10/image-94.png", page:"https://support.fasterforward.nl/kennisbank/formule-en-aanstellingsnummers-opvoeren-serviceprovider/", title:"Formule en aanstellingsnummers opvoeren serviceprovider"},
+ {img:"https://support.fasterforward.nl/wp-content/uploads/2025/10/image-88.png", page:"https://support.fasterforward.nl/kennisbank/formule-en-aanstellingsnummers-opvoeren-serviceprovider/", title:"Formule en aanstellingsnummers opvoeren serviceprovider"},
+ {img:"https://support.fasterforward.nl/wp-content/uploads/2024/07/image-400.png", page:"https://support.fasterforward.nl/kennisbank/startpagina/", title:"Dashboard inrichten"},
+ {img:"https://support.fasterforward.nl/wp-content/uploads/2024/07/image-401.png", page:"https://support.fasterforward.nl/kennisbank/startpagina/", title:"Dashboard inrichten"},
+ {img:"https://support.fasterforward.nl/wp-content/uploads/2024/07/image-403.png", page:"https://support.fasterforward.nl/kennisbank/startpagina/", title:"Dashboard inrichten"},
+ {img:"https://support.fasterforward.nl/wp-content/uploads/2024/11/Tags-Finly-schademelding.png", page:"https://support.fasterforward.nl/kennisbank/gemakkelijk-formulieren-toesturen-met-finly/", title:"Gemakkelijk formulieren toesturen met Finly"},
+ {img:"https://support.fasterforward.nl/wp-content/uploads/2021/09/bezoekdata-release.png", page:"https://support.fasterforward.nl/release-pdf-bewerken-meer/", title:"PDF bewerken, pakket bekijken bij mutaties verwerken en meer..."},
+ {img:"https://support.fasterforward.nl/wp-content/uploads/2022/04/toon-gehele-pakket.png", page:"https://support.fasterforward.nl/release-pdf-bewerken-meer/", title:"PDF bewerken, pakket bekijken bij mutaties verwerken en meer..."},
+ {img:"https://support.fasterforward.nl/wp-content/uploads/2022/04/poliszoeker-gearchiveerd.png", page:"https://support.fasterforward.nl/release-pdf-bewerken-meer/", title:"PDF bewerken, pakket bekijken bij mutaties verwerken en meer..."},
+ {img:"https://support.fasterforward.nl/wp-content/uploads/2022/04/spring-vanuit-RC-maatschappij.png", page:"https://support.fasterforward.nl/release-pdf-bewerken-meer/", title:"PDF bewerken, pakket bekijken bij mutaties verwerken en meer..."},
+ {img:"https://support.fasterforward.nl/wp-content/uploads/2022/04/tekst-verwijderd-overlay-1.png", page:"https://support.fasterforward.nl/release-pdf-bewerken-meer/", title:"PDF bewerken, pakket bekijken bij mutaties verwerken en meer..."},
+ {img:"https://support.fasterforward.nl/wp-content/uploads/2022/04/matches-info-scherm.png", page:"https://support.fasterforward.nl/release-pdf-bewerken-meer/", title:"PDF bewerken, pakket bekijken bij mutaties verwerken en meer..."},
+ {img:"https://support.fasterforward.nl/wp-content/uploads/2022/04/Release-april-WP-1.png", page:"https://support.fasterforward.nl/release-pdf-bewerken-meer/", title:"PDF bewerken, pakket bekijken bij mutaties verwerken en meer..."},
+ {img:"https://support.fasterforward.nl/wp-content/uploads/2022/04/tijd-stempel-pdf.png", page:"https://support.fasterforward.nl/release-pdf-bewerken-meer/", title:"PDF bewerken, pakket bekijken bij mutaties verwerken en meer..."},
+ {img:"https://support.fasterforward.nl/wp-content/uploads/2022/04/Match-ongedaan-makne.png", page:"https://support.fasterforward.nl/release-pdf-bewerken-meer/", title:"PDF bewerken, pakket bekijken bij mutaties verwerken en meer..."},
+ {img:"https://support.fasterforward.nl/wp-content/uploads/2022/04/id-redactie-1.png", page:"https://support.fasterforward.nl/release-pdf-bewerken-meer/", title:"PDF bewerken, pakket bekijken bij mutaties verwerken en meer..."},
+ {img:"https://support.fasterforward.nl/wp-content/uploads/2024/05/image-119.png", page:"https://support.fasterforward.nl/kennisbank/hypotheekinformatie/", title:"Hypotheekinformatie"},
+ {img:"https://support.fasterforward.nl/wp-content/uploads/2025/10/image-83.png", page:"https://support.fasterforward.nl/kennisbank/gebruiker-aanmaken-en-verwijderen-serviceprovider/", title:"Gebruiker aanmaken en verwijderen serviceprovider"},
+ {img:"https://support.fasterforward.nl/wp-content/uploads/2025/10/image-85.png", page:"https://support.fasterforward.nl/kennisbank/gebruiker-aanmaken-en-verwijderen-serviceprovider/", title:"Gebruiker aanmaken en verwijderen serviceprovider"},
+ {img:"https://support.fasterforward.nl/wp-content/uploads/2017/03/nhb-signalen-web-breed.png", page:"https://support.fasterforward.nl/klantdata-goud-waard/", title:"Meer leads nodig? Gebruik jouw klantdata in Elements"},
+ {img:"https://support.fasterforward.nl/wp-content/uploads/2020/08/duurzaamheidsprofiel.png", page:"https://support.fasterforward.nl/klantdata-goud-waard/", title:"Meer leads nodig? Gebruik jouw klantdata in Elements"},
+ {img:"https://support.fasterforward.nl/wp-content/uploads/2022/10/zitopgoud-wp.png", page:"https://support.fasterforward.nl/klantdata-goud-waard/", title:"Meer leads nodig? Gebruik jouw klantdata in Elements"},
+ {img:"https://support.fasterforward.nl/wp-content/uploads/2024/04/Schermafbeelding-2024-04-30-164717.png", page:"https://support.fasterforward.nl/kennisbank/serviceabonnement-voor-onderhoud-aanmaken/", title:"Serviceabonnement voor onderhoud aanmaken"},
+ {img:"https://support.fasterforward.nl/wp-content/uploads/2019/09/inlogscherm-WPsupport.jpg", page:"https://support.fasterforward.nl/inlogscherm-en-f-icoon-vernieuwd/", title:"Inlogscherm en F-icoon vernieuwd"}
+];
+const grid = document.getElementById('grid');
+items.forEach(it=>{
+  const card = document.createElement('div');
+  card.className='card';
+  const fname = it.img.split('/').pop();
+  card.innerHTML = `
+    <a href="${it.img}" target="_blank" rel="noopener"><img src="${it.img}" loading="lazy" alt="${it.title}"></a>
+    <div class="body">
+      <p class="title">${it.title}</p>
+      <a class="dl" href="${it.img}" download="${fname}">Downloaden</a>
+      <div class="label">Afbeelding</div>
+      <a href="${it.img}" target="_blank" rel="noopener">${it.img}</a>
+      <div class="label">Bronpagina</div>
+      <a href="${it.page}" target="_blank" rel="noopener">${it.page}</a>
+    </div>`;
+  grid.appendChild(card);
+});
+</script>
+</body>
+</html>

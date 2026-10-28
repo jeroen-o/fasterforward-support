@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>E-mail vanuit dossier versturen - Blinqx Support</title>
+<meta name="description" content="Lees hier wat de mogelijkheden zijn van het versturen van de e-mail vanuit een dossier.">
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="icon" href="../../assets/favicon.png">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
+    <symbol id="i-mail-o" viewBox="0 0 24 24"><path d="M2 5h20v14H2zm2 2v.4l8 5.6 8-5.6V7zm16 2.8-8 5.6-8-5.6V17h16z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><path d="M10 2a8 8 0 0 1 6.32 12.9l5.4 5.4-1.42 1.42-5.4-5.4A8 8 0 1 1 10 2zm0 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 64 64"><circle cx="7" cy="12" r="6"/><circle cx="7" cy="32" r="6"/><circle cx="7" cy="52" r="6"/><rect x="18" y="7" width="44" height="10" rx="2"/><rect x="18" y="27" width="44" height="10" rx="2"/><rect x="18" y="47" width="44" height="10" rx="2"/></symbol>
+    <symbol id="i-home" viewBox="0 0 64 64"><path d="M32 6 2 32l4 5 4-3.4V58h18V42h8v16h18V33.6l4 3.4 4-5-10-8.7V10h-8v7.4z"/></symbol>
+    <symbol id="i-car" viewBox="0 0 64 64"><path d="M16 10h32a6 6 0 0 1 5.7 4.1L58 27a7 7 0 0 1 4 6.3V48a3 3 0 0 1-3 3h-3v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H20v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H5a3 3 0 0 1-3-3V33.3A7 7 0 0 1 6 27l4.3-12.9A6 6 0 0 1 16 10zm1.5 7-3.3 10h35.6l-3.3-10zM13 34a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm38 0a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 64 64"><path d="M4 12a4 4 0 0 1 4-4h16l6 6h22a4 4 0 0 1 4 4v6H18a6 6 0 0 0-5.6 3.9L4 50z"/><path d="M18 28h44l-10 26H6z"/></symbol>
+    <symbol id="i-desktop" viewBox="0 0 64 64"><path d="M2 6h60v40H38v6h8v6H18v-6h8v-6H2zm6 6v28h48V12z"/></symbol>
+    <symbol id="i-comments" viewBox="0 0 64 64"><path d="M26 4c13.8 0 24 8.6 24 19s-10.2 19-24 19c-2.6 0-5-.3-7.3-.8C14.6 44 9.6 46 3 46c3-3 4.8-6.2 5.3-9.6C4.4 33 2 28.2 2 23 2 12.6 12.2 4 26 4z"/><path d="M54 24.5c5 3.4 8 8.3 8 13.5 0 4.2-1.8 8-4.8 11 .4 3.6 2 6.8 4.8 9.5-6 0-10.6-1.8-14.3-4.4-2.1.5-4.4.7-6.7.7-7 0-13.1-2.4-17-6.2 14.3-.4 30-8.8 30-24.1z"/></symbol>
+    <symbol id="i-envelope" viewBox="0 0 64 64"><path d="M4 12h56a2 2 0 0 1 2 2v3L32 37 2 17v-3a2 2 0 0 1 2-2z"/><path d="M2 23.5 32 43.5l30-20V50a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-euro" viewBox="0 0 64 64"><path d="M42 6c5 0 9.5 1.2 13 3.2l-2.6 8.2A19 19 0 0 0 42 14.5c-7.4 0-12.7 4.6-14.6 11.5H46l-2 7H26.3l-.05 2 .05 2H42l-2 7H27.4c1.9 7 7.2 11.5 14.6 11.5 4 0 7.6-1 10.4-2.9L55 61c-3.6 2-8 3-13 3-12.7 0-22.2-8-24.4-20H10l2-7h5.06L17 35l.06-2H10l2-7h5.6C19.8 14 29.3 6 42 6z"/></symbol>
+    <symbol id="i-file" viewBox="0 0 64 64"><path d="M10 2h28v18h18v38a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm32 0 14 14H42zM16 30v6h32v-6zm0 10v6h32v-6zm0 10v6h32v-6z"/></symbol>
+    <symbol id="i-rss" viewBox="0 0 64 64"><circle cx="11" cy="53" r="8"/><path d="M3 23a38 38 0 0 1 38 38H31A28 28 0 0 0 3 33z"/><path d="M3 3a58 58 0 0 1 58 58H51A48 48 0 0 0 3 13z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="rgba(0,0,0,.65)"/><path d="M26 20v24l20-12z" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="item"><svg class="ic"><use href="#i-phone"/></svg><a class="tel" href="tel:+31850180069">085 018 00 69</a></span>
+    <span class="sep" aria-hidden="true"></span>
+    <span class="item"><svg class="ic"><use href="#i-mail-o"/></svg><a class="mail" href="mailto:support-eblinqx@blinqx.tech">support-eblinqx@blinqx.tech</a></span>
+    <a class="li" href="https://www.linkedin.com/company/blinqx/" target="_blank" rel="noopener" aria-label="Blinqx op LinkedIn">in</a>
+  </div>
+</div>
+<header class="site">
+  <div class="wrap">
+    <div class="head-row">
+      <a class="brand" href="../../index.html" aria-label="Blinqx support — home">
+        <img src="../../assets/logo-mark.png" alt="Blinqx" width="470" height="119">
+        <span>powered by Faster Forward</span>
+      </a>
+      <nav class="main" aria-label="Hoofdmenu"><ul><li><a href="../../index.html">Home</a></li><li><a href="../../nieuws/index.html">Nieuws</a></li><li><a href="../../tips/index.html">Tips</a></li><li><a href="../../releasenotes/index.html">Release notes</a></li><li><a href="../../trainingen/index.html">Trainingen</a></li><li><a href="../../contact/index.html">Contact support</a></li></ul></nav>
+    </div>
+    <div class="search-row">
+      <form class="search" action="../../zoeken/index.html" method="get" role="search">
+        <label class="field">
+          <svg class="ic"><use href="#i-search"/></svg>
+          <input type="search" name="q" placeholder="Zoek hier op onderwerp" aria-label="Zoek op onderwerp">
+        </label>
+        <button type="submit">Zoeken</button>
+      </form>
+      <div class="status">Mogelijke incidenten en de systeemstatus vind je op onze <a href="#" title="URL statuspagina nog invullen">statuspagina</a>.</div>
+    </div>
+  </div>
+</header>
+<div class="crumbs"><div class="wrap"><nav aria-label="Kruimelpad"><a href="../../kennisbank/index.html">Kennisbank</a><span class="sep" aria-hidden="true">›</span><a href="../../categorien/e-mail/index.html">E-mail</a><span class="sep" aria-hidden="true">›</span><a href="../../categorien/artikelenmogelijkhedene-mail/index.html">Mogelijkheden e-mail</a><span class="sep" aria-hidden="true">›</span><span aria-current="page">E-mail vanuit dossier versturen</span></nav></div></div>
+<main class="article">
+  <div class="wrap cols">
+    <article>
+      <h1>E-mail vanuit dossier versturen</h1>
+      <p class="meta">Laatste update: 22 juni 2020</p>
+      <div class="content"><nav class="toc" aria-label="Inhoud"><ul><li><a href="#e-mail-verzenden">E-mail verzenden</a></li><li><a href="#e-mail-vanuit-een-dossier-aanmaken">E-mail vanuit een dossier aanmaken</a></li><li><a href="#concept-e-mail">Concept e-mail</a></li><li><a href="#e-mail-inplannen">E-mail inplannen</a></li><li><a href="#tekstveld">Tekstveld</a></li><li><a href="#registratie">Registratie</a></li><li><a href="#e-mail-vanuit-algemene-e-mailbox-aanmaken">E-mail vanuit algemene e-mailbox aanmaken</a></li></ul></nav><h2 id="e-mail-verzenden">E-mail verzenden</h2>
+<h2 id="e-mail-vanuit-een-dossier-aanmaken">E-mail vanuit een dossier aanmaken</h2>
+<p>Een e-mail opstellen voor en/of over een klant doe je vanuit het klantdossier. Dit heeft als voordeel dat alle correspondentie betreffende de klant in het dossier terug te vinden is.</p>
+<p>In het dossier klik je rechtsboven op de snelkoppeling &quot;e-mail aanmaken&quot;. Je komt dan in het scherm communicatie -&gt; e-mail.</p>
+<p>Wanneer de de e-mail betrekking heeft op een product, dan ga je eerst naar het product en klikt dan bij snelkoppelingen op &quot;e-mail aanmaken&quot;.</p>
+<p>E-mailbox: wanneer je recht hebt tot meerdere e-mailboxen, dan kan je ook vanuit meerdere boxen e-mailen. Je hebt één standaard e-mailbox, dit staat in &#x27;mijn instellingen&#x27; ingeregeld. Daaronder vind je de &#x27;Aan&#x27;, &#x27;CC&#x27;en &#x27;BCC&#x27;.<br>Standaardteksten: hier selecteer je een standaard tekst. Indien bij de standaard teksten een omschrijving meegegeven is, wordt deze in de onderwerpregel geplaatst na selecteren van de standaard tekst.<br>Prioriteit: het is daarnaast mogelijk om een bepaalde prioriteit toe te kennen aan de e-mail en om een leesbevestiging te vragen.<br>Handtekening: indien er een standaard handtekening onder de gebruiker aanwezig is, kan deze hier geselecteerd worden.<br>Bijlagen toevoegen: er zijn meerdere manieren om documenten aan de e-mail toe te voegen, namelijk: vanuit het dossier, vanuit een map of bureaublad slepen naar het betreffende veld of klikken op het veld en document vanuit de map selecteren. Deze bijlagen kunnen na het verzenden gekoppeld worden aan het dossier door het vinkje daar aan te zetten.</p>
+<h2 id="concept-e-mail">Concept e-mail</h2>
+<p>Indien je een e-mail als concept op wilt slaan, klik je hiervoor rechtsboven op de groene knop &#x27;concept&#x27;. In het e-mailoverzicht vind je jouw concept e-mail terug. De regelkleur is oranje en &#x27;Concept&#x27; staat dik gedrukt.</p>
+<p>Het kan zijn dat je de e-mail op een later tijdstip af wilt maken. Je kunt de e-mail dan als &quot;Concept&quot; opslaan. Klik rechtsonder het witte tekstvak op &#x27;Opslaan als concept&#x27;. De e-mail wordt automatisch als concept opgeslagen wanneer het typen langer dan 5 minuten duurt. Je krijgt tussentijds de melding dat de &#x27;Autosave&#x27; is gelukt (of niet)</p>
+<h2 id="e-mail-inplannen">E-mail inplannen</h2>
+<p>Ook is het mogelijk om een e-mail in te plannen. Klik hiervoor op het pijltje naast &#x27;Verzenden&#x27; en klik op &#x27;Verzend later&#x27;. Nadat hiervoor gekozen is, kun je een voorgestelde tijdstip/dag kiezen of deze zelf invullen. De e-mail wordt met het gekozen verzendmoment als concept opgeslagen, nadat er op de &#x27;bevestig&#x27; button is gedrukt.</p>
+<h2 id="tekstveld">Tekstveld</h2>
+<p>Het onderwerp van de e-mail kan vrij ingevuld worden of er kan gebruik gemaakt worden van een tag die het standaard e-mail onderwerp invult. Dit kan bijvoorbeeld het dossiernummer zijn of indien er een product gekoppeld is, een offertenummer. Wanneer er links een standaard tekst geselecteerd wordt en met de + toegevoegd is deze hier zichtbaar.</p>
+<h2 id="registratie">Registratie</h2>
+<p>Aan de e-mail kan een registratie gekoppeld worden. Zo kan de besteedde tijd aan het dossier worden bijgehouden.</p>
+<p>Wanneer de tekst gereed is en de e-mail verzonden kan worden, klik je op &#x27;Verzenden&#x27; links onder. De e-mail wordt verstuurd.</p>
+<p>De verzonden e-mail staat nu onder Communicatie-&gt;E-mail.</p>
+<h2 id="e-mail-vanuit-algemene-e-mailbox-aanmaken">E-mail vanuit algemene e-mailbox aanmaken</h2>
+<p>Naast het versturen vanuit een dossier is er de mogelijkheid om een e-mail te versturen vanuit de &#x27;algemene&#x27; e-mailbox. Hiervoor ga je naar het e-mail icoon (envelop) links bovenaan de pagina. Voor een nieuwe e-mail klik je op &#x27;Opstellen&#x27;. Daarna werkt de module zoals beschreven bij e-mail vanuit dossier aanmaken.</p>
+<p>Tagged: aanmaken, concept, e-mail, email, mail, versturen, verzenden</p></div>
+      <section class="figs"><h2>Afbeeldingen bij dit artikel</h2><figure><a href="https://web.archive.org/web/20200918193939im_/http://support.fasterforward.nl/wp-content/uploads/2016/Dossier/Dossier_email_links.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20200918193939im_/http://support.fasterforward.nl/wp-content/uploads/2016/Dossier/Dossier_email_links.png" alt="email" loading="lazy" onerror="this.closest('figure').remove()"></a><figcaption>email</figcaption></figure><figure><a href="https://web.archive.org/web/20200918193939im_/http://support.fasterforward.nl/wp-content/uploads/2018/06/concept.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20200918193939im_/http://support.fasterforward.nl/wp-content/uploads/2018/06/concept.png" alt="concept" loading="lazy" onerror="this.closest('figure').remove()"></a><figcaption>concept</figcaption></figure><figure><a href="https://web.archive.org/web/20200918193939im_/http://support.fasterforward.nl/wp-content/uploads/2016/Dossier/Dossier_email_tekstveld.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20200918193939im_/http://support.fasterforward.nl/wp-content/uploads/2016/Dossier/Dossier_email_tekstveld.png" alt="email2" loading="lazy" onerror="this.closest('figure').remove()"></a><figcaption>email2</figcaption></figure></section>
+      <details class="orig"><summary>Schermafbeelding van de oorspronkelijke pagina</summary><img src="../../bronnen/offline-archief/shots/hoe-maak-ik-een-e-mail-in-een-dossier-aan.jpg" alt="Schermafbeelding van E-mail vanuit dossier versturen" loading="lazy"></details>
+      <p class="src">Bron: <a href="https://web.archive.org/web/20200918193939/https://support.fasterforward.nl/kennisbank/hoe-maak-ik-een-e-mail-in-een-dossier-aan/" target="_blank" rel="noopener">Wayback Machine-archief</a></p>
+    </article>
+    <aside class="related"><h2>Gerelateerd:</h2><ul><li><a href="../../kennisbank/hoe-maak-ik-een-e-mail-aan/index.html">E-mail versturen vanuit e-mailbox</a></li><li><a href="../../kennisbank/e-mail-pdf-bijlagen-samenvoegen-en-splitsen/index.html">E-mail PDF-bijlagen samenvoegen en splitsen</a></li><li><a href="../../kennisbank/hoe-stel-afwezigheidsassistent/index.html">Automatisch antwoord instellen</a></li><li><a href="../../kennisbank/e-mail-notificatie/index.html">E-mail notificatie instellen</a></li><li><a href="../../kennisbank/bijlage-aan-e-mail-toevoegen/index.html">Bijlage aan een e-mail toevoegen en verwijderen</a></li><li><a href="../../kennisbank/prullenbak-e-mail/index.html">De prullenbak in de e-mail</a></li></ul></aside>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span>Copyright © 2024 Blinqx powered by Faster Forward</span>
+    <nav aria-label="Beleid">
+      <a href="../../supportbeleid/index.html">Supportbeleid</a>
+      <a href="../../opdrachtenbeleid/index.html">Opdrachtenbeleid</a>
+      <a href="../../klachtenbeleid/index.html">Klachtenbeleid</a>
+      <a href="../../wensenbeleid/index.html">Wensenbeleid</a>
+      <a href="../../video/index.html">Video's &amp; e-learning</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
