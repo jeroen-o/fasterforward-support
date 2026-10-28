@@ -409,6 +409,9 @@ def build_structure(pages):
         if p["path"] == "":
             p["skip"] = True
             continue
+        if p["path"] in ("kennisbank", "video", "zoeken", "categorien", "category"):
+            p["skip"] = True  # overzichtspagina's maken we zelf
+            continue
         if "/page/" in p["u"] or p["path"].startswith(("tag/", "tags/")):
             p["skip"] = True
             continue
@@ -901,52 +904,63 @@ def render_kennisbank(cats):
     write("kennisbank", layout(pg, "Kennisbank", body))
 
 
-def render_search(pages):
+def search_kind(p):
+    cr = p["crumb"] or []
+    if cr and cr[0] in FEEDS:
+        return {"Nieuws": "nieuws", "Tips": "tips", "Release notes": "release"}[cr[0]]
+    if cr and cr[0] == "Overig":
+        return "overig"
+    return "kennisbank"
+
+
+def render_search(pages, cats):
     pg = Page("zoeken")
     idx = []
     for p in pages.values():
-        if p.get("skip") or p.get("role") not in ("article",):
+        if p.get("skip") or p.get("role") != "article":
             continue
-        txt = " ".join(p["lines"])
-        idx.append({"t": p["t"], "p": p["path"], "c": " › ".join(p["crumb"] or []),
-                    "e": p.get("excerpt", "")[:200], "x": txt[:6000]})
-    data = json.dumps(idx, ensure_ascii=False).replace("</", "<\\/")
+        d = p["posted"] or p["updated"]
+        idx.append({"t": p["t"], "h": p["path"] + "/index.html", "c": " › ".join(p["crumb"] or []),
+                    "k": search_kind(p), "d": fmt_date(d) if d else "",
+                    "x": re.sub(r"\s+", " ", " ".join(p["lines"]))[:15000]})
+    for name, c in cats.items():
+        if c["subs"] or c["loose"]:
+            idx.append({"t": name, "h": cat_target(cats, name) + "/index.html", "c": "Kennisbank", "k": "categorie",
+                        "x": " ".join(s_["name"] for s_ in c["subs"].values())})
+        for sub in c["subs"].values():
+            if sub["items"]:
+                idx.append({"t": sub["name"], "h": sub_target(cats, name, sub) + "/index.html", "c": "Kennisbank › " + name,
+                            "k": "categorie", "x": " ".join(x["t"] for x in sub["items"])})
+    for g in json.load(open(os.path.join(TOOLS, "videos.json"), encoding="utf8")):
+        for v in g["videos"]:
+            idx.append({"t": v["t"], "h": "video/index.html#v-" + v["id"], "c": "Video's › " + g["group"], "k": "video",
+                        "x": " ".join(x for x in (v.get("ch"), g["group"]) if x)})
+    for l in open(os.path.join(TOOLS, "elearning.txt"), encoding="utf8"):
+        if l.strip() and not l.startswith("#"):
+            label, url, title, _ = l.rstrip("\n").split("|")
+            idx.append({"t": re.sub(r"^eBlinqx Connect:\s*", "", title).rstrip(".") or label, "h": url, "ext": 1,
+                        "c": "E-learning", "k": "video", "x": label + " " + title + " e-learning instructie"})
+    os.makedirs(os.path.join(ROOT, "zoeken"), exist_ok=True)
+    with open(os.path.join(ROOT, "zoeken", "zoekindex.js"), "w", encoding="utf8") as fh:
+        fh.write("window.ZOEKINDEX=" + json.dumps(idx, ensure_ascii=False, separators=(",", ":")) + ";\n")
     body = f"""{crumbs(pg, [("Zoeken", None)])}
-<main class="subpage"><div class="wrap">
+<main class="subpage searchpage"><div class="wrap">
   <h1 id="sh">Zoeken</h1>
-  <p id="scount" class="meta"></p>
+  <div class="sfilters" role="group" aria-label="Filter op soort">
+    <button type="button" data-k="" aria-pressed="true">Alles</button>
+    <button type="button" data-k="kennisbank" aria-pressed="false">Kennisbank</button>
+    <button type="button" data-k="release" aria-pressed="false">Release notes</button>
+    <button type="button" data-k="nieuws" aria-pressed="false">Nieuws &amp; tips</button>
+    <button type="button" data-k="video" aria-pressed="false">Video's &amp; e-learning</button>
+  </div>
+  <p id="scount" class="meta" aria-live="polite"></p>
   <div class="exlist" id="sres"></div>
+  <p><button type="button" id="smore" class="smore" hidden>Toon meer resultaten</button></p>
 </div></main>
-<script>
-const IDX = {data};
-const PRE = "../";
-function esc(s){{return (s||"").replace(/[&<>"']/g,c=>({{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}})[c]);}}
-for (const r of IDX){{ r._t = r.t.toLowerCase(); r._x = r.x.toLowerCase(); }}
-function run(q){{
-  const terms = q.toLowerCase().split(/\\s+/).filter(Boolean);
-  document.querySelector('.search input').value = q;
-  document.getElementById("sh").textContent = q ? `Zoekresultaten voor “${{q}}”` : "Zoeken";
-  if (!terms.length){{ document.getElementById("scount").textContent = "Typ een zoekterm in het zoekveld hierboven."; document.getElementById("sres").innerHTML=""; return; }}
-  const res = [];
-  for (const r of IDX){{
-    let score = 0, ok = true;
-    for (const t of terms){{
-      const inT = r._t.includes(t), inX = r._x.includes(t);
-      if (!inT && !inX){{ ok = false; break; }}
-      score += (inT ? 10 : 0) + (inX ? 1 : 0);
-    }}
-    if (ok) res.push([score, r]);
-  }}
-  res.sort((a,b)=>b[0]-a[0]);
-  document.getElementById("scount").textContent = res.length + (res.length === 1 ? " resultaat" : " resultaten");
-  document.getElementById("sres").innerHTML = res.slice(0,100).map(([,r]) =>
-    `<article class="ex"><h2><a href="${{PRE + r.p}}/index.html">${{esc(r.t)}}</a></h2>` +
-    (r.c ? `<p class="cpath">${{esc(r.c)}}</p>` : "") +
-    (r.e ? `<p>${{esc(r.e)}}</p>` : "") + `</article>`).join("") || "<p>Geen resultaten gevonden.</p>";
-}}
-run(new URLSearchParams(location.search).get("q") || "");
-</script>"""
+<script src="zoekindex.js"></script>
+<script src="zoeken.js"></script>"""
     write("zoeken", layout(pg, "Zoeken", body))
+    shutil.copy(os.path.join(TOOLS, "zoeken.js"), os.path.join(ROOT, "zoeken", "zoeken.js"))
 
 
 def render_home(cats, feeds, pages):
@@ -1081,11 +1095,11 @@ def render_video():
             meta = " · ".join(x for x in (v.get("ch"), fmt_dur(v.get("d"))) if x)
             thumb = pg.rel(f'assets/video/{v["id"]}.jpg')
             if v.get("url"):
-                vs.append(f'<div class="video"><a class="frame" href="{esc(v["url"])}" target="_blank" rel="noopener"><img src="{thumb}" alt="" loading="lazy">'
+                vs.append(f'<div class="video" id="v-{esc(v["id"])}"><a class="frame" href="{esc(v["url"])}" target="_blank" rel="noopener"><img src="{thumb}" alt="" loading="lazy">'
                           f'<span class="play"><svg class="ic"><use href="#i-play"/></svg></span></a>'
                           f'<h3><a href="{esc(v["url"])}" target="_blank" rel="noopener">{esc(v["t"])}</a></h3><p>{esc(meta)}</p></div>')
             else:
-                vs.append(f'<div class="video"><div class="frame" data-yt="{esc(v["id"])}"><img src="{thumb}" alt="" loading="lazy">'
+                vs.append(f'<div class="video" id="v-{esc(v["id"])}"><div class="frame" data-yt="{esc(v["id"])}"><img src="{thumb}" alt="" loading="lazy">'
                           f'<button class="play" type="button" aria-label="Speel {esc(v["t"])} af"><svg class="ic"><use href="#i-play"/></svg></button></div>'
                           f'<h3><a href="https://www.youtube.com/watch?v={esc(v["id"])}" target="_blank" rel="noopener">{esc(v["t"])}</a></h3><p>{esc(meta)}</p></div>')
         sections.append(f'<section class="vgroup"><h2>{esc(g["group"])}</h2><div class="vgrid">{"".join(vs)}</div></section>')
@@ -1165,7 +1179,7 @@ def main():
         render_feed(name, items)
     render_kennisbank(cats)
     render_video()
-    render_search(pages)
+    render_search(pages, cats)
     render_home(cats, feeds, pages)
     render_404()
     render_sitemap(pages)
