@@ -766,8 +766,6 @@ def render_article(cats, feeds, p):
         imgs = (f'<p class="replay"><a class="btn-out" href="{esc(REPLAYS[p["path"]])}" target="_blank" rel="noopener">'
                 f'<svg class="ic"><use href="#i-play"/></svg> Bekijk de webinar-replay</a></p>') + imgs
     src = ""
-    if p["wayback"]:
-        src = f'<p class="src">Bron: <a href="{esc(p["wayback"])}" target="_blank" rel="noopener">Wayback Machine-archief</a></p>'
     rel = related(cats, feeds, p)
     side = ""
     if rel:
