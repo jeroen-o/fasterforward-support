@@ -214,3 +214,36 @@ main h1{font-size:30px;font-weight:700;color:var(--heading);margin:0 0 26px;line
 .replay .btn-out{width:auto;display:inline-flex;gap:10px;padding:0 22px;font-size:16px;color:#000}
 .replay .btn-out .ic{width:26px;height:26px}
 .figs:not(:has(figure)){display:none}
+.content table{border-collapse:collapse;margin:0 0 18px;font-size:13.5px;max-width:100%;display:block;overflow-x:auto}
+.content td,.content th{border:1px solid #E3E3E3;padding:6px 10px;text-align:left;vertical-align:top}
+.content th{background:#F7F7F7}
+.content figure{margin:16px 0}
+.content img{max-width:100%;height:auto}
+.content iframe{width:100%;aspect-ratio:16/9;border:0}
+.content .wp-block-columns{display:block}
+/* mobiel: lange woorden en URL's mogen afbreken, niets breder dan het scherm */
+.crumbs nav,.content,.related,main h1,.card h3,.ex h2,.subcat li,.panel a{overflow-wrap:anywhere}
+.content pre{white-space:pre-wrap}
+.content *{max-width:100%}
+@media (max-width:640px){
+  .crumbs{padding:16px 0;font-size:13px}
+  main.article,main.catpage,main.subpage,main.feed{padding:28px 0 44px}
+  .toc{padding:14px 16px 10px}
+  .card{padding:16px 16px}
+  .tiles .tile{aspect-ratio:auto;min-height:120px}
+  .btn-row{gap:12px;margin-bottom:24px}
+  .btn-out{width:100%}
+  .home h2{margin-top:36px}
+  .head-row{padding-top:16px;gap:14px}
+  .brand{width:240px}
+  .brand span{margin-left:69px;font-size:12px}
+  nav.main a{padding:4px 8px;font-size:13px}
+  .search-row{padding-bottom:18px;gap:12px}
+  footer .wrap{padding:24px 16px}
+  footer nav{gap:10px 16px}
+}
+@media (max-width:640px){
+  #elearning .vgrid{grid-template-columns:1fr 1fr;gap:14px}
+  #elearning .video .frame{aspect-ratio:4/3}
+  #elearning .video h3{font-size:13px}
+}

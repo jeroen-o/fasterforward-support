@@ -70,7 +70,8 @@ def main():
         if not rel:
             continue
         dest = os.path.join(ROOT, rel)
-        if os.path.exists(dest) and os.path.getsize(dest) > 0:
+        alt = os.path.join(ROOT, "bronnen", "wayback", rel)
+        if (os.path.exists(dest) and os.path.getsize(dest) > 0) or os.path.exists(alt):
             skipped += 1
             continue
         tries = [w for w in waybacks if w] + [f"https://web.archive.org/web/2026im_/{src}", src]

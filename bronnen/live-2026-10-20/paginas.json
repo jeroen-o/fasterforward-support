@@ -1,0 +1,425 @@
+[
+ {
+  "url": "https://support.fasterforward.nl/contact/",
+  "titel": "Contact support",
+  "categorie": "",
+  "geplaatst": "",
+  "html": "paginas-html/contact.html",
+  "tekst": "paginas-tekst/contact.txt",
+  "tekens": 1432
+ },
+ {
+  "url": "https://support.fasterforward.nl/inzicht-dataverbruik-en-verbeteringen-klantportaal-e-mail-en-inloggen/",
+  "titel": "Inzicht dataverbruik en verbeteringen Klantportaal, e-mail en inloggen",
+  "categorie": "Release",
+  "geplaatst": "16 oktober 2026",
+  "html": "paginas-html/inzicht-dataverbruik-en-verbeteringen-klantportaal-e-mail-en-inloggen.html",
+  "tekst": "paginas-tekst/inzicht-dataverbruik-en-verbeteringen-klantportaal-e-mail-en-inloggen.txt",
+  "tekens": 9644
+ },
+ {
+  "url": "https://support.fasterforward.nl/optimalisaties-uwkluis-verbeteringen-quinn-mail-en-ai-gebruik-gemakkelijk-inzien/",
+  "titel": "Optimalisaties Uwkluis, verbeteringen Quinn Mail en AI gebruik gemakkelijk inzien",
+  "categorie": "Release",
+  "geplaatst": "18 september 2026 (Laatste update: 29 september 2026)",
+  "html": "paginas-html/optimalisaties-uwkluis-verbeteringen-quinn-mail-en-ai-gebruik-gemakkelijk-inzien.html",
+  "tekst": "paginas-tekst/optimalisaties-uwkluis-verbeteringen-quinn-mail-en-ai-gebruik-gemakkelijk-inzien.txt",
+  "tekens": 13135
+ },
+ {
+  "url": "https://support.fasterforward.nl/inkoop-via-per-maatschappij-instellen-aanleveren-stuk-taak-ia-berichten-en-meer/",
+  "titel": "Inkoop via per maatschappij instellen, aanleveren stuk, taak IA berichten en meer",
+  "categorie": "Release",
+  "geplaatst": "7 augustus 2026 (Laatste update: 17 augustus 2026)",
+  "html": "paginas-html/inkoop-via-per-maatschappij-instellen-aanleveren-stuk-taak-ia-berichten-en-meer.html",
+  "tekst": "paginas-tekst/inkoop-via-per-maatschappij-instellen-aanleveren-stuk-taak-ia-berichten-en-meer.txt",
+  "tekens": 8130
+ },
+ {
+  "url": "https://support.fasterforward.nl/portefeuillewaarde-overzicht-uitgebreid-verbeteringen-bankgarantie-en-aplaza-document-in-specifieke-map/",
+  "titel": "Portefeuillewaarde-overzicht uitgebreid, verbeteringen bankgarantie en Aplaza document in specifieke map",
+  "categorie": "Release",
+  "geplaatst": "6 juli 2026 (Laatste update: 14 juli 2026)",
+  "html": "paginas-html/portefeuillewaarde-overzicht-uitgebreid-verbeteringen-bankgarantie-en-aplaza-document-in-specifieke-map.html",
+  "tekst": "paginas-tekst/portefeuillewaarde-overzicht-uitgebreid-verbeteringen-bankgarantie-en-aplaza-document-in-specifieke-map.txt",
+  "tekens": 8803
+ },
+ {
+  "url": "https://support.fasterforward.nl/verbeteringen-performance/",
+  "titel": "Verbeteringen performance",
+  "categorie": "Release",
+  "geplaatst": "19 juni 2026 (Laatste update: 22 juni 2026)",
+  "html": "paginas-html/verbeteringen-performance.html",
+  "tekst": "paginas-tekst/verbeteringen-performance.txt",
+  "tekens": 3698
+ },
+ {
+  "url": "https://support.fasterforward.nl/voorbereidingen-op-hdn-26-en-verbeteringen-portefeuillesignalen/",
+  "titel": "Voorbereidingen op HDN 26 en verbeteringen PortefeuilleSignalen",
+  "categorie": "Release",
+  "geplaatst": "26 mei 2026 (Laatste update: 15 juni 2026)",
+  "html": "paginas-html/voorbereidingen-op-hdn-26-en-verbeteringen-portefeuillesignalen.html",
+  "tekst": "paginas-tekst/voorbereidingen-op-hdn-26-en-verbeteringen-portefeuillesignalen.txt",
+  "tekens": 6102
+ },
+ {
+  "url": "https://support.fasterforward.nl/nog-meer-data-en-documenten-vergelijken/",
+  "titel": "Nog meer data en documenten vergelijken",
+  "categorie": "Release",
+  "geplaatst": "29 april 2026",
+  "html": "paginas-html/nog-meer-data-en-documenten-vergelijken.html",
+  "tekst": "paginas-tekst/nog-meer-data-en-documenten-vergelijken.txt",
+  "tekens": 6682
+ },
+ {
+  "url": "https://support.fasterforward.nl/gemakkelijk-data-en-documenten-vergelijken/",
+  "titel": "Gemakkelijk data en documenten vergelijken",
+  "categorie": "Release",
+  "geplaatst": "25 maart 2026 (Laatste update: 10 april 2026)",
+  "html": "paginas-html/gemakkelijk-data-en-documenten-vergelijken.html",
+  "tekst": "paginas-tekst/gemakkelijk-data-en-documenten-vergelijken.txt",
+  "tekens": 5965
+ },
+ {
+  "url": "https://support.fasterforward.nl/verbeteringen-boekhouding-en-facturatie/",
+  "titel": "Verbeteringen boekhouding en facturatie",
+  "categorie": "Release",
+  "geplaatst": "13 maart 2026",
+  "html": "paginas-html/verbeteringen-boekhouding-en-facturatie.html",
+  "tekst": "paginas-tekst/verbeteringen-boekhouding-en-facturatie.txt",
+  "tekens": 6861
+ },
+ {
+  "url": "https://support.fasterforward.nl/verbeteringen-gespreksopname-en-onder-de-motorkap/",
+  "titel": "Verbeteringen gespreksopname en onder de motorkap",
+  "categorie": "Release",
+  "geplaatst": "20 februari 2026",
+  "html": "paginas-html/verbeteringen-gespreksopname-en-onder-de-motorkap.html",
+  "tekst": "paginas-tekst/verbeteringen-gespreksopname-en-onder-de-motorkap.txt",
+  "tekens": 3052
+ },
+ {
+  "url": "https://support.fasterforward.nl/verbeteringen-onder-de-motorkap-en-gespreksopnames/",
+  "titel": "Verbeteringen onder de motorkap en gespreksopnames",
+  "categorie": "Release",
+  "geplaatst": "9 januari 2026",
+  "html": "paginas-html/verbeteringen-onder-de-motorkap-en-gespreksopnames.html",
+  "tekst": "paginas-tekst/verbeteringen-onder-de-motorkap-en-gespreksopnames.txt",
+  "tekens": 4365
+ },
+ {
+  "url": "https://support.fasterforward.nl/hdn-release-afscheid-van-hdn-certificaten/",
+  "titel": "HDN release: afscheid van HDN certificaten",
+  "categorie": "Release",
+  "geplaatst": "25 november 2025",
+  "html": "paginas-html/hdn-release-afscheid-van-hdn-certificaten.html",
+  "tekst": "paginas-tekst/hdn-release-afscheid-van-hdn-certificaten.txt",
+  "tekens": 2416
+ },
+ {
+  "url": "https://support.fasterforward.nl/verbeterde-verwerking-van-grote-e-mailvolumes-via-office-365-en-voorbereiding-hdn/",
+  "titel": "Verbeterde verwerking van grote e-mailvolumes via Office 365 en voorbereiding HDN",
+  "categorie": "Release",
+  "geplaatst": "14 november 2025 (Laatste update: 19 november 2025)",
+  "html": "paginas-html/verbeterde-verwerking-van-grote-e-mailvolumes-via-office-365-en-voorbereiding-hdn.html",
+  "tekst": "paginas-tekst/verbeterde-verwerking-van-grote-e-mailvolumes-via-office-365-en-voorbereiding-hdn.txt",
+  "tekens": 3766
+ },
+ {
+  "url": "https://support.fasterforward.nl/nu-zelf-schade-en-levensverzekeringen-omnummeren/",
+  "titel": "Nu zelf schade- en levensverzekeringen omnummeren",
+  "categorie": "Release",
+  "geplaatst": "20 oktober 2025",
+  "html": "paginas-html/nu-zelf-schade-en-levensverzekeringen-omnummeren.html",
+  "tekst": "paginas-tekst/nu-zelf-schade-en-levensverzekeringen-omnummeren.txt",
+  "tekens": 1927
+ },
+ {
+  "url": "https://support.fasterforward.nl/verbeteringen-onder-de-motorkap-en-type-documenten-gecontroleerd/",
+  "titel": "Verbeteringen onder de motorkap en type documenten gecontroleerd",
+  "categorie": "Release",
+  "geplaatst": "12 september 2025 (Laatste update: 19 september 2025)",
+  "html": "paginas-html/verbeteringen-onder-de-motorkap-en-type-documenten-gecontroleerd.html",
+  "tekst": "paginas-tekst/verbeteringen-onder-de-motorkap-en-type-documenten-gecontroleerd.txt",
+  "tekens": 6962
+ },
+ {
+  "url": "https://support.fasterforward.nl/gespreksopname-omzetten-in-acties-verbeteringen-tp-incasso-en-meer/",
+  "titel": "Gespreksopname omzetten in acties, verbeteringen TP incasso en meer",
+  "categorie": "Release",
+  "geplaatst": "8 augustus 2025 (Laatste update: 12 augustus 2025)",
+  "html": "paginas-html/gespreksopname-omzetten-in-acties-verbeteringen-tp-incasso-en-meer.html",
+  "tekst": "paginas-tekst/gespreksopname-omzetten-in-acties-verbeteringen-tp-incasso-en-meer.txt",
+  "tekens": 10460
+ },
+ {
+  "url": "https://support.fasterforward.nl/klantrelaties-volledig-in-beeld-en-nieuwe-beheerdersmelding/",
+  "titel": "Klantrelaties volledig in beeld en nieuwe beheerdersmelding",
+  "categorie": "Release",
+  "geplaatst": "4 juli 2025",
+  "html": "paginas-html/klantrelaties-volledig-in-beeld-en-nieuwe-beheerdersmelding.html",
+  "tekst": "paginas-tekst/klantrelaties-volledig-in-beeld-en-nieuwe-beheerdersmelding.txt",
+  "tekens": 5181
+ },
+ {
+  "url": "https://support.fasterforward.nl/vernieuwde-pensioenkaart/",
+  "titel": "Vernieuwde pensioenkaart",
+  "categorie": "Release",
+  "geplaatst": "20 mei 2025 (Laatste update: 10 juni 2025)",
+  "html": "paginas-html/vernieuwde-pensioenkaart.html",
+  "tekst": "paginas-tekst/vernieuwde-pensioenkaart.txt",
+  "tekens": 3394
+ },
+ {
+  "url": "https://support.fasterforward.nl/elements-en-eblinqx-voorbereid-op-hdn25-release/",
+  "titel": "Elements en eBlinqx voorbereid op HDN25 release",
+  "categorie": "Release",
+  "geplaatst": "20 mei 2025",
+  "html": "paginas-html/elements-en-eblinqx-voorbereid-op-hdn25-release.html",
+  "tekst": "paginas-tekst/elements-en-eblinqx-voorbereid-op-hdn25-release.txt",
+  "tekens": 2519
+ },
+ {
+  "url": "https://support.fasterforward.nl/openstaande-facturen-op-betalingsoverzicht-en-koppeling-mytp-openen-vanuit-schadeproduct/",
+  "titel": "Openstaande facturen op betalingsoverzicht en koppeling MyTP openen vanuit schadeproduct",
+  "categorie": "Release",
+  "geplaatst": "6 mei 2025",
+  "html": "paginas-html/openstaande-facturen-op-betalingsoverzicht-en-koppeling-mytp-openen-vanuit-schadeproduct.html",
+  "tekst": "paginas-tekst/openstaande-facturen-op-betalingsoverzicht-en-koppeling-mytp-openen-vanuit-schadeproduct.txt",
+  "tekens": 5544
+ },
+ {
+  "url": "https://support.fasterforward.nl/uitgaande-e-mail-versturen-via-office-365-export-naar-adviesbox-online-verbeterd-en-meer/",
+  "titel": "Uitgaande e-mail versturen via Office 365, export naar Adviesbox online verbeterd en meer",
+  "categorie": "Release",
+  "geplaatst": "28 maart 2025 (Laatste update: 01 april 2025)",
+  "html": "paginas-html/uitgaande-e-mail-versturen-via-office-365-export-naar-adviesbox-online-verbeterd-en-meer.html",
+  "tekst": "paginas-tekst/uitgaande-e-mail-versturen-via-office-365-export-naar-adviesbox-online-verbeterd-en-meer.txt",
+  "tekens": 7866
+ },
+ {
+  "url": "https://support.fasterforward.nl/verbeteringen-uwkluis-schademelding-finly-en-zwevende-actieknoppen/",
+  "titel": "Verbeteringen Uwkluis, schademelding, Finly en zwevende actieknoppen",
+  "categorie": "Release",
+  "geplaatst": "14 februari 2025 (Laatste update: 18 februari 2025)",
+  "html": "paginas-html/verbeteringen-uwkluis-schademelding-finly-en-zwevende-actieknoppen.html",
+  "tekst": "paginas-tekst/verbeteringen-uwkluis-schademelding-finly-en-zwevende-actieknoppen.txt",
+  "tekens": 7270
+ },
+ {
+  "url": "https://support.fasterforward.nl/stukken-beoordelen-koppeling-voogd-voogd-en-meer/",
+  "titel": "Stukken beoordelen, koppeling Voogd & Voogd en meer",
+  "categorie": "Release",
+  "geplaatst": "3 januari 2025 (Laatste update: 17 januari 2025)",
+  "html": "paginas-html/stukken-beoordelen-koppeling-voogd-voogd-en-meer.html",
+  "tekst": "paginas-tekst/stukken-beoordelen-koppeling-voogd-voogd-en-meer.txt",
+  "tekens": 7659
+ },
+ {
+  "url": "https://support.fasterforward.nl/gebruikers-beheren-vanuit-omgeving-en-finly-formulieren-versturen-vanuit-tabblad/",
+  "titel": "Gebruikers beheren vanuit omgeving en Finly formulieren versturen vanuit tabblad",
+  "categorie": "Release",
+  "geplaatst": "15 november 2024 (Laatste update: 18 november 2024)",
+  "html": "paginas-html/gebruikers-beheren-vanuit-omgeving-en-finly-formulieren-versturen-vanuit-tabblad.html",
+  "tekst": "paginas-tekst/gebruikers-beheren-vanuit-omgeving-en-finly-formulieren-versturen-vanuit-tabblad.txt",
+  "tekens": 4591
+ },
+ {
+  "url": "https://support.fasterforward.nl/verbeteringen-productkaarten-en-uwkluis/",
+  "titel": "Verbeteringen productkaarten en Uwkluis",
+  "categorie": "Release",
+  "geplaatst": "14 oktober 2024",
+  "html": "paginas-html/verbeteringen-productkaarten-en-uwkluis.html",
+  "tekst": "paginas-tekst/verbeteringen-productkaarten-en-uwkluis.txt",
+  "tekens": 3779
+ },
+ {
+  "url": "https://support.fasterforward.nl/gemakkelijk-indexeren-uitnodigingen-accepteren-afwijzen-en-meer/",
+  "titel": "Gemakkelijk indexeren, uitnodigingen accepteren/afwijzen en meer",
+  "categorie": "Release",
+  "geplaatst": "6 september 2024",
+  "html": "paginas-html/gemakkelijk-indexeren-uitnodigingen-accepteren-afwijzen-en-meer.html",
+  "tekst": "paginas-tekst/gemakkelijk-indexeren-uitnodigingen-accepteren-afwijzen-en-meer.txt",
+  "tekens": 7398
+ },
+ {
+  "url": "https://support.fasterforward.nl/verbeteringen-adn-inbox-en-uwkluis-en-meer/",
+  "titel": "Verbeteringen ADN inbox en Uwkluis en meer",
+  "categorie": "Release",
+  "geplaatst": "2 augustus 2024 (Laatste update: 27 augustus 2024)",
+  "html": "paginas-html/verbeteringen-adn-inbox-en-uwkluis-en-meer.html",
+  "tekst": "paginas-tekst/verbeteringen-adn-inbox-en-uwkluis-en-meer.txt",
+  "tekens": 7426
+ },
+ {
+  "url": "https://support.fasterforward.nl/verbeteringen-uwkluis-uitbreiding-ockto-en-meer/",
+  "titel": "Verbeteringen Uwkluis, uitbreiding Ockto en meer",
+  "categorie": "Release",
+  "geplaatst": "28 juni 2024 (Laatste update: 29 juli 2024)",
+  "html": "paginas-html/verbeteringen-uwkluis-uitbreiding-ockto-en-meer.html",
+  "tekst": "paginas-tekst/verbeteringen-uwkluis-uitbreiding-ockto-en-meer.txt",
+  "tekens": 9152
+ },
+ {
+  "url": "https://support.fasterforward.nl/hdn-24-genderneutraal-ondersteund-en-meer/",
+  "titel": "HDN 24, genderneutraal ondersteund en meer",
+  "categorie": "Release",
+  "geplaatst": "14 mei 2024 (Laatste update: 22 mei 2024)",
+  "html": "paginas-html/hdn-24-genderneutraal-ondersteund-en-meer.html",
+  "tekst": "paginas-tekst/hdn-24-genderneutraal-ondersteund-en-meer.txt",
+  "tekens": 5754
+ },
+ {
+  "url": "https://support.fasterforward.nl/handmatig-prolongeren-maatschappij-incasso-bankgarantie-accorderen-via-uwkluis-en-meer/",
+  "titel": "Handmatig prolongeren maatschappij-incasso, bankgarantie accorderen via Uwkluis en meer",
+  "categorie": "Release",
+  "geplaatst": "15 maart 2024 (Laatste update: 20 maart 2024)",
+  "html": "paginas-html/handmatig-prolongeren-maatschappij-incasso-bankgarantie-accorderen-via-uwkluis-en-meer.html",
+  "tekst": "paginas-tekst/handmatig-prolongeren-maatschappij-incasso-bankgarantie-accorderen-via-uwkluis-en-meer.txt",
+  "tekens": 5811
+ },
+ {
+  "url": "https://support.fasterforward.nl/gemakkelijk-in-en-excasso-bestanden-verwerken/",
+  "titel": "Gemakkelijk in- en excasso bestanden verwerken",
+  "categorie": "Release",
+  "geplaatst": "23 februari 2024 (Laatste update: 26 februari 2024)",
+  "html": "paginas-html/gemakkelijk-in-en-excasso-bestanden-verwerken.html",
+  "tekst": "paginas-tekst/gemakkelijk-in-en-excasso-bestanden-verwerken.txt",
+  "tekens": 3364
+ },
+ {
+  "url": "https://support.fasterforward.nl/beheerder-meldingen-koppeling-adviesbox-online-en-meer/",
+  "titel": "Beheerder meldingen, koppeling Adviesbox Online en meer",
+  "categorie": "Release",
+  "geplaatst": "14 februari 2024 (Laatste update: 23 februari 2024)",
+  "html": "paginas-html/beheerder-meldingen-koppeling-adviesbox-online-en-meer.html",
+  "tekst": "paginas-tekst/beheerder-meldingen-koppeling-adviesbox-online-en-meer.txt",
+  "tekens": 6101
+ },
+ {
+  "url": "https://support.fasterforward.nl/extra-partijen-toevoegen-in-dossier-verbeteringen-verzekeringen-en-meer/",
+  "titel": "Extra partijen toevoegen in dossier, verbeteringen verzekeringen en meer",
+  "categorie": "Release",
+  "geplaatst": "28 december 2023 (Laatste update: 19 juni 2026)",
+  "html": "paginas-html/extra-partijen-toevoegen-in-dossier-verbeteringen-verzekeringen-en-meer.html",
+  "tekst": "paginas-tekst/extra-partijen-toevoegen-in-dossier-verbeteringen-verzekeringen-en-meer.txt",
+  "tekens": 10112
+ },
+ {
+  "url": "https://support.fasterforward.nl/automatisch-aplaza-berichten-verwijderen-aanpassingen-volgens-de-hdn-standaard-en-meer/",
+  "titel": "Automatisch Aplaza berichten verwijderen, HDN 23.1 update en meer",
+  "categorie": "Release",
+  "geplaatst": "11 december 2023",
+  "html": "paginas-html/automatisch-aplaza-berichten-verwijderen-aanpassingen-volgens-de-hdn-standaard-en-meer.html",
+  "tekst": "paginas-tekst/automatisch-aplaza-berichten-verwijderen-aanpassingen-volgens-de-hdn-standaard-en-meer.txt",
+  "tekens": 6344
+ },
+ {
+  "url": "https://support.fasterforward.nl/gemakkelijk-formulieren-toesturen-actuele-hypotheekgegevens-opvragen-bij-abn-amro-boekjaar-en-factuurnummers-2024-aangemaakt/",
+  "titel": "Gemakkelijk formulieren toesturen, actuele hypotheekgegevens opvragen bij ABN AMRO, boekjaar en factuurnummers 2024 aangemaakt",
+  "categorie": "Release",
+  "geplaatst": "20 november 2023 (Laatste update: 21 november 2023)",
+  "html": "paginas-html/gemakkelijk-formulieren-toesturen-actuele-hypotheekgegevens-opvragen-bij-abn-amro-boekjaar-en-factuurnummers-2024-aangemaakt.html",
+  "tekst": "paginas-tekst/gemakkelijk-formulieren-toesturen-actuele-hypotheekgegevens-opvragen-bij-abn-amro-boekjaar-en-factuurnummers-2024-aangemaakt.txt",
+  "tekens": 7539
+ },
+ {
+  "url": "https://support.fasterforward.nl/link-teams-genereren-vanuit-elements-gemakkelijk-kvk-gegevens-ophalen-en-meer/",
+  "titel": "Link Teams genereren vanuit Elements, gemakkelijk KvK gegevens ophalen en meer",
+  "categorie": "Release",
+  "geplaatst": "13 oktober 2023 (Laatste update: 17 oktober 2023)",
+  "html": "paginas-html/link-teams-genereren-vanuit-elements-gemakkelijk-kvk-gegevens-ophalen-en-meer.html",
+  "tekst": "paginas-tekst/link-teams-genereren-vanuit-elements-gemakkelijk-kvk-gegevens-ophalen-en-meer.txt",
+  "tekens": 11108
+ },
+ {
+  "url": "https://support.fasterforward.nl/nieuwe-features-voor-uwkluis-verzekeringen-en-meer/",
+  "titel": "Nieuwe features voor Uwkluis, verzekeringen en meer",
+  "categorie": "Release",
+  "geplaatst": "14 september 2023 (Laatste update: 15 september 2023)",
+  "html": "paginas-html/nieuwe-features-voor-uwkluis-verzekeringen-en-meer.html",
+  "tekst": "paginas-tekst/nieuwe-features-voor-uwkluis-verzekeringen-en-meer.txt",
+  "tekens": 10310
+ },
+ {
+  "url": "https://support.fasterforward.nl/augustus-2023/",
+  "titel": "Klantportaal voor bedrijven, On Route uitgebreid en meer",
+  "categorie": "Release",
+  "geplaatst": "1 augustus 2023 (Laatste update: 19 september 2023)",
+  "html": "paginas-html/augustus-2023.html",
+  "tekst": "paginas-tekst/augustus-2023.txt",
+  "tekens": 3496
+ },
+ {
+  "url": "https://support.fasterforward.nl/20-nieuwe-features/",
+  "titel": "20 nieuwe features voor afgekeurde stukken, ADN, Uwkluis en meer",
+  "categorie": "Release",
+  "geplaatst": "30 juni 2023 (Laatste update: 04 juli 2023)",
+  "html": "paginas-html/20-nieuwe-features.html",
+  "tekst": "paginas-tekst/20-nieuwe-features.txt",
+  "tekens": 10939
+ },
+ {
+  "url": "https://support.fasterforward.nl/optimalisaties-voor-serviceproviders-en-account-deblokkeren/",
+  "titel": "Optimalisaties voor serviceproviders en account deblokkeren",
+  "categorie": "Release",
+  "geplaatst": "26 mei 2023 (Laatste update: 20 juni 2023)",
+  "html": "paginas-html/optimalisaties-voor-serviceproviders-en-account-deblokkeren.html",
+  "tekst": "paginas-tekst/optimalisaties-voor-serviceproviders-en-account-deblokkeren.txt",
+  "tekens": 6759
+ },
+ {
+  "url": "https://support.fasterforward.nl/hdn-en-sivi-update/",
+  "titel": "HDN en SIVI update",
+  "categorie": "Release",
+  "geplaatst": "8 mei 2023",
+  "html": "paginas-html/hdn-en-sivi-update.html",
+  "tekst": "paginas-tekst/hdn-en-sivi-update.txt",
+  "tekens": 2367
+ },
+ {
+  "url": "https://support.fasterforward.nl/25-nieuwe-features/",
+  "titel": "25 nieuwe features voor hypotheken en verzekeren",
+  "categorie": "Release",
+  "geplaatst": "21 april 2023 (Laatste update: 25 april 2023)",
+  "html": "paginas-html/25-nieuwe-features.html",
+  "tekst": "paginas-tekst/25-nieuwe-features.txt",
+  "tekens": 13733
+ },
+ {
+  "url": "https://support.fasterforward.nl/beheer-serviceproviders/",
+  "titel": "Uitbreidingen voor klantbeheer, mutaties, Ockto en meer",
+  "categorie": "Release",
+  "geplaatst": "16 maart 2023 (Laatste update: 21 maart 2023)",
+  "html": "paginas-html/beheer-serviceproviders.html",
+  "tekst": "paginas-tekst/beheer-serviceproviders.txt",
+  "tekens": 8771
+ },
+ {
+  "url": "https://support.fasterforward.nl/optimalisaties-voor-verzekeringen-en-contracten/",
+  "titel": "Optimalisaties voor verzekeringen en contracten",
+  "categorie": "Release",
+  "geplaatst": "10 februari 2023 (Laatste update: 28 maart 2023)",
+  "html": "paginas-html/optimalisaties-voor-verzekeringen-en-contracten.html",
+  "tekst": "paginas-tekst/optimalisaties-voor-verzekeringen-en-contracten.txt",
+  "tekens": 3440
+ },
+ {
+  "url": "https://support.fasterforward.nl/uitbreidingen-10-januari/",
+  "titel": "Beter inzicht in aanvragen en vernieuwingen voor hypotheken en verzekeren",
+  "categorie": "Release",
+  "geplaatst": "5 januari 2023 (Laatste update: 19 januari 2023)",
+  "html": "paginas-html/uitbreidingen-10-januari.html",
+  "tekst": "paginas-tekst/uitbreidingen-10-januari.txt",
+  "tekens": 5874
+ },
+ {
+  "url": "https://support.fasterforward.nl/releasenotes/",
+  "titel": "Release notes",
+  "categorie": "",
+  "geplaatst": "",
+  "html": "paginas-html/releasenotes.html",
+  "tekst": "paginas-tekst/releasenotes.txt",
+  "tekens": 7681
+ }
+]

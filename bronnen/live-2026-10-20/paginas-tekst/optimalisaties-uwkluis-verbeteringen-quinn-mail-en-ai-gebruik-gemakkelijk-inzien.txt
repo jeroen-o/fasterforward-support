@@ -1,0 +1,143 @@
+Optimalisaties Uwkluis, verbeteringen Quinn Mail en AI gebruik gemakkelijk inzien
+https://support.fasterforward.nl/optimalisaties-uwkluis-verbeteringen-quinn-mail-en-ai-gebruik-gemakkelijk-inzien/
+
+Op dinsdag 22 september zijn Elements en eBlinqx weer verbeterd en uitgebreid met nieuwe features. Deze release bevat onder andere verbeteringen Uwkluis, inzicht in AI gebruik en AI instellingen gemakkelijk beheren.
+
+Verbeteringen Uwkluis
+Voorkomen van dubbele stukken
+
+Wijzigingen in documenten goed doorgeven aan Uwkluis
+
+Optimalisatie dossiersynchronisatie
+
+Knop handmatig synchroniseren verbeterd
+
+Authenticatie Uwkluis vernieuwd
+
+Nieuwe naam Uwkluis
+
+Verbeteringen Quinn Mail
+Automatisch koppelen op basis van AI per mailbox in te stellen
+
+Vertrouwelijke e-mails uitsluiten voor koppelen op basis van AI
+
+Blok taak aanmaken op basis van AI inklappen of wegklikken
+
+AI gebruik gemakkelijk inzien via één overzicht
+
+AI instellingen vanaf één centrale plek beheren
+
+Overige verbeteringen
+
+Verbeteringen Uwkluis
+
+We hebben diverse technische optimalisaties doorgevoerd om de synchronisatie tussen eBlinqx/Elements en Uwkluis te verbeteren. Dit zijn met name verbeteringen onder de motorkap. Door deze technische aanpassingen kunnen we in de toekomst meer verbeteringen doorvoeren. Hieronder vind je meer informatie over deze onderliggende wijzigingen. 
+
+Voorkomen van dubbele stukken
+
+Er zijn verschillende onderliggende wijzigingen doorgevoerd om dubbele stukken te voorkomen. Zo wordt bij een synchronisatie alleen het stuk vervangen waar een wijziging in is geweest. Voorheen werd op de achtergrond alles verwijderd en opnieuw geüpload. Deze aanpassing zorgt ook voor minder onnodig verkeer tussen eBlinqx/Elements. Daarnaast ziet eBlinqx nu beter dat een verzoek in Uwkluis hoort bij een product. Hiermee voorkomen we dat er dubbele stukkenlijsten ontstaan onder één product.
+
+Wijzigingen in documenten goed doorgeven aan Uwkluis
+
+In eBlinqx kan je op verschillende manieren bewerkingen doen aan een document, bijvoorbeeld censureren, een PDF bewerken, het splitsen/samenvoegen van documenten en getekend voor gezien. Deze wijzigingen werden niet altijd correct doorgeven aan Uwkluis. Hierin zijn verbeteringen doorgevoerd, zodat UwKluis altijd de laatste versie van een document heeft. Daarnaast komt onder het bijbehorende stuk ook het aangepaste document te staan. Let op: hierdoor moet je het stuk wel opnieuw beoordelen, omdat het eerder beoordeelde stuk wordt vervangen.
+
+Optimalisatie dossiersynchronisatie
+
+De synchronisatie van een dossier naar UwKluis is geoptimaliseerd, zodat er geen onnodige en minder zware databasebevragingen worden gedaan. Daarnaast krijgt het synchronisatieproces een eigen wachtrij die op de achtergrond wordt verwerkt. Hierdoor is de snelheid en belasting verbeterd. 
+
+Knop handmatig synchroniseren verbeterd
+
+In het tabblad Export – UwKluis komt een nieuwe knop met twee keuzes: “Basis sync” en “Volledige sync”. Bij een basis sync worden alleen de CRM gegevens, producten, contractdocumenten en voortgang hypotheekprocessen gesynchroniseerd, waarbij een volledige sync ook de documenten, de stukkenlijst, berichten, kantoorgegevens en verzoeken worden gesynchroniseerd. Zo kan je zelf bepalen wat je wilt synchroniseren. 
+
+Onder de knop wordt de status aangegeven van de laatste synchronisatie. Zo kan je zien of er een synchronisatie bezig is, in de wachtrij staat of wanneer de laatste synchronisatie (zowel handmatig als automatisch) heeft plaatsgevonden. Zolang er een synchronisatie in de wachtrij staat, is de knop tijdelijk niet te gebruiken. Daarnaast verhuist de huidige lange statustekst van de koppeling (nu zichtbaar in de tabel) naar een tooltip bij het statusicoon, zodat de tabel rustiger wordt.
+
+Authenticatie Uwkluis vernieuwd
+
+De techniek waarmee de koppeling tussen eBlinqx/Elements en Uwkluis wordt gelegd is vernieuwd. Dit is een modernere en veiligere authenticatiemethode. Dit richten wij voor jou in. Hier hoef je zelf niets voor te doen. 
+
+Nieuwe naam Uwkluis
+
+De naam Uwkluis is veranderd naar Klantportaal. In eBlinqx veranderen we op diverse plekken Uwkluis naar Klantportaal, bijvoorbeeld in het tabblad Export, ondertekenen Uwkluis, rapportages en workflowstappen. In de standaardteksten zal je, indien gewenst, zelf de benaming moeten aanpassen. In Uwkluis zelf zal de benaming halverwege oktober aangepast worden. 
+
+Verbeteringen Quinn Mail
+
+Automatisch koppelen op basis van AI per mailbox in te stellen
+
+Je kunt nu in de e-mailmanager per mailbox aangeven of de e-mails middels AI gekoppeld mogen worden. Zo kan je zelf bepalen in welke mailbox de e-mails op basis van AI gekoppeld mogen worden aan dossiers en producten. 
+
+Vertrouwelijke e-mails uitsluiten voor koppelen op basis van AI
+
+Er zijn diverse verbeteringen doorgevoerd om te voorkomen dat e-mails met vertrouwelijke informatie op basis van AI worden gekoppeld aan dossiers en in te zien zijn door niet bevoegde medewerkers. De volgende aanpassingen zijn gedaan:
+
+E-mails die als vertrouwelijk zijn aangemerkt worden niet meer naar AI gestuurd. Deze worden niet gekoppeld op basis van AI en de mailinhoud gaat niet door de AI-verwerker. E-mails worden als vertrouwelijke aangemerkt als deze binnenkomen in e-mailboxen of bij e-mailadressen die aangemerkt zijn als vertrouwelijk (e-mails verbergen voor anderen) 
+Draagt AI een dossier aan waarin een persoon voorkomt die ook gebruiker van eBlinqx is dan wordt de e-mail niet gekoppeld aan dit dossier. Dit geldt ook voor niet actieve en geblokkeerde gebruikers en voor elk dossiertype. Let op: onder deze persoon moet ook het gebruikersaccount gekoppeld zijn om deze link te kunnen leggen. De inhoud is in deze situatie wel door de AI-verwerker gegaan.
+Als het aangedragen dossier een personeelsdossier is dan wordt deze niet gekoppeld aan dit dossier. De inhoud is in deze situatie wel door de AI-verwerker gegaan
+
+Bij aanpassing 2 en 3 blijft de e-mail niet gekoppeld in de mailbox staan met de status ‘niet gelukt’. Ten slotte kan je ook het automatisch koppelen op basis van AI voor de gewenste mailbox, bijvoorbeeld de e-mailbox van HR, op ‘Nee’ zetten om zo te voorkomen dat de e-mails worden gekoppeld en door de AI-verwerker gaan.
+
+Blok taak aanmaken op basis van AI inklappen of wegklikken
+
+Het is mogelijk om het blok taak aanmaken op basis van AI in te klappen of weg te klikken. Dit middels de knop ‘Inklappen’ en het rode kruisje. Het ingeklapte blok kan je indien gewenst weer uitklappen.
+
+AI gebruik gemakkelijk inzien via één overzicht
+
+Vanaf nu is er in eBlinqx een nieuw dashboard beschikbaar: AI-gebruik. Het dashboard is te benaderen via Managementinformatie. Hiermee krijgt de beheerder van de omgeving in één overzicht inzicht in hoe de AI-functionaliteiten binnen de organisatie worden gebruikt.
+
+Het dashboard toont per AI-functionaliteit de belangrijkste aantallen, opgesplitst naar vier tijdvakken: de huidige maand (real-time bijgehouden), de volledige vorige maand, het lopende jaar tot en met gisteren, en het totaal sinds de start tot en met gisteren.
+
+Via het dashboard kan je verschillende zaken inzien, namelijk:
+
+AI mail koppelen laat zien hoeveel e-mails door AI zijn beoordeeld, hoeveel daarvan correct zijn gekoppeld, hoeveel foutief zijn gekoppeld en hoeveel e-mails niet gekoppeld konden worden. Deze cijfers worden getoond per mailbox.
+AI taken aanmaken laat zien hoeveel taken automatisch door AI zijn aangemaakt vanuit de mailbox, hoeveel taken handmatig zijn aangemaakt en hoeveel taken zijn afgevinkt. De handmatig aangemaakte en afgevinkte taken worden per gebruiker getoond.
+AI reply aanmaken laat per gebruiker zien hoeveel reply-teksten er met AI zijn gegenereerd.
+AI mail tekst verbeteren laat per gebruiker zien hoeveel teksten er met AI zijn verbeterd.
+
+Vanuit het dashboard klik je per onderwerp door naar een detailpagina. Daar staan dezelfde cijfers uitgesplitst in een overzichtelijke tabel, met filters op tijdvak (huidige maand, vorige maand, dit jaar of totaal) en op context, zoals gebruiker of mailbox. Zo zie je bijvoorbeeld direct hoeveel AI-reply’s een specifieke collega deze maand heeft aangemaakt.
+
+Degenen die toegang hebben tot Managementinformatie kunnen ook het AI-gebruik inzien. Heb je hier geen toegang tot en wil je als beheerder gebruik maken van dit dashboard? Stuur dan een e-mail naar support-eblinqx@blinqx.tech.
+
+AI instellingen vanaf één centrale plek beheren
+
+Voortaan kun je als beheerder op één centrale plek bepalen hoe de AI-functionaliteiten in eBlinqx zich gedragen. Dit in de module AI instellingen. Heb je toegang tot deze module, dan kun je alles hierin direct instellen, waaronder
+
+Aanschrijfvorm (tone of voice)
+
+Eerst wordt er gekeken naar de voorkeurstaal in het dossier. Staat er bij een dossier al een voorkeurstaal (formeel of informeel) ingesteld, dan gebruikt Quinn Mail die. Is er voor een dossier niets vastgelegd, dan valt Quinn Mail terug op de standaardwaarde die je zelf instelt in de AI instellingen module, bij “Aanschrijfvorm”. Deze standaard staat aanvankelijk op informeel. Zo wordt voor AI mail reply en AI tekst verbeteren de aanschrijfvorm nu automatisch en consistent toegepast.
+
+Promptaanvullingen per AI-functionaliteit
+
+Bij elke AI-functionaliteit — AI mail reply, AI tekst verbeteren, taken aanmaken op basis van e-mail, samenvatting gespreksopname en AI mail koppelen — kun je nu een eigen aanvulling meegeven aan de prompt die wordt gebruikt om de actie uit te voeren. Dit is geen volledige herschrijving van de instructie, maar een extra toevoeging.
+
+Let op: de aanschrijfvorm (formeel/informeel) stel je hier niet in — dat doe je bij “Aanschrijfvorm” in de AI instellingen module. De omzetting van de gespreksopname naar transcript heeft geen promptaanvulling, omdat dit uitsluitend spraak-naar-tekst is.
+
+Overige verbeteringen
+
+Het ophalen van de e-mailadressen in de rapportage ‘Personen die vandaag jarig zijn’ is verbeterd. Nu worden alle type e-mailadressen opgehaald, voorheen was dit alleen het type Algemeen en Privé. Nu wordt er eerst gekeken naar het type algemeen, dan privé en dan zakelijk
+Het versturen van een formulier voor een persoon met geslacht X naar Finly gaat nu goed. Voorheen gaf dit een foutmelding
+Een schadebatch met daarin een post met een verrekening openstaand bedrag wordt nu correct opgehaald bij het afboeken van deze batch
+In een productkaart onder ‘Behandeling’ kan je, als de setting hiervoor aanstaat, een persoon onder workflowgroep selecteren (bij behandelaar en acceptant). Voor deze situatie zijn nu tags gemaakt, zodat de gegevens van deze persoon kunnen worden opgehaald
+In het tabblad Communicatie – E-mail werd in het overzicht bij ontvanger het e-mailadres getoond wat in de CC stond. Nu wordt hier het e-mailadres van de ontvanger (‘Aan’) getoond
+In de SMART selectie ‘Klanten met telefoonnummer en zonder e-mailadres’ is de kolom ‘Dossierrol toegevoegd’. In de selectie ‘WWFT Klantonderzoek’ komt in de tabellen nu niets te staan als deze niet zijn uitgevoerd. Voorheen stond hier ‘fout’ ook al was deze niet uitgevoerd
+Bij het salderen van meerdere geselecteerde facturen (via Acties – selecteren salderen) krijgen nu al facturen de status gesaldeerd. Voorheen kreeg maar 1 van de gesaldeerde facturen deze status
+Op verschillende plaatsen in eBlinqx had je naast een actieknop een pijltje voor meerdere opties, bijvoorbeeld in de e-mail ‘Verzenden’ en ‘Later verzenden’. In deze meerdere opties stond ook de actie die je daadwerkelijk met de knop kon doen. De knop heet bijvoorbeeld Verzenden en door erop te klikken verzend je de e-mail. Dit verzenden stond dan ook nog als optie via het pijltje naast de knop. Deze dubbele weergave is op diverse plekken weggehaald, zodat via het pijltje alleen de extra opties zichtbaar zijn en niet ook nog de actie van de knop zelf
+Het ondertekenen van het document met een digitale handtekening in Uwkluis (via SignRequest) door 2 personen is verbeterd
+Verbeteringen API: via de API is het nu mogelijk om te zoeken op voorletters en voornaam. Ook wordt het prolongatie provisiebedrag bij het ophalen van de schadeverzekering meegegeven aan de API
+E-mails waarvan de opgeslagen inhoud niet meer bestaat in de opslag worden nu beter afgehandeld. Er verschijnt een duidelijke melding (e-mail niet gevonden) om je hierop te attenderen en de verwerking loopt door. Daarnaast wordt het duidelijk vermeldt als een binnenkomende e-mail nog wordt verwerkt en je deze nog niet kunt openen (e-mail wordt verwerkt)
+De rapportage ‘Managent – Algemeen overzicht facturen’ is uitgebreid met de kolom ‘Periode’. De rapportage ‘Management – Omzet per klant’ is uitgebreid met de kolommen ‘Zakelijk/particulier’, ‘Status’ en ‘Deelnemer’
+De producten van TAF – Zurich en Florius Profijt 12 zijn beschikbaar gesteld via de updateknop
+
+ Categorie: Release
+ -->
+ Geplaatst op 18 september 2026 (Laatste update: 29 september 2026) 
+
+ Laatste 5 releasenotes | 
+
+ Inzicht dataverbruik en verbeteringen Klantportaal, e-mail en inloggen » | 
+
+ Optimalisaties Uwkluis, verbeteringen Quinn Mail en AI gebruik gemakkelijk inzien » | 
+
+ Inkoop via per maatschappij instellen, aanleveren stuk, taak IA berichten en meer » | 
+
+ Portefeuillewaarde-overzicht uitgebreid, verbeteringen bankgarantie en Aplaza document in specifieke map » | 
+
+ Verbeteringen performance » |

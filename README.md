@@ -22,7 +22,9 @@ Verder: zoekpagina (`/zoeken/`, werkt volledig in de browser), `sitemap.xml`, `4
 
 - `index.html` + artikelmappen — de gegenereerde site (niet met de hand bewerken).
 - `assets/` — CSS, logo, hero-foto's, lettertype (Open Sans, lokaal), video-thumbnails.
-- `bronnen/` — ruwe bronnen:
+- `bronnen/` — ruwe bronnen (in volgorde van voorrang bij het bouwen):
+  - `live-2026-10-20/` — 47 pagina's van de live site op 20 oktober 2026 (ruwe HTML; o.a. alle releasenotes 2023–2026)
+  - `wayback/` — originele HTML en bestanden uit de Wayback Machine (gevuld door de GitHub Action)
   - `offline-archief/` — 473 pagina's met tekst + screenshot (Wayback Machine, okt 2026)
   - `volledige-tekst.html` — 556 pagina's volledige tekst
   - `inventaris.html` — 801 URL's met samenvatting en 1.718 afbeeldings-URL's
@@ -35,15 +37,28 @@ Verder: zoekpagina (`/zoeken/`, werkt volledig in de browser), `sitemap.xml`, `4
 python3 tools/build.py
 ```
 
-## Afbeeldingen
+## Internet Archive ophalen (kennisbankartikelen, afbeeldingen)
 
-Artikelen tonen hun afbeeldingen nu via de Wayback Machine. Om ze lokaal in de repo te krijgen
-(aanbevolen vóór livegang):
+**GitHub**: Actions → *Internet Archive ophalen en site bouwen* → *Run workflow*. De workflow draait
+`tools/wayback-ophalen.py` (per URL de nieuwste gearchiveerde versie, naar `bronnen/wayback/`), vult
+ontbrekende afbeeldingen aan, bouwt de site en commit het resultaat. Mag opnieuw gestart worden: wat al
+binnen is wordt overgeslagen.
 
-- **GitHub**: Actions → *Afbeeldingen ophalen en site bouwen* → *Run workflow*, of
-- **lokaal**: `python3 tools/download_afbeeldingen.py && python3 tools/build.py`
+**Lokaal**:
 
-De bestanden komen in `wp-content/uploads/...` (zelfde pad als op de oude site).
+```bash
+python3 tools/wayback-ophalen.py --uit bronnen/wayback
+python3 tools/build.py
+```
+
+Pagina's met originele HTML krijgen de echte opmaak terug (koppen, tabellen, afbeeldingen op hun plek);
+voor de rest valt de build terug op de tekstbronnen. Afbeeldingen die nog niet lokaal staan, worden via de
+Wayback Machine geladen.
+
+## Hosting
+
+De site draait op GitHub Pages: https://jeroen-o.github.io/fasterforward-support/ . Bij een eigen domein
+(bijv. support.fasterforward.nl) bouwen met `SITE_BASE=/ python3 tools/build.py` (alleen nodig voor `404.html`).
 
 ## Nog te doen
 

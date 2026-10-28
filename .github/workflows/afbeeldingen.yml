@@ -1,30 +1,42 @@
-name: Afbeeldingen ophalen en site bouwen
+name: Internet Archive ophalen en site bouwen
 
-# Handmatig starten via Actions -> "Afbeeldingen ophalen en site bouwen" -> Run workflow.
-# Haalt de afbeeldingen van support.fasterforward.nl op uit de Wayback Machine,
-# zet ze in wp-content/uploads/ en bouwt de site opnieuw, zodat de pagina's
-# lokale kopieën gebruiken in plaats van Wayback-links.
+# Handmatig starten via Actions -> "Internet Archive ophalen en site bouwen" -> Run workflow.
+# 1. tools/wayback-ophalen.py haalt per URL de nieuwste gearchiveerde versie van support.fasterforward.nl
+#    op (HTML, afbeeldingen, pdf's) naar bronnen/wayback/. Al aanwezige bestanden worden overgeslagen,
+#    dus de workflow kan opnieuw gestart worden als hij halverwege stopt.
+# 2. tools/download_afbeeldingen.py vult ontbrekende afbeeldingen aan.
+# 3. tools/build.py bouwt de site opnieuw; het resultaat wordt gecommit.
 on:
   workflow_dispatch:
     inputs:
-      max:
-        description: "Maximaal aantal afbeeldingen (0 = alles)"
-        default: "0"
+      alleen_kennisbank:
+        description: "Alleen kennisbank en homepage ophalen (sneller)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
 
+concurrency:
+  group: wayback
+  cancel-in-progress: false
+
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 350
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Afbeeldingen downloaden
-        run: python3 tools/download_afbeeldingen.py --max "${{ inputs.max }}"
+      - name: Pagina's en bestanden uit de Wayback Machine
+        run: |
+          ARGS="--uit bronnen/wayback --pauze 0.8"
+          if [ "${{ inputs.alleen_kennisbank }}" = "true" ]; then ARGS="$ARGS --kennisbank"; fi
+          timeout 290m python3 tools/wayback-ophalen.py $ARGS || echo "Gestopt (tijdslimiet of fout); wat binnen is wordt bewaard."
+      - name: Ontbrekende afbeeldingen aanvullen
+        run: timeout 30m python3 tools/download_afbeeldingen.py || true
       - name: Site bouwen
         run: python3 tools/build.py
       - name: Committen
@@ -32,5 +44,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
           git add -A
-          git diff --cached --quiet || git commit -m "Afbeeldingen uit Wayback Machine toegevoegd"
-          git push
+          git diff --cached --quiet && exit 0
+          git commit -m "Inhoud uit het Internet Archive bijgewerkt"
+          for i in 1 2 3; do git pull --rebase && git push && break; sleep 5; done

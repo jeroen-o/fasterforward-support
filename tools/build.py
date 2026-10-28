@@ -12,8 +12,11 @@ Uitvoer: statische site in de repo-root met dezelfde paden als het origineel
 
 Gebruik:  python3 tools/build.py
 """
-import glob, html, json, os, re, shutil
+import glob, html, json, os, re, shutil, sys
 from datetime import date
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import htmlclean  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, "bronnen")
@@ -29,10 +32,26 @@ TOP = [
     ("Mijn omgeving", "desktop"), ("Communicatie", "comments"), ("E-mail", "envelope"),
     ("Boekhouding", "euro"), ("Facturatie", "file"), ("Koppelingen", "rss"),
 ]
+# Supportkanalen per product (bron: verzekeringhypotheek.blinqx.tech/support via Adviesforum, okt 2026).
+PRODUCT_SUPPORT = [
+    ("eBlinqx Connect", "support-eblinqx@blinqx.tech", "1, dan 2"),
+    ("eBlinqx Hypotheekadvies (Fastlane)", "support-hypotheekadvies@blinqx.tech", "1, dan 1"),
+    ("Adviesbox", "support-adviesbox@blinqx.tech", "1, dan 1"),
+    ("CRM (Finly)", "support-crm@blinqx.tech", "1, dan 3"),
+    ("FinConnect", "support-finconnect@blinqx.tech", "1, dan 3"),
+    ("Volmacht", "support-volmacht@blinqx.tech", "1, dan 6"),
+]
+
 # Webinar-replays op WebinarGeek die bij een bestaand artikel horen.
 REPLAYS = {
     "webinar-nieuwe-feature-mytp": "https://fasterforward.webinargeek.com/watch/replay/2652088/faaf06952e67e0ce558425566f97772a/",
 }
+# Pad waaronder de site draait (voor 404.html). GitHub Pages: /<repo>/; eigen domein: /
+SITE_BASE = os.environ.get("SITE_BASE", "/fasterforward-support/")
+WAYBACK_DIR = os.path.join(SRC, "wayback")      # uitvoer van tools/wayback-ophalen.py
+LIVE_DIR = os.path.join(SRC, "live-2026-10-20")  # pagina's van de live site, 20 oktober 2026
+SKIP_PATH = re.compile(r"^(wp-content|wp-includes|wp-json|wp-admin|feed|comments|author|tag|tags|page|xmlrpc|"
+                       r"search|\?|.*?/feed$|.*?/page/\d+$|.*?/amp$|.*?/embed$)")
 FEEDS = {"Nieuws": "nieuws", "Tips": "tips", "Release notes": "releasenotes"}
 OUTDIRS = ["video", "kennisbank", "categorien", "category", "nieuws", "tips", "releasenotes", "zoeken",
            "contact", "trainingen", "assets"]
@@ -198,6 +217,13 @@ def text_to_html(lines):
         else:
             parts.append("<p>" + "<br>".join(linkify(l) for l in b) + "</p>")
     # De oorspronkelijke inhoudsopgave staat soms als één aaneengeplakte regel in de tekst: weghalen.
+    heads = {t.lower() for _, t in toc}
+
+    def is_toc_list(x):
+        items = [html.unescape(re.sub(r"<[^>]+>", "", i)).strip().lower() for i in re.findall(r"<li>(.*?)</li>", x)]
+        return len(items) >= 3 and sum(i in heads for i in items) >= 0.6 * len(items)
+    if len(toc) >= 3:
+        parts = [x for x in parts if not (x.startswith("<ul>") and is_toc_list(x))]
     glued = "".join(t for _, t in toc).replace(" ", "")
     if len(toc) >= 3:
         parts = [x for x in parts if not (x.startswith("<p>") and len(x) > 20
@@ -218,6 +244,37 @@ def load_sources():
                         "imgs": []}
         return pages[k]
 
+    # 0a. Live site 20 oktober 2026 (nieuwste versie, ruwe HTML)
+    lj = os.path.join(LIVE_DIR, "paginas.json")
+    if os.path.exists(lj):
+        for d in json.load(open(lj, encoding="utf8")):
+            f = os.path.join(LIVE_DIR, d["html"])
+            if os.path.exists(f):
+                p = get(d["u"] if "u" in d else d["url"])
+                p["raw"] = htmlclean.extract(open(f, encoding="utf8", errors="replace").read())
+                p["rawsrc"] = "live"
+                if d.get("categorie") == "Release":
+                    p["c"] = "release"
+    # 0b. Wayback Machine (ruwe HTML via tools/wayback-ophalen.py), alleen als er geen nieuwere versie is
+    for f in sorted(glob.glob(os.path.join(WAYBACK_DIR, "**", "index.html"), recursive=True)):
+        rel = os.path.relpath(os.path.dirname(f), WAYBACK_DIR).replace(os.sep, "/")
+        rel = "" if rel in (".", "index") else rel
+        if rel and SKIP_PATH.match(rel):
+            continue
+        p = get(BASE + "/" + rel + ("/" if rel else ""))
+        if p.get("raw"):
+            continue
+        try:
+            doc = open(f, encoding="utf8", errors="replace").read()
+        except OSError:
+            continue
+        if "<html" not in doc[:3000].lower():
+            continue
+        p["raw"] = htmlclean.extract(doc)
+        p["rawsrc"] = "wayback"
+        if rel.startswith("kennisbank/"):
+            p["c"] = p["c"] or "kennisbank"
+
     # 1. Offline-archief (zip): kruimelpad, type, screenshot, tekst
     for f in sorted(glob.glob(os.path.join(SRC, "offline-archief/pages/*.html"))):
         s = open(f, encoding="utf8").read()
@@ -237,6 +294,10 @@ def load_sources():
         tx = re.search(r'<div class="textbox">(.*?)</div>', s, re.S)
         if tx:
             p["texts"].append(("zip", tx.group(1)))
+
+    for p in pages.values():
+        if p.get("raw") and not p["t"]:
+            p["t"] = clean_title(p["raw"]["title"])
 
     # 2. Volledige tekst (JSON)
     s = open(os.path.join(SRC, "volledige-tekst.html"), encoding="utf8").read()
@@ -301,6 +362,23 @@ def build_structure(pages):
             if not best or score > best[0]:
                 best = (score, lines)
         p["lines"] = best[1] if best else []
+        raw = p.get("raw")
+        if raw and len(raw["html"]) > 150:
+            txt = html.unescape(re.sub(r"<[^>]+>", "\n", re.sub(r"</(p|h\d|li|tr|figcaption)>", "\n\n", raw["html"])))
+            lines = [re.sub(r"\s+", " ", l).strip() for l in txt.split("\n")]
+            p["lines"] = [l for i, l in enumerate(lines) if l or (i and lines[i - 1])]
+            p["rawhtml"] = raw["html"]
+            m = re.match(r"(?:Geplaatst op )?(.+?)(?:\s*\(Laatste update:\s*(.+?)\))?$", raw["posted"] or "")
+            if m and raw["posted"]:
+                p["posted"] = parse_date(m.group(1)) or p["posted"]
+                p["updated"] = parse_date(m.group(2) or "") or p["updated"]
+            if not p["crumb"] and raw["crumbs"]:
+                cr = [c for c in raw["crumbs"] if c.lower() not in ("home", "kennisbank", "support")]
+                if cr and cr[-1].lower() == (p["t"] or "").lower():
+                    cr = cr[:-1]
+                if cr:
+                    p["crumb"] = cr[:2]
+            p.pop("stub", None)
 
     # Uittreksels uit (sub)categoriepagina's: 'Titel\nOmschrijving'
     for p in pages.values():
@@ -359,6 +437,8 @@ def build_structure(pages):
         p["role"] = "article"
         if not cr:
             cr = title_to_crumb.get(p["t"].lower())
+        if not cr and p["c"] == "release":
+            cr = ["Release notes"]
         if not cr:
             if p["c"] == "beleid" or p["path"] in ("contact", "trainingen", "aanspreekvorm"):
                 cr = ["Overig"]
@@ -531,6 +611,57 @@ def crumbs(pg, items):
     return f'<div class="crumbs"><div class="wrap"><nav aria-label="Kruimelpad">{sep.join(parts)}</nav></div></div>'
 
 
+def hero_url(url, title):
+    return (f'<div class="hero" style="background-image:url(\'{esc(url)}\')">'
+            f'<div class="wrap"><h1>{esc(title)}</h1></div></div>')
+
+
+PAGES_BY_PATH = {}
+
+
+def resolve_img(pg, url):
+    url = htmlclean.unwrap_wayback(url)
+    if url.startswith("/"):
+        url = BASE + url
+    rel = img_local(url)
+    if rel:
+        for cand in (rel, "bronnen/wayback/" + rel):
+            if os.path.exists(os.path.join(ROOT, cand)):
+                return pg.rel(cand)
+    return wayback_img(url)
+
+
+def resolve_site(pg, path):
+    path, _, frag = path.partition("#")
+    key = path.split("?")[0].strip("/")
+    p = PAGES_BY_PATH.get(key)
+    if key == "":
+        return pg.rel("") + (("#" + frag) if frag else "")
+    if p:
+        return pg.rel(p["path"]) + (("#" + frag) if frag else "")
+    return "https://web.archive.org/web/2026/" + BASE + "/" + key + "/"
+
+
+def raw_to_html(pg, h):
+    h = re.sub(r'(href|src)="IMG:([^"]+)"', lambda m: f'{m.group(1)}="{esc(resolve_img(pg, html.unescape(m.group(2))))}"', h)
+    h = re.sub(r'href="SITE:([^"]*)"', lambda m: f'href="{esc(resolve_site(pg, html.unescape(m.group(1))))}"', h)
+    toc, used = [], set()
+
+    def add_id(m):
+        tag, attrs, inner = m.group(1), m.group(2) or "", m.group(3)
+        text = html.unescape(re.sub(r"<[^>]+>", "", inner)).strip()
+        idm = re.search(r'id="([^"]+)"', attrs)
+        sid = idm.group(1) if idm else slugify(text)
+        while sid in used:
+            sid += "-2"
+        used.add(sid)
+        if tag == "h2" and text:
+            toc.append((sid, text))
+        return f'<{tag} id="{sid}">{inner}</{tag}>'
+    h = re.sub(r"<(h[23])((?:\s[^>]*)?)>(.*?)</\1>", add_id, h, flags=re.S)
+    return h, toc
+
+
 def hero(pg, title, img):
     return (f'<div class="hero" style="background-image:url(\'{pg.rel("assets/" + img)}\')">'
             f'<div class="wrap"><h1>{esc(title)}</h1></div></div>')
@@ -594,7 +725,10 @@ def related(cats, feeds, p):
 
 def render_article(cats, feeds, p):
     pg = Page(p["path"])
-    body_html, toc = text_to_html(p["lines"])
+    if p.get("rawhtml"):
+        body_html, toc = raw_to_html(pg, p["rawhtml"])
+    else:
+        body_html, toc = text_to_html(p["lines"])
     p["toc"] = toc
     meta = []
     if p["posted"]:
@@ -611,11 +745,14 @@ def render_article(cats, feeds, p):
             body_html = body_html[:i] + toc_html + body_html[i:]
         else:
             body_html = toc_html + body_html
-    if p.get("stub") or not p["lines"]:
+    if (p.get("stub") or not p["lines"]) and not p.get("rawhtml"):
         body_html = (f'<p>{esc(p["summary"])}</p>' if p["summary"] else "") + \
             '<p class="note">De volledige tekst van deze pagina is nog niet teruggevonden. ' + \
             (f'Bekijk de <a href="{esc(p["wayback"])}" target="_blank" rel="noopener">gearchiveerde versie in de Wayback Machine</a>.' if p["wayback"] else "") + "</p>"
     imgs = ""
+    if p.get("rawhtml"):
+        shown = set(re.findall(r'/wp-content/uploads/[^"\s]+', body_html))
+        p["imgs"] = [im for im in p["imgs"] if not any(os.path.basename(im["src"]).split(".")[0][:20] in x for x in shown)]
     if p["imgs"]:
         figs = []
         for im in p["imgs"]:
@@ -655,7 +792,18 @@ def render_article(cats, feeds, p):
                 '<p>Wij zijn bereikbaar op werkdagen van 8:30 tot 17:00</p></aside>')
     else:
         head = crumbs(pg, crumb_items(cats, p))
-    h1 = "" if p["path"] == "contact" else f"<h1>{esc(p['t'])}</h1>"
+    raw = p.get("raw") or {}
+    if raw.get("hero") and p["path"] != "contact":
+        head = hero_url(resolve_img(pg, raw["hero"]), p["t"])
+        h1 = ""
+    else:
+        h1 = "" if p["path"] == "contact" else f"<h1>{esc(p['t'])}</h1>"
+    if p["path"] == "contact":
+        rows = "".join(f"<tr><td>{esc(n)}</td><td><a href=\"mailto:{esc(m)}\">{esc(m)}</a></td><td>{esc(k)}</td></tr>" for n, m, k in PRODUCT_SUPPORT)
+        body_html += ('<h2 id="andere-producten">Support voor andere Blinqx-producten</h2>'
+                      '<p>Bel 085 018 00 69 en kies in het keuzemenu eerst 1 en daarna het nummer van het product.</p>'
+                      f'<table class="ptable"><thead><tr><th>Product</th><th>E-mail</th><th>Keuzemenu</th></tr></thead><tbody>{rows}</tbody></table>'
+                      '<p><a href="https://verzekeringhypotheek.blinqx.tech/support" target="_blank" rel="noopener">Supportoverzicht Blinqx Verzekering &amp; Hypotheek</a></p>')
     body = f"""{head}
 <main class="article">
   <div class="wrap cols">
@@ -969,7 +1117,8 @@ def render_404():
   <p>Deze pagina bestaat (nog) niet in de herstelde supportsite. Gebruik de zoekfunctie hierboven of ga terug naar de <a href="/index.html">homepage</a>.</p>
 </div></main>"""
     html_ = layout(pg, "Pagina niet gevonden", body)
-    html_ = re.sub(r'(href|src|action)="(?!https?:|mailto:|tel:|#|/)([^"]*)"', r'\1="/\2"', html_)
+    html_ = re.sub(r'(href|src|action)="(?!https?:|mailto:|tel:|#|/)([^"]*)"', lambda m: f'{m.group(1)}="{SITE_BASE}{m.group(2)}"', html_)
+    html_ = html_.replace('href="/index.html"', f'href="{SITE_BASE}index.html"')
     write("404.html", html_)
 
 
@@ -1001,6 +1150,9 @@ def main():
     shutil.copytree(os.path.join(TOOLS, "assets"), os.path.join(ROOT, "assets"))
 
     n = {"article": 0, "cat": 0, "sub": 0}
+    for p in pages.values():
+        if not p.get("skip") and p.get("role"):
+            PAGES_BY_PATH[p["path"]] = p
     for p in pages.values():
         if p.get("skip"):
             continue
