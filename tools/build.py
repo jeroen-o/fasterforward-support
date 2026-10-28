@@ -107,6 +107,9 @@ NAV_JUNK = {"HOME", "NIEUWS", "TIPS", "RELEASE NOTES", "TRAININGEN", "CONTACT SU
 def clean_text(raw, title):
     """Ruwe paginatekst -> (lijst van regels/lege regels, geplaatst, bijgewerkt)."""
     t = html.unescape(raw).replace("\xa0", " ").replace("\r", "")
+    t = re.sub(r"\[Let op: dit is de nieuwste door de Wayback Machine[^\]]*\]", "", t)
+    if re.match(r"\s*(Title:.*?\n---\n)?\s*Niet gearchiveerd:", t, re.S):
+        return [], None, None
     if t.startswith("Title:") and "\n---\n" in t[:2000]:
         t = t.split("\n---\n", 1)[1]
     lines = [re.sub(r"[ \t]+", " ", l).strip() for l in t.split("\n")]
@@ -747,8 +750,7 @@ def render_article(cats, feeds, p):
             body_html = toc_html + body_html
     if (p.get("stub") or not p["lines"]) and not p.get("rawhtml"):
         body_html = (f'<p>{esc(p["summary"])}</p>' if p["summary"] else "") + \
-            '<p class="note">De volledige tekst van deze pagina is nog niet teruggevonden. ' + \
-            (f'Bekijk de <a href="{esc(p["wayback"])}" target="_blank" rel="noopener">gearchiveerde versie in de Wayback Machine</a>.' if p["wayback"] else "") + "</p>"
+            '<p class="note">De volledige tekst van deze pagina is nog niet teruggevonden.</p>'
     imgs = ""
     if p.get("rawhtml"):
         shown = set(re.findall(r'/wp-content/uploads/[^"\s]+', body_html))
