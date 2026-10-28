@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Voorbereidingen op HDN 26 en verbeteringen PortefeuilleSignalen - Blinqx Support</title>
+<meta name="description" content="Op woensdag 27 mei zijn Elements en eBlinqx weer verbeterd en uitgebreid met nieuwe features. Deze update bereidt Elements en eBlinqx voor op de aankomende HDN-versie 26. De overgang naar deze nieuwe HDN versie vindt pla…">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.png">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
+    <symbol id="i-mail-o" viewBox="0 0 24 24"><path d="M2 5h20v14H2zm2 2v.4l8 5.6 8-5.6V7zm16 2.8-8 5.6-8-5.6V17h16z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><path d="M10 2a8 8 0 0 1 6.32 12.9l5.4 5.4-1.42 1.42-5.4-5.4A8 8 0 1 1 10 2zm0 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 64 64"><circle cx="7" cy="12" r="6"/><circle cx="7" cy="32" r="6"/><circle cx="7" cy="52" r="6"/><rect x="18" y="7" width="44" height="10" rx="2"/><rect x="18" y="27" width="44" height="10" rx="2"/><rect x="18" y="47" width="44" height="10" rx="2"/></symbol>
+    <symbol id="i-home" viewBox="0 0 64 64"><path d="M32 6 2 32l4 5 4-3.4V58h18V42h8v16h18V33.6l4 3.4 4-5-10-8.7V10h-8v7.4z"/></symbol>
+    <symbol id="i-car" viewBox="0 0 64 64"><path d="M16 10h32a6 6 0 0 1 5.7 4.1L58 27a7 7 0 0 1 4 6.3V48a3 3 0 0 1-3 3h-3v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H20v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H5a3 3 0 0 1-3-3V33.3A7 7 0 0 1 6 27l4.3-12.9A6 6 0 0 1 16 10zm1.5 7-3.3 10h35.6l-3.3-10zM13 34a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm38 0a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 64 64"><path d="M4 12a4 4 0 0 1 4-4h16l6 6h22a4 4 0 0 1 4 4v6H18a6 6 0 0 0-5.6 3.9L4 50z"/><path d="M18 28h44l-10 26H6z"/></symbol>
+    <symbol id="i-desktop" viewBox="0 0 64 64"><path d="M2 6h60v40H38v6h8v6H18v-6h8v-6H2zm6 6v28h48V12z"/></symbol>
+    <symbol id="i-comments" viewBox="0 0 64 64"><path d="M26 4c13.8 0 24 8.6 24 19s-10.2 19-24 19c-2.6 0-5-.3-7.3-.8C14.6 44 9.6 46 3 46c3-3 4.8-6.2 5.3-9.6C4.4 33 2 28.2 2 23 2 12.6 12.2 4 26 4z"/><path d="M54 24.5c5 3.4 8 8.3 8 13.5 0 4.2-1.8 8-4.8 11 .4 3.6 2 6.8 4.8 9.5-6 0-10.6-1.8-14.3-4.4-2.1.5-4.4.7-6.7.7-7 0-13.1-2.4-17-6.2 14.3-.4 30-8.8 30-24.1z"/></symbol>
+    <symbol id="i-envelope" viewBox="0 0 64 64"><path d="M4 12h56a2 2 0 0 1 2 2v3L32 37 2 17v-3a2 2 0 0 1 2-2z"/><path d="M2 23.5 32 43.5l30-20V50a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-euro" viewBox="0 0 64 64"><path d="M42 6c5 0 9.5 1.2 13 3.2l-2.6 8.2A19 19 0 0 0 42 14.5c-7.4 0-12.7 4.6-14.6 11.5H46l-2 7H26.3l-.05 2 .05 2H42l-2 7H27.4c1.9 7 7.2 11.5 14.6 11.5 4 0 7.6-1 10.4-2.9L55 61c-3.6 2-8 3-13 3-12.7 0-22.2-8-24.4-20H10l2-7h5.06L17 35l.06-2H10l2-7h5.6C19.8 14 29.3 6 42 6z"/></symbol>
+    <symbol id="i-file" viewBox="0 0 64 64"><path d="M10 2h28v18h18v38a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm32 0 14 14H42zM16 30v6h32v-6zm0 10v6h32v-6zm0 10v6h32v-6z"/></symbol>
+    <symbol id="i-rss" viewBox="0 0 64 64"><circle cx="11" cy="53" r="8"/><path d="M3 23a38 38 0 0 1 38 38H31A28 28 0 0 0 3 33z"/><path d="M3 3a58 58 0 0 1 58 58H51A48 48 0 0 0 3 13z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="rgba(0,0,0,.65)"/><path d="M26 20v24l20-12z" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="item"><svg class="ic"><use href="#i-phone"/></svg><a class="tel" href="tel:+31850180069">085 018 00 69</a></span>
+    <span class="sep" aria-hidden="true"></span>
+    <span class="item"><svg class="ic"><use href="#i-mail-o"/></svg><a class="mail" href="mailto:support-eblinqx@blinqx.tech">support-eblinqx@blinqx.tech</a></span>
+    <a class="li" href="https://www.linkedin.com/company/blinqx/" target="_blank" rel="noopener" aria-label="Blinqx op LinkedIn">in</a>
+  </div>
+</div>
+<header class="site">
+  <div class="wrap">
+    <div class="head-row">
+      <a class="brand" href="../index.html" aria-label="Blinqx support — home">
+        <img src="../assets/logo-mark.png" alt="Blinqx" width="470" height="119">
+        <span>powered by Faster Forward</span>
+      </a>
+      <nav class="main" aria-label="Hoofdmenu"><ul><li><a href="../index.html">Home</a></li><li><a href="../nieuws/index.html">Nieuws</a></li><li><a href="../tips/index.html">Tips</a></li><li><a href="../releasenotes/index.html" aria-current="page">Release notes</a></li><li><a href="../trainingen/index.html">Trainingen</a></li><li><a href="../contact/index.html">Contact support</a></li></ul></nav>
+    </div>
+    <div class="search-row">
+      <form class="search" action="../zoeken/index.html" method="get" role="search">
+        <label class="field">
+          <svg class="ic"><use href="#i-search"/></svg>
+          <input type="search" name="q" placeholder="Zoek hier op onderwerp" aria-label="Zoek op onderwerp">
+        </label>
+        <button type="submit">Zoeken</button>
+      </form>
+      <div class="status">Mogelijke incidenten en de systeemstatus vind je op onze <a href="#" title="URL statuspagina nog invullen">statuspagina</a>.</div>
+    </div>
+  </div>
+</header>
+<div class="hero" style="background-image:url('https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2020/12/release-header.jpg')"><div class="wrap"><h1>Voorbereidingen op HDN 26 en verbeteringen PortefeuilleSignalen</h1></div></div>
+<main class="article">
+  <div class="wrap cols">
+    <article>
+      
+      <p class="meta">Geplaatst op 26 mei 2026 · Laatste update: 15 juni 2026</p>
+      <div class="content"><figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2026/05/slide.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2026/05/slide.png" alt="" width="1320" height="743" loading="lazy"></a></figure>
+<p><strong>Op woensdag 27 mei zijn Elements en eBlinqx weer verbeterd en uitgebreid met nieuwe features. Deze update bereidt Elements en eBlinqx voor op de aankomende HDN-versie 26. De overgang naar deze nieuwe HDN versie vindt plaats op 30 mei 2026. </strong></p><nav class="toc" aria-label="Inhoud"><ul><li><a href="#aanpassingen-naar-aanleiding-van-hdn-versie-26">Aanpassingen naar aanleiding van HDN-versie 26</a></li><li><a href="#verbeteringen-koppelingen-met-portefeuillesignalen">Verbeteringen koppelingen met Portefeuillesignalen</a></li><li><a href="#overige-verbeterpunten">Overige verbeterpunten</a></li></ul></nav>
+<h2 id="aanpassingen-naar-aanleiding-van-hdn-versie-26">Aanpassingen naar aanleiding van HDN-versie 26</h2>
+<h3 id="nieuwe-functionaliteiten">Nieuwe functionaliteiten</h3>
+<p><strong>Betalingsmethode advieskosten vastleggen</strong></p>
+<p>De betalingsmethode van advieskosten wordt voortaan automatisch overgenomen uit het adviespakket. In het hypotheek product wordt deze informatie getoond onder het tabblad “Wonen” bij “Netto advieskosten”. Je hebt twee opties:</p>
+<ul><li>Voldoen uit eigen middelen</li><li>Meefinancieren in de hypotheek</li></ul>
+<p>Deze informatie wordt automatisch meegestuurd in de hypotheekaanvraag naar de geldverstrekker.</p>
+<p><strong>Voorkeurstaal bij levensverzekeringen</strong></p>
+<p>Bij het aanvragen van levensverzekeringen via HDN kan een voorkeurstaal worden meegegeven. Als deze is ingevuld in de levensverzekeringsaanvraag en deze staat nog niet in Elements of eBlinqx dan wordt deze toegevoegd als <a href="../kennisbank/voorkeurstaal-instellen-in-het-dossier/index.html">voorkeurstaal</a>. Hiermee wordt correspondentie zoveel mogelijk in de juiste taal gegenereerd, afhankelijk van de inrichting van de omgeving.</p>
+<p><strong>Uiterste aanleverdatum-velden voor renteaanbod en hypotheekaanbod toegevoegd</strong></p>
+<p>Er zijn nieuwe datumvelden beschikbaar voor het renteaanbod en hypotheekaanbod, namelijk uiterste aanleverdatum dossier renteaanbod en uiterste aanleverdatum dossier hypotheekaanbod. Deze worden via het HDN-bericht aangeleverd en in het dossier beschikbaar gesteld. Wil je deze gegevens gebruiken voor signalering of workflowacties, dan kan dit worden ingericht via de workflow. Stuur hiervoor een e-mail naar support-eblinqx@blinqx.tech.</p>
+<h3 id="verbeteringen-wijzigingen">Verbeteringen/ wijzigingen</h3>
+<ul><li><strong>Matching aanvraagbericht aan adviseur</strong>: de matching van het aanvraagbericht aan de adviseur in de HDN inbox is verbeterd</li><li><strong>Maatschappij type lijst</strong>: de maatschappij type lijst van HDN is geactualiseerd met nieuwe aanbieders en verouderde maatschappijen zijn verwijderd</li><li><strong>Landennamen</strong>: de naam voor Congo (landencode CD) is gewijzigd naar “Democratische Republiek Congo” voor betere herkenbaarheid</li><li><strong>KX: </strong>we hebben de ondersteuning voor KX-berichten (kredietaanvragen) verwijderd uit het systeem. Hier wordt door HDN geen gebruik meer van gemaakt. </li><li><strong>Documentbericht (DX)</strong>: de maximale bestandsgrote van dit bericht is verhoogt van 30mb naar 35mb</li><li><strong>Bankgarantie (WX):</strong> bij het versturen van de bankgarantie wordt gekeken of in Elements of eBlinqx de voorkeurstaal staat ingevuld. Staat deze op Engels dan wordt dit als voorkeurstaal meegestuurd. Is de voorkeurstaal niet ingevuld of staat deze op Nederlands dan komt Nederlands in het uitgaande bericht te staan. Onder het element ‘Object’ is soort bouw en bestaande en nieuwbouw toegevoegd</li><li><strong>Zakelijk inkomen (ZX)</strong>: Het e-mailadres en telefoonnummer zijn in het ZX bericht verplaatst naar het element PartijNAWData. Dit geldt ook voor het e-mailadres en telefoonnummer onder het kantoor of centrale organisatie die staat in het tussenpersoonselement. Staat in Beheer – Organisatie &amp; Personen onder het kantoor of centrale organisatie het telefoonnummer (laatst opgevoerde met type zakelijk) of e-mailadres (laatst opgevoerde met type zakelijk) niet dan verschijnt er een foutmelding</li></ul>
+<h3 id="voor-elements-eblinqx-geen-actie-benodigd">Voor Elements/eBlinqx geen actie benodigd</h3>
+<p>Na de release is er geen actie benodigd binnen Elements/eBlinqx. Wij zorgen ervoor dat de aansluiting met HDN blijft werken. Hiervoor hoef je zelf niets te doen.</p>
+<br>
+<h2 id="verbeteringen-koppelingen-met-portefeuillesignalen">Verbeteringen koppelingen met Portefeuillesignalen</h2>
+<p>In de koppeling met PortefeuilleSignalen zijn er diverse verbeteringen doorgevoerd, waardoor er een betere data-uitwisseling is. De volgende verbeteringen zijn doorgevoerd:</p>
+<ul><li>Aan de SMART module is een selectie toegevoegd waarmee je direct naar het uitgebreide zoekscherm van PortefeuilleSignalen kunt gaan. In de SMART module is het woord Hypotheekbond vervangen door Signalen</li><li>Er is een verbetering doorgevoerd om te voorkomen dat inkomens dubbel in Portefeuillesignalen komen te staan. Bij het binnenkomen van de hypotheekaanvraag in Elements/eBlinqx wordt er nu beter gecontroleerd of het inkomen al aanwezig is. Dan wordt deze niet overgenomen vanuit het aanvraagbericht</li><li>De tabbladen Fastlane en Hypotheekbond zijn verduidelijkt. Het tabblad Fastlane heet nu Hypotheekadvies, het tabblad Hypotheekbond is aangepast naar Signalen</li><li>UwKluis vragenlijsten (JSON bestanden) zijn beschikbaar via de API</li><li>De mapping van de burgerlijke staat is uitgebreid en is nu verplicht om foutmeldingen te voorkomen</li></ul>
+<br>
+<h2 id="overige-verbeterpunten">Overige verbeterpunten</h2>
+<ul><li>Het tekenen voor gezien voor identiteitsdocumenten is verbeterd. Het systeem ondersteunt nu ook dossiers waarin alleen de voorkant van een identiteitsdocument beschikbaar is. Daarnaast blijft het uiteraard mogelijk om zowel voor- als achterkant aan te leveren. Hierdoor is er meer flexibiliteit in de verwerking van documenten binnen het dossier</li><li>Bij serviceprovider omgevingen wordt nu in <a href="../kennisbank/ia-ix-berichten/index.html">het uitgaande IA bericht</a> het SP element meegestuurd, zodat het duidelijk is dat deze vanuit een serviceprovider is verstuurd en het terugkomende IX bericht juist wordt ontvangen</li><li>Er wordt nu gekeken naar het standaard correspondentieadres van het dossier in plaats van het adres onder de persoon wanneer er een Finly formulier wordt verstuurd wat niet is gekoppeld aan een product. Is het formulier gekoppeld aan een product dan wordt er gekeken naar het standaard correspondentieadres in het product</li></ul></div>
+      
+      <details class="orig"><summary>Schermafbeelding van de oorspronkelijke pagina</summary><img src="../bronnen/offline-archief/shots/voorbereidingen-op-hdn-26-en-verbeteringen-portefeuillesignalen.jpg" alt="Schermafbeelding van Voorbereidingen op HDN 26 en verbeteringen PortefeuilleSignalen" loading="lazy"></details>
+      <p class="src">Bron: <a href="https://web.archive.org/web/20260629223453/https://support.fasterforward.nl/voorbereidingen-op-hdn-26-en-verbeteringen-portefeuillesignalen/" target="_blank" rel="noopener">Wayback Machine-archief</a></p>
+    </article>
+    <aside class="related"><h2>Gerelateerd:</h2><ul><li><a href="../inkoop-via-per-maatschappij-instellen-aanleveren-stuk-taak-ia-berichten-en-meer/index.html">Inkoop via per maatschappij instellen, aanleveren stuk, taak IA berichten en meer</a></li><li><a href="../portefeuillewaarde-overzicht-uitgebreid-verbeteringen-bankgarantie-en-aplaza-document-in-specifieke-map/index.html">Portefeuillewaarde-overzicht uitgebreid, verbeteringen bankgarantie en Aplaza document in specifieke map</a></li><li><a href="../verbeteringen-performance/index.html">Verbeteringen performance</a></li><li><a href="../nog-meer-data-en-documenten-vergelijken/index.html">Nog meer data en documenten vergelijken</a></li><li><a href="../gemakkelijk-data-en-documenten-vergelijken/index.html">Gemakkelijk data en documenten vergelijken</a></li><li><a href="../verbeteringen-boekhouding-en-facturatie/index.html">Verbeteringen boekhouding en facturatie</a></li></ul></aside>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span>Copyright © 2024 Blinqx powered by Faster Forward</span>
+    <nav aria-label="Beleid">
+      <a href="../supportbeleid/index.html">Supportbeleid</a>
+      <a href="../opdrachtenbeleid/index.html">Opdrachtenbeleid</a>
+      <a href="../klachtenbeleid/index.html">Klachtenbeleid</a>
+      <a href="../wensenbeleid/index.html">Wensenbeleid</a>
+      <a href="../video/index.html">Video's &amp; e-learning</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

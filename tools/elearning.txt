@@ -1,0 +1,19 @@
+# label|url|titel op Storylane|wachtwoord  (bron: https://fierhypotheken.nl/#elearning)
+Basis opstarten, inloggen, instellingen|https://blinqx.storylane.io/share/npl75yisvkpf|eBlinqx Connect: basis opstarten en inloggen|
+Klant zoeken|https://blinqx.storylane.io/share/wj15iy6dfyey|eBlinqx Connect: klantdossier zoeken|
+Klant aanmaken|https://blinqx.storylane.io/share/liudfpy4au2e|eBlinqx Connect: klantdossier aanmaken|
+Email — overige instellingen van de mailbox|https://blinqx.storylane.io/share/os253q6smdac|eBlinqx Connect: email aanmaken en verzenden|
+Overige instellingen mailbox|https://blinqx.storylane.io/share/qrqtfxmxl5oj|eBlinqx Connect: overige instellingen van de mailbox|
+Speciale instellingen van de mailbox|https://blinqx.storylane.io/share/6dq2gjm2kuv3|eBlinqx Connect: speciale acties in mailbox|
+Email koppelen|https://blinqx.storylane.io/share/vsrxj05efzou|eBlinqx Connect: email koppelen aan een dossier|
+Kolom- of lijstweergave email|https://blinqx.storylane.io/share/yobppl61w56n|eBlinqx Connect: lijst of kolomweergave|
+Kalender instellen en afspraak inboeken|https://blinqx.storylane.io/share/wm5k4bnda6l4|eBlinqx Connect: kalender instellen en afspraak inboeken.|
+Taken|https://blinqx.storylane.io/share/cc885jxstbfl|eBlinqx Connect: taken|
+Aanmaken en opvoeren schadeverzekering|https://blinqx.storylane.io/share/36vmnyv00pq4|eBlinqx Connect: invoer schadeverzekering|
+Schademeldingen registreren en verwerken|https://blinqx.storylane.io/share/xsevzehvopch|eBlinqx Connect: schademeldingen registreren en verwerken|
+SMART|https://blinqx.storylane.io/share/c2wxibrojoyo|eBlinqx Connect: SMART|
+Dossier splitsen / samenvoegen|https://blinqx.storylane.io/share/k1k8m6ytk6rz|eBlinqx Connect: dossier splitsen of samenvoegen|
+Aanmaken dienst|https://blinqx.storylane.io/share/qrmyfpldzpu4|eBlinqx Connect: aanmaken van een dienst.|
+Personen toevoegen|https://blinqx.storylane.io/share/jnrylc7q4ias|eBlinqx Connect: personen toevoegen|
+eBLINQX hypotheekadvies|https://blinqx.storylane.io/share/wqlzatuwfu1x|eBlinqx Hypotheekadvies|IkWilLeren
+Uitleg meeneemhypotheek eBlinqx Advies|https://youtu.be/mWiZ2w4aorM||

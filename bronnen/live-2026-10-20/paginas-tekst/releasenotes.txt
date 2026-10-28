@@ -1,0 +1,262 @@
+Release notes
+https://support.fasterforward.nl/releasenotes/
+
+Release notes | Support
+
+ 085 018 00 69
+
+ support-eblinqx@blinqx.tech
+
+ Home
+
+Nieuws
+
+Tips
+
+Release notes
+
+Trainingen
+
+Contact support
+
+ Supportbeleid
+
+Opdrachtenbeleid
+
+Klachtenbeleid
+
+Wensenbeleid
+
+ Zoek naar
+
+ Zoeken
+
+ Mogelijke incidenten en de systeemstatus vind je op onze statuspagina.
+
+Release notes
+
+ Laatste releases
+Hieronder vind je de laatste 10 eBlinqx updates.
+
+ Inzicht dataverbruik en verbeteringen Klantportaal, e-mail en inloggen
+
+ Op dinsdag 20 oktober is eBlinqx weer verbeterd en uitgebreid met nieuwe features. Deze release bevat onder andere niet meer uitloggen bij IP wissel, verbeteringen voor Klantportaal, e-mail, takenoverzicht, onder de motorkap en in de schadeverzekering.
+
+ Lees verder
+
+ Optimalisaties Uwkluis, verbeteringen Quinn Mail en AI gebruik gemakkelijk inzien
+
+ Op dinsdag 22 september zijn Elements en eBlinqx weer verbeterd en uitgebreid met nieuwe features. Deze release bevat onder andere verbeteringen Uwkluis, inzicht in AI gebruik en AI instellingen gemakkelijk beheren.
+
+ Lees verder
+
+ Inkoop via per maatschappij instellen, aanleveren stuk, taak IA berichten en meer
+
+ Op dinsdag 11 augustus zijn Elements en eBlinqx weer verbeterd en uitgebreid met nieuwe features. Deze release bevat onder andere inkoop via per maatschappij in te stellen, verbeteringen Uwkluis en per dossier en stuk in te stellen wie het stuk moet aanleveren.
+
+ Lees verder
+
+ Portefeuillewaarde-overzicht uitgebreid, verbeteringen bankgarantie en Aplaza document in specifieke map
+
+ Op dinsdag 7 juli zijn Elements en eBlinqx weer verbeterd en uitgebreid met nieuwe features. Deze release bevat onder andere Portefeuillewaarde-overzicht uitgebreid, Aplaza documenten in een specifieke map plaatsen, pep- en sanctiecheck via Hyarchis en wijzigen schademelding.
+
+ Lees verder
+
+ Verbeteringen performance
+
+ Op dinsdag 23 juni zijn er verbeteringen doorgevoerd aan de performance van Elements en eBlinqx. Hieronder lees je welke acties zijn afgerond, welke nog lopen en waar we naartoe werken.
+
+ Lees verder
+
+ Voorbereidingen op HDN 26 en verbeteringen PortefeuilleSignalen
+
+ Op woensdag 27 mei zijn Elements en eBlinqx weer verbeterd en uitgebreid met nieuwe features. Deze update bereidt Elements voor op de aankomende HDN-versie 26. De overgang naar deze nieuwe HDN versie vindt plaats op 30 mei 2026. 
+
+ Lees verder
+
+ Nog meer data en documenten vergelijken
+
+ Op woensdag 29 april zijn Elements en eBlinqx weer verbeterd en uitgebreid met nieuwe features. Deze release bevat onder andere uitbreiding van het aantal documenten dat slim vergeleken kan worden, en verbeteringen in de koppeling met PortefeuilleSignalen.
+
+ Lees verder
+
+ Gemakkelijk data en documenten vergelijken
+
+ Op donderdag 26 maart zijn Elements en eBlinqx weer verbeterd en uitgebreid met nieuwe features. Deze release bevat onder andere gemakkelijk data en documenten vergelijken en arrangementen bankgarantie Nationale Waarborg.
+
+ Lees verder
+
+ Verbeteringen boekhouding en facturatie
+
+ Op maandag 16 maart zijn Elements en eBlinqx weer verbeterd en uitgebreid met nieuwe features. Deze release bevat verbeteringen boekhouding en facturatie.
+
+ Lees verder
+
+ Verbeteringen gespreksopname en onder de motorkap
+
+ Op dinsdag 24 februari zijn Elements en eBlinqx weer verbeterd en uitgebreid met nieuwe features. Deze release bevat onder andere verbeteringen onder de motorkap. Ook zijn er nieuwe features alleen voor eBlinqx, namelijk verbeteringen in gespreksopname.
+
+ Lees verder
+
+ Archief
+In het archief vind je alle eBlinqx updates die de afgelopen jaren live zijn gegaan.
+
+ Gereleased in 2026
+
+ Inzicht dataverbruik en verbeteringen Klantportaal, e-mail en inloggen (16 oktober 2026)
+-->
+
+ Optimalisaties Uwkluis, verbeteringen Quinn Mail en AI gebruik gemakkelijk inzien (18 september 2026)
+-->
+
+ Inkoop via per maatschappij instellen, aanleveren stuk, taak IA berichten en meer (07 augustus 2026)
+-->
+
+ Portefeuillewaarde-overzicht uitgebreid, verbeteringen bankgarantie en Aplaza document in specifieke map (06 juli 2026)
+-->
+
+ Verbeteringen performance (19 juni 2026)
+-->
+
+ Voorbereidingen op HDN 26 en verbeteringen PortefeuilleSignalen (26 mei 2026)
+-->
+
+ Nog meer data en documenten vergelijken (29 april 2026)
+-->
+
+ Gemakkelijk data en documenten vergelijken (25 maart 2026)
+-->
+
+ Verbeteringen boekhouding en facturatie (13 maart 2026)
+-->
+
+ Verbeteringen gespreksopname en onder de motorkap (20 februari 2026)
+-->
+
+ Verbeteringen onder de motorkap en gespreksopnames (09 januari 2026)
+-->
+
+ Gereleased in 2025
+
+ HDN release: afscheid van HDN certificaten (25 november 2025)
+-->
+
+ Verbeterde verwerking van grote e-mailvolumes via Office 365 en voorbereiding HDN (14 november 2025)
+-->
+
+ Nu zelf schade- en levensverzekeringen omnummeren (20 oktober 2025)
+-->
+
+ Verbeteringen onder de motorkap en type documenten gecontroleerd (12 september 2025)
+-->
+
+ Gespreksopname omzetten in acties, verbeteringen TP incasso en meer (08 augustus 2025)
+-->
+
+ Klantrelaties volledig in beeld en nieuwe beheerdersmelding (04 juli 2025)
+-->
+
+ Vernieuwde pensioenkaart (20 mei 2025)
+-->
+
+ Elements en eBlinqx voorbereid op HDN25 release (20 mei 2025)
+-->
+
+ Openstaande facturen op betalingsoverzicht en koppeling MyTP openen vanuit schadeproduct (06 mei 2025)
+-->
+
+ Uitgaande e-mail versturen via Office 365, export naar Adviesbox online verbeterd en meer (28 maart 2025)
+-->
+
+ Verbeteringen Uwkluis, schademelding, Finly en zwevende actieknoppen (14 februari 2025)
+-->
+
+ Stukken beoordelen, koppeling Voogd & Voogd en meer (03 januari 2025)
+-->
+
+ Gereleased in 2024
+
+ Gebruikers beheren vanuit omgeving en Finly formulieren versturen vanuit tabblad (15 november 2024)
+-->
+
+ Verbeteringen productkaarten en Uwkluis (14 oktober 2024)
+-->
+
+ Gemakkelijk indexeren, uitnodigingen accepteren/afwijzen en meer (06 september 2024)
+-->
+
+ Verbeteringen ADN inbox en Uwkluis en meer (02 augustus 2024)
+-->
+
+ Verbeteringen Uwkluis, uitbreiding Ockto en meer (28 juni 2024)
+-->
+
+ HDN 24, genderneutraal ondersteund en meer (14 mei 2024)
+-->
+
+ Handmatig prolongeren maatschappij-incasso, bankgarantie accorderen via Uwkluis en meer (15 maart 2024)
+-->
+
+ Gemakkelijk in- en excasso bestanden verwerken (23 februari 2024)
+-->
+
+ Beheerder meldingen, koppeling Adviesbox Online en meer (14 februari 2024)
+-->
+
+ Gereleased in 2023
+
+ Extra partijen toevoegen in dossier, verbeteringen verzekeringen en meer (28 december 2023)
+-->
+
+ Automatisch Aplaza berichten verwijderen, HDN 23.1 update en meer (11 december 2023)
+-->
+
+ Gemakkelijk formulieren toesturen, actuele hypotheekgegevens opvragen bij ABN AMRO, boekjaar en factuurnummers 2024 aangemaakt (20 november 2023)
+-->
+
+ Link Teams genereren vanuit Elements, gemakkelijk KvK gegevens ophalen en meer (13 oktober 2023)
+-->
+
+ Nieuwe features voor Uwkluis, verzekeringen en meer (14 september 2023)
+-->
+
+ Klantportaal voor bedrijven, On Route uitgebreid en meer (01 augustus 2023)
+-->
+
+ 20 nieuwe features voor afgekeurde stukken, ADN, Uwkluis en meer (30 juni 2023)
+-->
+
+ Optimalisaties voor serviceproviders en account deblokkeren (26 mei 2023)
+-->
+
+ HDN en SIVI update (08 mei 2023)
+-->
+
+ 25 nieuwe features voor hypotheken en verzekeren (21 april 2023)
+-->
+
+ Uitbreidingen voor klantbeheer, mutaties, Ockto en meer (16 maart 2023)
+-->
+
+ Optimalisaties voor verzekeringen en contracten (10 februari 2023)
+-->
+
+ Beter inzicht in aanvragen en vernieuwingen voor hypotheken en verzekeren (05 januari 2023)
+-->
+
+Op de hoogte blijven?
+
+ Meld je aan voor onze releasemails om op de hoogte te
+blijven van alle eBlinqx updates.
+
+ Aanmelden releasenotes
+
+ Copyright © 2024 Blinqx powered by Faster Forward
+
+ Supportbeleid
+
+Opdrachtenbeleid
+
+Klachtenbeleid
+
+Wensenbeleid

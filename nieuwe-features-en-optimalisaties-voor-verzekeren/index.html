@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nieuwe features en optimalisaties voor verzekeren - Blinqx Support</title>
+<meta name="description" content="Ook in de zomer is de doorontwikkeling van Elements in volle gang! 🚀">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.png">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
+    <symbol id="i-mail-o" viewBox="0 0 24 24"><path d="M2 5h20v14H2zm2 2v.4l8 5.6 8-5.6V7zm16 2.8-8 5.6-8-5.6V17h16z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><path d="M10 2a8 8 0 0 1 6.32 12.9l5.4 5.4-1.42 1.42-5.4-5.4A8 8 0 1 1 10 2zm0 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 64 64"><circle cx="7" cy="12" r="6"/><circle cx="7" cy="32" r="6"/><circle cx="7" cy="52" r="6"/><rect x="18" y="7" width="44" height="10" rx="2"/><rect x="18" y="27" width="44" height="10" rx="2"/><rect x="18" y="47" width="44" height="10" rx="2"/></symbol>
+    <symbol id="i-home" viewBox="0 0 64 64"><path d="M32 6 2 32l4 5 4-3.4V58h18V42h8v16h18V33.6l4 3.4 4-5-10-8.7V10h-8v7.4z"/></symbol>
+    <symbol id="i-car" viewBox="0 0 64 64"><path d="M16 10h32a6 6 0 0 1 5.7 4.1L58 27a7 7 0 0 1 4 6.3V48a3 3 0 0 1-3 3h-3v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H20v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H5a3 3 0 0 1-3-3V33.3A7 7 0 0 1 6 27l4.3-12.9A6 6 0 0 1 16 10zm1.5 7-3.3 10h35.6l-3.3-10zM13 34a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm38 0a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 64 64"><path d="M4 12a4 4 0 0 1 4-4h16l6 6h22a4 4 0 0 1 4 4v6H18a6 6 0 0 0-5.6 3.9L4 50z"/><path d="M18 28h44l-10 26H6z"/></symbol>
+    <symbol id="i-desktop" viewBox="0 0 64 64"><path d="M2 6h60v40H38v6h8v6H18v-6h8v-6H2zm6 6v28h48V12z"/></symbol>
+    <symbol id="i-comments" viewBox="0 0 64 64"><path d="M26 4c13.8 0 24 8.6 24 19s-10.2 19-24 19c-2.6 0-5-.3-7.3-.8C14.6 44 9.6 46 3 46c3-3 4.8-6.2 5.3-9.6C4.4 33 2 28.2 2 23 2 12.6 12.2 4 26 4z"/><path d="M54 24.5c5 3.4 8 8.3 8 13.5 0 4.2-1.8 8-4.8 11 .4 3.6 2 6.8 4.8 9.5-6 0-10.6-1.8-14.3-4.4-2.1.5-4.4.7-6.7.7-7 0-13.1-2.4-17-6.2 14.3-.4 30-8.8 30-24.1z"/></symbol>
+    <symbol id="i-envelope" viewBox="0 0 64 64"><path d="M4 12h56a2 2 0 0 1 2 2v3L32 37 2 17v-3a2 2 0 0 1 2-2z"/><path d="M2 23.5 32 43.5l30-20V50a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-euro" viewBox="0 0 64 64"><path d="M42 6c5 0 9.5 1.2 13 3.2l-2.6 8.2A19 19 0 0 0 42 14.5c-7.4 0-12.7 4.6-14.6 11.5H46l-2 7H26.3l-.05 2 .05 2H42l-2 7H27.4c1.9 7 7.2 11.5 14.6 11.5 4 0 7.6-1 10.4-2.9L55 61c-3.6 2-8 3-13 3-12.7 0-22.2-8-24.4-20H10l2-7h5.06L17 35l.06-2H10l2-7h5.6C19.8 14 29.3 6 42 6z"/></symbol>
+    <symbol id="i-file" viewBox="0 0 64 64"><path d="M10 2h28v18h18v38a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm32 0 14 14H42zM16 30v6h32v-6zm0 10v6h32v-6zm0 10v6h32v-6z"/></symbol>
+    <symbol id="i-rss" viewBox="0 0 64 64"><circle cx="11" cy="53" r="8"/><path d="M3 23a38 38 0 0 1 38 38H31A28 28 0 0 0 3 33z"/><path d="M3 3a58 58 0 0 1 58 58H51A48 48 0 0 0 3 13z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="rgba(0,0,0,.65)"/><path d="M26 20v24l20-12z" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="item"><svg class="ic"><use href="#i-phone"/></svg><a class="tel" href="tel:+31850180069">085 018 00 69</a></span>
+    <span class="sep" aria-hidden="true"></span>
+    <span class="item"><svg class="ic"><use href="#i-mail-o"/></svg><a class="mail" href="mailto:support-eblinqx@blinqx.tech">support-eblinqx@blinqx.tech</a></span>
+    <a class="li" href="https://www.linkedin.com/company/blinqx/" target="_blank" rel="noopener" aria-label="Blinqx op LinkedIn">in</a>
+  </div>
+</div>
+<header class="site">
+  <div class="wrap">
+    <div class="head-row">
+      <a class="brand" href="../index.html" aria-label="Blinqx support — home">
+        <img src="../assets/logo-mark.png" alt="Blinqx" width="470" height="119">
+        <span>powered by Faster Forward</span>
+      </a>
+      <nav class="main" aria-label="Hoofdmenu"><ul><li><a href="../index.html">Home</a></li><li><a href="../nieuws/index.html">Nieuws</a></li><li><a href="../tips/index.html">Tips</a></li><li><a href="../releasenotes/index.html" aria-current="page">Release notes</a></li><li><a href="../trainingen/index.html">Trainingen</a></li><li><a href="../contact/index.html">Contact support</a></li></ul></nav>
+    </div>
+    <div class="search-row">
+      <form class="search" action="../zoeken/index.html" method="get" role="search">
+        <label class="field">
+          <svg class="ic"><use href="#i-search"/></svg>
+          <input type="search" name="q" placeholder="Zoek hier op onderwerp" aria-label="Zoek op onderwerp">
+        </label>
+        <button type="submit">Zoeken</button>
+      </form>
+      <div class="status">Mogelijke incidenten en de systeemstatus vind je op onze <a href="#" title="URL statuspagina nog invullen">statuspagina</a>.</div>
+    </div>
+  </div>
+</header>
+<div class="crumbs"><div class="wrap"><nav aria-label="Kruimelpad"><a href="../releasenotes/index.html">Release notes</a><span class="sep" aria-hidden="true">›</span><span aria-current="page">Nieuwe features en optimalisaties voor verzekeren</span></nav></div></div>
+<main class="article">
+  <div class="wrap cols">
+    <article>
+      <h1>Nieuwe features en optimalisaties voor verzekeren</h1>
+      <p class="meta">Geplaatst op 5 augustus 2022 · Laatste update: 29 augustus 2022</p>
+      <div class="content"><nav class="toc" aria-label="Inhoud"><ul><li><a href="#ook-in-de-zomer-is-de-doorontwikkeling-van-elements-in-volle">Ook in de zomer is de doorontwikkeling van Elements in volle gang! 🚀</a></li><li><a href="#verzekeringen">Verzekeringen</a></li><li><a href="#polis-handmatig-te-matchen-in-controlelijst">Polis handmatig te matchen in controlelijst</a></li><li><a href="#adn-bericht-beter-automatisch-gematcht-aan-polis">ADN bericht beter automatisch gematcht aan polis</a></li><li><a href="#premie-schadeverzekering-getoond-exclusief-assurantiebelasti">Premie schadeverzekering getoond exclusief assurantiebelasting</a></li><li><a href="#bepaal-zelf-wie-een-schadeverzekering-kan-aanmaken">Bepaal zelf wie een schadeverzekering kan aanmaken</a></li><li><a href="#laatste-prolongatie-alleen-bijgewerkt-bij-prolongatie">Laatste prolongatie alleen bijgewerkt bij prolongatie</a></li><li><a href="#inzicht-in-totale-pakketkorting">Inzicht in totale pakketkorting</a></li><li><a href="#algemeen">Algemeen</a></li><li><a href="#hypotheek-duidelijker-bij-inkomend-informatiebericht">Hypotheek duidelijker bij inkomend informatiebericht</a></li><li><a href="#inzicht-in-first-time-right">Inzicht in First Time Right</a></li><li><a href="#mutatievoorstellen">Mutatievoorstellen</a></li><li><a href="#maatschappij-volgen-of-controleren-bij-mutatieconflicten">Maatschappij volgen of controleren bij mutatieconflicten</a></li><li><a href="#overzicht-met-toekomstige-mutaties">Overzicht met toekomstige mutaties</a></li><li><a href="#polisinformatie-eenvoudig-te-mailen-naar-klant">Polisinformatie eenvoudig te mailen naar klant</a></li><li><a href="#mutaties-in-behandeling-overzicht-toont-alleen-actieve-mutat">Mutaties in behandeling overzicht toont alleen actieve mutaties</a></li><li><a href="#geen-mutatievoorstel-bij-boeking-zonder-mutatie">Geen mutatievoorstel bij boeking zonder mutatie</a></li><li><a href="#overige-verbeteringen-en-aanpassingen">Overige verbeteringen en aanpassingen</a></li><li><a href="#laatste-5-releasenotes">Laatste 5 releasenotes</a></li></ul></nav><h2 id="ook-in-de-zomer-is-de-doorontwikkeling-van-elements-in-volle">Ook in de zomer is de doorontwikkeling van Elements in volle gang! 🚀</h2>
+<p>Op 9 augustus is er daarom weer een update. Deze release bevat veel optimalisaties voor verzekeringsadviseurs en andere medewerkers van verzekeringsadvieskantoren.</p>
+<p>Daarnaast zijn er uitbreidingen voor iedere organisatie én zijn er nieuwe features voor advieskantoren die al werken met mutatievoorstellen.</p>
+<p>VerzekeringenPolis handmatig te matchen in controlelijstADN bericht beter automatisch gematcht aan polisPremie schadeverzekering getoond exclusief assurantiebelastingBepaal zelf wie een schadeverzekering kan aanmakenLaatste prolongatie alleen bijgewerkt bij prolongatieInzicht in totale pakketkortingAlgemeenHypotheek duidelijker bij inkomend informatieberichtInzicht in First Time RightMutatievoorstellenMaatschappij volgen of controleren bij mutatieconflictenOverzicht met toekomstige mutatiesPolisinformatie eenvoudig te mailen naar klantMutaties in behandeling overzicht toont alleen actieve mutatiesGeen mutatievoorstel bij boeking zonder mutatieOverige verbeteringen en aanpassingen</p>
+<h2 id="verzekeringen">Verzekeringen</h2>
+<h2 id="polis-handmatig-te-matchen-in-controlelijst">Polis handmatig te matchen in controlelijst</h2>
+<p>Het is vanaf nu mogelijk om direct vanuit de controlelijst handmatig een polis te matchen. Dit was voorheen alleen mogelijk in de ‘Posten’-lijst. Gebruik hiervoor het blauwe koppel-icoon.</p>
+<p>Let op: als je als tussenpersoon zelf incasseert, is het niet mogelijk om polissen te matchen vanuit de controlelijst.</p>
+<p>Daarnaast is de pop-up voor het koppelen volledig vernieuwd, waardoor deze duidelijker en overzichtelijker is. Dit is nu dezelfde pop-up als bij het koppelen van een e-mail.</p>
+<p>Tot slot is het rekenmachientje standaard grijs als je mutatievoorstellen gebruikt, omdat je de premie-afwijkingen bekijkt in de conflict pop-up. Je kan nog wel op de rekenmachine klikken om de details van de post en de polis te bekijken.</p>
+<h2 id="adn-bericht-beter-automatisch-gematcht-aan-polis">ADN bericht beter automatisch gematcht aan polis</h2>
+<p>Wanneer je handmatig een ADN bericht aan een polis hebt gekoppeld, wordt het polisnummer van het ADN bericht nu ook bijgewerkt in het tabblad ‘Matches’ in de ADN module. Wanneer er later weer een ADN bericht binnenkomt voor deze polis, wordt deze herkend en dus automatisch gematcht. Hierdoor zijn er minder foute matches en hoef je minder matches te verwijderen.</p>
+<p>Let op: het polisnummer in het klantdossier wordt niet automatisch bijgewerkt.</p>
+<h2 id="premie-schadeverzekering-getoond-exclusief-assurantiebelasti">Premie schadeverzekering getoond exclusief assurantiebelasting</h2>
+<p>In het portefeuillewaarde overzicht worden vanaf nu de premies van schadeverzekeringen getoond exclusief assurantiebelasting. Hierdoor worden alle bedragen in dit overzicht exclusief assurantiebelasting getoond en heb je een eenduidig overzicht.</p>
+<h2 id="bepaal-zelf-wie-een-schadeverzekering-kan-aanmaken">Bepaal zelf wie een schadeverzekering kan aanmaken</h2>
+<p>Je kunt nu kiezen welke medewerker een nieuwe productnaam (schadeverzekering) kan aanmaken. Standaard is dit mogelijk voor iedere medewerker. Als je wilt dat een medewerker geen productnaam kan aanmaken, stuur dan een e-mail naar <a href="mailto:support@fasterforward.nl">support@fasterforward.nl</a> en vermeld hierbij welke medewerkers wel/geen nieuwe productnamen mogen aanmaken.</p>
+<p>Daarnaast kun je nu in een bestaande polis de productnaam aanpassen door een andere (bestaande) productnaam te selecteren. Zo voorkom je een wildgroei van verschillende productnamen. De productnamen beheer je in de Productnaambeheer schadeverzekeringen.</p>
+<p>Als je een product aanmaakt vanuit ADN of Aplaza, dan nemen we de productnaam van de maatschappij over. Afhankelijk van je rechten kan je deze later weer aanpassen. Let op: de productnaam van de maatschappij wordt niet opgeslagen in de Productnaambeheer schadeverzekeringen module.</p>
+<h2 id="laatste-prolongatie-alleen-bijgewerkt-bij-prolongatie">Laatste prolongatie alleen bijgewerkt bij prolongatie</h2>
+<p>Bij prolongaties wordt nu de ‘Laatste prolongatie’ datum alleen bijgewerkt bij het verwerken van een prolongatie. Hierdoor is deze datum accurater. Voorheen werd deze datum in de polis ook bijgewerkt bij het verwerken van mutaties.</p>
+<h2 id="inzicht-in-totale-pakketkorting">Inzicht in totale pakketkorting</h2>
+<p>In de polis zie je nu bij ‘Pakketkorting’ de totale korting van het hele pakket. Zo zie je direct de totale korting van alles premies in dit pakket. De pakketkorting wordt berekend doordat uit alle polissen het ‘Termijnbedrag pakketkorting’ wordt opgeteld.</p>
+<h2 id="algemeen">Algemeen</h2>
+<h2 id="hypotheek-duidelijker-bij-inkomend-informatiebericht">Hypotheek duidelijker bij inkomend informatiebericht</h2>
+<p>Wanneer je via HDN een informatiebericht (IX) voor een hypotheek ontvangt, wordt nu direct de productnaam en het hypotheeknummer getoond. Met deze informatie kun je het bericht makkelijker matchen aan de bijbehorende hypotheek in Elements.</p>
+<h2 id="inzicht-in-first-time-right">Inzicht in First Time Right</h2>
+<p>De rapportage “Management – Hypotheekaanvraag FTR” is vanaf nu beschikbaar. Met deze rapportage zie je wanneer een hypotheekaanvraag niet in één keer werd goedgekeurd door de geldverstrekker (First Time Right). De rapportage maakt inzichtelijk welke stukken zijn afgekeurd door de maatschappij, de reden van afkeuren en door wie het stuk intern is beoordeeld.</p>
+<p>Als je deze rapportage wilt gebruiken, stuur dan een e-mail naar <a href="mailto:support@fasterforward.nl">support@fasterforward.nl</a> en geef hierbij aan welke medewerkers toegang mogen krijgen tot deze rapportage.</p>
+<h2 id="mutatievoorstellen">Mutatievoorstellen</h2>
+<p>In januari informeerden we al over verbeteringen omtrent het verwerken van verzekeringsmutaties. Ondertussen werken de eerste organisaties met mutatievoorstellen en mutatieconflicten. We benaderen onze klanten één-voor-één om de nieuwe werkwijze in te richten. We hopen de nieuwe features in het najaar van 2022 uit te rollen voor iedereen die met verzekeringen werkt in Elements.</p>
+<p>Kan je niet wachten? Stuur dan een e-mail naar <a href="mailto:support@fasterforward.nl">support@fasterforward.nl</a> en vermeld hierbij dat je wilt starten met mutatievoorstellen. Wij stemmen dan een moment met je af om de nieuwe werkwijze in te richten.</p>
+<h2 id="maatschappij-volgen-of-controleren-bij-mutatieconflicten">Maatschappij volgen of controleren bij mutatieconflicten</h2>
+<p>Als je werkt met mutatievoorstellen kan je nu zelf kiezen of je automatisch de mutaties van de maatschappij wilt goedkeuren óf dat je de mutaties van de maatschappij wilt controleren. Met deze instelling wordt dus bepaald of je de maatschappij volgt.</p>
+<p>Met deze toevoeging zijn 3 verschillende werkwijzen beschikbaar voor mutatieconflicten:</p>
+<p>Zonder mutatieconflicten, je controleert niets en voert automatisch de mutaties van de verzekeraar door in het klantdossier.Met mutatieconflicten, om te controleren of jouw mutatie overeenkomt met de mutatie van de verzekeraar.Met mutatieconflicten, om de verzekeraar te controleren of ze de mutatie correct hebben doorgevoerd.</p>
+<p>Als je al werkt met mutatievoorstellen en je wilt je instellingen wijzigen, stuur dan een e-mail naar <a href="mailto:support@fasterforward.nl">support@fasterforward.nl</a>. Vermeld hierbij welke werkwijze je wilt toepassen.</p>
+<p>Als je de maatschappij volgt, zie je niet de tabel “Mutatie in behandeling” met vinkjes en zandloper.</p>
+<h2 id="overzicht-met-toekomstige-mutaties">Overzicht met toekomstige mutaties</h2>
+<p>Je hebt nu inzicht in alle toekomstige mutaties in het ‘Overzicht toekomstige mutaties’. Deze vind je onder Verzekeringen &gt; Overzichten.</p>
+<h2 id="polisinformatie-eenvoudig-te-mailen-naar-klant">Polisinformatie eenvoudig te mailen naar klant</h2>
+<p>Als je werkt met mutatievoorstellen, kun je nu direct de workflow openen na het aanmaken van een polis. Zo kun je bijvoorbeeld gelijk de klant e-mailen dat er een polis toegevoegd aan zijn of haar pakket. Hierbij kunnen (d.m.v. tags) gegevens van de zojuist ingevoerde polis automatisch worden verstuurd naar de klant. Om deze tags te laten inrichten, stuur je een aanvraag naar <a href="mailto:support@fasterforward.nl">support@fasterforward.nl</a>.</p>
+<h2 id="mutaties-in-behandeling-overzicht-toont-alleen-actieve-mutat">Mutaties in behandeling overzicht toont alleen actieve mutaties</h2>
+<p>In het overzicht ‘Mutaties in behandeling’ zie je nu alle mutaties waar je binnenkort actie op moet ondernemen. Mutaties die in het verleden al bevestigd zijn, zijn niet meer zichtbaar.</p>
+<h2 id="geen-mutatievoorstel-bij-boeking-zonder-mutatie">Geen mutatievoorstel bij boeking zonder mutatie</h2>
+<p>Als je vanuit een ADN bericht een ‘Boeking zonder poliswijziging’ verwerkt dan wordt er geen mutatievoorstel aangemaakt. De polis is namelijk inhoudelijk niet gewijzigd. Deze boeking wordt dan alleen financieel verwerkt.</p>
+<h2 id="overige-verbeteringen-en-aanpassingen">Overige verbeteringen en aanpassingen</h2>
+<p>Zodra je een e-mail hebt doorgestuurd vanuit een dossier, keer je nu automatisch terug naar de oorspronkelijke e-mail.Bij het aanvullen van een bericht in de HDN inbox is het nu ook mogelijk om een product te selecteren als deze niet onder een productgroep valt.Bij het installeren van nieuwe producten is het niet meer verplicht om een productgroep te selecteren.Bij het aanmaken van een mutatievoorstel zijn de verzekerde bedragen beter leesbaar door de weergave in duizendtallen. 1000000 wordt bijvoorbeeld automatisch omgezet naar 1.000.000,00.De hoofdverval-, premie- en contractverval datums gaan we alleen bijwerken als de datum in het AFD bericht nieuwer is of als de datums niet zijn ingevuld in de polis. Zo staat hier altijd de juiste datum.De koppeling tussen Elements en Taxateurs Unie wordt niet langer ondersteund. Taxateurs Unie is namelijk overgenomen door NWWI en NWWI wil de koppeling niet verder onderhouden.</p>
+<h2 id="laatste-5-releasenotes">Laatste 5 releasenotes</h2>
+<ul><li>40 nieuwe features voor iedere medewerker »</li><li>Nieuwe features en optimalisaties voor verzekeren »</li><li>14 nieuwe features en verbeteringen »</li><li>Nieuwe features voor hypotheken en andere optimalisaties »</li><li>Makkelijker ADN berichten verwerken en PDF bewerken uitgebreid »</li></ul></div>
+      <section class="figs"><h2>Afbeeldingen bij dit artikel</h2><figure><a href="https://web.archive.org/web/20221002092027im_/https://support.fasterforward.nl/wp-content/uploads/2022/08/Release-WP-9aug.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20221002092027im_/https://support.fasterforward.nl/wp-content/uploads/2022/08/Release-WP-9aug.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20221002092027im_/https://support.fasterforward.nl/wp-content/uploads/2022/08/polis-matchen-controlelijst-1024x189.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20221002092027im_/https://support.fasterforward.nl/wp-content/uploads/2022/08/polis-matchen-controlelijst-1024x189.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20221002092027im_/https://support.fasterforward.nl/wp-content/uploads/2022/08/match-tabel-1024x107.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20221002092027im_/https://support.fasterforward.nl/wp-content/uploads/2022/08/match-tabel-1024x107.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20221002092027im_/https://support.fasterforward.nl/wp-content/uploads/2022/08/productnaam-aanmaken.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20221002092027im_/https://support.fasterforward.nl/wp-content/uploads/2022/08/productnaam-aanmaken.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20221002092027im_/https://support.fasterforward.nl/wp-content/uploads/2022/08/laatste-prolongatie-datum.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20221002092027im_/https://support.fasterforward.nl/wp-content/uploads/2022/08/laatste-prolongatie-datum.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20221002092027im_/https://support.fasterforward.nl/wp-content/uploads/2022/08/pakketkorting-blok.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20221002092027im_/https://support.fasterforward.nl/wp-content/uploads/2022/08/pakketkorting-blok.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure></section>
+      
+      <p class="src">Bron: <a href="https://web.archive.org/web/20221002092027/https://support.fasterforward.nl/nieuwe-features-en-optimalisaties-voor-verzekeren/" target="_blank" rel="noopener">Wayback Machine-archief</a></p>
+    </article>
+    <aside class="related"><h2>Gerelateerd:</h2><ul><li><a href="../hdn21-hypotheken/index.html">Nieuwe features voor hypotheken, documenten en HDN berichten</a></li><li><a href="../uitbreidingen-18-oktober/index.html">Overzichtelijke hypotheken, nieuwe features voor verzekeringen en meer</a></li><li><a href="../40-nieuwe-features/index.html">40 nieuwe features voor iedere medewerker</a></li><li><a href="../14-nieuwe-features-en-verbeteringen/index.html">14 nieuwe features en verbeteringen</a></li><li><a href="../hypotheken-optimalisaties-juli2022/index.html">Nieuwe features voor hypotheken en andere optimalisaties</a></li><li><a href="../hypotheekprocessen-en-wachtwoorden-aanmaken-verbeterd/index.html">Hypotheekprocessen en wachtwoorden aanmaken verbeterd</a></li></ul></aside>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span>Copyright © 2024 Blinqx powered by Faster Forward</span>
+    <nav aria-label="Beleid">
+      <a href="../supportbeleid/index.html">Supportbeleid</a>
+      <a href="../opdrachtenbeleid/index.html">Opdrachtenbeleid</a>
+      <a href="../klachtenbeleid/index.html">Klachtenbeleid</a>
+      <a href="../wensenbeleid/index.html">Wensenbeleid</a>
+      <a href="../video/index.html">Video's &amp; e-learning</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Optimalisaties Uwkluis, verbeteringen Quinn Mail en AI gebruik gemakkelijk inzien - Blinqx Support</title>
+<meta name="description" content="Op dinsdag 22 september zijn Elements en eBlinqx weer verbeterd en uitgebreid met nieuwe features. Deze release bevat onder andere">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.png">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
+    <symbol id="i-mail-o" viewBox="0 0 24 24"><path d="M2 5h20v14H2zm2 2v.4l8 5.6 8-5.6V7zm16 2.8-8 5.6-8-5.6V17h16z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><path d="M10 2a8 8 0 0 1 6.32 12.9l5.4 5.4-1.42 1.42-5.4-5.4A8 8 0 1 1 10 2zm0 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 64 64"><circle cx="7" cy="12" r="6"/><circle cx="7" cy="32" r="6"/><circle cx="7" cy="52" r="6"/><rect x="18" y="7" width="44" height="10" rx="2"/><rect x="18" y="27" width="44" height="10" rx="2"/><rect x="18" y="47" width="44" height="10" rx="2"/></symbol>
+    <symbol id="i-home" viewBox="0 0 64 64"><path d="M32 6 2 32l4 5 4-3.4V58h18V42h8v16h18V33.6l4 3.4 4-5-10-8.7V10h-8v7.4z"/></symbol>
+    <symbol id="i-car" viewBox="0 0 64 64"><path d="M16 10h32a6 6 0 0 1 5.7 4.1L58 27a7 7 0 0 1 4 6.3V48a3 3 0 0 1-3 3h-3v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H20v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H5a3 3 0 0 1-3-3V33.3A7 7 0 0 1 6 27l4.3-12.9A6 6 0 0 1 16 10zm1.5 7-3.3 10h35.6l-3.3-10zM13 34a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm38 0a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 64 64"><path d="M4 12a4 4 0 0 1 4-4h16l6 6h22a4 4 0 0 1 4 4v6H18a6 6 0 0 0-5.6 3.9L4 50z"/><path d="M18 28h44l-10 26H6z"/></symbol>
+    <symbol id="i-desktop" viewBox="0 0 64 64"><path d="M2 6h60v40H38v6h8v6H18v-6h8v-6H2zm6 6v28h48V12z"/></symbol>
+    <symbol id="i-comments" viewBox="0 0 64 64"><path d="M26 4c13.8 0 24 8.6 24 19s-10.2 19-24 19c-2.6 0-5-.3-7.3-.8C14.6 44 9.6 46 3 46c3-3 4.8-6.2 5.3-9.6C4.4 33 2 28.2 2 23 2 12.6 12.2 4 26 4z"/><path d="M54 24.5c5 3.4 8 8.3 8 13.5 0 4.2-1.8 8-4.8 11 .4 3.6 2 6.8 4.8 9.5-6 0-10.6-1.8-14.3-4.4-2.1.5-4.4.7-6.7.7-7 0-13.1-2.4-17-6.2 14.3-.4 30-8.8 30-24.1z"/></symbol>
+    <symbol id="i-envelope" viewBox="0 0 64 64"><path d="M4 12h56a2 2 0 0 1 2 2v3L32 37 2 17v-3a2 2 0 0 1 2-2z"/><path d="M2 23.5 32 43.5l30-20V50a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-euro" viewBox="0 0 64 64"><path d="M42 6c5 0 9.5 1.2 13 3.2l-2.6 8.2A19 19 0 0 0 42 14.5c-7.4 0-12.7 4.6-14.6 11.5H46l-2 7H26.3l-.05 2 .05 2H42l-2 7H27.4c1.9 7 7.2 11.5 14.6 11.5 4 0 7.6-1 10.4-2.9L55 61c-3.6 2-8 3-13 3-12.7 0-22.2-8-24.4-20H10l2-7h5.06L17 35l.06-2H10l2-7h5.6C19.8 14 29.3 6 42 6z"/></symbol>
+    <symbol id="i-file" viewBox="0 0 64 64"><path d="M10 2h28v18h18v38a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm32 0 14 14H42zM16 30v6h32v-6zm0 10v6h32v-6zm0 10v6h32v-6z"/></symbol>
+    <symbol id="i-rss" viewBox="0 0 64 64"><circle cx="11" cy="53" r="8"/><path d="M3 23a38 38 0 0 1 38 38H31A28 28 0 0 0 3 33z"/><path d="M3 3a58 58 0 0 1 58 58H51A48 48 0 0 0 3 13z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="rgba(0,0,0,.65)"/><path d="M26 20v24l20-12z" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="item"><svg class="ic"><use href="#i-phone"/></svg><a class="tel" href="tel:+31850180069">085 018 00 69</a></span>
+    <span class="sep" aria-hidden="true"></span>
+    <span class="item"><svg class="ic"><use href="#i-mail-o"/></svg><a class="mail" href="mailto:support-eblinqx@blinqx.tech">support-eblinqx@blinqx.tech</a></span>
+    <a class="li" href="https://www.linkedin.com/company/blinqx/" target="_blank" rel="noopener" aria-label="Blinqx op LinkedIn">in</a>
+  </div>
+</div>
+<header class="site">
+  <div class="wrap">
+    <div class="head-row">
+      <a class="brand" href="../index.html" aria-label="Blinqx support — home">
+        <img src="../assets/logo-mark.png" alt="Blinqx" width="470" height="119">
+        <span>powered by Faster Forward</span>
+      </a>
+      <nav class="main" aria-label="Hoofdmenu"><ul><li><a href="../index.html">Home</a></li><li><a href="../nieuws/index.html">Nieuws</a></li><li><a href="../tips/index.html">Tips</a></li><li><a href="../releasenotes/index.html" aria-current="page">Release notes</a></li><li><a href="../trainingen/index.html">Trainingen</a></li><li><a href="../contact/index.html">Contact support</a></li></ul></nav>
+    </div>
+    <div class="search-row">
+      <form class="search" action="../zoeken/index.html" method="get" role="search">
+        <label class="field">
+          <svg class="ic"><use href="#i-search"/></svg>
+          <input type="search" name="q" placeholder="Zoek hier op onderwerp" aria-label="Zoek op onderwerp">
+        </label>
+        <button type="submit">Zoeken</button>
+      </form>
+      <div class="status">Mogelijke incidenten en de systeemstatus vind je op onze <a href="#" title="URL statuspagina nog invullen">statuspagina</a>.</div>
+    </div>
+  </div>
+</header>
+<div class="hero" style="background-image:url('https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2020/12/release-header.jpg')"><div class="wrap"><h1>Optimalisaties Uwkluis, verbeteringen Quinn Mail en AI gebruik gemakkelijk inzien</h1></div></div>
+<main class="article">
+  <div class="wrap cols">
+    <article>
+      
+      <p class="meta">Geplaatst op 18 september 2026 · Laatste update: 29 september 2026</p>
+      <div class="content"><figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2026/09/image-12.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2026/09/image-12.png" alt="" width="790" height="492" loading="lazy"></a></figure>
+<p><strong>Op dinsdag 22 september zijn Elements en eBlinqx weer verbeterd en uitgebreid met nieuwe features. Deze release bevat onder andere</strong> <strong>verbeteringen Uwkluis, inzicht in AI gebruik en AI instellingen gemakkelijk beheren.</strong></p><nav class="toc" aria-label="Inhoud"><ul><li><a href="#verbeteringen-uwkluis">Verbeteringen Uwkluis</a></li><li><a href="#verbeteringen-quinn-mail">Verbeteringen Quinn Mail</a></li><li><a href="#ai-gebruik-gemakkelijk-inzien-via-een-overzicht">AI gebruik gemakkelijk inzien via één overzicht</a></li><li><a href="#ai-instellingen-vanaf-een-centrale-plek-beheren">AI instellingen vanaf één centrale plek beheren</a></li><li><a href="#overige-verbeteringen">Overige verbeteringen</a></li></ul></nav>
+<h2 id="verbeteringen-uwkluis">Verbeteringen Uwkluis</h2>
+<p>We hebben diverse technische optimalisaties doorgevoerd om de synchronisatie tussen eBlinqx/Elements en Uwkluis te verbeteren. Dit zijn met name verbeteringen onder de motorkap. Door deze technische aanpassingen kunnen we in de toekomst meer verbeteringen doorvoeren. Hieronder vind je meer informatie over deze onderliggende wijzigingen. </p>
+<h3 id="voorkomen-van-dubbele-stukken">Voorkomen van dubbele stukken</h3>
+<p>Er zijn verschillende onderliggende wijzigingen doorgevoerd om dubbele stukken te voorkomen. Zo wordt bij een synchronisatie alleen het stuk vervangen waar een wijziging in is geweest. Voorheen werd op de achtergrond alles verwijderd en opnieuw geüpload. Deze aanpassing zorgt ook voor minder onnodig verkeer tussen eBlinqx/Elements. Daarnaast ziet eBlinqx nu beter dat een verzoek in Uwkluis hoort bij een product. Hiermee voorkomen we dat er dubbele stukkenlijsten ontstaan onder één product.</p>
+<h3 id="wijzigingen-in-documenten-goed-doorgeven-aan-uwkluis">Wijzigingen in documenten goed doorgeven aan Uwkluis</h3>
+<p>In eBlinqx kan je op verschillende manieren bewerkingen doen aan een document, bijvoorbeeld censureren, een PDF bewerken, het splitsen/samenvoegen van documenten en getekend voor gezien. Deze wijzigingen werden niet altijd correct doorgeven aan Uwkluis. Hierin zijn verbeteringen doorgevoerd, zodat UwKluis altijd de laatste versie van een document heeft. Daarnaast komt onder het bijbehorende stuk ook het aangepaste document te staan. Let op: hierdoor moet je het stuk wel opnieuw beoordelen, omdat het eerder beoordeelde stuk wordt vervangen.</p>
+<h3 id="optimalisatie-dossiersynchronisatie">Optimalisatie dossiersynchronisatie</h3>
+<p>De synchronisatie van een dossier naar UwKluis is geoptimaliseerd, zodat er geen onnodige en minder zware databasebevragingen worden gedaan. Daarnaast krijgt het synchronisatieproces een eigen wachtrij die op de achtergrond wordt verwerkt. Hierdoor is de snelheid en belasting verbeterd. </p>
+<h3 id="knop-handmatig-synchroniseren-verbeterd">Knop handmatig synchroniseren verbeterd</h3>
+<p>In het tabblad Export – UwKluis komt een nieuwe knop met twee keuzes: “Basis sync” en “Volledige sync”. Bij een basis sync worden alleen de CRM gegevens, producten, contractdocumenten en voortgang hypotheekprocessen gesynchroniseerd, waarbij een volledige sync ook de documenten, de stukkenlijst, berichten, kantoorgegevens en verzoeken worden gesynchroniseerd. Zo kan je zelf bepalen wat je wilt synchroniseren. </p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2026/09/image-6.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2026/09/image-6.png" alt="" width="705" height="300" loading="lazy"></a></figure>
+<p>Onder de knop wordt de status aangegeven van de laatste synchronisatie. Zo kan je zien of er een synchronisatie bezig is, in de wachtrij staat of wanneer de laatste synchronisatie (zowel handmatig als automatisch) heeft plaatsgevonden. Zolang er een synchronisatie in de wachtrij staat, is de knop tijdelijk niet te gebruiken. Daarnaast verhuist de huidige lange statustekst van de koppeling (nu zichtbaar in de tabel) naar een tooltip bij het statusicoon, zodat de tabel rustiger wordt.</p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2026/09/image-7.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2026/09/image-7.png" alt="" width="1077" height="189" loading="lazy"></a></figure>
+<h3 id="authenticatie-uwkluis-vernieuwd">Authenticatie Uwkluis vernieuwd</h3>
+<p>De techniek waarmee de koppeling tussen eBlinqx/Elements en Uwkluis wordt gelegd is vernieuwd. Dit is een modernere en veiligere authenticatiemethode. Dit richten wij voor jou in. Hier hoef je zelf niets voor te doen. </p>
+<h3 id="nieuwe-naam-uwkluis">Nieuwe naam Uwkluis</h3>
+<p>De naam Uwkluis is veranderd naar Klantportaal. In eBlinqx veranderen we op diverse plekken Uwkluis naar Klantportaal, bijvoorbeeld in het tabblad Export, ondertekenen Uwkluis, rapportages en workflowstappen. In de standaardteksten zal je, indien gewenst, zelf de benaming moeten aanpassen. In Uwkluis zelf zal de benaming halverwege oktober aangepast worden. </p>
+<br>
+<h2 id="verbeteringen-quinn-mail">Verbeteringen Quinn Mail</h2>
+<h3 id="automatisch-koppelen-op-basis-van-ai-per-mailbox-in-te-stellen">Automatisch koppelen op basis van AI per mailbox in te stellen</h3>
+<p>Je kunt nu in de e-mailmanager per mailbox aangeven of de e-mails middels AI gekoppeld mogen worden. Zo kan je zelf bepalen in welke mailbox de e-mails op basis van AI gekoppeld mogen worden aan dossiers en producten. </p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2026/09/image.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2026/09/image.png" alt="" width="998" height="614" loading="lazy"></a></figure>
+<h3 id="vertrouwelijke-e-mails-uitsluiten-voor-koppelen-op-basis-van-ai">Vertrouwelijke e-mails uitsluiten voor koppelen op basis van AI</h3>
+<p>Er zijn diverse verbeteringen doorgevoerd om te voorkomen dat e-mails met vertrouwelijke informatie op basis van AI worden gekoppeld aan dossiers en in te zien zijn door niet bevoegde medewerkers. De volgende aanpassingen zijn gedaan:</p>
+<ol><li>E-mails die als vertrouwelijk zijn aangemerkt worden niet meer naar AI gestuurd. Deze worden niet gekoppeld op basis van AI en de mailinhoud gaat niet door de AI-verwerker. E-mails worden als vertrouwelijke aangemerkt als deze binnenkomen in e-mailboxen of bij e-mailadressen die aangemerkt zijn als <a href="https://web.archive.org/web/2026/https://support.fasterforward.nl/kennisbank/e-mails-verbergen/">vertrouwelijk (e-mails verbergen voor anderen)</a> </li><li>Draagt AI een dossier aan waarin een persoon voorkomt die ook gebruiker van eBlinqx is dan wordt de e-mail niet gekoppeld aan dit dossier. Dit geldt ook voor niet actieve en geblokkeerde gebruikers en voor elk dossiertype. <strong>Let op</strong>: onder deze persoon moet ook het gebruikersaccount gekoppeld zijn om deze link te kunnen leggen. De inhoud is in deze situatie wel door de AI-verwerker gegaan.</li><li>Als het aangedragen dossier een personeelsdossier is dan wordt deze niet gekoppeld aan dit dossier. De inhoud is in deze situatie wel door de AI-verwerker gegaan</li></ol>
+<p>Bij aanpassing 2 en 3 blijft de e-mail niet gekoppeld in de mailbox staan met de status ‘niet gelukt’. Ten slotte kan je ook het automatisch koppelen op basis van AI voor de gewenste mailbox, bijvoorbeeld de e-mailbox van HR, op ‘Nee’ zetten om zo te voorkomen dat de e-mails worden gekoppeld en door de AI-verwerker gaan.</p>
+<h3 id="blok-taak-aanmaken-op-basis-van-ai-inklappen-of-wegklikken">Blok taak aanmaken op basis van AI inklappen of wegklikken</h3>
+<p>Het is mogelijk om het blok taak aanmaken op basis van AI in te klappen of weg te klikken. Dit middels de knop ‘Inklappen’ en het rode kruisje. Het ingeklapte blok kan je indien gewenst weer uitklappen.</p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2026/08/image-4.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2026/08/image-4.png" alt="" width="976" height="211" loading="lazy"></a></figure>
+<br>
+<h2 id="ai-gebruik-gemakkelijk-inzien-via-een-overzicht">AI gebruik gemakkelijk inzien via één overzicht</h2>
+<p>Vanaf nu is er in eBlinqx een nieuw dashboard beschikbaar: AI-gebruik. Het dashboard is te benaderen via  Managementinformatie. Hiermee krijgt de beheerder van de omgeving in één overzicht inzicht in hoe de AI-functionaliteiten binnen de organisatie worden gebruikt.</p>
+<p>Het dashboard toont per AI-functionaliteit de belangrijkste aantallen, opgesplitst naar vier tijdvakken: de huidige maand (real-time bijgehouden), de volledige vorige maand, het lopende jaar tot en met gisteren, en het totaal sinds de start tot en met gisteren.</p>
+<p>Via het dashboard kan je verschillende zaken inzien, namelijk:</p>
+<ul><li>AI mail koppelen laat zien hoeveel e-mails door AI zijn beoordeeld, hoeveel daarvan correct zijn gekoppeld, hoeveel foutief zijn gekoppeld en hoeveel e-mails niet gekoppeld konden worden. Deze cijfers worden getoond per mailbox.</li><li>AI taken aanmaken laat zien hoeveel taken automatisch door AI zijn aangemaakt vanuit de mailbox, hoeveel taken handmatig zijn aangemaakt en hoeveel taken zijn afgevinkt. De handmatig aangemaakte en afgevinkte taken worden per gebruiker getoond.</li><li>AI reply aanmaken laat per gebruiker zien hoeveel reply-teksten er met AI zijn gegenereerd.</li><li>AI mail tekst verbeteren laat per gebruiker zien hoeveel teksten er met AI zijn verbeterd.</li></ul>
+<p>Vanuit het dashboard klik je per onderwerp door naar een detailpagina. Daar staan dezelfde cijfers uitgesplitst in een overzichtelijke tabel, met filters op tijdvak (huidige maand, vorige maand, dit jaar of totaal) en op context, zoals gebruiker of mailbox. Zo zie je bijvoorbeeld direct hoeveel AI-reply’s een specifieke collega deze maand heeft aangemaakt.</p>
+<p>Degenen die toegang hebben tot Managementinformatie kunnen ook het AI-gebruik inzien. Heb je hier geen toegang tot en wil je als beheerder gebruik maken van dit dashboard? Stuur dan een e-mail naar support-eblinqx@blinqx.tech.</p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2026/09/image-72.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2026/09/image-72.png" alt="" width="1917" height="851" loading="lazy"></a></figure>
+<br>
+<h2 id="ai-instellingen-vanaf-een-centrale-plek-beheren">AI instellingen vanaf één centrale plek beheren</h2>
+<p>Voortaan kun je als beheerder op één centrale plek bepalen hoe de AI-functionaliteiten in eBlinqx zich gedragen. Dit in de module AI instellingen. Heb je toegang tot deze module, dan kun je alles hierin direct instellen, waaronder</p>
+<p><strong>Aanschrijfvorm (tone of voice)</strong></p>
+<p>Eerst wordt er gekeken naar <a href="../kennisbank/voorkeurstaal-instellen-in-het-dossier/index.html">de voorkeurstaal</a> in het dossier. Staat er bij een dossier al een voorkeurstaal (formeel of informeel) ingesteld, dan gebruikt Quinn Mail die. Is er voor een dossier niets vastgelegd, dan valt Quinn Mail terug op de standaardwaarde die je zelf instelt in de AI instellingen module, bij “Aanschrijfvorm”. Deze standaard staat aanvankelijk op informeel. Zo wordt voor AI mail reply en AI tekst verbeteren de aanschrijfvorm nu automatisch en consistent toegepast.</p>
+<p><strong>Promptaanvullingen per AI-functionaliteit</strong></p>
+<p>Bij elke AI-functionaliteit — AI mail reply, AI tekst verbeteren, taken aanmaken op basis van e-mail, samenvatting gespreksopname en AI mail koppelen — kun je nu een eigen aanvulling meegeven aan de prompt die wordt gebruikt om de actie uit te voeren. Dit is geen volledige herschrijving van de instructie, maar een extra toevoeging.</p>
+<p><strong>Let op</strong>: de aanschrijfvorm (formeel/informeel) stel je hier niet in — dat doe je bij “Aanschrijfvorm” in de AI instellingen module. De omzetting van de gespreksopname naar transcript heeft geen promptaanvulling, omdat dit uitsluitend spraak-naar-tekst is.</p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2026/09/image-8.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2026/09/image-8.png" alt="" width="774" height="272" loading="lazy"></a></figure>
+<br>
+<h2 id="overige-verbeteringen">Overige verbeteringen</h2>
+<ul><li>Het ophalen van de e-mailadressen in de rapportage ‘Personen die vandaag jarig zijn’ is verbeterd. Nu worden alle type e-mailadressen opgehaald, voorheen was dit alleen het type Algemeen en Privé. Nu wordt er eerst gekeken naar het type algemeen, dan privé en dan zakelijk</li><li>Het versturen van een formulier voor een persoon met geslacht X naar Finly gaat nu goed. Voorheen gaf dit een foutmelding</li><li>Een schadebatch met daarin een post met een verrekening openstaand bedrag wordt nu correct opgehaald bij het afboeken van deze batch</li><li>In een productkaart onder ‘Behandeling’ kan je, als de setting hiervoor aanstaat, een persoon onder workflowgroep selecteren (bij behandelaar en acceptant). Voor deze situatie zijn nu tags gemaakt, zodat de gegevens van deze persoon kunnen worden opgehaald</li><li>In het tabblad Communicatie – E-mail werd in het overzicht bij ontvanger het e-mailadres getoond wat in de CC stond. Nu wordt hier het e-mailadres van de ontvanger (‘Aan’) getoond</li><li>In de SMART selectie ‘Klanten met telefoonnummer en zonder e-mailadres’ is de kolom ‘Dossierrol toegevoegd’. In de selectie ‘WWFT Klantonderzoek’ komt in de tabellen nu niets te staan als deze niet zijn uitgevoerd. Voorheen stond hier ‘fout’ ook al was deze niet uitgevoerd</li><li>Bij het salderen van meerdere geselecteerde facturen (via Acties – selecteren salderen) krijgen nu al facturen de status gesaldeerd. Voorheen kreeg maar 1 van de gesaldeerde facturen deze status</li><li>Op verschillende plaatsen in eBlinqx had je naast een actieknop een pijltje voor meerdere opties, bijvoorbeeld in de e-mail ‘Verzenden’ en ‘Later verzenden’. In deze meerdere opties stond ook de actie die je daadwerkelijk met de knop kon doen. De knop heet bijvoorbeeld Verzenden en door erop te klikken verzend je de e-mail. Dit verzenden stond dan ook nog als optie via het pijltje naast de knop. Deze dubbele weergave is op diverse plekken weggehaald, zodat via het pijltje alleen de extra opties zichtbaar zijn en niet ook nog de actie van de knop zelf</li><li>Het ondertekenen van het document met een digitale handtekening in Uwkluis (via SignRequest) door 2 personen is verbeterd</li><li>Verbeteringen API: via de API is het nu mogelijk om te zoeken op voorletters en voornaam. Ook wordt het prolongatie provisiebedrag bij het ophalen van de schadeverzekering meegegeven aan de API</li><li>E-mails waarvan de opgeslagen inhoud niet meer bestaat in de opslag worden nu beter afgehandeld. Er verschijnt een duidelijke melding (e-mail niet gevonden) om je hierop te attenderen en de verwerking loopt door. Daarnaast wordt het duidelijk vermeldt als een binnenkomende e-mail nog wordt verwerkt en je deze nog niet kunt openen (e-mail wordt verwerkt)</li><li>De rapportage ‘Managent – Algemeen overzicht facturen’ is uitgebreid met de kolom ‘Periode’. De rapportage ‘Management – Omzet per klant’ is uitgebreid met de kolommen ‘Zakelijk/particulier’, ‘Status’ en ‘Deelnemer’</li><li>De producten van TAF – Zurich en Florius Profijt 12 zijn beschikbaar gesteld via de updateknop</li></ul></div>
+      
+      
+      
+    </article>
+    <aside class="related"><h2>Gerelateerd:</h2><ul><li><a href="../inzicht-dataverbruik-en-verbeteringen-klantportaal-e-mail-en-inloggen/index.html">Inzicht dataverbruik en verbeteringen Klantportaal, e-mail en inloggen</a></li><li><a href="../inkoop-via-per-maatschappij-instellen-aanleveren-stuk-taak-ia-berichten-en-meer/index.html">Inkoop via per maatschappij instellen, aanleveren stuk, taak IA berichten en meer</a></li><li><a href="../portefeuillewaarde-overzicht-uitgebreid-verbeteringen-bankgarantie-en-aplaza-document-in-specifieke-map/index.html">Portefeuillewaarde-overzicht uitgebreid, verbeteringen bankgarantie en Aplaza document in specifieke map</a></li><li><a href="../verbeteringen-performance/index.html">Verbeteringen performance</a></li></ul></aside>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span>Copyright © 2024 Blinqx powered by Faster Forward</span>
+    <nav aria-label="Beleid">
+      <a href="../supportbeleid/index.html">Supportbeleid</a>
+      <a href="../opdrachtenbeleid/index.html">Opdrachtenbeleid</a>
+      <a href="../klachtenbeleid/index.html">Klachtenbeleid</a>
+      <a href="../wensenbeleid/index.html">Wensenbeleid</a>
+      <a href="../video/index.html">Video's &amp; e-learning</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

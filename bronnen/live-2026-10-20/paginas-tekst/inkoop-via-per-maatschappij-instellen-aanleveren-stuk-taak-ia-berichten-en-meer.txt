@@ -1,0 +1,119 @@
+Inkoop via per maatschappij instellen, aanleveren stuk, taak IA berichten en meer
+https://support.fasterforward.nl/inkoop-via-per-maatschappij-instellen-aanleveren-stuk-taak-ia-berichten-en-meer/
+
+Op dinsdag 11 augustus zijn Elements en eBlinqx weer verbeterd en uitgebreid met nieuwe features. Deze release bevat onder andere inkoop via per maatschappij in te stellen, verbeteringen Uwkluis en per dossier en stuk in te stellen wie het stuk moet aanleveren.
+
+eBlinqx Only
+
+Quinn Mail: e-mail koppelen, taken aanmaken en reply opstellen
+E-mail koppelen
+
+Taak aanmakenVanuit taken direct de e-mail beantwoorden
+
+E-mail beantwoorden met AI
+
+Blinqx en Elements
+
+Taken aangemaakt bij informatie-aanvraagberichten (IA/IX)
+
+Inkoop via hypotheken per maatschappij in te stellen
+
+Per dossier en stuk in te stellen wie stuk moet aanleveren
+
+Product in factuur kunnen wijzigen na opslaan
+
+Verbeteringen UwkluisBrondataverzoek Ockto aangemaakt voor activatie Uwkluis
+
+Overige verbeterpunten
+
+eBlinqx Only
+
+Quinn Mail: e-mail koppelen, taken aanmaken en reply opstellen
+
+Let op: alleen beschikbaar in eBlinqx
+
+Let op: deze functionaliteit is nog in pilot. Wil je hiervan gebruik maken? Vul dan dit formulier in.
+
+E-mail koppelen
+
+Er zijn verbeteringen doorgevoerd in het automatisch koppelen van e-mails aan onder andere dossiers, producten en schademeldingen. Bij deze automatische toewijzing kijken we niet langer alleen naar het onderwerp (bijvoorbeeld met #D) of het unieke e-mailadres. Met behulp van AI wordt nu ook de inhoud van de e-mail geanalyseerd om te bepalen of deze aan het dossier of product kan worden gekoppeld. Hierdoor worden e-mails sneller bij de juiste producten en/of schademeldingen ondergebracht. Daarnaast worden e-mails van bijvoorbeeld geldverstrekkers en notarissen voortaan automatisch aan het juiste dossier of product toegekend.
+
+Per e-mail wordt er aangegeven wat de status is van het automatisch koppelen door middel van AI. Zo kan je zien of de e-mail nog wordt geanalyseerd, is gekoppeld of het koppelen niet is gelukt. In sommige gevallen kan je handmatig het koppelen met AI aftrappen. Ook kan je beoordelen of de matching correct is gegaan of niet. Dit middels een duimpje omlaag of omhoog. Als blijkt dat de mail verkeerd gekoppeld is, kan de mail opnieuw gekoppeld of losgekoppeld worden.
+
+Taak aanmaken 
+
+Naast het automatisch koppelen van de e-mail, worden ook de mogelijke actiepunten uit de e-mail gehaald en in één taak gezet. Dit kan zowel automatisch als handmatig gestart worden. Er moeten aan verschillende voorwaarden worden voldaan om automatisch taken op basis van AI te maken. Bij het handmatig aanmaken van de taak is het mogelijk om de actiepunten, verantwoordelijke en tijd aan te passen, voordat je de taak aanmaakt. Je kunt het blok voor taak aanmaken inklappen door op de knop ‘inklappen’ te klikken, of permanent weg klikken door op het kruisje rechts boven te klikken.
+
+Vanuit taken direct de e-mail beantwoorden 
+
+Bij taken die door middel van AI zijn aangemaakt is het mogelijk om direct vanuit het takenoverzicht een reply te sturen. In het takenoverzicht staat bij deze taken een nieuw icoon. Als je hierop klikt dan open je een pop-up waarin je de e-mail kunt opstellen en versturen. 
+
+Het uitroepteken onder de kolom Prio is verplaatst naar voor de taak en de kolom Prio is hiermee komen te vervallen.
+
+E-mail beantwoorden met AI 
+
+Ook kan je gemakkelijk e-mails beantwoorden. Dit via de knop ‘AI reply genereren’. Op basis van de context en de eventueel ingevoerde instructie wordt er een conceptantwoord voor je klaargezet. Deze kan je controleren en aanvullen. Daarnaast is het mogelijk om de tekst van de e-mail te verbeteren door deze te selecteren en te kiezen voor ‘Tekst verbeteren met AI’. 
+
+Hier lees je meer over deze functionaliteiten.
+
+Blinqx en Elements
+
+Taken aangemaakt bij informatie-aanvraagberichten (IA/IX) 
+
+Vanaf nu worden er na het versturen van een informatie-aanvraagbericht op vaste momenten door het systeem taken aangemaakt. Zo wordt je geattendeerd op het binnenkomen van het IX-bericht of juist als deze niet is binnengekomen of bij het niet kunnen verwerken van het aanvraagbericht. De taakverantwoordelijke is de behandelaar van de hypotheek vanuit waar het informatie-aanvraagbericht wordt verzonden.
+
+Inkoop via hypotheken per maatschappij in te stellen 
+
+In de module Voorkeurscluster kan je nu per geldverstrekker aangeven wat de inkoop via moet zijn. Dit kan bijvoorbeeld ‘Rechtstreeks’ of een serviceprovider zijn. Let op: dit kan niet per deelnemer worden ingesteld. Daarnaast dien je de juiste rechten hiervoor te hebben.
+
+Bij een binnenkomend aanvraagbericht (AX) in de HDN inbox wordt er gekeken of er voor de betreffende geldverstrekker een voorkeurscluster staat ingesteld. Zo ja dan wordt dit veld direct bij ontvangst van het bericht ingevuld. Hierdoor hoeft dit veld niet meer handmatig te worden aangevuld. In veel gevallen kan hierdoor het hele bericht automatisch worden verwerkt, zonder handmatige tussenkomst. 
+
+Degenen die toegang hebben tot de module Gemiddelde doorlooptijden krijgen automatisch toegang tot de module Voorkeurscluster. Heb je deze toegang niet en is dit gewenst dan kan de mutatiebevoegde een e-mail sturen naar support-eblinqx@blinqx.tech.
+
+Per dossier en stuk in te stellen wie stuk moet aanleveren 
+
+Het is nu mogelijk om per dossier en stuk aan te geven wie het document/stuk moet aanleveren. Hierdoor kan je bijvoorbeeld per dossier aangeven welke stukken zichtbaar moeten zijn in Uwkluis of welke stukken door de tag opgehaald moeten worden als openstaande stukken. In Soort documenten beheer geef je generiek aan wie het document moet aanleveren en dit wordt standaard toegepast in de dossiers. Wijkt een bepaald dossier hiervan af dan kan je in dit specifieke dossier bij het gewenste stuk het aanleveren door wijzigen. Dit door op de naam van het stuk te klikken en het veld ‘Aan te leveren door’ aan te passen.
+
+Product in factuur kunnen wijzigen na opslaan 
+
+Je kunt nu na het opslaan van de factuur het product wijzigen. Hier zitten wat voorwaarden aan, namelijk:
+
+Het product kan alleen gewijzigd worden naar een ander product met dezelfde administratie:als het reeds geselecteerde product
+of
+
+van het dossier als er geen product was gekoppeld
+
+In het dropdownmenu worden alleen de producten getoond die dezelfde administratie hebben en ‘Geen’ als het dossier ook dezelfde administratie heeft
+Is de factuur daadwerkelijk geboekt dan is het niet mogelijk om het product te wijzigen
+Bij TP incasso facturen is het niet mogelijk om de het product te wijzigen
+
+Verbeteringen Uwkluis
+
+Brondataverzoek Ockto aangemaakt voor activatie Uwkluis 
+
+Het brondataverzoek Ockto kan nu aangemaakt worden voordat Uwkluis is geactiveerd. Dit heeft als voordeel dat het brondataverzoek direct klaar staat in Uwkluis als de klant deze activeert en inlogt. De klant kan dan meteen met het brondataverzoek aan de slag. Dit wordt geregeld vanuit de workflow. Wil je dit in de workflow aangepast hebben? Stuur dan een e-mail naar support-eblinqx@blinqx.tech.
+
+Overige verbeterpunten
+
+In de module Boeking zoeken zijn de invoervelden ‘Factuurnummer van en tot en met en ‘Boekstuknummer van en tot en met’ breder gemaakt, zodat het duidelijker is wat daar staat ingevoerd
+In een Aplaza-bericht kunnen meerdere documenten staan. Als één document aangemerkt is om het Aplaza-bericht automatisch te verwijderen en het andere document niet dan wordt het Aplaza-bericht niet automatisch verwijderd
+Bank FINOM is toegevoegd
+Het ondertekenen van documenten via Uwkluis wordt nu ondersteund door SignRequest. Dit verloopt niet meer via Stiply 
+Figlo versie 32 is doorgevoerd in eBlinqx
+Blokken op het dashboard kunnen nu ingeklapt worden. Zo heb je zelf meer regie over wat je ziet op het dashboard
+
+ Categorie: Release
+ -->
+ Geplaatst op 7 augustus 2026 (Laatste update: 17 augustus 2026) 
+
+ Laatste 5 releasenotes | 
+
+ Inzicht dataverbruik en verbeteringen Klantportaal, e-mail en inloggen » | 
+
+ Optimalisaties Uwkluis, verbeteringen Quinn Mail en AI gebruik gemakkelijk inzien » | 
+
+ Inkoop via per maatschappij instellen, aanleveren stuk, taak IA berichten en meer » | 
+
+ Portefeuillewaarde-overzicht uitgebreid, verbeteringen bankgarantie en Aplaza document in specifieke map » | 
+
+ Verbeteringen performance » |

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VKG koppeling inrichten en gebruiken - Blinqx Support</title>
+<meta name="description" content="VKG heeft een koppeling met eBlinqx. Vanuit eBlinqx kan je klantgegevens gemakkelijk exporteren naar VKG. Daarnaast is de software te gebruiken vanuit eBlinqx, waardoor je maar één keer moet inloggen en geen extra scherm…">
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="icon" href="../../assets/favicon.png">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
+    <symbol id="i-mail-o" viewBox="0 0 24 24"><path d="M2 5h20v14H2zm2 2v.4l8 5.6 8-5.6V7zm16 2.8-8 5.6-8-5.6V17h16z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><path d="M10 2a8 8 0 0 1 6.32 12.9l5.4 5.4-1.42 1.42-5.4-5.4A8 8 0 1 1 10 2zm0 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 64 64"><circle cx="7" cy="12" r="6"/><circle cx="7" cy="32" r="6"/><circle cx="7" cy="52" r="6"/><rect x="18" y="7" width="44" height="10" rx="2"/><rect x="18" y="27" width="44" height="10" rx="2"/><rect x="18" y="47" width="44" height="10" rx="2"/></symbol>
+    <symbol id="i-home" viewBox="0 0 64 64"><path d="M32 6 2 32l4 5 4-3.4V58h18V42h8v16h18V33.6l4 3.4 4-5-10-8.7V10h-8v7.4z"/></symbol>
+    <symbol id="i-car" viewBox="0 0 64 64"><path d="M16 10h32a6 6 0 0 1 5.7 4.1L58 27a7 7 0 0 1 4 6.3V48a3 3 0 0 1-3 3h-3v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H20v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H5a3 3 0 0 1-3-3V33.3A7 7 0 0 1 6 27l4.3-12.9A6 6 0 0 1 16 10zm1.5 7-3.3 10h35.6l-3.3-10zM13 34a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm38 0a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 64 64"><path d="M4 12a4 4 0 0 1 4-4h16l6 6h22a4 4 0 0 1 4 4v6H18a6 6 0 0 0-5.6 3.9L4 50z"/><path d="M18 28h44l-10 26H6z"/></symbol>
+    <symbol id="i-desktop" viewBox="0 0 64 64"><path d="M2 6h60v40H38v6h8v6H18v-6h8v-6H2zm6 6v28h48V12z"/></symbol>
+    <symbol id="i-comments" viewBox="0 0 64 64"><path d="M26 4c13.8 0 24 8.6 24 19s-10.2 19-24 19c-2.6 0-5-.3-7.3-.8C14.6 44 9.6 46 3 46c3-3 4.8-6.2 5.3-9.6C4.4 33 2 28.2 2 23 2 12.6 12.2 4 26 4z"/><path d="M54 24.5c5 3.4 8 8.3 8 13.5 0 4.2-1.8 8-4.8 11 .4 3.6 2 6.8 4.8 9.5-6 0-10.6-1.8-14.3-4.4-2.1.5-4.4.7-6.7.7-7 0-13.1-2.4-17-6.2 14.3-.4 30-8.8 30-24.1z"/></symbol>
+    <symbol id="i-envelope" viewBox="0 0 64 64"><path d="M4 12h56a2 2 0 0 1 2 2v3L32 37 2 17v-3a2 2 0 0 1 2-2z"/><path d="M2 23.5 32 43.5l30-20V50a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-euro" viewBox="0 0 64 64"><path d="M42 6c5 0 9.5 1.2 13 3.2l-2.6 8.2A19 19 0 0 0 42 14.5c-7.4 0-12.7 4.6-14.6 11.5H46l-2 7H26.3l-.05 2 .05 2H42l-2 7H27.4c1.9 7 7.2 11.5 14.6 11.5 4 0 7.6-1 10.4-2.9L55 61c-3.6 2-8 3-13 3-12.7 0-22.2-8-24.4-20H10l2-7h5.06L17 35l.06-2H10l2-7h5.6C19.8 14 29.3 6 42 6z"/></symbol>
+    <symbol id="i-file" viewBox="0 0 64 64"><path d="M10 2h28v18h18v38a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm32 0 14 14H42zM16 30v6h32v-6zm0 10v6h32v-6zm0 10v6h32v-6z"/></symbol>
+    <symbol id="i-rss" viewBox="0 0 64 64"><circle cx="11" cy="53" r="8"/><path d="M3 23a38 38 0 0 1 38 38H31A28 28 0 0 0 3 33z"/><path d="M3 3a58 58 0 0 1 58 58H51A48 48 0 0 0 3 13z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="rgba(0,0,0,.65)"/><path d="M26 20v24l20-12z" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="item"><svg class="ic"><use href="#i-phone"/></svg><a class="tel" href="tel:+31850180069">085 018 00 69</a></span>
+    <span class="sep" aria-hidden="true"></span>
+    <span class="item"><svg class="ic"><use href="#i-mail-o"/></svg><a class="mail" href="mailto:support-eblinqx@blinqx.tech">support-eblinqx@blinqx.tech</a></span>
+    <a class="li" href="https://www.linkedin.com/company/blinqx/" target="_blank" rel="noopener" aria-label="Blinqx op LinkedIn">in</a>
+  </div>
+</div>
+<header class="site">
+  <div class="wrap">
+    <div class="head-row">
+      <a class="brand" href="../../index.html" aria-label="Blinqx support — home">
+        <img src="../../assets/logo-mark.png" alt="Blinqx" width="470" height="119">
+        <span>powered by Faster Forward</span>
+      </a>
+      <nav class="main" aria-label="Hoofdmenu"><ul><li><a href="../../index.html">Home</a></li><li><a href="../../nieuws/index.html">Nieuws</a></li><li><a href="../../tips/index.html">Tips</a></li><li><a href="../../releasenotes/index.html">Release notes</a></li><li><a href="../../trainingen/index.html">Trainingen</a></li><li><a href="../../contact/index.html">Contact support</a></li></ul></nav>
+    </div>
+    <div class="search-row">
+      <form class="search" action="../../zoeken/index.html" method="get" role="search">
+        <label class="field">
+          <svg class="ic"><use href="#i-search"/></svg>
+          <input type="search" name="q" placeholder="Zoek hier op onderwerp" aria-label="Zoek op onderwerp">
+        </label>
+        <button type="submit">Zoeken</button>
+      </form>
+      <div class="status">Mogelijke incidenten en de systeemstatus vind je op onze <a href="#" title="URL statuspagina nog invullen">statuspagina</a>.</div>
+    </div>
+  </div>
+</header>
+<div class="crumbs"><div class="wrap"><nav aria-label="Kruimelpad"><a href="../../kennisbank/index.html">Kennisbank</a><span class="sep" aria-hidden="true">›</span><a href="../../categorien/koppelingen-elements/index.html">Koppelingen</a><span class="sep" aria-hidden="true">›</span><a href="../../categorien/koppelingen-elements2/index.html">Overige koppelingen</a><span class="sep" aria-hidden="true">›</span><span aria-current="page">VKG koppeling inrichten en gebruiken</span></nav></div></div>
+<main class="article">
+  <div class="wrap cols">
+    <article>
+      <h1>VKG koppeling inrichten en gebruiken</h1>
+      <p class="meta">Laatste update: 15 oktober 2025</p>
+      <div class="content"><p>VKG heeft een koppeling met eBlinqx. Vanuit eBlinqx kan je klantgegevens gemakkelijk exporteren naar VKG. Daarnaast is de software te gebruiken vanuit eBlinqx, waardoor je maar één keer moet inloggen en geen extra scherm hoeft te openen. Aangepaste of afgesloten producten kunnen vanuit het extranet van VKG naar eBlinqx geëxporteerd worden.</p><nav class="toc" aria-label="Inhoud"><ul><li><a href="#2-voer-zelf-je-inloggegevens-in">2. Voer zelf je inloggegevens in</a></li><li><a href="#eerste-keer-exporteren-vanuit-eblinqx">Eerste keer exporteren vanuit eBlinqx</a></li><li><a href="#controle-bestaande-klant-of-nieuwe-klant">Controle bestaande klant of nieuwe klant</a></li><li><a href="#producten-exporteren-naar-eblinqx">Producten exporteren naar eBlinqx</a></li><li><a href="#relatie-in-vkg-bijwerken-of-ontkoppelen">Relatie in VKG bijwerken of ontkoppelen</a></li><li><a href="#dossierhistorie">Dossierhistorie</a></li></ul></nav>
+<p>Hieronder lees je meer over de mogelijkheden.</p>
+<p>Voor het gebruik van de VKG koppeling moeten er rechten en processen aangezet worden. Wil je gebruik maken van de koppeling met VKG stuur dan een e-mail naar <a href="mailto:support-eblinqx@blinqx.tech">support-eblinqx@blinqx.tech</a>. Dan richten wij de koppeling voor je in.</p>
+<h2 id="2-voer-zelf-je-inloggegevens-in">2. Voer zelf je inloggegevens in</h2>
+<p>Het enige wat jij zelf dient in te richten is de username en password van VKG. Dit zijn de gebruikersnaam en het wachtwoord wat je gebruikt om in het extranet van VKG in te loggen. Je kunt deze gegevens via 2 manieren invoeren, namelijk via Mijn instellingen (poppetje rechts bovenin) – Instellingen – Koppelingen – VKG</p>
+<p>Of via Beheer – Organisaties &amp; Personen – de betreffende gebruiker opzoeken via het tabblad Personen – betreffende gebruiker aanklikken. Dan ga je naar tabblad Login- &amp; systeeminstellingen – Instellingen – Koppelingen – VKG. Hier vul je de gebruikersnaam en het wachtwoord in en je slaat op.</p>
+<p>Voor beide opties dien je de juiste rechten te hebben.</p>
+<p>Het kan zijn dat alle gebruikers gebruik maken van dezelfde gebruikersnaam en wachtwoord. Het is geen probleem dat dezelfde gegevens onder meerdere gebruikers opgevoerd worden.</p>
+<p>Het wachtwoord wordt getoond als sterretjes. Het is niet mogelijk om het wachtwoord te wijzigen via het wijzigingsicoon. Je moet deze verwijderen en opnieuw opvoeren.</p>
+<h2 id="eerste-keer-exporteren-vanuit-eblinqx">Eerste keer exporteren vanuit eBlinqx</h2>
+<p>Indien er voor het dossier nog geen export naar VKG is gedaan, kan je de klant exporteren via het tabblad Export – VKG. Hier wordt automatische de eerste persoon van het dossier ingevuld, maar het is ook mogelijk om hier de partner te selecteren. De gele velden zijn verplichte velden. Als alle gegevens correct staan kan je klant exporteren via de knop &#x27;Exporteren&#x27;.</p>
+<p>Let op: voor het exporteren moeten de gegevens correct ingevuld staan. De criteria vind je onder het informatie-icoon.</p>
+<p>Bij de export worden niet de gegevens van de partner of kinderen meegezonden. In het extranet van VKG kan je wel de partner en kinderen aanmaken onder de gekoppelde relatie.</p>
+<h2 id="controle-bestaande-klant-of-nieuwe-klant">Controle bestaande klant of nieuwe klant</h2>
+<p>Nadat je hebt geklikt op de knop &#x27;Exporteren&#x27; wordt er eerst gecontroleerd of de klant al bestaat in VKG. Deze controle vindt plaats aan de hand van de geboortedatum en het adres. Indien er in VKG een match wordt gevonden dan wordt deze match getoond in eBlinqx. Via &#x27;Koppelen&#x27; achter deze match kan je het dossier in eBlinqx koppelen aan de persoon in VKG. Als je toch een nieuwe relatie in VKG wilt aanmaken dan kies je voor &#x27;Toch een relatie aanmaken&#x27;.</p>
+<p>Wanneer er geen match gevonden kan worden dan wordt er direct een nieuwe relatie in VKG aangemaakt.</p>
+<h2 id="producten-exporteren-naar-eblinqx">Producten exporteren naar eBlinqx</h2>
+<p>In VKG kan je producten aanpassen of afsluiten. Na het samenstellen of aanpassen van het product, zet je met een druk op de knop het product klaar in eBlinqx. Deze komt vervolgens binnen in de &#x27;Externe berichten&#x27; inbox op het dashboard van eBlinqx. Vanuit hier kan je het bericht verder verwerken.</p>
+<h2 id="relatie-in-vkg-bijwerken-of-ontkoppelen">Relatie in VKG bijwerken of ontkoppelen</h2>
+<p>Je ziet dat de gegevens in VKG afwijken van de gegevens in de header van het dossier. Je kunt dan de gegevens updaten. Dit via het tabblad Export – VKG – klikken op de knop &#x27;Update relatie&#x27;. Vervolgens verschijnt het scherm waar je de persoon en de gegevens kunt invullen om daarna de gegevens in VKG te updaten.</p>
+<p>Via het tabblad VKG is het ook mogelijk om het de klant in eBlinqx los te koppelen van de relatie in VKG. Hiervoor gebruik je de knop &#x27;Ontkoppel relatie&#x27;. Hierbij wordt de relatie niet uit VKG verwijderd. Indien gewenst zal deze relatie in het extranet van VKG verwijderd moeten worden.</p>
+<p>Daarnaast is er de knop &#x27;Open relatie in nieuw tabblad&#x27;. Via deze knop log je in op VKG om daar de gegevens van de relatie te bekijken.</p>
+<h2 id="dossierhistorie">Dossierhistorie</h2>
+<p>Wanneer er persoonsgegevens naar VKG worden gestuurd dan wordt dit opgenomen in de dossierhistorie.</p></div>
+      <section class="figs"><h2>Afbeeldingen bij dit artikel</h2><figure><a href="https://web.archive.org/web/20231128102007im_/https://support.fasterforward.nl/wp-content/uploads/2023/03/image-7.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20231128102007im_/https://support.fasterforward.nl/wp-content/uploads/2023/03/image-7.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20231128102007im_/https://support.fasterforward.nl/wp-content/uploads/2023/02/VKG-klant-exporteren.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20231128102007im_/https://support.fasterforward.nl/wp-content/uploads/2023/02/VKG-klant-exporteren.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20231128102007im_/https://support.fasterforward.nl/wp-content/uploads/2023/02/image-5.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20231128102007im_/https://support.fasterforward.nl/wp-content/uploads/2023/02/image-5.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20231128102007im_/https://support.fasterforward.nl/wp-content/uploads/2023/04/image-2.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20231128102007im_/https://support.fasterforward.nl/wp-content/uploads/2023/04/image-2.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20231128102007im_/https://support.fasterforward.nl/wp-content/uploads/2023/05/extern-bericht.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20231128102007im_/https://support.fasterforward.nl/wp-content/uploads/2023/05/extern-bericht.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20231128102007im_/https://support.fasterforward.nl/wp-content/uploads/2023/03/image-21.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20231128102007im_/https://support.fasterforward.nl/wp-content/uploads/2023/03/image-21.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure></section>
+      <details class="orig"><summary>Schermafbeelding van de oorspronkelijke pagina</summary><img src="../../bronnen/offline-archief/shots/vkg-koppeling-gebruiken.jpg" alt="Schermafbeelding van VKG koppeling inrichten en gebruiken" loading="lazy"></details>
+      <p class="src">Bron: <a href="https://web.archive.org/web/20260629231220/https://support.fasterforward.nl/kennisbank/vkg-koppeling-gebruiken/" target="_blank" rel="noopener">Wayback Machine-archief</a></p>
+    </article>
+    <aside class="related"><h2>Gerelateerd:</h2><ul><li><a href="../../kennisbank/leadinbox-gebruiken-vanaf-contactformulier-op-website/index.html">Leads aanmaken vanaf je contactformulier met leadinbox</a></li><li><a href="../../kennisbank/contaqt/index.html">Contaqt koppeling</a></li><li><a href="../../kennisbank/differ-koppeling/index.html">Differ koppeling</a></li><li><a href="../../kennisbank/online-formulieren-versturen/index.html">Digitale formulieren versturen</a></li><li><a href="../../kennisbank/gemakkelijk-formulieren-toesturen-met-finly/index.html">Gemakkelijk formulieren toesturen met Finly</a></li><li><a href="../../kennisbank/gemakkelijk-klantgegevens-exporteren-naar-yes-co/index.html">Gemakkelijk klantgegevens exporteren naar Yes-co</a></li></ul></aside>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span>Copyright © 2024 Blinqx powered by Faster Forward</span>
+    <nav aria-label="Beleid">
+      <a href="../../supportbeleid/index.html">Supportbeleid</a>
+      <a href="../../opdrachtenbeleid/index.html">Opdrachtenbeleid</a>
+      <a href="../../klachtenbeleid/index.html">Klachtenbeleid</a>
+      <a href="../../wensenbeleid/index.html">Wensenbeleid</a>
+      <a href="../../video/index.html">Video's &amp; e-learning</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

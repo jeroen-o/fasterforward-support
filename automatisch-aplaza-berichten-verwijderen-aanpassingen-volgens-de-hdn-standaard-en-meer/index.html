@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Automatisch Aplaza berichten verwijderen, HDN 23.1 update en meer - Blinqx Support</title>
+<meta name="description" content="Op dinsdag 12 december zijn Elements en eBlinqx aangepast conform de HDN standaard 23.1. Zo kunnen alle HDN berichten ontvangen en verstuurd blijven worden. Daarnaast is het onder andere mogelijk om Aplaza berichten auto…">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.png">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
+    <symbol id="i-mail-o" viewBox="0 0 24 24"><path d="M2 5h20v14H2zm2 2v.4l8 5.6 8-5.6V7zm16 2.8-8 5.6-8-5.6V17h16z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><path d="M10 2a8 8 0 0 1 6.32 12.9l5.4 5.4-1.42 1.42-5.4-5.4A8 8 0 1 1 10 2zm0 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 64 64"><circle cx="7" cy="12" r="6"/><circle cx="7" cy="32" r="6"/><circle cx="7" cy="52" r="6"/><rect x="18" y="7" width="44" height="10" rx="2"/><rect x="18" y="27" width="44" height="10" rx="2"/><rect x="18" y="47" width="44" height="10" rx="2"/></symbol>
+    <symbol id="i-home" viewBox="0 0 64 64"><path d="M32 6 2 32l4 5 4-3.4V58h18V42h8v16h18V33.6l4 3.4 4-5-10-8.7V10h-8v7.4z"/></symbol>
+    <symbol id="i-car" viewBox="0 0 64 64"><path d="M16 10h32a6 6 0 0 1 5.7 4.1L58 27a7 7 0 0 1 4 6.3V48a3 3 0 0 1-3 3h-3v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H20v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H5a3 3 0 0 1-3-3V33.3A7 7 0 0 1 6 27l4.3-12.9A6 6 0 0 1 16 10zm1.5 7-3.3 10h35.6l-3.3-10zM13 34a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm38 0a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 64 64"><path d="M4 12a4 4 0 0 1 4-4h16l6 6h22a4 4 0 0 1 4 4v6H18a6 6 0 0 0-5.6 3.9L4 50z"/><path d="M18 28h44l-10 26H6z"/></symbol>
+    <symbol id="i-desktop" viewBox="0 0 64 64"><path d="M2 6h60v40H38v6h8v6H18v-6h8v-6H2zm6 6v28h48V12z"/></symbol>
+    <symbol id="i-comments" viewBox="0 0 64 64"><path d="M26 4c13.8 0 24 8.6 24 19s-10.2 19-24 19c-2.6 0-5-.3-7.3-.8C14.6 44 9.6 46 3 46c3-3 4.8-6.2 5.3-9.6C4.4 33 2 28.2 2 23 2 12.6 12.2 4 26 4z"/><path d="M54 24.5c5 3.4 8 8.3 8 13.5 0 4.2-1.8 8-4.8 11 .4 3.6 2 6.8 4.8 9.5-6 0-10.6-1.8-14.3-4.4-2.1.5-4.4.7-6.7.7-7 0-13.1-2.4-17-6.2 14.3-.4 30-8.8 30-24.1z"/></symbol>
+    <symbol id="i-envelope" viewBox="0 0 64 64"><path d="M4 12h56a2 2 0 0 1 2 2v3L32 37 2 17v-3a2 2 0 0 1 2-2z"/><path d="M2 23.5 32 43.5l30-20V50a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-euro" viewBox="0 0 64 64"><path d="M42 6c5 0 9.5 1.2 13 3.2l-2.6 8.2A19 19 0 0 0 42 14.5c-7.4 0-12.7 4.6-14.6 11.5H46l-2 7H26.3l-.05 2 .05 2H42l-2 7H27.4c1.9 7 7.2 11.5 14.6 11.5 4 0 7.6-1 10.4-2.9L55 61c-3.6 2-8 3-13 3-12.7 0-22.2-8-24.4-20H10l2-7h5.06L17 35l.06-2H10l2-7h5.6C19.8 14 29.3 6 42 6z"/></symbol>
+    <symbol id="i-file" viewBox="0 0 64 64"><path d="M10 2h28v18h18v38a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm32 0 14 14H42zM16 30v6h32v-6zm0 10v6h32v-6zm0 10v6h32v-6z"/></symbol>
+    <symbol id="i-rss" viewBox="0 0 64 64"><circle cx="11" cy="53" r="8"/><path d="M3 23a38 38 0 0 1 38 38H31A28 28 0 0 0 3 33z"/><path d="M3 3a58 58 0 0 1 58 58H51A48 48 0 0 0 3 13z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="rgba(0,0,0,.65)"/><path d="M26 20v24l20-12z" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="item"><svg class="ic"><use href="#i-phone"/></svg><a class="tel" href="tel:+31850180069">085 018 00 69</a></span>
+    <span class="sep" aria-hidden="true"></span>
+    <span class="item"><svg class="ic"><use href="#i-mail-o"/></svg><a class="mail" href="mailto:support-eblinqx@blinqx.tech">support-eblinqx@blinqx.tech</a></span>
+    <a class="li" href="https://www.linkedin.com/company/blinqx/" target="_blank" rel="noopener" aria-label="Blinqx op LinkedIn">in</a>
+  </div>
+</div>
+<header class="site">
+  <div class="wrap">
+    <div class="head-row">
+      <a class="brand" href="../index.html" aria-label="Blinqx support — home">
+        <img src="../assets/logo-mark.png" alt="Blinqx" width="470" height="119">
+        <span>powered by Faster Forward</span>
+      </a>
+      <nav class="main" aria-label="Hoofdmenu"><ul><li><a href="../index.html">Home</a></li><li><a href="../nieuws/index.html">Nieuws</a></li><li><a href="../tips/index.html">Tips</a></li><li><a href="../releasenotes/index.html" aria-current="page">Release notes</a></li><li><a href="../trainingen/index.html">Trainingen</a></li><li><a href="../contact/index.html">Contact support</a></li></ul></nav>
+    </div>
+    <div class="search-row">
+      <form class="search" action="../zoeken/index.html" method="get" role="search">
+        <label class="field">
+          <svg class="ic"><use href="#i-search"/></svg>
+          <input type="search" name="q" placeholder="Zoek hier op onderwerp" aria-label="Zoek op onderwerp">
+        </label>
+        <button type="submit">Zoeken</button>
+      </form>
+      <div class="status">Mogelijke incidenten en de systeemstatus vind je op onze <a href="#" title="URL statuspagina nog invullen">statuspagina</a>.</div>
+    </div>
+  </div>
+</header>
+<div class="hero" style="background-image:url('https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2020/12/release-header.jpg')"><div class="wrap"><h1>Automatisch Aplaza berichten verwijderen, HDN 23.1 update en meer</h1></div></div>
+<main class="article">
+  <div class="wrap cols">
+    <article>
+      
+      <p class="meta">Geplaatst op 11 december 2023</p>
+      <div class="content"><figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/12/Release-dec23.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/12/Release-dec23.png" alt="" width="795" height="500" loading="lazy"></a></figure>
+<p><strong>Op dinsdag 12 december zijn Elements en eBlinqx aangepast conform de HDN standaard 23.1. Zo kunnen alle HDN berichten ontvangen en verstuurd blijven worden. Daarnaast is het onder andere mogelijk om Aplaza berichten automatisch te laten verwijderen.</strong></p><nav class="toc" aria-label="Inhoud"><ul><li><a href="#automatisch-aplaza-berichten-verwijderen">Automatisch Aplaza berichten verwijderen</a></li><li><a href="#bericht-bij-prolongatie-op-hoofdvervaldatum">Bericht bij prolongatie op hoofdvervaldatum</a></li><li><a href="#zelf-opgestelde-formulieren-toesturen-naar-de-klant">Zelf opgestelde formulieren toesturen naar de klant</a></li><li><a href="#hdn-23-1-update">HDN 23.1 update</a></li><li><a href="#overige-verbeteringen">Overige verbeteringen</a></li></ul></nav>
+<h2 id="automatisch-aplaza-berichten-verwijderen">Automatisch Aplaza berichten verwijderen</h2>
+<p>Vanaf nu hoef je minder Aplaza berichten handmatig te verwijderen. Dit scheelt een hoop tijd. Vanuit de Aplaza inbox, via het hamburgermenu, kan je instellen welke berichten door het systeem direct verwijderd moeten worden na het (automatisch) koppelen aan het dossier. Dit kan iedereen instellen die toegang heeft tot de Aplaza inbox. Je doet dit aan de hand van de soort documenten. Je kunt per soort document aangeven of deze door het systeem direct verwijderd moet worden. Het verwijderen gaat in vanaf het moment dat de instelling is gedaan. Dit werkt niet met terugwerkende kracht. Het automatisch verwijderen geldt alleen voor correspondentieberichten. Berichten waarbij een nieuwe polis/dossier wordt aangemaakt of een bestaande polis wordt aangepast (offerteberichten) moeten altijd handmatig verwijderd worden. </p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/11/image-13.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/11/image-13.png" alt="" width="1607" height="357" loading="lazy"></a></figure>
+<br>
+<h2 id="bericht-bij-prolongatie-op-hoofdvervaldatum">Bericht bij prolongatie op hoofdvervaldatum</h2>
+<p>Vanaf nu is het mogelijk om via de workflow een notificatie te krijgen of de klant te informeren wanneer er een prolongatie op hoofdvervaldatum is verwerkt. Een prolongatie op hoofdvervaldatum is verwerkt bij het afronden van de ADN batch (het klikken op ‘Controlelijst afronden’). Na het afronden van de batch krijgt de workflow een seintje. Je kan zelf bepalen wat voor acties er dan uitgevoerd moeten worden, bijvoorbeeld een taak of e-mail aanmaken. </p>
+<p>Wil je hiervan gebruik maken? Stuur dan een e-mail naar support@fasterforward.nl. </p>
+<br>
+<h2 id="zelf-opgestelde-formulieren-toesturen-naar-de-klant">Zelf opgestelde formulieren toesturen naar de klant</h2>
+<p>In <a href="../gemakkelijk-formulieren-toesturen-actuele-hypotheekgegevens-opvragen-bij-abn-amro-boekjaar-en-factuurnummers-2024-aangemaakt/index.html#0-gemakkelijk-formulieren-toesturen-naar-klanten">de vorige release</a> hebben we in samenwerking met Finly het mogelijk gemaakt om gemakkelijk formulieren toe te sturen naar de klant. Het is vanaf nu ook mogelijk om formulieren die je zelf hebt aangemaakt in Finly vanuit Elements en eBlinqx naar de klant te versturen. Zo kan je zelf bepalen welke gegevens je wilt ophalen bij de klant. Ook deze formulieren vult Elements en eBlinqx al met de NAWTE gegevens die bij ons bekend zijn.</p>
+<p>Wil je hiervan gebruik maken? Het zelf aangemaakte formulier moet dan in de workflow verwerkt worden.  Stuur een e-mail naar support@fasterforward.nl met daarin het dossiertype ID van het zelfgemaakte formulier (deze is eventueel op te vragen bij Finly). </p>
+<p>Maak je nog niet gebruik van de koppeling met Finly? Neem dan eerst contact op met Finly (marnix.ravestein@finly.nl) om een overeenkomst af te sluiten.</p>
+<br>
+<h2 id="hdn-23-1-update">HDN 23.1 update</h2>
+<h3 id="nieuwe-energielabels-toegevoegd">Nieuwe energielabels toegevoegd</h3>
+<p>Er zijn nieuwe energielabels ontwikkeld, bijvoorbeeld A++++ (EP garantie) en Geen energielabel mogelijk. Deze energielabels zijn aan Elements en eBlinqx toegevoegd, zodat deze vanuit het HDN bericht overgenomen kunnen worden of handmatig geselecteerd kunnen worden. Dit onder het hypotheekproduct – tabblad Wonen.</p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/11/image-17.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/11/image-17.png" alt="" width="626" height="762" loading="lazy"></a></figure>
+<h3 id="vast-flexibel-budget-weergeven">Vast flexibel budget weergeven</h3>
+<p>Onder het tabblad Inkomen komt nu het vast flexibel budget te staan. Dit veld wordt zichtbaar bij bepaalde inkomenssoorten die vallen onder inkomen uit loondienst. Deze wordt gevuld vanuit het HDN bericht of kan handmatig ingevuld worden.</p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/11/image-18.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/11/image-18.png" alt="" width="423" height="428" loading="lazy"></a></figure>
+<h3 id="doel-van-financiering-uitgebreid">Doel van financiering uitgebreid</h3>
+<p>In een consumptief krediet kan je aangeven wat het doel van financiering is. Aan de lijst met doelen zijn nieuwe waardes toegevoegd en oude waardes verwijderd. Mocht er in de bestaande productkaart een oude verwijderde waarde staan dan wordt deze vervangen door Anders, zie toelichting. In de toelichting komt deze oude waarde te staan.</p>
+<br>
+<h2 id="overige-verbeteringen">Overige verbeteringen</h2>
+<ul><li>Via de module ‘Nog te ontvangen provisie overzicht’ kan je nu gemakkelijker de boekingen die staan op de grootboekrekening 1750 Onbekende ontvangsten maatschappijen koppelen aan een dossier. Je kunt nu de posten ook koppelen aan gearchiveerde producten en de check op pakketnummer is eruit gehaald</li><li>De rapportage CRM – Verzekeringsportefeuille is uitgebreid met de kolommen Verzekeringnemer_id, Offerte_id en offertedeel_id </li><li>Wanneer je een online afspraak vanuit Elements of eBlinqx verstuurt, kon het gebeuren dat er een e-mail met daarin een ‘Open agenda’ afspraak met een andere start- en einddatum terugkwam. Dit na het bevestigen van de uitnodiging door de andere partij. Dit is gecorrigeerd, waardoor nu de juiste start- en einddatum in de bevestigingsmail komt te staan </li><li>Vanaf nu wordt de subadministratie automatisch gevuld onder de organisatie, indien deze nog niet geselecteerd is, bij het maken van een memoriaal boeking vanuit workflow. Dit wordt aangevuld in de administratie die in de workflowactie staat geselecteerd</li><li>Wanneer je met mutatievoorstellen maatschappij volgend werkt, wordt de rappeltaak bij het royeren van een pakket direct aangemaakt. Eerst werd deze taak pas aangemaakt op de rappeldatum zelf</li><li>Het zoeken in de Poliszoeker is verbeterd. Wanneer je nu zoekt op kenteken, wordt alleen het polisonderdeel getoond waaraan dit object is gekoppeld </li><li>Op de startpagina van een dossier wordt nu in de dossiersamenvatting alle taken vermeld die gekoppeld zijn aan het dossier. Voorheen werden hier alleen de taken getoond die gekoppeld waren aan het dossier én de ingelogde gebruiker </li><li>De bestanden die aan een stuk of schademelding gekoppeld zijn, blijven daaraan gekoppeld ook al wordt de e-mail met deze bestanden ontkoppeld of herkoppeld van het dossier. Voorheen werden deze bestanden ook ontkoppeld en verwijderd, waardoor er een foutmelding verscheen bij het openen van het stuk of de schademelding</li><li>Bij de aanvraag bankgarantie of inkomensverklaring wordt nu in alle situaties een taak aangemaakt als zij documenten opvragen</li></ul></div>
+      
+      <details class="orig"><summary>Schermafbeelding van de oorspronkelijke pagina</summary><img src="../bronnen/offline-archief/shots/automatisch-aplaza-berichten-verwijderen-aanpassingen-volgens-de-hdn-standaard-en-meer.jpg" alt="Schermafbeelding van Automatisch Aplaza berichten verwijderen, HDN 23.1 update en meer" loading="lazy"></details>
+      <p class="src">Bron: <a href="https://web.archive.org/web/20260510024043/https://support.fasterforward.nl/automatisch-aplaza-berichten-verwijderen-aanpassingen-volgens-de-hdn-standaard-en-meer/" target="_blank" rel="noopener">Wayback Machine-archief</a></p>
+    </article>
+    <aside class="related"><h2>Gerelateerd:</h2><ul><li><a href="../gemakkelijk-in-en-excasso-bestanden-verwerken/index.html">Gemakkelijk in- en excasso bestanden verwerken</a></li><li><a href="../beheerder-meldingen-koppeling-adviesbox-online-en-meer/index.html">Beheerder meldingen, koppeling Adviesbox Online en meer</a></li><li><a href="../extra-partijen-toevoegen-in-dossier-verbeteringen-verzekeringen-en-meer/index.html">Extra partijen toevoegen in dossier, verbeteringen verzekeringen en meer</a></li><li><a href="../gemakkelijk-formulieren-toesturen-actuele-hypotheekgegevens-opvragen-bij-abn-amro-boekjaar-en-factuurnummers-2024-aangemaakt/index.html">Gemakkelijk formulieren toesturen, actuele hypotheekgegevens opvragen bij ABN AMRO, boekjaar en factuurnummers 2024 aangemaakt</a></li><li><a href="../link-teams-genereren-vanuit-elements-gemakkelijk-kvk-gegevens-ophalen-en-meer/index.html">Link Teams genereren vanuit Elements, gemakkelijk KvK gegevens ophalen en meer</a></li><li><a href="../nieuwe-features-voor-uwkluis-verzekeringen-en-meer/index.html">Nieuwe features voor Uwkluis, verzekeringen en meer</a></li></ul></aside>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span>Copyright © 2024 Blinqx powered by Faster Forward</span>
+    <nav aria-label="Beleid">
+      <a href="../supportbeleid/index.html">Supportbeleid</a>
+      <a href="../opdrachtenbeleid/index.html">Opdrachtenbeleid</a>
+      <a href="../klachtenbeleid/index.html">Klachtenbeleid</a>
+      <a href="../wensenbeleid/index.html">Wensenbeleid</a>
+      <a href="../video/index.html">Video's &amp; e-learning</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

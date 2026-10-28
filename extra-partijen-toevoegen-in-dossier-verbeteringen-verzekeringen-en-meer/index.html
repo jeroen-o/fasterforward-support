@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Extra partijen toevoegen in dossier, verbeteringen verzekeringen en meer - Blinqx Support</title>
+<meta name="description" content="Op woensdag 3 januari zijn Elements en eBlinqx weer verbeterd en uitgebreid met nieuwe features. Deze release bevat onder andere optimalisaties voor het klantdossier en verbeteringen ADN.">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.png">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
+    <symbol id="i-mail-o" viewBox="0 0 24 24"><path d="M2 5h20v14H2zm2 2v.4l8 5.6 8-5.6V7zm16 2.8-8 5.6-8-5.6V17h16z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><path d="M10 2a8 8 0 0 1 6.32 12.9l5.4 5.4-1.42 1.42-5.4-5.4A8 8 0 1 1 10 2zm0 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 64 64"><circle cx="7" cy="12" r="6"/><circle cx="7" cy="32" r="6"/><circle cx="7" cy="52" r="6"/><rect x="18" y="7" width="44" height="10" rx="2"/><rect x="18" y="27" width="44" height="10" rx="2"/><rect x="18" y="47" width="44" height="10" rx="2"/></symbol>
+    <symbol id="i-home" viewBox="0 0 64 64"><path d="M32 6 2 32l4 5 4-3.4V58h18V42h8v16h18V33.6l4 3.4 4-5-10-8.7V10h-8v7.4z"/></symbol>
+    <symbol id="i-car" viewBox="0 0 64 64"><path d="M16 10h32a6 6 0 0 1 5.7 4.1L58 27a7 7 0 0 1 4 6.3V48a3 3 0 0 1-3 3h-3v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H20v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H5a3 3 0 0 1-3-3V33.3A7 7 0 0 1 6 27l4.3-12.9A6 6 0 0 1 16 10zm1.5 7-3.3 10h35.6l-3.3-10zM13 34a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm38 0a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 64 64"><path d="M4 12a4 4 0 0 1 4-4h16l6 6h22a4 4 0 0 1 4 4v6H18a6 6 0 0 0-5.6 3.9L4 50z"/><path d="M18 28h44l-10 26H6z"/></symbol>
+    <symbol id="i-desktop" viewBox="0 0 64 64"><path d="M2 6h60v40H38v6h8v6H18v-6h8v-6H2zm6 6v28h48V12z"/></symbol>
+    <symbol id="i-comments" viewBox="0 0 64 64"><path d="M26 4c13.8 0 24 8.6 24 19s-10.2 19-24 19c-2.6 0-5-.3-7.3-.8C14.6 44 9.6 46 3 46c3-3 4.8-6.2 5.3-9.6C4.4 33 2 28.2 2 23 2 12.6 12.2 4 26 4z"/><path d="M54 24.5c5 3.4 8 8.3 8 13.5 0 4.2-1.8 8-4.8 11 .4 3.6 2 6.8 4.8 9.5-6 0-10.6-1.8-14.3-4.4-2.1.5-4.4.7-6.7.7-7 0-13.1-2.4-17-6.2 14.3-.4 30-8.8 30-24.1z"/></symbol>
+    <symbol id="i-envelope" viewBox="0 0 64 64"><path d="M4 12h56a2 2 0 0 1 2 2v3L32 37 2 17v-3a2 2 0 0 1 2-2z"/><path d="M2 23.5 32 43.5l30-20V50a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-euro" viewBox="0 0 64 64"><path d="M42 6c5 0 9.5 1.2 13 3.2l-2.6 8.2A19 19 0 0 0 42 14.5c-7.4 0-12.7 4.6-14.6 11.5H46l-2 7H26.3l-.05 2 .05 2H42l-2 7H27.4c1.9 7 7.2 11.5 14.6 11.5 4 0 7.6-1 10.4-2.9L55 61c-3.6 2-8 3-13 3-12.7 0-22.2-8-24.4-20H10l2-7h5.06L17 35l.06-2H10l2-7h5.6C19.8 14 29.3 6 42 6z"/></symbol>
+    <symbol id="i-file" viewBox="0 0 64 64"><path d="M10 2h28v18h18v38a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm32 0 14 14H42zM16 30v6h32v-6zm0 10v6h32v-6zm0 10v6h32v-6z"/></symbol>
+    <symbol id="i-rss" viewBox="0 0 64 64"><circle cx="11" cy="53" r="8"/><path d="M3 23a38 38 0 0 1 38 38H31A28 28 0 0 0 3 33z"/><path d="M3 3a58 58 0 0 1 58 58H51A48 48 0 0 0 3 13z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="rgba(0,0,0,.65)"/><path d="M26 20v24l20-12z" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="item"><svg class="ic"><use href="#i-phone"/></svg><a class="tel" href="tel:+31850180069">085 018 00 69</a></span>
+    <span class="sep" aria-hidden="true"></span>
+    <span class="item"><svg class="ic"><use href="#i-mail-o"/></svg><a class="mail" href="mailto:support-eblinqx@blinqx.tech">support-eblinqx@blinqx.tech</a></span>
+    <a class="li" href="https://www.linkedin.com/company/blinqx/" target="_blank" rel="noopener" aria-label="Blinqx op LinkedIn">in</a>
+  </div>
+</div>
+<header class="site">
+  <div class="wrap">
+    <div class="head-row">
+      <a class="brand" href="../index.html" aria-label="Blinqx support — home">
+        <img src="../assets/logo-mark.png" alt="Blinqx" width="470" height="119">
+        <span>powered by Faster Forward</span>
+      </a>
+      <nav class="main" aria-label="Hoofdmenu"><ul><li><a href="../index.html">Home</a></li><li><a href="../nieuws/index.html">Nieuws</a></li><li><a href="../tips/index.html">Tips</a></li><li><a href="../releasenotes/index.html" aria-current="page">Release notes</a></li><li><a href="../trainingen/index.html">Trainingen</a></li><li><a href="../contact/index.html">Contact support</a></li></ul></nav>
+    </div>
+    <div class="search-row">
+      <form class="search" action="../zoeken/index.html" method="get" role="search">
+        <label class="field">
+          <svg class="ic"><use href="#i-search"/></svg>
+          <input type="search" name="q" placeholder="Zoek hier op onderwerp" aria-label="Zoek op onderwerp">
+        </label>
+        <button type="submit">Zoeken</button>
+      </form>
+      <div class="status">Mogelijke incidenten en de systeemstatus vind je op onze <a href="#" title="URL statuspagina nog invullen">statuspagina</a>.</div>
+    </div>
+  </div>
+</header>
+<div class="hero" style="background-image:url('https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2020/12/release-header.jpg')"><div class="wrap"><h1>Extra partijen toevoegen in dossier, verbeteringen verzekeringen en meer</h1></div></div>
+<main class="article">
+  <div class="wrap cols">
+    <article>
+      
+      <p class="meta">Geplaatst op 28 december 2023 · Laatste update: 19 juni 2026</p>
+      <div class="content"><figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/12/Release-3-januari-2024.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/12/Release-3-januari-2024.png" alt="" width="795" height="500" loading="lazy"></a></figure>
+<p><strong>Op woensdag 3 januari zijn Elements en eBlinqx weer verbeterd en uitgebreid met nieuwe features. Deze release bevat onder andere optimalisaties voor het klantdossier en verbeteringen ADN.</strong></p><nav class="toc" aria-label="Inhoud"><ul><li><a href="#extra-partijen-in-dossier-toevoegen">Extra partijen in dossier toevoegen</a></li><li><a href="#stukkenlijst-wordt-verwijderd-bij-archiveren-product">Stukkenlijst wordt verwijderd bij archiveren product</a></li><li><a href="#verbeteringen-uwkluis">Verbeteringen Uwkluis</a></li><li><a href="#aanpassingen-formulieren-finly">Aanpassingen formulieren Finly</a></li><li><a href="#woningwaarde-rapport-gratis-op-te-halen">Woningwaarde rapport gratis op te halen</a></li><li><a href="#productkaart-bij-eerste-adn-verwerking-bijgewerkt">Productkaart bij eerste ADN verwerking bijgewerkt</a></li><li><a href="#niet-ontvangen-adn-posten-afvinken">Niet ontvangen ADN posten afvinken</a></li><li><a href="#toeslag-als-termijnbedrag-zichtbaar-in-berekening-premie">Toeslag als termijnbedrag zichtbaar in berekening premie</a></li><li><a href="#nieuwe-dekkingen-volgens-sivi-up-to-date">Nieuwe dekkingen volgens SIVI up-to-date</a></li></ul></nav>
+Advieskantoren
+<hr>
+<h2 id="extra-partijen-in-dossier-toevoegen">Extra partijen in dossier toevoegen</h2>
+<p>Je kunt nu heel gemakkelijk zelf extra partijen toevoegen aan het dossier. Zo wordt in één oogopslag duidelijk wie bijvoorbeeld de ouder, de bewindvoerder of ex-partner is. Het aanmaken en beheren van deze partijen doe je geheel zelf in de module ‘Overige partijen beheren’. Op deze manier kan jij zelf bepalen welke overige partijen jij wilt toevoegen aan jouw omgeving. In de module kan je aangeven of de overige partijen getoond moeten worden op de startpagina van een dossier en/of je deze moet kunnen selecteren in het product. Zo kan je in een product een overige partij aanmerken als bijvoorbeeld aanvrager, premiebetaler of verzekeringnemer. Daarnaast kan je vanuit het dossier communicatie richten aan en versturen naar deze overige partij. De huidige rollen ‘eerste aanvrager, partner en kind’ blijven bestaan om zo alle bestaande functionaliteiten door te laten lopen. <a href="../kennisbank/extra-partijen-toevoegen-aan-het-dossier/index.html">Hier</a> lees je hoe het precies in zijn werk gaat.</p>
+<p>Wil je gebruik maken van de module ‘Overige partijen beheren’ stuur dan een e-mail naar <a href="mailto:support@fasterforward.nl">support@fasterforward.nl</a>. Let op: alleen beheerders kunnen doorgeven wie toegang moet krijgen tot deze module.</p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/12/image-8.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/12/image-8.png" alt="" width="944" height="760" loading="lazy"></a></figure>
+<br>
+<h2 id="stukkenlijst-wordt-verwijderd-bij-archiveren-product">Stukkenlijst wordt verwijderd bij archiveren product</h2>
+<p>Een stukkenlijst wordt nu automatisch verwijderd bij het archiveren van een product. Een product kan (automatisch) gearchiveerd worden wanneer de aanvraag is vervallen of beëindigd. In deze situaties is de stukkenlijst niet meer benodigd, aangezien je voor deze aanvraag geen stukken meer hoeft te versturen. Door de stukkenlijst automatisch te verwijderen bij het archiveren voorkom je dat er onnodig stukkenlijsten in het dossier blijven staan. De documenten gekoppeld aan het stuk staan onder het tabblad Documenten, waardoor deze altijd terug te vinden zijn. Mocht het hypotheekproduct onterecht op beëindigd en gearchiveerd komen te staan dan kan de maatschappij een nieuw documentaanvraagbericht (DA) versturen om zo de stukkenlijst te herstellen.</p>
+<br>
+<h2 id="verbeteringen-uwkluis">Verbeteringen Uwkluis</h2>
+<h3 id="brondata-ockto-als-aparte-pdf-bestanden">Brondata Ockto als aparte PDF bestanden</h3>
+<p>Via Uwkluis is het mogelijk om met Ockto brondata op te halen bij verschillende instanties. Deze informatie komt nu in diverse PDF bestanden onder het klantdossier te staan. Zo heb je een apart document van bijvoorbeeld UWV en UPO. Voorheen kwam al deze informatie in één PDF bestand in Elements te staan. Nu hoef je niet meer zelf dit ene document te bewerken, maar kan je direct de PDF bestanden aan het juiste stuk koppelen.</p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/12/image-11.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/12/image-11.png" alt="" width="729" height="226" loading="lazy"></a></figure>
+<br>
+<h2 id="aanpassingen-formulieren-finly">Aanpassingen formulieren Finly</h2>
+<h3 id="nieuw-formulier-beschikbaar">Nieuw formulier beschikbaar</h3>
+<p>Via Elements kan je gemakkelijk formulieren opvragen bij <a href="../kennisbank/gemakkelijk-formulieren-toesturen-met-finly/index.html">Finly</a>. Aan de beschikbare formulieren is vanaf nu het formulier ‘Particuliere check-up’ toegevoegd. Wil je hiervan gebruik maken? Dan moet deze toegevoegd worden aan de workflow. Stuur hiervoor een e-mail naar support@fasterforward.nl</p>
+<h3 id="naamswijziging-bestaande-formulieren">Naamswijziging bestaande formulieren</h3>
+<p>De formulieren ‘Schademelden’ en ‘Risicomanagement’ zijn al beschikbaar. Deze hebben alleen een andere naam gekregen, namelijk ‘Schademelden inboedel’ en ‘Risico inventarisatie zakelijk’.</p>
+<h3 id="bijlagen-in-elements-en-eblinqx">Bijlagen in Elements en eBlinqx</h3>
+<p>Bij sommige formulieren kan de klant extra bijlagen toevoegen. Deze bijlagen komen ook in Elements en eBlinqx te staan onder het tabblad Documenten. Deze documenten hebben als protocol Finly en als soort document ‘bijlage Finly formulier’. Zo is het duidelijk dat deze bijlagen/documenten horen bij een formulier wat door de klant is ingevuld.</p>
+<p>Maak je nog geen gebruik van de koppeling met Finly? Neem dan eerst contact op met Finly (support-crm@blinqx.tech) om een overeenkomst af te sluiten. Zij sturen de betreffende gegevens naar ons op om het verder voor je in te richten.</p>
+<br>
+<h2 id="woningwaarde-rapport-gratis-op-te-halen">Woningwaarde rapport gratis op te halen</h2>
+<p>Wanneer jij gebruikt maakt van PortefeuilleSignalen kan je vanaf nu gratis het woningwaarde rapport van een dossier ophalen. Dit kan je doen door middel van de knop ‘Woningwaarde’ onder het tabblad Berekeningen. Voorheen moest je hiervoor betalen.  Als je geen gebruik maakt van PortefeuilleSignalen en je wilt toch een woningwaarde rapport ophalen dan kan je bij Hypotheekbond een demo-login aanvragen. Zonder een account is het niet meer mogelijk om het woningwaarde rapport bij hen op te vragen.</p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/12/image-12.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/12/image-12.png" alt="" width="475" height="272" loading="lazy"></a></figure>
+<br>
+Verzekeringen
+<hr>
+<h2 id="productkaart-bij-eerste-adn-verwerking-bijgewerkt">Productkaart bij eerste ADN verwerking bijgewerkt</h2>
+<p>Wanneer je werkt met mutatievoorstellen wordt nu ook de productkaart bijgewerkt aan de hand van het eerste AFD bericht wat voor dit product wordt verwerkt. Zo is de productkaart up-to-date en gevuld met de juiste gegevens. Voorheen (bij mutatievoorstellen) werd de productkaart alleen bijgewerkt bij een mutatie en wanneer de ADN verwerking een prolongatie op hoofdvervaldatum betrof. Hierdoor kon het voorkomen dat de productkaart lang leeg bleef ondanks het verwerken van het ADN bericht. Nu zal dit minder vaak voorkomen, doordat de productkaart ook aangepast wordt bij de verwerking van het eerste AFD bericht (ADN of Aplaza) naast het bijwerken bij prolongatie op hoofdvervaldatum en een mutatie.</p>
+<br>
+<h2 id="niet-ontvangen-adn-posten-afvinken">Niet ontvangen ADN posten afvinken</h2>
+<p>Vanaf nu is het mogelijk om in de ADN module onder <a href="../kennisbank/adn-tabbladen-overzicht/index.html#2-niet-ontvangen">het tabblad ‘Niet ontvangen’</a> regels af te vinken. Onder dit tabblad staan de polissen waarvan je via ADN in een bepaalde maand geen provisie hebt ontvangen, terwijl Elements en eBlinqx dit wel verwacht. Je controleert deze polissen en bijbehorende productkaart. Met het afvinken geef je aan dat je geen prolongatie meer hoeft te ontvangen en/of je de productkaart hebt aangepast. De afgevinkte posten zullen uit de lijst verdwijnen, nadat je hebt geklikt op ‘Markeer geselecteerde posten als gecontroleerd’. Op deze manier kan je het tabblad ‘Niet ontvangen’ actief bijwerken.</p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/12/Niet-ontvangen-posten-afvinken.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/12/Niet-ontvangen-posten-afvinken.png" alt="" width="1890" height="466" loading="lazy"></a></figure>
+<br>
+<h2 id="toeslag-als-termijnbedrag-zichtbaar-in-berekening-premie">Toeslag als termijnbedrag zichtbaar in berekening premie</h2>
+<p>In de polis wordt uiteengezet hoe het totale premiebedrag is opgebouwd. Vanaf nu staat in deze opbouw ook het termijnbedrag toeslag. Deze toeslag werd al wel meegenomen in de berekening, maar was voorheen niet zichtbaar in deze opbouw. Ook is het termijnbedrag toeslag op te halen door middel van een tag en wordt deze getoond in de dossiersamenvatting.</p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/12/Termijnbedrag-toeslag.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/12/Termijnbedrag-toeslag.png" alt="" width="1033" height="347" loading="lazy"></a></figure>
+<br>
+<h2 id="nieuwe-dekkingen-volgens-sivi-up-to-date">Nieuwe dekkingen volgens SIVI up-to-date</h2>
+<p>Als via ADN en Aplaza berichten binnenkomen, worden de nieuwste, bijbehorende dekkingen en/of soorten documenten aangemaakt. Deze zijn namelijk uitgebreid volgens de SIVI richtlijnen van april. Hiermee zijn alle te selecteren verzekeringen up-to-date om correct te verwerken in een klantdossier.</p>
+<figure><table><tbody><tr><td><strong>Nieuwe dekkingen</strong></td></tr><tr><td>Glas in afscheidingen</td></tr><tr><td>Werkmaterieel aansprakelijkheid</td></tr><tr><td>Werkmaterieel aansprakelijkheid uitgebreid</td></tr><tr><td>Bedrijfsschade cyber (stagnatie eigen bedrijf)</td></tr><tr><td>Bedrijfsschade cyber (stagnatie bij derden)</td></tr><tr><td>Machinebreuk met brandschade</td></tr><tr><td>Extra kosten brand en storm</td></tr><tr><td>Extra kosten brand en inbraak</td></tr><tr><td>Extra kosten uitgebreid</td></tr><tr><td>Extra kosten brand/storm/lucht-/ruimtevaartuigen</td></tr><tr><td>Extra kosten alle gevaren</td></tr><tr><td>Extra kosten extra uitgebreid</td></tr><tr><td>Bijzondere kosten opstal en inboedel</td></tr><tr><td>Rechtsbijstand pand en personeel</td></tr><tr><td>Schadeverzekering bestuurders</td></tr><tr><td>Opstal brand, storm en inbraak</td></tr><tr><td>Garage</td></tr><tr><td>Handelsvoorraad</td></tr><tr><td>Handelsvoorraad uitgebreid</td></tr><tr><td>Lijfsieraden verlies</td></tr><tr><td>Lijfsieraden schade</td></tr><tr><td>Liefsieraden diefstal</td></tr><tr><td>Werkgeversaansprakelijkheid werkmaterieel</td></tr><tr><td>Rechtsbijstand bedrijf, verkeer en juridisch</td></tr></tbody></table></figure>
+<br>
+Overige verbeteringen
+<ul><li>In het mutatievoorstel werd soms onterecht aangegeven dat het verzekerd object en/of de premieopbouw is aangepast. Deze check hebben we verbeterd, waardoor deze melding er alleen komt te staan als het verzekerd object of premieopbouw daadwerkelijk is gewijzigd </li><li>In de leningdelen van de hypotheekkaart wordt het doel vermeld. Dit doel wordt vanaf nu overgenomen vanuit het HDN bericht. De doelen kunnen zijn Box 1, Box 3 of Box 1/Box 3. Zo wordt het veld eenduidig gevuld en staat hier de correcte waarde </li><li>Het is niet meer mogelijk om een DA-bericht te verzenden (serviceprovider) wanneer er voor dat dossier nog DA berichten in de HDN inbox staan om te verwerken. Er verschijnt dan een melding. Als alle DA berichten zijn verwerkt, kan je een nieuw DA bericht versturen. Op deze manier stuur je altijd de meest actuele status mee naar intermediair</li><li>In een boekstuk kan je met de beschikbare knoppen naar het vorige of volgende boekstuk gaan. Deze knoppen kijken nu alleen naar de boekstukken binnen hetzelfde boekjaar. Dit geldt ook voor de saldoaansluiting tussen de boekstukken. Dit verbetert de snelheid van Elements en eBlinqx</li><li>Het prolongatiesoverzicht ‘Overzicht prolongaties’ is niet meer te raadplegen. Dit is een ouder overzicht wat niet meer onderhouden wordt. De informatie is op te halen via andere beschikbare overzichten</li><li>Wanneer je een adres opvoert, kan je het type van het onderpand selecteren. Aan dit type is ‘Bedrijfsonroerendgoed’ toegevoegd</li><li>Er zijn diverse banken uit Curaçao toegevoegd, zodat deze gebruikt kunnen worden in de boekhouding </li><li>In de rapportage CRM – dossiers met organisaties wordt nu het standaard correspondentieadres opgehaald in plaats van het eerst opgevoerde adres onder de organisatie</li></ul></div>
+      
+      <details class="orig"><summary>Schermafbeelding van de oorspronkelijke pagina</summary><img src="../bronnen/offline-archief/shots/extra-partijen-toevoegen-in-dossier-verbeteringen-verzekeringen-en-meer.jpg" alt="Schermafbeelding van Extra partijen toevoegen in dossier, verbeteringen verzekeringen en meer" loading="lazy"></details>
+      <p class="src">Bron: <a href="https://web.archive.org/web/20260215234050/https://support.fasterforward.nl/extra-partijen-toevoegen-in-dossier-verbeteringen-verzekeringen-en-meer/" target="_blank" rel="noopener">Wayback Machine-archief</a></p>
+    </article>
+    <aside class="related"><h2>Gerelateerd:</h2><ul><li><a href="../handmatig-prolongeren-maatschappij-incasso-bankgarantie-accorderen-via-uwkluis-en-meer/index.html">Handmatig prolongeren maatschappij-incasso, bankgarantie accorderen via Uwkluis en meer</a></li><li><a href="../gemakkelijk-in-en-excasso-bestanden-verwerken/index.html">Gemakkelijk in- en excasso bestanden verwerken</a></li><li><a href="../beheerder-meldingen-koppeling-adviesbox-online-en-meer/index.html">Beheerder meldingen, koppeling Adviesbox Online en meer</a></li><li><a href="../automatisch-aplaza-berichten-verwijderen-aanpassingen-volgens-de-hdn-standaard-en-meer/index.html">Automatisch Aplaza berichten verwijderen, HDN 23.1 update en meer</a></li><li><a href="../gemakkelijk-formulieren-toesturen-actuele-hypotheekgegevens-opvragen-bij-abn-amro-boekjaar-en-factuurnummers-2024-aangemaakt/index.html">Gemakkelijk formulieren toesturen, actuele hypotheekgegevens opvragen bij ABN AMRO, boekjaar en factuurnummers 2024 aangemaakt</a></li><li><a href="../link-teams-genereren-vanuit-elements-gemakkelijk-kvk-gegevens-ophalen-en-meer/index.html">Link Teams genereren vanuit Elements, gemakkelijk KvK gegevens ophalen en meer</a></li></ul></aside>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span>Copyright © 2024 Blinqx powered by Faster Forward</span>
+    <nav aria-label="Beleid">
+      <a href="../supportbeleid/index.html">Supportbeleid</a>
+      <a href="../opdrachtenbeleid/index.html">Opdrachtenbeleid</a>
+      <a href="../klachtenbeleid/index.html">Klachtenbeleid</a>
+      <a href="../wensenbeleid/index.html">Wensenbeleid</a>
+      <a href="../video/index.html">Video's &amp; e-learning</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

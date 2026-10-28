@@ -1,0 +1,27 @@
+url;aantal verwijzingen;titel zoals bij ons vermeld;inhoud in dit pakket;waar verwezen wordt
+https://support.fasterforward.nl/releasenotes/;12;Releasenotes eBlinqx (support.fasterforward.nl);ja;(gegenereerde pagina) kennisbank/k15.html:158 | (gegenereerde pagina) kennisbank/k416.html:224 | (gegenereerde pagina) kennisbank/k417.html:198 | (gegenereerde pagina) kennisbank/k418.html:215 | (gegenereerde pagina) kennisbank/k419.html:255 | (gegenereerde pagina) kennisbank/k420.html:286
+https://support.fasterforward.nl/;4;Kennisbank eBlinqx (Faster Forward);nee;(gegenereerde pagina) kennisbank/k15.html:157 | data/kennisbank.js:380 | index.html:814 | index.html:819
+https://support.fasterforward.nl/kennisbank/welke-adviespakketten-koppelt-eblinqx/;4;Adviespakketten gekoppeld aan eBlinqx;nee;(gegenereerde pagina) kennisbank/k13.html:262 | (gegenereerde pagina) kennisbank/k51.html:175 | data/kennisbank-eblinqx.js:73 | data/kennisbank.js:486
+https://support.fasterforward.nl/kennisbank/gemakkelijk-formulieren-toesturen-met-finly/;2;Faster Forward: gemakkelijk formulieren toesturen met Finly;nee;(gegenereerde pagina) kennisbank/k14.html:139 | data/kennisbank.js:434
+https://support.fasterforward.nl/kennisbank/adviesbox-online-instellen-en-gebruiken/;2;Faster Forward: Adviesbox Online instellen en gebruiken;nee;(gegenereerde pagina) kennisbank/k13.html:261 | data/kennisbank.js:485
+https://support.fasterforward.nl/kennisbank/fastlane-advies-gebruiken/;2;Faster Forward: Fastlane Advies gebruiken;nee;(gegenereerde pagina) kennisbank/k13.html:263 | data/kennisbank.js:487
+https://support.fasterforward.nl/kennisbank/quinn-mail-koppelen-taken-aanmaken-en-reply/;2;Quinn Mail: koppelen, taken aanmaken en reply (support.fasterforward.nl);nee;(gegenereerde pagina) kennisbank/k50.html:171 | data/kennisbank-eblinqx.js:12
+https://support.fasterforward.nl/kennisbank/gespreksopname-omzetten-naar-acties/;2;Gespreksopname omzetten naar acties;nee;(gegenereerde pagina) kennisbank/k50.html:172 | data/kennisbank-eblinqx.js:12
+https://support.fasterforward.nl/kennisbank/hoe-maak-ik-een-taak-aan/;2;Taak aanmaken;nee;(gegenereerde pagina) kennisbank/k50.html:175 | data/kennisbank-eblinqx.js:12
+https://support.fasterforward.nl/kennisbank/functionaliteiten-faster-forward-on-route-app;2;On Route app gebruiken;nee;(gegenereerde pagina) kennisbank/k50.html:176 | data/kennisbank-eblinqx.js:12
+https://support.fasterforward.nl/kennisbank/1-prolongatie-import/;2;ADN Module gebruiken;nee;(gegenereerde pagina) kennisbank/k51.html:170 | data/kennisbank-eblinqx.js:73
+https://support.fasterforward.nl/kennisbank/adn-berichten-ontvangen/;2;ADN berichten ontvangen (inrichten);nee;(gegenereerde pagina) kennisbank/k51.html:171 | data/kennisbank-eblinqx.js:73
+https://support.fasterforward.nl/kennisbank/mutatievoorstellen-aanmaken/;2;Mutatievoorstellen aanmaken;nee;(gegenereerde pagina) kennisbank/k51.html:172 | data/kennisbank-eblinqx.js:73
+https://support.fasterforward.nl/kennisbank/schademelding-aanmaken-en-verwerken/;2;Schademelding aanmaken en verwerken;nee;(gegenereerde pagina) kennisbank/k51.html:173 | data/kennisbank-eblinqx.js:73
+https://support.fasterforward.nl/kennisbank/hdn-inbox/;2;Inkomende en uitgaande HDN berichten verwerken;nee;(gegenereerde pagina) kennisbank/k51.html:174 | data/kennisbank-eblinqx.js:73
+https://support.fasterforward.nl/kennisbank/ockto-koppeling/;2;Ockto koppeling gebruiken en instellen;nee;(gegenereerde pagina) kennisbank/k51.html:176 | data/kennisbank-eblinqx.js:73
+https://support.fasterforward.nl/kennisbank/two-factor-authentication/;2;Two factor authentication;nee;(gegenereerde pagina) kennisbank/k52.html:158 | data/kennisbank-eblinqx.js:132
+https://support.fasterforward.nl/kennisbank/wachtwoord-en-two-factor-authentication-mfa-resetten/;2;Wachtwoord en MFA resetten;nee;(gegenereerde pagina) kennisbank/k52.html:159 | data/kennisbank-eblinqx.js:132
+https://support.fasterforward.nl/kennisbank/rechten-aan-laten-passen/;2;Rechten aan laten passen;nee;(gegenereerde pagina) kennisbank/k52.html:160 | data/kennisbank-eblinqx.js:132
+https://support.fasterforward.nl/kennisbank/avg-en-eblinqx-veel-gestelde-vragen/;2;AVG en eBlinqx, veel gestelde vragen;nee;(gegenereerde pagina) kennisbank/k52.html:161 | data/kennisbank-eblinqx.js:132
+https://support.fasterforward.nl/kennisbank/klanten-verifieren-met-debiteurenzeker/;2;Klanten verifiëren en controleren met zkr.;nee;(gegenereerde pagina) kennisbank/k52.html:162 | data/kennisbank-eblinqx.js:132
+https://support.fasterforward.nl/supportbeleid/;2;Supportbeleid;nee;(gegenereerde pagina) kennisbank/k52.html:163 | data/kennisbank-eblinqx.js:132
+https://support.fasterforward.nl/inzicht-dataverbruik-en-verbeteringen-klantportaal-e-mail-en-inloggen/;2;Release 20 oktober 2026: inzicht dataverbruik en verbeteringen Klantportaal, e-mail en inloggen (support.fasterforward.nl);ja;(gegenereerde pagina) kennisbank/k411.html:160 | data/kennisbank-eblinqx.js:250
+https://support.fasterforward.nl/kennisbank/managementinformatie/;2;Managementinformatie (support.fasterforward.nl);nee;(gegenereerde pagina) kennisbank/k411.html:161 | data/kennisbank-eblinqx.js:250
+https://support.fasterforward.nl/kennisbank/werkwijze/;1;;nee;index.html:812
+https://support.fasterforward.nl/kennisbank/bankgaranties-aanvragen/;1;;nee;index.html:813

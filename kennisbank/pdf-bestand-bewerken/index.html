@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pdf bestand bewerken - Blinqx Support</title>
+<meta name="description" content="In dit artikel vind je waar je het PDF kunt bewerken en welke mogelijkheden hierin zijn.">
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="icon" href="../../assets/favicon.png">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
+    <symbol id="i-mail-o" viewBox="0 0 24 24"><path d="M2 5h20v14H2zm2 2v.4l8 5.6 8-5.6V7zm16 2.8-8 5.6-8-5.6V17h16z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><path d="M10 2a8 8 0 0 1 6.32 12.9l5.4 5.4-1.42 1.42-5.4-5.4A8 8 0 1 1 10 2zm0 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 64 64"><circle cx="7" cy="12" r="6"/><circle cx="7" cy="32" r="6"/><circle cx="7" cy="52" r="6"/><rect x="18" y="7" width="44" height="10" rx="2"/><rect x="18" y="27" width="44" height="10" rx="2"/><rect x="18" y="47" width="44" height="10" rx="2"/></symbol>
+    <symbol id="i-home" viewBox="0 0 64 64"><path d="M32 6 2 32l4 5 4-3.4V58h18V42h8v16h18V33.6l4 3.4 4-5-10-8.7V10h-8v7.4z"/></symbol>
+    <symbol id="i-car" viewBox="0 0 64 64"><path d="M16 10h32a6 6 0 0 1 5.7 4.1L58 27a7 7 0 0 1 4 6.3V48a3 3 0 0 1-3 3h-3v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H20v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H5a3 3 0 0 1-3-3V33.3A7 7 0 0 1 6 27l4.3-12.9A6 6 0 0 1 16 10zm1.5 7-3.3 10h35.6l-3.3-10zM13 34a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm38 0a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 64 64"><path d="M4 12a4 4 0 0 1 4-4h16l6 6h22a4 4 0 0 1 4 4v6H18a6 6 0 0 0-5.6 3.9L4 50z"/><path d="M18 28h44l-10 26H6z"/></symbol>
+    <symbol id="i-desktop" viewBox="0 0 64 64"><path d="M2 6h60v40H38v6h8v6H18v-6h8v-6H2zm6 6v28h48V12z"/></symbol>
+    <symbol id="i-comments" viewBox="0 0 64 64"><path d="M26 4c13.8 0 24 8.6 24 19s-10.2 19-24 19c-2.6 0-5-.3-7.3-.8C14.6 44 9.6 46 3 46c3-3 4.8-6.2 5.3-9.6C4.4 33 2 28.2 2 23 2 12.6 12.2 4 26 4z"/><path d="M54 24.5c5 3.4 8 8.3 8 13.5 0 4.2-1.8 8-4.8 11 .4 3.6 2 6.8 4.8 9.5-6 0-10.6-1.8-14.3-4.4-2.1.5-4.4.7-6.7.7-7 0-13.1-2.4-17-6.2 14.3-.4 30-8.8 30-24.1z"/></symbol>
+    <symbol id="i-envelope" viewBox="0 0 64 64"><path d="M4 12h56a2 2 0 0 1 2 2v3L32 37 2 17v-3a2 2 0 0 1 2-2z"/><path d="M2 23.5 32 43.5l30-20V50a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-euro" viewBox="0 0 64 64"><path d="M42 6c5 0 9.5 1.2 13 3.2l-2.6 8.2A19 19 0 0 0 42 14.5c-7.4 0-12.7 4.6-14.6 11.5H46l-2 7H26.3l-.05 2 .05 2H42l-2 7H27.4c1.9 7 7.2 11.5 14.6 11.5 4 0 7.6-1 10.4-2.9L55 61c-3.6 2-8 3-13 3-12.7 0-22.2-8-24.4-20H10l2-7h5.06L17 35l.06-2H10l2-7h5.6C19.8 14 29.3 6 42 6z"/></symbol>
+    <symbol id="i-file" viewBox="0 0 64 64"><path d="M10 2h28v18h18v38a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm32 0 14 14H42zM16 30v6h32v-6zm0 10v6h32v-6zm0 10v6h32v-6z"/></symbol>
+    <symbol id="i-rss" viewBox="0 0 64 64"><circle cx="11" cy="53" r="8"/><path d="M3 23a38 38 0 0 1 38 38H31A28 28 0 0 0 3 33z"/><path d="M3 3a58 58 0 0 1 58 58H51A48 48 0 0 0 3 13z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="rgba(0,0,0,.65)"/><path d="M26 20v24l20-12z" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="item"><svg class="ic"><use href="#i-phone"/></svg><a class="tel" href="tel:+31850180069">085 018 00 69</a></span>
+    <span class="sep" aria-hidden="true"></span>
+    <span class="item"><svg class="ic"><use href="#i-mail-o"/></svg><a class="mail" href="mailto:support-eblinqx@blinqx.tech">support-eblinqx@blinqx.tech</a></span>
+    <a class="li" href="https://www.linkedin.com/company/blinqx/" target="_blank" rel="noopener" aria-label="Blinqx op LinkedIn">in</a>
+  </div>
+</div>
+<header class="site">
+  <div class="wrap">
+    <div class="head-row">
+      <a class="brand" href="../../index.html" aria-label="Blinqx support — home">
+        <img src="../../assets/logo-mark.png" alt="Blinqx" width="470" height="119">
+        <span>powered by Faster Forward</span>
+      </a>
+      <nav class="main" aria-label="Hoofdmenu"><ul><li><a href="../../index.html">Home</a></li><li><a href="../../nieuws/index.html">Nieuws</a></li><li><a href="../../tips/index.html">Tips</a></li><li><a href="../../releasenotes/index.html">Release notes</a></li><li><a href="../../trainingen/index.html">Trainingen</a></li><li><a href="../../contact/index.html">Contact support</a></li></ul></nav>
+    </div>
+    <div class="search-row">
+      <form class="search" action="../../zoeken/index.html" method="get" role="search">
+        <label class="field">
+          <svg class="ic"><use href="#i-search"/></svg>
+          <input type="search" name="q" placeholder="Zoek hier op onderwerp" aria-label="Zoek op onderwerp">
+        </label>
+        <button type="submit">Zoeken</button>
+      </form>
+      <div class="status">Mogelijke incidenten en de systeemstatus vind je op onze <a href="#" title="URL statuspagina nog invullen">statuspagina</a>.</div>
+    </div>
+  </div>
+</header>
+<div class="crumbs"><div class="wrap"><nav aria-label="Kruimelpad"><a href="../../kennisbank/index.html">Kennisbank</a><span class="sep" aria-hidden="true">›</span><a href="../../categorien/dossier/index.html">Dossier</a><span class="sep" aria-hidden="true">›</span><a href="../../categorien/artikelendocumenten/index.html">Documenten</a><span class="sep" aria-hidden="true">›</span><span aria-current="page">Pdf bestand bewerken</span></nav></div></div>
+<main class="article">
+  <div class="wrap cols">
+    <article>
+      <h1>Pdf bestand bewerken</h1>
+      <p class="meta">Laatste update: 15 oktober 2025</p>
+      <div class="content"><p>Een BSN verwijderen, foto verbergen of een handtekening of stempel toevoegen aan een document? Dat regel je veilig en eenvoudig in een klantdossier. Bovendien zorg je hiermee voor het anonimiseren en minimaliseren van data, twee belangrijke aandachtspunten binnen de Algemene Verordening Persoonsgegevens (AVG).</p><nav class="toc" aria-label="Inhoud"><ul><li><a href="#pdf-document-bewerken">PDF document bewerken</a></li><li><a href="#tekst-onleesbaar-maken">Tekst onleesbaar maken</a></li><li><a href="#tekst-markeren-onderstrepen-of-doorhalen">Tekst markeren, onderstrepen of doorhalen</a></li><li><a href="#afbeelding-onleesbaar-maken">Afbeelding onleesbaar maken</a></li><li><a href="#afbeelding-toevoegen">Afbeelding toevoegen</a></li><li><a href="#stempel-toevoegen">Stempel toevoegen</a></li><li><a href="#eigen-stempel-inclusief-datum-en-tijd">Eigen stempel inclusief datum en tijd</a></li><li><a href="#notities-toevoegen">Notities toevoegen</a></li><li><a href="#pagina-toevoegen-draaien-of-verwijderen">Pagina toevoegen, draaien of verwijderen</a></li><li><a href="#opslaan-met-of-zonder-origineel">Opslaan met of zonder origineel</a></li></ul></nav>
+<p>Door de pdf in eBlinqx te bewerken, hoef je geen ander programma gebruiken of een pdf te printen en opnieuw in te scannen.</p>
+<p>Het volgende is mogelijk:</p>
+<p>In dit artikel leggen we uit hoe je pdf bestanden bewerkt in eBlinqx.</p>
+<h2 id="pdf-document-bewerken">PDF document bewerken</h2>
+<p>Een pdf bewerken is mogelijk op 3 plaatsen in het klantdossier.</p>
+<ul><li>In de &#x27;Stukkenlijst&#x27;</li><li>In het tabblad &#x27;Documenten&#x27;</li><li>In het tabblad &#x27;Schademelding&#x27;</li></ul>
+<p>Voor de uitleg gebruiken we het tabblad Documenten. Ga naar &#x27;Documenten&#x27; in een klantdossier. Klik hier op het wijzigicoon aan het einde van de regel om het bewerken van de pdf te openen.</p>
+<p>Klik op de knop &#x27;Bewerk pdf&#x27; om het bewerken te starten.</p>
+<p>Op een kleiner beeldscherm dien je eerst op &#x27;Annotaties&#x27; te klikken, voordat onderstaande functies verschijnen.</p>
+<p>Op een groot beeldscherm zijn alle functies direct zichtbaar.</p>
+<p>Let op: als je jouw beeldscherm hebt ingezoomd op bijvoorbeeld 125% dan kan het zijn dat je bepaalde mogelijkheden, bijvoorbeeld gebiedseditor, er niet tussen ziet staan.</p>
+<h2 id="tekst-onleesbaar-maken">Tekst onleesbaar maken</h2>
+<p>Als je een BSN of andere gegevens wilt verwijderen uit een document, gebruik je de optie &#x27;Tekstredactie&#x27;. Na redactie is de originele tekst niet meer terug te vinden in het document.</p>
+<p>Het is ook mogelijk om tekst te selecteren in het document. Er verschijnt dan een zwarte balk met opties. Kies de rechter optie &#x27;Redactie&#x27; om de geselecteerde tekst onleesbaar te maken.</p>
+<p>Wanneer je klikt op het icoon van tekstredactie kan je de vulkleur, randkleur, transparantie en overlaytekst aanpassen.</p>
+<p>Zodra je de gewenste kleur hebt toegepast, is de tekst onleesbaar.</p>
+<p>Het is ook mogelijk om tekst over de oude tekst te plaatsen, zodat duidelijk is dat de originele tekst is weggehaald.</p>
+<p>Gebruik hiervoor de optie &quot;Overlaytekst&quot; en typ hier welke tekst je er overheen wilt plaatsen. Kies de kleur tekst en vink &#x27;Herhaal tekst&#x27; aan als je wilt dat de tekst automatisch wordt herhaald.</p>
+<h2 id="tekst-markeren-onderstrepen-of-doorhalen">Tekst markeren, onderstrepen of doorhalen</h2>
+<p>Het is ook mogelijk om specifieke teksten aan te duiden door deze te markeren of onderstrepen. Dit kan je doen door een tekst te selecteren en vervolgens te kiezen voor &#x27;Tekstmarkering&#x27;</p>
+<p>Het is ook mogelijk om een streep door een stuk tekst te plaatsen. Als je kiest voor &#x27;Doorhalen&#x27; wordt de tekst doorgestreept, waardoor deze dus nog wel leesbaar is.</p>
+<h2 id="afbeelding-onleesbaar-maken">Afbeelding onleesbaar maken</h2>
+<p>Gebruik de optie &#x27;Gebiedsredactie&#x27; om een afbeelding onzichtbaar te maken. Denk hierbij aan een foto op een identiteitsbewijs. Zodra je een rechthoek over de afbeelding plaatst, is de afbeelding niet meer zichtbaar te maken in de pdf.</p>
+<p>Let op: als je gebiedsredactie gebruikt bij een pdf met een achtergrond afbeelding, dan kan het voorkomen dat de gebiedsredactie die je plaatst op alle pagina&#x27;s van het document wordt weergegeven. Dit komt doordat je een laag over een afbeelding zet die op elke pagina terugkomt.</p>
+<p>Je kan hierbij de vulkleur, overlaytekst, randkleur en transparantie aanpassen via onderstaande menu-opties.</p>
+<p>Plaats vervolgens het vak over de afbeelding of foto die je wilt verbergen. Zo kan je gemakkelijk tekst of de foto zwart maken.</p>
+<h2 id="afbeelding-toevoegen">Afbeelding toevoegen</h2>
+<p>Klik in de menubalk op &#x27;Afbeelding&#x27; en vervolgens nogmaals op &#x27;Afbeelding&#x27; om een afbeelding toe te voegen. Upload nu de gewenste afbeelding en plaats deze op de gewenste plek in het document.</p>
+<p>Upload nu de gewenste afbeelding en plaats deze op de gewenste plek in het document.</p>
+<p>Op deze manier kan je eventueel een afbeelding van een handtekening toevoegen. In de editor zit ook een optie handtekeningen. Deze functie is niet te gebruiken in eBlinqx. Het digitaal ondertekenen werkt alleen vanuit Uwkluis.</p>
+<h2 id="stempel-toevoegen">Stempel toevoegen</h2>
+<p>Als je wilt aangeven dat je een bestand hebt gecontroleerd en/of goedgekeurd, kan je dit aangeven door een standaard of eigen stempel toe te voegen.</p>
+<p>Kies hiervoor voor de optie &quot;Stempel&quot;.</p>
+<p>Als je kiest voor een aangepaste stempel kan je de kleur en tekst aanpassen. Daarnaast kan je het systeem automatisch de datum en tijd laten invullen.</p>
+<h2 id="eigen-stempel-inclusief-datum-en-tijd">Eigen stempel inclusief datum en tijd</h2>
+<p>Als je ontwerp klaar is, klik je op &#x27;Maak stempel&#x27; en plaats je de stempel in je document.</p>
+<h2 id="notities-toevoegen">Notities toevoegen</h2>
+<p>Je kan ook een notitie toevoegen. Je kunt aangeven welk symbool je wilt gebruiken en in welke kleur. Dit icoon komt, nadat je opslaat, te staan in het document.</p>
+<h2 id="pagina-toevoegen-draaien-of-verwijderen">Pagina toevoegen, draaien of verwijderen</h2>
+<p>Open de &#x27;Documenteditor&#x27; als je een pagina wilt toevoegen, draaien of verwijderen.</p>
+<p>Klik op de bolletjes om alle opties voor het bewerken van pagina&#x27;s te bekijken.</p>
+<h2 id="opslaan-met-of-zonder-origineel">Opslaan met of zonder origineel</h2>
+<p>Wanneer je klaar bent met bewerken, kun je er ook voor kiezen om zowel de bewerkte versie als de niet-bewerkte (originele) versie op te slaan. Dit is bijvoorbeeld handig wanneer een geldverstrekker eerst een versie zonder BSN opvraagt, en later de originele versie mét BSN.</p>
+<p>Vink hiervoor de optie &quot;Origineel behouden&quot; aan.</p>
+<p>Als je deze optie niet aanvinkt, wordt de huidige versie van het document overschreven met de zojuist bewerkte versie.</p>
+<p>De optie &quot;Origineel behouden&quot; is voor iedere medewerker zichtbaar, maar je moet wel zelf het vinkje aanzetten om het origineel ook te bewaren.</p>
+<p>Als je het onmogelijk wilt maken om ook originele bestand te bewaren, kan dit worden uitgezet met een recht. Als je dit wilt aanpassen, stuur dan een e-mail naar <a href="mailto:support-eblinqx@blinqx.tech">support-eblinqx@blinqx.tech</a> met de titel &quot;Recht origineel behouden uitzetten.&quot; Vermeld hierbij voor welke medewerkers en/of afdelingen het niet mogelijk moet zijn om het origineel te behouden.</p></div>
+      <section class="figs"><h2>Afbeeldingen bij dit artikel</h2><figure><a href="https://web.archive.org/web/20230208043710im_/https://support.fasterforward.nl/wp-content/uploads/2022/04/PDF-bewerken-vanuit-documenten-1024x179.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20230208043710im_/https://support.fasterforward.nl/wp-content/uploads/2022/04/PDF-bewerken-vanuit-documenten-1024x179.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20230208043710im_/https://support.fasterforward.nl/wp-content/uploads/2022/04/Bewerk-PDF-knop-1024x148.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20230208043710im_/https://support.fasterforward.nl/wp-content/uploads/2022/04/Bewerk-PDF-knop-1024x148.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20230208043710im_/https://support.fasterforward.nl/wp-content/uploads/2022/04/pdf-menu-uitklappen-1024x193.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20230208043710im_/https://support.fasterforward.nl/wp-content/uploads/2022/04/pdf-menu-uitklappen-1024x193.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20230208043710im_/https://support.fasterforward.nl/wp-content/uploads/2022/04/tekstredactie-1.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20230208043710im_/https://support.fasterforward.nl/wp-content/uploads/2022/04/tekstredactie-1.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20230208043710im_/https://support.fasterforward.nl/wp-content/uploads/2022/04/tekst-redactie-simpel.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20230208043710im_/https://support.fasterforward.nl/wp-content/uploads/2022/04/tekst-redactie-simpel.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20230208043710im_/https://support.fasterforward.nl/wp-content/uploads/2022/04/tekstredactie-selectie-1.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20230208043710im_/https://support.fasterforward.nl/wp-content/uploads/2022/04/tekstredactie-selectie-1.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure></section>
+      <details class="orig"><summary>Schermafbeelding van de oorspronkelijke pagina</summary><img src="../../bronnen/offline-archief/shots/pdf-bestand-bewerken.jpg" alt="Schermafbeelding van Pdf bestand bewerken" loading="lazy"></details>
+      <p class="src">Bron: <a href="https://web.archive.org/web/20260608022803/https://support.fasterforward.nl/kennisbank/pdf-bestand-bewerken/" target="_blank" rel="noopener">Wayback Machine-archief</a></p>
+    </article>
+    <aside class="related"><h2>Gerelateerd:</h2><ul><li><a href="../../kennisbank/pdf-documenten-splitsen-en-samenvoegen-vanuit-een-dossier/index.html">PDF documenten splitsen en samenvoegen vanuit een dossier</a></li><li><a href="../../kennisbank/document-uploaden-in-het-dossier/index.html">Document uploaden en verwijderen in een dossier</a></li><li><a href="../../kennisbank/document-mappen-dossier-aanmaken/index.html">Documenten ordenen met mappenstructuur</a></li><li><a href="../../kennisbank/hoe-soort-document-toevoegen/index.html">Soort document toevoegen</a></li><li><a href="../../kennisbank/documenten-automatisch-censureren/index.html">Documenten automatisch censureren</a></li></ul></aside>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span>Copyright © 2024 Blinqx powered by Faster Forward</span>
+    <nav aria-label="Beleid">
+      <a href="../../supportbeleid/index.html">Supportbeleid</a>
+      <a href="../../opdrachtenbeleid/index.html">Opdrachtenbeleid</a>
+      <a href="../../klachtenbeleid/index.html">Klachtenbeleid</a>
+      <a href="../../wensenbeleid/index.html">Wensenbeleid</a>
+      <a href="../../video/index.html">Video's &amp; e-learning</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

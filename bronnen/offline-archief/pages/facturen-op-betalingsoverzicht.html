@@ -1,0 +1,142 @@
+<!doctype html><html lang="nl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Facturen op betalingsoverzicht — Support eBlinqx archief</title>
+<style>
+:root{--bg:#fff;--fg:#1a1a1a;--muted:#666;--line:#e3e3e3;--accent:#f2a900;--accent2:#1a1a1a;}
+*{box-sizing:border-box}
+body{font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--fg);margin:0;line-height:1.5}
+header.site{background:#1a1a1a;color:#fff;padding:14px 24px;position:sticky;top:0;z-index:10}
+header.site a{color:#fff;text-decoration:none;font-weight:600}
+header.site .path{color:#bbb;font-size:13px;margin-top:2px}
+header.site .path a{color:#bbb}
+main{max-width:980px;margin:0 auto;padding:24px}
+h1{font-size:1.5rem;margin:0 0 4px}
+h2{font-size:1.1rem;color:var(--accent2);border-bottom:2px solid var(--accent);padding-bottom:4px;margin-top:32px}
+h3{font-size:0.95rem;color:var(--muted);margin:18px 0 6px}
+ul.pagelist{list-style:none;padding:0;margin:0 0 6px;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:2px 16px}
+ul.pagelist li a{display:block;padding:3px 0;text-decoration:none;color:#0b5ed7;font-size:14px}
+ul.pagelist li a:hover{text-decoration:underline}
+.meta{color:var(--muted);font-size:13px;margin-bottom:18px}
+.meta a{color:var(--muted)}
+.shot{border:1px solid var(--line);border-radius:6px;max-width:100%;display:block;margin:16px 0;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.textbox{white-space:pre-wrap;background:#fafafa;border:1px solid var(--line);border-radius:6px;padding:16px;font-size:14px}
+.badge{display:inline-block;background:#fff4de;border:1px solid var(--accent);color:#7a5200;font-size:12px;border-radius:10px;padding:1px 9px;margin-right:4px}
+footer{color:var(--muted);font-size:12px;text-align:center;padding:30px 10px}
+.topcount{color:var(--muted);font-size:14px;margin-bottom:24px}
+.backlink{display:inline-block;margin-bottom:16px;color:#0b5ed7;text-decoration:none;font-size:14px}
+</style></head><body>
+<header class="site"><a href="../index.html">Support eBlinqx — offline archief</a>
+<div class="path"><a href="../index.html">Archief</a> › Facturatie › Facturatie</div></header>
+<main>
+<h1>Facturen op betalingsoverzicht</h1><div class="meta"><span class="badge">Artikel</span> Oorspronkelijke URL: <a href="https://support.fasterforward.nl/kennisbank/facturen-op-betalingsoverzicht/" target="_blank" rel="noopener">https://support.fasterforward.nl/kennisbank/facturen-op-betalingsoverzicht/</a><br>Wayback-capture: <a href="https://web.archive.org/web/20260311214506/https://support.fasterforward.nl/kennisbank/facturen-op-betalingsoverzicht/" target="_blank" rel="noopener">https://web.archive.org/web/20260311214506/https://support.fasterforward.nl/kennisbank/facturen-op-betalingsoverzicht/</a></div><img class="shot" src="../shots/facturen-op-betalingsoverzicht.jpg" alt="Schermafbeelding van Facturen op betalingsoverzicht" loading="lazy"><h3>Tekstinhoud</h3><div class="textbox">Facturen op betalingsoverzicht
+
+Beschikbaar in: eBlinqx niet in Elements
+
+Vanuit het dossier maak je gemakkelijk een betalingsoverzicht van openstaande en geboekte facturen. Ofwel een verzamelnota. Op deze manier kan je gemakkelijk facturen verrekenen met elkaar.
+
+Voorbeelden van situaties
+Inrichting en tags
+Template
+Tags
+Mollie
+Betalingsoverzicht aanmaken en versturen
+Handmatig
+Workflow
+Tussenpersoon incasso en betalingsoverzicht
+Financiële verwerking betalingsoverzicht
+Betalingsoverzicht verwijderen
+Betalingsoverzicht exporteren
+Voorbeelden van situaties
+
+Voorbeeld 1: de klant heeft een nieuwe auto gekocht. De verzekering van de oude auto wordt stopgezet en voor de nieuwe auto wordt een nieuwe verzekering aangevraagd. Vanuit de verzekering van de oude auto komt er restitutie. Deze restitutie kan dan verrekend worden met een openstaande factuur voor de nieuwe auto. Beide facturen neem je op in het betalingsoverzicht, zodat dit verrekend wordt met elkaar.
+
+Voorbeeld 2: de klant heeft een hypotheekadvies gekregen en hiervan is een factuur gemaakt. Je wilt de klant korting geven op het bedrag van het hypotheekadvies. Hiervoor heb je een creditfactuur aangemaakt. In het betalingsoverzicht neem je de factuur hypotheekadvies en de creditfactuur op. Zo is het duidelijk wat de klant moet betalen voor het hypotheekadvies.
+
+Inrichting en tags
+Template
+
+Om een betalingsoverzicht te kunnen maken moet er een template aanwezig zijn die staat ingesteld in de module Standaard template beheer bij ‘Betalingsoverzicht’. Deze is te vinden onder Beheer. Staat dit niet ingesteld dan verschijnt er bij het maken van het betalingsoverzicht de melding ‘Er is geen standaard documenttemplate ingesteld voor betalingsoverzichten’.
+
+In jouw omgeving is een basistemplate betalingsoverzicht aangemaakt en ingesteld in Standaard template beheer. Wil je een maatwerktemplate met hierin bijvoorbeeld jouw logo, stuur dan een e-mail naar support-eblinqx@blinqx.tech.
+
+Tags
+
+Er zijn diverse tags die gebruikt kunnen worden om de template voor het betalingsoverzicht te maken en die de gegevens van het betalingsoverzicht ophalen. De volgende tags zijn beschikbaar:
+
+[betalingsoverzicht-&gt;betaallink-&gt;id]
+[betalingsoverzicht-&gt;betaallink-&gt;link]
+[betalingsoverzicht-&gt;betaallink-&gt;verloopdatum-&gt;]
+[betalingsoverzicht-&gt;betalingskenmerk]
+[betalingsoverzicht-&gt;specificatie]
+[betalingsoverzicht-&gt;specificatie met productinformatie]:
+
+Mollie
+
+Indien je gebruik maakt van Mollie dan zal er voor het betalingsoverzicht een eigen link gegenereerd worden. De klant kan dan het bedrag van het betalingsoverzicht gemakkelijk betalen via deze link. In de module Overzicht betaallinks zijn de aangemaakte links van de betalingsoverzichten terug te vinden. Maak je nog geen gebruik van Mollie, maar wil je dit wel? Lees er hier meer over.
+
+Betalingsoverzicht aanmaken en versturen
+
+Er zijn twee verschillende manieren om een betalingsoverzicht te maken, namelijk handmatig of via de workflow.
+
+Handmatig
+
+Om vanuit het dossier handmatig een betalingsoverzicht te maken doorloop je de volgende stappen:
+
+In het dossier ga je naar het tabblad Financieel. Hier selecteer je de facturen die je op wilt nemen in het betalingsoverzicht. Dit door de checkboxen ervoor aan te vinken. Let op: je kunt alleen openstaande en geboekte facturen opnemen in het betalingsoverzicht.
+Vervolgens klik je op ‘Acties’ en dan ‘Betalingsoverzicht aanmaken’
+
+Bij de facturen die nog niet verzonden zijn, komt bij ‘Verzonden’ (het papieren vliegtuigicoon) de datum en tijd te staan van het moment van het genereren van het betalingsoverzicht.
+
+Er wordt een PDF van het betalingsoverzicht aangemaakt die komt te staan onder het tabblad Documenten in het klantdossier. Via de e-mail of per post kan je dit overzicht naar jouw klant versturen.
+
+Workflow
+
+Ook is het mogelijk om via de workflow een betalingsoverzicht te maken. Deze stap moet dan wel aan een workflow toegevoegd worden. Hierin zijn verschillende opties mogelijk, namelijk:
+
+Periode
+
+Altijd: alle openstaande, geboekte en niet eerder verzonden facturen opnemen in het betalingsoverzicht
+Afgelopen maand: de openstaande, geboekte en niet eerder verzonden facturen van de afgelopen periode (vandaag – 1 maand) opnemen in het betalingsoverzicht
+
+Factuur betaalwijze
+
+Overschrijving en incasso: Incassofacturen wel meenemen in het betalingsoverzicht. Facturen met incassowijze Automatische incasso worden gezien als incassofactuur
+Overschrijving: Incassofacturen niet meenemen in het betalingsoverzicht
+Incasso: alleen incassofacturen met de betaalwijze Automatische incasso worden opgehaald
+
+Factuurstatus
+
+Je kunt een keuze maken of wel verzonden of niet verzonden facturen meegenomen moeten worden in het overzicht.
+
+Factuur verzenden bij = Betalingoverzicht en Verzenden = Ja
+
+Als een factuur is gekoppeld aan een product wordt er naast bovenstaande voorwaarden ook gekeken naar twee andere voorwaarden, namelijk ‘Factuur verzenden bij’ staat op ‘Betalingsoverzicht’ en ‘Factuur verzenden = Ja’. Als dit niet het geval is dan wordt de factuur niet opgenomen in het betalingsoverzicht.
+
+Via de workflow wordt een PDF van het betalingsoverzicht aangemaakt en er wordt een (concept) e-mail klaargezet. De e-mail verstuur je naar de klant.
+
+Tussenpersoon incasso en betalingsoverzicht
+
+Prolongaties en mutaties van tussenpersoon incasso producten verwerk je via ADN. Vanuit hier komen ook facturen. Het kan zijn dat je deze facturen wilt opnemen in het betalingsoverzicht en hierdoor niet los naar de klant wilt versturen. In de productkaart kan je dit aangeven. Hier lees je er meer over.
+
+Financiële verwerking betalingsoverzicht
+
+Zoals eerder aangegeven moet op het betalingsoverzicht het betalingskenmerk staan. Als je gebruik maakt van Mollie dan komt er op het betalingsoverzicht een betalingslink te staan. De financiële verwerking van het betalingsoverzicht is dan als volgt:
+
+De klant ontvangt het betalingsoverzicht
+De klant betaalt het betalingsoverzicht. Dit kan via de link als je gebruik maakt van Mollie en anders per overschrijving. Belangrijk is dat het betalingskenmerk meekomt in de betaling
+Je leest in eBlinqx het bankafschrift in waarop de betaling staat
+Als het bedrag en het betalingskenmerk exact overeenkomen dan worden de facturen die opgenomen zijn in het betalingsoverzicht automatisch afgeletterd en op betaald gezet. Zit er een verschil in het bedrag of het betalingskenmerk komt niet overeen dan zal je het zelf boekhoudkundig in orde moeten maken
+
+Let op: er zit geen controle op andere zaken. Dus stel jij hebt een automatische incasso factuur opgenomen in het betalingsoverzicht dan blijft deze factuur staan in de module Incasso- en excassobestanden maken, totdat de klant het betalingsoverzicht betaalt. Stuur jij dus een betalingsoverzicht naar de klant en je wilt daarna meteen een incassobatch maken dan is het belangrijk dat je de facturen die zijn opgenomen in het betalingsoverzicht niet meeneemt in de incassobatch. Anders loop je het risico dat het bedrag dubbel betaald wordt (door de klant via het betalingsoverzicht en via automatische incasso).
+
+Betalingsoverzicht verwijderen
+
+Het betalingsoverzicht kan verwijderd worden vanuit het tabblad Documenten door middel van het rode kruisje. Het betalingsoverzicht is geen factuur, maar meer een momentopname van de openstaande facturen. Hierdoor is het toegestaan om het betalingsoverzicht te verwijderen en er geldt geen bewaarplicht.
+
+Betalingsoverzicht exporteren
+
+Het is mogelijk om via het tabblad Export – Dossier het betalingsoverzicht (het PDF bestand) te exporteren naar een ander dossier. Onder water blijft de link van het betalingsoverzicht en de facturen bestaan. Dus de betaallink (zolang deze geldig is) en het betalingskenmerk blijven gewoon werken en de juiste facturen (die opgenomen zijn in het betalingsoverzicht) worden afgeletterd.
+
+Laatste update: 30 december 2025
+Was deze informatie nuttig?
+Ja Nee</div></main><footer>Offline archief van support.fasterforward.nl, samengesteld uit de Wayback Machine (web.archive.org) — oktober 2026.</footer></body></html>

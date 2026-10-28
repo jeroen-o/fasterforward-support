@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Documenten verplaatsen naar andere stukkenlijst - Blinqx Support</title>
+<meta name="description" content="Lees hier hoe documenten gekoppeld aan een stuk verplaatst of kopieert van de ene stukkenlijst naar de andere.">
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="icon" href="../../assets/favicon.png">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
+    <symbol id="i-mail-o" viewBox="0 0 24 24"><path d="M2 5h20v14H2zm2 2v.4l8 5.6 8-5.6V7zm16 2.8-8 5.6-8-5.6V17h16z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><path d="M10 2a8 8 0 0 1 6.32 12.9l5.4 5.4-1.42 1.42-5.4-5.4A8 8 0 1 1 10 2zm0 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 64 64"><circle cx="7" cy="12" r="6"/><circle cx="7" cy="32" r="6"/><circle cx="7" cy="52" r="6"/><rect x="18" y="7" width="44" height="10" rx="2"/><rect x="18" y="27" width="44" height="10" rx="2"/><rect x="18" y="47" width="44" height="10" rx="2"/></symbol>
+    <symbol id="i-home" viewBox="0 0 64 64"><path d="M32 6 2 32l4 5 4-3.4V58h18V42h8v16h18V33.6l4 3.4 4-5-10-8.7V10h-8v7.4z"/></symbol>
+    <symbol id="i-car" viewBox="0 0 64 64"><path d="M16 10h32a6 6 0 0 1 5.7 4.1L58 27a7 7 0 0 1 4 6.3V48a3 3 0 0 1-3 3h-3v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H20v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H5a3 3 0 0 1-3-3V33.3A7 7 0 0 1 6 27l4.3-12.9A6 6 0 0 1 16 10zm1.5 7-3.3 10h35.6l-3.3-10zM13 34a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm38 0a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 64 64"><path d="M4 12a4 4 0 0 1 4-4h16l6 6h22a4 4 0 0 1 4 4v6H18a6 6 0 0 0-5.6 3.9L4 50z"/><path d="M18 28h44l-10 26H6z"/></symbol>
+    <symbol id="i-desktop" viewBox="0 0 64 64"><path d="M2 6h60v40H38v6h8v6H18v-6h8v-6H2zm6 6v28h48V12z"/></symbol>
+    <symbol id="i-comments" viewBox="0 0 64 64"><path d="M26 4c13.8 0 24 8.6 24 19s-10.2 19-24 19c-2.6 0-5-.3-7.3-.8C14.6 44 9.6 46 3 46c3-3 4.8-6.2 5.3-9.6C4.4 33 2 28.2 2 23 2 12.6 12.2 4 26 4z"/><path d="M54 24.5c5 3.4 8 8.3 8 13.5 0 4.2-1.8 8-4.8 11 .4 3.6 2 6.8 4.8 9.5-6 0-10.6-1.8-14.3-4.4-2.1.5-4.4.7-6.7.7-7 0-13.1-2.4-17-6.2 14.3-.4 30-8.8 30-24.1z"/></symbol>
+    <symbol id="i-envelope" viewBox="0 0 64 64"><path d="M4 12h56a2 2 0 0 1 2 2v3L32 37 2 17v-3a2 2 0 0 1 2-2z"/><path d="M2 23.5 32 43.5l30-20V50a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-euro" viewBox="0 0 64 64"><path d="M42 6c5 0 9.5 1.2 13 3.2l-2.6 8.2A19 19 0 0 0 42 14.5c-7.4 0-12.7 4.6-14.6 11.5H46l-2 7H26.3l-.05 2 .05 2H42l-2 7H27.4c1.9 7 7.2 11.5 14.6 11.5 4 0 7.6-1 10.4-2.9L55 61c-3.6 2-8 3-13 3-12.7 0-22.2-8-24.4-20H10l2-7h5.06L17 35l.06-2H10l2-7h5.6C19.8 14 29.3 6 42 6z"/></symbol>
+    <symbol id="i-file" viewBox="0 0 64 64"><path d="M10 2h28v18h18v38a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm32 0 14 14H42zM16 30v6h32v-6zm0 10v6h32v-6zm0 10v6h32v-6z"/></symbol>
+    <symbol id="i-rss" viewBox="0 0 64 64"><circle cx="11" cy="53" r="8"/><path d="M3 23a38 38 0 0 1 38 38H31A28 28 0 0 0 3 33z"/><path d="M3 3a58 58 0 0 1 58 58H51A48 48 0 0 0 3 13z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="rgba(0,0,0,.65)"/><path d="M26 20v24l20-12z" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="item"><svg class="ic"><use href="#i-phone"/></svg><a class="tel" href="tel:+31850180069">085 018 00 69</a></span>
+    <span class="sep" aria-hidden="true"></span>
+    <span class="item"><svg class="ic"><use href="#i-mail-o"/></svg><a class="mail" href="mailto:support-eblinqx@blinqx.tech">support-eblinqx@blinqx.tech</a></span>
+    <a class="li" href="https://www.linkedin.com/company/blinqx/" target="_blank" rel="noopener" aria-label="Blinqx op LinkedIn">in</a>
+  </div>
+</div>
+<header class="site">
+  <div class="wrap">
+    <div class="head-row">
+      <a class="brand" href="../../index.html" aria-label="Blinqx support — home">
+        <img src="../../assets/logo-mark.png" alt="Blinqx" width="470" height="119">
+        <span>powered by Faster Forward</span>
+      </a>
+      <nav class="main" aria-label="Hoofdmenu"><ul><li><a href="../../index.html">Home</a></li><li><a href="../../nieuws/index.html">Nieuws</a></li><li><a href="../../tips/index.html">Tips</a></li><li><a href="../../releasenotes/index.html">Release notes</a></li><li><a href="../../trainingen/index.html">Trainingen</a></li><li><a href="../../contact/index.html">Contact support</a></li></ul></nav>
+    </div>
+    <div class="search-row">
+      <form class="search" action="../../zoeken/index.html" method="get" role="search">
+        <label class="field">
+          <svg class="ic"><use href="#i-search"/></svg>
+          <input type="search" name="q" placeholder="Zoek hier op onderwerp" aria-label="Zoek op onderwerp">
+        </label>
+        <button type="submit">Zoeken</button>
+      </form>
+      <div class="status">Mogelijke incidenten en de systeemstatus vind je op onze <a href="#" title="URL statuspagina nog invullen">statuspagina</a>.</div>
+    </div>
+  </div>
+</header>
+<div class="crumbs"><div class="wrap"><nav aria-label="Kruimelpad"><a href="../../kennisbank/index.html">Kennisbank</a><span class="sep" aria-hidden="true">›</span><a href="../../categorien/dossier/index.html">Dossier</a><span class="sep" aria-hidden="true">›</span><a href="../../categorien/artikelenstukkenlijst/index.html">Stukkenlijst</a><span class="sep" aria-hidden="true">›</span><span aria-current="page">Documenten verplaatsen naar andere stukkenlijst</span></nav></div></div>
+<main class="article">
+  <div class="wrap cols">
+    <article>
+      <h1>Documenten verplaatsen naar andere stukkenlijst</h1>
+      <p class="meta">Laatste update: 15 oktober 2025</p>
+      <div class="content"><p>In het klantdossier wil je diverse gegevens van de klant opslaan. Voor het opvragen van deze gegevens kan je gebruik maken van de stukkenlijst. Ieder product heeft zijn eigen stukkenlijst. Het is mogelijk om de (documenten gekoppeld aan de) stukken van het ene product naar het andere product te verplaatsen of koppelen.</p><nav class="toc" aria-label="Inhoud"><ul><li><a href="#stukkenlijst-handmatig-verplaatsen">Stukkenlijst handmatig verplaatsen</a></li><li><a href="#1-kiezen-van-de-producten">1. Kiezen van de producten</a></li><li><a href="#2-stukken-selecteren">2. Stukken selecteren</a></li><li><a href="#3-documenten-verplaatsen">3. Documenten verplaatsen</a></li><li><a href="#systeemregistratie">Systeemregistratie</a></li><li><a href="#meldingen">Meldingen</a></li></ul></nav>
+<p>Het automatisch samenvoegen gebeurt van de dienst naar de hypotheek en bij een nieuwe versie van de hypotheek. Bij een dienst naar de hypotheek houdt dit het volgende in: bij ontvangst van een documentaanvraag (DA-bericht) onder een hypotheekaanvraag (AX-bericht) worden stukken die in hetzelfde dossier onder een stukkenlijst van een dienst staan samengevoegd met openstaande stukken van de hypotheek. En als binnen dezelfde hypotheekaanvraag (hetzelfde product) een nieuwe aanvraag wordt ontvangen (een hogere versie) wordt de stukkenlijst hiermee automatisch samengevoegd.</p>
+<h2 id="stukkenlijst-handmatig-verplaatsen">Stukkenlijst handmatig verplaatsen</h2>
+<p>Het is ook mogelijk om handmatig gekoppelde documenten aan stukken te verplaatsen van de ene stukkenlijst naar de andere stukkenlijst. Dit is ongeacht de maatschappij in het product of productsoort waaraan de stukkenlijst is gekoppeld. Het handmatig verplaatsen gaat als volgt.</p>
+<h2 id="1-kiezen-van-de-producten">1. Kiezen van de producten</h2>
+<p>In de stukkenlijst klik je op de knop &#x27;Stukken verplaatsen naar andere stukkenlijst&#x27;.</p>
+<p>Er opent een nieuw scherm waarin je de producten dient te selecteren. Ten eerste selecteer je het product, waaronder al documenten onder de stukken geüpload zijn. Hierbij worden gearchiveerde producten, producten zonder stukkenlijst of producten met stukken waar geen documenten onder geüpload zijn uitgesloten.</p>
+<p>Ten tweede selecteer je het product waar de documenten naar de (lege) stukken verplaatst moeten worden. Daarna klik je op &#x27;Volgende&#x27;.</p>
+<h2 id="2-stukken-selecteren">2. Stukken selecteren</h2>
+<p>Nadat je de producten hebt geselecteerd, kan je vervolgens selecteren welke documenten gekoppeld aan het stuk je wilt verplaatsten. Aan de linkerkant staat het product waaruit je stukken wilt verplaatsen. Hierbij staan:</p>
+<p>De stukken waaraan documenten hangen (en de interne beoordeling niet &#x27;Afgewezen&#x27; is). Hierbij staat een loepicoon waarmee je een preview kunt openen van het documenten. Zo kan je bijvoorbeeld de geldigheid van het document controleren.<br>De stukken waaraan documenten hangen, maar die de interne beoordeling &#x27;Afgewezen&#x27; hebben. Deze zijn lichtgrijs weergegeven, omdat documenten hieronder niet verplaatst kunnen worden.<br>De stukken waaronder geen documenten hangen. Ook deze zijn licht van kleur.</p>
+<p>Voor de stukken die genoemd staan bij punt 1 staat een checkbox. Met deze checkbox kan je aangeven welke stukken/documenten je wilt verplaatsen.</p>
+<p>Rechts staat het product waarbij je de documenten aan stukken wilt koppelen. Achter de stukken die genoemd staan bij punt 1 komt er rechts een pulldown te staan. In deze pulldown doet eBlinqx een voorstel van een stuk. Bij dit voorstel wordt er gekeken naar de stukken onder beide producten en op basis van de volgende punten wordt het voorstel gedaan:</p>
+<p>De aanwezigheid van het stuk (deze moet onder beide producten aanwezig zijn)<br>HDN code (deze moet gelijk zijn in beide stukken)<br>Protocol (deze moet gelijk zijn in beide stukken en kan je zien in Beheer – Documenten – Soort documenten beheer)<br>Geen voorstel</p>
+<p>Indien er geen voorstel gemaakt kan worden dan komt de pulldown op &#x27;maak uw keuze&#x27; te staan. Hier dien je zelf een keuze te maken. Ook kan je de checkbox uitvinken. De pulldown zal dan verdwijnen en het document zal niet worden verplaatst naar de stukkenlijst van het andere product.</p>
+<p>Let op: het is niet mogelijk dat een pulldown op &#x27;maak uw keuze&#x27; blijft staan. Je dient hier handmatig een keuze te maken of de checkbox uit te vinken. Ook is het niet mogelijk om bij twee stukken hetzelfde document te selecteren. Indien dit wel gebeurt dan wordt de dropdown rood.</p>
+<h2 id="3-documenten-verplaatsen">3. Documenten verplaatsen</h2>
+<p>Nadat achter elk stuk met een document een keuze is gemaakt of de checkbox is uitgezet, kan je nog de keuze maken uit de volgende opties:</p>
+<p>Document ontkoppelen van bestaande stukkenlijst. Deze staat standaard aangevinkt. De documenten worden dan ontkoppeld van de stukken die staan onder het product waarbij je documenten wilt verplaatsen. Vink je deze uit dan blijft het document gekoppeld staan aan het stuk onder beide producten. Let op: als deze staat uitgevinkt wordt er een kopie van het document gemaakt. Het document komt dan ook dubbel onder het tabblad Documenten te staan.<br>Bestaande stukkenlijst direct opruimen. Deze staat standaard aangevinkt. De stukkenlijst gekoppeld aan het product waarbij je documenten wilt verplaatsen wordt verwijderd (de documenten worden niet verwijderd, deze staan onder het tabblad Documenten in het klantdossier). Vink je deze uit dan blijft de stukkenlijst onder het product staan.</p>
+<p>Als deze keuzes zijn gemaakt dan kan je klikken op &#x27;Verwerken&#x27;.</p>
+<h2 id="systeemregistratie">Systeemregistratie</h2>
+<p>Nadat er op &#x27;Verwerken&#x27; is geklikt, wordt er ook een systeemregistratie gemaakt. Zo is terug te zien wie en wanneer de actie is uitgevoerd. De systeemregistratie kan je terugvinden in het tabblad Communicatie – Registratie. In het zoekfilter zet je &#x27;Systeemregistraties&#x27; op &#x27;Toon&#x27;.</p>
+<h2 id="meldingen">Meldingen</h2>
+<p>Er komt altijd een melding indien niet alle documenten gekoppeld aan stukken verplaatst worden van het ene product naar het andere product. Je heb dan een checkbox uitgevinkt. De melding die dan verschijnt, is &#x27;Let op: niet alle documenten worden verplaatst naar de andere stukkenlijst. Deze documenten blijven wel opgeslagen in het tabblad &#x27;Documenten&#x27;.</p>
+<p>Wanneer er links stukken zijn aangevinkt, maar rechts staat het pulldown nog op &#x27;maak uw keuze&#x27; dan verschijnt de melding &#x27;Er zijn stukken in de linker stukkenlijst aangevinkt, waarbij nog geen stuk geselecteerd is in de rechter stukkenlijst. Vink in de linker stukkenlijst enkel stukken aan die u wilt verplaatsen. Stukken die niet zijn aangevinkt worden niet verplaatst.&#x27;</p></div>
+      <section class="figs"><h2>Afbeeldingen bij dit artikel</h2><figure><a href="https://web.archive.org/web/20250518012833im_/https://support.fasterforward.nl/wp-content/uploads/2024/04/image-105.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20250518012833im_/https://support.fasterforward.nl/wp-content/uploads/2024/04/image-105.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20250518012833im_/https://support.fasterforward.nl/wp-content/uploads/2024/04/image-106.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20250518012833im_/https://support.fasterforward.nl/wp-content/uploads/2024/04/image-106.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20250518012833im_/https://support.fasterforward.nl/wp-content/uploads/2024/04/image-107.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20250518012833im_/https://support.fasterforward.nl/wp-content/uploads/2024/04/image-107.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20250518012833im_/https://support.fasterforward.nl/wp-content/uploads/2024/04/image-108.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20250518012833im_/https://support.fasterforward.nl/wp-content/uploads/2024/04/image-108.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure></section>
+      <details class="orig"><summary>Schermafbeelding van de oorspronkelijke pagina</summary><img src="../../bronnen/offline-archief/shots/documenten-verplaatsen-naar-andere-stukkenlijst.jpg" alt="Schermafbeelding van Documenten verplaatsen naar andere stukkenlijst" loading="lazy"></details>
+      <p class="src">Bron: <a href="https://web.archive.org/web/20260608025632/https://support.fasterforward.nl/kennisbank/documenten-verplaatsen-naar-andere-stukkenlijst/" target="_blank" rel="noopener">Wayback Machine-archief</a></p>
+    </article>
+    <aside class="related"><h2>Gerelateerd:</h2><ul><li><a href="../../kennisbank/stukkenlijst/index.html">Stukkenlijst gebruiken</a></li><li><a href="../../kennisbank/hoe-wordt-stukkenlijst-gevuld/index.html">Stukkenlijst aanmaken</a></li><li><a href="../../kennisbank/stukken-naar-maatschappij-versturen/index.html">Stukken naar de maatschappij versturen</a></li><li><a href="../../kennisbank/hoe-maak-stukkenlijst-template/index.html">Standaard stukkenlijst maken of wijzigen</a></li><li><a href="../../kennisbank/standaard-afkeurredenen-beheren/index.html">Standaard afkeurredenen beheren</a></li></ul></aside>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span>Copyright © 2024 Blinqx powered by Faster Forward</span>
+    <nav aria-label="Beleid">
+      <a href="../../supportbeleid/index.html">Supportbeleid</a>
+      <a href="../../opdrachtenbeleid/index.html">Opdrachtenbeleid</a>
+      <a href="../../klachtenbeleid/index.html">Klachtenbeleid</a>
+      <a href="../../wensenbeleid/index.html">Wensenbeleid</a>
+      <a href="../../video/index.html">Video's &amp; e-learning</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

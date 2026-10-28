@@ -1,0 +1,116 @@
+Portefeuillewaarde-overzicht uitgebreid, verbeteringen bankgarantie en Aplaza document in specifieke map
+https://support.fasterforward.nl/portefeuillewaarde-overzicht-uitgebreid-verbeteringen-bankgarantie-en-aplaza-document-in-specifieke-map/
+
+Op dinsdag 7 juli zijn Elements en eBlinqx weer verbeterd en uitgebreid met nieuwe features. Deze release bevat onder andere Portefeuillewaarde-overzicht uitgebreid, Aplaza documenten in een specifieke map plaatsen, pep- en sanctiecheck via Hyarchis en wijzigen schademelding.
+
+eBlinqx OnlyFin AI-assistent beschikbaar
+
+eBlinqx en Elements
+
+Aanvragen en beheren van bankgaranties verbeterd
+Bestaande aanvraagbericht bankgarantie wijzigen
+
+Correspondentieadres kiezen
+
+Foutmeldingen en verplichte velden verduidelijkt
+
+Velden worden opgehaald vanuit het dossier
+
+Pep- en sanctiecheck via Hyarchis
+
+Aplaza document in specifieke map plaatsen
+
+Schadedatum- en tijd, polis en object wijzigen in schademelding
+
+Portefeuillewaarde-overzicht uitgebreid
+
+Verbeteringen onder de motorkap
+
+Overige verbeterpunten
+
+eBlinqx Only
+
+Fin AI-assistent beschikbaar
+
+Let op: alleen beschikbaar in eBlinqx
+
+Fin is de virtuele AI-assistent die in eBlinqx is geïntegreerd. Via het gespreksicoontje kan je vragen stellen over eBlinqx. Door middel van AI zal Fin de vragen zo goed mogelijk proberen te beantwoorden.
+
+eBlinqx en Elements
+
+Aanvragen en beheren van bankgaranties verbeterd
+
+Bestaande aanvraagbericht bankgarantie wijzigen
+
+Vanaf nu is het mogelijk om een verstuurde bankgarantie, afhankelijk van de status, te wijzigen, te corrigeren of te verlengen. Deze kan je dan ook als zodanig opnieuw versturen. Het wijzigen van de initiële aanvraag is mogelijk tot het moment dat het statusbericht met de status ’04 Bankgarantieaanvraag ter acceptatie’ is binnengekomen. Alle velden van de bankgarantie kan je wijzigen. Het corrigeren is mogelijk na het stellen van de bankgarantie tot en met de einddatum van de bankgarantie. Het uitgaande WX-bericht krijgt dan het type correctie. Verlengen is mogelijk nadat de bankgarantie de status ‘Bankgarantie gesteld’ heeft gekregen en tot en met de einddatum van de bankgarantie. Deze wordt bepaald aan de hand van de passeerdatum die je eventueel kunt wijzigen in de aanvraag.
+
+Correspondentieadres kiezen
+
+Wanneer er een klant wilt inloggen op de omgeving van de bankgarantie dan wordt er gevraagd naar zijn postcode en huisnummer om de login te valideren. Voor deze validatie wordt er gekeken naar het correspondentieadres. Voorheen was dit altijd het hypotheekadres. Het kan gebeuren dat het woonadres van de klant afwijkt van het hypotheekadres in de aanvraag, omdat de klant bijvoorbeeld nog bij zijn ouders woont. Dit kon voor verwarring zorgen bij het inloggen. Nu is het mogelijk om bij de aanvraag het correspondentieadres voor de contactpersoon te kiezen. Standaard wordt het correspondentieadres die staat ingesteld onder de contactpersoon ingevuld. De klant kan dan met zijn eigen postcode en huisnummer inloggen.
+
+Foutmeldingen en verplichte velden verduidelijkt
+
+In het aanvraagscherm is het nu duidelijk aangegeven welke velden verplicht zijn. Is er een verplicht veld niet ingevuld en je klikt op ‘Verzenden’ dan verschijnt er een foutmelding. De knop ‘Verzenden’ wordt hierdoor niet langer meer verborgen. De bestaande foutmeldingen zijn verduidelijkt, zodat het duidelijker is waar het versturen van de aanvraag fout gaat.
+
+Velden worden opgehaald vanuit het dossier
+
+Diverse velden kan je niet meer handmatig invullen, maar worden opgehaald vanuit het dossier. Via het informatie-icoon kan je zien waar de informatie wordt opgehaald en waar je het kan aanpassen mocht het niet kloppen. Zo wordt het klantdossier up to date gehouden en wijken de gegevens in de aanvraag bankgarantie niet af van de gegevens in het dossier.
+
+Pep- en sanctiecheck via Hyarchis
+
+Het is nu mogelijk om via Hyarchis een pep- en sanctiecheck op te vragen. Via het blok ‘Klantonderzoek‘ , de workflow of SMART kan je de check starten indien dit is ingericht. Het resultaat is terug te lezen via een PDF wat wordt gegenereerd. Deze staat onder het tabblad Documenten in het dossier en kan je benaderen via het blok Klantonderzoek door te klikken op het resultaat. Daarnaast krijg je een inlog bij Hyarchis om vastgelopen aanvragen zelf door te zetten.
+
+Wil je hiervan gebruik maken? Stuur dan een e-mail naar je account owner. Geef hierbij aan welke gebruikers gebruik mogen maken van de functionaliteit. Wij zullen dan schakelen met Hyarchis om het vanuit beide kanten goed in te richten.
+
+Aplaza document in specifieke map plaatsen
+
+Het is nu mogelijk om Aplaza documenten, nadat het bericht is verwerkt, automatisch te plaatsen in een zelfingestelde blauwe map in het dossier. Via de Aplaza instellingen kan je een mappenstructuur aanmaken en per soort document aangeven in welke map deze gezet moet worden. 
+
+Aan de hand van deze aangemaakte mappenstructuur en de mappenstructuur in het specifieke dossier zijn en 3 mogelijke scenario’s na het verwerken van het Aplaza-bericht, namelijk:
+
+Bestaat de map niet in het betreffende dossier dan wordt deze aangemaakt samen met de onderliggende mappen en hierin wordt het document geplaatst.
+Bestaat de map maar de onderliggende map niet in het betreffende dossier dan wordt deze onderliggende map aangemaakt en hierin wordt het document geplaatst.
+Bestaat de map met daarin de onderliggende map dan wordt het document geplaatst in deze map.
+
+Let op: Het document wordt dus ten alle tijden in de map geplaatst en alle onderliggende mappen worden aangemaakt als deze niet bestaan. De map (met eventueel onderliggende mappen) wordt niet met terugwerkende kracht in alle dossiers aangemaakt. Eerder binnengekomen documenten van hetzelfde “Soort document” worden niet met terugwerkende kracht in de mappen geplaatst.
+
+Hier lees je er meer over.
+
+Schadedatum- en tijd, polis en object wijzigen in schademelding
+
+Vanaf nu kan je in een schademelding de schadedatum- en tijd, polis en object wijzigen zolang er geen boeking is gekoppeld aan de schademelding. Zodra er een (verwijderde) boeking is aangemaakt voor de schademelding dan is het niet mogelijk om één van deze velden te veranderen. Er verschijnt dan een melding om je hierop te attenderen. Het wijzigen kan je doen via het wijzigingsicoon achter de schadedatum. Voorheen was het na opslaan nooit mogelijk om de polis of object te wijzigen.
+
+Portefeuillewaarde-overzicht uitgebreid
+
+Portefeuillewaarde-overzicht is uitgebreid met een overzicht per branche en de polisdichtheid. Onder het overzicht per branche vind je alle branches en uitvaart-levens- en inkomensverzekering. Per branche/product kan je zien hoeveel polissen hiervan zijn en het totaal aan premie en vergoedingen. Je kunt hierop doorklikken waarna je een uitsplitsing krijgt van maatschappijen en polissen voor deze branche/product.
+
+Onder ‘Polisdichtheid’ vind je het aantal actieve verzekeringen per verzekeringnemer met hierbij het aantal relaties die dit aantal actieve verzekeringen hebben.
+
+Verbeteringen onder de motorkap
+
+De softwaretechnieken van Elements en eBlinqx zijn weer verder vernieuwd. We hebben hier verbeteringen op doorgevoerd. Ondanks dat je hier niets van merkt, is deze vernieuwing erg belangrijk.
+
+Hierdoor kunnen we namelijk nieuwe innovaties blijven implementeren, omdat we gebruikmaken van de nieuwste software. Bovendien blijft de veiligheid gewaarborgd. Dit geldt zowel voor Elements en eBlinqx als voor alle koppelingen en exports, zoals klantportalen, adviespakketten, Excel en verbindingen met geldverstrekkers en verzekeraars.
+
+Overige verbeterpunten
+
+De afwijkende rentevast ingangsdatum ten opzichte van de passeerdatum wordt nu juist gesynchroniseerd naar Uwkluis
+De naam van het PDF bestand wat wordt gemaakt na het afronden van het klantonderzoek via Uwkluis is veranderd naar ‘Klantonderzoek – vragenlijst.pdf’. Daarnaast komt deze automatisch op publiek te staan. Het bijbehorend JSON bestand wordt nog wel aangemaakt, maar komt niet meer onder het tabblad Documenten te staan
+De tag [betalingsoverzicht->totaalbedrag] is toegevoegd
+Enige tijd geleden zijn diverse betaalwijzen, waaronder automatische incasso, overschrijving en notaris, als vaste waarden vastgezet in het systeem. Hierdoor vervallen in administratie onderhoud de velden ‘betaalwijze bij incasso’, ‘betaalwijze bij overschrijving’ en ‘betaalwijze bij notaris’. Daarnaast vervalt het veld ‘Betaaltermijn’ bij het aanmaken van een factuur als er gekozen wordt voor de betaalwijze automatische incasso
+
+ Categorie: Release
+ -->
+ Geplaatst op 6 juli 2026 (Laatste update: 14 juli 2026) 
+
+ Laatste 5 releasenotes | 
+
+ Inzicht dataverbruik en verbeteringen Klantportaal, e-mail en inloggen » | 
+
+ Optimalisaties Uwkluis, verbeteringen Quinn Mail en AI gebruik gemakkelijk inzien » | 
+
+ Inkoop via per maatschappij instellen, aanleveren stuk, taak IA berichten en meer » | 
+
+ Portefeuillewaarde-overzicht uitgebreid, verbeteringen bankgarantie en Aplaza document in specifieke map » | 
+
+ Verbeteringen performance » |

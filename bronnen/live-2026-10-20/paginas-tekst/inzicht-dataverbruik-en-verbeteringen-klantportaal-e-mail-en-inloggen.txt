@@ -1,0 +1,126 @@
+Inzicht dataverbruik en verbeteringen Klantportaal, e-mail en inloggen
+https://support.fasterforward.nl/inzicht-dataverbruik-en-verbeteringen-klantportaal-e-mail-en-inloggen/
+
+Op dinsdag 20 oktober is eBlinqx weer verbeterd en uitgebreid met nieuwe features. Deze release bevat onder andere niet meer uitloggen bij IP wissel, verbeteringen voor Klantportaal, e-mail, takenoverzicht, onder de motorkap en in de schadeverzekering.
+
+Niet meer uitloggen bij wisselen IP adres
+
+Inzicht in dataverbruik
+
+Verbeteringen KlantportaalGewijzigde naam stuk synchroniseren naar Klantportaal
+
+Verbeteringen e-mail
+Zelf e-mailboxen type IMAP/POP3 omzetten naar Office365
+
+E-mailbox authenticeren of authenticatie intrekken via de e-mailmanager
+
+Gemakkelijk overschakelen naar ‘allen beantwoorden’ in reply e-mail
+
+Verbeteringen schadeverzekering
+Collectiviteit vastleggen in schadeverzekering
+
+Premiebetaler in schadeverzekering en overige partijen
+
+Verbeteringen takenoverzicht
+Meerdere personen of workflowgroepen tegelijk te selecteren in takenfilter
+
+Filteren op kantoor in takenoverzicht
+
+Administratie als standaard voor product instellen
+
+Verbeteringen onder de motorkap
+
+Overige verbeterpunten
+
+Niet meer uitloggen bij wisselen IP adres
+
+Vanaf nu wordt je niet langer meer automatisch uitgelogd wanneer enkel het IP adres wisselt. Het wisselen van IP adres kan bijvoorbeeld gebeuren wanneer je in het buitenland of via een hotspot werkt. Wisselt het IP adres én de omgeving of gebruiker wisselt dan wordt je wel uitgelogd vanwege veiligheidsoverwegingen. 
+
+Inzicht in dataverbruik
+
+Je kunt nu gemakkelijk via Managementinformatie het data-verbruik van bestanden en e-mail inzien. Zo weet je de hoeveelheid opslag die jouw omgeving gebruikt. Niet alle bestanden zijn zichtbaar als documenten, maar nemen wel opslag in gebruik, bijvoorbeeld HDN en ADN berichten. Dit overzicht wordt iedere maand op de 28e bijgewerkt. 
+
+Indien het juiste recht aanstaat en je bent aangemerkt als beheerder dan kan je het data-verbruik inzien in Managementinformatie. Zie je de module niet, ben je beheerder en wil je toegang tot de module Totale opslag van de omgeving? Stuur dan een e-mail naar support-eblinqx@blinqx.tech.
+
+Verbeteringen Klantportaal
+
+Gewijzigde naam stuk synchroniseren naar Klantportaal
+
+Als je nu de naam van een stuk in eBlinqx aanpast dan wordt deze nieuwe naam ook gesynchroniseerd naar het verzoek in Klantportaal. Zo blijft de naam van het stuk in eBlinqx en het verzoek Klantportaal hetzelfde.
+
+Verbeteringen e-mail
+
+Zelf e-mailboxen type IMAP/POP3 omzetten naar Office365
+
+Indien je gebruik maakt van e-mailboxen met het type IMAP of POP3 en deze moeten omgezet worden naar het type Office365 dan kan je dit nu gemakkelijk zelf in eBlinqx omzetten. Voorheen moest dit middels een script door ons gedaan worden. In de e-mailmanager is per mailbox met het type IMAP/POP3 een knop aanwezig om het type om te zetten naar Office365. Na omzetting dien je de mailbox te authentiseren. Eerder binnengekomen e-mails blijven zichtbaar. Als er op het moment van klikken op de knop het proces draait om e-mails binnen te halen, krijg je een melding dat je het op een later moment nogmaals moet proberen. Let op: het daadwerkelijk hosten van de e-mailadressen bij Microsoft dient door jullie ICT-beheerder ingeregeld te worden. De knop in de e-mailmanager geldt alleen voor de instellingen in eBlinqx en moet je niet gebruiken als de e-mailadressen nog niet gehost worden door Microsoft.
+
+E-mailbox authenticeren of authenticatie intrekken via de e-mailmanager
+
+De authenticatie, opnieuw authenticeren en het intrekken hiervan kan nu ook via de e-mailmanager, zodat de beheerder dit zelf kan doen. Voorheen kon dit alleen via de e-mailmodule. In de e-mailmanager kan je per mailbox bepalen of je wilt authenticeren of de authenticatie wilt intrekken.
+
+Gemakkelijk overschakelen naar ‘allen beantwoorden’ in reply e-mail
+
+Het kan gebeuren dat je een reply op wilt stellen voor alle partijen (aan en CC) in de e-mail, maar per ongeluk klikt op ‘Beantwoorden’ in plaats van ‘Allen beantwoorden’. Je kunt dit nu gemakkelijk herstellen door te klikken op ‘Allen beantwoorden’ wat zichtbaar is links onder afzender en ontvanger.
+
+Verbeteringen schadeverzekering
+
+Collectiviteit vastleggen in schadeverzekering
+
+Vanaf nu kan je in de productkaart van de schadeverzekering de collectiviteit vastleggen. Er is een veld ‘Collectiviteit’ bijgekomen. Wanneer je deze op ‘Ja’ zet verschijnen de velden ‘Collectiviteitsnummer’, ‘Naam’ en ‘Percentage’. Voor deze velden zijn tags gemaakt. Daarnaast zijn ze opgenomen in de API en ze worden gevuld vanuit het ADN bericht indien in het AFD bericht de velden hiervoor zijn meegestuurd.
+
+Premiebetaler in schadeverzekering en overige partijen
+
+In de productkaart schadeverzekering kan je nu links in de productkaart onder ‘Personen’ de premiebetaler selecteren via het veld ‘Premiebetaler’. Daarnaast kan je in de module Overige partij personen aanmerken als premiebetaler. Hierdoor komt de overige partij zichtbaar in het dropdownmenu voor het veld premiebetaler en kan je deze als zodanig makkelijk selecteren. Deze wijziging geldt ook voor de andere productkaarten waarin het veld premiebetaler al aanwezig was.
+
+Verbeteringen takenoverzicht
+
+Meerdere personen of workflowgroepen tegelijk te selecteren in takenfilter
+
+In de zoekvelden ‘Groep’ en ‘Persoon’ van het filter in het takenoverzicht (ook op dossierniveau) kan je nu groepen/personen selecteren waarvan je de taken wilt zien. Voorheen was het alle groepen/personen of één groep/persoon. Nu heb je meer keuze van welke groepen/personen je de taken wilt zien, omdat je deze kunt selecteren. Selecteer je geen personen of groepen dan zoek je op alle groepen/personen uit de lijst. Maak je een selectie dan zoek je op de geselecteerde groepen/personen.
+
+Filteren op kantoor in takenoverzicht
+
+In het algemene takenoverzicht is het nu mogelijk om ook op kantoor te filteren. Dit door middel van het nieuwe veld ‘Kantoor’ in het filter. Deze is alleen beschikbaar als de setting hiervoor staat ingesteld. In het zoekveld zie je de kantoren terug waar jij toegang tot hebt. Je bent dan in Beheer – Organisatie & Personen gekoppeld aan dit kantoor of je hebt een multi-officerecht. De keuze in dit zoekveld bepaalt (in combinatie met de ander ingestelde filters) welke taken je te zien krijgt, namelijk:
+
+Alle: je ziet alle taken van dossiers die gekoppeld zijn aan alle voor jouw beschikbare kantoren én je ziet alle taken die niet aan een dossier zijn gekoppeld
+Geen: je ziet alleen taken die niet aan een dossier (dus niet aan een kantoor) zijn gekoppeld
+Eén kantoor gekozen: je ziet alleen de taken van dossiers van dat kantoor
+
+Heeft jouw omgeving meerdere deelnemers en wil je gebruik maken van het filter ‘Kantoor’ stuur dan een e-mail naar support-eblinqx@blinqx.tech.
+
+Administratie als standaard voor product instellen
+
+In het product kan je een afwijkende administratie instellen. Het is nu mogelijk om een administratie te koppelen aan een producttype. Wordt dit producttype aangemaakt (via HDN, Aplaza, handmatig of API) dan krijgt dit product automatisch de ingestelde administratie. Het instellen doe je via de nieuwe module ‘Standaard administratie per producttype’. Wil je als beheerder hiervan gebruik maken? Stuur dan een e-mail naar support-eblinqx@blinqx.tech.
+
+Verbeteringen onder de motorkap
+
+De softwaretechnieken van eBlinqx zijn weer verder vernieuwd. We hebben hier verdere verbeteringen op doorgevoerd. Ondanks dat je hier niets van merkt, is deze vernieuwing erg belangrijk.
+
+Hierdoor kunnen we namelijk nieuwe innovaties blijven implementeren, omdat we gebruikmaken van de nieuwste software. Bovendien blijft de veiligheid gewaarborgd. Dit geldt zowel voor eBlinqx als voor alle koppelingen en exports, zoals klantportalen, adviespakketten, Excel en verbindingen met geldverstrekkers en verzekeraars.
+
+Overige verbeterpunten
+
+De kenmerken waarop een e-mail aan een dossier gematcht kan worden door middel van AI zijn uitgebreid. Hierdoor zal de e-mail vaker aan het juiste dossier worden gekoppeld en geeft dit een beter resultaat
+Het SEPA-bestand wordt nu opgeslagen en onthouden na genereren, waardoor je deze kunt blijven downloaden. Voorheen werd bij het downloaden het SEPA-bestand iedere keer opnieuw gegenereerd met de data die op dat moment aanwezig was, wat tot foutmelding kon leiden. Daarnaast wordt nu in het SEPA-bestand een gestructureerd adres meegestuurd
+Het premieblok in een levensverzekering kan nu middels de API worden gevuld
+Je kunt nu een e-mailbericht wat is gekoppeld aan een verwijderd dossier weer openen vanuit de e-mailmodule. Voorheen kwam er dan een foutmelding
+De zakelijke klantgegevens die automatisch op het Finly Formulier komen te staan zijn uitgebreid met de volgende gegevens: IBAN, naam en (laatst opgevoerde) e-mailadres van de (eerst opgevoerde) contactpersoon, naam van de directeur
+Diverse achterliggende processen zijn aangepast, zodat foutmeldingen beter afgevangen worden
+Via de API is het nu mogelijk om een stukkenlijst en losse stukken aan te maken in het klantdossier
+Beheerdermeldingen kunnen nu genegeerd worden. Voor de meldingen staat een checkbox die je aan kan vinken. Er verschijnt dan een knop ‘Negeer deze meldingen’. Na het klikken op deze knop verdwijnen de meldingen
+
+ Categorie: Release
+ -->
+ Geplaatst op 16 oktober 2026 
+
+ Laatste 5 releasenotes | 
+
+ Inzicht dataverbruik en verbeteringen Klantportaal, e-mail en inloggen » | 
+
+ Optimalisaties Uwkluis, verbeteringen Quinn Mail en AI gebruik gemakkelijk inzien » | 
+
+ Inkoop via per maatschappij instellen, aanleveren stuk, taak IA berichten en meer » | 
+
+ Portefeuillewaarde-overzicht uitgebreid, verbeteringen bankgarantie en Aplaza document in specifieke map » | 
+
+ Verbeteringen performance » |

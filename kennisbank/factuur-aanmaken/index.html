@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Handmatig factuur aanmaken vanuit een dossier - Blinqx Support</title>
+<meta name="description" content="Hier lees je hoe je de velden van de factuur invult en op welke manier je deze kan boeken en versturen naar de klant.">
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="icon" href="../../assets/favicon.png">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
+    <symbol id="i-mail-o" viewBox="0 0 24 24"><path d="M2 5h20v14H2zm2 2v.4l8 5.6 8-5.6V7zm16 2.8-8 5.6-8-5.6V17h16z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><path d="M10 2a8 8 0 0 1 6.32 12.9l5.4 5.4-1.42 1.42-5.4-5.4A8 8 0 1 1 10 2zm0 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 64 64"><circle cx="7" cy="12" r="6"/><circle cx="7" cy="32" r="6"/><circle cx="7" cy="52" r="6"/><rect x="18" y="7" width="44" height="10" rx="2"/><rect x="18" y="27" width="44" height="10" rx="2"/><rect x="18" y="47" width="44" height="10" rx="2"/></symbol>
+    <symbol id="i-home" viewBox="0 0 64 64"><path d="M32 6 2 32l4 5 4-3.4V58h18V42h8v16h18V33.6l4 3.4 4-5-10-8.7V10h-8v7.4z"/></symbol>
+    <symbol id="i-car" viewBox="0 0 64 64"><path d="M16 10h32a6 6 0 0 1 5.7 4.1L58 27a7 7 0 0 1 4 6.3V48a3 3 0 0 1-3 3h-3v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H20v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H5a3 3 0 0 1-3-3V33.3A7 7 0 0 1 6 27l4.3-12.9A6 6 0 0 1 16 10zm1.5 7-3.3 10h35.6l-3.3-10zM13 34a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm38 0a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 64 64"><path d="M4 12a4 4 0 0 1 4-4h16l6 6h22a4 4 0 0 1 4 4v6H18a6 6 0 0 0-5.6 3.9L4 50z"/><path d="M18 28h44l-10 26H6z"/></symbol>
+    <symbol id="i-desktop" viewBox="0 0 64 64"><path d="M2 6h60v40H38v6h8v6H18v-6h8v-6H2zm6 6v28h48V12z"/></symbol>
+    <symbol id="i-comments" viewBox="0 0 64 64"><path d="M26 4c13.8 0 24 8.6 24 19s-10.2 19-24 19c-2.6 0-5-.3-7.3-.8C14.6 44 9.6 46 3 46c3-3 4.8-6.2 5.3-9.6C4.4 33 2 28.2 2 23 2 12.6 12.2 4 26 4z"/><path d="M54 24.5c5 3.4 8 8.3 8 13.5 0 4.2-1.8 8-4.8 11 .4 3.6 2 6.8 4.8 9.5-6 0-10.6-1.8-14.3-4.4-2.1.5-4.4.7-6.7.7-7 0-13.1-2.4-17-6.2 14.3-.4 30-8.8 30-24.1z"/></symbol>
+    <symbol id="i-envelope" viewBox="0 0 64 64"><path d="M4 12h56a2 2 0 0 1 2 2v3L32 37 2 17v-3a2 2 0 0 1 2-2z"/><path d="M2 23.5 32 43.5l30-20V50a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-euro" viewBox="0 0 64 64"><path d="M42 6c5 0 9.5 1.2 13 3.2l-2.6 8.2A19 19 0 0 0 42 14.5c-7.4 0-12.7 4.6-14.6 11.5H46l-2 7H26.3l-.05 2 .05 2H42l-2 7H27.4c1.9 7 7.2 11.5 14.6 11.5 4 0 7.6-1 10.4-2.9L55 61c-3.6 2-8 3-13 3-12.7 0-22.2-8-24.4-20H10l2-7h5.06L17 35l.06-2H10l2-7h5.6C19.8 14 29.3 6 42 6z"/></symbol>
+    <symbol id="i-file" viewBox="0 0 64 64"><path d="M10 2h28v18h18v38a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm32 0 14 14H42zM16 30v6h32v-6zm0 10v6h32v-6zm0 10v6h32v-6z"/></symbol>
+    <symbol id="i-rss" viewBox="0 0 64 64"><circle cx="11" cy="53" r="8"/><path d="M3 23a38 38 0 0 1 38 38H31A28 28 0 0 0 3 33z"/><path d="M3 3a58 58 0 0 1 58 58H51A48 48 0 0 0 3 13z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="rgba(0,0,0,.65)"/><path d="M26 20v24l20-12z" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="item"><svg class="ic"><use href="#i-phone"/></svg><a class="tel" href="tel:+31850180069">085 018 00 69</a></span>
+    <span class="sep" aria-hidden="true"></span>
+    <span class="item"><svg class="ic"><use href="#i-mail-o"/></svg><a class="mail" href="mailto:support-eblinqx@blinqx.tech">support-eblinqx@blinqx.tech</a></span>
+    <a class="li" href="https://www.linkedin.com/company/blinqx/" target="_blank" rel="noopener" aria-label="Blinqx op LinkedIn">in</a>
+  </div>
+</div>
+<header class="site">
+  <div class="wrap">
+    <div class="head-row">
+      <a class="brand" href="../../index.html" aria-label="Blinqx support — home">
+        <img src="../../assets/logo-mark.png" alt="Blinqx" width="470" height="119">
+        <span>powered by Faster Forward</span>
+      </a>
+      <nav class="main" aria-label="Hoofdmenu"><ul><li><a href="../../index.html">Home</a></li><li><a href="../../nieuws/index.html">Nieuws</a></li><li><a href="../../tips/index.html">Tips</a></li><li><a href="../../releasenotes/index.html">Release notes</a></li><li><a href="../../trainingen/index.html">Trainingen</a></li><li><a href="../../contact/index.html">Contact support</a></li></ul></nav>
+    </div>
+    <div class="search-row">
+      <form class="search" action="../../zoeken/index.html" method="get" role="search">
+        <label class="field">
+          <svg class="ic"><use href="#i-search"/></svg>
+          <input type="search" name="q" placeholder="Zoek hier op onderwerp" aria-label="Zoek op onderwerp">
+        </label>
+        <button type="submit">Zoeken</button>
+      </form>
+      <div class="status">Mogelijke incidenten en de systeemstatus vind je op onze <a href="#" title="URL statuspagina nog invullen">statuspagina</a>.</div>
+    </div>
+  </div>
+</header>
+<div class="crumbs"><div class="wrap"><nav aria-label="Kruimelpad"><a href="../../kennisbank/index.html">Kennisbank</a><span class="sep" aria-hidden="true">›</span><a href="../../categorien/facturatie/index.html">Facturatie</a><span class="sep" aria-hidden="true">›</span><a href="../../categorien/facturatie3/index.html">Facturatie</a><span class="sep" aria-hidden="true">›</span><span aria-current="page">Handmatig factuur aanmaken vanuit een dossier</span></nav></div></div>
+<main class="article">
+  <div class="wrap cols">
+    <article>
+      <h1>Handmatig factuur aanmaken vanuit een dossier</h1>
+      <p class="meta">Laatste update: 15 oktober 2025</p>
+      <div class="content"><p>Jij levert diensten aan jouw klanten. Deze diensten wil je incasseren en dit kan door het versturen van een factuur. In dit artikel lees je hoe je een handmatig een factuur aanmaakt vanuit een dossier.</p><nav class="toc" aria-label="Inhoud"><ul><li><a href="#regels-aanmaken">Regels aanmaken</a></li><li><a href="#factuur-boeken">Factuur boeken</a></li><li><a href="#factuur-versturen-naar-de-klant">Factuur versturen naar de klant</a></li><li><a href="#factuur-handmatig-naar-de-klant-verzenden">Factuur handmatig naar de klant verzenden</a></li><li><a href="#factuur-verwijderen">Factuur verwijderen</a></li></ul></nav>
+<ul><li>Handmatig aanmaken van een factuur</li><li>Regels aanmaken</li><li>De volgorde van invoeren</li><li>Voorbeeld van de factuur</li><li>Factuur boeken</li><li>Factuur versturen naar de klant</li><li>Factuur handmatig naar de klant verzenden</li><li>Factuur verwijderen</li><li>Handmatig aanmaken van een factuur</li></ul>
+<p>Een nieuwe factuur aanmaken in een dossier kan via het tabblad Financieel. Op deze pagina wordt het standaard overzicht getoond met de facturen uit het dossier. Er kunnen middels het plusicoon linksboven nieuwe facturen worden aangemaakt.</p>
+<p>Er verschijnt dan een invoerveld waar de gegevens van de factuur ingevuld moeten worden.</p>
+<p>Hieronder volgt een algemene uitleg uitleg over de invoervelden. Alle invoervelden zijn te tonen op de factuur door middel van tags.</p>
+<p>VELDNAAM OMSCHRIJVING<br>Factuurdatum Hier komt standaard de datum van vandaag te staan. Uiteraard is deze datum ook te vervangen door een andere datum (intypen of met behulp van het kalender-icoontje)<br>Vervaldatum Deze zal automatisch gevuld worden aan de hand van de factuurdatum + betaaltermijn en hoeft dus niet handmatig gevuld te worden.<br>Template Standaard wordt de laatst gebruikte template geselecteerd. Handmatig zijn alle andere factuur templates te selecteren.<br>Status Dit veld staat standaard op ‘Nieuw’, dit is niet te wijzigen. Dit veld is aan te passen met behulp van de workflow, of indien deze niet aanwezig is, handmatig. Indien een blauw pijltje zichtbaar is achter de status kan de status alleen worden gewijzigd aan de hand van de workflow.<br>Type Geeft aan voor wie de factuur bestemd is. Er kan gekozen worden tussen ‘Persoon’ en ‘Organisatie’. Afhankelijk van de keuze, veranderen de invulvelden onder ‘Type’.</p>
+<ul><li>‘Persoon’: Particuliere klant uit het dossier is te selecteren</li><li>‘Organisatie’: Zakelijke klant uit het dossier is te selecteren</li></ul>
+<p>Eerste persoon / tweede persoon / Organisatie De personen/organisaties uit het dossier zijn te selecteren.<br>Product Een product uit het dossier kan geselecteerd worden. De factuur wordt aan dit betreffende product gekoppeld. Dit is handig voor het overzicht! Het product dient wel ingesteld te zijn voor de facturatie.<br>Betaalwijze Standaard kan gekozen worden uit ‘Automatische incasso’, ‘Overschrijving’ en ‘Notaris’.<br>Betaaltermijn Kies hier voor de betaaltermijn van de factuur. Invoer van een waarde in dit veld zal ervoor zorgen dat ook de Vervaldatum gevuld wordt (volgens de formule factuurdatum + betaaltermijn).</p>
+<p>LET OP: Indien de Betaalwijze ‘Automatische incasso’ is, dient dit veld gevuld te worden met ‘0’. Als dit niet gedaan wordt, kan de incasso niet automatisch via eBlinqx gaan!</p>
+<p>Omschrijving Een eigen omschrijving voor de factuur. Deze kan gebruikt worden voor op de factuur.</p>
+<p>Wanneer alle velden gevuld zijn, kan de factuur worden opgeslagen. Na opslaan wordt de eerste factuurregel zichtbaar.</p>
+<h2 id="regels-aanmaken">Regels aanmaken</h2>
+<p>Het aanmaken van de regels van een factuur gaat als volgt: Allereerst dient het product opgezocht te worden. Een aantal velden zijn bewerkbaar en een aantal andere worden automatisch berekend, zoals het BTW- bedrag.</p>
+<p>De volgorde van invoeren<br>Artikel<br>Door het invoeren van een letter of een productcode kan het artikel/product geselecteerd worden met behulp van de pijltjestoets op het toetsenbord en vervolgens met de ENTER toets. Na het selecteren zullen automatisch de ingestelde verkoopprijs gegevens worden geladen uit het product. Met de TAB toets kan tussen de verschillende invoervelden gesprongen worden.<br>Productcode zoeken:<br>De productcodes vind je door op het wijzigingsicoon te klikken bij het desbetreffende offertedeel. De productcode staat dan als eerst in het veld ‘product’. Of door links in het menu naar ‘Producten – Productbeheer’ te gaan en daar het desbetreffende product op te zoeken.<br>Een andere optie is om in de factuur in het veld ‘Artikel’ een deel van de naam van het product te typen. Vervolgens selecteer je het juiste artikel door gebruik te maken van de pijltjestoetsen op jouw toetsenbord.</p>
+<p>Artikelomschrijving<br>De omschrijving wordt automatisch gevuld op het moment dat het artikelnummer wordt geselecteerd. Deze kan vervolgens handmatig worden aangepast.<br>Aantal<br>Het aantal artikelen dat gefactureerd wordt. Na het invullen van de ‘Verkoopprijs’ zal het ingevulde ‘Aantal’ vermenigvuldigd worden om tot een totaalprijs te komen.<br>BTW-Code<br>Door het invullen van een percentage zal er een BTW-code getoond worden. Deze kan vervolgens geselecteerd worden met behulp van de pijltjestoetsen en de ENTER toets.<br>Kostprijs<br>Optioneel om te vullen. Als deze wordt gevuld, kan het volgende veld: marge, worden gebruikt<br>Marge (%)<br>De marge kan gebruikt worden als de kostprijs is gevuld. Een marge van 200 op een kostprijs van 25 euro geeft dus een verkoopprijs van 75 euro.<br>Verkoopprijs<br>eBlinqx checkt niet automatisch of de kostprijs, marge en verkoopprijs met elkaar kloppen, als de berekende verkoopprijs handmatig wordt veranderd.<br>Regel bijvoegen<br>Ga dan in het veld van ‘Verkoopprijs’ staan en druk vervolgens op de ENTER toets.<br>Regel verwijderen<br>Een regel verwijderen: met F2 op uw toetsenbord kunt u ingevoerde regels verwijderen. Hiervoor dient de cursor in een willekeurig veld van de desbetreffende regel te gaan staan. De regel zal grijs worden en er zal een streep door de tekst komen. Met de ENTER toets kan een nieuwe regel worden toegevoegd. De volgende keer dat je deze (opgeslagen) factuur opent, zal de verwijderde regel niet meer zichtbaar zijn.<br>Gereed!<br>Wanneer alle regels zijn ingevoerd kan de factuur worden opgeslagen.<br>Voorbeeld van de factuur</p>
+<p>Na het opslaan kan een een preview van de factuur getoond worden middels het printericoon linksboven. Naast het printericoon staat het kopie-icoon. Middels deze knop kan een kopie van de betreffende factuur worden afgedrukt. De factuur kan ook geprint worden in het algemene factuur overzicht op het tabblad “Financieel” middels het icoon achter de facturen.</p>
+<h2 id="factuur-boeken">Factuur boeken</h2>
+<p>Het boeken van de factuur doe je via de workflow of handmatig. Handmatig boeken is alleen mogelijk indien er geen workflow onder de factuur aanwezig is. Onderstaand icoontje kan dan gebruikt worden om de factuur te boeken. LET OP: Wanneer de factuur geboekt wordt, zal een factuurnummer worden toegekend en is verdere bewerking niet meer mogelijk.</p>
+<h2 id="factuur-versturen-naar-de-klant">Factuur versturen naar de klant</h2>
+<p>Een factuur kan verstuurd worden per post of per e-mail. Wanneer de factuur per post verstuurd moet worden kan de factuur afgedrukt worden via eBlinqx. Hiervoor kan met behulp van de workflow een PDF gegenereerd worden in het dossier. De factuur kan ook per e-mail verzonden worden met behulp van de workflow.</p>
+<p>Wanneer de klant meerdere e-mailadressen heeft en je wilt de factuur naar een specifiek e-mailadres versturen dan kan je dit bij het betreffende e-mailadres aangeven. Om dit te doen ga je naar het klantdossier – bij Partijen klik je op de betreffende persoon – achter het e-mailadres klik je op het wijzigingsicoon – bij omschrijving vul je Factuur in.</p>
+<h2 id="factuur-handmatig-naar-de-klant-verzenden">Factuur handmatig naar de klant verzenden</h2>
+<p>Het is mogelijk om de factuur nogmaals naar de klant handmatig te versturen. Dit kan je middels de e-mail doen. Binnen het dossier kies helemaal rechtsbovenin voor ‘E-mail aanmaken’</p>
+<p>Er komt dan een scherm zichtbaar om de e-mail op te stellen. Links klik je op de knop ‘Documenten uit dossier toevoegen’.</p>
+<p>In de zwarte balk kies je voor tabblad Factuur. Via de checkbox voor de factuur selecteer je factuur die je wilt toevoegen aan de e-mail. Vervolgens sla je op door middel van het opslaanicoon. Hier worden alleen de facturen getoond die geboekt zijn.</p>
+<p>Je stelt de e-mail verder op om deze vervolgens naar de klant te sturen.</p>
+<h2 id="factuur-verwijderen">Factuur verwijderen</h2>
+<p>Nadat een factuur geboekt is, is het niet mogelijk om de factuur te verwijderen. Om dit boekhoudkundig in orde te maken zal je een creditfactuur aan moeten maken. Ook kan je het boekhoudkundig verder verwerken. In deze handleiding lees je er meer over.</p>
+<p>Tagged: facturen</p></div>
+      <section class="figs"><h2>Afbeeldingen bij dit artikel</h2><figure><a href="https://web.archive.org/web/20190818134039im_/http://support.fasterforward.nl/wp-content/uploads/2016/03/factuur-artikel.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20190818134039im_/http://support.fasterforward.nl/wp-content/uploads/2016/03/factuur-artikel.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20190818134039im_/http://support.fasterforward.nl/wp-content/uploads/2017/03/factuur_boeken.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20190818134039im_/http://support.fasterforward.nl/wp-content/uploads/2017/03/factuur_boeken.png" alt="factuur1" loading="lazy" onerror="this.closest('figure').remove()"></a><figcaption>factuur1</figcaption></figure></section>
+      <details class="orig"><summary>Schermafbeelding van de oorspronkelijke pagina</summary><img src="../../bronnen/offline-archief/shots/factuur-aanmaken.jpg" alt="Schermafbeelding van Handmatig factuur aanmaken vanuit een dossier" loading="lazy"></details>
+      <p class="src">Bron: <a href="https://web.archive.org/web/20260215232917/https://support.fasterforward.nl/kennisbank/factuur-aanmaken/" target="_blank" rel="noopener">Wayback Machine-archief</a></p>
+    </article>
+    <aside class="related"><h2>Gerelateerd:</h2><ul><li><a href="../../kennisbank/betalingsherinnering-versturen/index.html">Betalingsherinnering versturen</a></li><li><a href="../../kennisbank/betalingsherinneringen-bekijken/index.html">Betalingsherinneringen versturen via de betalingsherinneringmodule</a></li><li><a href="../../kennisbank/facturen-op-betalingsoverzicht/index.html">Facturen op betalingsoverzicht</a></li><li><a href="../../kennisbank/factureren-vanuit-de-productkaart/index.html">Factureren vanuit de productkaart</a></li><li><a href="../../kennisbank/factuur-crediteren/index.html">Factuur crediteren</a></li><li><a href="../../kennisbank/herhalingsfactuur-aanmaken/index.html">Herhalingsfactuur aanmaken en verwijderen</a></li></ul></aside>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span>Copyright © 2024 Blinqx powered by Faster Forward</span>
+    <nav aria-label="Beleid">
+      <a href="../../supportbeleid/index.html">Supportbeleid</a>
+      <a href="../../opdrachtenbeleid/index.html">Opdrachtenbeleid</a>
+      <a href="../../klachtenbeleid/index.html">Klachtenbeleid</a>
+      <a href="../../wensenbeleid/index.html">Wensenbeleid</a>
+      <a href="../../video/index.html">Video's &amp; e-learning</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

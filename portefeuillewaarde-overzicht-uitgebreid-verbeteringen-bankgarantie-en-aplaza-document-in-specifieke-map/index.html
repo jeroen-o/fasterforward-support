@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Portefeuillewaarde-overzicht uitgebreid, verbeteringen bankgarantie en Aplaza document in specifieke map - Blinqx Support</title>
+<meta name="description" content="Op dinsdag 7 juli zijn Elements en eBlinqx weer verbeterd en uitgebreid met nieuwe features. Deze release bevat onder andere Portefeuillewaarde-overzicht uitgebreid, Aplaza documenten in een specifieke map plaatsen, pep-…">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.png">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
+    <symbol id="i-mail-o" viewBox="0 0 24 24"><path d="M2 5h20v14H2zm2 2v.4l8 5.6 8-5.6V7zm16 2.8-8 5.6-8-5.6V17h16z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><path d="M10 2a8 8 0 0 1 6.32 12.9l5.4 5.4-1.42 1.42-5.4-5.4A8 8 0 1 1 10 2zm0 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 64 64"><circle cx="7" cy="12" r="6"/><circle cx="7" cy="32" r="6"/><circle cx="7" cy="52" r="6"/><rect x="18" y="7" width="44" height="10" rx="2"/><rect x="18" y="27" width="44" height="10" rx="2"/><rect x="18" y="47" width="44" height="10" rx="2"/></symbol>
+    <symbol id="i-home" viewBox="0 0 64 64"><path d="M32 6 2 32l4 5 4-3.4V58h18V42h8v16h18V33.6l4 3.4 4-5-10-8.7V10h-8v7.4z"/></symbol>
+    <symbol id="i-car" viewBox="0 0 64 64"><path d="M16 10h32a6 6 0 0 1 5.7 4.1L58 27a7 7 0 0 1 4 6.3V48a3 3 0 0 1-3 3h-3v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H20v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H5a3 3 0 0 1-3-3V33.3A7 7 0 0 1 6 27l4.3-12.9A6 6 0 0 1 16 10zm1.5 7-3.3 10h35.6l-3.3-10zM13 34a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm38 0a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 64 64"><path d="M4 12a4 4 0 0 1 4-4h16l6 6h22a4 4 0 0 1 4 4v6H18a6 6 0 0 0-5.6 3.9L4 50z"/><path d="M18 28h44l-10 26H6z"/></symbol>
+    <symbol id="i-desktop" viewBox="0 0 64 64"><path d="M2 6h60v40H38v6h8v6H18v-6h8v-6H2zm6 6v28h48V12z"/></symbol>
+    <symbol id="i-comments" viewBox="0 0 64 64"><path d="M26 4c13.8 0 24 8.6 24 19s-10.2 19-24 19c-2.6 0-5-.3-7.3-.8C14.6 44 9.6 46 3 46c3-3 4.8-6.2 5.3-9.6C4.4 33 2 28.2 2 23 2 12.6 12.2 4 26 4z"/><path d="M54 24.5c5 3.4 8 8.3 8 13.5 0 4.2-1.8 8-4.8 11 .4 3.6 2 6.8 4.8 9.5-6 0-10.6-1.8-14.3-4.4-2.1.5-4.4.7-6.7.7-7 0-13.1-2.4-17-6.2 14.3-.4 30-8.8 30-24.1z"/></symbol>
+    <symbol id="i-envelope" viewBox="0 0 64 64"><path d="M4 12h56a2 2 0 0 1 2 2v3L32 37 2 17v-3a2 2 0 0 1 2-2z"/><path d="M2 23.5 32 43.5l30-20V50a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-euro" viewBox="0 0 64 64"><path d="M42 6c5 0 9.5 1.2 13 3.2l-2.6 8.2A19 19 0 0 0 42 14.5c-7.4 0-12.7 4.6-14.6 11.5H46l-2 7H26.3l-.05 2 .05 2H42l-2 7H27.4c1.9 7 7.2 11.5 14.6 11.5 4 0 7.6-1 10.4-2.9L55 61c-3.6 2-8 3-13 3-12.7 0-22.2-8-24.4-20H10l2-7h5.06L17 35l.06-2H10l2-7h5.6C19.8 14 29.3 6 42 6z"/></symbol>
+    <symbol id="i-file" viewBox="0 0 64 64"><path d="M10 2h28v18h18v38a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm32 0 14 14H42zM16 30v6h32v-6zm0 10v6h32v-6zm0 10v6h32v-6z"/></symbol>
+    <symbol id="i-rss" viewBox="0 0 64 64"><circle cx="11" cy="53" r="8"/><path d="M3 23a38 38 0 0 1 38 38H31A28 28 0 0 0 3 33z"/><path d="M3 3a58 58 0 0 1 58 58H51A48 48 0 0 0 3 13z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="rgba(0,0,0,.65)"/><path d="M26 20v24l20-12z" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="item"><svg class="ic"><use href="#i-phone"/></svg><a class="tel" href="tel:+31850180069">085 018 00 69</a></span>
+    <span class="sep" aria-hidden="true"></span>
+    <span class="item"><svg class="ic"><use href="#i-mail-o"/></svg><a class="mail" href="mailto:support-eblinqx@blinqx.tech">support-eblinqx@blinqx.tech</a></span>
+    <a class="li" href="https://www.linkedin.com/company/blinqx/" target="_blank" rel="noopener" aria-label="Blinqx op LinkedIn">in</a>
+  </div>
+</div>
+<header class="site">
+  <div class="wrap">
+    <div class="head-row">
+      <a class="brand" href="../index.html" aria-label="Blinqx support — home">
+        <img src="../assets/logo-mark.png" alt="Blinqx" width="470" height="119">
+        <span>powered by Faster Forward</span>
+      </a>
+      <nav class="main" aria-label="Hoofdmenu"><ul><li><a href="../index.html">Home</a></li><li><a href="../nieuws/index.html">Nieuws</a></li><li><a href="../tips/index.html">Tips</a></li><li><a href="../releasenotes/index.html" aria-current="page">Release notes</a></li><li><a href="../trainingen/index.html">Trainingen</a></li><li><a href="../contact/index.html">Contact support</a></li></ul></nav>
+    </div>
+    <div class="search-row">
+      <form class="search" action="../zoeken/index.html" method="get" role="search">
+        <label class="field">
+          <svg class="ic"><use href="#i-search"/></svg>
+          <input type="search" name="q" placeholder="Zoek hier op onderwerp" aria-label="Zoek op onderwerp">
+        </label>
+        <button type="submit">Zoeken</button>
+      </form>
+      <div class="status">Mogelijke incidenten en de systeemstatus vind je op onze <a href="#" title="URL statuspagina nog invullen">statuspagina</a>.</div>
+    </div>
+  </div>
+</header>
+<div class="hero" style="background-image:url('https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2020/12/release-header.jpg')"><div class="wrap"><h1>Portefeuillewaarde-overzicht uitgebreid, verbeteringen bankgarantie en Aplaza document in specifieke map</h1></div></div>
+<main class="article">
+  <div class="wrap cols">
+    <article>
+      
+      <p class="meta">Geplaatst op 6 juli 2026 · Laatste update: 14 juli 2026</p>
+      <div class="content"><figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2026/07/Release-juli-2026.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2026/07/Release-juli-2026.png" alt="" width="795" height="500" loading="lazy"></a></figure>
+<p><strong>Op dinsdag 7 juli zijn Elements en eBlinqx weer verbeterd en uitgebreid met nieuwe features. Deze release bevat onder andere Portefeuillewaarde-overzicht uitgebreid, Aplaza documenten in een specifieke map plaatsen, pep- en sanctiecheck via Hyarchis en</strong> <strong>wijzigen schademelding.</strong></p><nav class="toc" aria-label="Inhoud"><ul><li><a href="#fin-ai-assistent-beschikbaar">Fin AI-assistent beschikbaar</a></li><li><a href="#aanvragen-en-beheren-van-bankgaranties-verbeterd">Aanvragen en beheren van bankgaranties verbeterd</a></li><li><a href="#pep-en-sanctiecheck-via-hyarchis">Pep- en sanctiecheck via Hyarchis</a></li><li><a href="#aplaza-document-in-specifieke-map-plaatsen">Aplaza document in specifieke map plaatsen</a></li><li><a href="#schadedatum-en-tijd-polis-en-object-wijzigen-in-schademelding">Schadedatum- en tijd, polis en object wijzigen in schademelding</a></li><li><a href="#portefeuillewaarde-overzicht-uitgebreid">Portefeuillewaarde-overzicht uitgebreid</a></li><li><a href="#verbeteringen-onder-de-motorkap">Verbeteringen onder de motorkap</a></li></ul></nav>
+eBlinqx Only
+<hr>
+<h2 id="fin-ai-assistent-beschikbaar">Fin AI-assistent beschikbaar</h2>
+<p><strong>Let op</strong>: alleen beschikbaar in eBlinqx</p>
+<p>Fin is de virtuele AI-assistent die in eBlinqx is geïntegreerd. Via het gespreksicoontje kan je vragen stellen over eBlinqx. Door middel van AI zal Fin de vragen zo goed mogelijk proberen te beantwoorden.</p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2026/06/image-12.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2026/06/image-12.png" alt="" width="280" height="60" loading="lazy"></a></figure>
+<br>
+eBlinqx en Elements
+<hr>
+<h2 id="aanvragen-en-beheren-van-bankgaranties-verbeterd">Aanvragen en beheren van bankgaranties verbeterd</h2>
+<h3 id="bestaande-aanvraagbericht-bankgarantie-wijzigen">Bestaande aanvraagbericht bankgarantie wijzigen</h3>
+<p>Vanaf nu is het mogelijk om een verstuurde bankgarantie, afhankelijk van de status, te wijzigen, te corrigeren of te verlengen. Deze kan je dan ook als zodanig opnieuw versturen. Het wijzigen van de initiële aanvraag is mogelijk tot het moment dat het statusbericht met de status ’04 Bankgarantieaanvraag ter acceptatie’ is binnengekomen. Alle velden van de bankgarantie kan je wijzigen. Het corrigeren is mogelijk na het stellen van de bankgarantie tot en met de einddatum van de bankgarantie. Het uitgaande WX-bericht krijgt dan het type correctie. Verlengen is mogelijk nadat de bankgarantie de status ‘Bankgarantie gesteld’ heeft gekregen en tot en met de einddatum van de bankgarantie. Deze wordt bepaald aan de hand van de passeerdatum die je eventueel kunt wijzigen in de aanvraag.</p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2026/06/image-6.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2026/06/image-6.png" alt="" width="1868" height="170" loading="lazy"></a></figure>
+<h3 id="correspondentieadres-kiezen">Correspondentieadres kiezen</h3>
+<p>Wanneer er een klant wilt inloggen op de omgeving van de bankgarantie dan wordt er gevraagd naar zijn postcode en huisnummer om de login te valideren. Voor deze validatie wordt er gekeken naar het correspondentieadres. Voorheen was dit altijd het hypotheekadres. Het kan gebeuren dat het woonadres van de klant afwijkt van het hypotheekadres in de aanvraag, omdat de klant bijvoorbeeld nog bij zijn ouders woont. Dit kon voor verwarring zorgen bij het inloggen. Nu is het mogelijk om bij de aanvraag het correspondentieadres voor de contactpersoon te kiezen. Standaard wordt het correspondentieadres die staat ingesteld onder de contactpersoon ingevuld. De klant kan dan met zijn eigen postcode en huisnummer inloggen.</p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2026/06/image-11.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2026/06/image-11.png" alt="" width="1096" height="555" loading="lazy"></a></figure>
+<h3 id="foutmeldingen-en-verplichte-velden-verduidelijkt">Foutmeldingen en verplichte velden verduidelijkt</h3>
+<p>In het aanvraagscherm is het nu duidelijk aangegeven welke velden verplicht zijn. Is er een verplicht veld niet ingevuld en je klikt op ‘Verzenden’ dan verschijnt er een foutmelding. De knop ‘Verzenden’ wordt hierdoor niet langer meer verborgen. De bestaande foutmeldingen zijn verduidelijkt, zodat het duidelijker is waar het versturen van de aanvraag fout gaat.</p>
+<h3 id="velden-worden-opgehaald-vanuit-het-dossier">Velden worden opgehaald vanuit het dossier</h3>
+<p>Diverse velden kan je niet meer handmatig invullen, maar worden opgehaald vanuit het dossier. Via het informatie-icoon kan je zien waar de informatie wordt opgehaald en waar je het kan aanpassen mocht het niet kloppen. Zo wordt het klantdossier up to date gehouden en wijken de gegevens in de aanvraag bankgarantie niet af van de gegevens in het dossier.</p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2026/07/image-13.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2026/07/image-13.png" alt="" width="752" height="212" loading="lazy"></a></figure>
+<br>
+<h2 id="pep-en-sanctiecheck-via-hyarchis">Pep- en sanctiecheck via Hyarchis</h2>
+<p>Het is nu mogelijk om via Hyarchis een pep- en sanctiecheck op te vragen. Via het blok ‘<a href="../kennisbank/kredietcheck-vastleggen-volgens-wwft/index.html">Klantonderzoek</a>‘ , de workflow of SMART kan je de check starten indien dit is ingericht. Het resultaat is terug te lezen via een PDF wat wordt gegenereerd. Deze staat onder het tabblad Documenten in het dossier en kan je benaderen via het blok Klantonderzoek door te klikken op het resultaat. Daarnaast krijg je een inlog bij Hyarchis om vastgelopen aanvragen zelf door te zetten.</p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2026/06/image-7.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2026/06/image-7.png" alt="" width="936" height="159" loading="lazy"></a></figure>
+<p>Wil je hiervan gebruik maken? Stuur dan een e-mail naar je account owner. Geef hierbij aan welke gebruikers gebruik mogen maken van de functionaliteit. Wij zullen dan schakelen met Hyarchis om het vanuit beide kanten goed in te richten.</p>
+<br>
+<h2 id="aplaza-document-in-specifieke-map-plaatsen">Aplaza document in specifieke map plaatsen</h2>
+<p>Het is nu mogelijk om Aplaza documenten, nadat het bericht is verwerkt, automatisch te plaatsen in een zelfingestelde blauwe map in het dossier. Via de Aplaza instellingen kan je een mappenstructuur aanmaken en per soort document aangeven in welke map deze gezet moet worden. </p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2026/06/image-8.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2026/06/image-8.png" alt="" width="1651" height="334" loading="lazy"></a></figure>
+<p>Aan de hand van deze aangemaakte mappenstructuur en de mappenstructuur in het specifieke dossier zijn en 3 mogelijke scenario’s na het verwerken van het Aplaza-bericht, namelijk:</p>
+<ol><li>Bestaat de map niet in het betreffende dossier dan wordt deze aangemaakt samen met de onderliggende mappen en hierin wordt het document geplaatst.</li><li>Bestaat de map maar de onderliggende map niet in het betreffende dossier dan wordt deze onderliggende map aangemaakt en hierin wordt het document geplaatst.</li><li>Bestaat de map met daarin de onderliggende map dan wordt het document geplaatst in deze map.</li></ol>
+<p><strong>Let op:</strong> Het document wordt dus ten alle tijden in de map geplaatst en alle onderliggende mappen worden aangemaakt als deze niet bestaan. De map (met eventueel onderliggende mappen) wordt niet met terugwerkende kracht in alle dossiers aangemaakt. Eerder binnengekomen documenten van hetzelfde “Soort document” worden niet met terugwerkende kracht in de mappen geplaatst.</p>
+<p><a href="https://web.archive.org/web/2026/https://support.fasterforward.nl/kennisbank/aplaza-documenten-in-specifieke-map-plaatsen/">Hier</a> lees je er meer over.</p>
+<br>
+<h2 id="schadedatum-en-tijd-polis-en-object-wijzigen-in-schademelding">Schadedatum- en tijd, polis en object wijzigen in schademelding</h2>
+<p>Vanaf nu kan je in een schademelding de schadedatum- en tijd, polis en object wijzigen zolang er <strong>geen</strong> boeking is gekoppeld aan de schademelding. Zodra er een (verwijderde) boeking is aangemaakt voor de schademelding dan is het niet mogelijk om één van deze velden te veranderen. Er verschijnt dan een melding om je hierop te attenderen. Het wijzigen kan je doen via het wijzigingsicoon achter de schadedatum. Voorheen was het na opslaan nooit mogelijk om de polis of object te wijzigen.</p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2026/07/image-10.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2026/07/image-10.png" alt="" width="621" height="249" loading="lazy"></a></figure>
+<br>
+<h2 id="portefeuillewaarde-overzicht-uitgebreid">Portefeuillewaarde-overzicht uitgebreid</h2>
+<p>Portefeuillewaarde-overzicht is uitgebreid met een overzicht per branche en de polisdichtheid. Onder het overzicht per branche vind je alle branches en uitvaart-levens- en inkomensverzekering. Per branche/product kan je zien hoeveel polissen hiervan zijn en het totaal aan premie en vergoedingen. Je kunt hierop doorklikken waarna je een uitsplitsing krijgt van maatschappijen en polissen voor deze branche/product.</p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2026/06/image-13.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2026/06/image-13.png" alt="" width="1645" height="316" loading="lazy"></a></figure>
+<p>Onder ‘Polisdichtheid’ vind je het aantal actieve verzekeringen per verzekeringnemer met hierbij het aantal relaties die dit aantal actieve verzekeringen hebben.</p>
+<br>
+<h2 id="verbeteringen-onder-de-motorkap">Verbeteringen onder de motorkap</h2>
+<p>De softwaretechnieken van Elements en eBlinqx zijn weer verder vernieuwd. We hebben hier verbeteringen op doorgevoerd. Ondanks dat je hier niets van merkt, is deze vernieuwing erg belangrijk.</p>
+<p>Hierdoor kunnen we namelijk nieuwe innovaties blijven implementeren, omdat we gebruikmaken van de nieuwste software. Bovendien blijft de veiligheid gewaarborgd. Dit geldt zowel voor Elements en eBlinqx als voor alle koppelingen en exports, zoals klantportalen, adviespakketten, Excel en verbindingen met geldverstrekkers en verzekeraars.</p>
+<br>
+Overige verbeterpunten
+<ul><li>De afwijkende rentevast ingangsdatum ten opzichte van de passeerdatum wordt nu juist gesynchroniseerd naar Uwkluis</li><li>De naam van het PDF bestand wat wordt gemaakt na het afronden van het klantonderzoek via Uwkluis is veranderd naar ‘Klantonderzoek – vragenlijst.pdf’. Daarnaast komt deze automatisch op publiek te staan. Het bijbehorend JSON bestand wordt nog wel aangemaakt, maar komt niet meer onder het tabblad Documenten te staan</li><li>De tag [betalingsoverzicht-&gt;totaalbedrag] is toegevoegd</li><li>Enige tijd geleden zijn diverse betaalwijzen, waaronder automatische incasso, overschrijving en notaris, als vaste waarden vastgezet in het systeem. Hierdoor vervallen in administratie onderhoud de velden ‘betaalwijze bij incasso’, ‘betaalwijze bij overschrijving’ en ‘betaalwijze bij notaris’. Daarnaast vervalt het veld ‘Betaaltermijn’ bij het aanmaken van een factuur als er gekozen wordt voor de betaalwijze automatische incasso</li></ul></div>
+      
+      
+      
+    </article>
+    <aside class="related"><h2>Gerelateerd:</h2><ul><li><a href="../inzicht-dataverbruik-en-verbeteringen-klantportaal-e-mail-en-inloggen/index.html">Inzicht dataverbruik en verbeteringen Klantportaal, e-mail en inloggen</a></li><li><a href="../optimalisaties-uwkluis-verbeteringen-quinn-mail-en-ai-gebruik-gemakkelijk-inzien/index.html">Optimalisaties Uwkluis, verbeteringen Quinn Mail en AI gebruik gemakkelijk inzien</a></li><li><a href="../inkoop-via-per-maatschappij-instellen-aanleveren-stuk-taak-ia-berichten-en-meer/index.html">Inkoop via per maatschappij instellen, aanleveren stuk, taak IA berichten en meer</a></li><li><a href="../verbeteringen-performance/index.html">Verbeteringen performance</a></li><li><a href="../voorbereidingen-op-hdn-26-en-verbeteringen-portefeuillesignalen/index.html">Voorbereidingen op HDN 26 en verbeteringen PortefeuilleSignalen</a></li><li><a href="../nog-meer-data-en-documenten-vergelijken/index.html">Nog meer data en documenten vergelijken</a></li></ul></aside>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span>Copyright © 2024 Blinqx powered by Faster Forward</span>
+    <nav aria-label="Beleid">
+      <a href="../supportbeleid/index.html">Supportbeleid</a>
+      <a href="../opdrachtenbeleid/index.html">Opdrachtenbeleid</a>
+      <a href="../klachtenbeleid/index.html">Klachtenbeleid</a>
+      <a href="../wensenbeleid/index.html">Wensenbeleid</a>
+      <a href="../video/index.html">Video's &amp; e-learning</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

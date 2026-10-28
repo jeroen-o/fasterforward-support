@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aplaza offerteberichten verwerken - Blinqx Support</title>
+<meta name="description" content="Vind hier meer informatie over het verwerken van een Aplaza offertebericht">
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="icon" href="../../assets/favicon.png">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
+    <symbol id="i-mail-o" viewBox="0 0 24 24"><path d="M2 5h20v14H2zm2 2v.4l8 5.6 8-5.6V7zm16 2.8-8 5.6-8-5.6V17h16z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><path d="M10 2a8 8 0 0 1 6.32 12.9l5.4 5.4-1.42 1.42-5.4-5.4A8 8 0 1 1 10 2zm0 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 64 64"><circle cx="7" cy="12" r="6"/><circle cx="7" cy="32" r="6"/><circle cx="7" cy="52" r="6"/><rect x="18" y="7" width="44" height="10" rx="2"/><rect x="18" y="27" width="44" height="10" rx="2"/><rect x="18" y="47" width="44" height="10" rx="2"/></symbol>
+    <symbol id="i-home" viewBox="0 0 64 64"><path d="M32 6 2 32l4 5 4-3.4V58h18V42h8v16h18V33.6l4 3.4 4-5-10-8.7V10h-8v7.4z"/></symbol>
+    <symbol id="i-car" viewBox="0 0 64 64"><path d="M16 10h32a6 6 0 0 1 5.7 4.1L58 27a7 7 0 0 1 4 6.3V48a3 3 0 0 1-3 3h-3v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H20v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H5a3 3 0 0 1-3-3V33.3A7 7 0 0 1 6 27l4.3-12.9A6 6 0 0 1 16 10zm1.5 7-3.3 10h35.6l-3.3-10zM13 34a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm38 0a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 64 64"><path d="M4 12a4 4 0 0 1 4-4h16l6 6h22a4 4 0 0 1 4 4v6H18a6 6 0 0 0-5.6 3.9L4 50z"/><path d="M18 28h44l-10 26H6z"/></symbol>
+    <symbol id="i-desktop" viewBox="0 0 64 64"><path d="M2 6h60v40H38v6h8v6H18v-6h8v-6H2zm6 6v28h48V12z"/></symbol>
+    <symbol id="i-comments" viewBox="0 0 64 64"><path d="M26 4c13.8 0 24 8.6 24 19s-10.2 19-24 19c-2.6 0-5-.3-7.3-.8C14.6 44 9.6 46 3 46c3-3 4.8-6.2 5.3-9.6C4.4 33 2 28.2 2 23 2 12.6 12.2 4 26 4z"/><path d="M54 24.5c5 3.4 8 8.3 8 13.5 0 4.2-1.8 8-4.8 11 .4 3.6 2 6.8 4.8 9.5-6 0-10.6-1.8-14.3-4.4-2.1.5-4.4.7-6.7.7-7 0-13.1-2.4-17-6.2 14.3-.4 30-8.8 30-24.1z"/></symbol>
+    <symbol id="i-envelope" viewBox="0 0 64 64"><path d="M4 12h56a2 2 0 0 1 2 2v3L32 37 2 17v-3a2 2 0 0 1 2-2z"/><path d="M2 23.5 32 43.5l30-20V50a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-euro" viewBox="0 0 64 64"><path d="M42 6c5 0 9.5 1.2 13 3.2l-2.6 8.2A19 19 0 0 0 42 14.5c-7.4 0-12.7 4.6-14.6 11.5H46l-2 7H26.3l-.05 2 .05 2H42l-2 7H27.4c1.9 7 7.2 11.5 14.6 11.5 4 0 7.6-1 10.4-2.9L55 61c-3.6 2-8 3-13 3-12.7 0-22.2-8-24.4-20H10l2-7h5.06L17 35l.06-2H10l2-7h5.6C19.8 14 29.3 6 42 6z"/></symbol>
+    <symbol id="i-file" viewBox="0 0 64 64"><path d="M10 2h28v18h18v38a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm32 0 14 14H42zM16 30v6h32v-6zm0 10v6h32v-6zm0 10v6h32v-6z"/></symbol>
+    <symbol id="i-rss" viewBox="0 0 64 64"><circle cx="11" cy="53" r="8"/><path d="M3 23a38 38 0 0 1 38 38H31A28 28 0 0 0 3 33z"/><path d="M3 3a58 58 0 0 1 58 58H51A48 48 0 0 0 3 13z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="rgba(0,0,0,.65)"/><path d="M26 20v24l20-12z" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="item"><svg class="ic"><use href="#i-phone"/></svg><a class="tel" href="tel:+31850180069">085 018 00 69</a></span>
+    <span class="sep" aria-hidden="true"></span>
+    <span class="item"><svg class="ic"><use href="#i-mail-o"/></svg><a class="mail" href="mailto:support-eblinqx@blinqx.tech">support-eblinqx@blinqx.tech</a></span>
+    <a class="li" href="https://www.linkedin.com/company/blinqx/" target="_blank" rel="noopener" aria-label="Blinqx op LinkedIn">in</a>
+  </div>
+</div>
+<header class="site">
+  <div class="wrap">
+    <div class="head-row">
+      <a class="brand" href="../../index.html" aria-label="Blinqx support — home">
+        <img src="../../assets/logo-mark.png" alt="Blinqx" width="470" height="119">
+        <span>powered by Faster Forward</span>
+      </a>
+      <nav class="main" aria-label="Hoofdmenu"><ul><li><a href="../../index.html">Home</a></li><li><a href="../../nieuws/index.html">Nieuws</a></li><li><a href="../../tips/index.html">Tips</a></li><li><a href="../../releasenotes/index.html">Release notes</a></li><li><a href="../../trainingen/index.html">Trainingen</a></li><li><a href="../../contact/index.html">Contact support</a></li></ul></nav>
+    </div>
+    <div class="search-row">
+      <form class="search" action="../../zoeken/index.html" method="get" role="search">
+        <label class="field">
+          <svg class="ic"><use href="#i-search"/></svg>
+          <input type="search" name="q" placeholder="Zoek hier op onderwerp" aria-label="Zoek op onderwerp">
+        </label>
+        <button type="submit">Zoeken</button>
+      </form>
+      <div class="status">Mogelijke incidenten en de systeemstatus vind je op onze <a href="#" title="URL statuspagina nog invullen">statuspagina</a>.</div>
+    </div>
+  </div>
+</header>
+<div class="crumbs"><div class="wrap"><nav aria-label="Kruimelpad"><a href="../../kennisbank/index.html">Kennisbank</a><span class="sep" aria-hidden="true">›</span><a href="../../categorien/verzekeringen/index.html">Verzekeringen</a><span class="sep" aria-hidden="true">›</span><a href="../../categorien/aplaza/index.html">Aplaza</a><span class="sep" aria-hidden="true">›</span><span aria-current="page">Aplaza offerteberichten verwerken</span></nav></div></div>
+<main class="article">
+  <div class="wrap cols">
+    <article>
+      <h1>Aplaza offerteberichten verwerken</h1>
+      <p class="meta">Laatste update: 1 december 2025</p>
+      <div class="content"><p>Als je documenten en offertes van verzekeraars wilt ontvangen in eBlinqx, moet je werken met de Aplaza koppeling. Vanuit de Aplaza inbox verwerk je binnengekomen document- en offerteberichten.</p><nav class="toc" aria-label="Inhoud"><ul><li><a href="#binnengekomen-berichten-bekijken">Binnengekomen berichten bekijken</a></li><li><a href="#bericht-toekennen">Bericht toekennen</a></li><li><a href="#bericht-verwerken">Bericht verwerken</a></li><li><a href="#alleen-beschikbaar-voor-schadeverzekeringen">Alleen beschikbaar voor schadeverzekeringen</a></li><li><a href="#mutatievoorstellen">Mutatievoorstellen</a></li><li><a href="#matching-van-het-aplaza-bericht">Matching van het Aplaza bericht</a></li><li><a href="#matchen-aan-bestaand-dossier-of-een-nieuw-dossier-aanmaken">Matchen aan bestaand dossier of een nieuw dossier aanmaken</a></li><li><a href="#nieuwe-polis-aangemaakt">Nieuwe polis aangemaakt</a></li><li><a href="#een-bestaande-polis-aanpassen">Een bestaande polis aanpassen</a></li><li><a href="#status-product">Status product</a></li><li><a href="#berichten-verwijderen">Berichten verwijderen</a></li><li><a href="#acceptant-behandelaar-niet-ingericht">Acceptant/behandelaar niet ingericht</a></li><li><a href="#prolongatie-mutatie-berichten">Prolongatie &amp; mutatie berichten</a></li></ul></nav>
+<p>In dit artikel lees je hoe je een offertebericht verwerkt of lees hier hoe je een correspondentiebericht verwerkt.</p>
+<p>Door het verwerken van een offertebericht wordt er een product (en eventueel nieuw dossier) aangemaakt. Dit is middels een correspondentiebericht niet mogelijk.</p>
+<p>Zoals aangegeven kan je in de Aplaza inbox correspondentieberichten en offerteberichten ontvangen. Het hangt van de maatschappij af welke berichten zij kunnen aanbieden. Sommige maatschappijen sturen alleen correspondentieberichten waar andere maatschappijen ook offerteberichten kunnen aanbieden. Via de website van Aplaza kan je per aangesloten aanbieder de mogelijkheden zien (transactie staat voor offerteberichten).</p>
+<p>Door offerteberichten kunnen nieuwe pakketten/polissen aangemaakt worden, maar ook bestaande polissen kunnen geroyeerd worden.</p>
+<h2 id="binnengekomen-berichten-bekijken">Binnengekomen berichten bekijken</h2>
+<p>Klik op het dashboard op de Aplaza inbox om de ontvangen berichten van verzekeraars te bekijken.</p>
+<p>Bovenaan filter je eenvoudig binnen de berichten. Daaronder vind je de berichten.</p>
+<p>Wanneer een bericht automatisch gematcht is aan een dossier, herken je dit aan het huisje icoon (links in de regel). Door hier met je muis op te gaan staan, zie je het dossiernummer van het dossier waar het bericht aan is gekoppeld. In de kolom &#x27;Klantnaam&#x27; zie je de klantnaam terug.</p>
+<p>Het pagina icoon daarnaast geeft aan dat het bericht een document betreft.</p>
+<h2 id="bericht-toekennen">Bericht toekennen</h2>
+<p>De berichten in de Aplaza inbox kan je toekennen aan jouzelf of aan een collega. Zo is het duidelijk wie het bericht gaat verwerken. Het toekennen doe je door te klikken op &#x27;Toekennen&#x27;.</p>
+<p>Vervolgens klik je op de naam van degene aan wie je het bericht wilt toekennen. De personen die in deze lijst getoond worden zijn de gebruikers die de rol &#x27;Adviseur&#x27; hebben. Dit kan je controleren, als je de juiste rechten hebt, via Beheer – Organisatie &amp; Personen – betreffende personen – rechts bij de gekoppelde organisatie.</p>
+<h2 id="bericht-verwerken">Bericht verwerken</h2>
+<p>Via het wijzigicoon achteraan de regel kun je het bericht inzien en aanvullen. Vul alle velden aan waar een oranje driehoek met uitroepteken voor staat.</p>
+<p>Na het aanvullen van de aangegeven velden, zie je voor alle velden groene vinkjes staan. Daarnaast komt er onderin een knop &#x27;verwerk bericht&#x27; te staan. Wanneer je hier op klikt, wordt het bericht daadwerkelijk verwerkt. Via het dossiernummer in het bericht kan je rechtstreeks naar de polis in het dossier te gaan. Indien gewenst kun je nu de klant hiervan op de hoogte brengen of andere acties ondernemen voor verdere verwerking. Ook kan je vanuit het Aplaza bericht direct een taak aanmaken.</p>
+<h2 id="alleen-beschikbaar-voor-schadeverzekeringen">Alleen beschikbaar voor schadeverzekeringen</h2>
+<p>Berichten met het type Polis/Pakket worden alleen ondersteund voor schadeverzekeringen. Indien de branche een inkomensverzekering betreft (bijvoorbeeld 013) dan kan het bericht niet worden verwerkt en dus ook het product niet.</p>
+<h2 id="mutatievoorstellen">Mutatievoorstellen</h2>
+<p>Als je werkt met mutatievoorstellen dan wordt het Aplazabericht gematcht aan de hand van het polisnummer rechts in de productkaart. Hierdoor zie je in het Aplaza bericht per polis een blauwe melding wanneer er een mutatievoorstel voor deze polis open staat. Klik op deze melding om deze te bekijken. Ook worden eventuele conflicten per polis getoond. Wanneer je werkt met de setting maatschappijcontrolerend dan wordt ook de &#x27;mutaties in behandelingtabel&#x27; getoond. Hier kunnen de zandlopers, indien gewenst, afgevinkt worden.</p>
+<h2 id="matching-van-het-aplaza-bericht">Matching van het Aplaza bericht</h2>
+<p>Afhankelijk van het wel of niet kunnen matchen, zijn er verschillende scenario&#x27;s mogelijk.</p>
+<h2 id="matchen-aan-bestaand-dossier-of-een-nieuw-dossier-aanmaken">Matchen aan bestaand dossier of een nieuw dossier aanmaken</h2>
+<p>Wanneer eBlinqx de desbetreffende personen kan matchen, wordt deze gematcht aan een bestaand dossier en wordt het dossiernummer weergegeven. Het matchen vindt plaats aan de hand van ingestelde settings. In de meeste gevallen wordt de match gemaakt aan de hand van de achternaam, geslacht en geboortedatum. Zodra hier een verschil in zit, bijvoorbeeld in eBlinqx staat ook de meisjesnaam en in het Aplaza bericht niet, dan staat er in het bericht bij &#x27;Soort verwerking&#x27; &#x27;Nieuw dossier&#x27; en wordt er bij het verwerken van het bericht een nieuw dossier aangemaakt.</p>
+<h2 id="nieuwe-polis-aangemaakt">Nieuwe polis aangemaakt</h2>
+<p>Zoals aangegeven wordt er, indien je niet werkt met mutatievoorstellen, een match gezocht aan de hand van het pakketnummer links in de productkaart. Wanneer je wel met mutatievoorstellen werkt dan wordt er een match gezocht op het polisnummer rechts in de productkaart. Wanneer er wel een match gevonden kan worden met een bestaand dossier, maar niet met het pakket/polisonderdeel dan wordt er een nieuwe polis aangemaakt. De soort verwerking in het Aplaza bericht is dan &#x27;Nieuwe polis&#x27;. Let op: bij het matchen wordt er niet gekeken naar gearchiveerde producten. Op gearchiveerde producten zal geen match plaatsvinden.</p>
+<h2 id="een-bestaande-polis-aanpassen">Een bestaande polis aanpassen</h2>
+<p>Wanneer er wel een match gevonden kan worden op het dossier en op het product dan zal het offertebericht het bestaande product aanpassen, bijvoorbeeld door de polisonderdelen te royeren. De soort verwerking zal dan &#x27;Nieuwe versie&#x27; zijn.</p>
+<h2 id="status-product">Status product</h2>
+<p>Wanneer je niet werkt met mutatievoorstellen dan zal de status van het gehele product niet veranderen door het verwerken van het Aplaza bericht. Deze zal je door middel van de workflow moeten aanpassen. Stel dat de maatschappij een offertebericht Royement verstuurd dan worden de polisonderdelen op geroyeerd gezet, maar de status van het product blijft Lopend of Wachtpolis.</p>
+<h2 id="berichten-verwijderen">Berichten verwijderen</h2>
+<p>Wanneer je één of meerdere Aplaza berichten hebt verwerkt in het klantdossier, is het verstandig om deze berichten te verwijderen. Zo behoud je het overzicht. Het verwijderen van het bericht kan via het rode kruisje of via de knop &#x27;Verwijderen&#x27;. Deze knop en het rode kruisje is alleen zichtbaar als het bericht aan niemand is toegekend of voor de persoon aan wie de persoon is toegekend.</p>
+<p>Het is ook mogelijk om meerdere berichten tegelijk te verwijderen. Hiervoor selecteer je in de Aplaza inbox meerdere berichten en klik je vervolgens onderaan de pagina op &#x27;Verwijder geselecteerde berichten&#x27;. Berichten die je hebt verwerkt, kan je verwijderen.</p>
+<h2 id="acceptant-behandelaar-niet-ingericht">Acceptant/behandelaar niet ingericht</h2>
+<p>Indien de acceptant/dossierverantwoordelijke niet is ingericht dan komt daar een oranje driehoek voor te staan. Je kunt deze inregelen via Advisor &gt; support relatie. Hier lees je daar meer over.</p>
+<h2 id="prolongatie-mutatie-berichten">Prolongatie &amp; mutatie berichten</h2>
+<p>Prolongatie- en mutatie berichten verwerk je vanuit de ADN inbox. Hier lees je hoe je deze verwerkt.</p></div>
+      <section class="figs"><h2>Afbeeldingen bij dit artikel</h2><figure><a href="https://web.archive.org/web/20190818134958im_/https://support.fasterforward.nl/wp-content/uploads/2019/01/Aplaza-inbox.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20190818134958im_/https://support.fasterforward.nl/wp-content/uploads/2019/01/Aplaza-inbox.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20190818134958im_/https://support.fasterforward.nl/wp-content/uploads/2019/06/Schermafbeelding-2019-06-11-om-13.52.30-1024x301.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20190818134958im_/https://support.fasterforward.nl/wp-content/uploads/2019/06/Schermafbeelding-2019-06-11-om-13.52.30-1024x301.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20190818134958im_/https://support.fasterforward.nl/wp-content/uploads/2019/06/image-1.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20190818134958im_/https://support.fasterforward.nl/wp-content/uploads/2019/06/image-1.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20190818134958im_/https://support.fasterforward.nl/wp-content/uploads/2019/06/Aplaza-offertebericht.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20190818134958im_/https://support.fasterforward.nl/wp-content/uploads/2019/06/Aplaza-offertebericht.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20190818134958im_/https://support.fasterforward.nl/wp-content/uploads/2019/06/Aplaza-berichten-verwijderen-1024x207.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20190818134958im_/https://support.fasterforward.nl/wp-content/uploads/2019/06/Aplaza-berichten-verwijderen-1024x207.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure></section>
+      <details class="orig"><summary>Schermafbeelding van de oorspronkelijke pagina</summary><img src="../../bronnen/offline-archief/shots/aplaza-offerte-berichten-verwerken.jpg" alt="Schermafbeelding van Aplaza offerteberichten verwerken" loading="lazy"></details>
+      <p class="src">Bron: <a href="https://web.archive.org/web/20260629231220/https://support.fasterforward.nl/kennisbank/aplaza-offerte-berichten-verwerken/" target="_blank" rel="noopener">Wayback Machine-archief</a></p>
+    </article>
+    <aside class="related"><h2>Gerelateerd:</h2><ul><li><a href="../../kennisbank/aplaza/index.html">Aplaza koppeling gebruiken</a></li><li><a href="../../kennisbank/aplaza-berichten-verwerken/index.html">Aplaza correspondentieberichten verwerken</a></li><li><a href="../../kennisbank/aplaza-inrichten-aplaza-zonder-adn/index.html">Aplaza koppeling aanvragen: Aplaza zonder ADN</a></li><li><a href="../../kennisbank/aplaza-inrichten-aplaza-al-in-gebruik/index.html">Aplaza koppeling aanvragen: Aplaza al in gebruik</a></li></ul></aside>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span>Copyright © 2024 Blinqx powered by Faster Forward</span>
+    <nav aria-label="Beleid">
+      <a href="../../supportbeleid/index.html">Supportbeleid</a>
+      <a href="../../opdrachtenbeleid/index.html">Opdrachtenbeleid</a>
+      <a href="../../klachtenbeleid/index.html">Klachtenbeleid</a>
+      <a href="../../wensenbeleid/index.html">Wensenbeleid</a>
+      <a href="../../video/index.html">Video's &amp; e-learning</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

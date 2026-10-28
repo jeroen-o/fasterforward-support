@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Eenvoudig klanten verifiëren, mandaat aanmaken en nog veel meer... - Blinqx Support</title>
+<meta name="description" content="Op 22 november wordt Elements weer uitgebreid. Jouw Elements omgeving is die ochtend tot 08:00 niet bereikbaar.">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.png">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
+    <symbol id="i-mail-o" viewBox="0 0 24 24"><path d="M2 5h20v14H2zm2 2v.4l8 5.6 8-5.6V7zm16 2.8-8 5.6-8-5.6V17h16z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><path d="M10 2a8 8 0 0 1 6.32 12.9l5.4 5.4-1.42 1.42-5.4-5.4A8 8 0 1 1 10 2zm0 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 64 64"><circle cx="7" cy="12" r="6"/><circle cx="7" cy="32" r="6"/><circle cx="7" cy="52" r="6"/><rect x="18" y="7" width="44" height="10" rx="2"/><rect x="18" y="27" width="44" height="10" rx="2"/><rect x="18" y="47" width="44" height="10" rx="2"/></symbol>
+    <symbol id="i-home" viewBox="0 0 64 64"><path d="M32 6 2 32l4 5 4-3.4V58h18V42h8v16h18V33.6l4 3.4 4-5-10-8.7V10h-8v7.4z"/></symbol>
+    <symbol id="i-car" viewBox="0 0 64 64"><path d="M16 10h32a6 6 0 0 1 5.7 4.1L58 27a7 7 0 0 1 4 6.3V48a3 3 0 0 1-3 3h-3v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H20v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H5a3 3 0 0 1-3-3V33.3A7 7 0 0 1 6 27l4.3-12.9A6 6 0 0 1 16 10zm1.5 7-3.3 10h35.6l-3.3-10zM13 34a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm38 0a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 64 64"><path d="M4 12a4 4 0 0 1 4-4h16l6 6h22a4 4 0 0 1 4 4v6H18a6 6 0 0 0-5.6 3.9L4 50z"/><path d="M18 28h44l-10 26H6z"/></symbol>
+    <symbol id="i-desktop" viewBox="0 0 64 64"><path d="M2 6h60v40H38v6h8v6H18v-6h8v-6H2zm6 6v28h48V12z"/></symbol>
+    <symbol id="i-comments" viewBox="0 0 64 64"><path d="M26 4c13.8 0 24 8.6 24 19s-10.2 19-24 19c-2.6 0-5-.3-7.3-.8C14.6 44 9.6 46 3 46c3-3 4.8-6.2 5.3-9.6C4.4 33 2 28.2 2 23 2 12.6 12.2 4 26 4z"/><path d="M54 24.5c5 3.4 8 8.3 8 13.5 0 4.2-1.8 8-4.8 11 .4 3.6 2 6.8 4.8 9.5-6 0-10.6-1.8-14.3-4.4-2.1.5-4.4.7-6.7.7-7 0-13.1-2.4-17-6.2 14.3-.4 30-8.8 30-24.1z"/></symbol>
+    <symbol id="i-envelope" viewBox="0 0 64 64"><path d="M4 12h56a2 2 0 0 1 2 2v3L32 37 2 17v-3a2 2 0 0 1 2-2z"/><path d="M2 23.5 32 43.5l30-20V50a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-euro" viewBox="0 0 64 64"><path d="M42 6c5 0 9.5 1.2 13 3.2l-2.6 8.2A19 19 0 0 0 42 14.5c-7.4 0-12.7 4.6-14.6 11.5H46l-2 7H26.3l-.05 2 .05 2H42l-2 7H27.4c1.9 7 7.2 11.5 14.6 11.5 4 0 7.6-1 10.4-2.9L55 61c-3.6 2-8 3-13 3-12.7 0-22.2-8-24.4-20H10l2-7h5.06L17 35l.06-2H10l2-7h5.6C19.8 14 29.3 6 42 6z"/></symbol>
+    <symbol id="i-file" viewBox="0 0 64 64"><path d="M10 2h28v18h18v38a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm32 0 14 14H42zM16 30v6h32v-6zm0 10v6h32v-6zm0 10v6h32v-6z"/></symbol>
+    <symbol id="i-rss" viewBox="0 0 64 64"><circle cx="11" cy="53" r="8"/><path d="M3 23a38 38 0 0 1 38 38H31A28 28 0 0 0 3 33z"/><path d="M3 3a58 58 0 0 1 58 58H51A48 48 0 0 0 3 13z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="rgba(0,0,0,.65)"/><path d="M26 20v24l20-12z" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="item"><svg class="ic"><use href="#i-phone"/></svg><a class="tel" href="tel:+31850180069">085 018 00 69</a></span>
+    <span class="sep" aria-hidden="true"></span>
+    <span class="item"><svg class="ic"><use href="#i-mail-o"/></svg><a class="mail" href="mailto:support-eblinqx@blinqx.tech">support-eblinqx@blinqx.tech</a></span>
+    <a class="li" href="https://www.linkedin.com/company/blinqx/" target="_blank" rel="noopener" aria-label="Blinqx op LinkedIn">in</a>
+  </div>
+</div>
+<header class="site">
+  <div class="wrap">
+    <div class="head-row">
+      <a class="brand" href="../index.html" aria-label="Blinqx support — home">
+        <img src="../assets/logo-mark.png" alt="Blinqx" width="470" height="119">
+        <span>powered by Faster Forward</span>
+      </a>
+      <nav class="main" aria-label="Hoofdmenu"><ul><li><a href="../index.html">Home</a></li><li><a href="../nieuws/index.html" aria-current="page">Nieuws</a></li><li><a href="../tips/index.html">Tips</a></li><li><a href="../releasenotes/index.html">Release notes</a></li><li><a href="../trainingen/index.html">Trainingen</a></li><li><a href="../contact/index.html">Contact support</a></li></ul></nav>
+    </div>
+    <div class="search-row">
+      <form class="search" action="../zoeken/index.html" method="get" role="search">
+        <label class="field">
+          <svg class="ic"><use href="#i-search"/></svg>
+          <input type="search" name="q" placeholder="Zoek hier op onderwerp" aria-label="Zoek op onderwerp">
+        </label>
+        <button type="submit">Zoeken</button>
+      </form>
+      <div class="status">Mogelijke incidenten en de systeemstatus vind je op onze <a href="#" title="URL statuspagina nog invullen">statuspagina</a>.</div>
+    </div>
+  </div>
+</header>
+<div class="crumbs"><div class="wrap"><nav aria-label="Kruimelpad"><a href="../nieuws/index.html">Nieuws</a><span class="sep" aria-hidden="true">›</span><span aria-current="page">Eenvoudig klanten verifiëren, mandaat aanmaken en nog veel meer...</span></nav></div></div>
+<main class="article">
+  <div class="wrap cols">
+    <article>
+      <h1>Eenvoudig klanten verifiëren, mandaat aanmaken en nog veel meer...</h1>
+      <p class="meta">Geplaatst op 18 november 2022 · Laatste update: 22 november 2022</p>
+      <div class="content"><p>Op 22 november wordt Elements weer uitgebreid. Jouw Elements omgeving is die ochtend tot 08:00 niet bereikbaar.</p><nav class="toc" aria-label="Inhoud"><ul><li><a href="#belangrijkste-updates">Belangrijkste updates</a></li><li><a href="#eenvoudig-klanten-verifi-ren-en-onderzoeken-met-debiteurenze">Eenvoudig klanten verifiëren en onderzoeken met DebiteurenZeker</a></li><li><a href="#klantidentificatie-en-verificatie">Klantidentificatie en -verificatie</a></li><li><a href="#klantonderzoek">Klantonderzoek</a></li><li><a href="#resultaten-onderzoeken-analyseren">Resultaten onderzoeken analyseren</a></li><li><a href="#meer-weten">Meer weten</a></li><li><a href="#algemene-dossiernotitie-toe-te-voegen">Algemene dossiernotitie toe te voegen</a></li><li><a href="#mandaat-razendsnel-aangemaakt">Mandaat razendsnel aangemaakt</a></li><li><a href="#zo-maak-je-een-mandaat-aan">Zo maak je een mandaat aan</a></li><li><a href="#in-n-klik-een-factuur-crediteren">In één klik een factuur crediteren</a></li><li><a href="#zo-werkt-het">Zo werkt het</a></li><li><a href="#algemeen">Algemeen</a></li><li><a href="#taak-overzicht-uitgebreid">Taak overzicht uitgebreid</a></li><li><a href="#documenten-te-verwijderen">Documenten te verwijderen</a></li><li><a href="#tekst-bewerken-op-volledig-scherm">Tekst bewerken op volledig scherm</a></li><li><a href="#opmaak-van-tekst-blijft-behouden-bij-plakken">Opmaak van tekst blijft behouden bij plakken</a></li><li><a href="#linkjes-blijven-linkjes">Linkjes blijven linkjes</a></li><li><a href="#frisse-kleuren-voor-teksten">Frisse kleuren voor teksten</a></li><li><a href="#afvinken-van-taak-en-registratie-aanmaken-verbeterd">Afvinken van taak en registratie aanmaken verbeterd</a></li><li><a href="#verzekeringen">Verzekeringen</a></li><li><a href="#extra-info-bij-ongekoppelde-post-adn-batch">Extra info bij ongekoppelde post ADN batch</a></li><li><a href="#informatie-schadeverzekeringen-uitgebreid">Informatie schadeverzekeringen uitgebreid</a></li><li><a href="#nieuwe-polis-eenvoudig-aan-te-vullen-via-adn">Nieuwe polis eenvoudig aan te vullen via ADN</a></li><li><a href="#nieuwe-polis-communiceren-naar-klant-via-mutatievoorstel">Nieuwe polis communiceren naar klant via mutatievoorstel</a></li><li><a href="#nieuwste-dekkingen-en-objecten-sivi-up-to-date">Nieuwste dekkingen en objecten SIVI up-to-date</a></li><li><a href="#hypotheken">Hypotheken</a></li><li><a href="#sneller-hypotheken-vergelijken-vanuit-je-klantdossier">Sneller hypotheken vergelijken vanuit je klantdossier</a></li><li><a href="#sneller-een-inkomensverklaring-ondernemer-aanvragen">Sneller een inkomensverklaring ondernemer aanvragen</a></li><li><a href="#overige-verbeteringen">Overige verbeteringen</a></li><li><a href="#laatste-5-releasenotes">Laatste 5 releasenotes</a></li></ul></nav>
+<p>Je kan dan eenvoudig klanten verifiëren, dossiernotities toevoegen, mandaten aanmaken, facturen crediteren en nog 18 andere verbeteringen en uitbreidingen. Alle nieuwe features lees je in dit artikel.</p>
+<p>InhoudBelangrijkste updatesEenvoudig klanten verifiëren en onderzoeken met DebiteurenZekerAlgemene dossiernotitie toe te voegenMandaat razendsnel aangemaaktIn één klik een factuur crediterenAlgemeenTaak overzicht uitgebreidDocumenten te verwijderenTekst bewerken op volledig schermOpmaak van tekst blijft behouden bij plakkenFrisse kleuren voor tekstenAfvinken van taak en registratie aanmaken verbeterdVerzekeringenExtra info bij ongekoppelde post ADN batchInformatie schadeverzekeringen uitgebreidNieuwe polis eenvoudig aan te vullen via ADNNieuwe polis communiceren naar klant via mutatievoorstelNieuwste dekkingen en objecten SIVI up-to-dateHypothekenSneller hypotheken vergelijken vanuit je klantdossierSneller een inkomensverklaring ondernemer aanvragenOverige verbeteringen</p>
+<h2 id="belangrijkste-updates">Belangrijkste updates</h2>
+<h2 id="eenvoudig-klanten-verifi-ren-en-onderzoeken-met-debiteurenze">Eenvoudig klanten verifiëren en onderzoeken met DebiteurenZeker</h2>
+<p>Als financieel adviseur wil je geen link met dubieuze praktijken of verdachte transacties. Daarnaast ben je volgens de WWFT verplicht om voor levensverzekeringen klanten te identificeren en te verifiëren. Dit doe je nu eenvoudig met een identificatie, verificatie, pep- en sanctiecheck en verklaring inbreng eigen vermogen vanuit Elements via DebiteurenZeker.</p>
+<p>Deze identificatie en onderzoeken kun je uitvoeren bij het aanmaken van een nieuw klantdossier en voor bestaande klantdossiers (zowel per dossier als meerdere dossiers in één keer). Met deze controles weet je bijvoorbeeld of een klant onder curatele staat, of het eigen vermogen legaal is verkregen en of de klant zelf financiële keuzes mag maken.</p>
+<p>➡️ Hiervoor moet je de software van DebiteurenZeker ook gebruiken.</p>
+<h2 id="klantidentificatie-en-verificatie">Klantidentificatie en -verificatie</h2>
+<h2 id="klantonderzoek">Klantonderzoek</h2>
+<h2 id="resultaten-onderzoeken-analyseren">Resultaten onderzoeken analyseren</h2>
+<p>Nadat de persoon is gecheckt in de software van DebiteurenZeker, zie je resultaten in de WWFT tabel in het klantdossier. Klik op een kruis of check om deze persoon te bekijken in DebiteurenZeker. Zo check je waarom een controle een negatief resultaat oplevert.</p>
+<h2 id="meer-weten">Meer weten</h2>
+<h2 id="algemene-dossiernotitie-toe-te-voegen">Algemene dossiernotitie toe te voegen</h2>
+<p>Je kan nu met één druk op de knop een dossiernotitie maken voor collega’s. Deze is altijd zichtbaar is in het dossier. Zo deel je eenvoudig algemene dossierinformatie.</p>
+<p>Als iemand de dossiernotitie wijzigt, wordt in een systeemregistratie vastgelegd wie de notitie heeft gewijzigd.</p>
+<p>Tip: maak deze simple tag aan en voeg deze toe in de dossiernotitie. Zo zie je direct wie en wanneer de notitie heeft aangepast.</p>
+<h2 id="mandaat-razendsnel-aangemaakt">Mandaat razendsnel aangemaakt</h2>
+<p>Incasseer je zelf premies of factureer je abonnementen of diensten? Hiervoor regel je nu in een paar klikken een mandaat. Dit is van toepassing op schade- en levensverzekeringen, diensten en contracten van het type ‘Incasso’.</p>
+<p>Als je op de mandaat klikt, wordt er automatisch een financiële relatie aangemaakt voor die persoon, zodat de mandaat wordt geregeld. Met één klik op de knop wordt dan het mandaat gegenereerd en de status op ‘Geaccepteerd’.</p>
+<p>Als de IBAN al is ingevuld, maak je in één klik de mandaatcode aan in het tabblad ‘Financieel’. Daarnaast zie je de status van het mandaat en vul je gelijk de ontbrekende gegevens in door op ‘IBAN’ of ‘Mandaat’ te klikken.</p>
+<h2 id="zo-maak-je-een-mandaat-aan">Zo maak je een mandaat aan</h2>
+<h2 id="in-n-klik-een-factuur-crediteren">In één klik een factuur crediteren</h2>
+<p>Foutieve factuur aangemaakt? Maak nu makkelijk vanaf dezelfde plek een creditfactuur aan. Deze creditfactuur wordt direct afgeboekt tegen de bijbehorende factuur. Hierdoor hoef je later ook de factuur niet meer te salderen en af te letteren in het grootboek. Dit doet Elements voor je.</p>
+<p>Het is ook mogelijk om een deel van de factuur te crediteren.</p>
+<h2 id="zo-werkt-het">Zo werkt het</h2>
+<h2 id="algemeen">Algemeen</h2>
+<h2 id="taak-overzicht-uitgebreid">Taak overzicht uitgebreid</h2>
+<p>Je kunt nu ook de dossier adviseur, het dossiernummer en de schademelding van een taak inzien, als deze zijn ingesteld. Zo kun je bijvoorbeeld zien welke adviseur verantwoordelijk is voor een taak.</p>
+<p>Wil je deze kolommen zien? Stuur dan een e-mail naar <a href="mailto:support@fasterforward.nl">support@fasterforward.nl</a> en vermeld hierbij welke kolommen je wel en niet wilt zien in je takenlijst.</p>
+<h2 id="documenten-te-verwijderen">Documenten te verwijderen</h2>
+<p>Het is nu mogelijk om documenten in de prullenbak te plaatsen. Dit is mogelijk voor documentmappen in een dossier (blauwe mappen). De prullenbak verschijnt zodra je een document verwijdert.</p>
+<p>Documenten blijven 30 dagen in de prullenbak staan, zodat je het verwijderen ongedaan kan maken. Daarna is het document definitief verwijderd.</p>
+<h2 id="tekst-bewerken-op-volledig-scherm">Tekst bewerken op volledig scherm</h2>
+<p>Je kan nu tekst bewerken op volledig scherm. Als je bijvoorbeeld een lange tekst aan het typen bent, klik je op het ‘Maximaliseren’ icoon om de volledige tekst in beeld te krijgen.</p>
+<h2 id="opmaak-van-tekst-blijft-behouden-bij-plakken">Opmaak van tekst blijft behouden bij plakken</h2>
+<p>Het opmaken en schrijven van teksten, bijvoorbeeld bij e-mails, is nu uitgebreider en makkelijker.</p>
+<p>Wanneer je een tekst plakt, bijvoorbeeld met CTRL/CMD+V, blijft de opmaak (‘Rich text’) bewaard. Zo kun je de tekstgrootte, dikgedrukte tekst, tekstkleur en afbeeldingen behouden. In de tekstbewerker kun je dit ook weer ongedaan maken.</p>
+<p>Let op: dit is alleen mogelijk wanneer de uitgebreide tekstbewerker wordt getoond. Zie hieronder.</p>
+<h2 id="linkjes-blijven-linkjes">Linkjes blijven linkjes</h2>
+<p>Ook als je een link van een website kopieert, blijft dit nu een link in Elements. Zo hoef je deze niet meer handmatig toe te voegen.</p>
+<p>Komt de opmaak van de tekst niet mee als je deze plakt? Dan kan deze niet goed gekopieerd worden van de bron waarvan je deze kopieert.</p>
+<p>Tip: gebruik CTRL/CMD + SHIFT + V als je de tekst zonder opmaak en linkjes wilt plakken.</p>
+<h2 id="frisse-kleuren-voor-teksten">Frisse kleuren voor teksten</h2>
+<p>Tot slot zijn de kleuren aangepast naar frissere kleuren. Hiermee verander je de tekst of markeer je een stuk tekst om deze aan te duiden.</p>
+<h2 id="afvinken-van-taak-en-registratie-aanmaken-verbeterd">Afvinken van taak en registratie aanmaken verbeterd</h2>
+<p>Bij het aanmaken van een registratie staat er nu een duidelijke ‘Opslaan’ knop.</p>
+<p>Daarnaast kun je, als je een registratie aanmaakt onder een taak, gelijk klikken op ‘Opslaan en taak afvinken’. Hiermee sla je de registratie onder de taak op en vink je de taak af.</p>
+<p>Als je een e-mail gaat verzenden onder een taak is ‘Verzenden en taak afvinken’ toegevoegd. Hiermee kan je ook in één keer de bijbehorende taak afvinken.</p>
+<p>LET OP: het afvinken van een taak is alleen mogelijk als je hier recht tot hebt, er geen workflow onder de taak loopt én de taak is toegewezen aan een gebruiker.</p>
+<h2 id="verzekeringen">Verzekeringen</h2>
+<h2 id="extra-info-bij-ongekoppelde-post-adn-batch">Extra info bij ongekoppelde post ADN batch</h2>
+<p>Er wordt nu meer polisinformatie per post getoond in de ADN batch. Je weet daardoor aan welke polis je de post moet koppelen. In de ‘Posten’ en ‘Controlelijst’ is de informatie van de post namelijk uitgebreid.</p>
+<p>Ontvangen informatie van een verzekeraar over een polis of pakket wordt namelijk niet altijd automatisch gekoppeld aan een klantdossier. Dankzij deze toegevoegde informatie is het makkelijker om deze post te koppelen aan de juiste polis. Klik op het vergrootglas om de verzekeringsnemer, polisinformatie en het risicoadres te bekijken die de verzekeraar heeft gestuurd.</p>
+<h2 id="informatie-schadeverzekeringen-uitgebreid">Informatie schadeverzekeringen uitgebreid</h2>
+<p>De polisinformatie in het object van schadeverzekeringen is uitgebreid. Zo zie je bijvoorbeeld of een auto particulier of zakelijk wordt gebruikt.</p>
+<p>Je kan deze velden zelf invullen, maar deze worden ook automatisch ingevuld als de verzekeraar deze informatie deelt via een ADN bericht. Deze informatie is ook op te halen uit en toe te voegen aan Elements via de API.</p>
+<p>Toegevoegde veldenBij BranchesBedrag audiovisuele apparatuur020 Motorrijtuigen, 021 Auto, 025 Motor/scooterGebruik particulier of zakelijk020 Motorrijtuigen, 021 Auto, 025 Motor/scooterConstructiewijze dak055 Opstal, 056 Inboedel, 051 Opstal/inboedelStaat van onderhoud055 Opstal, 056 Inboedel, 051 Opstal/inboedelBedrag eigen risico stormschade055 Opstal, 056 Inboedel, 051 Opstal/inboedelZonnepanelen aanwezig055 Opstal, 056 Inboedel, 051 Opstal/inboedel</p>
+<h2 id="nieuwe-polis-eenvoudig-aan-te-vullen-via-adn">Nieuwe polis eenvoudig aan te vullen via ADN</h2>
+<p>Als je een nieuwe polis ontvangt via ADN, maar deze bestaat al in Elements, dan kun je deze polis nu in één keer aanvullen met de ontvangen informatie. Als je op plus icoon klikt, krijg je onderstaande pop-up te zien.</p>
+<p>Klik vervolgens op het koppel-icoon. Het polisnummer uit ADN wordt dan automatisch in de nieuwe polis geplaatst, zodat je geen dubbele polissen krijgt.</p>
+<p>Wil je toch een nieuwe polis aanmaken? Klik dan op ‘Toch een polis aanmaken’.</p>
+<p>TIP: Het is ook mogelijk om vanuit ADN een polisonderdeel aan te maken. Lees hier meer daarover.</p>
+<h2 id="nieuwe-polis-communiceren-naar-klant-via-mutatievoorstel">Nieuwe polis communiceren naar klant via mutatievoorstel</h2>
+<p>Let op: veel organisaties werken nog niet met mutatievoorstellenAls je hier niet mee werkt, dan is deze nieuwe feature niet zichtbaar voor jou. Lees hier meer. Als je wilt starten met mutatievoorstellen, stuur dan een e-mail naar <a href="mailto:support@fasterforward.nl">support@fasterforward.nl</a>.</p>
+<p>Als je een nieuwe polis aanmaakt, wordt er nu ook een nieuwe mutatievoorstel van deze polis aangemaakt.</p>
+<p>Je kan hierdoor altijd terugzien wanneer en door wie een nieuwe polis is aangemaakt.</p>
+<p>Hierdoor kan je ook informatie ophalen uit het mutatievoorstel. Zo kan je naar de klant communiceren (via de workflow) dat je een nieuwe polis hebt aangevraagd. Lees hier meer daarover.</p>
+<p>Tot slot, als je de mutaties van de maatschappij controleert, is het nu ook mogelijk om in de nieuwe polis de mutatie op ‘In behandeling’ te zetten en een rappeldatum in te stellen.</p>
+<p>ℹ️ Als je het communiceren naar de klant wilt laten inrichten, stuur dan een aanvraag naar <a href="mailto:support@fasterforward.nl">support@fasterforward.nl</a>.</p>
+<h2 id="nieuwste-dekkingen-en-objecten-sivi-up-to-date">Nieuwste dekkingen en objecten SIVI up-to-date</h2>
+<p>Als via ADN en Aplaza berichten binnenkomen, worden de nieuwste, bijbehorende dekkingen en/of soorten documenten aangemaakt. Deze zijn namelijk uitgebreid volgens de SIVI richtlijnen van september. Hiermee zijn alle te selecteren verzekeringen up-to-date om correct te verwerken in een klantdossier.</p>
+<p>Ongevallen bijzondere sportenBuitengewone kosten reisAfkoop eigen risico huurautoInboedel en luifelApparatuurDesktop(s) en randapparatuurLaptop(s) /notebook(s)Muziekinstrumenten en verenigingsmaterialenZonnepanelenVervangend vervoer en repatriëring</p>
+<p>Wintersport &amp; Bijzondere sportenLadingschade, diefstal en vermissingAgrarisch risico dierenziekteSpeciaal glasInventaris diefstalBedrijfs-/BeroepsaansprakelijkheidBrand, bliksem en inductieSneeuw- en/of ijsdrukWaterschadeInbraak, diefstal en vandalismeVorstschadeBrand en vandalismeOpstal brand en lucht- en ruimtevaartuigenOpstal brand/inbraak/lucht- en ruimtevaartuigen</p>
+<h2 id="hypotheken">Hypotheken</h2>
+<h2 id="sneller-hypotheken-vergelijken-vanuit-je-klantdossier">Sneller hypotheken vergelijken vanuit je klantdossier</h2>
+<p>Als je PortefeuilleSignalen en/of Fastlane gebruikt, kun je deze nu in één klik openen in het klantdossier. Hierdoor start je direct met het vergelijken van hypotheken in Fastlane, ook als er geen product in het dossier staat.</p>
+<h2 id="sneller-een-inkomensverklaring-ondernemer-aanvragen">Sneller een inkomensverklaring ondernemer aanvragen</h2>
+<p>Om een inkomensverklaring ondernemer te krijgen voor je klant hoef je binnenkort niet meer in te loggen in een extranet, heen en weer te mailen en gegevens handmatig over te typen.</p>
+<p>Samen met HDN, Pentrax en Zakelijk Inkomen zijn we namelijk een pilot gestart. We testen hierbij de mogelijkheden voor het digitaal aanvragen van inkomensverklaringen van ondernemers. HDN verwacht deze nieuwe feature te lanceren in het eerste kwartaal van 2023.</p>
+<p>Lees hier meer over de testfase.</p>
+<h2 id="overige-verbeteringen">Overige verbeteringen</h2>
+<p>In een klantdossier staat het veld ‘Roker’ nu standaard op ‘Onbekend’ i.p.v. ‘Nee’.Het ‘Productbeheer’ overzicht is vereenvoudigd. De filters en kolom over ‘Voorraad’ waren overbodig en daarom verwijderd.Het is bij ‘Bruto jaarinkomen’ niet meer verplicht om ‘Verplichting Inkomen’ in te vullen als je een bankgarantie gaat aanvragen. Daarnaast is het veld hernoemd. Het heette eerst ‘Bruto jaarbedrag overige inkomsten’.Op het tabblad documenten zijn de actieknoppen voor het printen van de ‘Dossier barcode’, ‘Document barcode’ en het ‘Scheidingsblad’ verplaatst. Deze stonden voorheen in de header, maar nu met een duidelijke knop rechtsboven de lijst met documenten.Als je mutatievoorstellen gebruikt én de maatschappij controleert, krijg je nu geen conflict meer wanneer er een prolongatie op de hoofdvervaldatum binnenkomt.Als je mutatievoorstellen gebruikt, zie je nu niet meer wanneer een dekking is toegevoegd als je met je muis op de dekking gaat staan. Dit is dan namelijk niet van toepassing.</p>
+<h2 id="laatste-5-releasenotes">Laatste 5 releasenotes</h2>
+<ul><li>Eenvoudig klanten verifiëren, mandaat aanmaken en nog veel meer… »</li><li>Overzichtelijke hypotheken, nieuwe features voor verzekeringen en meer »</li><li>40 nieuwe features voor iedere medewerker »</li><li>Nieuwe features en optimalisaties voor verzekeren »</li><li>14 nieuwe features en verbeteringen »</li></ul></div>
+      <section class="figs"><h2>Afbeeldingen bij dit artikel</h2><figure><a href="https://web.archive.org/web/20221127183915im_/https://support.fasterforward.nl/wp-content/uploads/2022/11/Release-WP-november.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20221127183915im_/https://support.fasterforward.nl/wp-content/uploads/2022/11/Release-WP-november.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20221127183915im_/https://support.fasterforward.nl/wp-content/uploads/2022/11/DZ-identificatie-en-verificatie-1.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20221127183915im_/https://support.fasterforward.nl/wp-content/uploads/2022/11/DZ-identificatie-en-verificatie-1.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20221127183915im_/https://support.fasterforward.nl/wp-content/uploads/2022/11/DZ-fraude-pep-sanctie-1.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20221127183915im_/https://support.fasterforward.nl/wp-content/uploads/2022/11/DZ-fraude-pep-sanctie-1.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20221127183915im_/https://support.fasterforward.nl/wp-content/uploads/2022/11/resultaat-klantonderzoek-startpagina.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20221127183915im_/https://support.fasterforward.nl/wp-content/uploads/2022/11/resultaat-klantonderzoek-startpagina.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20221127183915im_/https://support.fasterforward.nl/wp-content/uploads/2022/11/Voorbeeld-dossiernotitie.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20221127183915im_/https://support.fasterforward.nl/wp-content/uploads/2022/11/Voorbeeld-dossiernotitie.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20221127183915im_/https://support.fasterforward.nl/wp-content/uploads/2022/11/mandaat-geslaagd.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20221127183915im_/https://support.fasterforward.nl/wp-content/uploads/2022/11/mandaat-geslaagd.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure></section>
+      
+      <p class="src">Bron: <a href="https://web.archive.org/web/20221127183915/https://support.fasterforward.nl/identificatie-mandaat-dossiernotitie/" target="_blank" rel="noopener">Wayback Machine-archief</a></p>
+    </article>
+    <aside class="related"><h2>Gerelateerd:</h2><ul><li><a href="../webinar-klantbeheer/index.html">Webinar: klantbeheer? Dat doe je zo!</a></li><li><a href="../overstappen-mutatievoorstellen/index.html">6 redenen waarom jij over moet stappen naar mutatievoorstellen</a></li><li><a href="../vragenlijst-afm-invullen/index.html">AFM marktmonitor invullen: zo haal je informatie uit Elements</a></li><li><a href="../recap-webinar-dec22/index.html">Webinar: gebruik je deze features al?</a></li><li><a href="../moderne-online-kluis/index.html">Uwkluis: sneller en effectiever samenwerken in een modern klantportaal</a></li><li><a href="../dak-hdn/index.html">Wij zetten het DAK HDN-nummer voor je om</a></li></ul></aside>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span>Copyright © 2024 Blinqx powered by Faster Forward</span>
+    <nav aria-label="Beleid">
+      <a href="../supportbeleid/index.html">Supportbeleid</a>
+      <a href="../opdrachtenbeleid/index.html">Opdrachtenbeleid</a>
+      <a href="../klachtenbeleid/index.html">Klachtenbeleid</a>
+      <a href="../wensenbeleid/index.html">Wensenbeleid</a>
+      <a href="../video/index.html">Video's &amp; e-learning</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

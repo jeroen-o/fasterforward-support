@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Uitgaande e-mail versturen via Office 365, export naar Adviesbox online verbeterd en meer - Blinqx Support</title>
+<meta name="description" content="Op dinsdag 1 april zijn Elements en eBlinqx weer verbeterd en uitgebreid met nieuwe features. Deze release bevat onder andere uitgaande e-mails versturen via uitgaande server Office 365 en de oorzaak weer terug in de sch…">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.png">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
+    <symbol id="i-mail-o" viewBox="0 0 24 24"><path d="M2 5h20v14H2zm2 2v.4l8 5.6 8-5.6V7zm16 2.8-8 5.6-8-5.6V17h16z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><path d="M10 2a8 8 0 0 1 6.32 12.9l5.4 5.4-1.42 1.42-5.4-5.4A8 8 0 1 1 10 2zm0 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 64 64"><circle cx="7" cy="12" r="6"/><circle cx="7" cy="32" r="6"/><circle cx="7" cy="52" r="6"/><rect x="18" y="7" width="44" height="10" rx="2"/><rect x="18" y="27" width="44" height="10" rx="2"/><rect x="18" y="47" width="44" height="10" rx="2"/></symbol>
+    <symbol id="i-home" viewBox="0 0 64 64"><path d="M32 6 2 32l4 5 4-3.4V58h18V42h8v16h18V33.6l4 3.4 4-5-10-8.7V10h-8v7.4z"/></symbol>
+    <symbol id="i-car" viewBox="0 0 64 64"><path d="M16 10h32a6 6 0 0 1 5.7 4.1L58 27a7 7 0 0 1 4 6.3V48a3 3 0 0 1-3 3h-3v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H20v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H5a3 3 0 0 1-3-3V33.3A7 7 0 0 1 6 27l4.3-12.9A6 6 0 0 1 16 10zm1.5 7-3.3 10h35.6l-3.3-10zM13 34a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm38 0a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 64 64"><path d="M4 12a4 4 0 0 1 4-4h16l6 6h22a4 4 0 0 1 4 4v6H18a6 6 0 0 0-5.6 3.9L4 50z"/><path d="M18 28h44l-10 26H6z"/></symbol>
+    <symbol id="i-desktop" viewBox="0 0 64 64"><path d="M2 6h60v40H38v6h8v6H18v-6h8v-6H2zm6 6v28h48V12z"/></symbol>
+    <symbol id="i-comments" viewBox="0 0 64 64"><path d="M26 4c13.8 0 24 8.6 24 19s-10.2 19-24 19c-2.6 0-5-.3-7.3-.8C14.6 44 9.6 46 3 46c3-3 4.8-6.2 5.3-9.6C4.4 33 2 28.2 2 23 2 12.6 12.2 4 26 4z"/><path d="M54 24.5c5 3.4 8 8.3 8 13.5 0 4.2-1.8 8-4.8 11 .4 3.6 2 6.8 4.8 9.5-6 0-10.6-1.8-14.3-4.4-2.1.5-4.4.7-6.7.7-7 0-13.1-2.4-17-6.2 14.3-.4 30-8.8 30-24.1z"/></symbol>
+    <symbol id="i-envelope" viewBox="0 0 64 64"><path d="M4 12h56a2 2 0 0 1 2 2v3L32 37 2 17v-3a2 2 0 0 1 2-2z"/><path d="M2 23.5 32 43.5l30-20V50a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-euro" viewBox="0 0 64 64"><path d="M42 6c5 0 9.5 1.2 13 3.2l-2.6 8.2A19 19 0 0 0 42 14.5c-7.4 0-12.7 4.6-14.6 11.5H46l-2 7H26.3l-.05 2 .05 2H42l-2 7H27.4c1.9 7 7.2 11.5 14.6 11.5 4 0 7.6-1 10.4-2.9L55 61c-3.6 2-8 3-13 3-12.7 0-22.2-8-24.4-20H10l2-7h5.06L17 35l.06-2H10l2-7h5.6C19.8 14 29.3 6 42 6z"/></symbol>
+    <symbol id="i-file" viewBox="0 0 64 64"><path d="M10 2h28v18h18v38a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm32 0 14 14H42zM16 30v6h32v-6zm0 10v6h32v-6zm0 10v6h32v-6z"/></symbol>
+    <symbol id="i-rss" viewBox="0 0 64 64"><circle cx="11" cy="53" r="8"/><path d="M3 23a38 38 0 0 1 38 38H31A28 28 0 0 0 3 33z"/><path d="M3 3a58 58 0 0 1 58 58H51A48 48 0 0 0 3 13z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="rgba(0,0,0,.65)"/><path d="M26 20v24l20-12z" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="item"><svg class="ic"><use href="#i-phone"/></svg><a class="tel" href="tel:+31850180069">085 018 00 69</a></span>
+    <span class="sep" aria-hidden="true"></span>
+    <span class="item"><svg class="ic"><use href="#i-mail-o"/></svg><a class="mail" href="mailto:support-eblinqx@blinqx.tech">support-eblinqx@blinqx.tech</a></span>
+    <a class="li" href="https://www.linkedin.com/company/blinqx/" target="_blank" rel="noopener" aria-label="Blinqx op LinkedIn">in</a>
+  </div>
+</div>
+<header class="site">
+  <div class="wrap">
+    <div class="head-row">
+      <a class="brand" href="../index.html" aria-label="Blinqx support — home">
+        <img src="../assets/logo-mark.png" alt="Blinqx" width="470" height="119">
+        <span>powered by Faster Forward</span>
+      </a>
+      <nav class="main" aria-label="Hoofdmenu"><ul><li><a href="../index.html">Home</a></li><li><a href="../nieuws/index.html">Nieuws</a></li><li><a href="../tips/index.html">Tips</a></li><li><a href="../releasenotes/index.html" aria-current="page">Release notes</a></li><li><a href="../trainingen/index.html">Trainingen</a></li><li><a href="../contact/index.html">Contact support</a></li></ul></nav>
+    </div>
+    <div class="search-row">
+      <form class="search" action="../zoeken/index.html" method="get" role="search">
+        <label class="field">
+          <svg class="ic"><use href="#i-search"/></svg>
+          <input type="search" name="q" placeholder="Zoek hier op onderwerp" aria-label="Zoek op onderwerp">
+        </label>
+        <button type="submit">Zoeken</button>
+      </form>
+      <div class="status">Mogelijke incidenten en de systeemstatus vind je op onze <a href="#" title="URL statuspagina nog invullen">statuspagina</a>.</div>
+    </div>
+  </div>
+</header>
+<div class="hero" style="background-image:url('https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2020/12/release-header.jpg')"><div class="wrap"><h1>Uitgaande e-mail versturen via Office 365, export naar Adviesbox online verbeterd en meer</h1></div></div>
+<main class="article">
+  <div class="wrap cols">
+    <article>
+      
+      <p class="meta">Geplaatst op 28 maart 2025 · Laatste update: 1 april 2025</p>
+      <div class="content"><figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/03/RELEASEMAART-1.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/03/RELEASEMAART-1.png" alt="" width="795" height="500" loading="lazy"></a></figure>
+<p><strong>Op dinsdag 1 april zijn Elements en eBlinqx weer verbeterd en uitgebreid met nieuwe features. Deze release bevat onder andere uitgaande e-mails versturen via uitgaande server Office 365 en de oorzaak weer terug in de schademelding. Ook zijn er nieuwe features alleen voor eBlinqx, bijvoorbeeld export naar Adviesbox Online verbeterd en gemakkelijk klanten exporteren naar Yes-co.</strong></p><nav class="toc" aria-label="Inhoud"><ul><li><a href="#export-naar-adviesbox-online">Export naar Adviesbox Online</a></li><li><a href="#controle-geldigheid-document-in-eblinqx">Controle geldigheid document in eBlinqx</a></li><li><a href="#tabblad-mutaties-verduidelijkt">Tabblad Mutaties verduidelijkt</a></li><li><a href="#gemakkelijk-relatie-exporteren-naar-yes-co">Gemakkelijk relatie exporteren naar Yes-co</a></li><li><a href="#font-eblinqx-aangepast">Font eBlinqx aangepast</a></li><li><a href="#uitgaande-e-mail-versturen-via-office365">Uitgaande e-mail versturen via Office365</a></li><li><a href="#batchverwerking-blijft-doorlopen-ondanks-foutieve-batch">Batchverwerking blijft doorlopen ondanks foutieve batch</a></li><li><a href="#oorzaak-terug-in-schademelding">Oorzaak terug in schademelding</a></li><li><a href="#servicecontracten-goed-weergegeven-op-factuur">Servicecontracten goed weergegeven op factuur</a></li><li><a href="#vernieuwde-techniek-ockto-geintegreerd">Vernieuwde techniek Ockto geïntegreerd</a></li><li><a href="#overige-verbeteringen">Overige verbeteringen</a></li></ul></nav>
+eBlinqx Only
+<hr>
+<h2 id="export-naar-adviesbox-online">Export naar Adviesbox Online</h2>
+<p><strong>Let op</strong>: alleen beschikbaar in eBlinqx</p>
+<p>Vanaf nu is het niet langer meer nodig om het .hbx bestand handmatig te uploaden in Adviesbox Online. In eBlinqx kies je onder het tabblad Adviesbox voor Adviesbox Online. Vervolgens exporteer je het .hbx bestand gemakkelijk naar Adviesbox Online om vanuit daar het dossier te importeren en direct te starten met het opstellen van het advies. Voor deze koppeling is er inrichting in Adviesbox Online en eBlinqx nodig. <a href="../kennisbank/adviesbox-online-instellen-en-gebruiken/index.html">Hier</a> lees je er meer over. </p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/03/image-6.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/03/image-6.png" alt="" width="1004" height="312" loading="lazy"></a></figure>
+<br>
+<h2 id="controle-geldigheid-document-in-eblinqx">Controle geldigheid document in eBlinqx</h2>
+<p><strong>Let op:</strong> alleen beschikbaar in eBlinqx</p>
+<p>In eBlinqx wordt nu, naast Uwkluis, ook de geldigheidsdatum van het identiteitsbewijs gecontroleerd.  Indien het document niet geldig is dan wordt er een melding getoond in de stukkenlijst, het scherm van het stuk beoordelen en bewerken. In <a href="../kennisbank/uwkluis-koppeling/index.html#20-controle-geldigheid-document">Soort Documenten Beheer</a> geef je aan welke documenten je automatisch wilt laten controleren. Indien er een verschil zitten tussen de aangeleverde gegevens identiteitskaart en dat wat in eBlinqx staat dan verschijnt hiervan een melding. Via het tabblad Mutaties kan je deze wijzigingen doorvoeren. Voor nu is deze controle alleen nog op het identiteitsbewijs. In een latere release zullen andere documenten aan deze functionaliteit toegevoegd worden met als volgende de werkgeversverklaring. </p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/03/Melding-stukkenlijst-document-controle.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/03/Melding-stukkenlijst-document-controle.png" alt="" width="310" height="97" loading="lazy"></a></figure>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/03/Melding-document-controle-in-stuk-beoordelen.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/03/Melding-document-controle-in-stuk-beoordelen.png" alt="" width="723" height="223" loading="lazy"></a></figure>
+<br>
+<h2 id="tabblad-mutaties-verduidelijkt">Tabblad Mutaties verduidelijkt</h2>
+<p>Vanuit Uwkluis en eBlinqx vindt er een controle plaatst op de geldigheid van documenten. Wanneer er een verschil zit tussen de NAWTE-gegevens van het document en dat wat in eBlinqx staat dan verschijnt er een melding. Het verschil kan je bekijken in het tabblad Mutaties. Dit tabblad is visueel verduidelijkt. Daarnaast kan je een keuze maken in welke gegevens je wel wilt aanpassen in eBlinqx en welke niet.</p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/03/image-13.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/03/image-13.png" alt="" width="1206" height="552" loading="lazy"></a></figure>
+<br>
+<h2 id="gemakkelijk-relatie-exporteren-naar-yes-co">Gemakkelijk relatie exporteren naar Yes-co</h2>
+<p><strong>Let op</strong>: alleen beschikbaar in eBlinqx</p>
+<p>Vanuit eBlinqx exporteer je nu gemakkelijk de relatie naar Yes-co. Dit vanuit het klantdossier tabblad Export – Yes-co. Op deze manier hoef je de klant niet dubbel in te voeren en kan je direct vanuit Yes-co met de klant aan de slag. Wil je gebruik maken van deze koppeling? Stuur dan een e-mail naar support@fasterforward.nl.</p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/03/image-7.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/03/image-7.png" alt="" width="1061" height="244" loading="lazy"></a></figure>
+<br>
+<h2 id="font-eblinqx-aangepast">Font eBlinqx aangepast</h2>
+<p><strong>Let op</strong>: alleen beschikbaar in eBlinqx</p>
+<p>Het lettertype in eBlinqx is aangepast naar het font Metropolis. Dit zie je door heel eBlinqx terug,  bijvoorbeeld in de header, tabbladen en de namen van modules. Dit heeft geen invloed op bijvoorbeeld jouw huisstijl en standaard correspondentieteksten.</p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/03/Nieuw-lettertype-Metropolis-eBlinqx.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/03/Nieuw-lettertype-Metropolis-eBlinqx.png" alt="" width="442" height="427" loading="lazy"></a><figcaption><em>Nieuw</em>e <em>font</em></figcaption></figure>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/03/Oud-lettertype-Elements-eBlinqx-1.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/03/Oud-lettertype-Elements-eBlinqx-1.png" alt="" width="432" height="422" loading="lazy"></a><figcaption><em>Oude font</em></figcaption></figure>
+<br>
+Elements en eBlinqx
+<hr>
+<h2 id="uitgaande-e-mail-versturen-via-office365">Uitgaande e-mail versturen via Office365</h2>
+<p>Vanaf nu is het mogelijk, als je gebruik maakt van Office365, om de e-mails die je verstuurt vanuit Elements of eBlinqx via de uitgaande server van Office365 te versturen. Dit heeft als voordeel dat je in Office365, bijvoorbeeld op je mobiel, de verzonden items terug ziet. Daarnaast is het niet meer nodig om de DKIM, SPF en DMARC in te stellen.</p>
+<p>Via de e-mailmanager kan je dit per e-mailbox instellen. Je zet dan het veld ‘Verstuur via Office 365’ op ‘Ja’. Bij het aanpassen van de verzendmethode wordt de authenticatie automatisch ingetrokken. In de e-mailmodule verschijnt er in deze mailbox een oranje melding. De gebruiker dient de mailbox opnieuw te authentiseren via deze melding. </p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/03/image-8.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/03/image-8.png" alt="" width="455" height="238" loading="lazy"></a></figure>
+<p>Wanneer het een shared (sub)mailbox betreft dan dient deze instelling in het hoofdaccount ingesteld te worden. Ook de autorisatie intrekken en opnieuw authentiseren zal moeten gebeuren bij het hoofdaccount in de e-mailmanager. De instelling geldt dan direct voor alle subaccounts. Het kan zijn dat er aanpassingen gedaan moeten worden in de instellingen van Office365 voor de subaccounts. Neem hiervoor contact op met jouw ICT-beheerder.</p>
+<p>In eBlinqx en Elements komt er voor de ingestelde mailbox een extra map bij, namelijk ‘Verzenden mislukt’. Hierin kan je de e-mails terugvinden, waarbij het niet gelukt is om deze via de de uitgaande server van Office365 te verzenden. Ook kan je ze opnieuw verzenden vanuit daar. </p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/03/image-9.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/03/image-9.png" alt="" width="1672" height="492" loading="lazy"></a></figure>
+<br>
+<h2 id="batchverwerking-blijft-doorlopen-ondanks-foutieve-batch">Batchverwerking blijft doorlopen ondanks foutieve batch</h2>
+<p>Vanaf nu wordt de batchverwerking niet meer geblokkeerd vanwege een foutieve batch. Het kan zijn dat de verwerking van de batch vastloopt door bijvoorbeeld een ongeldige PFUNK code of het niet aanwezig zijn van de boekhoudkundige periode. Voorheen hield deze batch de verwerking van alle andere batches tegen. Deze bleven dan in de wachtrij staan. Nu is dit niet meer het geval. Alleen de de foutieve batch blijft in de wachtrij staan en het wordt visueel zichtbaar dat deze niet verwerkt kan worden. De andere batches worden gewoon verwerkt. </p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/03/image-14.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/03/image-14.png" alt="" width="276" height="116" loading="lazy"></a></figure>
+<br>
+<h2 id="oorzaak-terug-in-schademelding">Oorzaak terug in schademelding</h2>
+<p>Sinds <a href="../verbeteringen-uwkluis-schademelding-finly-en-zwevende-actieknoppen/index.html#15-oorzaak-aangepast-naar-schadeclassificatie">de vorige release</a> zijn de oorzaken in de schademelding vervangen voor de schadeclassificaties. Er is een zoekfilter toegevoegd om het zoeken in deze lijst te verbeteren. Echter de schadeclassificaties kunnen te specifiek of juist niet toereikend zijn. Daarom hebben we een nieuw veld met oorzaken toegevoegd aan de schademelding. Dit is een vaste lijst die wordt bepaald vanuit SIVI. Met het toevoegen van dit veld is de schadeclassificatie niet langer meer verplicht.</p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/03/image-10.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/03/image-10.png" alt="" width="835" height="350" loading="lazy"></a></figure>
+<br>
+<h2 id="servicecontracten-goed-weergegeven-op-factuur">Servicecontracten goed weergegeven op factuur</h2>
+<p>Vanaf nu worden de servicecontracten juist weergegeven op de TP incasso factuur. Boekhoudkundig verliep dit al correct, alleen visueel werd het niet juist op de factuur weergegeven. De bedragen worden nu correct getoond en ook is de terminologie aangepast. Zo klopt de opbouw van de factuur en is het duidelijk vanuit waar het totaalbedrag is opgebouwd. </p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/03/image-12.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/03/image-12.png" alt="" width="712" height="324" loading="lazy"></a></figure>
+<br>
+<h2 id="vernieuwde-techniek-ockto-geintegreerd">Vernieuwde techniek Ockto geïntegreerd</h2>
+<p>Ockto gebruikt een vernieuwde techniek voor het versturen van ODM berichten. Deze techniek hebben we geïntegreerd in eBlinqx en Elements. Functioneel verandert er niets.</p>
+<br>
+<h2 id="overige-verbeteringen">Overige verbeteringen</h2>
+<ul><li>Wij hebben diverse verbeteringen voor onze interne conversietool doorgevoerd. Hierdoor wordt de doorstroom van de conversies verbeterd</li><li>Via <a href="../kennisbank/maatschappij-en-producten-updates/index.html">de updateknop</a> hebben we de nieuwe producten Scildon Lifestyle Hypotheek ORV aangeboden </li><li>Het is nu ook mogelijk om het document verblijfsvergunning <a href="../kennisbank/stukkenlijst/index.html#6-document-voor-gezien-aanmerken">te ondertekenen voor gezien</a> </li><li>Vanuit het tabblad Figlo kan je Figlo Advisor of Figlo Start openen. Achter deze knoppen zitten nu aparte rechten, waardoor het mogelijk is één van deze knoppen niet te tonen</li><li>De rapportage CRM – Overzicht schademeldingen is uitgebreid met de kolommen ‘Aantal openstaande taken’ en ‘Polisnummer’. Wil je deze kolommen zien, zet ze dan aan in Rapportagebeheer</li><li>Er zijn diverse API uitbreidingen doorgevoerd. <a href="https://api.fasterforward.nl/changelog.html" target="_blank" rel="noopener">Hier</a> vind je de betreffende wijzigingen terug</li></ul></div>
+      
+      <details class="orig"><summary>Schermafbeelding van de oorspronkelijke pagina</summary><img src="../bronnen/offline-archief/shots/uitgaande-e-mail-versturen-via-office-365-export-naar-adviesbox-online-verbeterd-en-meer.jpg" alt="Schermafbeelding van Uitgaande e-mail versturen via Office 365, export naar Adviesbox online verbeterd en meer" loading="lazy"></details>
+      <p class="src">Bron: <a href="https://web.archive.org/web/20260510023752/https://support.fasterforward.nl/uitgaande-e-mail-versturen-via-office-365-export-naar-adviesbox-online-verbeterd-en-meer/" target="_blank" rel="noopener">Wayback Machine-archief</a></p>
+    </article>
+    <aside class="related"><h2>Gerelateerd:</h2><ul><li><a href="../vernieuwde-pensioenkaart/index.html">Vernieuwde pensioenkaart</a></li><li><a href="../elements-en-eblinqx-voorbereid-op-hdn25-release/index.html">Elements en eBlinqx voorbereid op HDN25 release</a></li><li><a href="../openstaande-facturen-op-betalingsoverzicht-en-koppeling-mytp-openen-vanuit-schadeproduct/index.html">Openstaande facturen op betalingsoverzicht en koppeling MyTP openen vanuit schadeproduct</a></li><li><a href="../verbeteringen-uwkluis-schademelding-finly-en-zwevende-actieknoppen/index.html">Verbeteringen Uwkluis, schademelding, Finly en zwevende actieknoppen</a></li><li><a href="../stukken-beoordelen-koppeling-voogd-voogd-en-meer/index.html">Stukken beoordelen, koppeling Voogd &amp; Voogd en meer</a></li><li><a href="../gebruikers-beheren-vanuit-omgeving-en-finly-formulieren-versturen-vanuit-tabblad/index.html">Gebruikers beheren vanuit omgeving en Finly formulieren versturen vanuit tabblad</a></li></ul></aside>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span>Copyright © 2024 Blinqx powered by Faster Forward</span>
+    <nav aria-label="Beleid">
+      <a href="../supportbeleid/index.html">Supportbeleid</a>
+      <a href="../opdrachtenbeleid/index.html">Opdrachtenbeleid</a>
+      <a href="../klachtenbeleid/index.html">Klachtenbeleid</a>
+      <a href="../wensenbeleid/index.html">Wensenbeleid</a>
+      <a href="../video/index.html">Video's &amp; e-learning</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

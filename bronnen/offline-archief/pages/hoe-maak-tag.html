@@ -1,0 +1,217 @@
+<!doctype html><html lang="nl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gegevens ophalen door tags te maken — Support eBlinqx archief</title>
+<style>
+:root{--bg:#fff;--fg:#1a1a1a;--muted:#666;--line:#e3e3e3;--accent:#f2a900;--accent2:#1a1a1a;}
+*{box-sizing:border-box}
+body{font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--fg);margin:0;line-height:1.5}
+header.site{background:#1a1a1a;color:#fff;padding:14px 24px;position:sticky;top:0;z-index:10}
+header.site a{color:#fff;text-decoration:none;font-weight:600}
+header.site .path{color:#bbb;font-size:13px;margin-top:2px}
+header.site .path a{color:#bbb}
+main{max-width:980px;margin:0 auto;padding:24px}
+h1{font-size:1.5rem;margin:0 0 4px}
+h2{font-size:1.1rem;color:var(--accent2);border-bottom:2px solid var(--accent);padding-bottom:4px;margin-top:32px}
+h3{font-size:0.95rem;color:var(--muted);margin:18px 0 6px}
+ul.pagelist{list-style:none;padding:0;margin:0 0 6px;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:2px 16px}
+ul.pagelist li a{display:block;padding:3px 0;text-decoration:none;color:#0b5ed7;font-size:14px}
+ul.pagelist li a:hover{text-decoration:underline}
+.meta{color:var(--muted);font-size:13px;margin-bottom:18px}
+.meta a{color:var(--muted)}
+.shot{border:1px solid var(--line);border-radius:6px;max-width:100%;display:block;margin:16px 0;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.textbox{white-space:pre-wrap;background:#fafafa;border:1px solid var(--line);border-radius:6px;padding:16px;font-size:14px}
+.badge{display:inline-block;background:#fff4de;border:1px solid var(--accent);color:#7a5200;font-size:12px;border-radius:10px;padding:1px 9px;margin-right:4px}
+footer{color:var(--muted);font-size:12px;text-align:center;padding:30px 10px}
+.topcount{color:var(--muted);font-size:14px;margin-bottom:24px}
+.backlink{display:inline-block;margin-bottom:16px;color:#0b5ed7;text-decoration:none;font-size:14px}
+</style></head><body>
+<header class="site"><a href="../index.html">Support eBlinqx — offline archief</a>
+<div class="path"><a href="../index.html">Archief</a> › Communicatie › Tags</div></header>
+<main>
+<h1>Gegevens ophalen door tags te maken</h1><div class="meta"><span class="badge">Artikel</span> Oorspronkelijke URL: <a href="https://support.fasterforward.nl/kennisbank/hoe-maak-tag/" target="_blank" rel="noopener">https://support.fasterforward.nl/kennisbank/hoe-maak-tag/</a><br>Wayback-capture: <a href="https://web.archive.org/web/20260608013933/https://support.fasterforward.nl/kennisbank/hoe-maak-tag/" target="_blank" rel="noopener">https://web.archive.org/web/20260608013933/https://support.fasterforward.nl/kennisbank/hoe-maak-tag/</a></div><img class="shot" src="../shots/hoe-maak-tag.jpg" alt="Schermafbeelding van Gegevens ophalen door tags te maken" loading="lazy"><h3>Tekstinhoud</h3><div class="textbox">Gegevens ophalen door tags te maken
+
+Met tags haal je gegevens op uit een dossier. Zo kun je automatisch gegevens inladen in een brief, registratie, sms e-mail of correspondentietekst.
+
+Wanneer je tags in een standaardtekst invoegt, hoef je deze gegevens nooit meer &#x27;keer op keer&#x27; op te zoeken. Je voegt de standaardtekst in, waar de tags in staan, en alles wordt automatisch opgehaald en ingevuld na het opslaan.
+
+Enkele voorbeelden van tags zijn:
+
+Tag / Resultaat
+[offerte-&gt;offertenummer] — Offertenummer van een specifiek product
+[taak-&gt;adres-&gt;postcode] — Postcode die is ingesteld als locatie in een afspraak
+[algemeen-&gt;vandaag-&gt;dd-mm-yyyy] — Datum van vandaag
+
+Gericht informatie ophalen
+Functies van tags
+If-Functie
+Else-Functie
+Repeat-Functie
+Algemene Functies
+Specifieke Functies
+
+Gericht informatie ophalen
+
+Je kunt hiervoor bestaande tags gebruiken (lees hier hoe je tags gebruikt) en je kunt zelf tags maken met behulp van de bestaande tags. Door zelf tags te maken, kun je heel gericht de juiste informatie ophalen uit een dossier.
+
+Hieronder lees je welke functies er zijn en wordt er aan de hand van voorbeelden uitgelegd hoe je zelf tags maakt.
+
+Functies van tags
+
+If-Functie
+
+Een IF-functie legt een conditie op een bepaalde tag. Een voorbeeld is:
+
+[if{offerte-&gt;aanvragers{1}-&gt;geslacht}==female]Mevrouw[/if]
+
+Dit leest als: Als het geslacht van de eerste aanvrager &#x27;vrouw&#x27; is, toon dan &quot;Mevrouw&quot;. Een IF-functie heeft de opbouw: [if{TAG}==UITKOMST TAG]Te tonen tekst[/if]
+
+TIP: == betekent &quot;is gelijk aan&quot; en != betekent &quot;is niet gelijk aan&quot;
+
+Else-Functie
+
+Een ELSE-functie zou er als volgt uit kunnen zien:
+
+[if{offerte-&gt;aanvragers{1}-&gt;geslacht}==female]Mevrouw[else]De heer[/if]
+
+Dit leest als: Als het geslacht van de eerste aanvrager &#x27;vrouw&#x27; is, toon dan &quot;Mevrouw&quot; anders &quot;De heer&quot;. Een ELSE-functie staat altijd in een IF-functie, dus tussen [if] en [/if].
+
+Repeat-Functie
+
+De repeat functie is gemaakt om herhalende gegevens op te halen en kent de volgende opbouw:
+
+[repeat{locatie waar je gaat zoeken}][informatie die u op wilt halen][/repeat]
+
+Dus je begint met:
+
+[repeat{FUNCTIE}][/repeat]
+
+Vervolgens geef je aan welke info je wilt ophalen. Bijvoorbeeld de achternaam van alle relaties uit een dossier. Die informatie zet je met een tag tussen de begin en sluit repeats in.
+
+[repeat{}][dossier-&gt;persoonrelaties-&gt;achternaam][/repeat]
+
+Vervolgens plaatst je tussen de accolades de locatie waar je deze info kunt vinden, in dit geval bij dossier-&gt;persoonrelaties:
+
+[repeat{dossier-&gt;persoonrelaties}][dossier-&gt;persoonrelaties-&gt;achternaam][/repeat]
+
+In dit geval krijg je alle achternamen van de personen uit het dossier te zien, bijvoorbeeld:
+
+Jansen Schipper Boer
+
+Ze staan dus aaneen gesloten. Door een spatie achter de tag [dossier-&gt;persoonrelaties-&gt;achternaam] te zetten, krijgt de opsomming ook een spatie.
+
+[repeat{dossier-&gt;persoonrelaties}][dossier-&gt;persoonrelaties-&gt;achternaam] [/repeat] wordt:
+
+Jansen Schipper Boer
+
+Je kunt ook een &#x27;Enter&#x27; plaatsen na de tag.
+
+[repeat{dossier-&gt;persoonrelaties}][dossier-&gt;persoonrelaties-&gt;achternaam] [/repeat]
+
+Dan is het resultaat:
+
+Jansen
+Schipper
+Boer
+
+Je kunt ook meerdere gegevens ophalen, zoals voorletters, tussenvoegsels en achternaam:
+
+[repeat{dossier-&gt;persoonrelaties}][dossier-&gt;persoonrelaties-&gt;voornaam] [dossier-&gt;persoonrelaties-&gt;tussenvoegsel] [dossier-&gt;persoonrelaties-&gt;achternaam] [/repeat]
+
+Dit geeft bijvoorbeeld als output:
+
+Saskia Jansen (LET OP: er staan 2 spaties tussen voor en achternaam)
+Bram Schipper (LET OP: er staan 2 spaties tussen voor en achternaam)
+Frank de Boer
+
+Om de extra spatie te voorkomen kan je een combinatie maken van een [repeat] en een [if]:
+
+[repeat{dossier-&gt;persoonrelaties}][dossier-&gt;persoonrelaties-&gt;voornaam] [if{dossier-&gt;persoonrelaties-&gt;tussenvoegsel}!=][dossier-&gt;persoonrelaties-&gt;tussenvoegsel] [/if][dossier-&gt;persoonrelaties-&gt;achternaam] [/repeat]
+
+Deze combinatie controleert meteen of het tussenvoegsel bestaat of niet. Als deze niet bestaat zal de extra spatie eruit worden gefilterd. Dit geeft dan als output:
+
+Saskia Jansen
+Bram Schipper
+Frank de Boer
+
+Algemene Functies
+
+De algemene functies kunnen gebruikt worden in iedere tag (behalve waarvan de uitkomst een getal is). Deze algemene functies houden geen rekening met de waarde die in het veld staat. Voorbeeld van een dergelijke tag is:
+
+[dossier-&gt;persoonrelaties-&gt;achternaam|allehoofdletter]
+
+Alle letters worden dus als hoofdletters weergegeven, ongeacht hoe het staat ingevoerd. Hieronder volgt de beschrijving van een aantal functies.
+
+|allehoofdletter
+Deze tag zal alle letters in hoofdletters zetten
+Voorbeeld: bergen op zoom zal worden: BERGEN OP ZOOM
+
+|zegge
+Deze tag zal de getallen voluit schrijven.
+
+|woordhoofdletter
+Deze tag zal de eerste letter van elk woord in deze tag als hoofdletter zetten
+Voorbeeld: bergen op zoom zal worden: Bergen Op Zoom
+
+|eerstehoofdletter
+Deze tag zal de eerste letter als hoofdletter zetten
+Voorbeeld: bergen op zoom zal worden: Bergen op zoom
+
+|alleeneerstehoofdletter
+Deze tag zal de eerste letter als hoofdletter en (in tegenstelling tot |eerstehoofdletter) de rest als kleine letters neerzetten.
+Voorbeeld: BERGEN OP ZOOM zal worden: Bergen op zoom
+
+|geenhoofdletters
+Deze tag zal alle hoofdletters in kleine letters zetten
+Voorbeeld: Bergen Op Zoom zal worden: bergen op zoom
+
+|voorloopnul
+Deze functie zal een 0 toevoegen aan een (onderdeel) van een datum of tijd.
+Voorbeeld: 8-7-2012 zal worden 08-07-2012 als bijvoorbeeld de tags [algemeen-&gt;vandaag-&gt;dagnummer|voorloopnul] en [algemeen-&gt;vandaag-&gt;maandnummer|voorloopnul] worden gebruikt.
+
+Voor tijd geldt hetzelfde: 9:5 is netter als dit wordt getoond als 09:05 en dit kan door bijvoorbeeld de tags [algemeen-&gt;vandaag-&gt;uur|voorloopnul]:[algemeen-&gt;vandaag-&gt;minuut|voorloopnul] worden gebruikt.
+
+LET OP: deze functie houdt wel rekening met het aantal karakters van de tag. Een tijd als 14:54 zal dus worden getoond als 14:54, en niet als 014:054 als gebruik wordt gemaakt van de functie |voorloopnul
+
+|maakvergelijkbaar
+Deze functie zal van een getal met komma een punt maken zodat er een vergelijk gemaakt kan worden.
+Voorbeeld: 1.500,00 zal met functie 1500.00 worden. [offerte-&gt;hoofdsom|maakvergelijkbaar]
+
+Daarnaast zijn er ook tags beschikbaar om het getal positief of negatief te maken. Gebruik hiervoor: |maakpositief of |maaknegatief
+
+|zonderspaties
+Deze functie zorgt ervoor dat de spaties eruit gehaald worden. Deze kan bijvoorbeeld gebruikt worden in de header bij het telefoonnummer.
+
+Specifieke Functies
+
+|spatie
+Deze is te gebruiken bij alle postcode tags en zal een spatie tussen de cijfers en letters zetten
+Voorbeeld: 1232AA zal worden: 1232 AA
+
+|hoofdletter
+Deze tag is alleen te gebruiken bij de tussenvoegsel tag om bij de aanhef het tussenvoegsel met hoofdletter te zetten
+Voorbeeld: Geachte heer de Krom zal worden: Geachte heer De Krom
+
+|width:X
+Om de breedte van een plaatje te forceren die een tag is opgeslagen (bijvoorbeeld een barcode), kan de breedte (width) worden ingesteld middels |width:X. Op de plaats van de X dient het aantal pixels gevuld te worden.
+Voorbeeld: [dossier-&gt;barcode-&gt;document categorie barcode|width:150]
+
+|height:X
+Om de hoogte van een plaatje te forceren die een tag is opgeslagen (bijvoorbeeld een barcode), kan de hoogte (height) worden ingesteld middels |height:X. Op de plaats van de X dient het aantal pixels gevuld te worden.
+[dossier-&gt;barcode-&gt;document categorie barcode|height:50]
+
+|type:{ID}
+Wanneer er een bepaalde document type barcode op bijvoorbeeld een brief geprint moet worden, zodat deze (bijvoorbeeld getekend) ingescand kan worden en direct op de goede plaats beland, moet het type van het document achter de tag worden geplakt. De ID&#x27;s zijn op te halen via de module &#x27;Document categorieën&#x27; onder &#x27;Beheer&#x27;.
+Voorbeeld: [dossier-&gt;barcode-&gt;document categorie barcode|type:100]
+
+|gebruikinlink
+Zo kan je bij een tag aangeven dat je deze specifiek gebruikt om een link te genereren.
+
+algemeen-&gt;vandaag, algemeen-&gt;vandaag|eerstedag en algemeen-&gt;vandaag|eerstewerkdag
+
+De tag algemeen-&gt;volgende maand zal als deze vandaag (op 1 januari 2025) wordt gebruikt de output geven 1 februari 2025. Wordt de tag op een dag gebruikt die in de volgende maand niet bestaat dan valt deze terug op de laatste wel bestaande dag. Wordt deze gebruikt op 29, 30 of 31 januari 2025 dan zal de output 28 februari 2025 zijn.
+
+Deze tag heeft ook extra functies, namelijk |eerstedag en |eerstewerkdag zodat respectievelijk de eerste dag of eerste werkdag de output zal zijn. Ongeacht welke dag in de maand de tag gebruikt wordt zal de output altijd de eerste (werk)dag van de volgende maand zijn. Gebruik je de tag met de functie |eerstedag op 1, 14 of 31 januari 2025 dan krijg je als output altijd 1 februari 2025. Gebruik je op een willekeurig dag in januari de tag met de functie |eerstewerkdag dan krijg je altijd als output (maandag) 3 februari 2025. Let op, de functie |eerstewerkdag neemt de maandagen en zal geen rekening houden met feestdagen.
+
+Laatste update: 15 oktober 2025
+Was deze informatie nuttig?
+Ja Nee</div></main><footer>Offline archief van support.fasterforward.nl, samengesteld uit de Wayback Machine (web.archive.org) — oktober 2026.</footer></body></html>

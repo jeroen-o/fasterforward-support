@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nieuw: PDF&#x27;s samenvoegen en splitsen, spam e-mailbox en meer - Blinqx Support</title>
+<meta name="description" content="In Elements was het al mogelijk om PDF documenten te splitsen en samenvoegen wanneer deze ontvangen werden via een e-mail. Vanaf nu is het ook mogelijk documenten handmatig samen te voegen of te splitsen vanuit het tabbl…">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.png">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
+    <symbol id="i-mail-o" viewBox="0 0 24 24"><path d="M2 5h20v14H2zm2 2v.4l8 5.6 8-5.6V7zm16 2.8-8 5.6-8-5.6V17h16z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><path d="M10 2a8 8 0 0 1 6.32 12.9l5.4 5.4-1.42 1.42-5.4-5.4A8 8 0 1 1 10 2zm0 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 64 64"><circle cx="7" cy="12" r="6"/><circle cx="7" cy="32" r="6"/><circle cx="7" cy="52" r="6"/><rect x="18" y="7" width="44" height="10" rx="2"/><rect x="18" y="27" width="44" height="10" rx="2"/><rect x="18" y="47" width="44" height="10" rx="2"/></symbol>
+    <symbol id="i-home" viewBox="0 0 64 64"><path d="M32 6 2 32l4 5 4-3.4V58h18V42h8v16h18V33.6l4 3.4 4-5-10-8.7V10h-8v7.4z"/></symbol>
+    <symbol id="i-car" viewBox="0 0 64 64"><path d="M16 10h32a6 6 0 0 1 5.7 4.1L58 27a7 7 0 0 1 4 6.3V48a3 3 0 0 1-3 3h-3v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H20v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H5a3 3 0 0 1-3-3V33.3A7 7 0 0 1 6 27l4.3-12.9A6 6 0 0 1 16 10zm1.5 7-3.3 10h35.6l-3.3-10zM13 34a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm38 0a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 64 64"><path d="M4 12a4 4 0 0 1 4-4h16l6 6h22a4 4 0 0 1 4 4v6H18a6 6 0 0 0-5.6 3.9L4 50z"/><path d="M18 28h44l-10 26H6z"/></symbol>
+    <symbol id="i-desktop" viewBox="0 0 64 64"><path d="M2 6h60v40H38v6h8v6H18v-6h8v-6H2zm6 6v28h48V12z"/></symbol>
+    <symbol id="i-comments" viewBox="0 0 64 64"><path d="M26 4c13.8 0 24 8.6 24 19s-10.2 19-24 19c-2.6 0-5-.3-7.3-.8C14.6 44 9.6 46 3 46c3-3 4.8-6.2 5.3-9.6C4.4 33 2 28.2 2 23 2 12.6 12.2 4 26 4z"/><path d="M54 24.5c5 3.4 8 8.3 8 13.5 0 4.2-1.8 8-4.8 11 .4 3.6 2 6.8 4.8 9.5-6 0-10.6-1.8-14.3-4.4-2.1.5-4.4.7-6.7.7-7 0-13.1-2.4-17-6.2 14.3-.4 30-8.8 30-24.1z"/></symbol>
+    <symbol id="i-envelope" viewBox="0 0 64 64"><path d="M4 12h56a2 2 0 0 1 2 2v3L32 37 2 17v-3a2 2 0 0 1 2-2z"/><path d="M2 23.5 32 43.5l30-20V50a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-euro" viewBox="0 0 64 64"><path d="M42 6c5 0 9.5 1.2 13 3.2l-2.6 8.2A19 19 0 0 0 42 14.5c-7.4 0-12.7 4.6-14.6 11.5H46l-2 7H26.3l-.05 2 .05 2H42l-2 7H27.4c1.9 7 7.2 11.5 14.6 11.5 4 0 7.6-1 10.4-2.9L55 61c-3.6 2-8 3-13 3-12.7 0-22.2-8-24.4-20H10l2-7h5.06L17 35l.06-2H10l2-7h5.6C19.8 14 29.3 6 42 6z"/></symbol>
+    <symbol id="i-file" viewBox="0 0 64 64"><path d="M10 2h28v18h18v38a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm32 0 14 14H42zM16 30v6h32v-6zm0 10v6h32v-6zm0 10v6h32v-6z"/></symbol>
+    <symbol id="i-rss" viewBox="0 0 64 64"><circle cx="11" cy="53" r="8"/><path d="M3 23a38 38 0 0 1 38 38H31A28 28 0 0 0 3 33z"/><path d="M3 3a58 58 0 0 1 58 58H51A48 48 0 0 0 3 13z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="rgba(0,0,0,.65)"/><path d="M26 20v24l20-12z" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="item"><svg class="ic"><use href="#i-phone"/></svg><a class="tel" href="tel:+31850180069">085 018 00 69</a></span>
+    <span class="sep" aria-hidden="true"></span>
+    <span class="item"><svg class="ic"><use href="#i-mail-o"/></svg><a class="mail" href="mailto:support-eblinqx@blinqx.tech">support-eblinqx@blinqx.tech</a></span>
+    <a class="li" href="https://www.linkedin.com/company/blinqx/" target="_blank" rel="noopener" aria-label="Blinqx op LinkedIn">in</a>
+  </div>
+</div>
+<header class="site">
+  <div class="wrap">
+    <div class="head-row">
+      <a class="brand" href="../index.html" aria-label="Blinqx support — home">
+        <img src="../assets/logo-mark.png" alt="Blinqx" width="470" height="119">
+        <span>powered by Faster Forward</span>
+      </a>
+      <nav class="main" aria-label="Hoofdmenu"><ul><li><a href="../index.html">Home</a></li><li><a href="../nieuws/index.html" aria-current="page">Nieuws</a></li><li><a href="../tips/index.html">Tips</a></li><li><a href="../releasenotes/index.html">Release notes</a></li><li><a href="../trainingen/index.html">Trainingen</a></li><li><a href="../contact/index.html">Contact support</a></li></ul></nav>
+    </div>
+    <div class="search-row">
+      <form class="search" action="../zoeken/index.html" method="get" role="search">
+        <label class="field">
+          <svg class="ic"><use href="#i-search"/></svg>
+          <input type="search" name="q" placeholder="Zoek hier op onderwerp" aria-label="Zoek op onderwerp">
+        </label>
+        <button type="submit">Zoeken</button>
+      </form>
+      <div class="status">Mogelijke incidenten en de systeemstatus vind je op onze <a href="#" title="URL statuspagina nog invullen">statuspagina</a>.</div>
+    </div>
+  </div>
+</header>
+<div class="crumbs"><div class="wrap"><nav aria-label="Kruimelpad"><a href="../nieuws/index.html">Nieuws</a><span class="sep" aria-hidden="true">›</span><span aria-current="page">Nieuw: PDF&#x27;s samenvoegen en splitsen, spam e-mailbox en meer</span></nav></div></div>
+<main class="article">
+  <div class="wrap cols">
+    <article>
+      <h1>Nieuw: PDF&#x27;s samenvoegen en splitsen, spam e-mailbox en meer</h1>
+      <p class="meta">Geplaatst op 19 februari 2020</p>
+      <div class="content"><nav class="toc" aria-label="Inhoud"><ul><li><a href="#inhoud">Inhoud</a></li><li><a href="#pdf-documenten-splitsen-en-samenvoegen-vanuit-een-dossier">PDF documenten splitsen en samenvoegen vanuit een dossier</a></li><li><a href="#inzicht-in-ongewenste-e-mails">Inzicht in ongewenste e-mails</a></li><li><a href="#meer-managementinformatie-via-doorklik-op-grafiek">Meer managementinformatie via doorklik op grafiek</a></li><li><a href="#kleuren-managementinformatie-verbeterd">Kleuren managementinformatie verbeterd</a></li><li><a href="#verwijderen-van-taken-verbeterd">Verwijderen van taken verbeterd</a></li><li><a href="#nieuwste-document-standaard-bovenaan">Nieuwste document standaard bovenaan</a></li><li><a href="#track-trace-uitgebreid-met-categorie">Track &amp; Trace uitgebreid met categorie</a></li><li><a href="#bedragen-in-adn-overzicht-gesplitst">Bedragen in ADN overzicht gesplitst</a></li><li><a href="#api-uitgebreid-met-huisstijl-organisatie">API uitgebreid met huisstijl organisatie</a></li><li><a href="#pdf-documenten-splitsen-en-samenvoegen-vanuit-een-dossier-2">PDF documenten splitsen en samenvoegen vanuit een dossier</a></li><li><a href="#samenvoegen-of-splitsen">Samenvoegen of splitsen</a></li><li><a href="#inzicht-in-ongewenste-e-mails-2">Inzicht in ongewenste e-mails</a></li><li><a href="#instellen">Instellen</a></li><li><a href="#meer-managementinformatie-via-doorklik-op-grafiek-2">Meer managementinformatie via doorklik op grafiek</a></li><li><a href="#kleuren-managementinformatie-verbeterd-2">Kleuren managementinformatie verbeterd</a></li><li><a href="#verwijderen-van-taken-verbeterd-2">Verwijderen van taken verbeterd</a></li><li><a href="#nieuwste-document-standaard-bovenaan-2">Nieuwste document standaard bovenaan</a></li><li><a href="#track-trace-uitgebreid-met-categorie-2">Track &amp; Trace uitgebreid met categorie</a></li><li><a href="#bedragen-in-adn-overzicht-gesplitst-2">Bedragen in ADN overzicht gesplitst</a></li><li><a href="#api-uitgebreid-met-huisstijl-organisatie-2">API uitgebreid met huisstijl organisatie</a></li></ul></nav><h2 id="inhoud">Inhoud</h2>
+<h2 id="pdf-documenten-splitsen-en-samenvoegen-vanuit-een-dossier">PDF documenten splitsen en samenvoegen vanuit een dossier</h2>
+<h2 id="inzicht-in-ongewenste-e-mails">Inzicht in ongewenste e-mails</h2>
+<h2 id="meer-managementinformatie-via-doorklik-op-grafiek">Meer managementinformatie via doorklik op grafiek</h2>
+<h2 id="kleuren-managementinformatie-verbeterd">Kleuren managementinformatie verbeterd</h2>
+<h2 id="verwijderen-van-taken-verbeterd">Verwijderen van taken verbeterd</h2>
+<h2 id="nieuwste-document-standaard-bovenaan">Nieuwste document standaard bovenaan</h2>
+<h2 id="track-trace-uitgebreid-met-categorie">Track &amp; Trace uitgebreid met categorie</h2>
+<h2 id="bedragen-in-adn-overzicht-gesplitst">Bedragen in ADN overzicht gesplitst</h2>
+<h2 id="api-uitgebreid-met-huisstijl-organisatie">API uitgebreid met huisstijl organisatie</h2>
+<h2 id="pdf-documenten-splitsen-en-samenvoegen-vanuit-een-dossier-2">PDF documenten splitsen en samenvoegen vanuit een dossier</h2>
+<p>In Elements was het al mogelijk om PDF documenten te splitsen en samenvoegen wanneer deze ontvangen werden via een e-mail. Vanaf nu is het ook mogelijk documenten handmatig samen te voegen of te splitsen vanuit het tabblad documenten in het dossier. Let op! Alleen PDF documenten kunnen samengevoegd/gesplitst worden.</p>
+<h2 id="samenvoegen-of-splitsen">Samenvoegen of splitsen</h2>
+<p>Selecteer 1 of meerdere documenten die je wilt samenvoegen en klik op de grijze knop ‘Documenten splitsen/samenvoegen’.</p>
+<p>In het volgende scherm geef je je actie aan. Bij samenvoegen selecteer je beide bestanden en klik je vervolgens op ‘Samenvoegen’. Om een bestand te splitsen, gebruik je de knop met de schaar.</p>
+<p>Nadat het document opgeslagen is, vind je deze terug in het tabblad ‘Documenten’.</p>
+<h2 id="inzicht-in-ongewenste-e-mails-2">Inzicht in ongewenste e-mails</h2>
+<p>Het is vanaf nu mogelijk om ook de SPAM map van je mailbox te synchroniseren in Elements. Zo mis je nooit meer een e-mail die per ongeluk als ongewenst is aangemerkt.</p>
+<p>De map ‘Ongewenst’ is zichtbaar, zodra je dit ingesteld hebt.</p>
+<h2 id="instellen">Instellen</h2>
+<p>Om de SPAM-map te synchroniseren, dien je dit in te stellen in de e-mailmanager. Neem hiervoor onderstaande stappen.</p>
+<p>Indien je geen toegang hebt tot de e-mailmanager neem dan contact op met je Elements beheerder met het verzoek dit in orde te maken.</p>
+<p>Ga naar Beheer -&gt; E-mail Manager;Klik op de e-mailbox waarvoor je de SPAM-map wilt synchroniseren;Klik op de grijze knop ‘IMAP mappen ophalen’;Selecteer bij ‘IMAP ongewenste berichten’ de SPAM map;Klik bovenin het scherm op het groene vinkje om op te slaan.</p>
+<h2 id="meer-managementinformatie-via-doorklik-op-grafiek-2">Meer managementinformatie via doorklik op grafiek</h2>
+<p>Het is vanaf nu mogelijk om vanuit de grafieken ‘omzet per verdichting’ en ‘kosten per verdichting’ direct door te klikken naar de verdichting.</p>
+<h2 id="kleuren-managementinformatie-verbeterd-2">Kleuren managementinformatie verbeterd</h2>
+<p>De kleuren van de managementgrafieken zijn gewijzigd. Hierdoor is bijvoorbeeld de hoeveelheid afspraken van iedere adviseur beter zichtbaar.</p>
+<h2 id="verwijderen-van-taken-verbeterd-2">Verwijderen van taken verbeterd</h2>
+<p>Voorheen was het niet mogelijk om een groepstaak alleen voor jezelf te verwijderen. Vanaf nu is het mogelijk om een groepstaak alleen voor jezelf te verwijderen, zonder dat deze taak bij de rest van de gekoppelde personen verwijderd wordt.</p>
+<p>Via de optie ‘Voor mijzelf’ wordt de taak alleen voor jou verwijderd. Via de optie ‘Voor iedereen’ wordt de taak voor ieder persoon in de taak verwijderd.</p>
+<p>Daarnaast is het ook het verwijderen van taken met herhaling vereenvoudigt. Deze opties zijn nu zichtbaar in dezelfde pop-up.</p>
+<h2 id="nieuwste-document-standaard-bovenaan-2">Nieuwste document standaard bovenaan</h2>
+<p>In het tabblad documenten en bij het toevoegen van<br>documenten in een e-mail wordt vanaf nu standaard het nieuwste document<br>bovenaan getoond.</p>
+<h2 id="track-trace-uitgebreid-met-categorie-2">Track &amp; Trace uitgebreid met categorie</h2>
+<p>In de export (naar Excel of afdrukken) van de track&amp; trace module wordt nu ook de productcategorie opgenomen.</p>
+<p>Let op! De productcategorie zie je niet terug in het Track &amp; Trace overzicht in Elements, alleen bij het exporteren van de gemaakte selectie naar Excel en/of bij het afdrukken.</p>
+<h2 id="bedragen-in-adn-overzicht-gesplitst-2">Bedragen in ADN overzicht gesplitst</h2>
+<p>De bedragen in het ADN overzicht worden nu gesplitst in Provisie<br>en Rekening Courant bedrag.</p>
+<h2 id="api-uitgebreid-met-huisstijl-organisatie-2">API uitgebreid met huisstijl organisatie</h2>
+<p>Het is nu mogelijk om de huisstijl van een organisatie in<br>Elements op te slaan ten behoeve van de API.</p>
+<p>Deze kun je opslaan onder de organisatie, hiervoor dient een recht aangezet te worden.</p>
+<p>Ga hiervoor naar Beheer -&gt; Organisatie &amp; personen -&gt; Tabblad huisstijl Stel hier de kleurcodes en het logo van de organisatie in (zie onderstaande afbeelding)</p>
+<p>Hierbij is het mogelijk om als Centrale Organisatie de huisstijlen van alle deelnemers te overschrijven. Dit gebeurt wanneer bovenstaande onder de Centrale Organisatie ingesteld wordt.</p>
+<p>Categorie: Release</p></div>
+      <section class="figs"><h2>Afbeeldingen bij dit artikel</h2><figure><a href="https://web.archive.org/web/20200919190603im_/https://support.fasterforward.nl/wp-content/uploads/2020/02/release-feb-2020-WP.jpg" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20200919190603im_/https://support.fasterforward.nl/wp-content/uploads/2020/02/release-feb-2020-WP.jpg" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20200919190603im_/https://support.fasterforward.nl/wp-content/uploads/2020/02/splitsen_voegen-1024x182.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20200919190603im_/https://support.fasterforward.nl/wp-content/uploads/2020/02/splitsen_voegen-1024x182.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20200919190603im_/https://support.fasterforward.nl/wp-content/uploads/2020/02/merge_split-1024x521.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20200919190603im_/https://support.fasterforward.nl/wp-content/uploads/2020/02/merge_split-1024x521.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20200919190603im_/https://support.fasterforward.nl/wp-content/uploads/2020/02/nieuwste_doc-1024x127.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20200919190603im_/https://support.fasterforward.nl/wp-content/uploads/2020/02/nieuwste_doc-1024x127.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20200919190603im_/https://support.fasterforward.nl/wp-content/uploads/2020/02/spambox-vb.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20200919190603im_/https://support.fasterforward.nl/wp-content/uploads/2020/02/spambox-vb.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20200919190603im_/https://support.fasterforward.nl/wp-content/uploads/2020/02/spam_sync_specifiek.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20200919190603im_/https://support.fasterforward.nl/wp-content/uploads/2020/02/spam_sync_specifiek.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure></section>
+      
+      <p class="src">Bron: <a href="https://web.archive.org/web/20200919190603/https://support.fasterforward.nl/optimalisatie-feb-2020/" target="_blank" rel="noopener">Wayback Machine-archief</a></p>
+    </article>
+    <aside class="related"><h2>Gerelateerd:</h2><ul><li><a href="../e-mail-gebruiksgemak-beveiliging/index.html">Uitbreiding e-mail: Gebruiksgemak &amp; Beveiliging</a></li><li><a href="../van-start-met-boekhouden-in-elements/index.html">Van start met boekhouden in Elements</a></li><li><a href="../hypotheekberekening-in-elements-en-meer/index.html">Hypotheekberekening in Elements en meer...</a></li><li><a href="../schadevrije-jaren-toevoegen-nu-beschikbaar-voor-iedere-schadebehandelaar/index.html">Schadevrije jaren toevoegen nu beschikbaar voor iedere schadebehandelaar</a></li><li><a href="../certificaat-verlengen-adn-aplaza-ook-elements/index.html">Certificaat verlengen voor ADN/Aplaza ook in Elements!</a></li><li><a href="../nodig-klanten-uit-voor-hun-belastingaangifte-met-workflows/index.html">Nodig klanten uit voor hun belastingaangifte met workflows</a></li></ul></aside>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span>Copyright © 2024 Blinqx powered by Faster Forward</span>
+    <nav aria-label="Beleid">
+      <a href="../supportbeleid/index.html">Supportbeleid</a>
+      <a href="../opdrachtenbeleid/index.html">Opdrachtenbeleid</a>
+      <a href="../klachtenbeleid/index.html">Klachtenbeleid</a>
+      <a href="../wensenbeleid/index.html">Wensenbeleid</a>
+      <a href="../video/index.html">Video's &amp; e-learning</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

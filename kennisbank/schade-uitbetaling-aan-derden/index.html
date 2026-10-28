@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Schade uitbetaling verwerken - Blinqx Support</title>
+<meta name="description" content="Leer hoe je schadeboekingen toevoegt, uitbetalingen van schade goedkeurt en uitbetalingen verwerkt in de boekhouding.">
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="icon" href="../../assets/favicon.png">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
+    <symbol id="i-mail-o" viewBox="0 0 24 24"><path d="M2 5h20v14H2zm2 2v.4l8 5.6 8-5.6V7zm16 2.8-8 5.6-8-5.6V17h16z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><path d="M10 2a8 8 0 0 1 6.32 12.9l5.4 5.4-1.42 1.42-5.4-5.4A8 8 0 1 1 10 2zm0 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 64 64"><circle cx="7" cy="12" r="6"/><circle cx="7" cy="32" r="6"/><circle cx="7" cy="52" r="6"/><rect x="18" y="7" width="44" height="10" rx="2"/><rect x="18" y="27" width="44" height="10" rx="2"/><rect x="18" y="47" width="44" height="10" rx="2"/></symbol>
+    <symbol id="i-home" viewBox="0 0 64 64"><path d="M32 6 2 32l4 5 4-3.4V58h18V42h8v16h18V33.6l4 3.4 4-5-10-8.7V10h-8v7.4z"/></symbol>
+    <symbol id="i-car" viewBox="0 0 64 64"><path d="M16 10h32a6 6 0 0 1 5.7 4.1L58 27a7 7 0 0 1 4 6.3V48a3 3 0 0 1-3 3h-3v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H20v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H5a3 3 0 0 1-3-3V33.3A7 7 0 0 1 6 27l4.3-12.9A6 6 0 0 1 16 10zm1.5 7-3.3 10h35.6l-3.3-10zM13 34a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm38 0a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 64 64"><path d="M4 12a4 4 0 0 1 4-4h16l6 6h22a4 4 0 0 1 4 4v6H18a6 6 0 0 0-5.6 3.9L4 50z"/><path d="M18 28h44l-10 26H6z"/></symbol>
+    <symbol id="i-desktop" viewBox="0 0 64 64"><path d="M2 6h60v40H38v6h8v6H18v-6h8v-6H2zm6 6v28h48V12z"/></symbol>
+    <symbol id="i-comments" viewBox="0 0 64 64"><path d="M26 4c13.8 0 24 8.6 24 19s-10.2 19-24 19c-2.6 0-5-.3-7.3-.8C14.6 44 9.6 46 3 46c3-3 4.8-6.2 5.3-9.6C4.4 33 2 28.2 2 23 2 12.6 12.2 4 26 4z"/><path d="M54 24.5c5 3.4 8 8.3 8 13.5 0 4.2-1.8 8-4.8 11 .4 3.6 2 6.8 4.8 9.5-6 0-10.6-1.8-14.3-4.4-2.1.5-4.4.7-6.7.7-7 0-13.1-2.4-17-6.2 14.3-.4 30-8.8 30-24.1z"/></symbol>
+    <symbol id="i-envelope" viewBox="0 0 64 64"><path d="M4 12h56a2 2 0 0 1 2 2v3L32 37 2 17v-3a2 2 0 0 1 2-2z"/><path d="M2 23.5 32 43.5l30-20V50a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-euro" viewBox="0 0 64 64"><path d="M42 6c5 0 9.5 1.2 13 3.2l-2.6 8.2A19 19 0 0 0 42 14.5c-7.4 0-12.7 4.6-14.6 11.5H46l-2 7H26.3l-.05 2 .05 2H42l-2 7H27.4c1.9 7 7.2 11.5 14.6 11.5 4 0 7.6-1 10.4-2.9L55 61c-3.6 2-8 3-13 3-12.7 0-22.2-8-24.4-20H10l2-7h5.06L17 35l.06-2H10l2-7h5.6C19.8 14 29.3 6 42 6z"/></symbol>
+    <symbol id="i-file" viewBox="0 0 64 64"><path d="M10 2h28v18h18v38a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm32 0 14 14H42zM16 30v6h32v-6zm0 10v6h32v-6zm0 10v6h32v-6z"/></symbol>
+    <symbol id="i-rss" viewBox="0 0 64 64"><circle cx="11" cy="53" r="8"/><path d="M3 23a38 38 0 0 1 38 38H31A28 28 0 0 0 3 33z"/><path d="M3 3a58 58 0 0 1 58 58H51A48 48 0 0 0 3 13z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="rgba(0,0,0,.65)"/><path d="M26 20v24l20-12z" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="item"><svg class="ic"><use href="#i-phone"/></svg><a class="tel" href="tel:+31850180069">085 018 00 69</a></span>
+    <span class="sep" aria-hidden="true"></span>
+    <span class="item"><svg class="ic"><use href="#i-mail-o"/></svg><a class="mail" href="mailto:support-eblinqx@blinqx.tech">support-eblinqx@blinqx.tech</a></span>
+    <a class="li" href="https://www.linkedin.com/company/blinqx/" target="_blank" rel="noopener" aria-label="Blinqx op LinkedIn">in</a>
+  </div>
+</div>
+<header class="site">
+  <div class="wrap">
+    <div class="head-row">
+      <a class="brand" href="../../index.html" aria-label="Blinqx support — home">
+        <img src="../../assets/logo-mark.png" alt="Blinqx" width="470" height="119">
+        <span>powered by Faster Forward</span>
+      </a>
+      <nav class="main" aria-label="Hoofdmenu"><ul><li><a href="../../index.html">Home</a></li><li><a href="../../nieuws/index.html">Nieuws</a></li><li><a href="../../tips/index.html">Tips</a></li><li><a href="../../releasenotes/index.html">Release notes</a></li><li><a href="../../trainingen/index.html">Trainingen</a></li><li><a href="../../contact/index.html">Contact support</a></li></ul></nav>
+    </div>
+    <div class="search-row">
+      <form class="search" action="../../zoeken/index.html" method="get" role="search">
+        <label class="field">
+          <svg class="ic"><use href="#i-search"/></svg>
+          <input type="search" name="q" placeholder="Zoek hier op onderwerp" aria-label="Zoek op onderwerp">
+        </label>
+        <button type="submit">Zoeken</button>
+      </form>
+      <div class="status">Mogelijke incidenten en de systeemstatus vind je op onze <a href="#" title="URL statuspagina nog invullen">statuspagina</a>.</div>
+    </div>
+  </div>
+</header>
+<div class="crumbs"><div class="wrap"><nav aria-label="Kruimelpad"><a href="../../kennisbank/index.html">Kennisbank</a><span class="sep" aria-hidden="true">›</span><a href="../../categorien/boekhouding/index.html">Boekhouding</a><span class="sep" aria-hidden="true">›</span><a href="../../categorien/elektronisch-bankieren/index.html">Elektronisch bankieren</a><span class="sep" aria-hidden="true">›</span><span aria-current="page">Schade uitbetaling verwerken</span></nav></div></div>
+<main class="article">
+  <div class="wrap cols">
+    <article>
+      <h1>Schade uitbetaling verwerken</h1>
+      <p class="meta">Laatste update: 15 oktober 2025</p>
+      <div class="content"><p>De klant meldt een schade. Deze schademelding en de bijbehorende financiële verwerking verwerk je in eBlinqx. Zo kan je een schadeboeking aanmaken en deze uitbetalen.</p><nav class="toc" aria-label="Inhoud"><ul><li><a href="#schademelding-en-schadeboeking-aanmaken">Schademelding en schadeboeking aanmaken</a></li><li><a href="#schadeboeking-inzien">Schadeboeking inzien</a></li><li><a href="#eigen-risico">Eigen risico</a></li><li><a href="#derde-partij-aanmaken">Derde partij aanmaken</a></li><li><a href="#uitbetaling-goedkeuren">Uitbetaling goedkeuren</a></li><li><a href="#uitbetalen">Uitbetalen</a></li><li><a href="#foutieve-schadeboeking-corrigeren">Foutieve schadeboeking corrigeren</a></li><li><a href="#negatieve-schadeboeking-en-verrekenen-schade-uitbetaling">Negatieve schadeboeking en verrekenen schade uitbetaling</a></li></ul></nav>
+<p>Voor het goedkeuren van de uitbetaling is de grootboekrekening &#x27;Uit te betalen schade&#x27; nodig. Dit is eenmalige inrichting in de administratie.</p>
+<h2 id="schademelding-en-schadeboeking-aanmaken">Schademelding en schadeboeking aanmaken</h2>
+<p>Je maakt een schademelding aan in het klantdossier gekoppeld aan de polis. Vanuit de schademelding kan je een schadeboeking aanmaken. Hiervoor vind je een knop &#x27;Schadeboeking toevoegen&#x27; in het blok &#x27;schadebedrag&#x27;.</p>
+<p>Let op: deze knop is alleen zichtbaar bij schademeldingen die gekoppeld zijn aan een TP-incassoproduct.</p>
+<p>Ook kan je een schadeboeking aanmaken vanuit het dossier. Hiervoor ga je naar het product – tabblad TP incasso boekingen en klik je op schadeboeking toevoegen.</p>
+<p>Selecteer hier de schademelding die hoort bij deze boeking. Bij &#x27;Uitbetalen aan&#x27; kan je een derde partij selecteren indien daarvan sprake is. Hieronder lees je verder hoe je een derde partij kan toevoegen.</p>
+<p>De betreffende polis wordt gelijk ingevuld vanuit de schademelding. De omschrijving en het uit te betalen bedrag moet ingevuld worden. Deze pagina opslaan. In de boekingsregel komt er nu een kolom bij met schademelding. Deze bevat de datum van de schade en het extern schadenummer.</p>
+<h2 id="schadeboeking-inzien">Schadeboeking inzien</h2>
+<p>De aangemaakte boeking kan je terug vinden in het dossier onder het tabblad TP incasso boekingen. Via het oogje kan je de boeking openen.</p>
+<p>Via het rondje pijltje kan je een terugbetaling invoeren. Hier lees je er meer over.</p>
+<h2 id="eigen-risico">Eigen risico</h2>
+<p>Wanneer je de eigen risico op wilt nemen in de schadeboeking dan kan je klikken op &#x27;Voeg boekingsregel toe&#x27;. Deze nieuwe boekingsregel kan je als omschrijving Eigen risico geven.</p>
+<h2 id="derde-partij-aanmaken">Derde partij aanmaken</h2>
+<p>Indien je gebruik maakt van TP incasso dan is het mogelijk om in eBlinqx schade uit te betalen aan een derde partij bij een schademelding. Deze derde partij is eenmalige informatie in eBlinqx en hoeft daarom niet als persoon/organisatie opgevoerd te worden. Om een derde partij op te voeren ga je naar de schademelding. Daar vind je het tabblad Partijen. Klik op de button &#x27;Betrokkenen toevoegen&#x27;. Hier vul je de naam in van de derde partij met IBAN nummer.</p>
+<h2 id="uitbetaling-goedkeuren">Uitbetaling goedkeuren</h2>
+<p>Het goedkeuren van een schade uitbetaling valt onder de groep &#x27;Verzekeringen&#x27; en kan alleen door personen gedaan worden die in deze groep staan. Je gaat naar de module Verzekeringen – Schades – Schade uitbetalingen goedkeuren. Je kan per regel de boeking goedkeuren of een selectie maken. Goedkeuren gebeurt door het klikken op het pijlicoontje achteraan de regel. Na goedkeuren, wordt de rekening courant maatschappij geboekt en is de schadeboeking in het dossier niet meer aan te passen.</p>
+<h2 id="uitbetalen">Uitbetalen</h2>
+<p>Voor het verwerken van de betaling ga je naar de module &#x27;Incasso- en excassobestanden maken&#x27;. Onder de &#x27;Maak excassobestand&#x27; kies je voor &#x27;Schades&#x27;. Hier staan alle goedgekeurde schadeboekingen.</p>
+<p>Is de schadeboeking voor de uitbetaling niet juist verwijder je hier de boeking. Na verwijderen kun je in het dossier onder de schademelding een nieuwe boeking aanmaken of de bestaande aanpassen. Automatisch wordt bij het verwijderen van de boeking de journaalpost die bij het goedkeuren gemaakt is tegengeboekt. Is de schadeboeking nog niet goedgekeurd dan kan je deze verwijderen vanuit het dossier – betreffende product – tabblad TP incasso boekingen.</p>
+<p>Je selecteert de schadeboekingen die je wilt uitbetalen. Vervolgens kies je vanaf welke rekening deze uitbetaling plaatsvindt en klik op &#x27;1 boeking(en) uitbetalen&#x27;.</p>
+<p>Je komt nu in het tabblad Schade uitbetalen. Hier download je het (sepa) bestand om in te lezen in je bankpakket. Eventueel kan de batch hier verwijderd worden om de posten terug open te zetten. Na het inlezen van het bankafschrift is het niet meer mogelijk om de batch te verwijderen.</p>
+<p>Vervolgens zie je in de schademelding terug welke bedragen uitbetaald zijn aan wie.</p>
+<p>Bij het inlezen van het bankafschrift moet na het selecteren van de grootboekrekening &#x27;Nog uit te betalen schades&#x27;.</p>
+<p>In het veld Bedrag klik je op F6. Hier selecteer je de batch en vervolgens kies je voor &#x27;Gehele batch invoegen&#x27;.</p>
+<p>Zo kan je de openstaande posten in één keer afboeken.</p>
+<p>Schadeboekingen worden opgenomen in het rekening-courant maatschappijen overzicht en daarnaast zijn ze terug te zien in de grootboek rekening-courant maatschappijen.</p>
+<h2 id="foutieve-schadeboeking-corrigeren">Foutieve schadeboeking corrigeren</h2>
+<p>Lees hier meer over het corrigeren van een foutieve schadeboeking.</p>
+<h2 id="negatieve-schadeboeking-en-verrekenen-schade-uitbetaling">Negatieve schadeboeking en verrekenen schade uitbetaling</h2>
+<p>Hier lees je meer over het verwerken van een negatieve schadeboeking en het verrekenen van een schade uitbetaling.</p></div>
+      <section class="figs"><h2>Afbeeldingen bij dit artikel</h2><figure><a href="https://web.archive.org/web/20221002093328im_/https://support.fasterforward.nl/wp-content/uploads/2020/08/klein.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20221002093328im_/https://support.fasterforward.nl/wp-content/uploads/2020/08/klein.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20221002093328im_/https://support.fasterforward.nl/wp-content/uploads/2020/04/schadeboeking-1024x112.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20221002093328im_/https://support.fasterforward.nl/wp-content/uploads/2020/04/schadeboeking-1024x112.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20221002093328im_/https://support.fasterforward.nl/wp-content/uploads/2020/04/boeking-1024x242.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20221002093328im_/https://support.fasterforward.nl/wp-content/uploads/2020/04/boeking-1024x242.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20221002093328im_/https://support.fasterforward.nl/wp-content/uploads/2020/04/partijen-1024x162.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20221002093328im_/https://support.fasterforward.nl/wp-content/uploads/2020/04/partijen-1024x162.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20221002093328im_/https://support.fasterforward.nl/wp-content/uploads/2020/04/betrokken.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20221002093328im_/https://support.fasterforward.nl/wp-content/uploads/2020/04/betrokken.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20221002093328im_/https://support.fasterforward.nl/wp-content/uploads/2020/05/schadeuitbet-1024x158.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20221002093328im_/https://support.fasterforward.nl/wp-content/uploads/2020/05/schadeuitbet-1024x158.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure></section>
+      <details class="orig"><summary>Schermafbeelding van de oorspronkelijke pagina</summary><img src="../../bronnen/offline-archief/shots/schade-uitbetaling-aan-derden.jpg" alt="Schermafbeelding van Schade uitbetaling verwerken" loading="lazy"></details>
+      <p class="src">Bron: <a href="https://web.archive.org/web/20260629231220/https://support.fasterforward.nl/kennisbank/schade-uitbetaling-aan-derden/" target="_blank" rel="noopener">Wayback Machine-archief</a></p>
+    </article>
+    <aside class="related"><h2>Gerelateerd:</h2><ul><li><a href="../../kennisbank/hoe-maak-en-incasso-batch/index.html">Incassobatch maken</a></li><li><a href="../../kennisbank/mandaat/index.html">Mandaatcode en IBAN aanmaken en aanpassen</a></li><li><a href="../../kennisbank/hoe-importeer-bankafschrift/index.html">Bankafschrift importeren</a></li><li><a href="../../kennisbank/bank-inrichten-importeren-bankafschriften/index.html">Bank inrichten voor het importeren van bankafschriften</a></li><li><a href="../../kennisbank/toewijzingsregels/index.html">Toewijzingsregels instellen</a></li><li><a href="../../kennisbank/financiele-verwerking-schademelding/index.html">Negatieve schadeboeking en verrekenen schade uitbetaling</a></li></ul></aside>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span>Copyright © 2024 Blinqx powered by Faster Forward</span>
+    <nav aria-label="Beleid">
+      <a href="../../supportbeleid/index.html">Supportbeleid</a>
+      <a href="../../opdrachtenbeleid/index.html">Opdrachtenbeleid</a>
+      <a href="../../klachtenbeleid/index.html">Klachtenbeleid</a>
+      <a href="../../wensenbeleid/index.html">Wensenbeleid</a>
+      <a href="../../video/index.html">Video's &amp; e-learning</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gespreksopname omzetten naar acties - Blinqx Support</title>
+<meta name="description" content="Met je klanten heb je gesprekken en het is handig om deze met één druk op de knop om te zetten naar een samenvatting of vanuit hier actiepunten te genereren. Dit is mogelijk vanuit het tabblad Communicatie – Gespreksopna…">
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="icon" href="../../assets/favicon.png">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
+    <symbol id="i-mail-o" viewBox="0 0 24 24"><path d="M2 5h20v14H2zm2 2v.4l8 5.6 8-5.6V7zm16 2.8-8 5.6-8-5.6V17h16z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><path d="M10 2a8 8 0 0 1 6.32 12.9l5.4 5.4-1.42 1.42-5.4-5.4A8 8 0 1 1 10 2zm0 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 64 64"><circle cx="7" cy="12" r="6"/><circle cx="7" cy="32" r="6"/><circle cx="7" cy="52" r="6"/><rect x="18" y="7" width="44" height="10" rx="2"/><rect x="18" y="27" width="44" height="10" rx="2"/><rect x="18" y="47" width="44" height="10" rx="2"/></symbol>
+    <symbol id="i-home" viewBox="0 0 64 64"><path d="M32 6 2 32l4 5 4-3.4V58h18V42h8v16h18V33.6l4 3.4 4-5-10-8.7V10h-8v7.4z"/></symbol>
+    <symbol id="i-car" viewBox="0 0 64 64"><path d="M16 10h32a6 6 0 0 1 5.7 4.1L58 27a7 7 0 0 1 4 6.3V48a3 3 0 0 1-3 3h-3v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H20v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H5a3 3 0 0 1-3-3V33.3A7 7 0 0 1 6 27l4.3-12.9A6 6 0 0 1 16 10zm1.5 7-3.3 10h35.6l-3.3-10zM13 34a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm38 0a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 64 64"><path d="M4 12a4 4 0 0 1 4-4h16l6 6h22a4 4 0 0 1 4 4v6H18a6 6 0 0 0-5.6 3.9L4 50z"/><path d="M18 28h44l-10 26H6z"/></symbol>
+    <symbol id="i-desktop" viewBox="0 0 64 64"><path d="M2 6h60v40H38v6h8v6H18v-6h8v-6H2zm6 6v28h48V12z"/></symbol>
+    <symbol id="i-comments" viewBox="0 0 64 64"><path d="M26 4c13.8 0 24 8.6 24 19s-10.2 19-24 19c-2.6 0-5-.3-7.3-.8C14.6 44 9.6 46 3 46c3-3 4.8-6.2 5.3-9.6C4.4 33 2 28.2 2 23 2 12.6 12.2 4 26 4z"/><path d="M54 24.5c5 3.4 8 8.3 8 13.5 0 4.2-1.8 8-4.8 11 .4 3.6 2 6.8 4.8 9.5-6 0-10.6-1.8-14.3-4.4-2.1.5-4.4.7-6.7.7-7 0-13.1-2.4-17-6.2 14.3-.4 30-8.8 30-24.1z"/></symbol>
+    <symbol id="i-envelope" viewBox="0 0 64 64"><path d="M4 12h56a2 2 0 0 1 2 2v3L32 37 2 17v-3a2 2 0 0 1 2-2z"/><path d="M2 23.5 32 43.5l30-20V50a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-euro" viewBox="0 0 64 64"><path d="M42 6c5 0 9.5 1.2 13 3.2l-2.6 8.2A19 19 0 0 0 42 14.5c-7.4 0-12.7 4.6-14.6 11.5H46l-2 7H26.3l-.05 2 .05 2H42l-2 7H27.4c1.9 7 7.2 11.5 14.6 11.5 4 0 7.6-1 10.4-2.9L55 61c-3.6 2-8 3-13 3-12.7 0-22.2-8-24.4-20H10l2-7h5.06L17 35l.06-2H10l2-7h5.6C19.8 14 29.3 6 42 6z"/></symbol>
+    <symbol id="i-file" viewBox="0 0 64 64"><path d="M10 2h28v18h18v38a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm32 0 14 14H42zM16 30v6h32v-6zm0 10v6h32v-6zm0 10v6h32v-6z"/></symbol>
+    <symbol id="i-rss" viewBox="0 0 64 64"><circle cx="11" cy="53" r="8"/><path d="M3 23a38 38 0 0 1 38 38H31A28 28 0 0 0 3 33z"/><path d="M3 3a58 58 0 0 1 58 58H51A48 48 0 0 0 3 13z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="rgba(0,0,0,.65)"/><path d="M26 20v24l20-12z" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="item"><svg class="ic"><use href="#i-phone"/></svg><a class="tel" href="tel:+31850180069">085 018 00 69</a></span>
+    <span class="sep" aria-hidden="true"></span>
+    <span class="item"><svg class="ic"><use href="#i-mail-o"/></svg><a class="mail" href="mailto:support-eblinqx@blinqx.tech">support-eblinqx@blinqx.tech</a></span>
+    <a class="li" href="https://www.linkedin.com/company/blinqx/" target="_blank" rel="noopener" aria-label="Blinqx op LinkedIn">in</a>
+  </div>
+</div>
+<header class="site">
+  <div class="wrap">
+    <div class="head-row">
+      <a class="brand" href="../../index.html" aria-label="Blinqx support — home">
+        <img src="../../assets/logo-mark.png" alt="Blinqx" width="470" height="119">
+        <span>powered by Faster Forward</span>
+      </a>
+      <nav class="main" aria-label="Hoofdmenu"><ul><li><a href="../../index.html">Home</a></li><li><a href="../../nieuws/index.html">Nieuws</a></li><li><a href="../../tips/index.html">Tips</a></li><li><a href="../../releasenotes/index.html">Release notes</a></li><li><a href="../../trainingen/index.html">Trainingen</a></li><li><a href="../../contact/index.html">Contact support</a></li></ul></nav>
+    </div>
+    <div class="search-row">
+      <form class="search" action="../../zoeken/index.html" method="get" role="search">
+        <label class="field">
+          <svg class="ic"><use href="#i-search"/></svg>
+          <input type="search" name="q" placeholder="Zoek hier op onderwerp" aria-label="Zoek op onderwerp">
+        </label>
+        <button type="submit">Zoeken</button>
+      </form>
+      <div class="status">Mogelijke incidenten en de systeemstatus vind je op onze <a href="#" title="URL statuspagina nog invullen">statuspagina</a>.</div>
+    </div>
+  </div>
+</header>
+<div class="crumbs"><div class="wrap"><nav aria-label="Kruimelpad"><a href="../../kennisbank/index.html">Kennisbank</a><span class="sep" aria-hidden="true">›</span><a href="../../categorien/communicatie/index.html">Communicatie</a><span class="sep" aria-hidden="true">›</span><a href="../../categorien/communicatie/gespreksopnames/index.html">Gespreksopnames</a><span class="sep" aria-hidden="true">›</span><span aria-current="page">Gespreksopname omzetten naar acties</span></nav></div></div>
+<main class="article">
+  <div class="wrap cols">
+    <article>
+      <h1>Gespreksopname omzetten naar acties</h1>
+      <p class="meta">Laatste update: 24 februari 2026</p>
+      <div class="content"><nav class="toc" aria-label="Inhoud"><ul><li><a href="#let-op-alleen-beschikbaar-in-eblinqx-niet-in-elements">Let op: alleen beschikbaar in eBlinqx niet in Elements</a></li><li><a href="#via-uploaden">Via uploaden</a></li><li><a href="#via-api">Via API</a></li><li><a href="#duur-gespreksopname">Duur gespreksopname</a></li><li><a href="#gespreksopname-opnieuw-indienen">Gespreksopname opnieuw indienen</a></li><li><a href="#samenvatting-maken-en-bekijken">Samenvatting maken en bekijken</a></li><li><a href="#aanmaken-via-sterretjesicoon">Aanmaken via sterretjesicoon</a></li><li><a href="#aanmaken-via-workflowpijl">Aanmaken via workflowpijl</a></li><li><a href="#samenvatting-bekijken">Samenvatting bekijken</a></li><li><a href="#samenvatting-als-concept-e-mail-klaarzetten">Samenvatting als concept e-mail klaarzetten</a></li><li><a href="#samenvatting-als-registratie-opslaan">Samenvatting als registratie opslaan</a></li><li><a href="#taken-aanmaken">Taken aanmaken</a></li><li><a href="#slim-formulier-finly-genereren-en-prefillen">Slim formulier (Finly) genereren en prefillen</a></li><li><a href="#gespreksopnamen-exporteren">Gespreksopnamen exporteren</a></li><li><a href="#dossierhistorie">Dossierhistorie</a></li></ul></nav><h2 id="let-op-alleen-beschikbaar-in-eblinqx-niet-in-elements">Let op: alleen beschikbaar in eBlinqx niet in Elements</h2>
+<p>Met je klanten heb je gesprekken en het is handig om deze met één druk op de knop om te zetten naar een samenvatting of vanuit hier actiepunten te genereren. Dit is mogelijk vanuit het tabblad Communicatie – Gespreksopname. Hieronder lees je meer over de mogelijkheden.</p>
+<p>Via het het tabblad Communicatie – Gespreksopname kan je een gespreksopname starten. Dit tabblad kan je benaderen vanuit het product of op dossierniveau. Let op: start je op dossierniveau dan is het niet mogelijk om de gespreksopname op een later moment te koppelen aan een product. Eventuele taken of e-mails die hieruit voortkomen kan je wel aan het product koppelen.</p>
+<p>Op een opname te starten klik je op de knop &#x27;Opname starten&#x27;. Er verschijnt vervolgens een pop-up waar je de opname daadwerkelijk kan starten via &#x27;Start opname&#x27;.</p>
+<p>Via &#x27;Pauzeer&#x27;, pauzeer je de opname. De knop verandert dan naar &#x27;Hervatten&#x27;, waarmee je de opname kan hervatten. Met &#x27;Stop&#x27;, stop je de opname.</p>
+<p>Heb je op &#x27;Stop&#x27; gedrukt dan geef je de opname een omschrijving en sla je de opname op.</p>
+<p>Let op: de opname neemt alleen jouw microfoon op. Dus bel je via een headset met de klant dan zal datgene wat de klant zegt niet worden opgenomen. Je zal dan het gesprek via luidspreker moeten afspelen om het gehele gesprek op te nemen.</p>
+<p>De opname komt na opslaan onder het tabblad Communicatie – Gespreksopname te staan. Deze wordt automatisch omgezet naar een transcript. Let op: dit kan even duren afhankelijk van de grootte van het gesprek. Daarnaast is het belangrijk dat je tijdens het laden op het tabblad Gespreksopname blijft staan. Je kunt eventueel wel in een nieuw tabblad in je browser verder werken.</p>
+<h2 id="via-uploaden">Via uploaden</h2>
+<p>Het is ook mogelijk om gesprekken, die je bijvoorbeeld met je telefoon hebt opgenomen, te uploaden. Die doe je via de knop &#x27;Opname uploaden&#x27;.</p>
+<p>De toegestane bestandstypen zijn MP3, MP4, WAV, webm en ogg. Met deze geüploade gespreksopnames kan je dezelfde acties uitvoeren als gesprekopnames die vanuit eBlinqx zijn gestart. Mocht het niet het juiste bestandstype zijn of deze is te groot dan wordt er een melding getoond bij het uploaden.</p>
+<h2 id="via-api">Via API</h2>
+<p>Ook is het mogelijk om via de API gespreksopnames in het dossier te zetten. De gesprekken die via de API binnenkomen worden automatisch omgezet naar een transcript. Een omschrijving, product, lengte en opnamedatum en tijd kunnen optioneel meegegeven worden. Wordt dit niet meegegeven dan blijven deze velden leeg. De omschrijving wordt dan de bestandsnaam. Ook kan je meegeven dat er direct een samenvatting gegenereerd moet worden.</p>
+<p>In het dossier wordt een melding getoond als er een gespreksopname aan het dossier is toegevoegd via de API.</p>
+<h2 id="duur-gespreksopname">Duur gespreksopname</h2>
+<p>De opname mag maximaal 2 uur duren. Is de opname langer dan kan deze niet omgezet worden naar transcript en zijn er geen vervolgacties mogelijk.</p>
+<h2 id="gespreksopname-opnieuw-indienen">Gespreksopname opnieuw indienen</h2>
+<p>Het kan gebeuren dat het de eerste keer niet is gelukt om de gespreksopname om te zetten naar transcript. Bij de gespreksopname komt dan een retry-icoon te staan en je wordt erop geattendeerd door middel van een blauwe melding. Je kunt op deze knop klikken om de de gespreksopname opnieuw in te dienen. Deze knop is niet beschikbaar als er al een transcript is en het originele verzoek nog geen 5 minuten geleden is.</p>
+<ul><li>Acties uitvoeren</li><li>Transcript inzien</li></ul>
+<p>Als de gespreksopname wordt opgeslagen wordt deze automatisch omgezet naar een transcript. De transcript kan je bekijken via het loepicoon.</p>
+<h2 id="samenvatting-maken-en-bekijken">Samenvatting maken en bekijken</h2>
+<p>De samenvatting kan op twee manieren aangemaakt worden, namelijk via het &#x27;sterretjesicoon&#x27; en via de workflowpijl.</p>
+<h2 id="aanmaken-via-sterretjesicoon">Aanmaken via sterretjesicoon</h2>
+<p>Maak je de samenvatting aan via het sterretjesicoon dan kan je geen voorwaarden voor hoe de samenvatting opgesteld moet worden meegeven. Het systeem maakt dan een standaard samenvatting aan.</p>
+<h2 id="aanmaken-via-workflowpijl">Aanmaken via workflowpijl</h2>
+<p>Je kunt ook een samenvatting aanmaken via de workflowpijl. Je klikt hierop en vervolgens op &#x27;Samenvatting genereren&#x27;. Er verschijnt dan een nieuw scherm waar je zelf extra input kan geven voor hoe de samenvatting opgesteld moet worden, bijvoorbeeld &#x27;de samenvatting moet geschikt zijn voor iemand zonder financiële kennis of achtergrond&#x27;. Klik je vervolgens weer op &#x27;Samenvatting genereren&#x27; dan wordt de samenvatting aangemaakt.</p>
+<h2 id="samenvatting-bekijken">Samenvatting bekijken</h2>
+<p>De aangemaakte samenvatting is te bekijken via het registratie-icoon.</p>
+<h2 id="samenvatting-als-concept-e-mail-klaarzetten">Samenvatting als concept e-mail klaarzetten</h2>
+<p>Is de samenvatting aangemaakt dan kan je deze per e-mail verzenden. Dit kan door middel van het envelopicoon of door middel van de workflowpijl en dan de actie &#x27;Concept e-mail klaarzetten met samenvatting&#x27;.</p>
+<p>De samenvatting wordt als tekst in de e-mail gezet. Op deze manier kan je eventueel nog zaken aanvullen of informatie verwijderen.</p>
+<h2 id="samenvatting-als-registratie-opslaan">Samenvatting als registratie opslaan</h2>
+<p>Via de workflowpijl kan je ook kiezen voor &#x27;Samenvatting als registratie opslaan&#x27;. De samenvatting wordt dan als registratie opgeslagen. Je kunt deze eventueel wijzigen.</p>
+<h2 id="taken-aanmaken">Taken aanmaken</h2>
+<p>Het is ook mogelijk om vanuit de gespreksopname direct taken aan te maken. Via de workflowpijl klik je dan op &#x27;Taken aanmaken&#x27;. Je krijgt vervolgens alle taken te zien die gegenereerd kunnen worden vanuit de opname. Voor het bepalen of het een taak moet zijn, wordt er gekeken of er duidelijke activerende woorden aanwezig zijn. Dit zijn woorden of zinnen die een handeling initiëren, aanzetten tot actie, of instructies geven. Je kunt denken aan werkwoorden als: starten, regelen, plannen, controleren, bevestigen, ontwikkelen, afstemmen, versturen, uitzoeken, implementeren, aanpassen, uitvoeren. Dit geldt ook voor werkwoorden in de gebiedende wijs gebruikt worden bijvoorbeeld moet, laten we, zorg dat, het is nodig om, denk eraan om, niet vergeten te. Als de tekst geen activerende woorden of suggesties voor actie bevat, geef dan wordt er aangegeven &quot;Geen acties geïdentificeerd.&quot;</p>
+<p>Voor deze taken staat een checkbox die standaard aangevinkt staat. Wil je niet dat er bepaalde taken aangemaakt worden dan kan je de checkbox ervoor uitvinken. Per taak kan je de naam, start- en einddatum, tijd en verantwoordelijke aanpassen. Om dit aan te passen klik je op het wijzigingsicoon achter de taak.</p>
+<p>Om de (geselecteerde) taken daadwerkelijk aan te maken klik je op &#x27;Geselecteerde actiepunten omzetten in taken&#x27;.</p>
+<p>In de omschrijving van de taak staat &#x27;Taak aangemaakt vanuit opname&#x27;, zodat je weet vanuit waar deze taak is aangemaakt.</p>
+<h2 id="slim-formulier-finly-genereren-en-prefillen">Slim formulier (Finly) genereren en prefillen</h2>
+<p>Een formulier genereren en prefillen doe je door te klikken op de workflowpijl en te kiezen voor &#x27;Slim formulier (Finly) genereren en prefillen&#x27;. Vervolgens kan je kiezen welk formulier je wilt aanmaken.</p>
+<h2 id="gespreksopnamen-exporteren">Gespreksopnamen exporteren</h2>
+<p>Via Export – Dossier is het mogelijk om gegevens van het ene dossier naar het andere dossier te exporteren. Als je een product exporteert waaraan gespreksopnames zijn gekoppeld dan worden ook automatisch de gespreksopnames overgezet naar het andere dossier. Ook is het mogelijk om gespreksopnames die niet aan een product zijn gekoppeld te exporteren.</p>
+<h2 id="dossierhistorie">Dossierhistorie</h2>
+<p>Bij gebruik van bovenstaande opties wordt er gebruik gemaakt van de Blinqx AI API. Dit wordt opgenomen in de dossierhistorie.</p></div>
+      <section class="figs"><h2>Afbeeldingen bij dit artikel</h2><figure><a href="https://web.archive.org/web/20260608014226im_/https://support.fasterforward.nl/wp-content/uploads/2025/08/Opname-starten-gespreksopname.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20260608014226im_/https://support.fasterforward.nl/wp-content/uploads/2025/08/Opname-starten-gespreksopname.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20260608014226im_/https://support.fasterforward.nl/wp-content/uploads/2025/08/image-5.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20260608014226im_/https://support.fasterforward.nl/wp-content/uploads/2025/08/image-5.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20260608014226im_/https://support.fasterforward.nl/wp-content/uploads/2025/08/image-6.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20260608014226im_/https://support.fasterforward.nl/wp-content/uploads/2025/08/image-6.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20260608014226im_/https://support.fasterforward.nl/wp-content/uploads/2025/12/image-15.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20260608014226im_/https://support.fasterforward.nl/wp-content/uploads/2025/12/image-15.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20260608014226im_/https://support.fasterforward.nl/wp-content/uploads/2025/09/image-6.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20260608014226im_/https://support.fasterforward.nl/wp-content/uploads/2025/09/image-6.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20260608014226im_/https://support.fasterforward.nl/wp-content/uploads/2025/12/image-14.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20260608014226im_/https://support.fasterforward.nl/wp-content/uploads/2025/12/image-14.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure></section>
+      <details class="orig"><summary>Schermafbeelding van de oorspronkelijke pagina</summary><img src="../../bronnen/offline-archief/shots/gespreksopname-omzetten-naar-acties.jpg" alt="Schermafbeelding van Gespreksopname omzetten naar acties" loading="lazy"></details>
+      <p class="src">Bron: <a href="https://web.archive.org/web/20260608014226/https://support.fasterforward.nl/kennisbank/gespreksopname-omzetten-naar-acties/" target="_blank" rel="noopener">Wayback Machine-archief</a></p>
+    </article>
+    
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span>Copyright © 2024 Blinqx powered by Faster Forward</span>
+    <nav aria-label="Beleid">
+      <a href="../../supportbeleid/index.html">Supportbeleid</a>
+      <a href="../../opdrachtenbeleid/index.html">Opdrachtenbeleid</a>
+      <a href="../../klachtenbeleid/index.html">Klachtenbeleid</a>
+      <a href="../../wensenbeleid/index.html">Wensenbeleid</a>
+      <a href="../../video/index.html">Video's &amp; e-learning</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

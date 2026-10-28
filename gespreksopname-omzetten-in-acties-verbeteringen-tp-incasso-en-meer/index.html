@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gespreksopname omzetten in acties, verbeteringen TP incasso en meer - Blinqx Support</title>
+<meta name="description" content="Op dinsdag 12 augustus zijn Elements en eBlinqx weer verbeterd en uitgebreid met nieuwe features. Deze release bevat onder andere filteren op posten dubbele prolongatie en verbeteringen TP incasso factuur. Ook zijn er ni…">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.png">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
+    <symbol id="i-mail-o" viewBox="0 0 24 24"><path d="M2 5h20v14H2zm2 2v.4l8 5.6 8-5.6V7zm16 2.8-8 5.6-8-5.6V17h16z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><path d="M10 2a8 8 0 0 1 6.32 12.9l5.4 5.4-1.42 1.42-5.4-5.4A8 8 0 1 1 10 2zm0 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 64 64"><circle cx="7" cy="12" r="6"/><circle cx="7" cy="32" r="6"/><circle cx="7" cy="52" r="6"/><rect x="18" y="7" width="44" height="10" rx="2"/><rect x="18" y="27" width="44" height="10" rx="2"/><rect x="18" y="47" width="44" height="10" rx="2"/></symbol>
+    <symbol id="i-home" viewBox="0 0 64 64"><path d="M32 6 2 32l4 5 4-3.4V58h18V42h8v16h18V33.6l4 3.4 4-5-10-8.7V10h-8v7.4z"/></symbol>
+    <symbol id="i-car" viewBox="0 0 64 64"><path d="M16 10h32a6 6 0 0 1 5.7 4.1L58 27a7 7 0 0 1 4 6.3V48a3 3 0 0 1-3 3h-3v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H20v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H5a3 3 0 0 1-3-3V33.3A7 7 0 0 1 6 27l4.3-12.9A6 6 0 0 1 16 10zm1.5 7-3.3 10h35.6l-3.3-10zM13 34a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm38 0a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 64 64"><path d="M4 12a4 4 0 0 1 4-4h16l6 6h22a4 4 0 0 1 4 4v6H18a6 6 0 0 0-5.6 3.9L4 50z"/><path d="M18 28h44l-10 26H6z"/></symbol>
+    <symbol id="i-desktop" viewBox="0 0 64 64"><path d="M2 6h60v40H38v6h8v6H18v-6h8v-6H2zm6 6v28h48V12z"/></symbol>
+    <symbol id="i-comments" viewBox="0 0 64 64"><path d="M26 4c13.8 0 24 8.6 24 19s-10.2 19-24 19c-2.6 0-5-.3-7.3-.8C14.6 44 9.6 46 3 46c3-3 4.8-6.2 5.3-9.6C4.4 33 2 28.2 2 23 2 12.6 12.2 4 26 4z"/><path d="M54 24.5c5 3.4 8 8.3 8 13.5 0 4.2-1.8 8-4.8 11 .4 3.6 2 6.8 4.8 9.5-6 0-10.6-1.8-14.3-4.4-2.1.5-4.4.7-6.7.7-7 0-13.1-2.4-17-6.2 14.3-.4 30-8.8 30-24.1z"/></symbol>
+    <symbol id="i-envelope" viewBox="0 0 64 64"><path d="M4 12h56a2 2 0 0 1 2 2v3L32 37 2 17v-3a2 2 0 0 1 2-2z"/><path d="M2 23.5 32 43.5l30-20V50a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-euro" viewBox="0 0 64 64"><path d="M42 6c5 0 9.5 1.2 13 3.2l-2.6 8.2A19 19 0 0 0 42 14.5c-7.4 0-12.7 4.6-14.6 11.5H46l-2 7H26.3l-.05 2 .05 2H42l-2 7H27.4c1.9 7 7.2 11.5 14.6 11.5 4 0 7.6-1 10.4-2.9L55 61c-3.6 2-8 3-13 3-12.7 0-22.2-8-24.4-20H10l2-7h5.06L17 35l.06-2H10l2-7h5.6C19.8 14 29.3 6 42 6z"/></symbol>
+    <symbol id="i-file" viewBox="0 0 64 64"><path d="M10 2h28v18h18v38a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm32 0 14 14H42zM16 30v6h32v-6zm0 10v6h32v-6zm0 10v6h32v-6z"/></symbol>
+    <symbol id="i-rss" viewBox="0 0 64 64"><circle cx="11" cy="53" r="8"/><path d="M3 23a38 38 0 0 1 38 38H31A28 28 0 0 0 3 33z"/><path d="M3 3a58 58 0 0 1 58 58H51A48 48 0 0 0 3 13z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="rgba(0,0,0,.65)"/><path d="M26 20v24l20-12z" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="item"><svg class="ic"><use href="#i-phone"/></svg><a class="tel" href="tel:+31850180069">085 018 00 69</a></span>
+    <span class="sep" aria-hidden="true"></span>
+    <span class="item"><svg class="ic"><use href="#i-mail-o"/></svg><a class="mail" href="mailto:support-eblinqx@blinqx.tech">support-eblinqx@blinqx.tech</a></span>
+    <a class="li" href="https://www.linkedin.com/company/blinqx/" target="_blank" rel="noopener" aria-label="Blinqx op LinkedIn">in</a>
+  </div>
+</div>
+<header class="site">
+  <div class="wrap">
+    <div class="head-row">
+      <a class="brand" href="../index.html" aria-label="Blinqx support — home">
+        <img src="../assets/logo-mark.png" alt="Blinqx" width="470" height="119">
+        <span>powered by Faster Forward</span>
+      </a>
+      <nav class="main" aria-label="Hoofdmenu"><ul><li><a href="../index.html">Home</a></li><li><a href="../nieuws/index.html">Nieuws</a></li><li><a href="../tips/index.html">Tips</a></li><li><a href="../releasenotes/index.html" aria-current="page">Release notes</a></li><li><a href="../trainingen/index.html">Trainingen</a></li><li><a href="../contact/index.html">Contact support</a></li></ul></nav>
+    </div>
+    <div class="search-row">
+      <form class="search" action="../zoeken/index.html" method="get" role="search">
+        <label class="field">
+          <svg class="ic"><use href="#i-search"/></svg>
+          <input type="search" name="q" placeholder="Zoek hier op onderwerp" aria-label="Zoek op onderwerp">
+        </label>
+        <button type="submit">Zoeken</button>
+      </form>
+      <div class="status">Mogelijke incidenten en de systeemstatus vind je op onze <a href="#" title="URL statuspagina nog invullen">statuspagina</a>.</div>
+    </div>
+  </div>
+</header>
+<div class="hero" style="background-image:url('https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2020/12/release-header.jpg')"><div class="wrap"><h1>Gespreksopname omzetten in acties, verbeteringen TP incasso en meer</h1></div></div>
+<main class="article">
+  <div class="wrap cols">
+    <article>
+      
+      <p class="meta">Geplaatst op 8 augustus 2025 · Laatste update: 12 augustus 2025</p>
+      <div class="content"><figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/08/augusuts-relaase.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/08/augusuts-relaase.png" alt="" width="795" height="500" loading="lazy"></a></figure>
+<p><strong>Op dinsdag 12 augustus zijn Elements en eBlinqx weer verbeterd en uitgebreid met nieuwe features. Deze release bevat onder andere filteren op posten dubbele prolongatie en verbeteringen TP incasso factuur. Ook zijn er nieuwe features alleen voor eBlinqx, namelijk gemakkelijk gespreksopname omzetten in acties en de controle geldigheid werkgeversverklaring en loonstrook.</strong></p><nav class="toc" aria-label="Inhoud"><ul><li><a href="#gemakkelijk-gespreksopname-omzetten-in-acties">Gemakkelijk gespreksopname omzetten in acties</a></li><li><a href="#controle-geldigheid-werkgeversverklaring-en-loonstrook">Controle geldigheid werkgeversverklaring en loonstrook</a></li><li><a href="#zoeken-op-dossiers-veranderd">Zoeken op dossiers veranderd</a></li><li><a href="#filteren-op-posten-dubbele-prolongatie">Filteren op posten dubbele prolongatie</a></li><li><a href="#verbeteringen-tp-incasso-factuur">Verbeteringen TP incasso factuur</a></li><li><a href="#assurantiebelasting-bij-eenmalige-boeking-verbeterd">Assurantiebelasting bij eenmalige boeking verbeterd</a></li><li><a href="#verbeteringen-rappeltaak-mutatievoorstel">Verbeteringen rappeltaak mutatievoorstel</a></li><li><a href="#niet-afgeronde-betalingsbestanden-verduidelijkt">Niet afgeronde betalingsbestanden verduidelijkt</a></li><li><a href="#oude-pensioenkaarten-overzetten-naar-nieuwe-pensioenkaart">Oude pensioenkaarten overzetten naar nieuwe pensioenkaart</a></li><li><a href="#overige-verbeterpunten">Overige verbeterpunten</a></li></ul></nav>
+eBlinqx Only
+<hr>
+<h2 id="gemakkelijk-gespreksopname-omzetten-in-acties">Gemakkelijk gespreksopname omzetten in acties</h2>
+<p><strong>Let op</strong>: alleen beschikbaar in eBlinqx</p>
+<p>Het is nu mogelijk om geluidsopnames aan het klantdossier te koppelen en met deze opnames verschillende acties uit te voeren. Dit vanuit het nieuwe tabblad Gespreksopname onder het tabblad Communicatie. Hier kan je een opname starten en er staat een overzicht van alle geluids- of beeldopnamen met bijbehorende gegevens. Door middel van de iconen kan je gemakkelijk, indien deze zijn aangemaakt, het transcript (loep), de samenvatting van de geluidsopname (tekstbestand) en de concept e-mail met daarin het gesprek als samenvatting (envelop) bekijken. Door middel van het downloadicoon kan je het bestand downloaden. </p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/08/Opname-starten-gespreksopname.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/08/Opname-starten-gespreksopname.png" alt="" width="536" height="302" loading="lazy"></a></figure>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/08/Icoontjes-gespreksopname.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/08/Icoontjes-gespreksopname.png" alt="" width="282" height="166" loading="lazy"></a></figure>
+<p>Is de samenvatting nog niet aangemaakt dan staat het icoon er niet, maar kan je deze via het sterretjesicoon of door middel van het pijltje direct aanmaken. Maak je de samenvatting aan via het pijltje dan kan je extra input geven in welke vorm je de samenvatting wilt hebben. Ook is het mogelijk om via het pijltje andere acties uit te voeren, namelijk concept e-mail met daarin de samenvatting van het gesprek maken, samenvatting als registratie opslaan en taken aanmaken. <a href="../kennisbank/gespreksopname-omzetten-naar-acties/index.html">Hier</a> lees je meer over de verschillende opties. </p>
+<br>
+<h2 id="controle-geldigheid-werkgeversverklaring-en-loonstrook">Controle geldigheid werkgeversverklaring en loonstrook</h2>
+<p><strong>Let op</strong>: alleen beschikbaar in eBlinqx</p>
+<p>In <a href="../uitgaande-e-mail-versturen-via-office-365-export-naar-adviesbox-online-verbeterd-en-meer/index.html#2-controle-geldigheid-document-in-eblinqx">een vorige release</a> werd de controle geldigheid document in eBlinqx geïntroduceerd. Hieraan is nu ook de werkgeversverklaring en loonstrook toegevoegd. De volgende zaken worden gecontroleerd als de werkgeversverklaring aan het stuk wordt gekoppeld:</p>
+<ol><li>Met welke versie de werkgeversverklaring is gemaakt. Als dit een verouderde versie is dan verschijnt hiervan een melding.</li><li>Het aanwezig zijn van de handtekening. Als deze ontbreekt, verschijnt hiervan een melding</li><li>Of de werkgeversverklaring nog geldig is. Is dit niet het geval dan kunnen de volgende meldingen verschijnen: <ul><li>Deze werkgeversverklaring is niet langer geldig.</li><li>Deze werkgeversverklaring is binnenkort niet meer geldig.</li></ul></li></ol>
+<p>De controle van de werkgeversverklaring vindt ook in Uwkluis plaats.</p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/08/image-3.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/08/image-3.png" alt="" width="721" height="343" loading="lazy"></a></figure>
+<p>Wanneer de loonstrook wordt gekoppeld aan het stuk, wordt het volgende gecontroleerd:</p>
+<ol><li>Geboortedatum; staat onder de persoon die gekoppeld is aan het stuk (eerste persoon of partner) een geboortedatum opgevoerd dan wordt gecontroleerd of deze overeenkomt met de geboortedatum op de loonstrook. Zo niet dan wordt er een melding getoond dat het lijkt of het aangeleverde document over een ander persoon gaat. Deze controle wordt vooralsnog alleen gedaan in eBlinqx, niet in Uwkluis. De verwachting is dat deze controle halverwege augustus ook in Uwkluis wordt gedaan.</li></ol>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/08/image-4.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/08/image-4.png" alt="" width="733" height="313" loading="lazy"></a></figure>
+<p>De meldingen van de werkgeversverklaring en loonstrook worden getoond in de stukkenlijst, het scherm van het stuk beoordelen en bewerken. In <a href="../kennisbank/stukkenlijst/index.html#5-controle-geldigheid-document">Soort Documenten Beheer</a> geef je aan welke documenten je automatisch wilt laten controleren. Vooralsnog werkt de functionaliteit alleen voor het identiteitsbewijs, de werkgeversverklaring en de loonstrook. Met de release zijn onder deze documenten de vinkjes automatisch aangezet. </p>
+<br>
+Elements en eBlinqx
+<hr>
+<h2 id="zoeken-op-dossiers-veranderd">Zoeken op dossiers veranderd</h2>
+<p>Vanaf nu staat in het zoekfilter op het dashboard het veld ‘Status’ standaard op ‘Nieuw en Lopend’. Dit komt de performance ten goede, omdat alleen gezocht wordt naar dossiers die <a href="../kennisbank/dossiersysteemstatus-indelen/index.html#1-de-dossiersysteemstatussen">de dossiersysteemstatus</a> ‘Nieuw’ of ‘Lopend’ hebben. Door middel van een setting is het mogelijk om ‘Alle’ als standaard in te stellen, dan wordt er binnen alle dossiersysteemstatussen gezocht. Is dit gewenst? Stuur dan een e-mail naar support-eblinqx@blinqx.tech. </p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/07/image-3.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/07/image-3.png" alt="" width="1172" height="258" loading="lazy"></a></figure>
+<br>
+<h2 id="filteren-op-posten-dubbele-prolongatie">Filteren op posten dubbele prolongatie</h2>
+<p>Vanaf nu kan je in de ADN batch filteren op de posten waarbij spraken is van een dubbele prolongatie. Deze posten zijn herkenbaar aan <a href="../kennisbank/adn-batch-verwerken-met-mutatievoorstellen/index.html#10-boeking">de rode pijltjes</a>. Bij deze posten kan er ook sprake zijn mismatching wat je kunt controleren onder het tabblad Matches in de ADN module. Het filteren onder dit tabblad is verbeterd wat het zoeken vergemakkelijkt. </p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/08/image-1.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/08/image-1.png" alt="" width="698" height="654" loading="lazy"></a></figure>
+<br>
+<h2 id="verbeteringen-tp-incasso-factuur">Verbeteringen TP incasso factuur</h2>
+<p>Vanaf nu wordt er voor de inhoud van de TP incasso factuur, naast de productkaart, ook gekeken naar het mutatievoorstel dat gemaakt is bij het aanmaken van de boekingsregel mits er geen conflict is of het mutatievoorstel is afgekeurd. Op deze manier wordt de actuele informatie van die periode getoond op de factuur. Daarnaast kan je aangeven of je op de factuur zowel de bruto- als nettopremie wilt tonen of alleen de nettopremie. Dit kan je aangeven in Administratie onderhoud. Ten slotte wordt assurantiebelasting niet meer getoond op de factuur als deze 0 euro is. </p>
+<br>
+<h2 id="assurantiebelasting-bij-eenmalige-boeking-verbeterd">Assurantiebelasting bij eenmalige boeking verbeterd</h2>
+<p>Bij het maken van een eenmalige boeking (TP incasso) wordt nu juist bepaald of de polis assurantiebelastingplichtig is. Voorheen werd hier altijd assurantiebelasting op berekend. <a href="../kennisbank/assurantiebelasting-tp-incasso/index.html">Hier</a> vind je meer informatie wanneer er wel of geen assurantiebelasting wordt berekend.</p>
+<br>
+<h2 id="verbeteringen-rappeltaak-mutatievoorstel">Verbeteringen rappeltaak mutatievoorstel</h2>
+<h3 id="naam-en-inhoud-taak-verduidelijkt">Naam en inhoud taak verduidelijkt</h3>
+<p>De naam en de inhoud van de taak zijn veranderd, waardoor het nu duidelijker is om welke mutatie het gaat. </p>
+<h3 id="startdatum-rappeltaak-nieuwe-polis">Startdatum rappeltaak nieuwe polis</h3>
+<p>Bij het aanmaken van een nieuwe polis krijgt de rappeltaak als startdatum de ingangsdatum van de polis. Verander je tijdens het aanmaken van de nieuwe polis de ingangsdatum (deze staat onder het blok Looptijd) dan verandert de datum van de rappeldatum mee. De taak wordt direct na het opslaan van de nieuwe polis aangemaakt. Wijzig je naderhand, na het aanmaken, de ingangsdatum van het polisonderdeel dan reageert de rappeltaak hier niet meer op.</p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/08/Rappeldatum-in-polisonderdeel.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/08/Rappeldatum-in-polisonderdeel.png" alt="" width="664" height="436" loading="lazy"></a></figure>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/08/Ingangsdatum-in-polisonderdeel.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/08/Ingangsdatum-in-polisonderdeel.png" alt="" width="593" height="268" loading="lazy"></a></figure>
+<h3 id="rappeltaak-wordt-direct-aangemaakt">Rappeltaak wordt direct aangemaakt</h3>
+<p>De rappeltaak wordt in alle gevallen nu direct aangemaakt ongeacht je volgens de setting maatschappijvolgend of controlerend werkt. Voorheen werd bij de setting maatschappij controlerend de taak pas aangemaakt op de dag van de rappeldatum mits het voorstel niet is afgehandeld.</p>
+<br>
+<h2 id="niet-afgeronde-betalingsbestanden-verduidelijkt">Niet afgeronde betalingsbestanden verduidelijkt</h2>
+<p>In de module ‘Incasso- en excassobestanden maken’ wordt nu visueel duidelijk weergegeven als het niet gelukt is om het betalingsbestand volledig te verwerken en af te ronden. Onder het tabblad ‘Aangemaakte bestanden’ is het euroteken van niet verwerkte bestanden grijs. Als je het bestand opent, zie je in de tabel of deze wel of niet is afgerond. Zo kan je gemakkelijk zien welk bestand niet volledig is verwerkt als je <a href="../kennisbank/hoe-maak-en-incasso-batch/index.html#9-melding-op-dit-moment-al-een-betalingsbestand-verwerkt">de melding</a> krijgt dat het niet mogelijk is om een betalingsbestand aan te maken.</p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/08/Betalingsbestand-afgerond-deel-2.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/08/Betalingsbestand-afgerond-deel-2.png" alt="" width="285" height="136" loading="lazy"></a></figure>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/08/Betalingsbestand-afgerond-deel-1.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/08/Betalingsbestand-afgerond-deel-1.png" alt="" width="752" height="378" loading="lazy"></a></figure>
+<br>
+<h2 id="oude-pensioenkaarten-overzetten-naar-nieuwe-pensioenkaart">Oude pensioenkaarten overzetten naar nieuwe pensioenkaart</h2>
+<p>In <a href="../vernieuwde-pensioenkaart/index.html#1-vernieuwde-pensioenkaart">de release van juni</a> hebben we <a href="../kennisbank/pensioen-opvoeren/index.html">de nieuwe pensioenkaart</a> geïntroduceerd. Vanaf nu is het mogelijk om de bestaande producten met de oude pensioenkaart om te zetten naar de nieuwe productkaart. Dit kan via actieknop ‘Converteer naar nieuwe pensioenkaart’. Er verschijnt een dropdownmenu waarin je kan aangeven naar welk type pensioen het product omgezet moet worden. De velden worden overgenomen als deze eenduidig zijn. Het kan zijn dat je handmatig nog velden moet aanvullen. Alle communicatie en documentatie blijft onder het product staan. De data uit de oude pensioenkaart die niet overgezet kon worden naar de nieuwe pensioenkaart wordt opgeslagen als registratie. </p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/08/image-2.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2025/08/image-2.png" alt="" width="643" height="359" loading="lazy"></a></figure>
+<p>De volgende oude pensioenkaarten kan je niet converteren, er verschijnt dan een melding:</p>
+<ul><li>Een product met meerdere delen van type individueel</li><li>Een product met meerdere delen van type collectief/semi collectief en dan willen omzetten naar individueel/ collectief werknemer</li></ul>
+<br>
+<h2 id="overige-verbeterpunten">Overige verbeterpunten</h2>
+<ul><li>Er zijn technische aanpassingen gedaan waardoor ADN batches sneller worden verwerkt</li><li>Het is mogelijk om een betalingsoverzicht vanuit de workflow aan te maken. In deze actie is het nu mogelijk om de template Betalingsoverzicht te selecteren en je kunt aangeven dat je alleen de facturen met betaalwijze automatische incasso wilt opnemen in het betalingsoverzicht</li><li>Lloyds bank werkt nu ook met <a href="../kennisbank/ia-ix-berichten/index.html">IA/IX berichten</a> waarmee je de hypotheekdata kunt actualiseren</li><li>Het is nu mogelijk om voor de koppeling Finly een ander API Domain in te vullen, waardoor het mogelijk is om bijvoorbeeld eerst een testomgeving in te stellen. Voorheen stond dit hard geprogrammeerd</li><li>Vanaf nu is het mogelijk om in het overzicht openstaande posten te filteren op boekjaar en periode. Voorheen was het alleen mogelijk om te zoeken op boekdatum</li><li>Wij hebben diverse verbeteringen voor onze interne conversietool doorgevoerd. Hierdoor wordt de doorstroom van de conversies verbeterd</li><li>In <a href="../klantrelaties-volledig-in-beeld-en-nieuwe-beheerdersmelding/index.html#7-eigen-risico-boeking-koppelen-aan-schademelding">de vorige release</a> is het mogelijk gemaakt om de eigen risico boeking aan een schademelding te koppelen. In eerste instantie werden hier alleen lopende schadeverzekeringen getoond, nu zijn dit alle schademeldingen ongeacht de status </li><li>Vanaf nu zijn de nieuwe tags algemeen-&gt;vandaag, algemeen-&gt;vandaag|eerstedag en algemeen-&gt;vandaag|eerstewerkdag beschikbaar</li><li>Op diverse documenten vinden er controles plaats in zowel Uwkluis als eBlinqx en er kan dan een melding verschijnen. De meldingen in Uwkluis zijn vanaf nu gericht op de consument en de meldingen in eBlinqx zijn gericht op de adviseur</li></ul></div>
+      
+      <details class="orig"><summary>Schermafbeelding van de oorspronkelijke pagina</summary><img src="../bronnen/offline-archief/shots/gespreksopname-omzetten-in-acties-verbeteringen-tp-incasso-en-meer.jpg" alt="Schermafbeelding van Gespreksopname omzetten in acties, verbeteringen TP incasso en meer" loading="lazy"></details>
+      <p class="src">Bron: <a href="https://web.archive.org/web/20260608022029/https://support.fasterforward.nl/gespreksopname-omzetten-in-acties-verbeteringen-tp-incasso-en-meer/" target="_blank" rel="noopener">Wayback Machine-archief</a></p>
+    </article>
+    <aside class="related"><h2>Gerelateerd:</h2><ul><li><a href="../verbeterde-verwerking-van-grote-e-mailvolumes-via-office-365-en-voorbereiding-hdn/index.html">Verbeterde verwerking van grote e-mailvolumes via Office 365 en voorbereiding HDN</a></li><li><a href="../nu-zelf-schade-en-levensverzekeringen-omnummeren/index.html">Nu zelf schade- en levensverzekeringen omnummeren</a></li><li><a href="../verbeteringen-onder-de-motorkap-en-type-documenten-gecontroleerd/index.html">Verbeteringen onder de motorkap en type documenten gecontroleerd</a></li><li><a href="../klantrelaties-volledig-in-beeld-en-nieuwe-beheerdersmelding/index.html">Klantrelaties volledig in beeld en nieuwe beheerdersmelding</a></li><li><a href="../vernieuwde-pensioenkaart/index.html">Vernieuwde pensioenkaart</a></li><li><a href="../elements-en-eblinqx-voorbereid-op-hdn25-release/index.html">Elements en eBlinqx voorbereid op HDN25 release</a></li></ul></aside>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span>Copyright © 2024 Blinqx powered by Faster Forward</span>
+    <nav aria-label="Beleid">
+      <a href="../supportbeleid/index.html">Supportbeleid</a>
+      <a href="../opdrachtenbeleid/index.html">Opdrachtenbeleid</a>
+      <a href="../klachtenbeleid/index.html">Klachtenbeleid</a>
+      <a href="../wensenbeleid/index.html">Wensenbeleid</a>
+      <a href="../video/index.html">Video's &amp; e-learning</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

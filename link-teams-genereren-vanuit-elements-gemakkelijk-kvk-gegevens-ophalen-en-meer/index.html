@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Link Teams genereren vanuit Elements, gemakkelijk KvK gegevens ophalen en meer - Blinqx Support</title>
+<meta name="description" content="Op dinsdag 17 oktober is Elements weer verbeterd en uitgebreid met nieuwe features! Deze release bevat uitbreidingen en optimalisaties voor advieskantoren">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.png">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
+    <symbol id="i-mail-o" viewBox="0 0 24 24"><path d="M2 5h20v14H2zm2 2v.4l8 5.6 8-5.6V7zm16 2.8-8 5.6-8-5.6V17h16z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><path d="M10 2a8 8 0 0 1 6.32 12.9l5.4 5.4-1.42 1.42-5.4-5.4A8 8 0 1 1 10 2zm0 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 64 64"><circle cx="7" cy="12" r="6"/><circle cx="7" cy="32" r="6"/><circle cx="7" cy="52" r="6"/><rect x="18" y="7" width="44" height="10" rx="2"/><rect x="18" y="27" width="44" height="10" rx="2"/><rect x="18" y="47" width="44" height="10" rx="2"/></symbol>
+    <symbol id="i-home" viewBox="0 0 64 64"><path d="M32 6 2 32l4 5 4-3.4V58h18V42h8v16h18V33.6l4 3.4 4-5-10-8.7V10h-8v7.4z"/></symbol>
+    <symbol id="i-car" viewBox="0 0 64 64"><path d="M16 10h32a6 6 0 0 1 5.7 4.1L58 27a7 7 0 0 1 4 6.3V48a3 3 0 0 1-3 3h-3v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H20v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H5a3 3 0 0 1-3-3V33.3A7 7 0 0 1 6 27l4.3-12.9A6 6 0 0 1 16 10zm1.5 7-3.3 10h35.6l-3.3-10zM13 34a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm38 0a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 64 64"><path d="M4 12a4 4 0 0 1 4-4h16l6 6h22a4 4 0 0 1 4 4v6H18a6 6 0 0 0-5.6 3.9L4 50z"/><path d="M18 28h44l-10 26H6z"/></symbol>
+    <symbol id="i-desktop" viewBox="0 0 64 64"><path d="M2 6h60v40H38v6h8v6H18v-6h8v-6H2zm6 6v28h48V12z"/></symbol>
+    <symbol id="i-comments" viewBox="0 0 64 64"><path d="M26 4c13.8 0 24 8.6 24 19s-10.2 19-24 19c-2.6 0-5-.3-7.3-.8C14.6 44 9.6 46 3 46c3-3 4.8-6.2 5.3-9.6C4.4 33 2 28.2 2 23 2 12.6 12.2 4 26 4z"/><path d="M54 24.5c5 3.4 8 8.3 8 13.5 0 4.2-1.8 8-4.8 11 .4 3.6 2 6.8 4.8 9.5-6 0-10.6-1.8-14.3-4.4-2.1.5-4.4.7-6.7.7-7 0-13.1-2.4-17-6.2 14.3-.4 30-8.8 30-24.1z"/></symbol>
+    <symbol id="i-envelope" viewBox="0 0 64 64"><path d="M4 12h56a2 2 0 0 1 2 2v3L32 37 2 17v-3a2 2 0 0 1 2-2z"/><path d="M2 23.5 32 43.5l30-20V50a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-euro" viewBox="0 0 64 64"><path d="M42 6c5 0 9.5 1.2 13 3.2l-2.6 8.2A19 19 0 0 0 42 14.5c-7.4 0-12.7 4.6-14.6 11.5H46l-2 7H26.3l-.05 2 .05 2H42l-2 7H27.4c1.9 7 7.2 11.5 14.6 11.5 4 0 7.6-1 10.4-2.9L55 61c-3.6 2-8 3-13 3-12.7 0-22.2-8-24.4-20H10l2-7h5.06L17 35l.06-2H10l2-7h5.6C19.8 14 29.3 6 42 6z"/></symbol>
+    <symbol id="i-file" viewBox="0 0 64 64"><path d="M10 2h28v18h18v38a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm32 0 14 14H42zM16 30v6h32v-6zm0 10v6h32v-6zm0 10v6h32v-6z"/></symbol>
+    <symbol id="i-rss" viewBox="0 0 64 64"><circle cx="11" cy="53" r="8"/><path d="M3 23a38 38 0 0 1 38 38H31A28 28 0 0 0 3 33z"/><path d="M3 3a58 58 0 0 1 58 58H51A48 48 0 0 0 3 13z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="rgba(0,0,0,.65)"/><path d="M26 20v24l20-12z" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="item"><svg class="ic"><use href="#i-phone"/></svg><a class="tel" href="tel:+31850180069">085 018 00 69</a></span>
+    <span class="sep" aria-hidden="true"></span>
+    <span class="item"><svg class="ic"><use href="#i-mail-o"/></svg><a class="mail" href="mailto:support-eblinqx@blinqx.tech">support-eblinqx@blinqx.tech</a></span>
+    <a class="li" href="https://www.linkedin.com/company/blinqx/" target="_blank" rel="noopener" aria-label="Blinqx op LinkedIn">in</a>
+  </div>
+</div>
+<header class="site">
+  <div class="wrap">
+    <div class="head-row">
+      <a class="brand" href="../index.html" aria-label="Blinqx support — home">
+        <img src="../assets/logo-mark.png" alt="Blinqx" width="470" height="119">
+        <span>powered by Faster Forward</span>
+      </a>
+      <nav class="main" aria-label="Hoofdmenu"><ul><li><a href="../index.html">Home</a></li><li><a href="../nieuws/index.html">Nieuws</a></li><li><a href="../tips/index.html">Tips</a></li><li><a href="../releasenotes/index.html" aria-current="page">Release notes</a></li><li><a href="../trainingen/index.html">Trainingen</a></li><li><a href="../contact/index.html">Contact support</a></li></ul></nav>
+    </div>
+    <div class="search-row">
+      <form class="search" action="../zoeken/index.html" method="get" role="search">
+        <label class="field">
+          <svg class="ic"><use href="#i-search"/></svg>
+          <input type="search" name="q" placeholder="Zoek hier op onderwerp" aria-label="Zoek op onderwerp">
+        </label>
+        <button type="submit">Zoeken</button>
+      </form>
+      <div class="status">Mogelijke incidenten en de systeemstatus vind je op onze <a href="#" title="URL statuspagina nog invullen">statuspagina</a>.</div>
+    </div>
+  </div>
+</header>
+<div class="hero" style="background-image:url('https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2020/12/release-header.jpg')"><div class="wrap"><h1>Link Teams genereren vanuit Elements, gemakkelijk KvK gegevens ophalen en meer</h1></div></div>
+<main class="article">
+  <div class="wrap cols">
+    <article>
+      
+      <p class="meta">Geplaatst op 13 oktober 2023 · Laatste update: 17 oktober 2023</p>
+      <div class="content"><figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/10/release-wp-okt23.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/10/release-wp-okt23.png" alt="" width="795" height="500" loading="lazy"></a></figure>
+<p><strong>Op dinsdag 17 oktober is Elements weer verbeterd en uitgebreid met nieuwe features! Deze release bevat uitbreidingen en optimalisaties voor advieskantoren</strong>.</p><nav class="toc" aria-label="Inhoud"><ul><li><a href="#uitnodigingen-verzenden-verbeterd">Uitnodigingen verzenden verbeterd</a></li><li><a href="#link-voor-teams-genereren-vanuit-elements">Link voor Teams genereren vanuit Elements</a></li><li><a href="#bericht-met-bijlage-ontvangen-vanuit-uwkluis">Bericht met bijlage ontvangen vanuit Uwkluis</a></li><li><a href="#bijlagen-verwijderen-uit-de-e-mail">Bijlagen verwijderen uit de e-mail</a></li><li><a href="#kvk-gegevens-organisatie-gemakkelijk-op-te-halen">KvK-gegevens organisatie gemakkelijk op te halen</a></li><li><a href="#overdrachtsformulieren-en-gespreksverslagen-wijzigen">Overdrachtsformulieren en gespreksverslagen wijzigen</a></li><li><a href="#pdf-bewerken-gebruiksvriendelijker-gemaakt">PDF bewerken gebruiksvriendelijker gemaakt</a></li><li><a href="#omzet-splitsen-op-zakelijke-en-particuliere-rekening">Omzet splitsen op zakelijke en particuliere rekening</a></li><li><a href="#eenvoudig-afletteren-ongedaan-maken">Eenvoudig afletteren ongedaan maken</a></li><li><a href="#verzekeringen-vergelijken-in-mytp">Verzekeringen vergelijken in MyTP</a></li><li><a href="#gemakkelijk-doorklikken-naar-polis-in-adn-batch">Gemakkelijk doorklikken naar polis in ADN batch</a></li><li><a href="#gegevens-sorteren-in-de-aplaza-inbox">Gegevens sorteren in de Aplaza-inbox</a></li><li><a href="#filteren-op-aanstellingsnummer">Filteren op aanstellingsnummer</a></li><li><a href="#sneller-hypotheeknummer-in-dossier">Sneller hypotheeknummer in dossier</a></li><li><a href="#melding-informatieberichten-ix-nog-te-verwerken">Melding informatieberichten (IX) nog te verwerken</a></li></ul></nav>
+Algemeen
+<hr>
+<h2 id="uitnodigingen-verzenden-verbeterd">Uitnodigingen verzenden verbeterd</h2>
+<p>Het verzenden van uitnodigingen vanuit Elements is technisch, onder de motorkap, verbeterd. Zo voldoet het systeem aan de laatste standaarden. Ook biedt het de mogelijkheid om in de toekomst het verzenden van uitnodigingen functioneel te verbeteren en de functionaliteiten uit te breiden. </p>
+<p>Voorheen kon het gebeuren, wanneer je de office365 kalender synchronisatie aan had staan, dat je een afspraak dubbel in de agenda kreeg. Dat gebeurt nu niet langer, afspraken die je nog niet hebt geaccepteerd verschijnen namelijk niet in je kalender in Elements.</p>
+<br>
+<h2 id="link-voor-teams-genereren-vanuit-elements">Link voor Teams genereren vanuit Elements</h2>
+<p>Vanaf nu genereer je gemakkelijk bij het maken van een afspraak in Elements een link voor Teams. Dit door ‘Teams link genereren’ aan te vinken. Dit is mogelijk als de synchronisatie met jouw Office365 agenda staat ingesteld. De link komt te staan in het veld ‘Omschrijving’ en in het veld ‘Locatie’. De link kan je kopiëren en plakken in de e-mail die je vanuit de afspraak verzendt naar de genodigden. Ook is de link op te halen door middel van de tag [taak-&gt;locatie]. Na het verzenden van de e-mail kan je, bij een online afspraak, niet meer de verantwoordelijke van de taak te wijzigen.</p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/10/Teamslink-genereren.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/10/Teamslink-genereren.png" alt="" width="1186" height="579" loading="lazy"></a></figure>
+<br>
+<h2 id="bericht-met-bijlage-ontvangen-vanuit-uwkluis">Bericht met bijlage ontvangen vanuit Uwkluis</h2>
+<p>Vanuit Uwkluis kan de eindconsument een bericht versturen naar de adviseur. Het is nu ook mogelijk om met dit bericht een bijlage mee te sturen. Dit document komt in het klantdossier onder het tabblad Documenten te staan. Daarnaast wordt er een taak aangemaakt waarin aangegeven wordt dat er een bericht en een bestand ontvangen is vanuit Uwkluis.</p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/10/Bericht-en-bijlage-versturen-Uwkluis.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/10/Bericht-en-bijlage-versturen-Uwkluis.png" alt="" width="622" height="711" loading="lazy"></a></figure>
+<br>
+<h2 id="bijlagen-verwijderen-uit-de-e-mail">Bijlagen verwijderen uit de e-mail</h2>
+<p>Je kunt nu bijlagen in de e-mail verwijderen. Zo zorg je ervoor dat de bijlage niet meer zichtbaar is of dat je deze kunt downloaden vanuit de e-mail. Op deze manier kan je niet alsnog verwijderde documenten uit het dossier ophalen via de oorspronkelijke e-mail. Middels het prullenbakicoon achter de bijlage is het mogelijk om de bijlage te verwijderen. Als een bijlage is verwijderd, wordt in de e-mail zichtbaar dat deze oorspronkelijk meer bijlagen bevatte. </p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/10/bijlagen-verwijderen-e-mail.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/10/bijlagen-verwijderen-e-mail.png" alt="" width="690" height="205" loading="lazy"></a></figure>
+<br>
+<h2 id="kvk-gegevens-organisatie-gemakkelijk-op-te-halen">KvK-gegevens organisatie gemakkelijk op te halen</h2>
+<p>Met één druk op de knop haal je gemakkelijk de <a href="../kennisbank/gegevens-bij-kvk-ophalen/index.html">KvK-gegevens</a> op van een organisatie en indien gewenst ook direct een KvK-uittreksel in PDF formaat. Deze functionaliteit is tot stand gekomen in samenwerking met zkr. Aan de hand van het KvKnummer worden diverse gegevens van de organisatie, zoals naam, handelsnaam en adres automatisch gevuld. Dit kan je toepassen bij het aanmaken van een dossier en bij het wijzigen van de organisatie binnen het dossier of binnen Beheer – Organisatie &amp; Personen. Wanneer je naast het ophalen van de gegevens ook het uittreksel opvraagt dan komt deze in het dossier onder het tabblad Documenten te staan. Het is in te stellen wie binnen jouw organisatie via deze knop de informatie mag ophalen. Als er gegevens via deze knop zijn opgehaald dan komt dit te staan in de dossierhistorie. </p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/10/Gegevens-ophalen-KvK.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/10/Gegevens-ophalen-KvK.png" alt="" width="940" height="558" loading="lazy"></a></figure>
+<p>Wil je hiervan gebruik maken? Neem dan <a href="https://zkr.nl/contact/" target="_blank" rel="noopener">contact</a> op met zkr. Zij nemen vervolgens met ons contact op om het verder in te richten. <strong>Let op:</strong> er zitten kosten verbonden aan het ophalen van de gegevens. Deze kosten worden in rekening gebracht door zkr. Wil je hier meer informatie over, neem dan contact op met zkr. </p>
+<br>
+<h2 id="overdrachtsformulieren-en-gespreksverslagen-wijzigen">Overdrachtsformulieren en gespreksverslagen wijzigen</h2>
+<p>Registraties die aangemaakt worden vanuit de workflow kunnen vanaf nu, mits dit staat ingesteld in de workflow, handmatig gewijzigd worden. Op deze manier kunnen bijvoorbeeld overdrachtsformulieren of gespreksverslagen achteraf gecorrigeerd of aangevuld worden. </p>
+<p>Wil je dat dit in jouw omgeving bij een workflow wordt ingesteld? Stuur dan een e-mail naar support@fasterforward.nl met daarin welke workflow en welke stap/registratie in die workflow het betreft. Stuur hierbij ook een voorbeelddossier mee, waarin de betreffende registratie is aangemaakt.</p>
+<br>
+<h2 id="pdf-bewerken-gebruiksvriendelijker-gemaakt">PDF bewerken gebruiksvriendelijker gemaakt</h2>
+<p>In <a href="../kennisbank/pdf-bestand-bewerken/index.html">de PDF-bewerker</a> hoef je nu niet meer iedere keer de selectietool, bijvoorbeeld gebiedsredactie, opnieuw selecteren. Wanneer je de selectietool hebt geselecteerd kan je meerdere acties achter elkaar uitvoeren. Je blijft de selectietool gebruiken tot het moment dat je in het menu iets anders aanklikt of het document opslaat.</p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/10/image-2.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/10/image-2.png" alt="" width="661" height="225" loading="lazy"></a></figure>
+<br>
+<h2 id="omzet-splitsen-op-zakelijke-en-particuliere-rekening">Omzet splitsen op zakelijke en particuliere rekening</h2>
+<p>Vanaf nu is het mogelijk om een keuze te maken op welke rekening de omzet van TP incassoboekingen geboekt moet worden. Dit kan je per type product, leven of schade, aangeven. Voor schadeverzekeringen kan je ook een onderscheid maken tussen particulier en zakelijk. De omzetrekeningen stel je in via Administraties onderhoud – tabblad Algemeen – TP incasso instellingen. De nieuwe instellingen hebben wij gevuld met de oude instelling. Dit is de omzetrekening die stond bij TP incasso instellingen – Omzet. Jij kunt zelf, indien je de juiste rechten hebt, de rekeningen wijzigen naar de omzetrekening die gewenst is.</p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/09/Omzetrekeningen-provisie.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/09/Omzetrekeningen-provisie.png" alt="" width="1582" height="470" loading="lazy"></a></figure>
+<br>
+<h2 id="eenvoudig-afletteren-ongedaan-maken">Eenvoudig afletteren ongedaan maken</h2>
+<p>Op diverse plaatsen in Elements, bijvoorbeeld vanuit het boekstuk voor de factuur, grootboekrekeningen en openstaande posten, kan je via het vergrootglasicoon de saldoverklaring openen. In de saldoverklaring kan je zien of er al op- en afboekingen zijn geweest op de post. Vanaf nu kan je vanuit de saldoverklaring de afboeking ongedaan maken. Dit is mogelijk op een grootboekrekening met subadministratie en op de tussenrekening uit te betalen schades. Door te klikken op het koppelicoon achter de afgeboekte post maak je het afletteren ongedaan.</p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/10/Afletteren-ongedaan-maken.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/10/Afletteren-ongedaan-maken.png" alt="" width="1454" height="325" loading="lazy"></a></figure>
+<br>
+Verzekeringen
+<hr>
+<h2 id="verzekeringen-vergelijken-in-mytp">Verzekeringen vergelijken in MyTP</h2>
+<p>Vanaf nu start je gemakkelijk het vergelijken van verzekeringen in <a href="../kennisbank/mytp/index.html">MyTP</a> vanuit Elements. Je gaat hiervoor naar het tabblad Export – MyTP. Vervolgens klik je op ‘Open in MijnTP’. Je wordt doorgeleid naar MyTP. Vanuit daar kan je direct met de juiste klant en zijn gegevens starten met vergelijken. </p>
+<p>Wil je hiervan gebruik maken? Stuur dan een e-mail naar support@fasterforward.nl.</p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/10/Tabblad-Mytp-1.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/10/Tabblad-Mytp-1.png" alt="" width="915" height="136" loading="lazy"></a></figure>
+<br>
+<h2 id="gemakkelijk-doorklikken-naar-polis-in-adn-batch">Gemakkelijk doorklikken naar polis in ADN batch</h2>
+<p>Vanuit het dossier – product – tabblad AFD berichten kan je via ‘Toon batch’ direct naar de betreffende batch gaan. Er wordt nu bij ‘Toon batch’ aangegeven welke maatschappij en RC-periode het betreft. Ook wordt er direct gefilterd op het polisnummer vanuit waar je het hebt geklikt op ‘Toon batch’. Op deze manier wordt automatisch de polis getoond waar je naar op zoek bent. </p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/09/Toon-batch-maatschappij-en-RC-periode.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/09/Toon-batch-maatschappij-en-RC-periode.png" alt="" width="1887" height="351" loading="lazy"></a></figure>
+<br>
+<h2 id="gegevens-sorteren-in-de-aplaza-inbox">Gegevens sorteren in de Aplaza-inbox</h2>
+<p>In de Aplaza-inbox kan je nu klikken op de kolommen ‘Omschrijving’ en ‘Klantnaam’. Op deze manier kan de gegevens in de kolom sorteren, zodat bijvoorbeeld alle berichten van dezelfde klant onder elkaar komen te staan. </p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/10/Kolommen-aplaza-klikbaar.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/10/Kolommen-aplaza-klikbaar.png" alt="" width="1903" height="531" loading="lazy"></a></figure>
+<br>
+Hypotheken
+<hr>
+<h2 id="filteren-op-aanstellingsnummer">Filteren op aanstellingsnummer</h2>
+<p>Onder het tabblad Aanstellingen in Beheer – Organisatie &amp; Personen kan je nu gemakkelijk filteren op deelnemer of maatschappij. Op deze manier kan je onder jouw kantoor gemakkelijk opzoeken of het aanstellingsnummer onder de betreffende maatschappij staat opgevoerd en/of het aanstellingsnummer van de deelnemer onder de maatschappij staat opgevoerd.</p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/10/Filteren-aanstellingsnummer.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/10/Filteren-aanstellingsnummer.png" alt="" width="1438" height="677" loading="lazy"></a></figure>
+<br>
+<h2 id="sneller-hypotheeknummer-in-dossier">Sneller hypotheeknummer in dossier</h2>
+<p>We nemen vanaf nu eerder het hypotheeknummer van de hypotheek over in het klantdossier. Dit offertenummer wordt meegestuurd in de HDN berichten. Voorheen namen we dit nummer over wanneer het offertebericht (OX) binnenkwam of wanneer we het signaal kregen dat de lening in beheer was. Nu gaan we het nummer al overnemen in de productkaart, zodra er een statusbericht binnenkomt waarin dit nummer in het juiste veld als kenmerk staat vermeldt. </p>
+<br>
+<h2 id="melding-informatieberichten-ix-nog-te-verwerken">Melding informatieberichten (IX) nog te verwerken</h2>
+<p>Vanaf nu wordt je vanuit het dossier erop geattendeerd dat er in de HDN inbox nog niet verwerkte <a href="../kennisbank/ia-ix-berichten/index.html">informatieberichten (IX)</a> staan. Het kan gebeuren dat er een informatiebericht is binnengekomen en dat deze niet automatisch verwerkt kan worden. Deze dient dan nog aangevuld te worden. In de hypotheekkaart tonen we een melding dat er nog niet verwerkte IX-berichten in de HDN inbox staan en dat hierdoor de informatie in de productkaart niet actueel is. </p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/09/Melding-IX-bericht-in-HDN-inbox.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2023/09/Melding-IX-bericht-in-HDN-inbox.png" alt="" width="1271" height="151" loading="lazy"></a></figure>
+<br>
+Overige verbeteringen
+<ul><li>In de SMART historie in de SMART module zie je nu alleen de uitgevoerde selecties van jouw eigen kantoor</li><li>In sommige situaties, bijvoorbeeld bij de aanvraag verhuurhypotheek, werd er niet automatisch een conceptmail klaargezet bij akkoord hypotheek. Dit, omdat er via HDN geen OX-bericht wordt gestuurd. Nu wordt deze e-mail altijd klaargezet, ongeacht er een OX-bericht binnenkomt</li><li>Bij uitgaande HDN-berichten controleren we nu of het verzendernummer gelijk is aan het nummer van de ontvanger. Is dit het geval dan komt het bericht in HDN inbox – uitgaand mislukt te staan. Deze nummers mogen niet meer gelijk aan elkaar zijn</li><li>Verschillende nieuwe producten, zoals de producten van Neo Hypotheken en de Bespaarhypotheken van onder ander RegioBank, zijn aangeboden via de <a href="../kennisbank/maatschappij-en-producten-updates/index.html">updateknop</a></li><li>De rapportage CRM – Dossier met natuurlijke personen is uitgebreid met de kolommen ‘Kenmerken eerste persoon’ en ‘Kenmerken tweede persoon’ </li><li>Wanneer je in de On Route app de tijd van een afspraak wijzigde, werd deze tijd niet direct zichtbaar aangepast in Elements. Dit is gecorrigeerd, waardoor de aangepaste tijd ook direct in Element wordt getoond</li><li>Via de productkaart is het mogelijk om het document wat als <a href="../kennisbank/polisblad-als-contract-aanmerken/index.html">contract</a> is aangemerkt te bekijken. Voorheen werd deze gedownload. Wanneer het een PDF-bestand betreft wordt deze vanaf nu getoond in een viewer</li><li>De provisieboeking die wordt aangemaakt via het tabblad Boekingen in een dossier wordt nu ook aangemerkt als provisie in het RC maatschappijen overzicht</li><li>Onder Mijn instellingen is het niet meer mogelijk om een afbeelding te uploaden. Een foto uploaden, bijvoorbeeld voor Uwkluis, kan nog steeds in Beheer – Organisatie &amp; Personen</li></ul></div>
+      
+      <details class="orig"><summary>Schermafbeelding van de oorspronkelijke pagina</summary><img src="../bronnen/offline-archief/shots/link-teams-genereren-vanuit-elements-gemakkelijk-kvk-gegevens-ophalen-en-meer.jpg" alt="Schermafbeelding van Link Teams genereren vanuit Elements, gemakkelijk KvK gegevens ophalen en meer" loading="lazy"></details>
+      <p class="src">Bron: <a href="https://web.archive.org/web/20260510013835/https://support.fasterforward.nl/link-teams-genereren-vanuit-elements-gemakkelijk-kvk-gegevens-ophalen-en-meer/" target="_blank" rel="noopener">Wayback Machine-archief</a></p>
+    </article>
+    <aside class="related"><h2>Gerelateerd:</h2><ul><li><a href="../extra-partijen-toevoegen-in-dossier-verbeteringen-verzekeringen-en-meer/index.html">Extra partijen toevoegen in dossier, verbeteringen verzekeringen en meer</a></li><li><a href="../automatisch-aplaza-berichten-verwijderen-aanpassingen-volgens-de-hdn-standaard-en-meer/index.html">Automatisch Aplaza berichten verwijderen, HDN 23.1 update en meer</a></li><li><a href="../gemakkelijk-formulieren-toesturen-actuele-hypotheekgegevens-opvragen-bij-abn-amro-boekjaar-en-factuurnummers-2024-aangemaakt/index.html">Gemakkelijk formulieren toesturen, actuele hypotheekgegevens opvragen bij ABN AMRO, boekjaar en factuurnummers 2024 aangemaakt</a></li><li><a href="../nieuwe-features-voor-uwkluis-verzekeringen-en-meer/index.html">Nieuwe features voor Uwkluis, verzekeringen en meer</a></li><li><a href="../augustus-2023/index.html">Klantportaal voor bedrijven, On Route uitgebreid en meer</a></li><li><a href="../20-nieuwe-features/index.html">20 nieuwe features voor afgekeurde stukken, ADN, Uwkluis en meer</a></li></ul></aside>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span>Copyright © 2024 Blinqx powered by Faster Forward</span>
+    <nav aria-label="Beleid">
+      <a href="../supportbeleid/index.html">Supportbeleid</a>
+      <a href="../opdrachtenbeleid/index.html">Opdrachtenbeleid</a>
+      <a href="../klachtenbeleid/index.html">Klachtenbeleid</a>
+      <a href="../wensenbeleid/index.html">Wensenbeleid</a>
+      <a href="../video/index.html">Video's &amp; e-learning</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
