@@ -21,6 +21,8 @@ const crypto = require('crypto');
 
 const INLOG = process.env.EBLINQX_URL || 'https://demo-omgeving.vh.eblinqx.tech/?data=rvmKMOm%2FhSfLionl2R19QBhSSmI1vSfPeKGR%2FpXSIYYMA%2FigHw%3D%3D';
 const BASIS = new URL(INLOG).origin;
+// demodossier van klant Jeroen Oversteegen: startpunt voor de schermafbeeldingen ('scherm dossier <uitvoer.png>')
+const DOSSIER = process.env.EBLINQX_DOSSIER || 'https://demo-omgeving.vh.eblinqx.tech/?data=xfSR%2F%2Fc4He1J5SsRa0hhFRhSSmI1vSfSZ%2Brb%2FYnGIY1QS%2BSmE2cvpnRDsH74Aa%2FEODnvd9C3nv8mlJ4LH7jY59ARm6NYYoATkqrr';
 const KLANTNAAM = process.env.EBLINQX_KLANTNAAM || 'Jeroen Oversteegen';
 const DEMONAAM = process.env.EBLINQX_DEMONAAM || '';
 const SESSIE = path.join(__dirname, '.eblinqx-sessie.json');
@@ -67,6 +69,7 @@ async function scherm(pad, uit, markeer) {
   const b = await chromium.launch();
   const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, locale: 'nl-NL', storageState: SESSIE });
   const p = await ctx.newPage();
+  if (pad === 'dossier') pad = DOSSIER;
   await p.goto(pad.startsWith('http') ? pad : BASIS + '/' + pad.replace(/^\//, ''), { waitUntil: 'networkidle' });
   if (await p.$('#frmTxtPassword')) throw new Error('Sessie verlopen: opnieuw inloggen.');
   if (DEMONAAM) {
