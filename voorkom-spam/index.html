@@ -81,30 +81,32 @@
       <h1>Voorkom dat je e-mail niet aankomt</h1>
       <p class="meta">Geplaatst op 11 juli 2022</p>
       
-      <div class="content"><p>Niets is vervelender dan dat een klant een e-mail over het hoofd ziet omdat deze in de ongewenste inbox staat. Het is daarom essentieel dat je DKIM, SPF &amp; DMARC correct staan ingesteld in Elements.</p><nav class="toc" aria-label="Inhoud"><ul><li><a href="#dkim-instellen">DKIM instellen</a></li><li><a href="#dkim-instellen-2">DKIM instellen</a></li><li><a href="#spf-en-dmarc-instellen">SPF en DMARC instellen</a></li><li><a href="#controle-of-correct-is-ingesteld">Controle of correct is ingesteld</a></li><li><a href="#wat-zijn-dmarc-en-spf">Wat zijn DMARC en SPF?</a></li><li><a href="#wat-is-dmarc">Wat is DMARC?</a></li><li><a href="#wat-is-spf">Wat is SPF?</a></li></ul></nav>
+      <div class="content"><figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2022/06/Spam-WP.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2022/06/Spam-WP.png" alt="" width="795" height="500" loading="lazy"></a></figure>
+<p>Niets is vervelender dan dat een klant een e-mail over het hoofd ziet omdat deze in de ongewenste inbox staat. Het is daarom essentieel dat je DKIM, SPF &amp; DMARC correct staan ingesteld in Elements.</p><nav class="toc" aria-label="Inhoud"><ul><li><a href="#dkim-instellen">DKIM instellen</a></li><li><a href="#spf-en-dmarc-instellen">SPF en DMARC instellen</a></li><li><a href="#wat-zijn-dmarc-en-spf">Wat zijn DMARC en SPF?</a></li></ul></nav>
 <p>Wanneer dit niet goed is ingesteld, kunnen e-mailboxen niet verifiëren of de e-mail daadwerkelijk van jou afkomstig is en verdwijnt deze (mogelijk) in de spam.</p>
 <p>Daarom is het essentieel dat je:</p>
-<p>Zelf je DKIM insteltJouw e-mailbeheerder de SPF en DMARC laat instellen</p>
-<p>💡 Het instellen van de DKIM, SPF en DMARC is een instelling voor de gehele mailserver, dus geldt hiermee gelijk voor alle e-mailadressen van jouw organisatie. Als dit correct is ingesteld, dan is het dus ingesteld voor alle gebruikers binnen jullie organisatie. De gebruikers hoeven dit dan niet meer individueel te doen.</p>
+<ol><li>Zelf je DKIM instelt</li><li>Jouw e-mailbeheerder de SPF en DMARC laat instellen</li></ol>
+<p>💡 Het instellen van de DKIM, SPF en DMARC is een instelling voor de gehele mailserver, dus geldt hiermee gelijk voor alle e-mailadressen van jouw organisatie. Als dit correct is ingesteld, dan is het dus ingesteld voor alle gebruikers binnen jullie organisatie. De gebruikers hoeven dit dan niet meer individueel te doen.</p>
 <h2 id="dkim-instellen">DKIM instellen</h2>
-<p>DKIM is een extra beveiliging voor het verifiëren van een e-mail. Met DKIM geef je aan dat de e-mail afkomstig is van jouw beveiligde domein.</p>
-<p>Volg de instructies om deze in te stellen.</p>
-<h2 id="dkim-instellen-2">DKIM instellen</h2>
+<p>DKIM is een extra beveiliging voor het verifiëren van een e-mail. Met DKIM geef je aan dat de e-mail afkomstig is van jouw beveiligde domein. </p>
+<p>Volg de instructies om deze in te stellen. </p>
+<a href="../kennisbank/dkim-instellen/index.html">DKIM instellen</a><br>
 <h2 id="spf-en-dmarc-instellen">SPF en DMARC instellen</h2>
 <p>De SPF &amp; DMARC moet jouw e-mailbeheerder zelf instellen in jouw DNS server. De DNS server is meestal de server van de partij die jouw internetverbinding verzorgt, zoals KPN of Ziggo.</p>
 <p>Stuur daarom onderstaand bericht door naar de beheerder van jouw e-mailadressen.</p>
-<p>Beste beheerder,Willen jullie de DMARC en SPF inrichten door de volgende records als TXT in de DNS te zetten?Voor DMARC:v=DMARC1;p=noneRichtlijn voor SPF:Dit is een richtlijn, mogelijk moet er meer informatie worden ingezet.Voorbeeld 1) v=spf1 a:mailout.fasterforward.nl ~allVoorbeeld 2) v=spf1 a mx a:mailout.fasterforward.nl include:_spf.hostdomein.nl ~allLet op: vervang hostdomein.nl door het correcte domein.Alvast bedankt!</p>
-<h2 id="controle-of-correct-is-ingesteld">Controle of correct is ingesteld</h2>
-<p>Nadat jouw beheerder de bovenstaande gegevens heeft ingevuld in de SPF en de DMARC in jouw DNS, controleer je in Elements of deze correct is ingesteld.</p>
-<p>Ga naar E-mailmanager &gt; Kies mailbox &gt; Tabblad Beveiliging &gt; Klik op “Check SPF/DMARC opnieuw”.</p>
+<p>Beste beheerder,<br>Willen jullie de <a href="https://web.archive.org/web/2026/https://support.fasterforward.nl/kennisbank/ip-adres-of-hostname-instellen/">DMARC</a> en <a href="https://web.archive.org/web/2026/https://support.fasterforward.nl/kennisbank/spfrecord/">SPF</a> inrichten door de volgende records als TXT in de DNS te zetten?<br><strong>Voor DMARC:</strong><br>v=DMARC1;p=none<br><strong>Richtlijn voor SPF:</strong><br>Dit is een richtlijn, mogelijk moet er meer informatie worden ingezet.<br><em>Voorbeeld 1) </em>v=spf1 a:mailout.fasterforward.nl ~all<br><em>Voorbeeld 2)</em> v=spf1 a mx a:mailout.fasterforward.nl include:_spf.hostdomein.nl ~all<br><em>Let op: vervang hostdomein.nl door het correcte domein.</em><br>Alvast bedankt!</p>
+<h3 id="controle-of-correct-is-ingesteld">Controle of correct is ingesteld</h3>
+<p>Nadat jouw beheerder de bovenstaande gegevens heeft ingevuld in de SPF en de DMARC in jouw DNS, controleer je in Elements of deze correct is ingesteld. </p>
+<p>Ga naar E-mailmanager &gt; Kies mailbox &gt; Tabblad Beveiliging &gt; Klik op “Check SPF/DMARC opnieuw”. </p>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2022/06/spf-check.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2022/06/spf-check.png" alt="" width="572" height="240" loading="lazy"></a></figure>
 <h2 id="wat-zijn-dmarc-en-spf">Wat zijn DMARC en SPF?</h2>
-<h2 id="wat-is-dmarc">Wat is DMARC?</h2>
+<h3 id="wat-is-dmarc">Wat is DMARC?</h3>
 <p>Dankzij DMARC bescherm je ook direct je domein zodat anderen niet ongeoorloofd gebruik hiervan kunnen maken.</p>
-<p>Lees hier meer informatie over het instellen van de DMARC.</p>
-<h2 id="wat-is-spf">Wat is SPF?</h2>
+<p>Lees hier meer informatie over het <a href="https://web.archive.org/web/2026/https://support.fasterforward.nl/kennisbank/ip-adres-of-hostname-instellen/">instellen van de DMARC</a>.</p>
+<h3 id="wat-is-spf">Wat is SPF?</h3>
 <p>Een SPF-record geeft aan vanuit welke server de e-mail afkomstig is. E-mailboxen filteren op de betrouwbaarheid van de server. Via de hostname en bijbehorende IP-adressen van Faster Forward voorkom je dat e-mails eruit worden gefilterd.</p>
-<p>Lees hier meer informatie over het instellen van de SPF.</p></div>
-      <section class="figs"><h2>Afbeeldingen bij dit artikel</h2><figure><a href="https://web.archive.org/web/20221002092508im_/https://support.fasterforward.nl/wp-content/uploads/2022/06/Spam-WP.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20221002092508im_/https://support.fasterforward.nl/wp-content/uploads/2022/06/Spam-WP.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20221002092508im_/https://support.fasterforward.nl/wp-content/uploads/2022/06/spf-check.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20221002092508im_/https://support.fasterforward.nl/wp-content/uploads/2022/06/spf-check.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure></section><div class="feedback"><span class="fb-q">Was deze informatie nuttig?</span><button type="button" data-fb="ja">Ja</button><button type="button" data-fb="nee">Nee</button><p class="fb-out" role="status" hidden></p></div>
+<p>Lees hier meer informatie over het <a href="https://web.archive.org/web/2026/https://support.fasterforward.nl/kennisbank/spfrecord/">instellen van de SPF</a>.</p></div>
+      <div class="feedback"><span class="fb-q">Was deze informatie nuttig?</span><button type="button" data-fb="ja">Ja</button><button type="button" data-fb="nee">Nee</button><p class="fb-out" role="status" hidden></p></div>
       
       
     </article>
