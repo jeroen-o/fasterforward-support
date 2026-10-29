@@ -94,7 +94,13 @@ def een(u):
         gestopt.set()
         return
     ts, mime = nieuwste[u]
-    inhoud, ct = haal('https://web.archive.org/web/%sid_/%s' % (ts, u))
+    inhoud = None
+    if 'html' in (mime or '') or doelpad(u).endswith('index.html'):
+        # Let op: de CDX-lijst (collapse=urlkey) bevat per adres de OUDSTE opname. Voor pagina's willen we de
+        # nieuwste: het archief geeft bij een tijdstip in de toekomst de opname die daar het dichtst bij ligt.
+        inhoud, ct = haal('https://web.archive.org/web/2027id_/%s' % u, tries=2)
+    if inhoud is None:
+        inhoud, ct = haal('https://web.archive.org/web/%sid_/%s' % (ts, u))
     if inhoud is not None:
         doel = os.path.join(a.uit, doelpad(u))
         os.makedirs(os.path.dirname(doel), exist_ok=True)

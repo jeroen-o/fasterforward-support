@@ -16,7 +16,8 @@ ALLOWED = {
     "table": (), "thead": (), "tbody": (), "tr": (), "td": ("colspan", "rowspan"), "th": ("colspan", "rowspan"),
     "blockquote": (), "code": (), "pre": (), "sup": (), "sub": (), "iframe": ("src",),
 }
-VOID = {"br", "hr", "img"}
+# Alle lege elementen uit de HTML-standaard: die hebben geen sluittag en mogen de tellers niet ophogen.
+VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"}
 DROP = {"script", "style", "form", "noscript", "button", "select", "textarea", "svg", "head", "nav", "h1"}
 HOST_RE = re.compile(r"^https?://(?:www\.)?support\.fasterforward\.nl", re.I)
 EMBED_RE = re.compile(r"^(https?:)?//(www\.)?(youtube(-nocookie)?\.com/embed/|player\.vimeo\.com/video/)", re.I)
