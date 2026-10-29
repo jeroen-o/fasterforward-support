@@ -14,5 +14,7 @@
     <symbol id="i-file" viewBox="0 0 64 64"><path d="M10 2h28v18h18v38a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm32 0 14 14H42zM16 30v6h32v-6zm0 10v6h32v-6zm0 10v6h32v-6z"/></symbol>
     <symbol id="i-rss" viewBox="0 0 64 64"><circle cx="11" cy="53" r="8"/><path d="M3 23a38 38 0 0 1 38 38H31A28 28 0 0 0 3 33z"/><path d="M3 3a58 58 0 0 1 58 58H51A48 48 0 0 0 3 13z"/></symbol>
     <symbol id="i-play" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="rgba(0,0,0,.65)"/><path d="M26 20v24l20-12z" fill="#fff"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 64 64"><path d="M32 8 0 22l32 14 24-10.5V40h4V23.7L64 22z"/><path d="M12 31.5V44c0 5 9 10 20 10s20-5 20-10V31.5L32 40.2z"/></symbol>
+  <symbol id="i-video" viewBox="0 0 64 64"><path d="M6 12h52a4 4 0 0 1 4 4v32a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V16a4 4 0 0 1 4-4zm20 10v20l17-10z"/></symbol>
   </defs>
 </svg>

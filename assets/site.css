@@ -301,3 +301,5 @@ nav.main li.ext a::after{content:"↗";font-size:.85em;margin-left:3px;color:#8A
 @media (min-width:901px){
   nav.main ul,nav.main ul{flex-wrap:wrap;justify-content:flex-end;row-gap:6px;max-width:740px}
 }
+/* 12 tegels: 4 per rij op desktop */
+@media (min-width:901px){.tiles{grid-template-columns:repeat(4,1fr);gap:30px 25px}.tile{aspect-ratio:232/150}}

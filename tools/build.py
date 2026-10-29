@@ -1002,6 +1002,8 @@ def render_home(cats, feeds, pages):
     tiles = "".join(
         f'<a class="tile" href="{pg.rel(cat_target(cats, name))}"><svg class="ic"><use href="#i-{icon}"/></svg>{esc(name)}</a>'
         for name, icon in TOP)
+    tiles += (f'<a class="tile" href="{pg.rel("elearning")}"><svg class="ic"><use href="#i-cap"/></svg>E-learning</a>'
+              f'<a class="tile" href="{pg.rel("video")}"><svg class="ic"><use href="#i-video"/></svg>Video\'s</a>')
 
     def a(path, label):
         href, _ = link_for(path)
