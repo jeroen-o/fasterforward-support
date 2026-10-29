@@ -532,9 +532,12 @@ def build_structure(pages):
 
 
 def elements_tekst(t):
-    t = re.sub(r"\bFaster Forward Elements\b", "eBlinqx", t)
-    t = re.sub(r"\bFFWD Elements\b", "eBlinqx", t)
-    return re.sub(r"\bElements\b", "eBlinqx", t)
+    """Oude productnamen in de kennisbank -> eBlinqx Connect; Faster Forward als bedrijf -> Blinqx."""
+    t = re.sub(r"\b(?:Faster Forward|FFWD) Elements\b", "eBlinqx Connect", t)
+    t = re.sub(r"\bFaster Forward On Route\b", "eBlinqx Connect On Route", t)
+    t = re.sub(r"(?<!eBlinqx Connect )\bElements\b", "eBlinqx Connect", t)
+    t = re.sub(r"\bFaster Forward\b(?! (?:Support|support))", "Blinqx", t)
+    return t
 
 
 def wb_date(p):
@@ -713,6 +716,7 @@ def layout(pg, title, body, active=None, description=""):
       <a href="{pg.rel('video')}">Video's</a>
       <a href="{pg.rel('downloads')}">Downloads</a>
       <a href="{pg.rel('nieuwsbrief')}">Nieuwsbrief</a>
+      <a href="{pg.rel('privacy')}">Privacy</a>
     </nav>
   </div>
 </footer>
@@ -987,7 +991,7 @@ def render_article(cats, feeds, p):
     <article>
       {h1}
       {f'<p class="meta">{" · ".join(meta)}</p>' if meta else ""}
-      {f'<div class="oud" role="note"><strong>Let op: mogelijk verouderd.</strong> Dit artikel is voor het laatst bijgewerkt {esc(oud)} en beschrijft mogelijk een oudere versie van de software (Elements). Schermen en werkwijze kunnen in eBlinqx afwijken. Twijfel je? <a href="{pg.rel("contact")}">Neem contact op met support</a>.</div>' if oud else ""}
+      {f'<div class="oud" role="note"><strong>Let op: mogelijk verouderd.</strong> Dit artikel is voor het laatst bijgewerkt {esc(oud)} en beschrijft mogelijk een oudere versie van de software (Elements). Schermen en werkwijze kunnen in eBlinqx Connect afwijken. Twijfel je? <a href="{pg.rel("contact")}">Neem contact op met support</a>.</div>' if oud else ""}
       <div class="content">{body_html}</div>
       {imgs}
       {shot}
@@ -1720,6 +1724,27 @@ def render_nieuwsbrief():
     write("nieuwsbrief", layout(pg, "Nieuwsbrief", body, None, "Meld je aan voor de nieuwsbrief van Blinqx Verzekering & Hypotheek."))
 
 
+def render_privacy():
+    pg = Page("privacy")
+    body = f"""{crumbs(pg, [("Privacy", None)])}
+<main class="subpage"><div class="wrap"><article class="content" style="max-width:780px">
+  <h1>Privacy en cookies</h1>
+  <p>Deze supportsite plaatst zelf geen cookies en gebruikt geen statistieken of advertentiediensten. Een paar onderdelen komen van andere diensten; die worden zo veel mogelijk pas geladen als je ze zelf gebruikt.</p>
+  <h2>Diensten van derden op deze site</h2>
+  <ul>
+    <li><b>Chatknop</b> (rechtsonder): de chatbot van Blinqx. Wat je in de chat typt, wordt door Blinqx verwerkt. De chatknop onthoudt in je browser alleen waar je de knop hebt neergezet.</li>
+    <li><b>Nieuwsbrief</b>: het aanmeldformulier van Blinqx Verzekering &amp; Hypotheek (HubSpot) wordt pas geladen als je op de aanmeldknop klikt.</li>
+    <li><b>Scherm delen</b> (contactpagina): verbinding via ISL Online, alleen als je een sessiecode invult.</li>
+    <li><b>Video's en e-learnings</b>: YouTube (in de privacyvriendelijke modus) en Storylane worden pas geladen als je op afspelen of starten klikt.</li>
+    <li><b>Rekentools en trainingen</b>: openen op de website van Hypotheekbond en de Blinqx Academy.</li>
+    <li><b>Afbeeldingen</b> die nog niet op deze site staan, worden geladen uit het Internet Archive (web.archive.org).</li>
+  </ul>
+  <h2>Privacyverklaring en cookieverklaring van Blinqx</h2>
+  <p>Voor de verwerking van persoonsgegevens door Blinqx gelden de <a href="https://verzekeringhypotheek.blinqx.tech/privacy-statement" target="_blank" rel="noopener">privacyverklaring</a> en de <a href="https://verzekeringhypotheek.blinqx.tech/cookieverklaring" target="_blank" rel="noopener">cookieverklaring</a> van Blinqx Verzekering &amp; Hypotheek.</p>
+</article></div></main>"""
+    write("privacy", layout(pg, "Privacy en cookies", body, None, "Welke diensten deze supportsite gebruikt en waar je de privacyverklaring van Blinqx vindt."))
+
+
 def render_404():
     # GitHub Pages serveert 404.html vanaf de root; absolute paden zijn daar niet bekend, dus root-relatief.
     pg = Page("")
@@ -1816,6 +1841,7 @@ def main():
     render_websitetools()
     render_downloads()
     render_nieuwsbrief()
+    render_privacy()
     render_search(pages, cats)
     render_home(cats, feeds, pages)
     render_404()
