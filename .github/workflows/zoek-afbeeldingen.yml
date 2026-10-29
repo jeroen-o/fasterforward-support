@@ -1,0 +1,63 @@
+name: Ontbrekende afbeeldingen zoeken
+
+# Handmatig starten via Actions -> "Ontbrekende afbeeldingen zoeken" -> Run workflow.
+# Zoekt de afbeeldingen die nog ontbreken in de Wayback Machine (hele fasterforward.nl-domein, alle maten)
+# en in Common Crawl (tools/zoek_afbeeldingen.py), commit wat gevonden is en bouwt de site opnieuw.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: wayback
+  cancel-in-progress: false
+
+jobs:
+  zoeken:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Zoeken en vondsten committen
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          python3 tools/zoek_afbeeldingen.py --max-minuten 300 || true
+          for pad in bronnen/wayback tools/afbeeldingen_zoekresultaat.json; do [ -e "$pad" ] && git add "$pad"; done
+          git diff --cached --quiet && { echo "Niets nieuws gevonden."; exit 0; }
+          git commit -q -m "Ontbrekende afbeeldingen teruggevonden (Wayback-domein, maatvarianten, Common Crawl)"
+          for i in 1 2 3 4 5; do
+            git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0
+            sleep 10
+          done
+          echo "::error::Pushen mislukt"; exit 1
+
+  bouwen:
+    needs: zoeken
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Site bouwen op de nieuwste main en committen
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          for i in 1 2 3 4 5; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            python3 tools/build.py
+            git add -A
+            git diff --cached --quiet && { echo "Geen wijzigingen in de site."; exit 0; }
+            git commit -q -m "Site opnieuw gebouwd met teruggevonden afbeeldingen"
+            git push -q origin HEAD:main && exit 0
+            sleep 15
+          done
+          echo "::error::Pushen van de gebouwde site is mislukt"; exit 1
