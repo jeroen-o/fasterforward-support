@@ -30,12 +30,12 @@ OVERSLAAN = re.compile(r'/(wp-content/cache|wp-includes|wp-json|wp-admin|xmlrpc|
                        r'\.(css|js|woff2?|ttf|eot|map|xml|json|txt)$|[?&](ver|replytocom|s|p)=', re.I)
 
 
-def haal(url, tries=4):
+def haal(url, tries=4, timeout=90):
     err = None
     for i in range(tries):
         try:
             req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (herstel eigen site)'})
-            with urllib.request.urlopen(req, timeout=90) as r:
+            with urllib.request.urlopen(req, timeout=timeout) as r:
                 return r.read(), r.headers.get('Content-Type', '')
         except urllib.error.HTTPError as e:
             if e.code == 404:
@@ -55,11 +55,14 @@ if os.path.exists(cdx_file) and not a.verse_lijst:
 else:
     q = urllib.parse.urlencode({'url': HOST + '/*', 'output': 'json', 'fl': 'timestamp,original,mimetype',
                                 'filter': 'statuscode:200', 'collapse': 'urlkey', 'limit': '20000'})
-    data, _ = haal('https://web.archive.org/cdx/search/cdx?' + q)
+    data, _ = haal('https://web.archive.org/cdx/search/cdx?' + q, tries=6, timeout=900)
     if not data:
-        sys.exit('Kon de lijst met gearchiveerde pagina\'s niet ophalen.')
+        print('Kon de lijst met gearchiveerde pagina\'s niet ophalen.', file=sys.stderr)
+        sys.exit(2)
     rijen = json.loads(data)[1:]
     json.dump(rijen, open(cdx_file, 'w'))
+    print('CDX-lijst opgehaald:', len(rijen), 'regels', flush=True)
+START = time.time()  # de tijdslimiet geldt voor het downloaden, niet voor het opvragen van de lijst
 
 # per url de nieuwste versie
 nieuwste = {}

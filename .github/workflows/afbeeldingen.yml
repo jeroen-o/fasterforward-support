@@ -47,7 +47,7 @@ jobs:
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
           ARGS="--uit bronnen/wayback --pauze 0.5 --werkers 4 --max-minuten 25"
           if [ "${{ inputs.alleen_kennisbank }}" = "true" ]; then ARGS="$ARGS --kennisbank"; fi
-          start=$(date +%s); nieuw=false; onaf=true
+          start=$(date +%s); nieuw=false; onaf=true; fouten=0
           commit_data() {
             git add bronnen/wayback tools/mislukte_afbeeldingen.txt 2>/dev/null || true
             git diff --cached --quiet && return 0
@@ -61,6 +61,13 @@ jobs:
           }
           while true; do
             set +e; python3 tools/wayback-ophalen.py $ARGS; code=$?; set -e
+            echo "wayback-ophalen.py stopte met code $code"
+            if [ "$code" != "0" ] && [ "$code" != "3" ]; then
+              fouten=$((fouten + 1))
+              if [ $fouten -ge 3 ]; then commit_data "tussenstand"; echo "::error::Ophalen 3x mislukt (code $code)"; exit 1; fi
+              sleep 120; continue
+            fi
+            fouten=0
             if [ "$code" = "0" ]; then
               timeout 40m python3 tools/download_afbeeldingen.py --max-minuten 35 || true
               onaf=false
