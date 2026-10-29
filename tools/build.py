@@ -948,12 +948,20 @@ def render_article(cats, feeds, p):
             figs.append(f'<figure><a href="{esc(src)}" target="_blank" rel="noopener"><img src="{esc(src)}" alt="{esc(im["alt"])}" loading="lazy" onerror="this.closest(\'figure\').remove()"></a>'
                         f'{f"<figcaption>{esc(im["alt"])}</figcaption>" if im["alt"] else ""}</figure>')
         imgs = '<section class="figs"><h2>Afbeeldingen bij dit artikel</h2>' + "".join(figs) + "</section>"
-    nu = EBLINQX_SCHERMEN["artikelen"].get(p["path"].strip("/"), [])
+    nu = [("bronnen/eblinqx/" + n + ".webp", EBLINQX_SCHERMEN["schermen"][n])
+          for n in EBLINQX_SCHERMEN["artikelen"].get(p["path"].strip("/"), [])]
+    # extra actuele schermen per artikel (tools/vervanging_plaatsen.py)
+    xmap = os.path.join("bronnen", "eblinqx-artikel", p["path"].strip("/").split("/")[-1])
+    if os.path.isdir(os.path.join(ROOT, xmap)):
+        bj = os.path.join(ROOT, xmap, "_bijschriften.json")
+        bijschrift = json.load(open(bj, encoding="utf8")) if os.path.exists(bj) else {}
+        nu += [(xmap + "/" + f, bijschrift.get(f, "")) for f in sorted(os.listdir(os.path.join(ROOT, xmap)))
+               if f.lower().endswith((".png", ".jpg", ".jpeg", ".webp", ".gif"))]
     if nu:
         imgs = ('<section class="figs nu"><h2>Zo ziet het er nu uit in eBlinqx Connect</h2>' + "".join(
-            f'<figure><a href="{pg.rel("bronnen/eblinqx/" + n + ".webp")}" target="_blank" rel="noopener">'
-            f'<img src="{pg.rel("bronnen/eblinqx/" + n + ".webp")}" alt="{esc(EBLINQX_SCHERMEN["schermen"][n])}" width="1440" height="840" loading="lazy"></a>'
-            f'<figcaption>{esc(EBLINQX_SCHERMEN["schermen"][n])}</figcaption></figure>' for n in nu) + "</section>") + imgs
+            f'<figure><a href="{pg.rel(src)}" target="_blank" rel="noopener">'
+            f'<img src="{pg.rel(src)}" alt="{esc(cap)}" loading="lazy"></a>'
+            + (f'<figcaption>{esc(cap)}</figcaption>' if cap else "") + '</figure>' for src, cap in nu) + "</section>") + imgs
     shot = ""  # screenshots van de Wayback-opname worden niet meer getoond; de echte afbeeldingen staan in het artikel
     if p["path"] not in ("contact",) and (p.get("rawhtml") or p["lines"]):
         imgs += ('<div class="feedback"><span class="fb-q">Was deze informatie nuttig?</span>'
