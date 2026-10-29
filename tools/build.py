@@ -265,14 +265,14 @@ def load_sources():
         rel = "" if rel in (".", "index") else rel
         if rel and SKIP_PATH.match(rel):
             continue
-        p = get(BASE + "/" + rel + ("/" if rel else ""))
-        if p.get("raw"):
-            continue
         try:
             doc = open(f, encoding="utf8", errors="replace").read()
         except OSError:
             continue
-        if "<html" not in doc[:3000].lower():
+        if "<html" not in doc[:3000].lower() or "<title" not in doc.lower():
+            continue  # geen (volledige) HTML-pagina, bijvoorbeeld een omleiding of foutmelding van het archief
+        p = get(BASE + "/" + rel + ("/" if rel else ""))
+        if p.get("raw"):
             continue
         p["raw"] = htmlclean.extract(doc)
         p["rawsrc"] = "wayback"
@@ -526,6 +526,12 @@ def build_structure(pages):
                     lines += [l.strip().lower() for l in html.unescape(raw).split("\n")]
             pos = {l: i for i, l in reversed(list(enumerate(lines)))}
             sub["items"].sort(key=lambda x: (pos.get(x["t"].lower(), 10**6), x["t"].lower()))
+    # Uitgelichte afbeelding per bericht (zoals in de nieuwsoverzichten van de oorspronkelijke site).
+    for f in feeds.values():
+        for p in f:
+            raw = p.get("raw") or {}
+            m = re.search(r'src="IMG:([^"]+)"', p.get("rawhtml") or "")
+            p["thumb"] = raw.get("ogimg") or (m.group(1) if m else None) or (p["imgs"][0]["src"] if p["imgs"] else None)
     for f in feeds.values():
         f.sort(key=lambda p: (p["posted"] or p["updated"] or wb_date(p) or date(1900, 1, 1)), reverse=True)
     return cats, feeds
@@ -1055,10 +1061,15 @@ def render_feed(name, items):
 
     def card(x):
         d = x["posted"] or x["updated"]
-        return (f'<article class="card"><h3><a href="{pg.rel(x["path"])}">{esc(x["t"])}</a></h3>'
+        img = ""
+        if x.get("thumb"):
+            img = (f'<a class="card-img" href="{pg.rel(x["path"])}" tabindex="-1" aria-hidden="true">'
+                   f'<img src="{esc(resolve_img(pg, x["thumb"]))}" alt="" loading="lazy" '
+                   f'onerror="this.closest(\'.card\').classList.remove(\'has-img\');this.parentNode.remove()"></a>')
+        return (f'<article class="card{" has-img" if img else ""}">{img}<div class="card-body"><h3><a href="{pg.rel(x["path"])}">{esc(x["t"])}</a></h3>'
                 f'{f"<p class=\"date\">{fmt_date(d)}</p>" if d else ""}'
                 f'{f"<p>{esc(x["excerpt"])}</p>" if x.get("excerpt") else ""}'
-                f'<a class="readmore" href="{pg.rel(x["path"])}">Lees verder</a></article>')
+                f'<a class="readmore" href="{pg.rel(x["path"])}">Lees verder</a></div></article>')
 
     # Per jaar groeperen (zoals bij de releasenotes van Hypotheekadvies); zonder datum onderaan.
     groups = {}

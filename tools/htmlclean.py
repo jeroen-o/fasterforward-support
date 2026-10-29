@@ -196,5 +196,7 @@ def extract(doc):
     out = re.sub(r"<p>\s*(<br>)?\s*</p>", "", out)
     out = re.sub(r"<(strong|em|b|i|span)>\s*</\1>", "", out)
     out = re.sub(r"\n\s*\n+", "\n", out).strip()
+    og = re.search(r'<meta property="og:image" content="([^"]+)"', doc)
     return {"title": title, "html": out, "posted": posted, "updated": updated,
+            "ogimg": unwrap_wayback(html.unescape(og.group(1))) if og else None,
             "hero": unwrap_wayback(hero.group(1)) if hero else None, "crumbs": crumbs}

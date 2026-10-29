@@ -398,3 +398,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
 .nb-cta{margin:40px 0 0;padding:22px 24px;background:#FFF6D1;border-left:4px solid var(--yellow)}
 .nb-cta h2{margin:0 0 6px;font-size:20px;color:var(--heading)}
 #nb-form{max-width:560px;margin:10px 0}
+/* nieuwskaarten met uitgelichte afbeelding (zoals het origineel) */
+.card.has-img{display:grid;grid-template-columns:320px 1fr;gap:24px;align-items:start;padding:10px 26px 18px 10px}
+.card-img{display:block;aspect-ratio:16/10;background:#F2F2F2;overflow:hidden}
+.card-img img{width:100%;height:100%;object-fit:cover;display:block}
+.card.has-img .card-body{padding-top:10px}
+@media (max-width:700px){.card.has-img{grid-template-columns:1fr;padding:10px 10px 16px}.card.has-img .card-body{padding:0 8px}}

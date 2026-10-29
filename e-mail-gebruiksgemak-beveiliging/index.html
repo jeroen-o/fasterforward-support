@@ -15,7 +15,7 @@
 <meta property="og:image" content="https://jeroen-o.github.io/fasterforward-support/assets/og-image.png">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="../assets/site.css?v=6a8415e5">
+<link rel="stylesheet" href="../assets/site.css?v=9c7c00aa">
 <link rel="icon" href="../assets/favicon.png">
 </head>
 <body>
@@ -81,54 +81,92 @@
       <h1>Uitbreiding e-mail: Gebruiksgemak &amp; Beveiliging</h1>
       <p class="meta">Geplaatst op 11 mei 2020</p>
       
-      <div class="content"><p>De afgelopen tijd hebben wij ons ingezet om de e-mail in Elements verder te optimaliseren.</p><nav class="toc" aria-label="Inhoud"><ul><li><a href="#afbeelding-rechtstreeks-plakken-in-een-e-mail">Afbeelding rechtstreeks plakken in een E-mail</a></li><li><a href="#e-mail-inplannen">E-mail inplannen</a></li><li><a href="#ontdubbelen">Ontdubbelen</a></li><li><a href="#afzendernaam">Afzendernaam</a></li><li><a href="#e-mails-slepen-vanuit-verzonden-items">E-mails slepen vanuit ‘verzonden items’</a></li><li><a href="#editor-uitgebreid">Editor uitgebreid</a></li><li><a href="#melding-bij-uitval-e-mail-synchronisatie">Melding bij uitval e-mail synchronisatie</a></li><li><a href="#dkim-en-dmarc-toegevoegd">DKIM en DMARC toegevoegd</a></li><li><a href="#spf-controle">SPF controle</a></li><li><a href="#office-365-authenticatie">Office 365 authenticatie</a></li><li><a href="#wachtwoord-wijzigen">Wachtwoord wijzigen</a></li><li><a href="#overige-verbeteringen-en-uitbreidingen">Overige verbeteringen en uitbreidingen</a></li><li><a href="#fixes">Fixes</a></li><li><a href="#afbeelding-rechtstreeks-plakken-in-een-e-mail-2">Afbeelding rechtstreeks plakken in een E-mail</a></li><li><a href="#e-mail-inplannen-2">E-mail inplannen</a></li><li><a href="#ontdubbelen-2">Ontdubbelen</a></li><li><a href="#afzendernaam-2">Afzendernaam</a></li><li><a href="#e-mails-slepen-vanuit-verzonden-items-2">E-mails slepen vanuit ‘verzonden items’</a></li><li><a href="#melding-bij-uitval-e-mail-synchronisatie-2">Melding bij uitval e-mail synchronisatie</a></li><li><a href="#dkim-en-dmarc-toegevoegd-2">DKIM en DMARC toegevoegd</a></li><li><a href="#spf-controle-2">SPF controle</a></li><li><a href="#office-365-authenticatie-2">Office 365 authenticatie</a></li><li><a href="#wachtwoord-wijzigen-2">Wachtwoord wijzigen</a></li></ul></nav>
-<h2 id="afbeelding-rechtstreeks-plakken-in-een-e-mail">Afbeelding rechtstreeks plakken in een E-mail</h2>
-<h2 id="e-mail-inplannen">E-mail inplannen</h2>
-<h2 id="ontdubbelen">Ontdubbelen</h2>
-<p>E-mails koppelen nu verbeterd!</p>
-<h2 id="afzendernaam">Afzendernaam</h2>
-<h2 id="e-mails-slepen-vanuit-verzonden-items">E-mails slepen vanuit ‘verzonden items’</h2>
-<h2 id="editor-uitgebreid">Editor uitgebreid</h2>
-<h2 id="melding-bij-uitval-e-mail-synchronisatie">Melding bij uitval e-mail synchronisatie</h2>
-<h2 id="dkim-en-dmarc-toegevoegd">DKIM en DMARC toegevoegd</h2>
-<h2 id="spf-controle">SPF controle</h2>
-<h2 id="office-365-authenticatie">Office 365 authenticatie</h2>
-<h2 id="wachtwoord-wijzigen">Wachtwoord wijzigen</h2>
-<h2 id="overige-verbeteringen-en-uitbreidingen">Overige verbeteringen en uitbreidingen</h2>
-<h2 id="fixes">Fixes</h2>
-<h2 id="afbeelding-rechtstreeks-plakken-in-een-e-mail-2">Afbeelding rechtstreeks plakken in een E-mail</h2>
+      <div class="content"><p>Geplaatst op 11 mei 2020</p><nav class="toc" aria-label="Inhoud"><ul><li><a href="#afbeelding-rechtstreeks-plakken-in-een-e-mail">Afbeelding rechtstreeks plakken in een E-mail</a></li><li><a href="#e-mail-inplannen">E-mail inplannen</a></li><li><a href="#ontdubbelen">Ontdubbelen</a></li><li><a href="#e-mails-koppelen-nu-verbeterd">E-mails koppelen nu verbeterd!</a></li><li><a href="#afzendernaam">Afzendernaam</a></li><li><a href="#e-mails-slepen-vanuit-verzonden-items">E-mails slepen vanuit ‘verzonden items’</a></li><li><a href="#melding-bij-uitval-e-mail-synchronisatie">Melding bij uitval e-mail synchronisatie</a></li><li><a href="#dkim-en-dmarc-toegevoegd">DKIM en DMARC toegevoegd</a></li><li><a href="#spf-controle">SPF controle</a></li><li><a href="#office-365-authenticatie">Office 365 authenticatie</a></li><li><a href="#wachtwoord-wijzigen">Wachtwoord wijzigen</a></li><li><a href="#andere-punten-die-uitgebreid-of-verbeterd-zijn-in-deze-release">Andere punten die uitgebreid of verbeterd zijn in deze release:</a></li><li><a href="#fixes">Fixes:</a></li></ul></nav>
+<p>De afgelopen tijd hebben wij ons ingezet om de e-mail in Elements verder te optimaliseren.</p>
+<figure><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2019/07/envelop-email-beveiliging-v2.png" alt="" loading="lazy"></figure>
+<table>
+<tbody>
+<tr>
+<td><a href="#Afbeelding rechtstreeks plakken in een E-mail">Afbeelding rechtstreeks plakken in een E-mail</a></td></tr>
+<tr>
+<td><a href="#E-mail inplannen">E-mail inplannen</a></td></tr>
+<tr>
+<td><a href="#Ontdubbelen">Ontdubbelen</a></td></tr>
+<tr>
+<td><a href="#E-mails koppelen nu verbeterd!">E-mails koppelen nu verbeterd!</a></td></tr>
+<tr>
+<td><a href="#Afzendernaam">Afzendernaam</a></td>
+</tr>
+<tr>
+<td><a href="#E-mails slepen vanuit ‘verzonden items’">E-mails slepen vanuit ‘verzonden items’</a></td>
+</tr>
+<tr>
+<td><a href="#Editor uitgebreid">Editor uitgebreid</a></td>
+</tr>
+<tr>
+<td><a href="#Melding bij uitval e-mail synchronisatie">Melding bij uitval e-mail synchronisatie</a></td>
+</tr>
+<tr>
+<td><a href="#DKIM en DMARC toegevoegd">DKIM en DMARC toegevoegd</a>
+</td>
+</tr>
+<tr>
+<td><a href="#SPF controle">SPF controle</a>
+</td>
+</tr>
+<tr>
+<td><a href="#Office 365 authenticatie">Office 365 authenticatie</a>
+</td>
+</tr>
+<tr>
+<td><a href="#Wachtwoord wijzigen">Wachtwoord wijzigen</a>
+</td>
+</tr>
+<tr>
+<td><a href="#Overige verbeteringen en uitbreidingen">Overige verbeteringen en uitbreidingen</a>
+</td>
+</tr>
+<tr>
+<td><a href="#Fixes">Fixes</a>
+</td>
+</tr>
+</tbody>
+</table>
+<h2 id="afbeelding-rechtstreeks-plakken-in-een-e-mail"><a></a>Afbeelding rechtstreeks plakken in een E-mail</h2>
 <p>Onze CK Editor voor het opstellen van e-mails is uitgebreid én geüpdatet. Bij het opstellen van een e-mail zijn nu 2 opties erbij gekomen:</p>
-<p>De optie om een quote toe te voegen.Een afbeelding rechtstreeks in de e-mail plakken.</p>
-<h2 id="e-mail-inplannen-2">E-mail inplannen</h2>
-<p>Het is nu mogelijk om een e-mail niet direct te versturen, maar om in te plannen om deze op een later tijdstip te versturen. Wanneer er gekozen wordt om een e-mail later te versturen wordt deze als concept opgeslagen met het gekozen verzendmoment. Klik hier voor meer instructies.</p>
-<h2 id="ontdubbelen-2">Ontdubbelen</h2>
-<p>Vanuit Elements verstuurde e-mails worden vanaf nu niet meer dubbel weergegeven in een dossier. Voorbeeld: je verstuurt een e-mail naar de klant met daarin 2 collega’s in de cc, deze e-mail werd voorheen 3 keer getoond in het dossier; 1 keer als verzonden naar de klant en nog 2 als uitgaande e-mails naar de collega’s. Vanaf deze release wordt deze e-mail nu slechts 1 keer getoond en indien deze naar meerdere e-mailadressen is verstuurd wordt dit aangegeven door een dropdown icoontje. Wanneer je daarop klikt openen de verstuurde e-mails. Let op! Dit geldt alléén voor e-mails verstuurd vanuit Elements.</p>
-<p>E-mails koppelen nu verbeterd!</p>
+<ul><li>De optie om een quote toe te voegen.</li><li>Een afbeelding rechtstreeks in de e-mail plakken.</li></ul>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2020/05/afbeelding-plakken.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2020/05/afbeelding-plakken-1024x446.png" alt="" loading="lazy"></a></figure>
+<h2 id="e-mail-inplannen"><a></a>E-mail inplannen</h2>
+<p>Het is nu mogelijk om een e-mail niet direct te versturen, maar om in te plannen om deze op een later tijdstip te versturen. Wanneer er gekozen wordt om een e-mail later te versturen wordt deze als concept opgeslagen met het gekozen verzendmoment. Klik <a href="https://web.archive.org/web/2026/https://support.fasterforward.nl/kennisbank/e-mail-inplannen/">hier</a> voor meer instructies.</p>
+<h2 id="ontdubbelen"><a></a>Ontdubbelen</h2>
+<p>Vanuit Elements verstuurde e-mails worden vanaf nu niet meer dubbel weergegeven in een dossier. Voorbeeld: je verstuurt een e-mail naar de klant met daarin 2 collega’s in de cc, deze e-mail werd voorheen 3 keer getoond in het dossier; 1 keer als verzonden naar de klant en nog 2 als uitgaande e-mails naar de collega’s. Vanaf deze release wordt deze e-mail nu slechts 1 keer getoond en indien deze naar meerdere e-mailadressen is verstuurd wordt dit aangegeven door een dropdown icoontje. Wanneer je daarop klikt openen de verstuurde e-mails.<br>Let op! Dit geldt alléén voor e-mails verstuurd vanuit Elements.</p>
+<h2 id="e-mails-koppelen-nu-verbeterd"><a></a>E-mails koppelen nu verbeterd!</h2>
 <p>De pop-up bij het handmatig koppelen van een e-mail aan een dossier is geoptimaliseerd en hierdoor eenvoudiger en duidelijker geworden. Hier krijg je nu een voorstel, de optie om een dossier te zoeken én zie je jouw 10 laatst bezochte dossiers.</p>
-<h2 id="afzendernaam-2">Afzendernaam</h2>
-<p>Indien het gewenst is om de afzendernaam variabel te maken is het vanaf nu mogelijk om tags te gebruiken voor het vullen van de afzendernaam. Hierdoor wordt het mogelijk om bijvoorbeeld de naam van een medewerker als afzendernaam te sturen wanneer er vanuit de infobox gemaild wordt.De afzendernaam dient via de e-mailmanager aangepast te worden, hiervoor kun je contact opnemen met jullie interne Elements beheerder.</p>
-<h2 id="e-mails-slepen-vanuit-verzonden-items-2">E-mails slepen vanuit ‘verzonden items’</h2>
+<figure><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2020/05/popup_koppelen-1.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2020/05/popup_koppelen-1.png" alt="" loading="lazy"></a></figure>
+<h2 id="afzendernaam"><a></a>Afzendernaam</h2>
+<p>Indien het gewenst is om de afzendernaam variabel te maken is het vanaf nu mogelijk om <a href="../kennisbank/hoe-gebruik-ik-een-tag/index.html">tags</a> te gebruiken voor het vullen van de afzendernaam. Hierdoor wordt het mogelijk om bijvoorbeeld de naam van een medewerker als afzendernaam te sturen wanneer er vanuit de infobox gemaild wordt.<br>De afzendernaam dient via de e-mailmanager aangepast te worden, hiervoor kun je contact opnemen met jullie interne Elements beheerder.</p>
+<h2 id="e-mails-slepen-vanuit-verzonden-items"><a></a>E-mails slepen vanuit ‘verzonden items’</h2>
 <p>Verzonden e-mails kun je nu gemakkelijk slepen naar een andere map binnen de e-mail module.</p>
-<h2 id="melding-bij-uitval-e-mail-synchronisatie-2">Melding bij uitval e-mail synchronisatie</h2>
-<p>Wanneer er een x aantal keren (aantal in te stellen in de e-mailmanager) geen verbinding gemaakt kan worden met een e-mailbox vervalt de automatische synchronisatie. Wanneer je jouw e-mailbox opent, toont Elements hier nu een melding van, zodat je de verbinding weer kunt herstellen. Lees hier wat je moet doen wanneer de e-mail synchronisatie uit valt.</p>
-<h2 id="dkim-en-dmarc-toegevoegd-2">DKIM en DMARC toegevoegd</h2>
-<p>In Elements hebben wij een DKIM en DMARC check toegevoegd. Hier kun je zien of deze voor jouw e-mailbox ingesteld is en/of deze een foutmelding geeft.</p>
+<h2 id="melding-bij-uitval-e-mail-synchronisatie"><a></a>Melding bij uitval e-mail synchronisatie</h2>
+<p>Wanneer er een x aantal keren (aantal in te stellen in de e-mailmanager) geen verbinding gemaakt kan worden met een e-mailbox vervalt de automatische synchronisatie. Wanneer je jouw e-mailbox opent, toont Elements hier nu een melding van, zodat je de verbinding weer kunt herstellen. Lees <a href="https://web.archive.org/web/2026/https://support.fasterforward.nl/kennisbank/e-mail-synchronisatie/">hier</a> wat je moet doen wanneer de e-mail synchronisatie uit valt.</p>
+<figure><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2020/05/karin2-1.png" alt="" loading="lazy"></figure>
+<h2 id="dkim-en-dmarc-toegevoegd"><a></a>DKIM en DMARC toegevoegd</h2>
+<p>In Elements hebben wij een DKIM en DMARC check toegevoegd. <a href="https://web.archive.org/web/2026/https://support.fasterforward.nl/kennisbank/ip-adres-of-hostname-instellen/">Hier</a> kun je zien of deze voor jouw e-mailbox ingesteld is en/of deze een foutmelding geeft.</p>
 <p>Een DKIM key is een extra beveiliging naast het spf record om te verifiëren dat de e-mail daadwerkelijk afkomstig is van de afzender die genoemd wordt. Een DKIM key kun je opvragen bij je e-mail beheerder. Deze instelling geldt alleen voor e-mails die verstuurd worden, niet voor inkomende e-mails.</p>
-<p>DMARC stelt domein eigenaren in staat om hun domein(en) te beschermen tegen ongeoorloofd gebruik door het bestrijden van phishing, spoofing, CEO-fraude en Business Email Compromise.</p>
-<p>Beide dienen op jullie server(domein) ingesteld te worden om dit zichtbaar te hebben in Elements. Lees hier meer over het controleren en instellen van deze veiligheidsopties.</p>
-<h2 id="spf-controle-2">SPF controle</h2>
-<p>Naast bovenstaande toevoegingen in de beveiliging hebben wij ook een controle toegevoegd op het SPF record. Lees hier meer over een SPF record.</p>
-<h2 id="office-365-authenticatie-2">Office 365 authenticatie</h2>
-<p>Door een wijziging bij Office 365 dienen alle e-mailboxen geauthenticeerd te worden voor 13 oktober 2020. Dit geldt voor alle bestaande Office 365 e-mailboxen.Lees hier hoe je dit voor jouw e-mailbox in orde kunt maken.</p>
-<h2 id="wachtwoord-wijzigen-2">Wachtwoord wijzigen</h2>
-<p>Bij de e-mail instellingen kun je het wachtwoord van je standaard e-mailbox nu zelf wijzigen indien deze op jullie server gewijzigd is. Lees hier hoe je dit doet.Let op! Hiervoor dient een recht aangezet te worden. Stuur hiervoor een e-mail naar <a href="mailto:support-eblinqx@blinqx.tech">support-eblinqx@blinqx.tech</a></p>
-<p>Andere punten die uitgebreid of verbeterd zijn in deze release:</p>
-<p>Andere punten die uitgebreid of verbeterd zijn in deze release:</p>
-<p>In de takenlijst zie je vanaf nu direct of de taak gekoppeld is aan een schademelding. Daarnaast hebben we het ook visueel duidelijker gemaakt wanneer een registratie gekoppeld is aan een schademelding.Het woord ‘HDN’ wordt niet meer in de omschrijving van een document opgenomen wanneer deze via HDN ontvangen is. Bij het toevoegen van een document aan een e-mail vanuit een product, zijn de documenten automatisch op datum gesorteerd (nieuwste document bovenaan).Er is een verbetering doorgevoerd om het opslaan van partijen onder een schademelding gebruiksvriendelijker te maken.De specificatie in de urenregistratie is aangepast zodat de geregistreerde tijd niet in uren maar in minuten wordt weergegeven. Indien je al gebruik maakt van de urenregistratie in Elements en hier gebruik van wilt maken stuur dan een e-mail naar <a href="mailto:support-eblinqx@blinqx.tech">support-eblinqx@blinqx.tech</a></p>
-<p>Fixes:</p>
-<p>Het resultatenblokje werd op bepaalde schermen nog getoond terwijl deze setting uit stond. Wanneer een offerte bevroren wordt, worden alle velden nu uitgegrijsd, voorheen leken bepaalde velden nog bewerkbaar. Het handmatig uploaden van een CSV bestand bij de prolongatie import is verbeterd. NHB koppelingen zijn verbeterdIcoon uitgaande e-mail is aangepast</p>
-<p>Categorie: Algemeen</p></div>
-      <section class="figs"><h2>Afbeeldingen bij dit artikel</h2><figure><a href="https://web.archive.org/web/20200919181608im_/https://support.fasterforward.nl/wp-content/uploads/2019/07/envelop-email-beveiliging-v2.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20200919181608im_/https://support.fasterforward.nl/wp-content/uploads/2019/07/envelop-email-beveiliging-v2.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20200919181608im_/https://support.fasterforward.nl/wp-content/uploads/2020/05/afbeelding-plakken-1024x446.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20200919181608im_/https://support.fasterforward.nl/wp-content/uploads/2020/05/afbeelding-plakken-1024x446.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20200919181608im_/https://support.fasterforward.nl/wp-content/uploads/2020/05/popup_koppelen-1-1024x580.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20200919181608im_/https://support.fasterforward.nl/wp-content/uploads/2020/05/popup_koppelen-1-1024x580.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20200919181608im_/https://support.fasterforward.nl/wp-content/uploads/2020/05/karin2-1-1024x346.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20200919181608im_/https://support.fasterforward.nl/wp-content/uploads/2020/05/karin2-1-1024x346.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20200919181608im_/https://support.fasterforward.nl/wp-content/uploads/2020/05/vinkje.jpg" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20200919181608im_/https://support.fasterforward.nl/wp-content/uploads/2020/05/vinkje.jpg" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure></section><div class="feedback"><span class="fb-q">Was deze informatie nuttig?</span><button type="button" data-fb="ja">Ja</button><button type="button" data-fb="nee">Nee</button><p class="fb-out" role="status" hidden></p></div>
+<p>DMARC stelt domein eigenaren in staat om hun domein(en) te beschermen tegen ongeoorloofd gebruik door het bestrijden van phishing, spoofing, CEO-fraude en Business Email Compromise. </p>
+<p>Beide dienen op jullie server(domein) ingesteld te worden om dit zichtbaar te hebben in Elements. <br>Lees <a href="https://web.archive.org/web/2026/https://support.fasterforward.nl/kennisbank/ip-adres-of-hostname-instellen/">hier</a> meer over het controleren en instellen van deze veiligheidsopties.</p>
+<h2 id="spf-controle"><a></a>SPF controle</h2>
+<p>Naast bovenstaande toevoegingen in de beveiliging hebben wij ook een controle toegevoegd op het SPF record. Lees <a href="https://web.archive.org/web/2026/https://support.fasterforward.nl/kennisbank/ip-adres-of-hostname-instellen/">hier</a> meer over een SPF record.</p>
+<h2 id="office-365-authenticatie"><a></a>Office 365 authenticatie</h2>
+<p>Door een wijziging bij <a href="https://developer.microsoft.com/en-us/office/blogs/end-of-support-for-basic-authentication-access-to-exchange-online-apis-for-office-365-customers/" target="_blank" rel="noopener">Office 365</a> dienen alle e-mailboxen geauthenticeerd te worden voor 13 oktober 2020. Dit geldt voor alle bestaande Office 365 e-mailboxen.<br>Lees <a href="../kennisbank/office-365-authenticatie/index.html">hier</a> hoe je dit voor jouw e-mailbox in orde kunt maken.</p>
+<h2 id="wachtwoord-wijzigen"><a></a>Wachtwoord wijzigen</h2>
+<p>Bij de e-mail instellingen kun je het wachtwoord van je standaard e-mailbox nu zelf wijzigen indien deze op jullie server gewijzigd is. Lees <a href="https://web.archive.org/web/2026/https://support.fasterforward.nl/kennisbank/wachtwoord-e-mail-wijzigen/">hier</a> hoe je dit doet.<br>Let op! Hiervoor dient een recht aangezet te worden. Stuur hiervoor een e-mail naar <a href="mailto:support-eblinqx@blinqx.tech">support-eblinqx@blinqx.tech</a></p>
+<h2 id="andere-punten-die-uitgebreid-of-verbeterd-zijn-in-deze-release"><a></a>Andere punten die uitgebreid of verbeterd zijn in deze release:</h2>
+<p><strong>Andere punten die uitgebreid of verbeterd zijn in deze release:</strong></p>
+<ul><li>In de takenlijst zie je vanaf nu direct of de taak gekoppeld is aan een schademelding. Daarnaast hebben we het ook visueel duidelijker gemaakt wanneer een registratie gekoppeld is aan een schademelding.</li><li>Het woord ‘HDN’ wordt niet meer in de omschrijving van een document opgenomen wanneer deze via HDN ontvangen is. </li><li>Bij het toevoegen van een document aan een e-mail vanuit een product, zijn de documenten automatisch op datum gesorteerd (nieuwste document bovenaan).</li><li>Er is een verbetering doorgevoerd om het opslaan van partijen onder een schademelding gebruiksvriendelijker te maken.</li><li>De specificatie in de urenregistratie is aangepast zodat de geregistreerde tijd niet in uren maar in minuten wordt weergegeven.  Indien je al gebruik maakt van de urenregistratie in Elements en hier gebruik van wilt maken stuur dan een e-mail naar <a href="mailto:support-eblinqx@blinqx.tech">support-eblinqx@blinqx.tech</a></li></ul>
+<h2 id="fixes"><a></a>Fixes:</h2>
+<table><tbody><tr><td>Het resultatenblokje werd op bepaalde schermen nog getoond terwijl deze setting uit stond.</td><td> <img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2020/05/vinkje.jpg" alt="" loading="lazy"></td></tr><tr><td>Wanneer een offerte bevroren wordt, worden alle velden nu uitgegrijsd, voorheen leken bepaalde velden nog bewerkbaar. </td><td><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2020/05/vinkje.jpg" alt="" loading="lazy"></td></tr><tr><td>Het handmatig uploaden van een CSV bestand bij de prolongatie import is verbeterd. </td><td><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2020/05/vinkje.jpg" alt="" loading="lazy"></td></tr><tr><td>NHB koppelingen zijn verbeterd</td><td><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2020/05/vinkje.jpg" alt="" loading="lazy"></td></tr><tr><td>Icoon uitgaande e-mail is aangepast</td><td><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2020/05/vinkje.jpg" alt="" loading="lazy"></td></tr></tbody></table></div>
+      <section class="figs"><h2>Afbeeldingen bij dit artikel</h2><figure><a href="https://web.archive.org/web/20200919181608im_/https://support.fasterforward.nl/wp-content/uploads/2020/05/popup_koppelen-1-1024x580.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20200919181608im_/https://support.fasterforward.nl/wp-content/uploads/2020/05/popup_koppelen-1-1024x580.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure><figure><a href="https://web.archive.org/web/20200919181608im_/https://support.fasterforward.nl/wp-content/uploads/2020/05/karin2-1-1024x346.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20200919181608im_/https://support.fasterforward.nl/wp-content/uploads/2020/05/karin2-1-1024x346.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure></section><div class="feedback"><span class="fb-q">Was deze informatie nuttig?</span><button type="button" data-fb="ja">Ja</button><button type="button" data-fb="nee">Nee</button><p class="fb-out" role="status" hidden></p></div>
       
       
     </article>
