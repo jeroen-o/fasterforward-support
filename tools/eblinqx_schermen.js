@@ -5,6 +5,8 @@
  *   EBLINQX_GEBRUIKER, EBLINQX_WACHTWOORD
  *   EBLINQX_TOTP        optioneel: geheime sleutel van de authenticator-app (base32)
  *   EBLINQX_CODE        optioneel: eenmalige verificatiecode (als er geen TOTP-sleutel is)
+ *   EBLINQX_KLANTNAAM   naam van de klant in de schermen (standaard: Jeroen Oversteegen)
+ *   EBLINQX_DEMONAAM    optioneel: naam van de bestaande demoklant, die op het scherm wordt vervangen door KLANTNAAM
  *
  * Gebruik:
  *   node tools/eblinqx_schermen.js inloggen            # inloggen en sessie bewaren in tools/.eblinqx-sessie.json
@@ -19,6 +21,8 @@ const crypto = require('crypto');
 
 const INLOG = process.env.EBLINQX_URL || 'https://demo-omgeving.vh.eblinqx.tech/?data=rvmKMOm%2FhSfLionl2R19QBhSSmI1vSfPeKGR%2FpXSIYYMA%2FigHw%3D%3D';
 const BASIS = new URL(INLOG).origin;
+const KLANTNAAM = process.env.EBLINQX_KLANTNAAM || 'Jeroen Oversteegen';
+const DEMONAAM = process.env.EBLINQX_DEMONAAM || '';
 const SESSIE = path.join(__dirname, '.eblinqx-sessie.json');
 
 function totp(secret) {
@@ -65,6 +69,15 @@ async function scherm(pad, uit, markeer) {
   const p = await ctx.newPage();
   await p.goto(pad.startsWith('http') ? pad : BASIS + '/' + pad.replace(/^\//, ''), { waitUntil: 'networkidle' });
   if (await p.$('#frmTxtPassword')) throw new Error('Sessie verlopen: opnieuw inloggen.');
+  if (DEMONAAM) {
+    // demoklant op het scherm hernoemen (tekst en invulvelden); de demo-omgeving zelf verandert niet
+    await p.evaluate(([oud, nieuw]) => {
+      const re = new RegExp(oud.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
+      const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+      for (let n; (n = w.nextNode());) n.nodeValue = n.nodeValue.replace(re, nieuw);
+      document.querySelectorAll('input, textarea').forEach(i => { i.value = i.value.replace(re, nieuw); });
+    }, [DEMONAAM, KLANTNAAM]);
+  }
   if (markeer) {
     await p.evaluate(sel => {
       const el = document.querySelector(sel);
