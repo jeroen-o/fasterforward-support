@@ -53,7 +53,7 @@ LIVE_DIR = os.path.join(SRC, "live-2026-10-20")  # pagina's van de live site, 20
 SKIP_PATH = re.compile(r"^(wp-content|wp-includes|wp-json|wp-admin|feed|comments|author|tag|tags|page|xmlrpc|"
                        r"search|\?|.*?/feed$|.*?/page/\d+$|.*?/amp$|.*?/embed$)")
 FEEDS = {"Nieuws": "nieuws", "Tips": "tips", "Release notes": "releasenotes"}
-OUTDIRS = ["video", "kennisbank", "categorien", "category", "nieuws", "tips", "releasenotes", "zoeken",
+OUTDIRS = ["elearning", "video", "kennisbank", "categorien", "category", "nieuws", "tips", "releasenotes", "zoeken",
            "contact", "trainingen", "assets"]
 
 
@@ -538,7 +538,7 @@ def page_url(p):
     return p["path"]
 
 
-NAV = [("Home", ""), ("Nieuws", "nieuws"), ("Tips", "tips"), ("Release notes", "releasenotes"),
+NAV = [("Home", ""), ("Nieuws", "nieuws"), ("Tips", "tips"), ("E-learning", "elearning"), ("Release notes", "releasenotes"),
        ("Trainingen", "trainingen"), ("Contact support", "contact")]
 
 
@@ -583,7 +583,7 @@ def layout(pg, title, body, active=None, description=""):
         </label>
         <button type="submit">Zoeken</button>
       </form>
-      <div class="status">Mogelijke incidenten en de systeemstatus vind je op onze <a href="#" title="URL statuspagina nog invullen">statuspagina</a>.</div>
+      <div class="status">Mogelijke incidenten en de systeemstatus vind je op onze <a href="https://status.fasterforward.nl/" target="_blank" rel="noopener">statuspagina</a>.</div>
     </div>
   </div>
 </header>
@@ -596,7 +596,7 @@ def layout(pg, title, body, active=None, description=""):
       <a href="{pg.rel('opdrachtenbeleid')}">Opdrachtenbeleid</a>
       <a href="{pg.rel('klachtenbeleid')}">Klachtenbeleid</a>
       <a href="{pg.rel('wensenbeleid')}">Wensenbeleid</a>
-      <a href="{pg.rel('video')}">Video's &amp; e-learning</a>
+      <a href="{pg.rel('video')}">Video's</a>
     </nav>
   </div>
 </footer>
@@ -955,11 +955,9 @@ def render_search(pages, cats):
         for v in g["videos"]:
             idx.append({"t": v["t"], "h": "video/index.html#v-" + v["id"], "c": "Video's › " + g["group"], "k": "video",
                         "x": " ".join(x for x in (v.get("ch"), g["group"]) if x)})
-    for l in open(os.path.join(TOOLS, "elearning.txt"), encoding="utf8"):
-        if l.strip() and not l.startswith("#"):
-            label, url, title, _ = l.rstrip("\n").split("|")
-            idx.append({"t": re.sub(r"^eBlinqx Connect:\s*", "", title).rstrip(".") or label, "h": url, "ext": 1,
-                        "c": "E-learning", "k": "video", "x": label + " " + title + " e-learning instructie"})
+    for it in elearning_items():
+        idx.append({"t": it["t"], "h": "elearning/" + it["slug"] + "/index.html", "c": "E-learning › " + it["prod"], "k": "video",
+                    "x": " ".join(" ".join([st["h"]] + st["p"]) for st in it["steps"]) or it["t"]})
     os.makedirs(os.path.join(ROOT, "zoeken"), exist_ok=True)
     with open(os.path.join(ROOT, "zoeken", "zoekindex.js"), "w", encoding="utf8") as fh:
         fh.write("window.ZOEKINDEX=" + json.dumps(idx, ensure_ascii=False, separators=(",", ":")) + ";\n")
@@ -1024,7 +1022,7 @@ def render_home(cats, feeds, pages):
     <div class="btn-row">
       {a("kennisbank/nieuwe-gebruiker-aanvragen", "Nieuwe gebruiker aanvragen").replace("<a ", '<a class="btn-out" ', 1)}
       {a("kennisbank/gebruiker-opzeggen", "Gebruiker opzeggen").replace("<a ", '<a class="btn-out" ', 1)}
-      <a class="btn-out" href="{pg.rel('video')}">E-learning &amp; video's</a>
+      <a class="btn-out" href="{pg.rel('elearning')}">E-learning</a>
     </div>
     <div class="tiles">{tiles}</div>
 
@@ -1108,7 +1106,7 @@ def render_video():
             f'<span class="play"><svg class="ic"><use href="#i-play"/></svg></span></a>'
             f'<h3><a href="{esc(url)}" target="_blank" rel="noopener">{esc(t)}</a></h3>'
             f'<p>{esc(prod)} · {"interactieve demo" if not yt else "video"}{f" · wachtwoord: <b>{esc(pw)}</b>" if pw else ""}</p></div>')
-    sections = [f'<section class="vgroup" id="elearning"><h2>E-learning</h2><p class="lead">Interactieve instructies per onderwerp. Elke e-learning opent in een nieuw tabblad.</p><div class="vgrid">{"".join(cards)}</div></section>']
+    sections = [f'<p class="note">Op zoek naar de interactieve instructies? Die staan op de pagina <a href="{pg.rel("elearning")}">E-learning</a>.</p>']
     for g in groups:
         vs = []
         for v in g["videos"]:
@@ -1123,10 +1121,10 @@ def render_video():
                           f'<button class="play" type="button" aria-label="Speel {esc(v["t"])} af"><svg class="ic"><use href="#i-play"/></svg></button></div>'
                           f'<h3><a href="https://www.youtube.com/watch?v={esc(v["id"])}" target="_blank" rel="noopener">{esc(v["t"])}</a></h3><p>{esc(meta)}</p></div>')
         sections.append(f'<section class="vgroup"><h2>{esc(g["group"])}</h2><div class="vgrid">{"".join(vs)}</div></section>')
-    body = f"""{crumbs(pg, [("Video's & e-learning", None)])}
+    body = f"""{crumbs(pg, [("Video's", None)])}
 <main class="subpage"><div class="wrap">
-  <h1>Video's &amp; e-learning</h1>
-  <p class="lead">Instructievideo's, e-learnings, webinars en presentaties over Faster Forward Elements en eBlinqx. Video's worden pas van YouTube geladen als je op afspelen klikt.</p>
+  <h1>Video's</h1>
+  <p class="lead">Instructievideo's, webinars en presentaties over Faster Forward Elements en eBlinqx. Video's worden pas van YouTube geladen als je op afspelen klikt.</p>
   {"".join(sections)}
 </div></main>
 <script>
@@ -1137,7 +1135,106 @@ document.addEventListener("click", e => {{
   f.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${{f.dataset.yt}}?autoplay=1&rel=0" title="Video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
 }});
 </script>"""
-    write("video", layout(pg, "Video's & e-learning", body))
+    write("video", layout(pg, "Video's", body))
+
+
+ELEARN_DIR = os.path.join(SRC, "elearning")
+
+
+def elearning_items():
+    """E-learnings uit tools/elearning.txt, aangevuld met de uitgelezen stappen (bronnen/elearning/<id>/stappen.json)."""
+    items = []
+    for l in open(os.path.join(TOOLS, "elearning.txt"), encoding="utf8"):
+        if not l.strip() or l.startswith("#"):
+            continue
+        label, url, title, pw = l.rstrip("\n").split("|")
+        t = re.sub(r"^eBlinqx Connect:\s*", "", title).rstrip(".") or label
+        t = t[:1].upper() + t[1:]
+        yt = re.search(r"youtu\.be/([\w-]+)", url)
+        sid = url.rstrip("/").split("/")[-1]
+        prod = "eBlinqx Hypotheekadvies" if "Hypotheekadvies" in title else ("eBlinqx Connect" if title else "eBlinqx Advies")
+        it = {"t": t, "url": url, "id": sid, "yt": yt.group(1) if yt else None, "prod": prod, "pw": pw,
+              "slug": slugify(t), "steps": []}
+        f = os.path.join(ELEARN_DIR, sid, "stappen.json")
+        if os.path.exists(f):
+            for st in json.load(open(f, encoding="utf8")):
+                lines = [x.strip() for x in st["text"].split("\n")]
+                lines = [x for x in lines if x and not re.fullmatch(r"\d+\s*/\s*\d+", x) and x not in st.get("btn", [])]
+                if not lines:
+                    continue
+                head = lines[0] if len(lines) > 1 and len(lines[0]) < 90 else ""
+                body = lines[1:] if head else lines
+                it["steps"].append({"h": head, "p": body, "img": f"bronnen/elearning/{sid}/{st['file']}"})
+        items.append(it)
+    return items
+
+
+def render_elearning():
+    items = elearning_items()
+    pg = Page("elearning")
+    cards = []
+    for it in items:
+        thumb = (pg.rel(it["steps"][0]["img"]) if it["steps"] else
+                 pg.rel(f'assets/video/{it["yt"]}.jpg') if it["yt"] else "")
+        n = f'{len(it["steps"])} stappen' if it["steps"] else ("video" if it["yt"] else "interactieve demo")
+        cards.append(
+            f'<div class="video el"><a class="frame" href="{pg.rel("elearning/" + it["slug"])}">'
+            f'{f"<img src=\"{thumb}\" alt=\"\" loading=\"lazy\">" if thumb else ""}'
+            f'<span class="play"><svg class="ic"><use href="#i-play"/></svg></span></a>'
+            f'<h3><a href="{pg.rel("elearning/" + it["slug"])}">{esc(it["t"])}</a></h3>'
+            f'<p>{esc(it["prod"])} · {n}</p></div>')
+    body = f"""{crumbs(pg, [("E-learning", None)])}
+<main class="subpage"><div class="wrap">
+  <h1>E-learning</h1>
+  <p class="lead">Interactieve instructies per onderwerp: klik je stap voor stap door de software, of lees de stappen rustig na op de pagina van de e-learning. Zie ook de <a href="{pg.rel('video')}">video's</a>.</p>
+  <div class="vgrid elgrid">{"".join(cards)}</div>
+</div></main>"""
+    write("elearning", layout(pg, "E-learning", body, "elearning", "Interactieve e-learnings voor eBlinqx Connect en eBlinqx Hypotheekadvies."))
+
+    for it in items:
+        path = "elearning/" + it["slug"]
+        pg = Page(path)
+        if it["yt"]:
+            demo = (f'<div class="video demo"><div class="frame" data-yt="{esc(it["yt"])}"><img src="{pg.rel("assets/video/" + it["yt"] + ".jpg")}" alt="">'
+                    f'<button class="play" type="button" aria-label="Video afspelen"><svg class="ic"><use href="#i-play"/></svg></button></div></div>')
+        else:
+            demo_url = f'https://blinqx.storylane.io/demo/{it["id"]}?embed=inline'
+            first = pg.rel(it["steps"][0]["img"]) if it["steps"] else ""
+            demo = (f'<div class="video demo"><div class="frame" data-sl="{esc(demo_url)}">'
+                    f'{f"<img src=\"{first}\" alt=\"\">" if first else ""}'
+                    f'<button class="play" type="button" aria-label="Start de interactieve e-learning"><svg class="ic"><use href="#i-play"/></svg><span>Start de interactieve e-learning</span></button></div>'
+                    f'<p><a href="{esc(it["url"])}" target="_blank" rel="noopener">Open in een nieuw tabblad</a>'
+                    f'{f" · wachtwoord: <b>{esc(it["pw"])}</b>" if it["pw"] else ""}</p></div>')
+        steps = ""
+        if it["steps"]:
+            lis = []
+            for i, st in enumerate(it["steps"], 1):
+                ps = "".join(f"<p>{linkify(x)}</p>" for x in st["p"])
+                lis.append(f'<li id="stap-{i}"><h3><span class="snum">Stap {i}</span>{esc(st["h"])}</h3>{ps}'
+                           f'<a class="sshot" href="{pg.rel(st["img"])}" target="_blank" rel="noopener"><img src="{pg.rel(st["img"])}" alt="Stap {i}: {esc(st["h"])}" loading="lazy"></a></li>')
+            steps = f'<h2 id="stappen">Alle stappen</h2><ol class="steps">{"".join(lis)}</ol>'
+        others = "".join(f'<li><a href="{pg.rel("elearning/" + o["slug"])}">{esc(o["t"])}</a></li>' for o in items if o is not it)
+        meta = f'{esc(it["prod"])} · {"video" if it["yt"] else "interactieve demo"}{f" · {len(it["steps"])} stappen" if it["steps"] else ""}'
+        body = f"""{crumbs(pg, [("E-learning", "elearning"), (it["t"], None)])}
+<main class="article"><div class="wrap cols">
+  <article>
+    <h1>{esc(it["t"])}</h1>
+    <p class="meta">{meta}</p>
+    {demo}
+    <div class="content">{steps}</div>
+  </article>
+  <aside class="related"><h2>Andere e-learnings:</h2><ul>{others}</ul></aside>
+</div></main>
+<script>
+document.addEventListener("click", e => {{
+  const b = e.target.closest(".play");
+  const f = b && b.closest("[data-sl],[data-yt]");
+  if (!f) return;
+  const src = f.dataset.sl || `https://www.youtube-nocookie.com/embed/${{f.dataset.yt}}?autoplay=1&rel=0`;
+  f.innerHTML = `<iframe src="${{src}}" title="E-learning" allow="autoplay; fullscreen; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+}});
+</script>"""
+        write(path, layout(pg, it["t"], body, "elearning", f'E-learning {it["prod"]}: {it["t"]}'))
 
 
 def render_404():
@@ -1199,6 +1296,7 @@ def main():
         render_feed(name, items)
     render_kennisbank(cats)
     render_video()
+    render_elearning()
     render_search(pages, cats)
     render_home(cats, feeds, pages)
     render_404()
