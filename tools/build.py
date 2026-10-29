@@ -17,6 +17,7 @@ from datetime import date
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import htmlclean  # noqa: E402
+import classify  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, "bronnen")
@@ -471,6 +472,24 @@ def build_structure(pages):
                 cats[top]["loose"].append(p)
         else:
             cats["Overig"]["loose"].append(p)
+
+    # Kennisbankartikelen zonder categorie (niet in de gearchiveerde overzichten) alsnog indelen:
+    # eerst duidelijke titelregels, daarna op inhoudelijke overeenkomst (tools/classify.py).
+    ov = cats["Overig"]["subs"].get("Overige kennisbankartikelen")
+    if ov and ov["items"]:
+        subs = {(c, sn): sub["items"] for c, cat in cats.items() if c != "Overig" for sn, sub in cat["subs"].items()}
+        auto = classify.indelen(subs, ov["items"], drempel=0.15)
+        blijft = []
+        for p in ov["items"]:
+            doel = classify.regel(p["t"])
+            if not doel or doel not in subs:
+                doel = auto.get(id(p), (None,))[0]
+            if doel:
+                p["crumb"] = list(doel)
+                cats[doel[0]]["subs"][doel[1]]["items"].append(p)
+            else:
+                blijft.append(p)
+        ov["items"] = blijft
 
     # Volgorde van subcategorieën en artikelen zoals op de oorspronkelijke site.
     idx = open(os.path.join(SRC, "offline-archief/index.html"), encoding="utf8").read()
