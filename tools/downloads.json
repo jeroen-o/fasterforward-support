@@ -1,0 +1,38 @@
+{
+ "_uitleg": "Pdf's van de oude supportsite (uit het Internet Archive). Pad = deel na wp-content/uploads/. Titels en rubrieken handmatig.",
+ "rubrieken": [
+  {"naam": "Handleidingen", "items": [
+   ["2024/02/Handleiding-aanvragen-versturen-via-Elements.pdf", "Handleiding: aanvragen versturen via Elements"],
+   ["2022/09/Hoe-storneer-ik-een-automatische-incasso.pdf", "Hoe storneer ik een automatische incasso?"],
+   ["2022/09/dubbele-definitieve-factuur-boekhoudkundig-verwerken.pdf", "Dubbele definitieve factuur boekhoudkundig verwerken"],
+   ["2022/09/uwkluis-slideshow-2022.pdf", "Uwkluis: presentatie (2022)"],
+   ["2018/03/Nextens-handleiding.pdf", "Handleiding Nextens-koppeling"],
+   ["2018/03/koppeling-myView-Elements.pdf", "Koppeling myView – Elements"],
+   ["2017/11/AFD-voor-Aplaza-en-IBAN.pdf", "AFD voor Aplaza en IBAN"],
+   ["2017/09/Kalender-items.pdf", "Kalender-items"],
+   ["2017/03/Handleiding_HDN-certificaat-voor-Skydoo.pdf", "Handleiding HDN-certificaat voor Skydoo"]
+  ]},
+  {"naam": "Voorbeeldrapporten", "items": [
+   ["2022/10/Adviesrapport-Voorbeeld-1.pdf", "Voorbeeld adviesrapport"],
+   ["2020/07/FinancieelRapport-Voorbeeld-FinRust.pdf", "Voorbeeld financieel rapport (FinRust)"]
+  ]},
+  {"naam": "Releasenotes 2016–2017", "items": [
+   ["2017/12/Release-notes-API-en-update-schermen.pdf", "Releasenotes: API en update schermen"],
+   ["2017/11/Releasenotes-splitsen-en-samenvoegen-PDF.pdf", "Releasenotes: dossiers splitsen en samenvoegen"],
+   ["2017/10/Tijdwinst-release.pdf", "Releasenotes: tijdwinst-release"],
+   ["2017/08/Optimalisaties-schadekaart.pdf", "Releasenotes: optimalisaties schadekaart"],
+   ["2017/07/Releasenotes-aangebrachte-punten.pdf", "Releasenotes: aangebrachte punten"],
+   ["2017/06/Release-grafische-update.pdf", "Releasenotes: grafische update"],
+   ["2017/04/Releasenotes-update-schermen.pdf", "Releasenotes: update schermen"],
+   ["2017/02/Releasenotes_9februari.pdf", "Releasenotes 9 februari 2017"],
+   ["2017/02/Releasenotes-Carnavals_release.pdf", "Releasenotes: carnavalsrelease"],
+   ["2017/01/Releasenotes-10.8.1.pdf", "Releasenotes versie 10.8.1"],
+   ["2016/11/Releasenotesoptimalisatienovember.pdf", "Releasenotes: optimalisatie november 2016"]
+  ]},
+  {"naam": "Beleid (archief 2017)", "items": [
+   ["2017/08/Beleid-Support-aug-2017.pdf", "Supportbeleid (augustus 2017)"],
+   ["2017/09/BeleidOpdrachtenaugustus2017.pdf", "Opdrachtenbeleid (augustus 2017)"],
+   ["2017/10/Klachten-beleid.pdf", "Klachtenbeleid (oktober 2017)"]
+  ]}
+ ]
+}

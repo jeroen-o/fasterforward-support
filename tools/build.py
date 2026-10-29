@@ -690,6 +690,7 @@ def layout(pg, title, body, active=None, description=""):
       <a href="{pg.rel('klachtenbeleid')}">Klachtenbeleid</a>
       <a href="{pg.rel('wensenbeleid')}">Wensenbeleid</a>
       <a href="{pg.rel('video')}">Video's</a>
+      <a href="{pg.rel('downloads')}">Downloads</a>
     </nav>
   </div>
 </footer>
@@ -1039,6 +1040,7 @@ def render_feed(name, items):
   <h2 class="feed-h">{esc(h2)}</h2>
   <p>{esc(intro)} {len(items)} berichten.</p>
   {f'<p class="jump">Ga naar: {jump}</p>' if len(keys) > 1 else ""}
+  {f'<p class="note">Oudere releasenotes uit 2016 en 2017 staan als pdf bij de <a href="{pg.rel("downloads")}">downloads</a>.</p>' if name == "Release notes" else ""}
   {blocks}
 </div></main>"""
     write(path, layout(pg, title, body, path, f"{title}: {intro}"))
@@ -1104,6 +1106,9 @@ def render_search(pages, cats):
         wt = json.load(open(wtf, encoding="utf8"))
         idx.append({"t": "Websitetools: rekentools voor op je website", "h": "websitetools/index.html", "c": "Websitetools", "k": "kennisbank",
                     "x": " ".join(g["g"] + " " + " ".join(t["t"] for t in g["tools"]) for g in wt["groepen"]) + " rekentool rekentools website hypotheekbond leads"})
+    for i in downloads_items():
+        idx.append({"t": i["t"], "h": "downloads/index.html", "c": "Downloads › " + i["rub"], "k": "overig",
+                    "d": i["datum"], "x": i["t"] + " pdf download " + i["rub"]})
     tf = os.path.join(SRC, "academy", "trainingen.json")
     if os.path.exists(tf):
         for t in json.load(open(tf, encoding="utf8"))["trainingen"]:
@@ -1614,6 +1619,60 @@ def render_websitetools():
                                  "Rekentools voor op de website van je advieskantoor: hypotheek berekenen, rentes vergelijken, aflossen, verduurzamen en klantinzicht."))
 
 
+def downloads_items():
+    """Pdf's uit tools/downloads.json: lokaal (bronnen/wayback/wp-content/uploads) of anders uit het archief."""
+    f = os.path.join(TOOLS, "downloads.json")
+    if not os.path.exists(f):
+        return []
+    cdx = {}
+    cf = os.path.join(WAYBACK_DIR, "_cdx.json")
+    if os.path.exists(cf):
+        for ts, orig, _ in json.load(open(cf)):
+            if orig.lower().endswith(".pdf"):
+                cdx[orig.split("/wp-content/uploads/")[-1]] = (ts, orig.replace("http://", "https://"))
+    out = []
+    for rub in json.load(open(f, encoding="utf8"))["rubrieken"]:
+        for pad, titel in rub["items"]:
+            lokaal = os.path.join(WAYBACK_DIR, "wp-content", "uploads", pad)
+            y, m = pad.split("/")[:2]
+            item = {"rub": rub["naam"], "t": titel, "pad": pad, "datum": f"{MAANDEN[int(m) - 1]} {y}"}
+            if os.path.exists(lokaal):
+                item["href"] = "bronnen/wayback/wp-content/uploads/" + pad
+                item["kb"] = max(1, os.path.getsize(lokaal) // 1024)
+            elif pad in cdx:
+                ts, orig = cdx[pad]
+                item["url"] = f"https://web.archive.org/web/{ts}id_/{orig}"
+            else:
+                continue
+            out.append(item)
+    return out
+
+
+def render_downloads():
+    items = downloads_items()
+    if not items:
+        return
+    pg = Page("downloads")
+    rubs = []
+    for naam in dict.fromkeys(i["rub"] for i in items):
+        lis = []
+        for i in items:
+            if i["rub"] != naam:
+                continue
+            href = pg.rel(i["href"]) if i.get("href") else i["url"]
+            meta = i["datum"] + (f' · pdf, {i["kb"]:,} kB'.replace(",", ".") if i.get("kb") else " · pdf")
+            lis.append(f'<li><a class="dl" href="{esc(href)}" target="_blank" rel="noopener">'
+                       f'<svg class="ic"><use href="#i-file"/></svg><span><b>{esc(i["t"])}</b><small>{esc(meta)}</small></span></a></li>')
+        rubs.append(f'<section class="dlgroup"><h2>{esc(naam)}</h2><ul class="dllist">{"".join(lis)}</ul></section>')
+    body = f"""{crumbs(pg, [("Downloads", None)])}
+<main class="subpage"><div class="wrap">
+  <h1>Downloads</h1>
+  <p class="lead">Handleidingen, voorbeeldrapporten en oudere releasenotes als pdf. Een deel van deze documenten stamt uit de tijd van Elements en kan verouderd zijn; kijk voor de actuele werkwijze in de <a href="{pg.rel("kennisbank")}">kennisbank</a>.</p>
+  {"".join(rubs)}
+</div></main>"""
+    write("downloads", layout(pg, "Downloads", body, None, "Handleidingen, voorbeeldrapporten en oudere releasenotes van eBlinqx / Elements als pdf."))
+
+
 def render_404():
     # GitHub Pages serveert 404.html vanaf de root; absolute paden zijn daar niet bekend, dus root-relatief.
     pg = Page("")
@@ -1708,6 +1767,7 @@ def main():
     render_trainingen()
     render_procesversneller()
     render_websitetools()
+    render_downloads()
     render_search(pages, cats)
     render_home(cats, feeds, pages)
     render_404()
