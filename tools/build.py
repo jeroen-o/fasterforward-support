@@ -540,12 +540,16 @@ def page_url(p):
 
 NAV = [("Home", ""), ("Nieuws", "nieuws"), ("Tips", "tips"), ("E-learning", "elearning"),
        ("Releasenotes Fastlane", "releasenotes-hypotheekadvies"), ("Release notes", "releasenotes"),
-       ("Trainingen", "trainingen"), ("Contact support", "contact")]
+       ("Trainingen", "trainingen"), ("Contact support", "contact"),
+       ("Overig support", "https://verzekeringhypotheek.blinqx.tech/support"),
+       ("Overig contact", "https://verzekeringhypotheek.blinqx.tech/contact")]
 
 
 def layout(pg, title, body, active=None, description=""):
     nav = "".join(
-        f'<li><a href="{pg.rel(t)}"{" aria-current=\"page\"" if active == t else ""}>{esc(n)}</a></li>'
+        (f'<li class="ext"><a href="{t}" target="_blank" rel="noopener">{esc(n)}<span class="sr"> (opent in nieuw tabblad)</span></a></li>'
+         if t.startswith("http") else
+         f'<li><a href="{pg.rel(t)}"{" aria-current=\"page\"" if active == t else ""}>{esc(n)}</a></li>')
         for n, t in NAV)
     return f"""<!doctype html>
 <html lang="nl">

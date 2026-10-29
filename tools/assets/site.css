@@ -295,3 +295,9 @@ ol.steps p{margin:0 0 10px}
 @media (min-width:901px) and (max-width:1000px){
   nav.main ul{flex-wrap:wrap}
 }
+/* menu met externe items (Overig support / Overig contact) */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+nav.main li.ext a::after{content:"↗";font-size:.85em;margin-left:3px;color:#8A8A8A}
+@media (min-width:901px){
+  nav.main ul,nav.main ul{flex-wrap:wrap;justify-content:flex-end;row-gap:6px;max-width:740px}
+}
