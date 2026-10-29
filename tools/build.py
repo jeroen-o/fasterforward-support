@@ -808,7 +808,8 @@ KLUIS_RE = re.compile(r"(?<![\w/.-])[Uu]w\s?[Kk]luis(?![\w-])(?!\s*/\s*Online kl
 
 # Verouderde contactgegevens van Faster Forward -> huidige gegevens van Blinqx support (eBlinqx Connect).
 OUD_CONTACT = [
-    (re.compile(r"support@fasterforward\.nl", re.I), "support-eblinqx@blinqx.tech"),
+    # alle oude adressen (support@, opdrachten@, sales@ …) -> support van eBlinqx
+    (re.compile(r"[\w.+-]+@fasterforward\.nl", re.I), "support-eblinqx@blinqx.tech"),
     (re.compile(r"0164[\s-]?271[\s-]?281"), "085 018 00 69"),
 ]
 
