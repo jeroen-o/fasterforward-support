@@ -62,6 +62,7 @@
           if (s) { hit++; total += s; } else if (all) return;
         }
         if (!hit) return;
+        if (r._t === phrase) total += 120;       // exacte titel altijd bovenaan
         if (terms.length > 1) {
           if (r._t.indexOf(phrase) !== -1 || r._t.indexOf(" " + nq) !== -1) total += 40;
           else if (r._x.indexOf(" " + nq) !== -1) total += 12;
