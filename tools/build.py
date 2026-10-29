@@ -415,7 +415,7 @@ def build_structure(pages):
         if p["path"] in ("kennisbank", "video", "zoeken", "categorien", "category"):
             p["skip"] = True  # overzichtspagina's maken we zelf
             continue
-        if "/page/" in p["u"] or p["path"].startswith(("tag/", "tags/")):
+        if "/page/" in p["u"] or p["path"].startswith(("tag/", "tags/")) or re.search(r"/(embed|feed|amp)$", p["path"]):
             p["skip"] = True
             continue
         p["excerpt"] = excerpts.get(p["t"].lower()) or (p["summary"] if p.get("stub") else "") or first_sentence(p["lines"])
@@ -493,6 +493,21 @@ def build_structure(pages):
                 blijft.append(p)
         ov["items"] = blijft
 
+    # Productnaam in de kennisbank: 'Elements' heet nu eBlinqx (nieuws en releasenotes blijven ongemoeid: dat is geschiedenis).
+    for c, cat in cats.items():
+        for sub in list(cat["subs"].values()) + [{"items": cat["loose"]}]:
+            for p in sub["items"]:
+                p["t"] = elements_tekst(p["t"])
+                p["lines"] = [elements_tekst(l) for l in p["lines"]]
+                if p.get("excerpt"):
+                    p["excerpt"] = elements_tekst(p["excerpt"])
+                p["summary"] = elements_tekst(p.get("summary") or "")
+                for im in p["imgs"]:
+                    im["alt"] = elements_tekst(im.get("alt") or "")
+                if p.get("rawhtml"):
+                    parts = re.split(r"(<[^>]+>)", p["rawhtml"])
+                    p["rawhtml"] = "".join(x if i % 2 else elements_tekst(x) for i, x in enumerate(parts))
+
     # Volgorde van subcategorieën en artikelen zoals op de oorspronkelijke site.
     idx = open(os.path.join(SRC, "offline-archief/index.html"), encoding="utf8").read()
     order, cur = {}, None
@@ -514,6 +529,12 @@ def build_structure(pages):
     for f in feeds.values():
         f.sort(key=lambda p: (p["posted"] or p["updated"] or wb_date(p) or date(1900, 1, 1)), reverse=True)
     return cats, feeds
+
+
+def elements_tekst(t):
+    t = re.sub(r"\bFaster Forward Elements\b", "eBlinqx", t)
+    t = re.sub(r"\bFFWD Elements\b", "eBlinqx", t)
+    return re.sub(r"\bElements\b", "eBlinqx", t)
 
 
 def wb_date(p):
@@ -691,9 +712,11 @@ def layout(pg, title, body, active=None, description=""):
       <a href="{pg.rel('wensenbeleid')}">Wensenbeleid</a>
       <a href="{pg.rel('video')}">Video's</a>
       <a href="{pg.rel('downloads')}">Downloads</a>
+      <a href="{pg.rel('nieuwsbrief')}">Nieuwsbrief</a>
     </nav>
   </div>
 </footer>
+<script src="{pg.rel('assets/site.js')}?v={asset_versie('site.js')}" defer></script>
 </body>
 </html>
 """
@@ -913,6 +936,10 @@ def render_article(cats, feeds, p):
                         f'{f"<figcaption>{esc(im["alt"])}</figcaption>" if im["alt"] else ""}</figure>')
         imgs = '<section class="figs"><h2>Afbeeldingen bij dit artikel</h2>' + "".join(figs) + "</section>"
     shot = ""  # screenshots van de Wayback-opname worden niet meer getoond; de echte afbeeldingen staan in het artikel
+    if p["path"] not in ("contact",) and (p.get("rawhtml") or p["lines"]):
+        imgs += ('<div class="feedback"><span class="fb-q">Was deze informatie nuttig?</span>'
+                 '<button type="button" data-fb="ja">Ja</button><button type="button" data-fb="nee">Nee</button>'
+                 '<p class="fb-out" role="status" hidden></p></div>')
     if p["path"] in REPLAYS:
         imgs = (f'<p class="replay"><a class="btn-out" href="{esc(REPLAYS[p["path"]])}" target="_blank" rel="noopener">'
                 f'<svg class="ic"><use href="#i-play"/></svg> Bekijk de webinar-replay</a></p>') + imgs
@@ -935,7 +962,11 @@ def render_article(cats, feeds, p):
                 '<p>Blinqx powered by Faster Forward</p>'
                 '<p>E-mail:<br><a href="mailto:support-eblinqx@blinqx.tech">support-eblinqx@blinqx.tech</a></p>'
                 '<p>Telefoonnummer:<br><a href="tel:+31850180069">085 018 00 69</a></p>'
-                '<p>Wij zijn bereikbaar op werkdagen van 8:30 tot 17:00</p></aside>')
+                '<p>Wij zijn bereikbaar op werkdagen van 8:30 tot 17:00</p>'
+                '<h2 class="isl-h">Scherm delen</h2>'
+                '<form id="isl-connect-form" class="isl" autocomplete="off"><label for="isl-code">Vul de sessiecode in die je van support hebt gekregen:</label>'
+                '<input id="isl-code" name="code" type="text" inputmode="numeric" required>'
+                '<button type="submit">Verbinden</button></form><p id="isl-feedback" role="status"></p></aside>')
     else:
         head = crumbs(pg, crumb_items(cats, p))
     raw = p.get("raw") or {}
@@ -1042,6 +1073,8 @@ def render_feed(name, items):
   {f'<p class="jump">Ga naar: {jump}</p>' if len(keys) > 1 else ""}
   {f'<p class="note">Oudere releasenotes uit 2016 en 2017 staan als pdf bij de <a href="{pg.rel("downloads")}">downloads</a>.</p>' if name == "Release notes" else ""}
   {blocks}
+  <div class="nb-cta"><h2>Op de hoogte blijven?</h2><p>Meld je aan voor onze nieuwsbrief om regelmatig tips te ontvangen.</p>
+  <p><a class="btn-out cta" href="{pg.rel("nieuwsbrief")}">Aanmelden nieuwsbrief</a></p></div>
 </div></main>"""
     write(path, layout(pg, title, body, path, f"{title}: {intro}"))
 
@@ -1673,6 +1706,20 @@ def render_downloads():
     write("downloads", layout(pg, "Downloads", body, None, "Handleidingen, voorbeeldrapporten en oudere releasenotes van eBlinqx / Elements als pdf."))
 
 
+def render_nieuwsbrief():
+    pg = Page("nieuwsbrief")
+    body = f"""{crumbs(pg, [("Nieuwsbrief", None)])}
+<main class="subpage"><div class="wrap">
+  <h1>Op de hoogte blijven?</h1>
+  <p class="lead">Meld je aan voor de nieuwsbrief van Blinqx Verzekering &amp; Hypotheek en ontvang regelmatig tips, nieuws en de belangrijkste releases van eBlinqx.</p>
+  <div id="nb-form"></div>
+  <p><button type="button" class="btn-out cta" data-nieuwsbrief>Aanmelden voor de nieuwsbrief</button></p>
+  <p id="nb-fallback" hidden>Aanmelden kan ook via de website van <a href="https://verzekeringhypotheek.blinqx.tech/" target="_blank" rel="noopener">Blinqx Verzekering &amp; Hypotheek</a> (onderaan de pagina).</p>
+  <p class="src">Het aanmeldformulier wordt pas geladen als je op de knop klikt. Je gegevens worden verwerkt door Blinqx Verzekering &amp; Hypotheek via HubSpot. Afmelden kan altijd via de link in de nieuwsbrief (zie ook <a href="{pg.rel("kennisbank/nieuwsbrief-afmelden")}">nieuwsbrief afmelden</a>).</p>
+</div></main>"""
+    write("nieuwsbrief", layout(pg, "Nieuwsbrief", body, None, "Meld je aan voor de nieuwsbrief van Blinqx Verzekering & Hypotheek."))
+
+
 def render_404():
     # GitHub Pages serveert 404.html vanaf de root; absolute paden zijn daar niet bekend, dus root-relatief.
     pg = Page("")
@@ -1768,6 +1815,7 @@ def main():
     render_procesversneller()
     render_websitetools()
     render_downloads()
+    render_nieuwsbrief()
     render_search(pages, cats)
     render_home(cats, feeds, pages)
     render_404()
