@@ -534,10 +534,6 @@ class Page:
         return pre + (target + "/" if target else "") + "index.html"
 
 
-def page_url(p):
-    return p["path"]
-
-
 NAV = [("Home", ""), ("Nieuws", "nieuws"), ("Tips", "tips"), ("E-learning", "elearning"),
        ("Releasenotes Hypotheekadvies", "releasenotes-hypotheekadvies"), ("Releasenotes Connect", "releasenotes"),
        ("Trainingen", "trainingen"), ("Contact support", "contact"),
@@ -551,7 +547,7 @@ SITE_URL = os.environ.get("SITE_URL", "https://jeroen-o.github.io/fasterforward-
 
 def share_block(pg, title, description):
     from urllib.parse import quote
-    url = SITE_URL + (pg.path + "/" if pg.path and not pg.path.endswith(".html") else "")
+    url = page_url(pg)
     t = title or "Blinqx Support"
     d = re.sub(r"\s+", " ", description or "").strip()
     if len(d) > 200:
@@ -568,6 +564,37 @@ def share_block(pg, title, description):
             'document.querySelectorAll(".share-b").forEach(function(a){var m=a.dataset.msg;'
             'a.href=a.classList.contains("wa")?"https://wa.me/?text="+encodeURIComponent(m+" "+u)'
             ':"mailto:?subject="+encodeURIComponent(a.dataset.t+" – Blinqx Support")+"&body="+encodeURIComponent(m+"\\n\\n"+u);});})();</script>')
+
+
+SITE_DESC = ("Support voor eBlinqx (Faster Forward / Elements): kennisbank, releasenotes, e-learning en video's "
+             "van Blinqx Verzekering & Hypotheek.")
+
+
+def page_url(pg):
+    return SITE_URL + (pg.path + "/" if pg.path and not pg.path.endswith(".html") else "")
+
+
+def head_meta(pg, title, description):
+    """Beschrijving, canonical en Open Graph-tags (voorbeeldkaart bij delen via WhatsApp, Teams, mail)."""
+    d = re.sub(r"\s+", " ", description or "").strip() or SITE_DESC
+    if len(d) > 290:
+        d = d[:290].rsplit(" ", 1)[0] + "…"
+    t = title or "Blinqx Support"
+    u = page_url(pg)
+    img = SITE_URL + "assets/og-image.png"
+    return "\n".join([
+        f'<meta name="description" content="{esc(d)}">',
+        f'<link rel="canonical" href="{esc(u)}">',
+        '<meta property="og:site_name" content="Blinqx Support">',
+        '<meta property="og:locale" content="nl_NL">',
+        f'<meta property="og:type" content="{"website" if not pg.path else "article"}">',
+        f'<meta property="og:title" content="{esc(t)}">',
+        f'<meta property="og:description" content="{esc(d)}">',
+        f'<meta property="og:url" content="{esc(u)}">',
+        f'<meta property="og:image" content="{img}">',
+        '<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">',
+        '<meta name="twitter:card" content="summary_large_image">',
+    ])
 
 
 _VERSIES = {}
@@ -594,11 +621,12 @@ def layout(pg, title, body, active=None, description=""):
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{esc(title)}{" - " if title else ""}Blinqx Support</title>
-{f'<meta name="description" content="{esc(description[:300])}">' if description else ""}
+{head_meta(pg, title, description)}
 <link rel="stylesheet" href="{pg.rel('assets/site.css')}?v={asset_versie('site.css')}">
 <link rel="icon" href="{pg.rel('assets/favicon.png')}">
 </head>
 <body>
+<a class="skip" href="#inhoud">Naar de inhoud</a>
 {ICONS}
 <div class="topbar">
   <div class="wrap">
@@ -629,6 +657,7 @@ def layout(pg, title, body, active=None, description=""):
     </div>
   </div>
 </header>
+<div id="inhoud" tabindex="-1"></div>
 {body}
 {share_block(pg, title, description)}
 <footer>
