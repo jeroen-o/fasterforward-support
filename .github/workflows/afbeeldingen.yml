@@ -2,10 +2,10 @@ name: Internet Archive ophalen en site bouwen
 
 # Handmatig starten via Actions -> "Internet Archive ophalen en site bouwen" -> Run workflow.
 # 1. tools/wayback-ophalen.py haalt per URL de nieuwste gearchiveerde versie van support.fasterforward.nl
-#    op (HTML, afbeeldingen, pdf's) naar bronnen/wayback/. Al aanwezige bestanden worden overgeslagen,
-#    dus de workflow kan opnieuw gestart worden als hij halverwege stopt.
+#    op (HTML, afbeeldingen, pdf's) naar bronnen/wayback/. Al aanwezige bestanden worden overgeslagen.
 # 2. tools/download_afbeeldingen.py vult ontbrekende afbeeldingen aan.
 # 3. tools/build.py bouwt de site opnieuw; het resultaat wordt gecommit.
+# Is het ophalen nog niet klaar (tijdslimiet) en is er voortgang geboekt, dan start de workflow zichzelf opnieuw.
 on:
   workflow_dispatch:
     inputs:
@@ -13,9 +13,13 @@ on:
         description: "Alleen kennisbank en homepage ophalen (sneller)"
         type: boolean
         default: false
+      ronde:
+        description: "Volgnummer (automatisch)"
+        default: "1"
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: wayback
@@ -31,19 +35,37 @@ jobs:
         with:
           python-version: "3.12"
       - name: Pagina's en bestanden uit de Wayback Machine
+        id: ophalen
         run: |
           ARGS="--uit bronnen/wayback --pauze 0.8"
           if [ "${{ inputs.alleen_kennisbank }}" = "true" ]; then ARGS="$ARGS --kennisbank"; fi
-          timeout 290m python3 tools/wayback-ophalen.py $ARGS || echo "Gestopt (tijdslimiet of fout); wat binnen is wordt bewaard."
+          set +e
+          timeout 280m python3 tools/wayback-ophalen.py $ARGS 2>&1 | tee ophalen.log | grep -v '^[0-9]*/[0-9]* ' | tail -200
+          code=${PIPESTATUS[0]}
+          set -e
+          echo "Laatste voortgang:"; grep '^[0-9]*/[0-9]* ' ophalen.log | tail -3 || true
+          rm -f ophalen.log
+          if [ "$code" = "124" ]; then echo "onaf=true" >> "$GITHUB_OUTPUT"; else echo "onaf=false" >> "$GITHUB_OUTPUT"; fi
       - name: Ontbrekende afbeeldingen aanvullen
-        run: timeout 30m python3 tools/download_afbeeldingen.py || true
+        if: steps.ophalen.outputs.onaf == 'false'
+        run: timeout 40m python3 tools/download_afbeeldingen.py || true
       - name: Site bouwen
         run: python3 tools/build.py
       - name: Committen
+        id: commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
           git add -A
-          git diff --cached --quiet && exit 0
-          git commit -m "Inhoud uit het Internet Archive bijgewerkt"
-          for i in 1 2 3; do git pull --rebase && git push && break; sleep 5; done
+          if git diff --cached --quiet; then echo "nieuw=false" >> "$GITHUB_OUTPUT"; exit 0; fi
+          echo "nieuw=true" >> "$GITHUB_OUTPUT"
+          git commit -q -m "Inhoud uit het Internet Archive bijgewerkt (ronde ${{ inputs.ronde }})"
+          for i in 1 2 3 4 5; do git pull -q --rebase && git push && break; sleep 10; done
+      - name: Volgende ronde starten
+        if: steps.ophalen.outputs.onaf == 'true' && steps.commit.outputs.nieuw == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh workflow run afbeeldingen.yml --ref main \
+            -f alleen_kennisbank=${{ inputs.alleen_kennisbank }} \
+            -f ronde=$(( ${{ inputs.ronde }} + 1 ))
