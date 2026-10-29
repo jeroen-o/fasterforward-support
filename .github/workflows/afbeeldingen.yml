@@ -45,7 +45,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
-          ARGS="--uit bronnen/wayback --pauze 0.5 --werkers 4 --max-minuten 25"
+          ARGS="--uit bronnen/wayback --pauze 0.5 --werkers 8 --max-minuten 25"
           if [ "${{ inputs.alleen_kennisbank }}" = "true" ]; then ARGS="$ARGS --kennisbank"; fi
           start=$(date +%s); nieuw=false; onaf=true; fouten=0
           commit_data() {
