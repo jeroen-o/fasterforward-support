@@ -765,9 +765,9 @@ def kluis_html(doc):
     return out
 
 
-def write(path, content):
+def write(path, content, kluis=True):
     full = os.path.join(ROOT, path) if path.endswith((".html", ".xml")) else os.path.join(ROOT, path, "index.html")
-    if full.endswith(".html"):
+    if full.endswith(".html") and kluis:
         content = kluis_html(content)
     os.makedirs(os.path.dirname(full), exist_ok=True)
     with open(full, "w", encoding="utf8") as fh:
@@ -1061,6 +1061,12 @@ def render_search(pages, cats):
         for v in g["videos"]:
             idx.append({"t": v["t"], "h": "video/index.html#v-" + v["id"], "c": "Video's › " + g["group"], "k": "video",
                         "x": " ".join(x for x in (v.get("ch"), g["group"]) if x)})
+    pvf = os.path.join(SRC, "procesversneller.html")
+    if os.path.exists(pvf):
+        pv = open(pvf, encoding="utf8").read()
+        pv = re.sub(r"<script\b.*?</script>|<style\b.*?</style>", " ", pv, flags=re.S)
+        idx.append({"t": "Proces-versneller: alles op een rij", "h": "procesversneller/index.html", "c": "Proces-versneller", "k": "kennisbank",
+                    "x": re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", pv)))[:15000] + " procesversneller ockto brondata"})
     tf = os.path.join(SRC, "academy", "trainingen.json")
     if os.path.exists(tf):
         for t in json.load(open(tf, encoding="utf8"))["trainingen"]:
@@ -1116,7 +1122,9 @@ def render_home(cats, feeds, pages):
         f'<a class="tile" href="{pg.rel(cat_target(cats, name))}"><svg class="ic"><use href="#i-{icon}"/></svg>{esc(name)}</a>'
         for name, icon in TOP)
     tiles += (f'<a class="tile" href="{pg.rel("elearning")}"><svg class="ic"><use href="#i-cap"/></svg>E-learning</a>'
-              f'<a class="tile" href="{pg.rel("video")}"><svg class="ic"><use href="#i-video"/></svg>Video\'s</a>')
+              f'<a class="tile" href="{pg.rel("video")}"><svg class="ic"><use href="#i-video"/></svg>Video\'s</a>'
+              f'<a class="tile tile-wide" href="{pg.rel("procesversneller")}"><svg class="ic"><use href="#i-bolt"/></svg>'
+              f'<span class="tw"><span>Proces-versneller</span><small>Brondata ophalen via Ockto: zo werkt het in eBlinqx</small></span></a>')
 
     def a(path, label):
         href, _ = link_for(path)
@@ -1514,6 +1522,32 @@ def render_trainingen():
                                "Trainingen voor eBlinqx, Adviesbox en Financiële Planner bij de Blinqx Academy."))
 
 
+def render_procesversneller():
+    """Procesversneller-uitleg (bronnen/procesversneller.html, eigen opmaak) als losse pagina met een terugbalk."""
+    f = os.path.join(SRC, "procesversneller.html")
+    if not os.path.exists(f):
+        return
+    pg = Page("procesversneller")
+    doc = open(f, encoding="utf8").read()
+    # links naar de oude supportsite -> deze site (absoluut, zodat ze ook in de afgedrukte brochure werken)
+    doc = re.sub(r"https://support\.fasterforward\.nl/((?:kennisbank/)?[a-z0-9-]+/)",
+                 lambda m: SITE_URL + m.group(1) if os.path.isdir(os.path.join(ROOT, m.group(1))) else m.group(0), doc)
+    bar = (f'<div class="pv-bar" style="background:#111;padding:8px 16px;font:14px/1.4 \'Open Sans\',system-ui,sans-serif">'
+           f'<a href="{pg.rel("")}" style="color:#FFCD00;text-decoration:none;font-weight:600">← Blinqx Support</a>'
+           f'<span style="color:#bbb"> &nbsp;·&nbsp; </span><a href="{pg.rel("kennisbank/ockto-koppeling")}" style="color:#fff">Ockto-koppeling in de kennisbank</a></div>')
+    i = doc.rfind("</style>", 0, doc.find("<main")) + len("</style>")
+    doc = doc[:i] + "\n" + bar + doc[i:]
+    title = "Procesversneller: alles op een rij"
+    desc = "Hoe werkt de Procesversneller in eBlinqx: brondata ophalen via Ockto, wat het je kantoor oplevert en antwoorden op veelgestelde vragen."
+    head = ('<!doctype html>\n<html lang="nl">\n<head>\n<meta charset="utf-8">\n'
+            '<meta name="viewport" content="width=device-width,initial-scale=1">\n'
+            f'<link rel="icon" href="{pg.rel("assets/favicon.png")}">\n{head_meta(pg, title, desc)}\n'
+            '<style>html,body{margin:0;padding:0}</style>\n')
+    doc = re.sub(r"<title>[^<]*</title>", f"<title>{esc(title)} - Blinqx Support</title>\n</head>\n<body>", doc, count=1)
+    # deze pagina noemt zelf al beide namen (Online klantportaal / UwKluis): niet automatisch aanvullen
+    write("procesversneller", head + doc + "\n</body>\n</html>\n", kluis=False)
+
+
 def render_404():
     # GitHub Pages serveert 404.html vanaf de root; absolute paden zijn daar niet bekend, dus root-relatief.
     pg = Page("")
@@ -1606,6 +1640,7 @@ def main():
     render_elearning()
     render_fastlane()
     render_trainingen()
+    render_procesversneller()
     render_search(pages, cats)
     render_home(cats, feeds, pages)
     render_404()

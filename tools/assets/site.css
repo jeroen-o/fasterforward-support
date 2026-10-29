@@ -347,3 +347,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
 .tmore{margin-top:auto;font-size:13px;color:var(--link);font-weight:600}
 @media (max-width:900px){.tgrid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:640px){.tgrid{grid-template-columns:1fr}}
+/* 12 tegels + brede Proces-versneller-tegel: 5 kolommen, laatste rij vol */
+@media (min-width:901px){.tiles{grid-template-columns:repeat(5,1fr);gap:40px 25px}.tile{aspect-ratio:180/150}}
+.tile-wide{grid-column:span 3;aspect-ratio:auto!important;flex-direction:row;justify-content:flex-start;gap:22px;padding:0 30px;text-align:left}
+.tile-wide .tw{display:flex;flex-direction:column;gap:6px}
+.tile-wide small{font-weight:400;font-size:15px;line-height:1.35}
+@media (max-width:900px){.tile-wide{grid-column:span 3;padding:22px}}
+@media (max-width:640px){.tile-wide{grid-column:span 2;padding:20px 18px;gap:16px}.tile-wide .ic{font-size:44px;flex-shrink:0}.tile-wide small{font-size:13.5px}}
