@@ -75,7 +75,32 @@
 <main class="subpage"><div class="wrap">
   <h1>Pagina niet gevonden</h1>
   <p>Deze pagina bestaat (nog) niet in de herstelde supportsite. Gebruik de zoekfunctie hierboven of ga terug naar de <a href="/fasterforward-support/index.html">homepage</a>.</p>
+  <div id="sugg" hidden><h2>Bedoelde je misschien:</h2><ul class="sugg"></ul></div>
 </div></main>
+<script src="/fasterforward-support/zoeken/zoekindex.js"></script>
+<script>
+(function () {
+  var IDX = window.ZOEKINDEX || [];
+  var strip = function (s) { return (s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase(); };
+  var words = strip(decodeURIComponent(location.pathname)).split(/[^a-z0-9]+/)
+    .filter(function (w) { return w.length > 2 && ["fasterforward", "support", "kennisbank", "index", "html", "categorien", "page"].indexOf(w) < 0; });
+  if (!words.length) return;
+  var res = IDX.map(function (r) {
+    var t = " " + strip(r.t).replace(/[^a-z0-9]+/g, " ") + " ", h = strip(r.h), sc = 0;
+    words.forEach(function (w) { if (h.indexOf(w) >= 0) sc += 3; if (t.indexOf(" " + w) >= 0) sc += 2; });
+    if (sc && r.k === "kennisbank") sc += 2;
+    return [sc, r];
+  }).filter(function (x) { return x[0] >= Math.min(4, words.length * 2); }).sort(function (a, b) { return b[0] - a[0]; }).slice(0, 6);
+  if (!res.length) return;
+  var ul = document.querySelector("#sugg ul");
+  res.forEach(function (x) {
+    var li = document.createElement("li"), a = document.createElement("a");
+    a.href = x[1].ext ? x[1].h : document.querySelector(".brand").getAttribute("href").replace("index.html", "") + x[1].h;
+    a.textContent = x[1].t; li.appendChild(a); ul.appendChild(li);
+  });
+  document.getElementById("sugg").hidden = false;
+})();
+</script>
 <section class="share" aria-label="Deel deze pagina"><div class="wrap"><span class="share-l">Deel dit met een collega:</span><a class="share-b mail" href="mailto:?subject=Pagina%20niet%20gevonden%20%E2%80%93%20Blinqx%20Support&amp;body=Hoi%2C%20dit%20is%20misschien%20handig%20voor%20je%3A%20Pagina%20niet%20gevonden%0A%0Ahttps%3A//jeroen-o.github.io/fasterforward-support/" data-msg="Hoi, dit is misschien handig voor je: Pagina niet gevonden" data-t="Pagina niet gevonden"><svg class="ic"><use href="#i-mail-o"/></svg>E-mail</a><a class="share-b wa" href="https://wa.me/?text=Hoi%2C%20dit%20is%20misschien%20handig%20voor%20je%3A%20Pagina%20niet%20gevonden%20https%3A//jeroen-o.github.io/fasterforward-support/" target="_blank" rel="noopener" data-msg="Hoi, dit is misschien handig voor je: Pagina niet gevonden"><svg class="ic"><use href="#i-wa"/></svg>WhatsApp</a></div></section><script>(function(){var u=location.href.split("#")[0].replace(/index\.html(?=$|\?)/,"");document.querySelectorAll(".share-b").forEach(function(a){var m=a.dataset.msg;a.href=a.classList.contains("wa")?"https://wa.me/?text="+encodeURIComponent(m+" "+u):"mailto:?subject="+encodeURIComponent(a.dataset.t+" – Blinqx Support")+"&body="+encodeURIComponent(m+"\n\n"+u);});})();</script>
 <footer>
   <div class="wrap">

@@ -1116,6 +1116,9 @@ def render_home(cats, feeds, pages):
         ("webinar-nieuwe-feature-mytp", "Webinar: met één klik verzekeringen vergelijken met My TP"),
         ("september-terugblik-nieuwe-elements-features", "Webinar: september terugblik nieuwe Elements features"),
     ]
+    fl_latest = "".join(f'<li><a href="{pg.rel("releasenotes-hypotheekadvies/" + m["slug"])}">Releasenotes {esc(m["label"])}'
+                        f'{f" ({m["count"]} verbeteringen)" if m["count"] else ""} »</a></li>'
+                        for m in fastlane_months()[0][:5])
     nieuws_li = "".join(f'<li>{a(p, esc(l) + " »")}</li>' for p, l in nieuws_home)
 
     body = f"""<main class="home">
@@ -1144,7 +1147,8 @@ def render_home(cats, feeds, pages):
     <div class="nt">
       <div class="tabs" role="tablist" aria-label="Nieuws en tips">
         <button role="tab" id="tab-nieuws" aria-controls="p-nieuws" aria-selected="true">Nieuwsberichten</button>
-        <button role="tab" id="tab-release" aria-controls="p-release" aria-selected="false" tabindex="-1">Releasenotes</button>
+        <button role="tab" id="tab-release" aria-controls="p-release" aria-selected="false" tabindex="-1">Releasenotes Connect</button>
+        <button role="tab" id="tab-fl" aria-controls="p-fl" aria-selected="false" tabindex="-1">Releasenotes Hypotheekadvies</button>
         <button role="tab" id="tab-tips" aria-controls="p-tips" aria-selected="false" tabindex="-1">Tips</button>
       </div>
       <div>
@@ -1153,8 +1157,12 @@ def render_home(cats, feeds, pages):
           <ul>{nieuws_li}<li class="all"><a href="{pg.rel('nieuws')}">Alle nieuwsberichten »</a></li></ul>
         </section>
         <section class="panel" id="p-release" role="tabpanel" aria-labelledby="tab-release" hidden>
-          <h3>Laatste 5 releasenotes</h3>
-          <ul>{latest("Release notes")}<li class="all"><a href="{pg.rel('releasenotes')}">Alle releasenotes »</a></li></ul>
+          <h3>Laatste 5 releasenotes eBlinqx Connect</h3>
+          <ul>{latest("Release notes")}<li class="all"><a href="{pg.rel('releasenotes')}">Alle releasenotes Connect »</a></li></ul>
+        </section>
+        <section class="panel" id="p-fl" role="tabpanel" aria-labelledby="tab-fl" hidden>
+          <h3>Laatste 5 releasenotes eBlinqx Hypotheekadvies</h3>
+          <ul>{fl_latest}<li class="all"><a href="{pg.rel('releasenotes-hypotheekadvies')}">Alle releasenotes Hypotheekadvies »</a></li></ul>
         </section>
         <section class="panel" id="p-tips" role="tabpanel" aria-labelledby="tab-tips" hidden>
           <h3>Laatste 5 tips</h3>
@@ -1466,7 +1474,32 @@ def render_404():
     body = """<main class="subpage"><div class="wrap">
   <h1>Pagina niet gevonden</h1>
   <p>Deze pagina bestaat (nog) niet in de herstelde supportsite. Gebruik de zoekfunctie hierboven of ga terug naar de <a href="/index.html">homepage</a>.</p>
-</div></main>"""
+  <div id="sugg" hidden><h2>Bedoelde je misschien:</h2><ul class="sugg"></ul></div>
+</div></main>
+<script src="zoeken/zoekindex.js"></script>
+<script>
+(function () {
+  var IDX = window.ZOEKINDEX || [];
+  var strip = function (s) { return (s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase(); };
+  var words = strip(decodeURIComponent(location.pathname)).split(/[^a-z0-9]+/)
+    .filter(function (w) { return w.length > 2 && ["fasterforward", "support", "kennisbank", "index", "html", "categorien", "page"].indexOf(w) < 0; });
+  if (!words.length) return;
+  var res = IDX.map(function (r) {
+    var t = " " + strip(r.t).replace(/[^a-z0-9]+/g, " ") + " ", h = strip(r.h), sc = 0;
+    words.forEach(function (w) { if (h.indexOf(w) >= 0) sc += 3; if (t.indexOf(" " + w) >= 0) sc += 2; });
+    if (sc && r.k === "kennisbank") sc += 2;
+    return [sc, r];
+  }).filter(function (x) { return x[0] >= Math.min(4, words.length * 2); }).sort(function (a, b) { return b[0] - a[0]; }).slice(0, 6);
+  if (!res.length) return;
+  var ul = document.querySelector("#sugg ul");
+  res.forEach(function (x) {
+    var li = document.createElement("li"), a = document.createElement("a");
+    a.href = x[1].ext ? x[1].h : document.querySelector(".brand").getAttribute("href").replace("index.html", "") + x[1].h;
+    a.textContent = x[1].t; li.appendChild(a); ul.appendChild(li);
+  });
+  document.getElementById("sugg").hidden = false;
+})();
+</script>"""
     html_ = layout(pg, "Pagina niet gevonden", body)
     html_ = re.sub(r'(href|src|action)="(?!https?:|mailto:|tel:|#|/)([^"]*)"', lambda m: f'{m.group(1)}="{SITE_BASE}{m.group(2)}"', html_)
     html_ = html_.replace('href="/index.html"', f'href="{SITE_BASE}index.html"')
@@ -1474,9 +1507,14 @@ def render_404():
 
 
 def render_sitemap(pages):
-    urls = [""] + sorted({p["path"] for p in pages.values() if not p.get("skip") and p.get("role")})
+    urls = set()
+    for f in glob.glob(os.path.join(ROOT, "**", "index.html"), recursive=True):
+        rel = os.path.relpath(os.path.dirname(f), ROOT).replace(os.sep, "/")
+        if rel.split("/")[0] in ("bronnen", "tools", "zoeken", "assets", ".github"):
+            continue
+        urls.add("" if rel == "." else rel)
     xml = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
-    xml += [f"  <url><loc>{BASE}/{u + '/' if u else ''}</loc></url>" for u in urls]
+    xml += [f"  <url><loc>{SITE_URL}{u + '/' if u else ''}</loc></url>" for u in sorted(urls)]
     xml.append("</urlset>")
     write("sitemap.xml", "\n".join(xml) + "\n")
 
