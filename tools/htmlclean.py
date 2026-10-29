@@ -133,6 +133,10 @@ def fix_href(h):
     h = unwrap_wayback(h.strip())
     if h.startswith(("javascript:", "#respond")):
         return None
+    if h.startswith("//"):
+        h = "https:" + h
+    if " " in h.strip() and not re.match(r"^[a-z]+:", h):
+        return None  # geen geldig adres (bijv. losse tekst in het href-veld)
     if h.startswith("/") and not h.startswith("//"):
         h = "https://support.fasterforward.nl" + h
     if HOST_RE.match(h):
