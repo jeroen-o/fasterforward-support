@@ -81,22 +81,81 @@
       <h1>Leadinbox en Aplaza</h1>
       <p class="meta">Geplaatst op 31 augustus 2018</p>
       
-      <div class="content"><nav class="toc" aria-label="Inhoud"><ul><li><a href="#inhoudsopgave">Inhoudsopgave</a></li><li><a href="#aplaza-afd">Aplaza (AFD)</a></li><li><a href="#api-uitbreiding">Api uitbreiding</a></li><li><a href="#bsn-nummer-niet-tonen">BSN nummer (niet) tonen</a></li><li><a href="#dashboard">Dashboard</a></li><li><a href="#generieke-rapportage">Generieke rapportage</a></li><li><a href="#leadinbox">Leadinbox</a></li><li><a href="#registratietype-tonen-op-de-factuurspecificatie">Registratietype tonen op de factuurspecificatie</a></li><li><a href="#risk">Risk</a></li></ul></nav><h2 id="inhoudsopgave">Inhoudsopgave</h2>
-<h2 id="aplaza-afd">Aplaza (AFD)</h2>
-<h2 id="api-uitbreiding">Api uitbreiding</h2>
-<h2 id="bsn-nummer-niet-tonen">BSN nummer (niet) tonen</h2>
-<h2 id="dashboard">Dashboard</h2>
-<h2 id="generieke-rapportage">Generieke rapportage</h2>
-<h2 id="leadinbox">Leadinbox</h2>
-<h2 id="registratietype-tonen-op-de-factuurspecificatie">Registratietype tonen op de factuurspecificatie</h2>
-<h2 id="risk">Risk</h2>
-<p>Aplaza (AFD)<br>Checkbox<br>In de Aplaza inbox is het nu mogelijk om middels een checkbox per regel meerdere berichten tegelijk te verwijderen.<br>Documenten zichtbaar in Aplaza berichtenbox<br>De documenten in de Aplaza berichten worden nu in een preview venster weergegeven (wanneer het een pdf-bestand is). Het is nu niet meer nodig om deze eerst te downloaden.<br>Handmatig een Aplaza bericht matchen<br>Indien een bericht (polis of document) niet automatisch koppelt, is het nu mogelijk om deze handmatig te koppelen. In de berichtenregel is een pijltje beschikbaar om de koppeling handmatig uit te voeren.<br>Kantoor ‘negeren’ bij matching<br>Het is mogelijk om het kantoor te ‘negeren’ bij het matchen van berichten. Deze instelling is van toepassing op het moment dat het hoofdkantoor de Centrale Organisatie is met losse kantoren. Het postbusnummer van Aplaza staat op het hoofdkantoor. Berichten worden dan ongeacht kantoor met de aangegeven criteria aan het dossier gekoppeld.<br>Matching van offertenummer op meer productsoorten<br>Er vindt in de Aplaza inbox nu een match plaats op de producten leven, schade, inkomen, hypotheek en uitvaart. Er komen ook berichten binnen voor producten die in Elements zijn opgevoerd als vermogen &amp; bancair en consumptief krediet. Deze producten zijn nu te verwerken op offertenummer.<br>Zoeken op berichtnummer in de Aplaza berichtenbox<br>In het zoekfilter van de berichtenbox is het veld om op berichtnummer te zoeken bijgekomen.<br>Api uitbreiding<br>Deze release bevat weer een uitbreiding op de API. Bekijk de uitbreiding op onze site: <a href="http://api.fasterforward.nl/" target="_blank" rel="noopener">http://api.fasterforward.nl/</a><br>BSN nummer (niet) tonen<br>Naast de instelling om het BSN nummer niet over te nemen uit adviespakketten, is er een nieuwe instelling om (bijna) nergens in Elements het BSN nummer te tonen.<br>Deze instelling staat standaard aan en daarmee is het BSN nummer niet:</p>
-<p>zichtbaar onder de persoon (binnen en buiten dossier met uitzondering op personeelsdossier: de werkgever is wettelijk verplicht een overzicht van alle werknemers met hun BSN nummer in het arbeidsregister bij te houden.);<br>op te halen middels tags;<br>mee te geven via de API;<br>opgenomen in de dossiersamenvatting (klantgegevens downloaden in Elements zowel PDF als XML)</p>
-<p>Dashboard<br>De teller voor het aantal nog niet verwerkte ADN berichten toont nu het juiste aantal berichten welke actie vereisen.<br>Generieke rapportage<br>Er is een generieke rapportage bijgekomen: Aantal gebruikers app en laatste gebruik app. Dit betreft de consumenten app van Apps &amp; Finance. Met deze rapportage is het zichtbaar hoeveel van uw klanten er gebruik maken van de deze mobiele applicatie.<br>Leadinbox<br>Voor de leadinbox zijn een aantal wijzigingen doorgevoerd:</p>
-<p>Filter voor het zoeken naar leads staat vanaf nu standaard op ‘alle’;<br>Kantoornaam wordt getoond bij automatisch matchen;<br>Verwerken van de lead, ongeacht het aantal personen, is per XML in te stellen door de implementerende partij;<br>Wel of niet automatisch verwerken bij 100% match, is per XML in te stellen door de implementerende partij;<br>Wel of niet automatisch verwerken bij geen match, is per XML in te stellen door de implementerende partij;<br>Indien er meerdere kantoren in een Elements omgeving werken kan in de XML meegegeven worden dat er een match plaatsvindt waarbij het kantoor buiten beschouwing gelaten wordt.</p>
-<p>Er is nu meer keuze wanneer je de lead automatisch wilt laten verwerken naar een dossier. Dit is niet iets wat in Elements zelf ingeregeld wordt, maar in de XML die vanuit het formulier naar Elements gestuurd wordt. De implementerende partij stelt dit in.<br>Registratietype tonen op de factuurspecificatie<br>Bij het beheren van de factuurtemplate is het mogelijk om in te stellen welke kolommen er opgenomen worden op de specificatie. Daar is nu het ‘Soort registratie’ bijgekomen.<br>Risk<br>Het wijzigen van een polis die in Risk is aangemaakt, kan nu via Risk of in Elements. Er zijn hiervoor aparte iconen beschikbaar per onderdeel (zie onderstaande afbeelding). Klik op wijzig en u blijft in Elements, klik op het Risk icoon en u gaat naar Risk.</p>
-<p>Categorie: Algemeen, Release</p></div>
-      <section class="figs"><h2>Afbeeldingen bij dit artikel</h2><figure><a href="https://web.archive.org/web/20190818133105im_/https://support.fasterforward.nl/wp-content/uploads/2018/08/risk-icoon.png" target="_blank" rel="noopener"><img src="https://web.archive.org/web/20190818133105im_/https://support.fasterforward.nl/wp-content/uploads/2018/08/risk-icoon.png" alt="" loading="lazy" onerror="this.closest('figure').remove()"></a></figure></section><div class="feedback"><span class="fb-q">Was deze informatie nuttig?</span><button type="button" data-fb="ja">Ja</button><button type="button" data-fb="nee">Nee</button><p class="fb-out" role="status" hidden></p></div>
+      <div class="content"><p>Geplaatst op 31 augustus 2018</p>
+                            <h2 id="inhoudsopgave">Inhoudsopgave</h2>
+<table>
+<tbody>
+<tr>
+<td><a href="#afd">Aplaza (AFD)</a></td>
+</tr>
+<tr>
+<td><a href="#api">Api uitbreiding</a></td>
+</tr>
+<tr>
+<td><a href="#bsn">BSN nummer (niet) tonen</a></td>
+</tr>
+<tr>
+<td><a href="#dashboard">Dashboard</a></td>
+</tr>
+<tr>
+<td><a href="#rapportage">Generieke rapportage</a></td>
+</tr>
+<tr>
+<td><a href="#leadinbox">Leadinbox</a></td>
+</tr>
+<tr>
+<td><a href="#registratietype">Registratietype tonen op de factuurspecificatie</a></td>
+</tr>
+<tr>
+<td><a href="#risk">Risk</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="aplaza-afd"><a></a>Aplaza (AFD)</h3>
+<p><strong>Checkbox</strong><br>
+In de Aplaza inbox is het nu mogelijk om middels een checkbox per regel meerdere berichten tegelijk te verwijderen.<br>
+<strong>Documenten zichtbaar in Aplaza berichtenbox</strong><br>
+De documenten in de Aplaza berichten worden nu in een preview venster weergegeven (wanneer het een pdf-bestand is). Het is nu niet meer nodig om deze eerst te downloaden.<br>
+<strong>Handmatig een Aplaza bericht matchen</strong><br>
+Indien een bericht (polis of document) niet automatisch koppelt, is het nu mogelijk om deze handmatig te koppelen. In de berichtenregel is een pijltje beschikbaar om de koppeling handmatig uit te voeren.<br>
+<strong>Kantoor ‘negeren’ bij matching</strong><br>
+Het is mogelijk om het kantoor te ‘negeren’ bij het matchen van berichten. Deze instelling is van toepassing op het moment dat het hoofdkantoor de Centrale Organisatie is met losse kantoren. Het postbusnummer van Aplaza staat op het hoofdkantoor. Berichten worden dan ongeacht kantoor met de aangegeven criteria aan het dossier gekoppeld.<br>
+<strong>Matching van offertenummer op meer productsoorten</strong><br>
+Er vindt in de Aplaza inbox nu een match plaats op de producten leven, schade, inkomen, hypotheek en uitvaart. Er komen ook berichten binnen voor producten die in Elements zijn opgevoerd als vermogen &amp; bancair en consumptief krediet. Deze producten zijn nu te verwerken op offertenummer.<br>
+<strong>Zoeken op berichtnummer in de Aplaza berichtenbox</strong><br>
+In het zoekfilter van de berichtenbox is het veld om op berichtnummer te zoeken bijgekomen.</p>
+<h3 id="api-uitbreiding"><a></a>Api uitbreiding</h3>
+<p>Deze release bevat weer een uitbreiding op de API. Bekijk de uitbreiding op onze site: <a href="http://api.fasterforward.nl/" target="_blank" rel="noopener">http://api.fasterforward.nl/</a></p>
+<h3 id="bsn-nummer-niet-tonen"><a></a>BSN nummer (niet) tonen</h3>
+<p>Naast de instelling om het BSN nummer niet over te nemen uit adviespakketten, is er een nieuwe instelling om (bijna) nergens in Elements het BSN nummer te tonen.</p>
+<p>Deze instelling staat standaard aan en daarmee is het BSN nummer niet:</p>
+<ul>
+<li>zichtbaar onder de persoon (binnen en buiten dossier met uitzondering op personeelsdossier: de werkgever is wettelijk verplicht een overzicht van alle werknemers met hun BSN nummer in het arbeidsregister bij te houden.);</li>
+<li>op te halen middels tags;</li>
+<li>mee te geven via de API;</li>
+<li>opgenomen in de dossiersamenvatting (klantgegevens downloaden in Elements zowel PDF als XML)</li>
+</ul>
+<h3 id="dashboard"><a></a>Dashboard</h3>
+<p>De teller voor het aantal nog niet verwerkte ADN berichten toont nu het juiste aantal berichten <strong>welke actie vereisen</strong>.</p>
+<h3 id="generieke-rapportage"><a></a>Generieke rapportage</h3>
+<p>Er is een generieke rapportage bijgekomen: Aantal gebruikers app en laatste gebruik app. Dit betreft de consumenten app van Apps &amp; Finance. Met deze rapportage is het zichtbaar hoeveel van uw klanten er gebruik maken van de deze mobiele applicatie.</p>
+<h3 id="leadinbox"><a></a>Leadinbox</h3>
+<p>Voor de leadinbox zijn een aantal wijzigingen doorgevoerd:</p>
+<ul>
+<li>Filter voor het zoeken naar leads staat vanaf nu standaard op ‘alle’;</li>
+<li>Kantoornaam wordt getoond bij automatisch matchen;</li>
+<li>Verwerken van de lead, ongeacht het aantal personen, is per XML in te stellen door de implementerende partij;</li>
+<li>Wel of niet automatisch verwerken bij 100% match, is per XML in te stellen door de implementerende partij;</li>
+<li>Wel of niet automatisch verwerken bij geen match, is per XML in te stellen door de implementerende partij;</li>
+<li>Indien er meerdere kantoren in een Elements omgeving werken kan in de XML meegegeven worden dat er een match plaatsvindt waarbij het kantoor buiten beschouwing gelaten wordt.</li>
+</ul>
+<p>Er is nu meer keuze wanneer je de lead automatisch wilt laten verwerken naar een dossier. Dit is niet iets wat in Elements zelf ingeregeld wordt, maar in de XML die vanuit het formulier naar Elements gestuurd wordt. De implementerende partij stelt dit in.</p>
+<h3 id="registratietype-tonen-op-de-factuurspecificatie"><a></a>Registratietype tonen op de factuurspecificatie</h3>
+<p>Bij het beheren van de factuurtemplate is het mogelijk om in te stellen welke kolommen er opgenomen worden op de specificatie. Daar is nu het ‘Soort registratie’ bijgekomen.</p>
+<h3 id="risk"><a></a>Risk</h3>
+<p>Het wijzigen van een polis die in Risk is aangemaakt, kan nu via Risk of in Elements. Er zijn hiervoor aparte iconen beschikbaar per onderdeel (zie onderstaande afbeelding). Klik op wijzig en u blijft in Elements, klik op het Risk icoon en u gaat naar Risk.</p>
+<p><a href="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2018/08/risk-icoon.png"><img src="https://web.archive.org/web/2026im_/https://support.fasterforward.nl/wp-content/uploads/2018/08/risk-icoon.png" alt="" width="913" height="205" loading="lazy"></a></p></div>
+      <div class="feedback"><span class="fb-q">Was deze informatie nuttig?</span><button type="button" data-fb="ja">Ja</button><button type="button" data-fb="nee">Nee</button><p class="fb-out" role="status" hidden></p></div>
       
       
     </article>
