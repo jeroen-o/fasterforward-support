@@ -49,11 +49,11 @@ def leesmij_omschrijvingen(cat_map):
 def originelen_in(tekst, bekend):
     """Oorspronkelijke bestandsnamen die in de omschrijving als 'match' worden genoemd."""
     namen = set()
-    for m in re.finditer(r"(?:matcht?|matches|vervangt|komt overeen met|=)\s*(?:exact\w*|precies)?\s*([^.;()]*)", tekst, re.I):
-        stuk = m.group(1)
-        for n in re.findall(r"[\w\-]+\.(?:png|jpe?g|gif)", stuk, re.I):
-            namen.add(n)
-        for basis, nrs in re.findall(r"(image)-(\d+(?:/\d+)+)", stuk):
+    tekst = re.sub(r"-\s+", "-", tekst)  # bestandsnamen die over twee regels zijn afgebroken
+    for m in re.finditer(r"(?:matcht?|matches|vervangt|komt overeen met)\s*(?:exact\w*|precies)?\s*", tekst, re.I):
+        stuk = re.split(r"(?<!\w)\.(?:\s|$)|;|\(", tekst[m.end():m.end() + 200])[0]
+        namen.update(re.findall(r"[\w\-]+\.(?:png|jpe?g|gif)", stuk, re.I))
+        for nrs in re.findall(r"image-(\d+(?:/\d+)+)", stuk):
             for nr in nrs.split("/"):
                 namen.update(k for k in bekend if k.startswith(f"image-{nr}."))
     return [n for n in namen if n in bekend]

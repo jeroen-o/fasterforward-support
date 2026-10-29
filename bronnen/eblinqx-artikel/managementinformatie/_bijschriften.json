@@ -1,14 +1,6 @@
 {
  "aantal-hdn-aanvragen-leeg.png": "\"Aantal HDN aanvragen\" — het scherm bestaat en toont een correcte asweergave (weken 35-44 van 2026), maar de lijn blijft op 0: er zijn geen HDN-aanvragen geregistreerd in dit demo-account",
- "cirkeldiagram-afspraken-per-adviseur.png": "\"Afspraken per adviseur van september\" — een echt cirkeldiagram (roze = Jansen, Rob; oranje = Vonk, Erwin) met toelichtende tekst eronder",
  "eerste-afspraken-leeg.png": "\"Eerste afspraken in september per adviseur\" — leeg scherm (geen cirkeldiagram gerenderd, geen eerste- afspraken geregistreerd deze maand)",
  "ftr-afgekeurde-stukken-leeg.jpg": "\"FTR: Afgekeurde stukken per maand\" toont de melding \"Er is geen data aanwezig om te tonen\" — het scherm bestaat, maar bevat geen testdata in dit account",
- "kosten-cumulatief-staafgrafiek.png": "\"Kosten cumulatief t.o.v",
- "kosten-per-periode-staafgrafiek.png": "\"Kosten per periode t.o.v",
- "nieuwe-klanten-per-maand.png": "\"Nieuwe klanten per maand\" — een volledige staafgrafiek over 12 maanden (oktober 2025 t/m september 2026) met een gedetailleerde legenda met exacte aantallen per maand",
- "omzet-cumulatief-staafgrafiek.png": "\"Omzet cumulatief t.o.v",
- "omzet-en-kosten-combinatiegrafiek.png": "\"Omzet en kosten t.o.v",
- "omzet-per-periode-staafgrafiek.jpg": "\"Omzet per periode t.o.v",
- "overzicht-sidebar-alle-grafieken.jpg": "Volledige Overzicht-scherm met de linker sidebar (alle 11 grafieklinks, gegroepeerd onder CRM/ Financieel/Dossier) en de standaard geladen cirkeldiagram",
- "producten-afgesloten-stacked-bar.png": "\"Producten afgesloten in het afgelopen half jaar\" — een echte gestapelde staafgrafiek per maand (april t/m september) met productcategorieën Hypotheken/ …"
+ "overzicht-sidebar-alle-grafieken.jpg": "Volledige Overzicht-scherm met de linker sidebar (alle 11 grafieklinks, gegroepeerd onder CRM/ Financieel/Dossier) en de standaard geladen cirkeldiagram"
 }
