@@ -110,7 +110,7 @@
     return out + esc(s.slice(i));
   }
 
-  var LABEL = { kennisbank: "Kennisbank", nieuws: "Nieuws", tips: "Tip", release: "Release notes", video: "Video", categorie: "Categorie", overig: "Pagina" };
+  var LABEL = { kennisbank: "Kennisbank", nieuws: "Nieuws", tips: "Tip", release: "Releasenotes", video: "Video", categorie: "Categorie", overig: "Pagina" };
 
   function card(r) {
     var href = r.ext ? r.h : "../" + r.h;

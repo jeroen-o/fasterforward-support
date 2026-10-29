@@ -539,7 +539,7 @@ def page_url(p):
 
 
 NAV = [("Home", ""), ("Nieuws", "nieuws"), ("Tips", "tips"), ("E-learning", "elearning"),
-       ("Releasenotes Fastlane", "releasenotes-hypotheekadvies"), ("Release notes", "releasenotes"),
+       ("Releasenotes Hypotheekadvies", "releasenotes-hypotheekadvies"), ("Releasenotes Connect", "releasenotes"),
        ("Trainingen", "trainingen"), ("Contact support", "contact"),
        ("Overig support", "https://verzekeringhypotheek.blinqx.tech/support"),
        ("Overig contact", "https://verzekeringhypotheek.blinqx.tech/contact")]
@@ -704,7 +704,7 @@ def crumb_items(cats, p):
     cr = p["crumb"] or []
     items = []
     if cr and cr[0] in FEEDS:
-        items.append((cr[0], FEEDS[cr[0]]))
+        items.append((FEED_LABEL.get(cr[0], cr[0]), FEEDS[cr[0]]))
     elif cr and cr[0] in cats:
         items.append(("Kennisbank", "kennisbank"))
         items.append((cr[0], cat_target(cats, cr[0])))
@@ -883,6 +883,7 @@ def render_sub(cats, catname, sub):
     write(path, layout(pg, sub["name"], body))
 
 
+FEED_LABEL = {"Release notes": "Releasenotes Connect"}
 FEED_META = {
     "Nieuws": ("Laatste nieuws", "Hieronder vind je onze laatste nieuwsberichten.", "hero-nieuws.jpg"),
     "Tips": ("Laatste tips", "Hieronder vind je onze laatste tips.", "hero-tips.jpg"),
@@ -902,7 +903,7 @@ def render_feed(name, items):
             f'{f"<p class=\"date\">{fmt_date(d)}</p>" if d else ""}'
             f'{f"<p>{esc(x["excerpt"])}</p>" if x.get("excerpt") else ""}'
             f'<a class="readmore" href="{pg.rel(x["path"])}">Lees verder</a></article>')
-    body = f"""{hero(pg, name, img)}
+    body = f"""{hero(pg, "Releasenotes Connect" if name == "Release notes" else name, img)}
 <main class="feed"><div class="wrap">
   <h2 class="feed-h">{esc(h2)}</h2>
   <p>{esc(intro)}</p>
@@ -945,7 +946,7 @@ def render_search(pages, cats):
         if p.get("skip") or p.get("role") != "article":
             continue
         d = p["posted"] or p["updated"]
-        idx.append({"t": p["t"], "h": p["path"] + "/index.html", "c": " › ".join(p["crumb"] or []),
+        idx.append({"t": p["t"], "h": p["path"] + "/index.html", "c": " › ".join(FEED_LABEL.get(c, c) for c in (p["crumb"] or [])),
                     "k": search_kind(p), "d": fmt_date(d) if d else "", "o": 1 if verouderd(p) else 0,
                     "x": re.sub(r"\s+", " ", " ".join(p["lines"]))[:15000]})
     for name, c in cats.items():
@@ -975,7 +976,7 @@ def render_search(pages, cats):
   <div class="sfilters" role="group" aria-label="Filter op soort">
     <button type="button" data-k="" aria-pressed="true">Alles</button>
     <button type="button" data-k="kennisbank" aria-pressed="false">Kennisbank</button>
-    <button type="button" data-k="release" aria-pressed="false">Release notes</button>
+    <button type="button" data-k="release" aria-pressed="false">Releasenotes</button>
     <button type="button" data-k="nieuws" aria-pressed="false">Nieuws &amp; tips</button>
     <button type="button" data-k="video" aria-pressed="false">Video's &amp; e-learning</button>
   </div>
