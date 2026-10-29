@@ -69,3 +69,15 @@ De site draait op GitHub Pages: https://jeroen-o.github.io/fasterforward-support
 - LinkedIn-link controleren (`https://www.linkedin.com/company/blinqx/`).
 - Teksten uit de Elements-periode verwijzen nog naar `support@fasterforward.nl` en *Elements*;
   inhoudelijk nalopen waar nodig.
+
+## Schermafbeeldingen uit de demo-omgeving van eBlinqx Connect
+
+Alleen de demo-omgeving met fictieve gegevens gebruiken: de afbeeldingen worden openbaar.
+
+1. Zet in de instellingen van de cloudomgeving (omgevingsmenu → Bewerken → Network secrets of omgevingsvariabelen):
+   `EBLINQX_GEBRUIKER`, `EBLINQX_WACHTWOORD` en eventueel `EBLINQX_TOTP` (geheime sleutel van de authenticator-app).
+   Nooit in de chat of in de code. Een nieuwe sessie leest ze in.
+2. `node tools/eblinqx_schermen.js inloggen` — logt in en bewaart de sessie in `tools/.eblinqx-sessie.json`
+   (staat in `.gitignore`). Zonder TOTP-sleutel: eenmalige code meegeven als `EBLINQX_CODE=123456`.
+3. `node tools/eblinqx_schermen.js scherm <pad> <uitvoer.png> [css-selector]` — schermafbeelding, met een gele
+   markering rond het element dat bij de stap hoort.
