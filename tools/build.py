@@ -1032,7 +1032,7 @@ def render_search(pages, cats):
     pg = Page("zoeken")
     idx = []
     for p in pages.values():
-        if p.get("skip") or p.get("role") != "article":
+        if p.get("skip") or p.get("role") != "article" or p["path"] == "trainingen":
             continue
         d = p["posted"] or p["updated"]
         idx.append({"t": p["t"], "h": p["path"] + "/index.html", "c": " › ".join(FEED_LABEL.get(c, c) for c in (p["crumb"] or [])),
@@ -1050,6 +1050,11 @@ def render_search(pages, cats):
         for v in g["videos"]:
             idx.append({"t": v["t"], "h": "video/index.html#v-" + v["id"], "c": "Video's › " + g["group"], "k": "video",
                         "x": " ".join(x for x in (v.get("ch"), g["group"]) if x)})
+    tf = os.path.join(SRC, "academy", "trainingen.json")
+    if os.path.exists(tf):
+        for t in json.load(open(tf, encoding="utf8"))["trainingen"]:
+            idx.append({"t": t["t"], "h": t["url"], "ext": 1, "c": "Trainingen › Blinqx Academy", "k": "video",
+                        "x": " ".join(t["meta"] + t["labels"]) + " training cursus opleiding"})
     for m in fastlane_months()[0]:
         idx.append({"t": f'Releasenotes eBlinqx Hypotheekadvies – {m["label"]}', "h": f'releasenotes-hypotheekadvies/{m["slug"]}/index.html',
                     "c": "Releasenotes Hypotheekadvies (Fastlane)", "k": "release", "d": m["label"], "x": m["text"][:20000]})
@@ -1468,6 +1473,36 @@ def render_fastlane():
         write(path, layout(pg, f'Releasenotes {m["label"]} – eBlinqx Hypotheekadvies', body, "releasenotes-hypotheekadvies", fl_excerpt(m["text"])))
 
 
+def render_trainingen():
+    """Trainingen: actueel aanbod van de Blinqx Academy (bronnen/academy, via tools/academy_ophalen.py)."""
+    f = os.path.join(SRC, "academy", "trainingen.json")
+    if not os.path.exists(f):
+        return
+    data = json.load(open(f, encoding="utf8"))
+    pg = Page("trainingen")
+    d = date.fromisoformat(data["opgehaald"])
+    cards = []
+    for t in data["trainingen"]:
+        chips = "".join(f'<span class="chip">{esc(m)}</span>' for m in t["meta"])
+        labels = "".join(f'<span class="tlabel">{esc(l)}</span>' for l in t["labels"])
+        img = f'<img src="{pg.rel("bronnen/academy/" + t["img"])}" alt="" loading="lazy">' if t["img"] else ""
+        cards.append(f'<a class="training" href="{esc(t["url"])}" target="_blank" rel="noopener">'
+                     f'<span class="timg">{img}{f"<span class=tlabels>{labels}</span>" if labels else ""}</span>'
+                     f'<span class="tbody"><span class="ttitle">{esc(t["t"])}</span><span class="chips">{chips}</span>'
+                     f'<span class="tmore">Bekijk en meld je aan ↗</span></span></a>')
+    body = f"""{crumbs(pg, [("Trainingen", None)])}
+<main class="subpage"><div class="wrap">
+  <h1>Trainingen</h1>
+  <p class="lead">Haal meer uit de software met een training van de Blinqx Academy: van een korte online kennismaking tot een volledige basistraining op locatie. Data, prijzen en aanmelden vind je in de Academy.</p>
+  <p><a class="btn-out cta" href="{esc(data["bron"])}" target="_blank" rel="noopener">Naar de Blinqx Academy ↗</a></p>
+  <div class="tgrid">{"".join(cards)}</div>
+  <p class="note">Liever direct zelf aan de slag? Bekijk de <a href="{pg.rel("elearning")}">e-learnings</a> en <a href="{pg.rel("video")}">video's</a>.</p>
+  <p class="src">Overzicht van het trainingsaanbod op {fmt_date(d)}; het actuele aanbod staat in de <a href="{esc(data["bron"])}" target="_blank" rel="noopener">Blinqx Academy</a>.</p>
+</div></main>"""
+    write("trainingen", layout(pg, "Trainingen", body, "trainingen",
+                               "Trainingen voor eBlinqx, Adviesbox en Financiële Planner bij de Blinqx Academy."))
+
+
 def render_404():
     # GitHub Pages serveert 404.html vanaf de root; absolute paden zijn daar niet bekend, dus root-relatief.
     pg = Page("")
@@ -1559,6 +1594,7 @@ def main():
     render_video()
     render_elearning()
     render_fastlane()
+    render_trainingen()
     render_search(pages, cats)
     render_home(cats, feeds, pages)
     render_404()
