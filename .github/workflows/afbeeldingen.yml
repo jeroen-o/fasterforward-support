@@ -49,7 +49,10 @@ jobs:
           if [ "${{ inputs.alleen_kennisbank }}" = "true" ]; then ARGS="$ARGS --kennisbank"; fi
           start=$(date +%s); nieuw=false; onaf=true; fouten=0
           commit_data() {
-            git add bronnen/wayback tools/mislukte_afbeeldingen.txt 2>/dev/null || true
+            for pad in bronnen/wayback tools/mislukte_afbeeldingen.txt; do
+              [ -e "$pad" ] && git add "$pad"
+            done
+            echo "Te committen: $(git diff --cached --name-only | wc -l) bestanden"
             git diff --cached --quiet && return 0
             git commit -q -m "Internet Archive: $1 (ronde ${{ inputs.ronde }})"
             nieuw=true
