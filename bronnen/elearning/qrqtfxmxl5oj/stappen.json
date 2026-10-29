@@ -1,0 +1,48 @@
+{
+ "id": "qrqtfxmxl5oj",
+ "name": "eBlinqx Connect: overige instellingen van de mailbox",
+ "steps": [
+  {
+   "flow": "Default",
+   "kind": "popup",
+   "title": "",
+   "html": "<h2><strong>Overige instellingen van de mailbox.</strong></h2>",
+   "page": "395077b7-47aa-40d0-8df9-f0215048cbb5"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Onder Postvak in, kun je extra mappen aanmaken.</p><p>Beperk dit en probeer alle mail te koppelen aan een dossier. Niet ieder dossier hoeft een klantdossier te zijn.</p>",
+   "page": "395077b7-47aa-40d0-8df9-f0215048cbb5"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Via het hamburgermenu kun je een extra map aanmaken.</p>",
+   "page": "d3c04e58-8235-44c5-b439-e98f9cab91dc"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Geef de map de gewenste naam.</p>",
+   "page": "1f74d06c-81f6-47d6-938f-cd91eb109a74"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Hier kun je onder andere de afwezigheidassistent instellen of een mailingregel, zodat mail die voldoet aan bepaalde voorwaarde een actie krijgt.</p>",
+   "page": "d3c04e58-8235-44c5-b439-e98f9cab91dc"
+  },
+  {
+   "flow": "Default",
+   "kind": "popup",
+   "title": "",
+   "html": "<h2><strong>Ready to Make an Impact?</strong></h2><p>Thanks for exploring! Ready to see how this can work for you? Our team is here to help you get started.</p>",
+   "page": "f9237ee1-ed43-4ba1-8fad-2fc982a07698"
+  }
+ ]
+}

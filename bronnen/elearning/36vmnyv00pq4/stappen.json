@@ -1,0 +1,265 @@
+{
+ "id": "36vmnyv00pq4",
+ "name": "Dashboard | eBlinqx Connect | Sep 8 12:25 PM",
+ "steps": [
+  {
+   "flow": "Default",
+   "kind": "popup",
+   "title": "",
+   "html": "<h2><strong>Schadeverzekering invoeren — volledig geregeld in één flow</strong></h2><p>Ontdek hoe je razendsnel een schadeverzekering registreert, een offerte verstuurt en de polis definitief vastlegt. Klaar?</p>",
+   "page": "75f9e6d8-0ff2-416d-a16f-5c1e809ff09b"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Open het klantdossier — hier start het hele traject.</p>",
+   "page": "75f9e6d8-0ff2-416d-a16f-5c1e809ff09b"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Voeg een nieuw product toe aan het dossier van de klant.</p>",
+   "page": "840f0b71-3067-49f8-b132-1f78d2916e97"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Kies Schadeverzekering als producttype — de juiste categorie voor dit traject.</p>",
+   "page": "c10bec67-2e0b-4364-9a23-4fdcbc4b5d74"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Bevestig je keuze en ga verder met de productinvoer.</p>",
+   "page": "bf8b9f21-040e-4a20-a4a7-c32a32f0348d"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>De roze velden zijn verplicht.</p>",
+   "page": "a792a689-6042-40a9-bdbb-fde520f54f0e"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>De overige velden zijn niet verplicht, maar kunnen wel interessante data opleveren voor later.</p>",
+   "page": "65f3882d-6407-4e17-b57b-b9bca5970e46"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Deze data kan op een later tijdstip worden gebruikt in bijvoorbeeld de <strong>Rapportagemananager</strong></p>",
+   "page": "c7a73736-79df-48c8-8592-df2df5b42e87"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Rond dit onderdeel af en zet de invoer voort.</p>",
+   "page": "d41a5074-dacd-4fbb-b4c0-dbccd8527677"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Bevestig de invoer een sla op.</p>",
+   "page": "448086e6-fad6-48b3-b4eb-616ff536a9a2"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Alle basisgegevens zijn ingevuld — klaar om de workflow te starten.</p>",
+   "page": "2d2bf1a2-8def-4595-9d45-f0cc7f6d7bfb"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Start het offertetraject — begeleidt je stap voor stap.</p>",
+   "page": "31eeccbb-8e66-4c51-afaf-19b5b55b58a0"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Vraag automatisch de huidige polis(sen) van de klant op — geen handmatig zoekwerk.</p>",
+   "page": "079a3151-6617-40e2-9ec6-af7f09307c94"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Gebruik het kant-en-klare concept om de klant te vragen zijn kopie polis te sturen.</p>",
+   "page": "2a37b171-95e2-4780-9c5a-4e49c8997da9"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Verstuur het bericht direct vanuit het dossier — snel en traceerbaar.</p>",
+   "page": "6e65ed41-e16a-4701-abf0-d999dbc40c3a"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>De workflow heeft de status van het product aangepast.</p>",
+   "page": "9d203900-081a-4a7b-8eef-aab31b875497"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Markeer de huidige polis als ontvangen — de workflow gaat automatisch verder.</p>",
+   "page": "f8b81b3a-01d9-4f8d-a2ee-39ca0018069c"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Stuur de offerte direct naar de klant — professioneel en binnen enkele seconden.</p>",
+   "page": "29cd5410-f8d5-40d8-9ebd-54a16bb7e363"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Open het klaarstaande concept voor de offerte schadeverzekeringen.</p>",
+   "page": "ce8df8e4-50df-4c38-9fbf-df78afaba45d"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Verstuur de offerte.</p>",
+   "page": "18a9d42d-c167-46c7-a182-6c7bb43157bc"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Keer terug naar de startpagina van het klantdossier.</p>",
+   "page": "8b69e65d-5e17-44d0-b121-c9047b2de4f9"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>De workflow heeft de status van het product aangepast.</p>",
+   "page": "27f74817-78b6-4dcc-89d5-b78ec82db7e6"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Bekijk de details van de offertestatus en onderneem actie.</p>",
+   "page": "a21da608-74bf-42a8-a7f5-496c13dd9464"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Bevestig de ontvangst en verwerk het akkoord van de klant.</p>",
+   "page": "8b842a14-4d65-41e5-b81b-ffa7bab33f50"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>De klant gaat akkoord — nu de verzekering volledig en correct invoeren.</p>",
+   "page": "84a31135-9215-448b-8f27-cc823c512d59"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Voeg de definitieve polis toe aan het dossier — alles op één plek.</p>",
+   "page": "88c9cc18-1cc2-4885-a46f-368514f47ad2"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Kies de branche conform de AFD-standaard.</p>",
+   "page": "0ce3b14a-6438-4bde-a7ba-9dec6f5a5682"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Sla de polisgegevens op en bevestig de invoer.</p>",
+   "page": "280e437c-615b-4c5a-a7be-c108ed2a48d6"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Open de volgende taak om de digitale aanvraag te bevestigen.</p>",
+   "page": "d59d3df2-89c5-4679-af7d-d9f7ef23b2e1"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Registreer dat de aanvraag digitaal is ingediend bij de maatschappij — alles vastgelegd.</p>",
+   "page": "5fc2d4c3-27ac-44f2-a464-f60fb4ddf243"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Ga verder met de afronding van het aanvraagproces.</p>",
+   "page": "35725d16-edd6-4eb1-a325-5068ad012394"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Rond de statusregistratie af — bijna klaar!</p>",
+   "page": "6dfb6ded-3c83-41e0-b46c-be87767090ab"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Bevestig en sluit dit onderdeel van de invoer af.</p>",
+   "page": "37f198e5-f6ac-4964-a3a7-fb188f488e78"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Gebruik het automatisch gegenereerde concept om de klant het polisnummer te communiceren.</p>",
+   "page": "33577268-9b74-42b1-9911-f25d138ba356"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Verstuur de bevestiging — de klant weet meteen dat zijn schadeverzekering is aangevraagd.</p>",
+   "page": "80e7a20a-5770-4d4e-83d1-1a7658ca6933"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Bekijk je takenoverzicht — alles netjes afgevinkt en volledig traceerbaar.</p>",
+   "page": "40b2a117-68f5-41d6-b10c-90dce84f719b"
+  },
+  {
+   "flow": "Default",
+   "kind": "popup",
+   "title": "",
+   "html": "<h2><strong>Van aanvraag tot polis — in minuten geregeld.</strong></h2>",
+   "page": "dbe0d68a-2296-417d-831f-fbbd6087160a"
+  }
+ ]
+}

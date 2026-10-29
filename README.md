@@ -14,7 +14,8 @@ origineel (bijv. `/kennisbank/matching-adn-posten/`), zodat oude links en zoekre
 | Subcategorieën | 62 |
 | Nieuws / Tips / Release notes | 115 / 16 / 66 |
 | Video's (YouTube + WebinarGeek-replays) | 60 |
-| E-learnings (Storylane) | 18 |
+| E-learnings (Storylane + video), met alle stappen als tekst | 18 |
+| Releasenotes eBlinqx Hypotheekadvies (Fastlane), per maand | 37 |
 
 Verder: zoekpagina (`/zoeken/`, werkt volledig in de browser), `sitemap.xml`, `404.html`.
 
@@ -25,6 +26,8 @@ Verder: zoekpagina (`/zoeken/`, werkt volledig in de browser), `sitemap.xml`, `4
 - `bronnen/` — ruwe bronnen (in volgorde van voorrang bij het bouwen):
   - `live-2026-10-20/` — 47 pagina's van de live site op 20 oktober 2026 (ruwe HTML; o.a. alle releasenotes 2023–2026)
   - `wayback/` — originele HTML en bestanden uit de Wayback Machine (gevuld door de GitHub Action)
+  - `elearning/` — 17 e-learnings (Storylane): stappen + schermafbeeldingen, via `tools/storylane_ophalen.py`
+  - `fastlane/` — releasenotes eBlinqx Hypotheekadvies 2023–2026 van fastlane.hypotheekbond.nl + afbeeldingen (WebP)
   - `offline-archief/` — 473 pagina's met tekst + screenshot (Wayback Machine, okt 2026)
   - `volledige-tekst.html` — 556 pagina's volledige tekst
   - `inventaris.html` — 801 URL's met samenvatting en 1.718 afbeeldings-URL's

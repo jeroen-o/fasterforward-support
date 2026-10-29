@@ -1,0 +1,167 @@
+{
+ "id": "cc885jxstbfl",
+ "name": "eBlinqx Connect Taken",
+ "steps": [
+  {
+   "flow": "Default",
+   "kind": "popup",
+   "title": "",
+   "html": "<h2><strong>Taken aanmaken en afhandelen — zo werkt het</strong></h2><p>Ontdek hoe je taken aanmaakt, toewijst en afhandelt. Efficiënter werken begint hier. Klaar?</p>",
+   "page": "4eb40aaf-df0c-4271-8611-0f9b02811e13"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Vanaf iedere pagina navigeer je via het icoon in de zwarte balk naar het takenoverzicht.</p>",
+   "page": "4eb40aaf-df0c-4271-8611-0f9b02811e13"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Kies de gewenste persoon uit de lijst — zo werk je altijd in de juiste context.</p>",
+   "page": "082e06eb-07fc-4022-9b27-9d5426f28c33"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Stel het filter in zoals jij dat wenst.</p>",
+   "page": "4697fc25-ce77-4394-9977-18bcbbf61599"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Rode taken zijn vanuit het verleden, oranje taken van vandaag en zwarte taken liggen in de toekomst.</p><p>Taken zijn gekoppeld aan dossiers en aan producten. Beide zijn klikbaar om direct in het dossier of product te komen.</p><p>Taken op een groep dien je altijd eerst op naam te zetten, alvorens je deze kan afhandelen. Dit doe je door te klikken op '<strong>Toekennen</strong>'.</p>",
+   "page": "a8358162-9b41-4f0d-b76a-cc562bbdff7c"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Taken worden veelal automatisch aangemaakt vanuit een workflow. Handmatig een taak aanmaken kan uiteraard ook en dit doe je vanuit het klantdossier.</p>",
+   "page": "a8358162-9b41-4f0d-b76a-cc562bbdff7c"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Selecteer de klant — alle taken worden direct aan het juiste dossier gekoppeld.</p>",
+   "page": "c811ad9c-eb81-4a4b-8313-1c025982eb17"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Ga naar <strong>Taken</strong> — hier beheer je alle openstaande en afgeronde acties op één plek.</p>",
+   "page": "c7004dff-9d2a-476d-8ef8-91beb5599506"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Als je voor het eerst een taak voor iemand anders aanmaakt, dan is deze persoon nog niet te selecteren. Voeg daarom eerst deze persoon of personen toe aan jouw takenoverzicht.</p><p>Klik op de blauwe pijl om personen toe te voegen.</p>",
+   "page": "62d8ea15-c6b8-44b1-8e55-22db10515e61"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Je kan ook direct een taak aanmaken vanuit dit snelmenu. <br><br>Maak een nieuwe taak aan om een actie vast te leggen en niets over het hoofd te zien.</p>",
+   "page": "62d8ea15-c6b8-44b1-8e55-22db10515e61"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Kies voor een persoonlijke taak als de actie specifiek aan jou als is gekoppeld.</p>",
+   "page": "61a571e4-9f3d-4c6e-ab24-822792081ba0"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Bepaal het taaktype — of het nu een afspraak, belactie of klacht is, je categoriseert direct correct.</p>",
+   "page": "ddfbc8ae-377b-4392-822a-696b1966ddc4"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Vul de details in zodat de taak volledig en duidelijk is voor iedereen. Maak hier eventueel werkafspraken over.</p>",
+   "page": "1ae80277-f811-4ed5-84f8-c6ae35824a63"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Koppel het juiste product — zo is de taak altijd in de juiste context terug te vinden.</p>",
+   "page": "a062887f-97d0-4d14-a508-aabda888d18c"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Sla de taak op — die verschijnt nu direct in het overzicht en is klaar voor opvolging.</p>",
+   "page": "4a21409e-3411-487c-9f04-08d41197c9fc"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Verander het taaktype naar <strong>Bellen</strong> om de juiste vervolgactie vast te leggen.</p>",
+   "page": "581fe0c7-81d0-4ef9-ab77-a59f191720c2"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Bevestig de wijziging zodat de taak up-to-date blijft voor jou en je team.</p>",
+   "page": "5cd034a0-b3e8-469f-9850-b5b8d3162ce0"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Met dit kruis kom je terug in het oorspronkelijk filter.</p>",
+   "page": "6a9a59c6-b347-405d-b2c9-faa264cacc28"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Met het groene vinkje handel je de taak af. Deze wordt opgeslagen als afgehandelde taak onder het dossier en product.</p>",
+   "page": "96c03397-5ecb-4b73-a2d4-70ac20bc3ba6"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Bepaal hier welke type taken in het filter moeten, met CTRL+klik maak je de selectie.</p>",
+   "page": "31748100-6b2e-4a00-9eb7-8000bab663b1"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Bevestig de zoekopdracht.</p>",
+   "page": "625c9a63-c39c-4041-92f5-5e44d2109464"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Klik in het hamburgermenu om vervolgens dit filter op te slaan. Dit filter is nu de basis als je in dit scherm komt.</p>",
+   "page": "044cb1d5-7d5e-410c-b5bc-bd377af836bf"
+  },
+  {
+   "flow": "Default",
+   "kind": "popup",
+   "title": "",
+   "html": "<h2><strong>Ready to Make an Impact?</strong></h2><p>Thanks for exploring! Ready to see how this can work for you? Our team is here to help you get started.</p>",
+   "page": "745590bd-d659-4784-b1f9-fb94d6a0311a"
+  }
+ ]
+}

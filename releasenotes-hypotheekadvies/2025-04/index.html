@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Releasenotes April 2025 – eBlinqx Hypotheekadvies - Blinqx Support</title>
+<meta name="description" content="Onderstaande updates hebben wij in de maand april doorgevoerd: IT-24950: Verbetering weergave hoofdstukken op basis van burgerlijke staat Vanaf deze release tonen we de hoofdstukken Draagplichtovereenkomst en Overeenkomst…">
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="icon" href="../../assets/favicon.png">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
+    <symbol id="i-mail-o" viewBox="0 0 24 24"><path d="M2 5h20v14H2zm2 2v.4l8 5.6 8-5.6V7zm16 2.8-8 5.6-8-5.6V17h16z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><path d="M10 2a8 8 0 0 1 6.32 12.9l5.4 5.4-1.42 1.42-5.4-5.4A8 8 0 1 1 10 2zm0 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 64 64"><circle cx="7" cy="12" r="6"/><circle cx="7" cy="32" r="6"/><circle cx="7" cy="52" r="6"/><rect x="18" y="7" width="44" height="10" rx="2"/><rect x="18" y="27" width="44" height="10" rx="2"/><rect x="18" y="47" width="44" height="10" rx="2"/></symbol>
+    <symbol id="i-home" viewBox="0 0 64 64"><path d="M32 6 2 32l4 5 4-3.4V58h18V42h8v16h18V33.6l4 3.4 4-5-10-8.7V10h-8v7.4z"/></symbol>
+    <symbol id="i-car" viewBox="0 0 64 64"><path d="M16 10h32a6 6 0 0 1 5.7 4.1L58 27a7 7 0 0 1 4 6.3V48a3 3 0 0 1-3 3h-3v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H20v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H5a3 3 0 0 1-3-3V33.3A7 7 0 0 1 6 27l4.3-12.9A6 6 0 0 1 16 10zm1.5 7-3.3 10h35.6l-3.3-10zM13 34a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm38 0a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 64 64"><path d="M4 12a4 4 0 0 1 4-4h16l6 6h22a4 4 0 0 1 4 4v6H18a6 6 0 0 0-5.6 3.9L4 50z"/><path d="M18 28h44l-10 26H6z"/></symbol>
+    <symbol id="i-desktop" viewBox="0 0 64 64"><path d="M2 6h60v40H38v6h8v6H18v-6h8v-6H2zm6 6v28h48V12z"/></symbol>
+    <symbol id="i-comments" viewBox="0 0 64 64"><path d="M26 4c13.8 0 24 8.6 24 19s-10.2 19-24 19c-2.6 0-5-.3-7.3-.8C14.6 44 9.6 46 3 46c3-3 4.8-6.2 5.3-9.6C4.4 33 2 28.2 2 23 2 12.6 12.2 4 26 4z"/><path d="M54 24.5c5 3.4 8 8.3 8 13.5 0 4.2-1.8 8-4.8 11 .4 3.6 2 6.8 4.8 9.5-6 0-10.6-1.8-14.3-4.4-2.1.5-4.4.7-6.7.7-7 0-13.1-2.4-17-6.2 14.3-.4 30-8.8 30-24.1z"/></symbol>
+    <symbol id="i-envelope" viewBox="0 0 64 64"><path d="M4 12h56a2 2 0 0 1 2 2v3L32 37 2 17v-3a2 2 0 0 1 2-2z"/><path d="M2 23.5 32 43.5l30-20V50a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-euro" viewBox="0 0 64 64"><path d="M42 6c5 0 9.5 1.2 13 3.2l-2.6 8.2A19 19 0 0 0 42 14.5c-7.4 0-12.7 4.6-14.6 11.5H46l-2 7H26.3l-.05 2 .05 2H42l-2 7H27.4c1.9 7 7.2 11.5 14.6 11.5 4 0 7.6-1 10.4-2.9L55 61c-3.6 2-8 3-13 3-12.7 0-22.2-8-24.4-20H10l2-7h5.06L17 35l.06-2H10l2-7h5.6C19.8 14 29.3 6 42 6z"/></symbol>
+    <symbol id="i-file" viewBox="0 0 64 64"><path d="M10 2h28v18h18v38a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm32 0 14 14H42zM16 30v6h32v-6zm0 10v6h32v-6zm0 10v6h32v-6z"/></symbol>
+    <symbol id="i-rss" viewBox="0 0 64 64"><circle cx="11" cy="53" r="8"/><path d="M3 23a38 38 0 0 1 38 38H31A28 28 0 0 0 3 33z"/><path d="M3 3a58 58 0 0 1 58 58H51A48 48 0 0 0 3 13z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="rgba(0,0,0,.65)"/><path d="M26 20v24l20-12z" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="item"><svg class="ic"><use href="#i-phone"/></svg><a class="tel" href="tel:+31850180069">085 018 00 69</a></span>
+    <span class="sep" aria-hidden="true"></span>
+    <span class="item"><svg class="ic"><use href="#i-mail-o"/></svg><a class="mail" href="mailto:support-eblinqx@blinqx.tech">support-eblinqx@blinqx.tech</a></span>
+    <a class="li" href="https://www.linkedin.com/company/blinqx/" target="_blank" rel="noopener" aria-label="Blinqx op LinkedIn">in</a>
+  </div>
+</div>
+<header class="site">
+  <div class="wrap">
+    <div class="head-row">
+      <a class="brand" href="../../index.html" aria-label="Blinqx support — home">
+        <img src="../../assets/logo-mark.png" alt="Blinqx" width="470" height="119">
+        <span>powered by Faster Forward</span>
+      </a>
+      <nav class="main" aria-label="Hoofdmenu"><ul><li><a href="../../index.html">Home</a></li><li><a href="../../nieuws/index.html">Nieuws</a></li><li><a href="../../tips/index.html">Tips</a></li><li><a href="../../elearning/index.html">E-learning</a></li><li><a href="../../releasenotes-hypotheekadvies/index.html" aria-current="page">Releasenotes Fastlane</a></li><li><a href="../../releasenotes/index.html">Release notes</a></li><li><a href="../../trainingen/index.html">Trainingen</a></li><li><a href="../../contact/index.html">Contact support</a></li></ul></nav>
+    </div>
+    <div class="search-row">
+      <form class="search" action="../../zoeken/index.html" method="get" role="search">
+        <label class="field">
+          <svg class="ic"><use href="#i-search"/></svg>
+          <input type="search" name="q" placeholder="Zoek hier op onderwerp" aria-label="Zoek op onderwerp">
+        </label>
+        <button type="submit">Zoeken</button>
+      </form>
+      <div class="status">Mogelijke incidenten en de systeemstatus vind je op onze <a href="https://status.fasterforward.nl/" target="_blank" rel="noopener">statuspagina</a>.</div>
+    </div>
+  </div>
+</header>
+<div class="crumbs"><div class="wrap"><nav aria-label="Kruimelpad"><a href="../../releasenotes-hypotheekadvies/index.html">Releasenotes eBlinqx Hypotheekadvies (Fastlane)</a><span class="sep" aria-hidden="true">›</span><span aria-current="page">April 2025</span></nav></div></div>
+<main class="article"><div class="wrap cols">
+  <article>
+    <h1>Releasenotes eBlinqx Hypotheekadvies – April 2025</h1>
+    
+    <div class="content flnotes">
+									
+										
+											
+												<p><strong>Onderstaande updates hebben wij in de maand april doorgevoerd:</strong></p>
+												<p><strong><img src="../../bronnen/fastlane/img/schermafbeelding-2025-04-29-122433.webp" alt="Schermafbeelding 2025 04 29 122433" loading="lazy"></strong></p>
+												<p><strong>IT-24950: Verbetering weergave hoofdstukken op basis van burgerlijke staat</strong><br>Vanaf deze release tonen we de hoofdstukken <em>Draagplichtovereenkomst</em> en <em>Overeenkomst vergoedingsrechten</em> in het adviesrapport alleen als dit relevant is op basis van de burgerlijke staat die de adviseur heeft vastgelegd in database (inventarisatie).<br>Wanneer de klant (of klanten) door hun burgerlijke staat <strong>niet</strong> in aanmerking komt/kommen voor een draagplichtovereenkomst of overeenkomst vergoedingsrechten:</p>
+												<ul>
+													<li>Worden de bijbehorende adviesmotivatieblokken <strong>niet</strong> meer getoond.</li>
+													<li>Zijn de bijbehorende opties in de selectiemodal voor het samenstellen van het adviesrapport <strong>niet</strong> meer zichtbaar.</li>
+												</ul>
+												<p><img src="../../bronnen/fastlane/img/zwarte-balk-1.webp" alt="Zwarte balk (1)" loading="lazy"></p>
+												<p><strong>IT-25722: Navigatiebalk PortefeuilleSignalen verbergen bij Fastlane Oriëntatie</strong><br>De zwarte navigatiebalk, links in de kantlijn, van PortefeuilleSignalen is niet langer zichtbaar in de Fastlane Oriëntatie-omgeving. De zwarte navigatiebalk hoort bij PortefeuilleSignalen. Wanneer deze ook zichtbaar was in Oriëntatie, veroorzaakte dit verwarring bij adviseurs. Ze klikten hier per ongeluk op, waardoor ze de context kwijt raakten of onbedoeld in een andere omgeving terechtkwamen. Met deze verbetering is er minder kans op verwarring en verkeerde navigatie, blijven adviseurs binnen de juiste omgeving en ontstaan er minder onderbrekingen in het oriëntatieproces.</p>
+												<p><strong><img src="../../bronnen/fastlane/img/indexatie-gemaximeerd.webp" alt="Indexatie gemaximeerd" loading="lazy"></strong></p>
+												<p><strong>IT-25033: Maximeren indexatiepercentages bij het onderpand</strong><br>Om invoerfouten te voorkomen en de datakwaliteit te verbeteren, limiteren wij voortaan het indexatiepercentage bij onderpanden tot maximaal <strong>10%</strong>. Deze beperking geldt voor de volgende waardes: Marktwaarde, WOZ-waarde en Erfpacht.<br>In de praktijk kwam het voor dat adviseurs per ongeluk extreem hoge percentages invoerden (bijvoorbeeld 271%), waardoor eBlinqx Hypotheekadvies niet verder kon rekenen en een foutmelding ontstond. Door deze aanpassing zorgen we voor stabielere berekeningen en een betere gebruikerservaring.</p>
+												<p><strong><img src="../../bronnen/fastlane/img/leeftijd-in-de-toekomst.webp" alt="Leeftijd in de toekomst" loading="lazy"><br></strong></p>
+												<p><strong>IT-25772: </strong><strong>Leeftijd tonen op rekendatum</strong><br>De leeftijden van de aanvrager en partner bij de geboortedatumvelden worden vanaf nu berekend op basis van de <strong>rekendatum</strong> in plaats van de huidige datum. Door de leeftijden te koppelen aan de rekendatum, sluiten ze beter aan bij het moment waarop de hypotheekberekening wordt uitgevoerd. Dit voorkomt verwarring en zorgt voor een consistente en betrouwbare weergave van informatie in het aanvraagproces. Deze verbetering bouwt voort op een eerdere toevoeging waarbij leeftijden zichtbaar werden gemaakt naast geboortedatums. Met deze verfijning wordt de getoonde leeftijd nog relevanter binnen de context van de berekening.</p>
+												<p><strong><img src="../../bronnen/fastlane/img/einde-relatie-na-aow.webp" alt="Einde relatie na AOW" loading="lazy"></strong></p>
+												<p><strong>IT-21561: Einde relatie vanaf AOW-leeftijd</strong><br>Vanaf deze release wordt bij het beëindigen van een relatie waarbij beide personen AOW-gerechtigd zijn, het juiste AOW-bedrag voor een alleenstaande toegepast. Dit betekent dat de overblijvende of alleenstaande aanvrager voortaan automatisch het alleenstaandenbedrag ontvangt, in plaats van het bedrag voor gehuwden/partners. Deze aanpassing geldt zowel voor situaties na overlijden als bij relatiebeëindiging vanaf de AOW-leeftijd.</p>
+												<p><strong><img src="../../bronnen/fastlane/img/schermafbeelding-2025-04-18-202225.webp" alt="Schermafbeelding 2025 04 18 202225" loading="lazy"></strong></p>
+												<h3><strong>IT-18665: Automatisch uitschakelen van Elements Synchronisatie</strong></h3>
+												<p>Om ongewenst dataverlies te voorkomen, wordt de knop ‘Elements Synchronisatie staat aan’ voortaan automatisch uitgeschakeld bij het opstarten van eBlinqx Hypotheekadvies vanuit Elements. Tot nu toe bleef deze knop bij veel adviseurs onbedoeld actief, waardoor data in eBlinqx Hypotheekadvies tijdens nachtelijke synchronisaties kon worden overschreven met informatie uit Elements. Deze aanpassing voorkomt dat risico.</p>
+												<p><strong>Voordelen:</strong><br>✔ Voorkomt onbedoeld dataverlies<br>✔ Minder handmatige acties nodig<br>✔ Meer controle over datastromen</p>
+												<p>Na het passeren van de hypotheek kan de adviseur de synchronisatie handmatig weer inschakelen indien gewenst.</p>
+												<p><strong><img src="../../bronnen/fastlane/img/toekomst.webp" alt="Toekomst" loading="lazy"></strong></p>
+												<h3><strong>IT-24474: Aanpassing in berekening pro resto hoofdsom</strong></h3>
+												<h3>Bij het verplaatsen van de rekendatum naar een toekomstig moment worden voortaan de volgende waarden automatisch opnieuw berekend:</h3>
+												<ul>
+													<li>
+		<p>De <strong>pro resto hoofdsom</strong></p>
+		</li>
+													<li>
+		<p>De <strong>resterende rentevastperiode</strong></p>
+		</li>
+													<li>
+		<p>De <strong>resterende looptijd</strong> van de hypotheek</p>
+		</li>
+													<li>
+		<p>De <strong>resterende periode met recht op renteaftrek</strong></p>
+		</li>
+												</ul>
+												<p>Deze wijziging zorgt ervoor dat de berekening beter aansluit op de gekozen rekendatum en een actueel beeld geeft van de hypotheek op dat moment.</p>
+												<p><strong><img src="../../bronnen/fastlane/img/lees-tekstenbibliotheek-1.webp" alt="Lees tekstenbibliotheek" loading="lazy"></strong></p>
+												<p><strong>IT-25013: Nieuw: Snel even spieken in de tekstenbibliotheek 👀📚</strong><br>Goed nieuws voor alle adviseurs! In de tekstenbibliotheek kun je nu met één klik een tekst <em>bekijken</em> via een handige kijkfunctie – vergelijkbaar met het PDF-voorbeeld in het klantprofiel. Geen gedoe meer met eerst openen: je ziet direct wat erin staat. Lekker snel, lekker efficiënt!</p>
+												<p><strong><img src="../../bronnen/fastlane/img/hypotheek-na-uitkering-verzekering-1.webp" alt="Hypotheek na uitkering verzekering (1)" loading="lazy"><br></strong></p>
+												<p><strong>IT-25156: Tekstuele verbetering – kortere titel bij uitkering verzekering ✂️</strong><br>De tekst <em>‘Hypotheekhoogte na uitkering verzekering’</em> is ingekort naar <em>‘Hypotheek na uitkering verzekering’</em>. Dankzij deze aanpassing wordt de tekst nu netjes op één regel weergegeven in de applicatie én oogt het rapport overzichtelijker doordat er meer ruimte is tussen tekst en getallen. Klein verschil, groot effect!</p>
+												<p><strong><img src="../../bronnen/fastlane/img/acties-klantprofiel.webp" alt="Acties klantprofiel" loading="lazy"><br></strong></p>
+												<p><strong>IT-25014: Titel ‘Acties’ toegevoegd boven actiekolom in klantprofiel ✅</strong><br>Voor nóg meer consistentie binnen onze software hebben we nu de titel <em>‘Acties’</em> toegevoegd boven de actiekolom in het klantprofiel. Zo is in één oogopslag duidelijk waar de acties te vinden zijn. Kleine verbetering, groot gebruiksgemak!</p>
+												<p><strong><img src="../../bronnen/fastlane/img/fixatie-header.webp" alt="Fixatie header" loading="lazy"><br></strong></p>
+												<p><strong>IT-25619: Altijd zicht op de geldverstrekker tijdens het vergelijken! 🔍📌</strong><br>Vergelijken is nóg makkelijker geworden! In het onderdeel <em>Geldverstrekkers vergelijken</em> blijft de header met de naam van de geldverstrekker, de productnaam én het logo nu keurig in beeld terwijl je scrolt. Superhandig wanneer je voorwaarden naast elkaar bekijkt — zo weet je altijd precies bij welke aanbieder je bent. Wel zo overzichtelijk, toch?</p>
+												<p><strong><img src="../../bronnen/fastlane/img/leeftijd-in-beeld.webp" alt="Leeftijd in beeld" loading="lazy"></strong></p>
+												<p><strong>IT-25588: Leeftijd nu zichtbaar in jaren én maanden!</strong> 🎉<br>Vanaf nu zie je bij de geboortedatum van de klant direct ook de leeftijd in jaren en maanden. Superhandig! Zo hoef je niet meer zelf te rekenen en zie je in één oogopslag of een klant bijvoorbeeld bijna 57 jaar en 3 maanden is. Een kleine toevoeging met grote impact!</p>
+												<p><img src="../../bronnen/fastlane/img/percentage-weg.webp" alt="Percentage weg" loading="lazy"></p>
+												<p><strong>IT-23365: Percentage bij AO uit adviesrapport verwijderd 📄❌</strong><br>We hebben het percentage van het resterende inkomen bij arbeidsongeschiktheid (AO) uit het adviesrapport gehaald. Dit zorgt voor een duidelijker en neutraler weergave van de informatie, zonder verwarring of onnodige aannames. Weer een stapje richting een nóg professioneler rapport!</p>
+												<p><strong><img src="../../bronnen/fastlane/img/schermafbeelding-2025-04-14-113941.webp" alt="Schermafbeelding 2025 04 14 113941" loading="lazy"><br></strong></p>
+												<p><strong>IT-25388: Alleen voornaam in automatisch gegenereerde teksten</strong><br>We hebben de opmaak van automatisch gegenereerde teksten in het adviesrapport aangepast. In de paragrafen over Arbeidsongeschiktheid (AO), Werkloosheid (WW), AOW, Overlijden partner en Einde relatie wordt voortaan alleen de voornaam van de klant gebruikt. Waarom deze wijziging? Het herhaald noemen van de voornaam en achternaam zorgde voor een onrustige leeservaring. Door alleen de voornaam te tonen, leest het rapport natuurlijker en prettiger. Let op: in de titels van de paragrafen blijft de volledige naam wél zichtbaar.</p>
+												<p><strong><img src="../../bronnen/fastlane/img/hoofdstuk-en-zoeken.webp" alt="Hoofdstuk en zoeken" loading="lazy"><br></strong></p>
+												<p><strong>IT-25383: </strong><strong>Verbeterde navigatie in de Tekstenbibliotheek: rubrieken eerst, dan zoeken</strong><br>We hebben de werking van de zoekfunctie in de Tekstenbibliotheek aangepast om het zoeken naar teksten sneller en intuïtiever te maken. Vanaf nu kiest de adviseur eerst een hoofdstuk of rubriek waarin hij/zij wil zoeken. Pas daarna wordt de zoekterm ingevoerd. Waarom deze wijziging? De eerdere werkwijze – eerst zoeken en dan pas filteren – bleek in de praktijk omslachtig en niet gebruiksvriendelijk. Door het om te draaien, wordt het zoeken veel gerichter en overzichtelijker.</p>
+												<p><strong><img src="../../bronnen/fastlane/img/fixatie.webp" alt="Fixatie" loading="lazy"><br></strong></p>
+												<p><strong>IT-25069: </strong><strong>Vastgezette titelbalk bij het motiveren van het advies</strong><br>Vanaf deze release blijven de titelbalken <em>‘Adviesmotivatie’</em> en <em>‘Tekstenbibliotheek’</em> altijd zichtbaar wanneer je door de pagina scrollt. Wat betekent dit voor jou?</p>
+												<ul>
+													<li>
+		<p>Meer overzicht: Je weet altijd waar je bent in het scherm, zelfs bij langere teksten.</p>
+		</li>
+													<li>
+		<p>Sneller werken: Geen onnodig heen-en-weer scrollen meer om knoppen of context terug te vinden.</p>
+		</li>
+													<li>
+		<p>Gebruiksvriendelijker: De interface voelt rustiger en intuïtiever aan, wat bijdraagt aan een prettigere werkomgeving.</p>
+		</li>
+												</ul>
+												<p><strong><img src="../../bronnen/fastlane/img/woningwaarde-1.webp" alt="Woningwaarde" loading="lazy"></strong></p>
+												<p><strong>IT-24997: Woningwaarde bij het onderdeel 'Berekeningen vergelijken'<br></strong>Voorheen werd bij het vergelijken of presenteren van hypotheekberekeningen standaard de RWWR-waarde (onze modelmatige waarderapport) gebruikt. Met deze release is dit aangepast: voortaan wordt de marktwaarde gehanteerd die de adviseur zelf heeft ingevuld. Dit sluit beter aan bij de praktijk en biedt meer consistentie in de adviesrapportage.</p>
+												<h3><strong> <img src="../../bronnen/fastlane/img/inventarisatierapport.webp" alt="Inventarisatierapport" loading="lazy"></strong></h3>
+												<h3><strong> </strong></h3>
+												<h3><strong>IT-25379: Sjabloon Inventarisatierapport beschikbaar</strong></h3>
+												<p>Binnen het onderdeel 'Rapport samenstellen' hebben wij nu het het sjabloon <em>Inventarisatierapport </em>toegevoegd. Dit sjabloon is voor alle gebruikers te vinden via: Instellingen → eBlinqx Hypotheekadvies → Rapport samenstellen. Het <em>Inventarisatierapport</em> bevat de volgende onderdelen:</p>
+												<ul>
+													<li>
+		<p>Voorblad met de titel <em>Inventarisatierapport</em></p>
+		</li>
+													<li>
+		<p>Persoonlijke gegevens</p>
+		</li>
+													<li>
+		<p>Huidige woning</p>
+		</li>
+													<li>
+		<p>Huidige hypotheek</p>
+		</li>
+													<li>
+		<p>Huidige leningdelen</p>
+		</li>
+													<li>
+		<p>Te verwachten verkoopresultaat</p>
+		</li>
+												</ul>
+												<p>Deze toevoeging maakt het mogelijk om snel en overzichtelijk de huidige situatie van een klant in kaart te brengen.<strong></strong></p>
+												<p><strong><img src="../../bronnen/fastlane/img/voorwaarden-1.webp" alt="Voorwaarden" loading="lazy"></strong></p>
+												<p><strong>IT-22218: Nieuw in eBlinqx Hypotheekadvies: hypotheekvoorwaarden nu beschikbaar!</strong><br>Met trots introduceren we de eerste release van hypotheekvoorwaarden in eBlinqx Hypotheekadvies! Vanaf nu kun je via de link <strong>‘Toon meer’</strong> direct doorklikken naar de volledige set voorwaarden in Findata. Zo heb je snel en overzichtelijk toegang tot alle relevante informatie die je nodig hebt. Wat betekent dit voor jou?</p>
+												<ul>
+													<li>
+		<p><strong>Sneller inzicht</strong> in de specifieke voorwaarden van geldverstrekkers</p>
+		</li>
+													<li>
+		<p><strong>Minder klikken</strong> om bij de juiste informatie te komen</p>
+		</li>
+													<li>
+		<p><strong>Meer gemak</strong> bij het onderbouwen van je advies</p>
+		</li>
+												</ul>
+												<p>En dit is nog maar het begin! In de komende periode worden steeds meer hypotheekvoorwaarden direct in eBlinqx Hypotheekadvies zelf gepresenteerd, zodat je nóg eenvoudiger kunt werken. Stay tuned – we bouwen hard door aan een nóg slimmere advieservaring! </p>
+												<p><strong><img src="../../bronnen/fastlane/img/fastlane-orientatie.webp" alt="Fastlane Orientatie" loading="lazy"></strong></p>
+												<p><strong>IT-25260 – Switchen tussen Fastlane Advies en Fastlane Oriëntatie</strong><br>Het is vanaf nu mogelijk om eenvoudig te schakelen tussen Fastlane Advies en Fastlane Oriëntatie. Dit biedt je meer flexibiliteit bij het vergelijken van scenario’s of het oriënteren op alternatieve opties.</p>
+												<p>👉 Let op: Wijzigingen die je aanbrengt in Fastlane Oriëntatie worden uitsluitend opgeslagen in de berekening zelf. Deze wijzigingen worden niet automatisch overgenomen in de database van Fastlane Advies. Houd hier rekening mee bij het maken van aanpassingen.</p>
+												<p><strong>Fastlane Oriëntatie</strong><br>De gegevens die je in Fastlane Oriëntatie invoert, worden alleen in de berekening zelf opgeslagen. Fastlane Oriëntatie is ideaal voor het maken van snelle berekeningen en simulaties. Je kunt bijvoorbeeld eenvoudig bekijken wat er gebeurt als de klant straks binnen de 10 jaar van zijn of haar AOW-datum komt, als het inkomen verandert, of als een lening doorloopt of wordt afgelost. De gegevens die je invoert, worden niet toegevoegd aan een centrale database, maar blijven alleen in die specifieke berekening bewaard. Als we de ingevoerde gegevens zouden opslaan in onze database dan worden de feitelijke gegevens overschreven en zou dit de kracht van de simulaties verminderen, en daarom doen we dat niet.</p>
+												<p><strong>Fastlane Advies</strong><br>Voor Fastlane Advies is er wél een aparte database (inventarisatie). Hierin worden alle feiten vastgelegd en verwerkt. Er wordt niet meer gesimuleerd; we gaan uit van de ingevoerde gegevens zoals ze zijn. Iedere nieuwe berekening in Fastlane Advies wordt gevoed met de gegevens uit deze database. Deze gegevens worden ook gebruikt voor de hypotheekaanvraag en om het HDN-aanvraagformulier in te vullen.</p>
+												<p><img src="../../bronnen/fastlane/img/ik-heb-hier-geen-voorziening-voor.webp" alt="Ik heb hier geen voorziening voor" loading="lazy"></p>
+												<p><strong>IT-25385: Verwijderen keuzeoptie in klantprofiel</strong><br>De keuzeoptie <em>‘Ik heb hier geen voorziening voor en wil dit ook niet regelen’</em> is verwijderd uit het klantprofiel bij de thema’s Arbeidsongeschiktheid (AO), Werkloosheid (WW) en Overlijden partner.<br>Deze wijziging is doorgevoerd in zowel de applicatie als in de output, waaronder het adviesrapport en eventuele andere downloads. Hierdoor sluiten de rapportages beter aan op het actuele adviesproces en wordt de focus gelegd op passende oplossingen in plaats van op het expliciet afzien daarvan.</p>
+												<p><img src="../../bronnen/fastlane/img/verantwoord-blijven-wonen.webp" alt="Verantwoord blijven wonen" loading="lazy"></p>
+												<p><strong>IT-25026: Verantwoord blijven wonen? Ja voor € 0,00 per maand</strong><br>Bij het thema <em>‘Verantwoord blijven wonen’</em> toonden wij eerder altijd de tekst: <em>‘Ja, voor € x per maand’</em>. Deze toevoeging is nu verwijderd uit de applicatie en de rapportages.<br>De reden hiervoor is dat wanneer een adviseur (nog) niet alle verzekeringen adviseerde, er automatisch de tekst verscheen: <em>‘Verantwoord blijven wonen? Ja, voor € 0,00 per maand’</em>. Dit riep verwarring op en gaf een onwenselijke indruk.</p>
+												<p><strong><img src="../../bronnen/fastlane/img/verzekering-2-in-rapport.webp" alt="Verzekering 2 in rapport" loading="lazy"><br></strong></p>
+												<h3><strong>IT-24551 – Volledige weergave ORV’s en woonlastenbeschermers in adviesrapport</strong></h3>
+												<p>We hebben de weergave van overlijdensrisicoverzekeringen (ORV’s) en woonlastenbeschermers in het adviesrapport uitgebreid. Waar voorheen slechts één ORV en één woonlastenbeschermer werd getoond, worden nu alle geadviseerde producten weergegeven, inclusief handmatig toegevoegde ORV’s en woonlastenbeschermers. Deze aanpassing zorgt ervoor dat het adviesrapport beter aansluit bij het daadwerkelijke advies en completer is voor de klant.</p>
+												<p><strong><img src="../../bronnen/fastlane/img/einde-renteaftrek-2.webp" alt="Einde renteaftrek" loading="lazy"></strong></p>
+												<p><strong>IT-25221 – Einddatum fiscale renteaftrek nu correct opgeslagen bij inventarisatie<br></strong>Bij het inventariseren van een bestaande hypotheek werd de einddatum van de fiscale renteaftrek eerder niet opgeslagen. Dit leidde tot onvolledige gegevens in het dossier. Dit probleem is nu opgelost: de einddatum van de fiscale aftrek wordt voortaan correct vastgelegd in het eBlinqx Hypotheekadviesdossier bij het invoeren van een bestaande hypotheek.</p>
+												<p><img src="../../bronnen/fastlane/img/schermafbeelding-2025-04-01-144626.webp" alt="Schermafbeelding 2025 04 01 144626" loading="lazy"></p>
+												<p><strong>IT-25301 – Naam van berekening nu zichtbaar in bestandsnaam bij download<br></strong>Bij het downloaden van een berekening of adviesrapport wordt vanaf vandaag de tenaamstelling van de berekening automatisch toegevoegd aan de bestandsnaam. Daarnaast is de toevoeging <em>‘Fastlane’</em> uit de bestandsnaam verwijderd om verwarring te voorkomen.  Een bestand dat voorheen werd opgeslagen als bijvoorbeeld FDF_20250330.pdf, wordt nu automatisch opgeslagen als bijvoorbeeld Financieringsopzet_20250330.pdf. Zo zie je direct om welk document het gaat, zonder dit handmatig te hoeven aanpassen.</p>
+												<p><img src="../../bronnen/fastlane/img/schermafbeelding-2025-04-01-152118.webp" alt="Schermafbeelding 2025 04 01 152118" loading="lazy"></p>
+												<p><strong>IT-24630 – Correcte einddatum voor bankspaarleningdelen in vergelijkende berekening</strong><br>In het thema <em>Berekeningen vergelijken</em> hebben we een correctie doorgevoerd voor leningdelen met de aflosvorm <em>Banksparen</em>. Voorheen liepen deze leningdelen in de vergelijkende berekening onterecht door ná de afgesproken einddatum, wat een vertekend beeld gaf van de lasten.</p>
+												<p><img src="../../bronnen/fastlane/img/toetsmomenten-1-2.webp" alt="Toetsmomenten (1)" loading="lazy"></p>
+												<p><strong>IT-25250 – Toevoeging tekstuele onderbouwing bij toetsmomenten<br></strong>Bij de toetsmomenten is vanaf nu, naast de cijfermatige onderbouwing, ook de bijbehorende tekstuele toelichting beschikbaar. Deze aanvulling biedt meer context en inzicht in de achterliggende cijfers, wat de interpretatie en beoordeling van de toetsmomenten vereenvoudigt en versterkt.</p>
+											
+											
+											
+										
+									
+								
+							</div>
+    <p class="pager"><a href="../../releasenotes-hypotheekadvies/2025-03/index.html">« Maart 2025</a> &nbsp; <a href="../../releasenotes-hypotheekadvies/2025-05/index.html">Mei 2025 »</a></p>
+    <p class="src">Bron: <a href="https://fastlane.hypotheekbond.nl/hoe-het-werkt/releasenotes/releasenotes-2025/" target="_blank" rel="noopener">fastlane.hypotheekbond.nl</a></p>
+  </article>
+  <aside class="related"><h2>Andere maanden:</h2><ul><li><a href="../../releasenotes-hypotheekadvies/2025-08/index.html">Augustus 2025</a></li><li><a href="../../releasenotes-hypotheekadvies/2025-07/index.html">Juli 2025</a></li><li><a href="../../releasenotes-hypotheekadvies/2025-06/index.html">Juni 2025</a></li><li><a href="../../releasenotes-hypotheekadvies/2025-05/index.html">Mei 2025</a></li><li><a href="../../releasenotes-hypotheekadvies/2025-03/index.html">Maart 2025</a></li><li><a href="../../releasenotes-hypotheekadvies/2025-02/index.html">Februari 2025</a></li><li><a href="../../releasenotes-hypotheekadvies/2025-01/index.html">Januari 2025</a></li><li><a href="../../releasenotes-hypotheekadvies/2024-12/index.html">December 2024</a></li><li><a href="../../releasenotes-hypotheekadvies/2024-11/index.html">November 2024</a></li></ul><p><a href="../../releasenotes-hypotheekadvies/index.html">Alle releasenotes »</a></p></aside>
+</div></main>
+<footer>
+  <div class="wrap">
+    <span>Copyright © 2024 Blinqx powered by Faster Forward</span>
+    <nav aria-label="Beleid">
+      <a href="../../supportbeleid/index.html">Supportbeleid</a>
+      <a href="../../opdrachtenbeleid/index.html">Opdrachtenbeleid</a>
+      <a href="../../klachtenbeleid/index.html">Klachtenbeleid</a>
+      <a href="../../wensenbeleid/index.html">Wensenbeleid</a>
+      <a href="../../video/index.html">Video's</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,2288 @@
+{
+ "id": "wqlzatuwfu1x",
+ "name": "1. eBlinqx Hypotheekadvies (Fastlane) 2 april 2026",
+ "steps": [
+  {
+   "flow": "CRM- Dossier aanmaken - copy",
+   "kind": "popup",
+   "title": "",
+   "html": "<h2><strong>Welkom bij eBlinqx Hypotheekadvies</strong></h2><p>In deze trainingsomgeving zal de werkwijze van de propositie<br><strong>eBlinqx Advies &amp; Bemiddeling Start </strong><br>worden doorlopen.</p><p>Na het voltooien van deze training ben je klaar om eBlinqx te gebruiken.</p>",
+   "page": "e9df2170-65e4-41c7-8f31-c6894abc3f4d"
+  },
+  {
+   "flow": "CRM- Dossier aanmaken - copy",
+   "kind": "popup",
+   "title": "",
+   "html": "<h2><strong>Het Dossier</strong></h2><p>In de volgende stappen nemen we de basisinformatie door van het klantdossier</p>",
+   "page": "760e63ad-ec8a-4095-9739-ccead785f904"
+  },
+  {
+   "flow": "CRM- Dossier aanmaken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Klant opzoeken</strong></h3><p>Zoek naar je klant met behulp van de zoekvelden hierboven</p><p><strong>Particuliere relaties: </strong>Gebruik het veld \"Achternaam\"</p><p><strong>Zakelijke relatie: </strong>Gebruik het veld \"Organisatie\"</p><p>Met een %-teken is het mogelijk om op naamdelen te zoeken.</p>",
+   "page": "760e63ad-ec8a-4095-9739-ccead785f904"
+  },
+  {
+   "flow": "CRM- Dossier aanmaken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Uitgebreide filters</strong></h3><p><em>Druk op \"Toon uitgebreide filters\"</em></p>",
+   "page": "760e63ad-ec8a-4095-9739-ccead785f904"
+  },
+  {
+   "flow": "CRM- Dossier aanmaken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Uitgebreide filters</strong></h3><p>Nu kan er op meerdere criteria worden gezocht</p>",
+   "page": "185a4321-7708-4ad4-93e4-1e51c23d7e9c"
+  },
+  {
+   "flow": "CRM- Dossier aanmaken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Dossier aanmaken</strong></h3><p>Indien de klant nog niet in het systeem staat, kan er een nieuw dossier aangemaakt worden</p><p><em>Klik op \"Dossier aanmaken\"</em></p>",
+   "page": "1bed27bc-7b1f-4e69-a57f-0b39dc9b6b2a"
+  },
+  {
+   "flow": "CRM- Dossier aanmaken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Gegevens invullen</strong></h3><p>Laat de status op \"prospect\" staan</p><p>Dit wordt automatisch aangepast wanneer de opdracht tot dienstverlening ontvangen is</p>",
+   "page": "8db7c807-4f33-469b-ab3b-35e1641b729b"
+  },
+  {
+   "flow": "CRM- Dossier aanmaken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Aanspreekvorm</strong></h3><p>Wanneer deze op \"niet ingesteld blijft staan, wordt informeel aangehouden</p>",
+   "page": "8db7c807-4f33-469b-ab3b-35e1641b729b"
+  },
+  {
+   "flow": "CRM- Dossier aanmaken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<p>Alle roze velden zijn verplicht</p>",
+   "page": "8db7c807-4f33-469b-ab3b-35e1641b729b"
+  },
+  {
+   "flow": "CRM- Dossier aanmaken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Persoonsgegevens</strong></h3><p>Vul tenminste de onderstaande gegevens in:</p><ul><li><p>Achternaam</p></li><li><p>Tussenvoegsel</p></li><li><p>Voorletters</p></li><li><p>Roepnaam</p></li><li><p>Geslacht</p></li><li><p>Geboortedatum</p></li><li><p>Burgerlijke staat</p></li></ul>",
+   "page": "8db7c807-4f33-469b-ab3b-35e1641b729b"
+  },
+  {
+   "flow": "CRM- Dossier aanmaken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Contactgegevens</strong></h3><p>Vul minimaal de onderstaande gegevens in:</p><ul><li><p>Mobiel telefoonnummer</p></li><li><p>E-mailadres</p></li></ul><p>Deze gegevens zijn benodigd om het klantportaal (Uwkluis) te activeren.</p><p><br>Achteraf aanvullen blijft altijd een mogelijkheid.</p>",
+   "page": "b36bdc0b-4d91-436d-8199-159230be3006"
+  },
+  {
+   "flow": "CRM- Dossier aanmaken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Adresgegevens</strong></h3><p>Haal het adres op door de postcode en huisnummer op te voeren.</p><p><em>Druk op \"Adres ophalen\"</em></p>",
+   "page": "4082ea1c-16b3-4b9b-ac47-85b84627a3f5"
+  },
+  {
+   "flow": "CRM- Dossier aanmaken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Partner toevoegen</strong></h3><p><em>Klik op het selectievakje relatie om de velden invulbaar te maken</em></p>",
+   "page": "51ef20ec-74de-4940-b83e-05dd28f8ff8b"
+  },
+  {
+   "flow": "CRM- Dossier aanmaken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Kopieer de contactgegevens</strong></h3><p>De gegevens van de eerste persoon kunnen gekopieerd worden naar de tweede persoon</p><p><em>Selecteer \"Kopieer van eerste persoon\"</em></p>",
+   "page": "3c8becc1-6311-42f2-af93-8caa2b7fa058"
+  },
+  {
+   "flow": "CRM- Dossier aanmaken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Kopieer de adresgegevens</strong></h3><p>Dit geldt ook voor de adresgegevens</p><p><em>Selecteer \"Kopieer van eerste persoon\"</em></p>",
+   "page": "e3c91a26-c781-4e4f-b1db-c151629b440e"
+  },
+  {
+   "flow": "CRM- Dossier aanmaken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Opslaan</strong></h3><p><em>Klik op \"opslaan\"</em></p>",
+   "page": "ab1dfd04-981e-4866-87d1-a26d0c76d129"
+  },
+  {
+   "flow": "CRM- Dossier aanmaken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Het dossier is aangemaakt</strong></h3><p>Hier kan je snel de basisgegevens van de klant zien</p>",
+   "page": "39378f97-8125-4af0-81e5-aaa0b1654de2"
+  },
+  {
+   "flow": "CRM- Dossier aanmaken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Dossier overzicht</strong></h3><p><strong>Startpagina: </strong>Hier vind je een overzicht van alle informatie in het dossier</p><p><strong>Partijen en objecten: </strong>Hier vind je alle betrokkenen partijen, zoals geldverstrekkers, notaris, makelaars etc. met hun contactgegevens</p><p><strong>Stukkenlijst: </strong>Hier vind je alle stukken die zijn opgevraagd door jou en door de geldverstrekker</p><p><strong>Documenten: </strong>Hier zie je alle documenten die zijn ontvangen van de klant of door jou zijn toegevoegd aan het dossier</p><p><strong>Fastlane: </strong>Hier ga je naar de adviesprogramma eBlinqx Hypotheekadvies</p><p><strong>Export: </strong>Hier kan je informatie vinden over klantportaal (Uwkluis) en bronddata</p>",
+   "page": "39378f97-8125-4af0-81e5-aaa0b1654de2"
+  },
+  {
+   "flow": "CRM- Dossier aanmaken - copy",
+   "kind": "popup",
+   "title": "",
+   "html": "<h2><strong>Het dossier</strong></h2><p>Dit was de basisinformastie over het dossier</p>",
+   "page": "309cd2a9-8555-4ebd-ac9f-4a746d35212d"
+  },
+  {
+   "flow": "CRM- Dienst aanmaken - copy",
+   "kind": "popup",
+   "title": "",
+   "html": "<h2><strong>Dienst aanmaken</strong></h2><p>Als financieel dienstverlener kan een klant zich melden met verschillende hulpvragen, zoals aankoop, verbouwing etc.</p><p>Door een dienst aan te maken is het mogelijk:</p><ul><li><p>Om in één opslag te zien wat voor adviestraject er aangeboden wordt</p></li><li><p>Het klantportaal (Uwkluis) aan te maken</p></li><li><p>Documenten op te vragen bij de klant</p></li><li><p>Een opdracht tot dienstverlening te maken</p></li></ul><p>De volgende stappen laten de werkwijze zien</p>",
+   "page": "6e709ca0-1f68-4816-bff9-d92dbf70407e"
+  },
+  {
+   "flow": "CRM- Dienst aanmaken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Nieuwe dienst aanmaken</strong></h3><p><em>Klik op \"Nieuw product\"</em></p>",
+   "page": "620c8dbf-2a7b-4736-9322-f0ea7c82fbec"
+  },
+  {
+   "flow": "CRM- Dienst aanmaken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Nieuwe dienst aanmaken</strong></h3><p><em>Klik op \"Dienst\" </em></p>",
+   "page": "7abbf62b-807e-4a88-bbc2-085a450708d0"
+  },
+  {
+   "flow": "CRM- Dienst aanmaken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h2><strong>Dienst invullen   </strong></h2><p>Vul aan de linkerkant van het scherm algemene informatie in. Alle roze velden verplicht</p><p><strong>Omschrijving</strong><br>Deze kan je leeglaten en wordt automatisch gevuld op basis van het gekozen dienstdeel</p>",
+   "page": "fe8223e8-5a9f-407e-87aa-7cd87d12191e"
+  },
+  {
+   "flow": "CRM- Dienst aanmaken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Behandeling</strong></h3><p>Geef hier aan wie welke rol heeft.</p><p><strong>Adviseur</strong> De adviseur</p><p><strong>Acceptant </strong>Dient hetzelfde te zijn als behandelaar</p><p><strong>Behandelaar </strong>Degene die de voortgangsbewaking doet</p><p>Deze rollen kunnen uiteraard ook door één persoon vervult worden</p><ul><li><p><em>Selecteer de adviseur</em></p></li><li><p><em>Selecteer de acceptant en behandelaar</em></p></li></ul>",
+   "page": "1564641f-5253-4635-80ff-4b791a6393b3"
+  },
+  {
+   "flow": "CRM- Dienst aanmaken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Contactgegevens</strong></h3><p>Hier kan je aangeven wie de eerste aanvrager is</p><p><em>Selecteer de eerste aanvrager</em></p>",
+   "page": "aadfeb63-b209-40aa-af98-4c074714f7e4"
+  },
+  {
+   "flow": "CRM- Dienst aanmaken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Opslaan</strong></h3><p><em>Klik op \"opslaan\"</em></p>",
+   "page": "b2a2ff4e-93d2-4a40-8621-de74ea8f55d0"
+  },
+  {
+   "flow": "CRM- Dienst aanmaken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Rechterdeel van de dienst</strong></h3><p>Voeg een dienstdeel toe</p><p><em>Klik op het \"plus-teken\"</em></p>",
+   "page": "6f7c208d-c61c-4500-98ff-19e8ffd4da5e"
+  },
+  {
+   "flow": "CRM- Dienst aanmaken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Dienst invullen</strong></h3><p>Hier kan je aangeven wat voor dienst je zal leveren</p><p><em>Selecteer een keuze uit de lijst</em></p>",
+   "page": "32d1efe1-2cd7-4d91-9420-b2a69d882f25"
+  },
+  {
+   "flow": "CRM- Dienst aanmaken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Prijsafspraak</strong></h3><p><em>Vul het bijbehorende bedrag in</em></p>",
+   "page": "07d66d1c-0039-4b33-bc5e-bedeb10e0e2c"
+  },
+  {
+   "flow": "CRM- Dienst aanmaken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Opslaan</strong></h3><p><em>Klik op \"opslaan\"</em></p>",
+   "page": "e293644c-2940-4857-97f6-11da8720aa0d"
+  },
+  {
+   "flow": "CRM- Dienst aanmaken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>De dienst is aangemaakt</strong></h3><p>De omschrijving is automatisch ingevuld</p>",
+   "page": "c10b3ccc-5db6-4c88-bfdc-e6f31c9bf80d"
+  },
+  {
+   "flow": "CRM- Dienst aanmaken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Dienst</strong></h3><p>Op de startpagina is in één opslag te zien wat voor soort adviestraject er loopt</p>",
+   "page": "8d9fb377-61d4-4f07-9183-7fa8d5510a22"
+  },
+  {
+   "flow": "CRM-Uwkluis - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Workflows</strong></h3><p>In eBlinqx zijn diverse workflows beschikbaar die de gebruiker door het proces begeleiden.</p><p>Dit biedt comfort en vermindert de kans op fouten.</p><p><strong>Basisregel: Klik alleen aan wat van toepassing is of wat uitgevoerd dient worden</strong></p><p><em>Klik op de workflowpijl bij de dienst</em></p>",
+   "page": "8d9fb377-61d4-4f07-9183-7fa8d5510a22"
+  },
+  {
+   "flow": "CRM-Uwkluis - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Dienst</strong></h3><p>Op de startpagina is de dienst te vinden</p><p><em>Klik op de dienst</em></p>",
+   "page": "8d9fb377-61d4-4f07-9183-7fa8d5510a22"
+  },
+  {
+   "flow": "CRM-Uwkluis - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Workflow</strong></h3><p>Vanuit de dienst is het ook mogelijk om naar de workflows te gaan</p>",
+   "page": "e69a1482-9789-487b-a9f7-bb50c7e68212"
+  },
+  {
+   "flow": "CRM-Uwkluis - copy",
+   "kind": "popup",
+   "title": "",
+   "html": "<h3><strong>Workflow opties</strong></h3><p>De volgende opties zijn beschikbaar</p><ol><li><p>Uwkluis aanmaken (Klantportaal)</p></li><li><p>Stukkenlijst aanmaken</p></li><li><p>Opdracht tot dienstverlening aanmaken</p></li></ol><p>Dit is de optimale volgorde voor het oppakken van de workflows</p><p>De stappen gaan als volgt</p>",
+   "page": "ee7d3cfa-b2ac-492a-8fbd-a211e250033d"
+  },
+  {
+   "flow": "CRM-Uwkluis - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Uwkluis aanmaken</strong></h3><p>Onder de workflow heb je twéé mogelijkheden</p><ol><li><p>Uwkluis aanmaken</p></li><li><p>Uwkluis aanmaken + Brondata</p></li></ol><p>Bij beide opties wordt er een activatiemail gestuurd, zodat de klant zijn klantportaal (Uwkluis) kan activeren</p><p>De activatiemail wordt <strong>automatisch</strong> verstuurd vanuit eBlinqx</p><p><em>Klik op een van de twéé opties</em></p>",
+   "page": "ee7d3cfa-b2ac-492a-8fbd-a211e250033d"
+  },
+  {
+   "flow": "CRM-Uwkluis - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Activatiemail inzien</strong></h3><p>Onder de dienst is het mogelijk om te zien of de activatiemail verstuurd is</p><p><em>Klik op het tabblad \"communicatie\"</em></p>",
+   "page": "b4124a39-ca81-4cfd-96aa-eb7acde8a4cd"
+  },
+  {
+   "flow": "CRM-Uwkluis - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Activatiemail inzien</strong></h3><p><em>Zet de systeemregistraties op \"Toon\"</em></p>",
+   "page": "583d95ee-1ab7-4906-8b6e-92642f03095b"
+  },
+  {
+   "flow": "CRM-Uwkluis - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Activatiemail inzien</strong></h3><p><em>Klik op \"zoeken\"</em></p>",
+   "page": "714e47e4-0fae-45fc-9dc1-397e9b06c19d"
+  },
+  {
+   "flow": "CRM-Uwkluis - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Activatiemail inzien</strong></h3><p>Hier zie je dat de mail verstuurd is vanuit het systeem</p>",
+   "page": "38766fc1-197d-49a3-bb26-2e88dac433fb"
+  },
+  {
+   "flow": "CRM-Uwkluis - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Activatiemail inzien</strong></h3><p>Hiermee is het mogelijk om de verstuurde mail in te zien</p>",
+   "page": "e953b0d0-c408-4275-9a38-4f5f0867b1a3"
+  },
+  {
+   "flow": "CRM-Uwkluis - copy",
+   "kind": "popup",
+   "title": "",
+   "html": "<h3><strong>Het klantportaal (Uwkluis) is aangemaakt</strong></h3><p>De klant dient het klantportaal (Uwkluis) te activeren door een wachtwoord aan te maken.</p><p>De stappen voor de klant zijn te zien in het hoofdstuk \"Klantview\"</p>",
+   "page": "e953b0d0-c408-4275-9a38-4f5f0867b1a3"
+  },
+  {
+   "flow": "CRM-Stukkenlijst - copy",
+   "kind": "popup",
+   "title": "",
+   "html": "<h3><strong>Stukkenlijst aanmaken</strong></h3><p>In de inventarisatiefase is het mogelijk om documenten op te vragen</p><p>Via het klantportaal (Uwkluis) kan de klant documenten aanleveren.</p><p>Daarvoor is het benodigd om de gewenste documenten als stukkenlijst open te zetten in eBlinqx</p><p>De volgende stappen laten zien hoe dat kan</p>",
+   "page": "8d9fb377-61d4-4f07-9183-7fa8d5510a22"
+  },
+  {
+   "flow": "CRM-Stukkenlijst - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Stukkenlijst aanmaken</strong></h3><p><em>Klik op de workflow van de desbetreffende dienst</em></p>",
+   "page": "8d9fb377-61d4-4f07-9183-7fa8d5510a22"
+  },
+  {
+   "flow": "CRM-Stukkenlijst - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Stukkenlijst aanmaken</strong></h3><p>Indien er één klant is opgevoerd, wordt er een extra bevestiging gevraagd of dit correct is</p><p>De stukken wordt namelijk per aanvrager opgevraagd</p><p><em>Klik op de gewenste optie</em></p>",
+   "page": "aae347ec-acd7-4d84-ba97-8b13848744ae"
+  },
+  {
+   "flow": "CRM-Stukkenlijst - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Stukkenlijst aanmaken</strong></h3><p>Afhankelijk van de klantsituatie stel je hier een stukkenlijst samen</p><p><em>Klik de onderdelen aan die van toepassing zijn</em></p>",
+   "page": "034a64ea-456c-4432-ba70-5e5469682f53"
+  },
+  {
+   "flow": "CRM-Stukkenlijst - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Stukkenlijst inzien</strong></h3><p>Ga je terug naar de dienst</p><p><em>Klik op \"terug\"</em></p>",
+   "page": "eec9c384-902c-44d6-93cf-033bdb05100f"
+  },
+  {
+   "flow": "CRM-Stukkenlijst - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Stukkenlijst inzien</strong></h3><p><em>Klik op het tabblad \"stukkenlijst\"</em></p>",
+   "page": "f407e6b9-4d30-4f4c-bda0-40bf7ef674c3"
+  },
+  {
+   "flow": "CRM-Stukkenlijst - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Stukkenlijst inzien</strong></h3><p>Hier zie je alle openstaande stukken en geeft een overzicht van alle benodigde documenten om het dossier compleet te maken voor een toekomstige hypotheekaanvraag</p><p>De stukkenlijst is gebaseerd op de eerder gemaakte keuzes</p>",
+   "page": "7cac6800-8937-433d-8dd8-0da94d7dbc54"
+  },
+  {
+   "flow": "CRM-Stukkenlijst - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Stukkenlijst inzien</strong></h3><p>De meeste stukken zal de klant aanleveren</p><p>Hieraan is te zien of het stuk wordt opgevraagd via het klantportaal (Uwkluis)</p><p>Dit is alleen zichtbaar nadat de klant het klantportaal (Uwkluis) heeft geactiveerd</p>",
+   "page": "2bc74ae9-fca2-4ab9-b30a-7e9a07e1ec09"
+  },
+  {
+   "flow": "CRM-Stukkenlijst - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Stukkenlijst inzien</strong></h3><p>Voor sommige stukken is de adviseur verantwoordelijk, denk hierbij aan een financieringsopzet</p><p>Dit stuk wordt niet opgevraagd bij de klant. Voor je eigen dossiervorming is het stuk wel nodig. Daarom is het onderdeel van de stukkenlijst.</p>",
+   "page": "7f50f2b0-ac2d-4fb2-a1a2-86afb29f2a83"
+  },
+  {
+   "flow": "CRM-Stukkenlijst - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Stukkenlijst inzien</strong></h3><p>Onder \"Omschrijving\" zie je de benamingen van de stukken</p><p>Onder \"Contract\" zie je onder welk product, in dit geval dienst, de stukken opgevraagd zijn</p>",
+   "page": "7cac6800-8937-433d-8dd8-0da94d7dbc54"
+  },
+  {
+   "flow": "CRM-Stukkenlijst - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Stuk verwijderen</strong></h3><p>Mocht de stukkenlijst niet passend zijn voor het dossier, kan een stuk verwijderd worden</p><p>Een stuk verwijderen kan door op <br>\"kruis-teken \" te drukken</p>",
+   "page": "7cac6800-8937-433d-8dd8-0da94d7dbc54"
+  },
+  {
+   "flow": "CRM-Stukkenlijst - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Stuk toevoegen</strong></h3><p>Een stuk toevoegen kan door op het \"plus-teken\" te drukken</p><p><em>Druk op  het \"plus-teken\"</em></p>",
+   "page": "7cac6800-8937-433d-8dd8-0da94d7dbc54"
+  },
+  {
+   "flow": "CRM-Stukkenlijst - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Stukken toevoegen</strong></h3><p>Kies hier aan welk product je een stuk wilt toevoegen</p><p>Je hebt twéé manieren om stukken toe te voegen</p><ol><li><p>Template</p></li><li><p>Los stuk</p></li></ol>",
+   "page": "adcf1508-d2fc-49af-9ec8-e64fbf5c3853"
+  },
+  {
+   "flow": "CRM-Stukkenlijst - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Stukken toevoegen- Template</strong></h3><p><em>Kies uit de bestaande templates</em></p>",
+   "page": "adcf1508-d2fc-49af-9ec8-e64fbf5c3853"
+  },
+  {
+   "flow": "CRM-Stukkenlijst - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Stukken toevoegen- Template</strong></h3><p>Hier kan je zien welke stukken vanuit een bestaande template toegevoegd worden</p>",
+   "page": "f50388a9-26c2-43f9-9251-2c52202c5acf"
+  },
+  {
+   "flow": "CRM-Stukkenlijst - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Opslaan</strong></h3><p><em>Klik op \"opslaan\"</em></p>",
+   "page": "f50388a9-26c2-43f9-9251-2c52202c5acf"
+  },
+  {
+   "flow": "CRM-Stukkenlijst - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Stukken toevoegen-Los stuk</strong></h3><p>Hier kan je een stuk opzoeken</p><p><em>Vul een zoekterm in</em></p>",
+   "page": "bc830eb9-06ad-4f7c-91ac-293444e23364"
+  },
+  {
+   "flow": "CRM-Stukkenlijst - copy",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<h3><strong>Stukken toevoegen- Los stuk</strong></h3><p>Hier zie je de resultaten van de zoekopdracht</p><p>Kies zover het mogelijk is altijd voor stukken met \"(hdn)\" erachter.</p><p>Hier heb je profijt van wanneer je een stukkenlijst van de geldverstrekker ontvangt</p><p><em>Dubbelklik op het gekozen stuk</em></p>",
+   "page": "4622a134-37e9-4009-bbd9-8f27c61e11c7"
+  },
+  {
+   "flow": "CRM-Stukkenlijst - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Stukken toevoegen- Los stuk</strong></h3><p>Het stuk is uit de lijst gekozen</p>",
+   "page": "6877aae7-925d-4438-a00b-d879954fb63d"
+  },
+  {
+   "flow": "CRM-Stukkenlijst - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Opslaan</strong></h3><p><em>Klik op \"opslaan\"</em></p>",
+   "page": "6877aae7-925d-4438-a00b-d879954fb63d"
+  },
+  {
+   "flow": "CRM-OTD - copy",
+   "kind": "popup",
+   "title": "",
+   "html": "<h2><strong>Opdracht tot dienstverlening maken</strong></h2><p>In dit onderdeel maken we  een Opdracht tot dienstverlening. </p><p>In de volgende stappen gebruiken we de afkorting OTD </p>",
+   "page": "ba11b77b-efaa-4543-8046-6d63ea267cdc"
+  },
+  {
+   "flow": "CRM-OTD - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>OTD aanmaken</strong></h3><p><em>Klik op de workflow-pijl van de dienst</em></p>",
+   "page": "ba11b77b-efaa-4543-8046-6d63ea267cdc"
+  },
+  {
+   "flow": "CRM-OTD - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>OTD aanmaken</strong></h3><p><em>Klik op \"Maak opdracht tot dienstverlening Hypotheken\"</em></p>",
+   "page": "ea82499d-5439-45a6-978c-0ade722422a7"
+  },
+  {
+   "flow": "CRM-OTD - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>OTD aanmaken</strong></h3><p>Hier heb je de mogelijkheid om een deel van de standaard OTD aan te passen</p><p><em>Pas en/of vul de teksten aan</em></p>",
+   "page": "7e441d21-a235-4c5c-add4-6f0a9206794e"
+  },
+  {
+   "flow": "CRM-OTD - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>OTD aanmaken</strong></h3><p><em>Vul het tarief van de dienst in</em></p>",
+   "page": "7e441d21-a235-4c5c-add4-6f0a9206794e"
+  },
+  {
+   "flow": "CRM-OTD - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Opslaan</strong></h3><p><em>Klik op \"opslaan\"</em></p>",
+   "page": "937da999-f741-425e-85c1-7ea2ad2a9595"
+  },
+  {
+   "flow": "CRM-OTD - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>OTD inzien</strong></h3><p><em>Klik op \"terug\"</em></p>",
+   "page": "48ea40bd-bc8d-411b-b33e-bb581bb8bdb8"
+  },
+  {
+   "flow": "CRM-OTD - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>OTD inzien</strong></h3><p><em>Ga naar het tabblad \"documenten\"</em></p>",
+   "page": "3c50d520-2d5c-4f3f-bcd8-683dd62b44b6"
+  },
+  {
+   "flow": "CRM-OTD - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>OTD inzien</strong></h3><p>Hier is de aangemaakte OTD te zien</p><p><em>Dubbelklik op het document om deze zichtbaar te maken</em></p>",
+   "page": "99e52507-25d5-49ae-bdc3-64808cfdffa3"
+  },
+  {
+   "flow": "CRM-OTD - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>OTD inzien</strong></h3><p>In het document is de onderstaande informatie uit het dossier toegevoegd</p><ul><li><p>Persoonlijke gegevens</p></li><li><p>(Aangepaste)Tekst blokken</p></li><li><p>Het tarief</p></li></ul><p>De overige informatie is standaard ingeregeld.</p><p><br><em>Sluit het scherm af</em></p>",
+   "page": "9f0e707c-5b1c-4008-aa75-24327809687f"
+  },
+  {
+   "flow": "CRM-OTD - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>OTD versturen</strong></h3><p><em>Klik op de workflow-pijl van de dienst</em></p>",
+   "page": "ba11b77b-efaa-4543-8046-6d63ea267cdc"
+  },
+  {
+   "flow": "CRM-OTD - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>OTD versturen</strong></h3><p>Om de OTD bij de klant te krijgen zijn er twéé mogelijkheden</p><ol><li><p>Aanbieden via klantportaal (Uwkluis)</p></li><li><p>Printen en overhandigen</p></li></ol>",
+   "page": "81b4cca6-be29-4a7f-aec6-83fdeda02ce9"
+  },
+  {
+   "flow": "CRM-OTD - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>OTD versturen -Aanbieden via klantportaal (Uwkluis)</strong></h3><p><em>Maak de keuze in de workflow</em></p>",
+   "page": "81b4cca6-be29-4a7f-aec6-83fdeda02ce9"
+  },
+  {
+   "flow": "CRM-OTD - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>OTD opvragen</strong></h3><p>In de stukkenlijst is een nieuw stuk toegevoegd</p><p>Dit zorgt ervoor dat de klant een getekende OTD via het klantportaal (Uwkluis)kan aanleveren</p>",
+   "page": "93aa7f52-4036-4251-b38b-3a2bf22d06df"
+  },
+  {
+   "flow": "CRM-OTD - copy",
+   "kind": "popup",
+   "title": "",
+   "html": "<h2><strong>De OTD is beschikbaar</strong></h2><p>De OTD is via het klantportaal (Uwkluis)</p><ul><li><p>te downloaden én</p></li><li><p>een getekende versie kan geüpload worden</p></li></ul><p>De klant wordt vanuit eBlinqx daar niet van op de hoogte gebracht</p><p>Indien de klant de app heeft gedownload en notificaties aan heeft staan, dan ontvangt de klant een notificatie in de app</p><p><em>Stuur een mail vanuit je eigen mailprogramma</em></p>",
+   "page": "ba11b77b-efaa-4543-8046-6d63ea267cdc"
+  },
+  {
+   "flow": "CRM-OTD - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>OTD versturen</strong></h3><p><em>Klik op \"Print OTD ter overhandiging\"</em></p>",
+   "page": "d41b096b-45c4-4c54-81c4-cbf82fb14b91"
+  },
+  {
+   "flow": "CRM-OTD - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>OTD Printen</strong></h3><p>Hier is het mogelijk om de OTD te downloaden/inzien en te printen</p><p><em>Klik op een van de iconen</em></p>",
+   "page": "12603016-ca21-495d-8887-d3de737e2d88"
+  },
+  {
+   "flow": "CRM-OTD - copy",
+   "kind": "popup",
+   "title": "",
+   "html": "<h2><strong>De OTD is geprint</strong></h2><p>Draag deze over aan de klant</p><p>De klant kan deze op twéé manieren aanleveren</p><p>Fysiek</p><p>via het klantportaal (Uwkluis)</p>",
+   "page": "ba11b77b-efaa-4543-8046-6d63ea267cdc"
+  },
+  {
+   "flow": "CRM-Aanvraag",
+   "kind": "popup",
+   "title": "",
+   "html": "<h3><strong>Hypotheek Advies</strong></h3><p>Hier zullen we de stappen doorlopen hoe het hypotheek advies via eBlinqx op te bouwen is.</p>",
+   "page": "309cd2a9-8555-4ebd-ac9f-4a746d35212d"
+  },
+  {
+   "flow": "CRM-Aanvraag",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h2><strong>Fastlane</strong></h2><p><em>Druk op het tabblad \"Fastlane\"</em></p>",
+   "page": "309cd2a9-8555-4ebd-ac9f-4a746d35212d"
+  },
+  {
+   "flow": "CRM-Aanvraag",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Fastlane</strong></h3><p><em>Klik op \"Dossier bekijken\"</em></p>",
+   "page": "7f10d36c-6ddc-41fd-8881-6a0dd6f7eeb9"
+  },
+  {
+   "flow": "Fastlane - Inlog - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Inloggen</strong></h3><p>Eenmalig inloggen is benodigd</p><p><em>Gebruik de inloggegevens van Fastlane</em></p>",
+   "page": "9c6a0a89-3811-4748-8503-ef66538f2fc3"
+  },
+  {
+   "flow": "Fastlane - Algemeen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Navigatie kolom</strong></h3><p>Hier zie alle onderdelen die je in de adviescirkel kan doorlopen</p>",
+   "page": "7774d4ac-e7d4-4960-895b-bab24d8dd25f"
+  },
+  {
+   "flow": "Fastlane - Algemeen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Menu uitklappen</strong></h3><p>Met deze knop kan het menu uitgeklapt worden</p>",
+   "page": "7774d4ac-e7d4-4960-895b-bab24d8dd25f"
+  },
+  {
+   "flow": "Fastlane - Algemeen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Inventarisatie menu</strong></h3><p>Hier zie je alle onderdelen van de inventarisatie.</p><p>Deze doorloop je van boven naar beneden.</p>",
+   "page": "3754ebb4-b65b-42c7-9666-60a1093650ba"
+  },
+  {
+   "flow": "Inventarisatie -Klantgegevens - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Klantgegevens</strong></h3><p>Dit is het eerste onderdeel van de inventarisatiefase.</p><p>De klantgegevens zijn de basis voor alle berekeningen en adviezen die volgen.<br></p><p>Veel gegevens worden vanuit de CRM ingevuld.</p>",
+   "page": "7f830b38-da0a-4df6-9f4c-17215774f6cd"
+  },
+  {
+   "flow": "Inventarisatie -Klantgegevens - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Burgerlijke staat</strong></h3><p>De burgerlijke staat is een cruciale keuze. Op basis van deze keuze wordt er in de berekening rekening gehouden met één of twee aanvragers.</p><p>Kies hier de toekomstige situatie van de klant en niet de huidige.</p><p><em>Voorbeeld: twee ongehuwde personen die samen een woning kopen. Selecteer hier \"Samenwonend\"</em></p>",
+   "page": "d5fb5e7a-8820-4a8a-8c26-8502289d3fe4"
+  },
+  {
+   "flow": "Inventarisatie -Klantgegevens - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Burgerlijke staat</strong></h3><p>Enkel bij een scheiding of ontslag hoofdelijke aansprakelijkheid kies je de situatie van vlak vóór het uit elkaar gaan.</p><p>Dit maakt het mogelijk om de bestaande woning en hypotheek fiscaal correct te splitsen.</p>",
+   "page": "d5fb5e7a-8820-4a8a-8c26-8502289d3fe4"
+  },
+  {
+   "flow": "Inventarisatie -Klantgegevens - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Controle persoonlijke gegevens</strong></h3><p>Scrol naar beneden om de persoonlijke gegevens te controleren.</p><p>Vanuit het CRM-systeem worden deze velden grotendeels automatisch gevuld.</p><p>Vul de ontbrekende details zo volledig aan, zodat de berekening soepel verloopt.</p>",
+   "page": "7f830b38-da0a-4df6-9f4c-17215774f6cd"
+  },
+  {
+   "flow": "Inventarisatie -Klantgegevens - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Adres overnemen</strong></h3><p>Met één klik kun je het adres van de aanvrager kopiëren naar de partner</p>",
+   "page": "3c4a0cea-e4bb-4dcc-9fa5-e99b4c80a961"
+  },
+  {
+   "flow": "Inventarisatie -Klantgegevens - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Opslaan</strong></h3><p><em>Klik op \"opslaan\"</em></p>",
+   "page": "9e3a579e-0747-4c1f-a0b4-23e718737837"
+  },
+  {
+   "flow": "Inventarisatie -Klantprofiel - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Klantprofiel</strong></h3><p>Ga door met de inventarisatie</p><p><em>Klik op \"Klantprofiel\"</em></p>",
+   "page": "4fddc8ab-e7b5-4bef-af59-d73133a69937"
+  },
+  {
+   "flow": "Inventarisatie -Klantprofiel - copy",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<h3><strong>Klantprofiel toevoegen</strong></h3><p>Maak per persoon een nieuw klantprofiel.</p><p><em>Druk op \"Klantprofiel toevoegen\"</em></p>",
+   "page": "e9c9ed79-2b94-46bb-82b7-8e111ab7b940"
+  },
+  {
+   "flow": "Inventarisatie -Klantprofiel - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Klantprofiel</strong></h3><p>Het klantprofiel is per persoon beschikbaar.</p><p>Partners kunnen verschillend denken over risico, zekerheid en toekomstplannen.</p><p>Op deze manier is de kennis, ervaring en risicobereidheid per persoon vastgelegd en zijn de verschillen inzichtelijk</p><p>Dit is de wijze waarop de toezichthouder dit het liefst ziet.</p><p><em>Druk op \"Klantprofiel toevoegen\"</em></p>",
+   "page": "32a44354-2122-48f3-86a4-1a7eff612bed"
+  },
+  {
+   "flow": "Inventarisatie -Klantprofiel - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Klantprofiel</strong></h3><p>Hier heb je een overzicht van de onderwerpen/ rubrieken van het klantprofiel</p>",
+   "page": "4e6d1976-c515-4936-82ac-cfc54317e00f"
+  },
+  {
+   "flow": "Inventarisatie -Klantprofiel - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Klantprofiel </strong></h3><p><em>Klik op  'Start' om de vragenlijst te starten.</em></p>",
+   "page": "4e6d1976-c515-4936-82ac-cfc54317e00f"
+  },
+  {
+   "flow": "Inventarisatie -Klantprofiel - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Klantprofiel vragen</strong></h3><p>Beantwoord de vragen in elk rubriek van het klantprofiel.</p><p>Het klantprofiel kan tijdens het gesprek ingevuld worden of via het klantportaal (Uwkluis)</p><p><em>Antwoorden is verplicht</em></p>",
+   "page": "450b448a-8401-4e7c-9bb2-c4b5dacc95a2"
+  },
+  {
+   "flow": "Inventarisatie -Klantprofiel - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Klantprofiel vragen</strong></h3><p>Na het beantwoorden van de vragen in deze rubriek is het mogelijk door te gaan naar de volgende rubriek.</p><p><em>Druk op 'Volgende'</em></p>",
+   "page": "450b448a-8401-4e7c-9bb2-c4b5dacc95a2"
+  },
+  {
+   "flow": "Inventarisatie -Woningen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Woningen</strong></h3><p>Na het invullen van het klantprofiel volgt het onderdeel Woningen van de inventarisatie.</p><p><em>Klik op \"Woningen\" in het inventarisatie menu</em></p>",
+   "page": "f7d6f9ca-c671-4ba8-90d1-c1ee453b015e"
+  },
+  {
+   "flow": "Inventarisatie -Woningen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Woningen</strong></h3><p>Hier is de huidige woning zichtbaar.</p><p>Indien toegevoegd zijn hier andere woningen in eigendom of de toekomstig aan te kopen woning zichtbaar.</p>",
+   "page": "ca511b4b-48e4-4bda-8419-bac99ae28b10"
+  },
+  {
+   "flow": "Inventarisatie -Woningen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Woning toevoegen</strong></h3><p>Een woning kan toegevoegd worden door op \"woning toevoegen\" te drukken</p>",
+   "page": "ca511b4b-48e4-4bda-8419-bac99ae28b10"
+  },
+  {
+   "flow": "Inventarisatie -Woningen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Woning bewerken</strong></h3><p>De gegevens van de opgevoerde woning kunnen bekeken en gewijzijgd worden. </p><p>Denk hierbij aan de woningwaarden, woningstatus en eigendomsverhouding.  </p><p><em>Klik op het potlood-icoon</em> </p>",
+   "page": "ca511b4b-48e4-4bda-8419-bac99ae28b10"
+  },
+  {
+   "flow": "Inventarisatie -Woningen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Woninggegevens</strong></h3><p>Hier zijn de gegevens over de woning zichtbaar.</p><p>Denk hierbij aan type woning, soort onderpand, aankoopdatum en de eigendomsverhouding</p>",
+   "page": "80d1e85c-49b1-42ae-87d1-e8d5c2eb1ca2"
+  },
+  {
+   "flow": "Inventarisatie -Woningen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Eigendomsverhouding</strong></h3><p>De eigendomsverhouding is niet altijd aanpasbaar. Dit is het geval wanneer de burgerlijke staat \"Gehuwd in gemeenschap van goederen\" geselecteerd is. <br><br>Zo wordt voorkomen dat er een fiscaal onjuiste verdeling gemaakt wordt.</p>",
+   "page": "80d1e85c-49b1-42ae-87d1-e8d5c2eb1ca2"
+  },
+  {
+   "flow": "Inventarisatie -Woningen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Woningwaarde</strong></h3><p>Hier kan de WOZ-waarde, taxatiewaarde of marktwaarde worden vastgelegd.</p>",
+   "page": "80d1e85c-49b1-42ae-87d1-e8d5c2eb1ca2"
+  },
+  {
+   "flow": "Inventarisatie -Woningen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>WOZ-waarde</strong></h3><p>Met de WOZ-check kan de actuele WOZ-waarde opgehaald worden</p>",
+   "page": "80d1e85c-49b1-42ae-87d1-e8d5c2eb1ca2"
+  },
+  {
+   "flow": "Inventarisatie -Woningen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Woningstatus</strong></h3><p>Hier kan aangeven worden of de woning verkocht zal worden. </p>",
+   "page": "da72c174-0962-40a5-9eab-d2267deb26cc"
+  },
+  {
+   "flow": "Inventarisatie -Woningen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Woning verkopen</strong></h3><p>Indien de woning verkocht wordt, verschijnen er aanvullende vragen.</p><p>Denk hierbij aan de status van de verkoop</p>",
+   "page": "80d1e85c-49b1-42ae-87d1-e8d5c2eb1ca2"
+  },
+  {
+   "flow": "Inventarisatie -Woningen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Potentiële overwaarde</strong></h3><p>Op basis van verkoopprijs, kosten en openstaande hypotheek wordt de overwaarde berekend.</p>",
+   "page": "80d1e85c-49b1-42ae-87d1-e8d5c2eb1ca2"
+  },
+  {
+   "flow": "Inventarisatie -Woningen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Overbruggingskrediet</strong></h3><p>In de inventarisatiefase wordt het overbruggingskrediet standaard berekend met 90% of 100%</p>",
+   "page": "80d1e85c-49b1-42ae-87d1-e8d5c2eb1ca2"
+  },
+  {
+   "flow": "Inventarisatie -Woningen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Overbruggingskrediet</strong></h3><p>Gebaseerd op het gegeven of de woning al onvoorwaardelijk verkocht is of niet wordt het percentage bepaald</p><p>Onvoorwaardelijk verkocht<br>Nee -&gt; 90%<br>Ja -&gt; 100%</p><p>Dit is een aanname en in de adviesfase kan in de berekening het percentage aangepast worden.</p>",
+   "page": "80d1e85c-49b1-42ae-87d1-e8d5c2eb1ca2"
+  },
+  {
+   "flow": "Inventarisatie -Woningen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Opslaan</strong></h3><p><em>Klik op \"opslaan\"</em></p>",
+   "page": "80d1e85c-49b1-42ae-87d1-e8d5c2eb1ca2"
+  },
+  {
+   "flow": "Inventarisatie -Inkomen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Inkomen</strong></h3><p>Na het invullen van de woning(en) volgt het onderdeel <em>Inkomen</em> van de inventarisatie.</p><p><em>Klik op \"Inkomen\" in het inventarisatie menu</em></p>",
+   "page": "fe51b126-664b-4349-9630-bcf1e0b938a2"
+  },
+  {
+   "flow": "Inventarisatie -Inkomen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Inkomensoverzicht</strong></h3><p>Hier wordt een overzicht weergegeven van de inkomstenbronnen van de aanvragers.<br></p><p>Toekomstig inkomen, zoals een pensioen, dient opgevoerd te worden onder het inventarisatie onderdeel \"Werkgeversregelingen\"</p><p>Is de aanvrager al met pensioen, dan betreft het een huidig inkomen en dient het pensioen onder het inventarisatie onderdeel \"inkomen\" opgevoerd te worden</p>",
+   "page": "142b3a67-29a3-498e-bd2b-19def4883464"
+  },
+  {
+   "flow": "Inventarisatie -Inkomen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>AOW- uitkering</strong></h3><p>Het AOW-inkomen wordt automatisch berekend op basis van leeftijd.<br><br>Alleen bij een afwijkende AOW-opbouw, dient dit aangepast worden.</p>",
+   "page": "142b3a67-29a3-498e-bd2b-19def4883464"
+  },
+  {
+   "flow": "Inventarisatie -Inkomen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Inkomen toevoegen</strong></h3><p>Er kunnen verschillende soorten inkomen toegevoegd worden</p><p><em>Klik op \"Inkomen toevoegen\" en selecteer het type inkomen</em></p>",
+   "page": "488c7632-8f07-4e83-82eb-f36c18d90e9b"
+  },
+  {
+   "flow": "Inventarisatie -Inkomen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Inkomen uit loondienst</strong></h3><p>Hier worden de gegevens van het inkomen ingevuld</p>",
+   "page": "e02e04b8-cecd-4829-b130-948db48f5130"
+  },
+  {
+   "flow": "Inventarisatie -Inkomen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Soort inkomensdocument</strong></h3><p>Hier kan aangegeven worden op basis van welk gegeven het inkomen wordt ingevuld</p>",
+   "page": "e4f44cdd-0c04-4eab-98c2-7c8e46f083b7"
+  },
+  {
+   "flow": "Inventarisatie -Inkomen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Bruto salaris</strong></h3><p>Vul hier het bruto salaris exclusief de variabele componenten in.</p>",
+   "page": "fbc0bd8b-a718-49f3-898e-d4f0ffe0d2b9"
+  },
+  {
+   "flow": "Inventarisatie -Inkomen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Vakantiegeld</strong></h3><p>Dit wordt automatisch uitgerekend en ingevuld</p>",
+   "page": "0ff7404d-31cc-4f12-a7d8-687fb4af46d4"
+  },
+  {
+   "flow": "Inventarisatie -Inkomen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Tijdvak brutosalaris</strong></h3><p>Selecteer hier het tijdvak van het ingevulde brutosalaris</p>",
+   "page": "17dece3b-82e4-4767-98a8-a5e0e2a42fc3"
+  },
+  {
+   "flow": "Inventarisatie -Inkomen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Toevoegen overige componenten</strong></h3><p>Voeg eventueel andere vaste componenten toe, zoals een eindejaarsuitkering</p>",
+   "page": "e5973ea6-d643-45e3-bb20-5d21fef5366b"
+  },
+  {
+   "flow": "Inventarisatie -Inkomen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Toevoegen overige componenten</strong></h3><p>Of een 13de maand</p><p>Gebruik alleen inkomen dat structureel en aantoonbaar is.</p>",
+   "page": "c55a197a-41d0-4432-8953-1ad2a74fee2c"
+  },
+  {
+   "flow": "Inventarisatie -Inkomen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Werkgever</strong></h3><p>Vul hier de naam van de werkgever in</p>",
+   "page": "198c5d86-684a-411a-8e9f-26ff2d34d476"
+  },
+  {
+   "flow": "Inventarisatie -Inkomen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Werkgever zoeken</strong></h3><p>Vanuit de gegeven van de Kamer van Koophandel is het mogelijk werkgeversgegevens op te halen.</p>",
+   "page": "661f35bb-5431-4485-96e4-b9aacac3417c"
+  },
+  {
+   "flow": "Inventarisatie -Inkomen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Selecteer Werkgever</strong></h3><p>Kies de juiste werkgever</p>",
+   "page": "7f3fd42a-9a5a-4ef6-8982-c5cdcd6de189"
+  },
+  {
+   "flow": "Inventarisatie -Inkomen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Gegevens werkgever</strong></h3><p>De gegevens van de werkgever zijn toegevoegd</p>",
+   "page": "3f9dedd3-3711-4541-a962-eef2d1fe3ccb"
+  },
+  {
+   "flow": "Inventarisatie -Inkomen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Opslaan</strong></h3><p><em>Klik op \"opslaan\"</em></p>",
+   "page": "9e64f512-f805-4feb-97b1-5da6b6cbc099"
+  },
+  {
+   "flow": "Inventarisatie -Verplichtingen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Verplichtingen</strong></h3><p>Na het invullen van het inkomen volgt het onderdeel Verplichtingen van de inventarisatie.</p><p><em>Klik op \"Verplichtingen\" in het inventarisatie menu</em></p>",
+   "page": "a415f9a4-07f6-485c-b0f3-5f944a6395ee"
+  },
+  {
+   "flow": "Inventarisatie -Verplichtingen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Verplichtingen</strong></h3><p>Hier kunnen alle financiële verplichtingen van de klant vastgelegd worden.</p>",
+   "page": "417846ce-0c42-4e1d-9007-fceddef1940b"
+  },
+  {
+   "flow": "Inventarisatie -Verplichtingen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Verplichting toevoegen</strong></h3><p>Een verplichting kan toegevoegd worden door op \"verplichting toevoegen\" te drukken</p>",
+   "page": "417846ce-0c42-4e1d-9007-fceddef1940b"
+  },
+  {
+   "flow": "Inventarisatie -Verplichtingen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Type verplichting</strong></h3><p>Verschillende typen verplichtingen kunnen vastgelegd worden.</p><p>Denk aan persoonlijke leningen, doorlopend krediet, private lease en studieschulden.</p>",
+   "page": "a7ff679f-b2c9-44f4-948b-16d46a4374fa"
+  },
+  {
+   "flow": "Inventarisatie -Verplichtingen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Studielening</strong></h3><p>Voor een correcte berekening van de draaglast van een studielening is het van belang om de volgende vier gegevens in te vullen</p><ul><li><p>Ingangsdatum</p></li><li><p>Einddatum</p></li><li><p>Kredietbedrag</p></li><li><p>Rentepercentage </p></li></ul>",
+   "page": "2808862c-239e-4e8b-bed5-d39f689a0646"
+  },
+  {
+   "flow": "Inventarisatie -Verplichtingen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Ingangsdatum</strong></h3><p>Bij de ingangsdatum dient de berekeningsdatum op het document van DUO ingevuld te worden.</p><p>Wanneer de studie is begonnen is niet van belang.</p>",
+   "page": "2808862c-239e-4e8b-bed5-d39f689a0646"
+  },
+  {
+   "flow": "Inventarisatie -Verplichtingen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Einddatum</strong></h3><p>De einddatum dient berekend te worden op basis van de resterende maanden van de lening op het document van DUO</p>",
+   "page": "d81ca36a-f582-4a01-a906-f5d6ad8f2460"
+  },
+  {
+   "flow": "Inventarisatie -Verplichtingen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Kredietbedrag en rentepercentage</strong></h3><p>Deze twee gegevens zijn te vinden op het document en kunnen overgenomen worden</p>",
+   "page": "d81ca36a-f582-4a01-a906-f5d6ad8f2460"
+  },
+  {
+   "flow": "Inventarisatie -Verplichtingen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Status</strong></h3><p>De status van een verplichting bepaalt hoe deze wordt meegenomen in de berekening.</p><p><strong>Lopend </strong>De verplichting blijft bestaan en wordt volledig meegenomen in de toetsing.</p><p><strong>Afgelost</strong> <strong>voor passeren </strong>De verplichting zal worden afgelost voor passeren en wordt niet meegenomen in de toetsing</p><p><strong>Afgelost</strong> <strong>tijdens passeren </strong>de verplichting wordt meegenomen in de financieringsopzet.</p>",
+   "page": "cd4fca48-0d7e-4a92-ac07-1ee84e47fe5e"
+  },
+  {
+   "flow": "Inventarisatie -Verplichtingen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Resultaat</strong></h3><p>Op basis van de ingevulde gegevens wordt er een berekening gemaakt. Hier is het resultaat daarvan te zien</p>",
+   "page": "0f2f12c3-b0f2-4f77-ac1d-a6d0bcb53356"
+  },
+  {
+   "flow": "Inventarisatie -Verplichtingen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Opslaan</strong></h3><p><em>Klik op \"opslaan\"</em></p>",
+   "page": "96c65c64-e12b-47c9-afba-9ae311ff2cc4"
+  },
+  {
+   "flow": "Inventarisatie -Werkgeversregelingen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Werkgeversregelingen</strong></h3><p>Na het invullen van de verplichtingen volgt het onderdeel Werkgeversregelingen van de inventarisatie.</p><p><em>Klik op \"Werkgeversregelingen\" in het inventarisatie menu</em></p>",
+   "page": "8b10d6b5-11b3-43b1-a14a-2c8b04b78786"
+  },
+  {
+   "flow": "Inventarisatie -Werkgeversregelingen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Werkgeversregelingen</strong></h3><p>Hier wordt een overzicht gegeven van de <strong>toekomstige</strong> inkomstenbronnen van de aanvragers.</p><p>Denk hierbij aan pensioeninkomen en regelingen via de werkgever, zoals loondoorbetaling bij ziekte.</p><p>Is de aanvrager al met pensioen, dan betreft het een huidig inkomen en dient het pensioen onder het inventarisatie onderdeel \"inkomen\" opgevoerd te worden</p>",
+   "page": "ed7fe990-5861-4dba-9ac3-30aa31034d05"
+  },
+  {
+   "flow": "Inventarisatie -Werkgeversregelingen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Loondoorbetaling bij ziekte</strong></h3><p>Deze vorm van inkomen wordt automatisch gevuld.</p>",
+   "page": "806ef842-02a3-4009-b211-1ca130aabf0a"
+  },
+  {
+   "flow": "Inventarisatie -Werkgeversregelingen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Uitgangspunten</strong></h3><p>Standaard wordt aangenomen dat de uitbetaling als volgt verloopt</p><ul><li><p>Eerste jaar 100% </p></li><li><p>Tweede jaar 70% </p></li></ul>",
+   "page": "d27d8e6b-6566-4285-85c1-7fb4212dfd61"
+  },
+  {
+   "flow": "Inventarisatie -Werkgeversregelingen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Werkgeversregeling toevoegen</strong></h3><p>Er kunnen verschillende soorten regelingen toegevoegd worden</p><p><em>Klik op \"werkgeversregeling toevoegen\" en selecteer het type inkomen</em></p>",
+   "page": "052b171a-be9a-4e36-b7fe-893ba134f32d"
+  },
+  {
+   "flow": "Inventarisatie -Werkgeversregelingen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Pensioenregeling toevoegen</strong></h3><p>Hier worden de gegevens van het pensioen ingevuld</p><p>Dit gaat om het inkomen <strong>ná</strong> pensionering.</p><p>Dit inkomen wordt niet meegenomen in de huidige toetsing, maar wordt meegenomen in de betaalbaarheid voor de lange termijn. </p>",
+   "page": "201b2732-2749-4b1a-bf17-382e560b3447"
+  },
+  {
+   "flow": "Inventarisatie -Werkgeversregelingen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Bruto jaarinkomen</strong></h3><p>Zodra dit bedrag is vastgelegd, wordt het automatisch meegenomen in de scenario's voor de toekomst</p>",
+   "page": "3fd0ab1b-2a9f-45b6-9f72-215adb307db4"
+  },
+  {
+   "flow": "Inventarisatie -Werkgeversregelingen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Opslaan</strong></h3><p><em>Klik op \"opslaan\"</em></p>",
+   "page": "4ae0e690-2aa0-4f54-a72b-fe8f4f60101a"
+  },
+  {
+   "flow": "Inventarisatie-Hypotheek - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Huidige hypotheek</strong></h3><p>Na het invullen van de werkgeversregelingen volgt het onderdeel \"Huidige hypotheek\" van de inventarisatie.</p><p><em>Klik op \"Huidige hypotheek\" in het inventarisatie menu</em></p>",
+   "page": "69878b7c-41ec-438a-b571-bafe0eec3f1a"
+  },
+  {
+   "flow": "Inventarisatie-Hypotheek - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Hypotheekoverzicht</strong></h3><p>Hier wordt een overzicht gegeven van alle bestaande hypotheken</p>",
+   "page": "9eb2f590-1677-4d9f-bafa-90b48f81b777"
+  },
+  {
+   "flow": "Inventarisatie-Hypotheek - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Hypotheek toevoegen</strong></h3><p><em>Klik op \"hypotheek toevoegen\" </em></p>",
+   "page": "9eb2f590-1677-4d9f-bafa-90b48f81b777"
+  },
+  {
+   "flow": "Inventarisatie-Hypotheek - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Hypotheek toevoegen</strong></h3><p>Hier kunnen de specifieke gegevens van de hypotheek opgevoerd worden.</p><p>De gegevens die hier vastgelegd worden zijn van belang voor de berekeningen.</p><p>De eerste hypotheek die ingevoerd is, wordt automatisch de hoofdhypotheek.</p>",
+   "page": "f153a22f-9eb2-4915-8749-4701989b6dc8"
+  },
+  {
+   "flow": "Inventarisatie-Hypotheek - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Hypotheek toevoegen</strong></h3><p>Indien er meerdere hypotheken in het dossier opgevoerd zijn, dan is de bovenste hypotheek altijd de hoofdhypotheek.</p><p><em>Voorbeeld</em><br><em>Een stel met beide een eigen woning, gaan nu samen een woning kopen. Een van de hypotheken wordt meegenomen naar de nieuwe woning in verband met voorwaarden. De mee te nemen hypotheek dient als hoofhypotheek meegenomen te worden</em></p><p>De volgorde aanpassen kan door het slepen van de hypotheek in het hypotheekoverzicht</p>",
+   "page": "f153a22f-9eb2-4915-8749-4701989b6dc8"
+  },
+  {
+   "flow": "Inventarisatie-Hypotheek - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Hoofdsom</strong></h3><p>Vul hier de <strong>oorspronkelijke </strong>hoofdsom in. De schuldstand wordt automatisch doorgerekend naar vandaag.</p>",
+   "page": "94fddcb4-5f79-4366-aea7-51f948d1e34d"
+  },
+  {
+   "flow": "Inventarisatie-Hypotheek - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Leningdeel toevoegen</strong></h3><p>De totale hypotheek dient leningdelen te bevatten</p><p>Deze melding blijft aanwezig totdat deze toegevoegd zijn</p><p><em>Klik op \"Leningdeel lijkt te ontbreken\"</em> </p>",
+   "page": "b55159bf-6106-451f-acb2-4438ef645d75"
+  },
+  {
+   "flow": "Inventarisatie-Hypotheek - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Product</strong></h3><p><em>Vul hier de aflossingsvorm in.</em></p>",
+   "page": "ac4aa678-d500-49ee-a5a3-7714e2531a60"
+  },
+  {
+   "flow": "Inventarisatie-Hypotheek - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Schuld verloop</strong></h3><p>Hier is de huidig stand van de schuld te zien</p>",
+   "page": "8fbf81ca-71cf-4bf6-a8b6-41ff49af744f"
+  },
+  {
+   "flow": "Inventarisatie-Hypotheek - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Extra aflossing</strong></h3><p>Heeft de klant een extra aflossing gedaan, dan dient dat opgevoerd te worden door een regel toe te voegen.</p><p><em>Klik op \"Regel toevoegen\"</em></p>",
+   "page": "8fbf81ca-71cf-4bf6-a8b6-41ff49af744f"
+  },
+  {
+   "flow": "Inventarisatie-Hypotheek - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Extra aflossing</strong></h3><p>Vul hier de werkelijke schuldstand in, met de bijbehorende datum en druk op het vinkje</p>",
+   "page": "fd45c5d2-c9cb-4b73-aa5a-2c26f05628f8"
+  },
+  {
+   "flow": "Inventarisatie-Hypotheek - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Overige leningdeel gegevens</strong></h3><p>Voeg de overige informatie over het lening toe</p>",
+   "page": "a87ec7d8-435c-4ea3-a215-e8e2d2ebed11"
+  },
+  {
+   "flow": "Inventarisatie-Hypotheek - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Opslaan</strong></h3><p><em>Klik op \"opslaan\"</em></p>",
+   "page": "73c3b47d-1ab1-4395-9cae-9571b5a3e141"
+  },
+  {
+   "flow": "Inventarisatie-Hypotheek - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Huidige schuldrest</strong></h3><p>Hier is te zien wat de huidige schuldrest is.</p><p>Het uitgangspunt is de oorspronkelijke hoofdsom rekening houdend met het schuldverloop en de extra aflossing</p>",
+   "page": "ced9bf94-a609-4ca4-b0f7-b64d81432192"
+  },
+  {
+   "flow": "Inventarisatie-FiscaalPaspoort - copy",
+   "kind": "popup",
+   "title": "",
+   "html": "<h2><strong>Fiscaal Paspoort</strong></h2><p>Hiermee kan de fiscale situatie van de klant worden vastgelegd.</p><p>Dit onderdeel bevindt zich nog in de bètafase en wordt daarom verder niet toegelicht.</p>",
+   "page": "3d852d2f-326c-42a0-bcda-d90021eb7243"
+  },
+  {
+   "flow": "Inventarisatie -Vermogen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Vermogen</strong></h3><p>Na het invullen van de huidige hypotheek volgt het onderdeel <em>Vermogen</em> van de inventarisatie.</p><p><em>Klik op \"Vermogen\" in het inventarisatie menu</em></p>",
+   "page": "3d852d2f-326c-42a0-bcda-d90021eb7243"
+  },
+  {
+   "flow": "Inventarisatie -Vermogen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Vermogensoverzicht</strong></h3><p>Hier wordt een overzicht weergeven van het beschikbaar vermogen van de klant.</p><p>Vermogen staat los van inkomen en betreft een momentopname.</p>",
+   "page": "092ff6b0-0e66-456d-8e38-889524603f31"
+  },
+  {
+   "flow": "Inventarisatie -Vermogen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Vermogenssoort</strong></h3><p>Je kunt verschillende vormen van vermogen vastleggen.</p><p>Denk aan spaargeld, betaalrekeningen en overige vrij beschikbare middelen.</p>",
+   "page": "092ff6b0-0e66-456d-8e38-889524603f31"
+  },
+  {
+   "flow": "Inventarisatie -Vermogen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Spaarrekening</strong></h3><p>De bedragen die zijn opgevoerd als spaarrekening worden gebruikt als eigen inbreng voor kosten koper en eventuele aflossingen</p><p>De hoogte van het vermogen wat ingezet wordt kan aangepast worden.</p>",
+   "page": "092ff6b0-0e66-456d-8e38-889524603f31"
+  },
+  {
+   "flow": "Inventarisatie -Vermogen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Betaalrekening</strong></h3><p>De betaalrekening die hier ingevuld wordt, zal gebruikt als incassorekening voor de hypotheek.</p><p>Dit rekeningnummer wordt automatisch doorgezet naar de HDN-aanvraag.</p>",
+   "page": "092ff6b0-0e66-456d-8e38-889524603f31"
+  },
+  {
+   "flow": "Inventarisatie -Vermogen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Rekeningeigenaar</strong></h3><p>Bij twee aanvragers is het mogelijk om het vermogen per persoon vast te leggen.</p><p>Dit is vooral relevant bij een ongelijke inbreng. De verdeling hiervan wordt meegenomen in het advies en de motivatie.</p>",
+   "page": "092ff6b0-0e66-456d-8e38-889524603f31"
+  },
+  {
+   "flow": "Inventarisatie -Verzekeringen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Verzekeringsoverzicht</strong></h3><p>Hier wordt een overzicht weergegeven van de bestaande verzekeringen </p><p>Dit betreft enkel de huidige situatie</p>",
+   "page": "7bd9e787-4132-4aeb-b47a-d3702722d36d"
+  },
+  {
+   "flow": "Inventarisatie -Verzekeringen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Verzekering toevoegen</strong></h3><p>Er kunnen verschillende soorten verzekeringen toegevoegd worden</p><p><em>Klik op \"verzekering toevoegen\" en selecteer de verzekering</em></p>",
+   "page": "545d677b-868a-4c7c-b750-b0786c82bf44"
+  },
+  {
+   "flow": "Inventarisatie -Verzekeringen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Verzekering toevoegen</strong></h3><p>Vul hier de polis gegevens in van de bestaande verzekering.</p><p>De gegevens die hier worden vastgelegd worden meegenomen in de risicoanalyse </p>",
+   "page": "84040d5e-542c-4206-b886-d372a41738b3"
+  },
+  {
+   "flow": "Inventarisatie -Verzekeringen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Soort verzekering</strong></h3><p>Kies hier wat voor soort verzekering het is</p>",
+   "page": "ce00ee81-c3af-41f0-80c1-1ac7bc1f216a"
+  },
+  {
+   "flow": "Inventarisatie -Verzekeringen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Leningdeel</strong></h3><p>Indien de verzekering verpand is, geef aan aan welk leningdeel de verzekering gekoppeld is. Bij een levensverzekering kies je het gekoppelde leningdeel.</p>",
+   "page": "16546782-211f-45fd-8700-94a5aa62a295"
+  },
+  {
+   "flow": "Inventarisatie -Verzekeringen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Opslaan</strong></h3><p><em>Klik op \"opslaan\"</em></p>",
+   "page": "d1d3c6fb-df02-43b4-a645-4cf14acc05f8"
+  },
+  {
+   "flow": "Adviseren - overzicht - copy",
+   "kind": "popup",
+   "title": "",
+   "html": "<p><strong>De inventarisatie is afgerond</strong><br><br>De volgende stap is de rekenmodule (Adviseren)</p>",
+   "page": "68030546-82e5-4755-b61c-1daff1429e2f"
+  },
+  {
+   "flow": "Adviseren - overzicht - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Adviseren</strong></h3><p><em>Klik op het icoon om naar de adviesmodule (Adviseren) te gaan</em></p>",
+   "page": "0b8574c1-c4a0-4858-9d8f-2aab2aae855c"
+  },
+  {
+   "flow": "Adviseren - overzicht - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Nieuwe berekening</strong></h3><p>Alle informatie wat is vastgelegd in de inventarisatie wordt meegenomen in de berekening.</p><p>Het is mogelijk om meerdere berekeningen te maken en op te slaan binnen één dossier</p><p>Geef de berekening een herkenbare naam</p><p><em>Klik op \"Nieuwe berekening\" om te starten</em></p>",
+   "page": "dd806f31-5415-4601-8a4c-7cc83773fb58"
+  },
+  {
+   "flow": "Adviseren - overzicht - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Onderdelenoverzicht</strong></h3><p>In de volgende onderdelen komen de inventarisatie gegevens terug</p><ul><li><p>Onderpand</p></li><li><p>Inkomen</p></li><li><p>NAWTE per aanvrager</p></li><li><p>Verplichtingen</p></li><li><p>Bestaande hypotheek</p></li><li><p>Bestaande verzekeringen</p></li></ul><p>De overige onderdelen kunnen hier aangevuld worden</p>",
+   "page": "e25ec198-34f4-4ffe-88e8-f2d38672d7ab"
+  },
+  {
+   "flow": "Adviseren - overzicht - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Onderdelenoverzicht</strong></h3><p>Elk onderdeel kan geopend en gesloten worden</p><p>Open en sluit de onderdelen per keer om het overzicht te behouden het scrollen te minimaliseren</p>",
+   "page": "6a8ec4b9-aec1-4c6e-9608-ce1a8e1f9cdd"
+  },
+  {
+   "flow": "Adviseren - Doelstelling - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Doelstelling</strong></h3><p>Hier kan aangegeven wordt wat het doel is van de berekening</p><p>De huidige situatie geeft een mooi beeld hoe de klant er nu voor staan</p><p>Daarnaast kunnen meerdere berekeningen gemaakt worden om meer inzicht te geven in de overweging om te verkopen of te verbouwen</p><p><em>Klik op \"een bestaande woning kopen\"van de doelstellingen</em></p>",
+   "page": "b31db946-23f7-4e16-8c72-017948966155"
+  },
+  {
+   "flow": "Adviseren - Doelstelling - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>GHF of CBI</strong></h3><p>De berekeningen kunnen uitgaan van de maximale hypotheek op basis van de Gedragscode of het consumptief besteedbaar inkomen.</p><p>Met een simpele instelknop kan het uitgangspunt van de berekening aangepast worden.</p>",
+   "page": "6a8ec4b9-aec1-4c6e-9608-ce1a8e1f9cdd"
+  },
+  {
+   "flow": "Adviseren - Doelstelling - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Omschrijving</strong></h3><p>Hier kan er een herkenbare naam voor de berekening meegegeven worden</p>",
+   "page": "6a8ec4b9-aec1-4c6e-9608-ce1a8e1f9cdd"
+  },
+  {
+   "flow": "Adviseren - Onderpand - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Onderpand</strong></h3><p>Bij aankoop van een nieuwe woning kan hier de gegevens ingevuld worden van de aan te kopen woning.</p><p>Op basis van postcode en huisnummer worden gegevens automatisch opgehaald.</p>",
+   "page": "ecbcec40-e713-4e3f-b039-e071b17db0e7"
+  },
+  {
+   "flow": "Adviseren - Onderpand - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Woningwaarden</strong></h3><p>Vul de WOZ-waarde aan de hand van de WOZ-waarde checker</p><p>De indexatie staat standaard op 2%. Dit zou eventueel in de instellingen aangepast kunnen worden</p><p>Indien nodig pas de marktwaardes aan.</p><p>RWWR- waardebepaling is vergelijkbaar met Calcasa</p><p>De aanpassingen die hier gedaan worden zijn te zien in de financieringsopzet, de leencapaciteit, de maandlasten en de risico's.</p>",
+   "page": "ecbcec40-e713-4e3f-b039-e071b17db0e7"
+  },
+  {
+   "flow": "Adviseren -Financieringsopzet - copy",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<h3><strong>Financieringsopzet</strong></h3><p>Hier kan de financieringsopzet opgebouwd worden.</p><p>Veel velden worden automatisch gevuld en zijn aanpasbaar</p><p>Het aanpassen van de gegevens kan per dossier. De standaardwaarden kunnen in de instellingen aangepast worden.</p>",
+   "page": "5c02fcbb-d94e-4ee5-9576-3e69d3c7f4e2"
+  },
+  {
+   "flow": "Adviseren -Financieringsopzet - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Energiebespaarbudget</strong></h3><p>Dit budget kan handmatig toevoegd worden. Vanuit de instellingen kan er voor gekozen worden om deze standaard aan of uit te zetten</p>",
+   "page": "5c02fcbb-d94e-4ee5-9576-3e69d3c7f4e2"
+  },
+  {
+   "flow": "Adviseren -Financieringsopzet - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Tarief overdrachtsbelasting</strong></h3><p>Deze staat standaard op 2% en kan handmatig aangepast worden</p><p>Uit ervaring is gebleken dat de check of de klant voldoet aan de voorwaarden voor een <br>0%-tarief vaak vergeten wordt</p>",
+   "page": "5c02fcbb-d94e-4ee5-9576-3e69d3c7f4e2"
+  },
+  {
+   "flow": "Adviseren -Financieringsopzet - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<p><strong>Eigen geld</strong></p><p>Hier wordt vastgelegd hoeveel eigen geld wordt ingebracht. <br>Denk hierbij aan spaargeld of de overwaarde uit verkoop. </p><p>Het eigen geld staan in eerste instantie bij de eerste aanvrager, maar kan ook verdeeld worden </p>",
+   "page": "1fa93259-bc88-4e2b-80b7-fa61af0f2464"
+  },
+  {
+   "flow": "Adviseren -Financieringsopzet - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Overbruggingshypotheek</strong></h3><p>De standaard overbruggingspercentage van 90% of 100% uit de inventarisatiefase kan hier overschreven worden</p>",
+   "page": "1fa93259-bc88-4e2b-80b7-fa61af0f2464"
+  },
+  {
+   "flow": "Adviseren -Financieringsopzet - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Overbruggingshypotheek</strong></h3><p>Klik voor de overbruggingsberekening hierop</p>",
+   "page": "1fa93259-bc88-4e2b-80b7-fa61af0f2464"
+  },
+  {
+   "flow": "Adviseren -Financieringsopzet - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Overbruggingshypotheek</strong></h3><p>Hier wordt een uiteenzetting van de berekening getoond</p>",
+   "page": "3e7f2310-e5fe-4161-a502-ffb46863283a"
+  },
+  {
+   "flow": "Adviseren -Hypotheekopbouw - copy",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<h3><strong>Hypotheek samenstellen</strong></h3><p>Hier kan de hypotheekconstructie concreet gemaakt worden door de volgende gegevens vast te leggen:</p><ul><li><p>Leningdelen</p></li><li><p>Aflosvorm</p></li><li><p>Looptijd</p></li><li><p>Rente</p></li></ul>",
+   "page": "4ff79ef7-1933-4b65-8423-f6abd3a964b7"
+  },
+  {
+   "flow": "Adviseren -Hypotheekopbouw - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Bestaande leningdelen</strong></h3><p>Bestaande leningdelen zijn zichtbaar en worden standaard meegenomen naar de nieuwe situatie. </p><p>Dat is handig bij bijvoorbeeld verhuizing met behoud van leningdelen of bij een constructie die deels blijft staan.</p><p>Controleer altijd: rentevaste periode, resterende looptijd en fiscale kenmerken.</p>",
+   "page": "915ae874-e13b-4069-94a7-a35ca967798e"
+  },
+  {
+   "flow": "Adviseren -Hypotheekopbouw - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Bestaande leningdelen</strong></h3><p>Dient het leningdeel niet meegenomen te worden. Zet het vinkje uit.</p>",
+   "page": "915ae874-e13b-4069-94a7-a35ca967798e"
+  },
+  {
+   "flow": "Adviseren -Hypotheekopbouw - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Leningdeel toevoegen</strong></h3><p>Indien er extra financiering nodig is, is het mogelijk om met één knop een aanvullende leningdeel met het juiste bedrag toe te voegen.</p><p><em>Klik op \"leningdeel toevoegen\"</em></p>",
+   "page": "70e9c874-0064-4534-8d84-380d07b1ac56"
+  },
+  {
+   "flow": "Adviseren -Hypotheekopbouw - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Leningdeel aanpassen</strong></h3><p>Per leningdeel kan de hoogte, aflosvorm, looptijd en rentevaste periode aangepast worden</p><p>Een aanpassing heeft uiteraard invloed op de maandlast</p>",
+   "page": "54534fd1-84d5-495c-b118-7c3ebf297439"
+  },
+  {
+   "flow": "Adviseren -Hypotheekopbouw - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Overbrugging</strong></h3><p>Onder de leningdelen, wordt de informatie van de overbrugging getoond.</p>",
+   "page": "e219cd8f-3387-4d3a-bca7-39c52713ac42"
+  },
+  {
+   "flow": "Adviseren -Hypotheekopbouw - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Vergelijk geldverstrekkers</strong></h3><p>Wanneer de hypotheekconstructie helemaal staat, kunnen de geldvertrekkers vergeleken worden.</p><p><em>Klik op \"vergelijk geldverstrekkers\"</em></p>",
+   "page": "4ff79ef7-1933-4b65-8423-f6abd3a964b7"
+  },
+  {
+   "flow": "Adviseren -Hypotheekopbouw - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Vergelijking geldverstrekkers</strong></h3><p>Hier is de vergelijking van geldverstrekkers zichtbaar en kan er op basis van deze resultaten een keuze gemaakt worden</p><p><em>Kies een geldverstrekker</em></p>",
+   "page": "0d2f64d5-f327-4074-9684-5dd28ef77db3"
+  },
+  {
+   "flow": "Adviseren -Hypotheekopbouw - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Duurzame producten</strong></h3><p>In het kader van verduurzamen, is het mogelijk om enkel duurzame producten te tonen</p><p><em>Selecteer de filter</em></p>",
+   "page": "0d2f64d5-f327-4074-9684-5dd28ef77db3"
+  },
+  {
+   "flow": "Adviseren -Hypotheekopbouw - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Voorwaarden geldvertrekker</strong></h3><p>Hier worden de voorwaarden van de geldverstrekker getoond.</p><p><em>Klik op \"Toon voorwaarden\"</em></p>",
+   "page": "4ff79ef7-1933-4b65-8423-f6abd3a964b7"
+  },
+  {
+   "flow": "Adviseren -Hypotheekopbouw - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Voorwaarden geldverstrekkers</strong></h3><p>De meest relevante voorwaarden worden hier getoond. Om alle voorwaarden zichtbaar te krijgen, kan het overzicht uitgebreid worden met \"Toon meer\"</p>",
+   "page": "47c96334-9a87-4cb4-8061-47e235eb3c93"
+  },
+  {
+   "flow": "Adviseren - Resultaten bespreken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Resultaat berekeningen</strong></h3><p>Op basis van alle opgevoerde informatie is het resultaat in één overzicht te zien.</p><p>Naast de haalbaarheid is het ook te zien wat verantwoord is.</p><p>Bij het aanpassen van componenten die van belang zijn voor de berekening, wordt het resultaat gelijk aangepast en is de impact inzichtelijk.</p>",
+   "page": "e25ec198-34f4-4ffe-88e8-f2d38672d7ab"
+  },
+  {
+   "flow": "Adviseren - Resultaten bespreken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Foto woning aanpassen</strong></h3><p>De foto van de woning wordt opgehaald uit streetview en zal getoond worden in het adviesrapport.</p><p>Indien hier geen foto van de woning getoond wordt, heeft Streetview de informatie niet en kan dit toegevoegd worden.</p><p><em>Klik op de foto</em></p>",
+   "page": "6644cdc6-f92a-49b1-8cd2-aac7592ce561"
+  },
+  {
+   "flow": "Adviseren - Resultaten bespreken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>StreetView</strong></h3><p>Controleer of de afbeelding handmatig vannuit Streetview opgehaald worden.</p>",
+   "page": "eef574bd-fc5f-4c2b-88c3-84d7b9da3c95"
+  },
+  {
+   "flow": "Adviseren - Resultaten bespreken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Eigen afbeelding</strong></h3><p>Het uploaden van een eigen foto is een mogelijkheid</p>",
+   "page": "eef574bd-fc5f-4c2b-88c3-84d7b9da3c95"
+  },
+  {
+   "flow": "Adviseren - Resultaten bespreken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Presentatiemodus</strong></h3><p>De resultaten kunnen in een presentatie modus getoond worden.</p>",
+   "page": "af79d110-52cd-435b-a78c-b3c673469cd5"
+  },
+  {
+   "flow": "Adviseren - Resultaten bespreken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Presentatiemodus</strong></h3><p>Het menu verdwijnt waardoor er meer ruimte is voor de resultaten. </p><p>Dit is een fijne modus om samen met de klant te doorlopen</p>",
+   "page": "6a8ec4b9-aec1-4c6e-9608-ce1a8e1f9cdd"
+  },
+  {
+   "flow": "Adviseren - Resultaten bespreken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Legenda</strong></h3><p>Per tabel is het mogelijk om aan te geven welke informatie op dat moment getoond dient te worden. </p><p><em>Voorbeeld:</em><br><em>De partner kan uitgezet worden om het scenario uit elkaar te bespreken</em></p>",
+   "page": "e25ec198-34f4-4ffe-88e8-f2d38672d7ab"
+  },
+  {
+   "flow": "Adviseren - Resultaten bespreken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Grafiek vergroten</strong></h3><p>Hiermee kan de grafiek vergroot worden weergegeven.</p>",
+   "page": "e25ec198-34f4-4ffe-88e8-f2d38672d7ab"
+  },
+  {
+   "flow": "Adviseren - Resultaten bespreken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Grafiek</strong></h3><p>Dit is duidelijker zichtbaar voor de klant.</p><p>Ook hier kan de legenda aangepast worden indien nodig</p>",
+   "page": "91dbe250-5535-4066-95d0-43851e134cbc"
+  },
+  {
+   "flow": "Adviseren - Resultaten bespreken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Verantwoord blijven wonen</strong></h3><p>In dit tabel worden de volgende scenario's visueel getoond</p><ul><li><p>Arbeidsongeschiktheid</p></li><li><p>Werkloosheid</p></li><li><p>Overlijden</p></li><li><p>Einde relatie</p></li><li><p>AOW</p></li></ul>",
+   "page": "a0f50bee-5722-4c83-82c0-9ba096bdc34a"
+  },
+  {
+   "flow": "Adviseren - Resultaten bespreken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Verantwoord blijven wonen</strong></h3><p>Per scenario is het per persoon inzichtelijk of er sprake is van een tekort.</p><p>Tekorten worden in het rood weergeven</p>",
+   "page": "a0f50bee-5722-4c83-82c0-9ba096bdc34a"
+  },
+  {
+   "flow": "Adviseren - Resultaten bespreken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Verantwoord blijven wonen</strong></h3><p>Per tabel kan de situatie nader bekeken worden.</p><p>Bestaande verzekeringen die in de inventarisatie zijn aangevinkt worden meegenomen in de berekening.</p><p><em>Klik op een onderdeel van het scenario om meer informatie te zien</em></p>",
+   "page": "52fdcc18-3c4b-4a79-85fe-eee37f45ab12"
+  },
+  {
+   "flow": "Adviseren - Resultaten bespreken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Arbeidsongeschiktheid</strong></h3><p>In dit scenario wordt er gekeken of de toetslast van de  hypotheek verantwoord is op basis het resterend inkomen wanneer een persoon niet meer volledig kan werken bij ziekte. </p><p>Werkgeversregelingen, zoals Loondoorbetaling bij ziekte hebben invloed op het resultaat.</p>",
+   "page": "bf85c86a-21cc-4d23-9236-04e0c2f92007"
+  },
+  {
+   "flow": "Adviseren - Resultaten bespreken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Werkloosheid</strong></h3><p>In dit scenario wordt er gekeken of de toetslast van de hypotheek verantwoord is op basis het resterend inkomen wanneer een persoon tijdelijk werkloos is. </p>",
+   "page": "4c73a835-03d8-4830-b037-f9404c3362b3"
+  },
+  {
+   "flow": "Adviseren - Resultaten bespreken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Overlijden</strong></h3><p>In dit scenario wordt er gekeken of de toetslast van de  hypotheek verantwoord is op basis het resterend inkomen van de achtergebleven partner. </p>",
+   "page": "8057366e-bef3-4279-902e-dcee6ee5718c"
+  },
+  {
+   "flow": "Adviseren - Resultaten bespreken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Overlijdensrisicoverzekering</strong></h3><p>Bij een tekort wordt er een ORV voorgesteld .</p><p>Het verzekerd bedrag is afgestemd op het gesignaleerde risico.</p>",
+   "page": "1a44ac52-6fdf-45c3-a53c-3c7d10657ed6"
+  },
+  {
+   "flow": "Adviseren - Verzekeringsopbouw - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Verzekeringen samenstellen</strong></h3><p>In dit onderdeel worden de verzekeringen samengesteld op basis van de eerder uitgevoerde risicoanalyse.</p><p>Op basis van de niet afgedekte risico's wordt er een voorstel gedaan. </p>",
+   "page": "316b72f2-a063-4556-9b66-2ee87650001b"
+  },
+  {
+   "flow": "Adviseren - Verzekeringsopbouw - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Voorgestelde verzekeringen</strong></h3><p>Op basis van de scenario's kunnen de volgende verzekeringen aangeboden worden:<br>- WW en/of AO Woonlasten<br>- Inkomensbeschermer<br>- Nazorgabbonement<br>- Overlijdensrisicoverzekering</p>",
+   "page": "1d272e1f-173e-4477-9f86-8a7c8b140ce7"
+  },
+  {
+   "flow": "Adviseren - Verzekeringsopbouw - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Verzekerde bedragen</strong></h3><p>Het tekort uit het scenario wordt als verzekerd bedrag genomen</p><p>Vul eventueel de benodigde informatie in</p>",
+   "page": "2b81f61f-7e58-43d3-a461-2414187fae53"
+  },
+  {
+   "flow": "Adviseren - Verzekeringsopbouw - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Verzekeringsaanbieders</strong></h3><p>Het uitgangspunt is de verzekeringspartij met de goedkoopste premie</p>",
+   "page": "2b81f61f-7e58-43d3-a461-2414187fae53"
+  },
+  {
+   "flow": "Adviseren - Verzekeringsopbouw - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Verzekeringen vergelijken</strong></h3><p>Uiteraard blijft het mogelijk om de verzekeringspartijen te vergelijken en een andere keuze te maken</p>",
+   "page": "c7a7e5c8-4147-4569-a88f-97f41f7427d9"
+  },
+  {
+   "flow": "Adviseren - Extra informatie - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Extra informatie en mogelijkheden</strong></h3><p>In de balk zijn er diverse iconen die uiteengezet worden</p>",
+   "page": "e25ec198-34f4-4ffe-88e8-f2d38672d7ab"
+  },
+  {
+   "flow": "Adviseren - Extra informatie - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Aanvullende informatie</strong></h3><p>Hier is een snelkoppeling te vinden naar specifieke informatie</p><p><strong>Naslagwerk</strong> betreft de SEH Adviespocket</p>",
+   "page": "d82fd740-203c-4a77-8c17-6fc8c1975885"
+  },
+  {
+   "flow": "Adviseren - Extra informatie - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Actualiseer de berekening</strong></h3><p><em>Klik op het icoon voor uitleg</em></p>",
+   "page": "03da9758-feea-4522-b302-aabbf8ca121d"
+  },
+  {
+   "flow": "Adviseren - Extra informatie - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Uitleg actualiseren</strong></h3><p>Zie hier de randvoorwaarden</p>",
+   "page": "0d1f1be6-ba2f-4313-b492-7a9fbec9905f"
+  },
+  {
+   "flow": "Adviseren - vergelijken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Vergelijk berekeningen</strong></h3><p>Het is mogelijk om berekeningen met elkaar te vergelijken</p><p><em>Klik op het icoon</em></p>",
+   "page": "a94db90a-c425-48e0-adae-448c56a4ab5c"
+  },
+  {
+   "flow": "Adviseren - vergelijken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Berekeningen toevoegen</strong></h3><p>Voeg tot maximaal drie berekeningen toe in de vergelijking</p><p><em>Voorbeeld: Voor de overweging verbouwen of verhuizen kan</em></p><ul><li><p><em>de huidige situatie,</em></p></li><li><p><em>verbouwen/verduurzamen en</em></p></li><li><p><em>nieuwe woning naast elkaar geplaatst worden</em></p></li></ul>",
+   "page": "6f997fa4-98b8-43ae-a3a4-96e9089f094d"
+  },
+  {
+   "flow": "Adviseren - snelle berekening - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Tooling</strong></h3><p>Hier is het mogelijk om \"snelle\" berekening te maken</p>",
+   "page": "08b9443f-1c89-4558-97f7-1ee37e5f1db6"
+  },
+  {
+   "flow": "Adviseren - snelle berekening - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Tooling</strong></h3><p>Op basis van minimale gegevens kan een maximaal hypotheek bedrag of toetslast berekend</p><p><em>Klik na het invullen van de gegevens op \"Berekenen\"</em></p>",
+   "page": "b1434670-3389-4bec-bae0-47fee3fbdb99"
+  },
+  {
+   "flow": "Adviseren - opslaan/down/maken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Berekeningen downloaden</strong></h3><p>Hier heb je de mogelijkheid om rapporten te downloaden</p>",
+   "page": "8d428906-cce6-4037-a30f-154b05209dcd"
+  },
+  {
+   "flow": "Adviseren - opslaan/down/maken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Rapport samenstellen</strong></h3><p>Hier kan aangegeven worden wat voor soort rapport er gedownload dient te worden en uit welke onderdelen deze dient te bestaan</p>",
+   "page": "070781e6-04b0-4d6a-b57a-d6ca93ff5cf6"
+  },
+  {
+   "flow": "Adviseren - opslaan/down/maken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Berekening opslaan</strong></h3><p>Hier kan de huidige berekening opgeslagen worden</p>",
+   "page": "448d6266-9f12-4b86-bf16-d4e175bc77f9"
+  },
+  {
+   "flow": "Adviseren - opslaan/down/maken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Benaming berekening</strong></h3><p>Hier kan de berekening een herkenbare naam gegeven worden</p>",
+   "page": "6d4a55c8-390f-4b0a-83d5-805c852c4857"
+  },
+  {
+   "flow": "Motiveren - adviesrapport - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Motiveren</strong></h3><p>Alle berekeningen zijn gedaan en de risico's zijn doorlopen</p><p>Nu kan het adviesrapport samengesteld worden. </p><p><em>Klik op 'Motiveren'</em></p>",
+   "page": "5754e79a-fdea-450b-8c7e-5efa2e46345d"
+  },
+  {
+   "flow": "Motiveren - adviesrapport - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Adviesmotivatie</strong></h3><p>Het adviesrapport bundelt alle keuzes, berekeningen en onderbouwingen samen.</p><p><br>Dit is het document waarmee  wordt uitgelegd: wat we adviseren, waarom, en wat de klant daarvan merkt.</p>",
+   "page": "c427513c-6f0b-412d-803b-ee12d28a9bca"
+  },
+  {
+   "flow": "Motiveren - adviesrapport - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Presentatiemodus</strong></h3><p>Ook hier is de presentatie modus beschikbaar</p>",
+   "page": "f524930e-5e01-414a-b07d-8bb34d16d637"
+  },
+  {
+   "flow": "Motiveren - adviesrapport - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Tekstenbibliotheek</strong></h3><p>De tekstenbibliotheek bevat vooraf ingerichte standaardteksten per onderdeel.</p><p>Deze teksten zijn bedoeld om het advies te structureren en te versnellen.</p><p>Het rapport hoeft niet elke keer opnieuw geschreven te worden, omdat veel onderdelen automatisch gevuld worden</p>",
+   "page": "ef0d64e6-1761-4b20-9427-b935c82d0576"
+  },
+  {
+   "flow": "Motiveren - adviesrapport - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Adviesrapport downloaden</strong></h3><p>Het rapport vormt de afsluiting van het adviestraject.</p><p>Hier kan het rapport gedownload worden .</p>",
+   "page": "ef0d64e6-1761-4b20-9427-b935c82d0576"
+  },
+  {
+   "flow": "Motiveren - adviesrapport - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Rapportage</strong></h3><p>Maak een keuze voor het soort rapport.</p>",
+   "page": "35c195de-23a6-4655-b68f-3cefcf505a28"
+  },
+  {
+   "flow": "Motiveren - adviesrapport - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Volledig adviesrapport</strong></h3><p>Kies voor \"Adviesrapport\" voor een rapport met alle componenten.</p>",
+   "page": "2423f9cc-c17e-474b-b691-7add25c7232b"
+  },
+  {
+   "flow": "Motiveren - adviesrapport - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Rapportsecties</strong></h3><p>Hier is het mogelijk om de gewenste rapportsecties toe te voegen of te verwijderen</p>",
+   "page": "2423f9cc-c17e-474b-b691-7add25c7232b"
+  },
+  {
+   "flow": "HDN-aanvraag - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>HDN aanvraag</strong></h3><p>Nu het adviesrapport afgerond is, kan de HDN-aanvraag opgebouwd worden. </p>",
+   "page": "22848d13-674c-4483-8e52-4225d663ee06"
+  },
+  {
+   "flow": "HDN-aanvraag - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>HDN-aanvraagoverzicht</strong></h3><p>Hier zie je alle HDN-aanvragen die klaarstaan om verstuurd te worden</p><p>Deze aanvragen komen uit de onderdelen hypotheek en verzekering samenstellen</p>",
+   "page": "1a7d19ed-da88-4e5e-a4ee-5c8043b2abd3"
+  },
+  {
+   "flow": "HDN-aanvraag - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>HDN-aanvraag starten</strong></h3><p><em>Klik op 'Start HDN aanvraag'</em></p>",
+   "page": "1a7d19ed-da88-4e5e-a4ee-5c8043b2abd3"
+  },
+  {
+   "flow": "HDN-aanvraag - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>HDN-aanvraag</strong></h3><p>Om een HDN-aanvraag te kunnen versturen dienen bepaalde gegevens correct in het formulier ingevuld te zijn</p><p>Is dat niet het geval, dan is dat hier zichtbaar. </p>",
+   "page": "7404e2a2-2aae-44be-be53-6b8c5a9966a1"
+  },
+  {
+   "flow": "HDN-aanvraag - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Aandachtspunten</strong></h3><p>Zolang niet alles compleet is, kan de aanvraag niet verzonden worden</p><p>Hoe zorgvuldiger de eerdere fases zijn ingevuld, hoe minder aandachtspunten er zullen zijn.</p><p>Het kan voorkomen dat de verstrekker aanvullende informatie nodig heeft die tijdens de inventarisatie niet aan bod is gekomen</p><p><em>Loop elk onderdeel langs en los de aandachtspunten op.</em></p>",
+   "page": "7404e2a2-2aae-44be-be53-6b8c5a9966a1"
+  },
+  {
+   "flow": "HDN-aanvraag - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>HDN aanvraag verzenden</strong></h3><p>Zodra alle velden zijn ingevuld, kan de aanvraag verzonden worden.</p><p>De aanvraag gaat naar de eBlinqx omgeving en vanuit daar wordt de aanvraag naar de verstrekker verstuurd</p>",
+   "page": "64063cb0-083e-472c-91f9-9dbf051fdb20"
+  },
+  {
+   "flow": "CRM- HDN verwerken - copy",
+   "kind": "popup",
+   "title": "",
+   "html": "<h2><strong>Aanvraag</strong></h2><p>Nadat de aanvraag vanuit het adviesprogramma verstuurd is, komt deze binnen in eBlinqx</p><p>De volgende stappen geven aan hoe de aanvraag verwerkt dient te worden</p>",
+   "page": "a04ae528-53ee-43b1-936b-3fed2a5482ff"
+  },
+  {
+   "flow": "CRM- HDN verwerken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Inkomende berichten</strong></h3><p>Onder de tegel \"binnenkomende berichten\" vind je de HDN-berichten</p><p><em>Klik op de inkomende HDN-berichten</em></p>",
+   "page": "7865c609-5803-479c-9d74-579e2c568099"
+  },
+  {
+   "flow": "CRM- HDN verwerken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>HDN-inbox</strong></h3><p>Hier vind je alle binnenkomende HDN-berichten</p><p>Type AX betreft een hypotheekaanvraag</p>",
+   "page": "b25b54fb-aa1c-4739-b486-5ec0ca303133"
+  },
+  {
+   "flow": "CRM- HDN verwerken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>HDN-inbox</strong></h3><p>Aan de status is te zien welke berichten nog verwerkt dienen te worden</p>",
+   "page": "b25b54fb-aa1c-4739-b486-5ec0ca303133"
+  },
+  {
+   "flow": "CRM- HDN verwerken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>HDN-bericht verwerken</strong></h3><p>Klik op het \"potlood-icoon\"</p>",
+   "page": "b25b54fb-aa1c-4739-b486-5ec0ca303133"
+  },
+  {
+   "flow": "CRM- HDN verwerken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Gegevens aanvullen</strong></h3><p>Hier zijn de gegevens die bevestigd dienen te worden</p>",
+   "page": "5c4033ba-4b2b-4691-92fa-0059a3e51598"
+  },
+  {
+   "flow": "CRM- HDN verwerken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Gegevens ophalen</strong></h3><p>Haal de informatie erbij om de gegevens correct over te nemen</p><p><em>Klik op het informatie-icoon</em></p>",
+   "page": "f8262f42-e1fe-4f7b-bc32-9bad93156104"
+  },
+  {
+   "flow": "CRM- HDN verwerken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Gegevens aanvullen</strong></h3><p><em>Vul de gegevens aan</em></p>",
+   "page": "f8262f42-e1fe-4f7b-bc32-9bad93156104"
+  },
+  {
+   "flow": "CRM- HDN verwerken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Inkoop via</strong></h3><p>Hier kan er aangegeven worden of de aanvraag rechtsreeks bij de maatschappij wordt aangevraagd of via een Serviceprovider</p>",
+   "page": "09b4733e-c3b3-4c38-a478-5c60e4ded8cd"
+  },
+  {
+   "flow": "CRM- HDN verwerken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Opslaan</strong></h3><p><em>Klik op \"opslaan\"</em></p>",
+   "page": "efa6a4a0-6ed3-464f-a4b1-bcb32e345db3"
+  },
+  {
+   "flow": "CRM- HDN verwerken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>HDN-bericht verwerkt</strong></h3><p>Aan het vinkje is te zien, dat het bericht correct verwerkt is</p>",
+   "page": "ee8ef719-b0ed-4e1f-ac88-12d9675cb985"
+  },
+  {
+   "flow": "CRM- HDN verwerken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>HDN-bericht verwerkt</strong></h3><p>Daarnaast is het dossier aangevuld met de hypotheek aanvraag</p><p><em>Klik op de hypotheekofferte</em></p>",
+   "page": "e583e5d3-db01-4a48-bd56-799a17950511"
+  },
+  {
+   "flow": "CRM- HDN verwerken - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Rente aanbod</strong></h3><p>Aan de status is te zien dat het rente aanbod aangevraagd is</p>",
+   "page": "5a007a6d-978b-4f4b-8769-648156c8fc0b"
+  },
+  {
+   "flow": "CRM- HDN verwerken - copy",
+   "kind": "popup",
+   "title": "",
+   "html": "<h3><strong>Rente aanbod</strong></h3><p>Het rente aanbod is aangevraagd via HDN</p>",
+   "page": "78539bdd-d0e3-48dc-9f79-e52839e95760"
+  },
+  {
+   "flow": "CRM-Bemiddeling - copy",
+   "kind": "popup",
+   "title": "",
+   "html": "<h3><strong>Hypotheekbemiddeling</strong></h3><p>Nadat de aanvraag gedaan is, kan de workflow op twéé manieren naar een volgende stap gaan</p><ol><li><p>door een keuze van de gebruiker</p></li><li><p>door een HDN-bericht</p></li></ol><p><em>Ga naar de workflow van de hypotheek</em></p>",
+   "page": "c7643de7-e15e-4c91-b38f-b9495856a022"
+  },
+  {
+   "flow": "CRM-Bemiddeling - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Hypotheekbemiddeling</strong></h3><p>Deze opties zijn zichtbaar nadat het rente aanbod is aangevraagd</p>",
+   "page": "a3a61b91-bb65-4523-b864-8a5dc088070b"
+  },
+  {
+   "flow": "CRM-Bemiddeling - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Rente aanbod ontvangen</strong></h3><p>Per mail word je vanuit eBlinqx op de hoogte gesteld dat er een rente aanbod ontvangen is</p>",
+   "page": "8903659d-d82f-4147-a901-f8df822343f5"
+  },
+  {
+   "flow": "CRM-Bemiddeling - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Rente aanbod ontvangen</strong></h3><p><em>Klik op het tabblad \"documenten\"</em></p>",
+   "page": "8903659d-d82f-4147-a901-f8df822343f5"
+  },
+  {
+   "flow": "CRM-Bemiddeling - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Rente aanbod</strong></h3><p>Hier zijn de documenten van de geldverstrekker te vinden</p><p><em>Open het rente aanbod en bekijk het document</em></p>",
+   "page": "558aaa73-1808-4910-ab2c-53be9f5016cf"
+  },
+  {
+   "flow": "CRM-Bemiddeling - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Hypotheekbemiddeling</strong></h3><p><em>Ga naar de workflow van de hypotheek</em></p>",
+   "page": "78539bdd-d0e3-48dc-9f79-e52839e95760"
+  },
+  {
+   "flow": "CRM-Bemiddeling - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Rente aanbod ontvangen</strong></h3><p>De optie \"Renteaanbod ontvangen\" is automatisch gekozen omdat het renteaanbod via HDN ontvangen is</p><p>Hier kan handmatig aangegeven worden of het rente aanbod correct is</p>",
+   "page": "390ae680-1e69-449e-9bcd-34c2b6ebd640"
+  },
+  {
+   "flow": "CRM-Bemiddeling - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Rente aanbod ontvangen</strong></h3><p>Het rente aanbod dient in dit geval getekend te worden</p><p>Dit is een gegeven wat in het HDN-bericht van de geldverstrekker zit.</p><p><em>Klik op \"Renteaanbod correct en dient getekend te worden\"</em></p>",
+   "page": "390ae680-1e69-449e-9bcd-34c2b6ebd640"
+  },
+  {
+   "flow": "CRM-Bemiddeling - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Renteaanbod overdragen</strong></h3><p>Hier kan de keuze gemaakt worden om het renteaanbod</p><ol><li><p>te mailen (eigen mailprogramma)</p></li><li><p>fysiek over te dragen</p></li></ol><p>Dit kan per gebruiker en per dossier bepaald worden</p>",
+   "page": "e52fb35b-2032-40a8-9fc0-3e23536c0a17"
+  },
+  {
+   "flow": "CRM-Bemiddeling - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>HDN-stukkenlijst</strong></h3><p>De stukkenlijst wordt op basis van een HDN-bericht aangevuld.</p><p>Dit zijn documenten die de geldverstrekker opvraagd</p>",
+   "page": "7d33a882-b37c-469f-ae14-67bc1cbeb856"
+  },
+  {
+   "flow": "CRM-Bemiddeling - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>HDN-stukkenlijst</strong></h3><p>De stukkenlijst van de geldverstrekker zal gevuld worden met de documenten die in de inventarisatiefase ontvangen en akkoord bevonden zijn</p>",
+   "page": "7d33a882-b37c-469f-ae14-67bc1cbeb856"
+  },
+  {
+   "flow": "CRM-Bemiddeling - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>HDN-Stukken versturen</strong></h3><p>Zodra de documenten beoordeeld zijn door de gebruiker, staan ze onder \"Stukken gereed\"</p>",
+   "page": "9cd84f79-7f3e-4a14-8f65-51b195388286"
+  },
+  {
+   "flow": "CRM-Bemiddeling - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>HDN-stukken versturen</strong></h3><p><em>Klik op \"Verzend stukken naar maatschappij\"</em></p>",
+   "page": "1171a902-88a3-47a9-b2ef-a7de1690115f"
+  },
+  {
+   "flow": "CRM-Bemiddeling - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>De HDN-stukken zijn verstuurd</strong></h3><p>Na het versturen van de HDN-stukken zal de communicatie tussen de geldverstrekker en eBlinqx via HDN gaan</p><p><strong>Verzonden: </strong>datum wanneer de stukken verzonden zijn naar de geldverstrekker</p><p><strong>Beoordeling SP: </strong>Documentstatus van een serviceprovider</p><p><strong>Beoordeling MIJ: </strong>Documentstatus van de geldverstrekker</p>",
+   "page": "1171a902-88a3-47a9-b2ef-a7de1690115f"
+  },
+  {
+   "flow": "CRM-Bemiddeling - copy",
+   "kind": "popup",
+   "title": "",
+   "html": "<h3><strong>Aandachtspunten</strong></h3><ul><li><p>Als adviseur ontvang je mails vanuit eBlinqx op cruciale momenten</p></li><li><p>Volg de workflow en klik enkel aan wat van toepassing/wenselijk is</p></li><li><p>De klant krijgt <strong><em>geen</em></strong> mails vanuit eBlinqx. Stuur aanvullend een mail uit een eigen mailprogramma</p></li></ul><ul><li><p>De klant ontvangt notificaties in de uwkluis app</p></li></ul>",
+   "page": "c7643de7-e15e-4c91-b38f-b9495856a022"
+  },
+  {
+   "flow": "Fastlane - Instellingen - copy",
+   "kind": "popup",
+   "title": "",
+   "html": "<h3><strong>Instellingen</strong></h3><p>Binnen Fastlane is het mogelijk om bepaalde instellingen aan te passen.</p><p>Denk hierbij aan bijvoorbeeld aan standaardwaarden</p>",
+   "page": "a9069582-dade-42bf-a020-ee88ec7478c2"
+  },
+  {
+   "flow": "Fastlane - Instellingen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Instellingen</strong></h3><p><em>Klik op het tandwiel-icoon</em></p>",
+   "page": "4811e9ff-cac3-4c17-a3b7-dd8f185a829e"
+  },
+  {
+   "flow": "Fastlane - Instellingen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Instellingenoverzicht</strong></h3><p>Hier is een overzicht van alle onderdelen die aanpasbaar zijn.</p><p>We behandelen enkel de onderdelen die voor Fastlane van belang zijn:</p><ul><li><p>Fastlane Algemeen</p></li><li><p>Logo uploaden</p></li><li><p>Tarieven</p></li><li><p>Rapport samenstellen</p></li><li><p>Tekstenbibliotheek</p></li></ul>",
+   "page": "d46b7718-4363-4f2e-9cb1-22842706d154"
+  },
+  {
+   "flow": "Fastlane - Instellingen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Instellingen - Algemeen</strong></h3><p>Hier is het mogelijk om het rekengedrag van Fastlane in te stellen.</p><p><em>Klik op \"Fastlane Algemeen\"</em></p>",
+   "page": "d46b7718-4363-4f2e-9cb1-22842706d154"
+  },
+  {
+   "flow": "Fastlane - Instellingen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Instellingen - Algemeen</strong></h3><p>De meest gebruikte aanpassingen zijn</p><ul><li><p><strong>Ernergiebbespaarbudget (EEB)</strong><br>Standaard wordt op basis van het energielabel een EBB toegevoegd in de berekening. Hier kan dat uitgezet worden.</p></li><li><p><strong>CBI</strong><br>Indien de berekeningen standaard op CBI gedaan dienen te worden, kan dat hier aangezet worden.</p></li></ul>",
+   "page": "ddf46d4b-7775-4571-812b-5b9856c85993"
+  },
+  {
+   "flow": "Fastlane - Instellingen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Opslaan</strong></h3><p><em>Klik op \"opslaan\"</em></p>",
+   "page": "ddf46d4b-7775-4571-812b-5b9856c85993"
+  },
+  {
+   "flow": "Fastlane - Instellingen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Instellingen - Logo uploaden</strong></h3><p>Hier is het mogelijk om een logo te uploaden.</p><p><em>Klik op \"Logo uploaden\"</em></p>",
+   "page": "0c702dfe-a155-4dce-8a24-22d6829623b7"
+  },
+  {
+   "flow": "Fastlane - Instellingen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Logo uploaden</strong></h3><p>Dit logo zal getoond worden op de (advies)rapporten</p>",
+   "page": "9032b6c6-f3e7-4d38-a828-c81e0842b802"
+  },
+  {
+   "flow": "Fastlane - Instellingen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Instellingen - Tarieven</strong></h3><p><em>Klik op \"Tarieven\"</em></p>",
+   "page": "41eb248a-4aa2-412c-8890-672d4896ba03"
+  },
+  {
+   "flow": "Fastlane - Instellingen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Tarieven</strong></h3><p>Hier zijn alle tarieven zichtbaar.</p><p>Per tarief is in te stellen of deze getoond dient te worden in de financieringsopzet en wat de standaardwaarde dient te zijn.</p><p>Uiteraard zijn deze tarieven per dossier aan te passen.</p>",
+   "page": "db605033-9639-40fc-aa97-cd7833e318f9"
+  },
+  {
+   "flow": "Fastlane - Instellingen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Percentages</strong></h3><p>Hier zijn alle percentages zichtbaar.</p><p>Per percentage  kan er afgeweken worden op de standaardwaarde.   </p>",
+   "page": "db605033-9639-40fc-aa97-cd7833e318f9"
+  },
+  {
+   "flow": "Fastlane - Instellingen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Serviceprovider</strong></h3><p>Bij een samenwerking met een serviceprovider, kan er sprake zijn van dossierkosten.</p><p><em>Vink afwijkend aan en vul de nieuwe waarde in</em></p>",
+   "page": "26a72823-841d-4415-90b5-20ef22a0af09"
+  },
+  {
+   "flow": "Fastlane - Instellingen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Opslaan</strong></h3><p><em>Klik op \"opslaan\"</em></p>",
+   "page": "6eacc491-7906-4aef-b25b-284ef04b79cb"
+  },
+  {
+   "flow": "Fastlane - Instellingen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Instellingen - Rapport samenstellen</strong></h3><p>Hier kan een nieuw rapport ingesteld worden.</p><p><em>Klik op \"Rapport samenstellen\"</em></p>",
+   "page": "9c29458b-d43d-4ec7-bd30-2fb757466ef2"
+  },
+  {
+   "flow": "Fastlane - Instellingen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Rapport overzicht</strong></h3><p>Hier heb je een overzicht van alle samengestelde rapporten</p>",
+   "page": "f0b9aab6-4e4b-439d-86e7-5bd4ecc71c86"
+  },
+  {
+   "flow": "Fastlane - Instellingen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Nieuw Rapport</strong></h3><p><em>Klik hier om een nieuw rapport toe te voegen</em></p>",
+   "page": "f0b9aab6-4e4b-439d-86e7-5bd4ecc71c86"
+  },
+  {
+   "flow": "Fastlane - Instellingen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Rapportnaam</strong></h3><p>Geef het nieuwe rapport een naam</p><p><em>Vul een naam in</em></p>",
+   "page": "e15af14d-8e9f-48ca-862c-887d0d8a98c8"
+  },
+  {
+   "flow": "Fastlane - Instellingen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Pagina's</strong></h3><p>Selecteer de gewenste pagina's</p><p><em>Vink de pagina's aan</em></p>",
+   "page": "3b7c9d63-a022-452a-94c6-dec39e09836e"
+  },
+  {
+   "flow": "Fastlane - Instellingen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Opslaan</strong></h3><p><em>Klik op \"opslaan\"</em></p>",
+   "page": "3b7c9d63-a022-452a-94c6-dec39e09836e"
+  },
+  {
+   "flow": "Fastlane - Instellingen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Instellingen - Tekstenbibliotheek</strong></h3><p>Hier heb je de mogelijkheid om tekst blokken in te stellen</p><p><em>Klik op \"Tekstenbibliotheek\"</em></p>",
+   "page": "9c29458b-d43d-4ec7-bd30-2fb757466ef2"
+  },
+  {
+   "flow": "Fastlane - Instellingen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Tekstenoverzicht</strong></h3><p>Hier zie je een overzicht van alle tekst blokken die er instaan</p>",
+   "page": "52a4eb07-c5b1-4050-ae52-937b762130db"
+  },
+  {
+   "flow": "Fastlane - Instellingen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Tekst toevoegen</strong></h3><p><em>Klik op \"Tekst toevoegen\"</em></p>",
+   "page": "52a4eb07-c5b1-4050-ae52-937b762130db"
+  },
+  {
+   "flow": "Fastlane - Instellingen - copy",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<h3><strong>Tekst opvoeren</strong></h3><p>Kies het thema in de adviesmotivering waar een nieuwe tekst voor wordt ingevoerd.</p><p><br>Geef een duidelijke titel mee zodat deze in de adviesmotivering snel terug te vinden is</p>",
+   "page": "32575d04-4d01-46ae-9ca4-6c0b392e4494"
+  },
+  {
+   "flow": "Fastlane - Instellingen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Tekst opvoeren</strong></h3><p>Voeg hier de inhoud van de standaardtekst toe</p>",
+   "page": "76702a15-3152-4e3a-a849-8382dc82b20e"
+  },
+  {
+   "flow": "Fastlane - Instellingen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Zichtbaarheid tekstblokken</strong></h3><p>Teksten kunnen op twee manieren opgeslagen worden.</p><p><strong>Standaard in adviesmotivatie</strong><br>De standaardtekst wordt getoond in de adviesmotivatie en is vrij aanpasbaar</p><p><strong>Alleen zichtbaar in het adviesrapport</strong><br>Deze teksten worden niet getoond in de adviesmotivatie, zijn niet vrij aanpasbaar en zijn uitsluitend zichtbaar in het adviesrapport.</p>",
+   "page": "60192161-a6f7-4bd6-ba0d-4aa58e17ac39"
+  },
+  {
+   "flow": "Fastlane - Instellingen - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Opslaan</strong></h3><p><em>Klik op \"opslaan\"</em></p>",
+   "page": "83e84725-9bd5-4bc1-91f3-7c1aebc5b94b"
+  },
+  {
+   "flow": "CRM-Klant view - copy",
+   "kind": "popup",
+   "title": "",
+   "html": "<h3><strong>Uwkluis activeren</strong></h3><p>De volgende stappen worden gezet door de klant</p>",
+   "page": "54e5cc16-3555-4cfc-8e47-57db5c99e141"
+  },
+  {
+   "flow": "CRM-Klant view - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Uwkluis activeren</strong></h3><p>De klant ontvangt een mail om het klantportaal te activeren</p><p>De klant klikt op \"<em>Activeer je online kluis</em>\"</p>",
+   "page": "54e5cc16-3555-4cfc-8e47-57db5c99e141"
+  },
+  {
+   "flow": "CRM-Klant view - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Uwkluis activeren</strong></h3><p>De klant vult hier tweemaal een zelf gekozen wachtwoord in</p>",
+   "page": "304e61c9-acd4-4444-aed6-3755d8fb54e0"
+  },
+  {
+   "flow": "CRM-Klant view - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Uwkluis activeren</strong></h3><p>Klikt op \"<em>account aanmaken</em>\"</p>",
+   "page": "8a71166e-43d2-4524-afbe-bed14ecb4b95"
+  },
+  {
+   "flow": "CRM-Klant view - copy",
+   "kind": "popup",
+   "title": "",
+   "html": "<h2><strong>Uwkluis is geactiveerd</strong></h2><p>De klant start op het Dashoard</p>",
+   "page": "c1714c47-6123-4477-be3f-73769ff8de7f"
+  },
+  {
+   "flow": "CRM-Klant view - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Dashboard</strong></h3><p>Op het dashboard vindt de klant alle acties die van hem verwacht worden. Denk hierbij aan</p><ul><li><p>Documenten downloaden</p></li><li><p>Documenten aanleveren</p></li><li><p>Brondata aanleveren</p></li></ul>",
+   "page": "c1714c47-6123-4477-be3f-73769ff8de7f"
+  },
+  {
+   "flow": "CRM-Klant view - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Dashboard</strong></h3><p>Deze twee To-Do's staan er bij activatie standaard op</p>",
+   "page": "d8d7a8d8-ccde-4c6f-9aab-efa50f4b8194"
+  },
+  {
+   "flow": "CRM-Klant view - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Uwkluis app</strong></h3><p>Hier kan de app gedownload woren</p>",
+   "page": "c866cc21-f818-46ab-87b9-d443a0aa0a55"
+  },
+  {
+   "flow": "CRM-Klant view - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Uwkluis app</strong></h3><p>Klik op <em>\"koppelen</em>\"</p>",
+   "page": "15aeaa96-2981-4ba7-a4f1-3eea57b67031"
+  },
+  {
+   "flow": "CRM-Klant view - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Uwkluis app</strong></h3><p>De klant scant de QR-code vanuit de app.</p><p>De app is gekoppeld aan het account en het is nu mogelijk om vanuit de app de actiepunten af te handelen</p>",
+   "page": "3236fbd9-7a29-463f-af2c-109d2f0c1846"
+  },
+  {
+   "flow": "CRM-Klant view - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Two-factor authenticator</strong></h3><p>Hier kan de klant zijn account extra beveiligen door een authenticator- app in te stellen</p>",
+   "page": "125a2b68-e196-4866-8022-7602eee2bfc6"
+  },
+  {
+   "flow": "CRM-Klant view - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Extra gebruikers</strong></h3><p>Enkel de eerste aanvrager krijgt een activatiemail voor het aanmaken van uwkluis.</p><p>Die aanvrager kan hier extra gebruikers toevoegen, die met hun eigen inloggegevens in de uwkluis-omgeving kunnen</p>",
+   "page": "c5dff87d-dff2-4884-ad26-b0505fbfd653"
+  },
+  {
+   "flow": "CRM-Klant view - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Documenten aanleveren</strong></h3><p>Hier kan de klant zien dat er documenten opgevraagd worden</p>",
+   "page": "93f0b4c8-0f56-4322-b0b2-aeccf8987e1a"
+  },
+  {
+   "flow": "CRM-Klant view - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Documenten aanleveren</strong></h3><p>Hier kan de klant een overzicht zien van alle documenten die nog aangeleverd dienen te worden</p>",
+   "page": "81746bd9-f9df-447b-bf05-c864e53e335a"
+  },
+  {
+   "flow": "CRM-Klant view - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Documenten aanleveren</strong></h3><p>De klant drukt op <em>\"Voeg document(en) toe\"</em></p>",
+   "page": "81746bd9-f9df-447b-bf05-c864e53e335a"
+  },
+  {
+   "flow": "CRM-Klant view - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Documenten aanleveren</strong></h3><p>Hier kan de klant een lokale map openen of een document naartoe slepen</p>",
+   "page": "257f5a5d-7393-4799-a982-95374a185b83"
+  },
+  {
+   "flow": "CRM-Klant view - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Documenten aanleveren</strong></h3><p>De klant kant eventueel extra informatie meesturen</p>",
+   "page": "863109b8-16e2-40dd-b539-29f5ce2a2eca"
+  },
+  {
+   "flow": "CRM-Klant view - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Documenten aanleveren</strong></h3><p>De klant klikt op \"<em>Bestanden delen\"</em></p>",
+   "page": "289e26a7-019c-41cc-820f-35cc9945acd8"
+  },
+  {
+   "flow": "CRM-Klant view - copy",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<h3><strong>Aangeleverde documenten</strong></h3><p>Het aangeleverde document verschuift naar beneden</p>",
+   "page": "137b8881-021f-4f7e-aa42-ba880aa9ff0a"
+  }
+ ]
+}

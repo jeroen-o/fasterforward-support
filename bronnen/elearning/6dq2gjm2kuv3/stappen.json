@@ -1,0 +1,90 @@
+{
+ "id": "6dq2gjm2kuv3",
+ "name": "eBlinqx Connect: speciale acties in mailbox",
+ "steps": [
+  {
+   "flow": "Default",
+   "kind": "popup",
+   "title": "",
+   "html": "<h2><strong>eBlinqx Connect specifieke mailhandelingen</strong></h2>",
+   "page": "91c33138-d51a-4b9f-8cf7-cff5b57bac14"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Overrule de synchronisatie zoals deze is ingesteld.</p>",
+   "page": "91c33138-d51a-4b9f-8cf7-cff5b57bac14"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Plan de mail in de werkvoorraad door middel van een taak.</p>",
+   "page": "1a624384-35aa-4f32-b3a4-88f9a01a54a6"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Dit kan een persoonlijke taak of een groepstaak worden.</p><p>Bijvoorbeeld een mail met bijlagen waarvoor je nu geen tijd hebt, maar je wilt je mailbox wel schoon houden.</p>",
+   "page": "31fe373b-3c64-48df-b6e0-b106cd095b72"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Koppel de mail aan een product of dienst van het reeds gekoppelde dossier.</p>",
+   "page": "6ed6b1c5-b583-4b69-aaec-1192b198cc36"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Alle producten en/of diensten worden hier getoond.</p>",
+   "page": "4296420d-adc7-442a-b803-b2b162bd6814"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Koppel de mail aan een schademelding van het dossier.</p>",
+   "page": "6976f3b9-1676-4620-a0ff-f1e74a9117a2"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>De mail alleen zichtbaar maken voor jezelf, andere medewerkers zien deze mail niet.</p>",
+   "page": "8e515007-2003-4f29-9415-77efa8e7e626"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Het icoontje is ook alleen voor jou zichtbaar.</p>",
+   "page": "f65b161d-49b3-43b8-96a0-931b2d46d3c0"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Onder deze knop extra acties.</p>",
+   "page": "e76922d3-e3be-4648-b2c9-2ab322ad25a1"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Bijvoorbeeld de mail ontkoppelen van het dossier.</p>",
+   "page": "5177b50a-eefd-40f3-a173-7d32abf1be87"
+  },
+  {
+   "flow": "Default",
+   "kind": "popup",
+   "title": "",
+   "html": "<h2><strong>Ready to Make an Impact?</strong></h2><p>Thanks for exploring! Ready to see how this can work for you? Our team is here to help you get started.</p>",
+   "page": "a9d158b4-df30-4dce-9754-918b57ea6606"
+  }
+ ]
+}

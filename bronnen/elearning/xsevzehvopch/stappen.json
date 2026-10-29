@@ -1,0 +1,83 @@
+{
+ "id": "xsevzehvopch",
+ "name": "Schademeldingen Registreren en Verwerken",
+ "steps": [
+  {
+   "flow": "Demo",
+   "kind": "popup",
+   "title": "Schademeldingen Registreren en Verwerken",
+   "html": "<h3><strong>Schademeldingen Slimmer Verwerken</strong></h3><p>Zie hoe je vanuit het klantdossier snel een schademelding registreert en verwerkt.</p>",
+   "page": "45f18230-756a-4a10-8590-5e3f3d1690ef"
+  },
+  {
+   "flow": "Demo",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>In het klantdossier controleer je eerst of de klant verzekerd is voor de gemelde schade en selecteer je het betreffende product, zoals de autoverzekering.</p>",
+   "page": "baa5a471-3027-42c7-bdc8-79362802aea7"
+  },
+  {
+   "flow": "Demo",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Vanuit de productkaart maak je via de snelkoppeling rechtsboven eenvoudig een nieuwe schademelding aan.</p>",
+   "page": "f3ff696a-eea6-453a-b844-826889715af9"
+  },
+  {
+   "flow": "Demo",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Vul de verplichte velden in, deze zijn rose van kleur,zoals de schadedatum. Het tijdstip is optioneel. Het systeem selecteert automatisch de juiste polis omdat je vanuit de productkaart werkt.</p>",
+   "page": "235f4cc8-32b8-4c56-9d19-748ff39436cb"
+  },
+  {
+   "flow": "Demo",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Op het tabblad 'Schademelding' in het klantdossier vind je een handig overzicht van alle geregistreerde schades, inclusief de status en het claimgedrag</p>",
+   "page": "1970738b-1b1a-48c9-b8ce-ef360e570b73"
+  },
+  {
+   "flow": "Demo",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Het schadedossier is overzichtelijk verdeeld in twee delen: links de interne notities en details, en rechts de gekoppelde documenten zoals het aanrijdingsformulier.</p>",
+   "page": "383c8f03-373f-4508-9486-f89989a916a9"
+  },
+  {
+   "flow": "Demo",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Leg alle relevante details vast in het dossier, zoals de oorzaak, schuldvraag en wie de behandelaar is. Zo hou je het dossier compleet en actueel.</p>",
+   "page": "5d246cca-6954-4a38-bc77-281f401d9373"
+  },
+  {
+   "flow": "Demo",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Onder het tabblad 'Documenten' vind je alle opgeslagen communicatie en bestanden die specifiek bij deze schademelding horen, gescheiden van de rest van het klantdossier.</p>",
+   "page": "8f3db026-0d1f-4b6e-b6f1-b68161812953"
+  },
+  {
+   "flow": "Demo",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Gebruik de workflow-ondersteuning om het proces efficiënt af te handelen. Selecteer de gewenste vervolgstap, zoals het opvragen van ontbrekende documenten.</p>",
+   "page": "e6a93c25-ca6c-4e78-b2d8-8b2f6df8baf4"
+  },
+  {
+   "flow": "Demo",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Het systeem zet direct een conceptmail klaar met standaardteksten en het interne schadenummer. Dit bespaart veel tijd en zorgt voor professionele communicatie met de klant.</p>",
+   "page": "1017e2d9-bc2a-499d-8b54-2c60d2d5a23c"
+  },
+  {
+   "flow": "Demo",
+   "kind": "tooltip",
+   "title": "Schademeldingen Registreren en Verwerken",
+   "html": "<h3><strong>Sneltoets in de zwarte balk</strong></h3><p>Onder deze knop tref je alle schademeldingen aan binnen de portefeuille met alle statussen. Deze is zichtbaar voor medewerkers met een account op 'Schadebehandelaar'.</p>",
+   "page": "36ee7ea1-2158-4f92-bffb-90858810f414"
+  }
+ ]
+}

@@ -1,0 +1,62 @@
+{
+ "id": "jnrylc7q4ias",
+ "name": "eBlinqx Connect: personen toevoegen",
+ "steps": [
+  {
+   "flow": "Default",
+   "kind": "popup",
+   "title": "",
+   "html": "<h2><strong>Voeg eenvoudig personen toe aan een dossier</strong></h2><p>Ontdek hoe je snel en correct een betrokkene koppelt aan een dossier in eBlinqx Connect — stap voor stap.</p>",
+   "page": "ceb80b54-d197-495d-8b16-6eaa6076a34f"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Navigeer naar \"Partijen &amp; objecten\" — hier beheer je alle betrokkenen binnen een dossier.</p>",
+   "page": "ceb80b54-d197-495d-8b16-6eaa6076a34f"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Voeg een persoon toe aan het dossier.</p>",
+   "page": "ee1532ae-bd55-406f-8170-0a91fa4e9930"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>De roze velden zijn verplicht. Ook hier vind controle plaats op mogelijk dubbele invoer.</p>",
+   "page": "b4cfb752-ad02-40bc-ac45-1456ddca1ae6"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Bepaal de rol van deze persoon.</p>",
+   "page": "a0623ea3-375e-42d6-af15-023589978b07"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Vul de overige velden voor een compleet dossier.</p><p>Dit voorkomt aanpassingen in de standaard emails binnen eBlinqx Connect.</p>",
+   "page": "9a5543a4-fad9-48bb-9052-6d2ed2978c1d"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Bevestig en sla de persoon op in het dossier.</p>",
+   "page": "f75e1013-8494-4059-9960-218e15afeeb3"
+  },
+  {
+   "flow": "Default",
+   "kind": "popup",
+   "title": "",
+   "html": "<p>Zo eenvoudig koppel je personen aan een dossier in eBlinqx Connect.</p><p><strong><em>TIP: zie je de wijziging niet direct in de dossierheader? CTRL F5 ververst de pagina.</em></strong></p>",
+   "page": "765f1d98-7fbd-422b-afa9-fdc68f3e7f44"
+  }
+ ]
+}

@@ -1,0 +1,216 @@
+{
+ "id": "wm5k4bnda6l4",
+ "name": "Dashboard | eBlinqx Connect | Sep 7 3:12 PM",
+ "steps": [
+  {
+   "flow": "Default",
+   "kind": "popup",
+   "title": "",
+   "html": "<h2><strong>Kalender/Agenda</strong></h2><p>In deze module leer je basisinstellingen van de kalender en het maken van een afspraak.</p>",
+   "page": "5fbb2505-a97d-4850-9061-faddb2d95093"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Klik op het kalendericoon in de zwarte balk. Doe je dit met <strong>CTRL+klik</strong>, dan opent de kalender in een nieuw tabblad.</p>",
+   "page": "5fbb2505-a97d-4850-9061-faddb2d95093"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Middels deze keuzes heb je inzage in de agenda van jezelf of die van één of meerdere collega's. De rechten tot elkaars agenda zijn geregeld bij de inrichting of worden aangepast door jullie beheerder.</p>",
+   "page": "0e23abe8-2108-4ba0-8e8d-9a75f5e6d8c2"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Middels het hamburgermenu kom je in dit keuzemenu.</p><p>Klik op <strong>Instellingen</strong>.</p>",
+   "page": "518b9e20-6d6b-4eaa-9e28-8b57a57ebd9f"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Maak hier een keuze of je dag, week, maand of lijstweergave.</p>",
+   "page": "c7d1b5c1-951f-4e17-b93e-d066c5956700"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Klik op \"Dag Week Maand Lijst\"</p>",
+   "page": "a5f8837b-423e-421f-b08e-65511fe41a36"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Kies hier je voorkeur qua tijdsindeling. De schaal op 30 min geeft in de agenda de gehele dag weer.</p>",
+   "page": "20a14886-8338-433e-9279-f6f362f39575"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Klik op \"15 minuten 30 minuten\"</p>",
+   "page": "eb87e196-3c59-42e6-b95b-2a681afeb8c3"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Kies hier het type notificatie voor de afspraak.</p><p>Let op: de notificaties worden vanuit de browser gegeven. Hiervoor dient de browser de juiste rechten te hebben.</p>",
+   "page": "8f6a8e14-cf72-4a90-b73a-e6f036105c38"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Maak hier de koppeling met Office 365.</p>",
+   "page": "3f7de4de-32fe-4b99-b32a-0c275d3114ed"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Klik op here</p>",
+   "page": "a1abc1de-fafa-4847-ba1e-1170300a843d"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Sla de wijzigingen op.</p>",
+   "page": "b173463b-cd63-43eb-91c2-fd8a5472d4e6"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Open <strong>Kleurbeheer</strong> om de kleuren van de verschillende agenda's in te richten.</p>",
+   "page": "062323b3-8bea-4426-87e9-8caa1b3deb4c"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Open het kleurenschema</p>",
+   "page": "385e16ed-d732-4b2a-856b-f2221f73286b"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Kies een kleur.</p>",
+   "page": "aa9844f0-8ca2-474a-ad14-2ed95bf9183a"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Bevestig de wijziging.</p>",
+   "page": "b542de73-ae7d-4b42-8ba0-9de3ef2e3506"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Sla de wijziging op.</p>",
+   "page": "3936903b-23c3-4915-afaf-3f5ed7d0fe0c"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Selecteer een tijdsblok voor een privéafspraak.</p>",
+   "page": "da50f22a-f5b5-4cbf-8f30-1896b2b203b3"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Niet zakelijke afspraken zijn niet zichtbaar voor collega's qua inhoud.</p>",
+   "page": "89e27eab-f330-40ee-ba95-e35adfdb0650"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Eventueel is een herhaling mogelijk, bijvoorbeeld bij een vaste vrije middag.<br><br>Sla vervolgens de afspraak op.</p>",
+   "page": "b01c4c9c-2515-44f8-8ad3-0f5a23705a8e"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Laten wij nu een afspraak inboeken voor een klant.</p>",
+   "page": "8e9d0987-f16b-4155-bf46-637f4d5a5b29"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Selecteer een klantdossier.</p>",
+   "page": "04b065a2-e21a-43c5-b6a9-36bf724fd881"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Klik op <strong>kalender</strong>.</p>",
+   "page": "f44c8594-95b0-44b5-bcca-bc9032a813b3"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Kies een tijdsblok in de kalender van jezelf of die van een collega.</p>",
+   "page": "57efe23c-cf1a-4d14-ad24-eb1304701711"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Kies een locatie waar de afspraak plaatsvindt. Laat deze leeg als de afspraak online is.</p>",
+   "page": "43dd990e-96ca-44b8-b52c-f55b6cb96a6c"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>De afspraak koppel je het liefst aan een product of dienst die de klant bij jou heeft afgenomen.</p>",
+   "page": "5df4e283-7110-495d-a2c0-8631992b4a60"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Sla de afspraak op.</p>",
+   "page": "c6a1a9f5-1ea7-47bb-aa9d-12fe8f449adf"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Aangezien de afspraak vanuit een klantdossier is gemaakt, volgt een workflow. Kies het type afspraakbevestiging.</p>",
+   "page": "ffe6fffc-56e4-45d6-a88c-4d3e22cf34d3"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>De workflow zet een conceptmail klaar met een standaard tekst, welke door jullie beheerder centraal is aan te passen.</p>",
+   "page": "4c5d0c70-9dd7-4342-8c21-aa6f86b99b76"
+  },
+  {
+   "flow": "Default",
+   "kind": "popup",
+   "title": "",
+   "html": "<p>Pas de mail eventueel aan en verstuur deze naar de klant.</p><p>Hiermee is deze module afgerond.</p>",
+   "page": "93baa9bf-684d-40ec-9467-3a97e067c3eb"
+  }
+ ]
+}

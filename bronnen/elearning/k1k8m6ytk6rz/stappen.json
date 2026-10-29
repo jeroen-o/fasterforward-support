@@ -1,0 +1,69 @@
+{
+ "id": "k1k8m6ytk6rz",
+ "name": "eBlinqx Connect: dossier splitsen of samenvoegen",
+ "steps": [
+  {
+   "flow": "Default",
+   "kind": "popup",
+   "title": "",
+   "html": "<h2><strong>Dossiers splitsen of samenvoegen eBlinqx Connect</strong></h2>",
+   "page": "9d91c694-ca20-4019-94f1-fc67b9eeea7c"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Open het tabblad Export.</p>",
+   "page": "9d91c694-ca20-4019-94f1-fc67b9eeea7c"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Gegevens kunnen naar een nieuw aan te maken dossier of een bestaand dossier.</p>",
+   "page": "c3bd5bee-8fdd-46b2-a5ff-39ae9162c692"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Selecteer de persoon of personen die je wilt exporteren.</p>",
+   "page": "f3cccdf2-40c9-45d2-a842-709f55168ec4"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Selecteer de producten, diensten, taken, emails enz. die je wilt exporteren.</p><p><em>Let op: gegevens kun je niet kopiëren.</em></p>",
+   "page": "73bb3294-ad27-455c-a278-9b35ccf16437"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Bij een nieuw dossier wordt een nieuw dossier en nummer aangemaakt. Bij een bestaand dossier, maak je nog een keuze.</p>",
+   "page": "aab6730f-3174-40f2-b14f-bdb32196d4b3"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Met deze knop open je een zoekscherm.</p>",
+   "page": "6b7edec6-d7b7-4245-a735-dbf15e637a84"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Zoek hier het bestaande dossier.</p>",
+   "page": "cace30f6-c8b1-4cce-a3e4-6966defd48c8"
+  },
+  {
+   "flow": "Default",
+   "kind": "popup",
+   "title": "",
+   "html": "<h2><strong>Ready to Make an Impact?</strong></h2><p>Thanks for exploring! Ready to see how this can work for you? Our team is here to help you get started.</p>",
+   "page": "2e585d69-7239-4928-a349-6e2caa5d5563"
+  }
+ ]
+}

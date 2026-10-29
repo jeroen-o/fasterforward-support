@@ -1,0 +1,90 @@
+{
+ "id": "liudfpy4au2e",
+ "name": "Dashboard | eBlinqx Connect | Sep 7 12:05 PM",
+ "steps": [
+  {
+   "flow": "Default",
+   "kind": "popup",
+   "title": "",
+   "html": "<h2><strong>Aanmaken nieuw klantdossier</strong></h2>",
+   "page": "b4c3f037-fa63-44ab-8385-7fb100a1479d"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Klik op deze knop om een nieuw klantdossier aan te maken.</p>",
+   "page": "b4c3f037-fa63-44ab-8385-7fb100a1479d"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Maak hier de keuze tussen een <strong>Persoon</strong> of <strong>Organisatie</strong></p>",
+   "page": "47f9f118-2e31-49b1-a3ef-3845fee03d0f"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Maak hier de keuze op welke wijze de klant wordt aangesproken. Dit heeft effect op de standaard mails vanuit de workflow in het dossier. In het klantdossier kan dit alsnog worden aangepast.</p>",
+   "page": "5bd74bc4-f290-4156-8552-f63ae54fb079"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>De roze velden zijn minimaal verplicht te vullen, beginnend met de achternaam.</p>",
+   "page": "23821826-7004-41e9-a361-938483d59f31"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Dit veld laat het aantal resultaten zien, op basis van jouw invoer, in de bestaande database. Bij een resultaat &lt;10 is dit veld klikbaar.</p>",
+   "page": "465d7db5-7965-4b01-9f11-58ef2462da53"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Hiermee voorkom je ongewenste duplicaten van personen. Klik op één van deze personen, dan neem je deze gegevens over naar het nieuwe dossier.</p>",
+   "page": "abdbd267-41d4-4cb3-80d0-268c40d77522"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Postcode en huisnummer levert een check op en de adresgegevens worden automatisch gevuld.</p><p>Velden als telefoonnummer en email zijn niet verplicht, maar wij raden sterk aan om deze te vullen, zodat je later direct een mail kan verzenden of de klant vanuit het dossier kan bellen.</p>",
+   "page": "82806a43-9366-4175-a878-f8f77e3fc0a6"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Heeft de klant een partner? Vul deze dan direct in en aan.</p>",
+   "page": "3a92545f-0994-4365-92b8-1ced5f080d12"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Gegevens zijn eenvoudig te kopiëren.</p>",
+   "page": "b6b1ad12-7e77-4d8b-b2a4-38f27595273b"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Als alles naar wens is ingevuld, sla je hier de gegevens op. Hierna wordt het klantdossier aangemaakt.</p>",
+   "page": "b9a6a3d1-6bd2-4d40-937e-414c6b7bda80"
+  },
+  {
+   "flow": "Default",
+   "kind": "popup",
+   "title": "",
+   "html": "<h2><strong>Einde van deze module</strong></h2>",
+   "page": "22bb3211-d5d7-4299-8164-ea16be00e865"
+  }
+ ]
+}

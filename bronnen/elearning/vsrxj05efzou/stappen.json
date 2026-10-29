@@ -1,0 +1,62 @@
+{
+ "id": "vsrxj05efzou",
+ "name": "eBlinqx Connect: email koppelen aan een dossier",
+ "steps": [
+  {
+   "flow": "Default",
+   "kind": "popup",
+   "title": "",
+   "html": "<h2><strong>email koppelen aan een dossier</strong></h2>",
+   "page": "19e067ff-cf27-4741-9035-64c5ca7b51f1"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Klik op de mail die je wilt koppelen.</p><p><em>Een mail wordt automatisch gekoppeld aan een dossier als het emailadres van de afzender uniek voorkomt in een dossier.</em></p><p><em>Een mail wordt automatisch gekoppeld aan een dossier als het een reply is op een verzonden mail vanuit een dossier.</em></p>",
+   "page": "19e067ff-cf27-4741-9035-64c5ca7b51f1"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Met dit icoon start het proces om te koppelen.</p>",
+   "page": "cb5b33cd-9a58-4ac0-93eb-e4760f90dc16"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>eBlinqx Connect heeft geen dossiersuggesties en worden de laatste 10 bezochte dossiers getoond.</p><p>Met het koppelteken, koppel je de mail aan dit dossier.</p>",
+   "page": "20085add-4795-4b66-bc1e-de8768e2288f"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Het mapje geeft aan dat de mail is gekoppeld. Hover over het mapje om het dossiernummer en klantnaam te zien.</p>",
+   "page": "4c743a51-c5a9-4277-ac1c-c1b394f34692"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Met dit icoon kun je de mail herkoppelen aan een ander dossier.</p>",
+   "page": "4c743a51-c5a9-4277-ac1c-c1b394f34692"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Geen dossiersuggestie en niet het gewenste dossier bij de laatste 10?</p><p>Zoek dan handmatig een dossier.</p>",
+   "page": "9cc0215c-26f4-477a-8a95-3b4468006ae6"
+  },
+  {
+   "flow": "Default",
+   "kind": "popup",
+   "title": "",
+   "html": "<h2><strong>Ready to Make an Impact?</strong></h2><p>Thanks for exploring! Ready to see how this can work for you? Our team is here to help you get started.</p>",
+   "page": "4e55b1d0-e672-4853-8b22-e35771efbd0c"
+  }
+ ]
+}

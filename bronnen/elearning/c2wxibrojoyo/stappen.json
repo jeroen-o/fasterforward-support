@@ -1,0 +1,90 @@
+{
+ "id": "c2wxibrojoyo",
+ "name": "eBlinqx Connect: SMART",
+ "steps": [
+  {
+   "flow": "Default",
+   "kind": "popup",
+   "title": "",
+   "html": "<h2><strong>SMART-selecties in eBlinqx Connect</strong></h2><p>Ontdek hoe je met SMART-selecties razendsnel de juiste klantgroepen filtert en direct actie onderneemt.</p>",
+   "page": "0f87d77a-225a-462f-95ac-1d7f5d29e6b5"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Open het selectiemenu om een nieuwe SMART-selectie op te bouwen.</p>",
+   "page": "0f87d77a-225a-462f-95ac-1d7f5d29e6b5"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Start een nieuwe selectie — in dit voorbeeld selecteren 'Particuliere klanten met of zonder specifieke producten'. </p>",
+   "page": "9347ee66-2067-4e32-84b6-bb9b8234e550"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Kies \"Klant\" als basis voor je selectie, zodat je filtert op de juiste doelgroep.</p>",
+   "page": "573c919c-ef31-45c4-97a0-0a9e55693675"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Klanten met een specifiek product.</p>",
+   "page": "48c3aca8-a79d-4334-93a9-f93a769a5c28"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Welk product ontbreekt.</p>",
+   "page": "0f0575ba-a3af-4855-963f-cec4a66f9fa7"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Pas \"Filter selectie\" toe — eBlinqx Connect toont direct alleen de klanten die aan jouw criteria voldoen.</p>",
+   "page": "8c974d0d-960c-447a-af34-14d47c50bb1c"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Kies wat je met deze selectie wilt doen — acties, taken of communicatie zijn direct beschikbaar.</p>",
+   "page": "eb7d891f-8a7a-4569-8515-00615b455187"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Gebruik \"Maak taken\" om voor de hele selectie in één keer taken aan te maken — geen handwerk meer.</p>",
+   "page": "a3d41e98-df4e-4659-8b8d-05c78cc1dfd1"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Geef de taak een duidelijke omschrijving zodat je team direct weet wat er moet gebeuren.</p>",
+   "page": "8f0cd25a-86c2-4fd5-b432-29594e609db0"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Wijs de taak toe aan de juiste rol voor de beste opvolging.</p>",
+   "page": "5b851f92-6060-4008-98ee-334d7ec601fc"
+  },
+  {
+   "flow": "Default",
+   "kind": "popup",
+   "title": "",
+   "html": "<h2><strong>Klaar om slimmer te selecteren?</strong></h2><p>Met SMART-selecties in eBlinqx bereik je altijd de juiste klant op het juiste moment.</p>",
+   "page": "15475e90-002b-491f-82dc-24c0deb3a1b7"
+  }
+ ]
+}

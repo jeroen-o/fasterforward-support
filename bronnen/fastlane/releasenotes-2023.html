@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <title>Releasenotes - Fastlane</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="De nieuwste updates, functies en verbeteringen van Fastlane">
+<meta name="keywords" content="Fastlane Nationale Hypotheekbond nazorg releasenotes">
+<meta property="og:title" content="Fastlane, hypotheekadviessoftware die jou helpt bij het geven van een goed advies.">
+<meta property="og:description" content="Bekijk of hier alle nazorg en releasenotes">
+<meta property="og:type" content="website">
+<meta property="og:updated_time" content="1789020964">
+<meta name="twitter:title" content="Fastlane, hypotheekadviessoftware die jou helpt bij het geven van een goed advies.">
+<meta name="twitter:description" content="Bekijk of hier alle nazorg en releasenotes">
+        <link rel="shortcut icon" type="image/png" href="/assets/files/fastlane-favicon.png" data-href_alt="Fastlane Favicon">
+        <link rel="canonical" href="https://fastlane.hypotheekbond.nl/hoe-het-werkt/releasenotes/releasenotes-2023/">
+        <link rel="preload" href="/assets/fonts/be-vietnam-pro/be-vietnam-pro-extrabold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/assets/fonts/be-vietnam-pro/be-vietnam-pro-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/assets/fonts/be-vietnam-pro/be-vietnam-pro-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/assets/fonts/fira-sans/fira-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/assets/fonts/fira-sans/fira-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/assets/fonts/fira-sans/fira-sans-black.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/assets/fonts/fira-sans/fira-sans-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="stylesheet" href="/assets/css/fonts.css?v=1789020964">
+        <link rel="stylesheet" href="/assets/css/website.css?v=1789020964">
+        <link rel="stylesheet" href="/assets/css/page-1763077.css?v=1789020964">
+        <link rel="stylesheet" href="/assets/vendors/flatpickr/flatpickr.min.css">
+<script>
+    const LANGUAGE_CODE = 'nl';
+</script>
+<script src="/assets/vendors/jquery/jquery.min.js"></script>
+        
+        <script src="/js/script.js" defer data-domain="fastlane.hypotheekbond.nl"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+<script type="text/plain" async src="https://www.googletagmanager.com/gtag/js?id=G-QHFBJ0EDGT"></script>
+<script type="text/plain">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QHFBJ0EDGT');
+</script>
+        <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Over ons",
+            "item": "https://fastlane.hypotheekbond.nl"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Hoe het werkt",
+            "item": "https://fastlane.hypotheekbond.nl/hoe-het-werkt/orientatie/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Releasenotes",
+            "item": "https://fastlane.hypotheekbond.nl/hoe-het-werkt/releasenotes/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Releasenotes 2023",
+            "item": "https://fastlane.hypotheekbond.nl/hoe-het-werkt/releasenotes/releasenotes-2023/"
+        }
+    ]
+}
+</script>
+    </head>
+    <body>
+        
+        <div class="page" id="page-1763077">
+		<section class="block-120-1 dark" data-cookie="agree" data-sticky="sticky">
+			<div class="container">
+				<div class="row row-1">
+					<div class="col col-1">
+						<div class="box">
+							<div class="heading-6 light">Deze website maakt gebruik van cookies</div>
+							<div class="text-6 light">
+								<p>Deze website gebruikt cookies en verzamelt daarmee informatie over het gebruik van de website om deze te analyseren. Door hiernaast op akkoord te klikken, geef je aan akkoord te zijn met het gebruik van cookies en het verzamelen van informatie aan de hand daarvan door ons en door derden. <a href="https://www.hfbg.nl/privacy/" target="_blank">Cookiebeleid.</a></p>
+							</div>
+						</div>
+					</div>
+					<div class="col col-2">
+						<div>
+							<div class="button-wrapper">
+								<div class="button-1 dark" data-action="agree">Akkoord</div>
+								<div class="button-3 light" data-action="disagree">Niet akkoord</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<header class="block-77-1 light">
+			<div class="container container-1">
+				<div class="row row-2">
+					<div class="col col-2">
+						
+						<a class="icon-1 dark" href="https://verzekeringhypotheek.blinqx.tech/producten/eblinqx/compleet" target="_blank" data-color="fill">
+							<img src="/assets/files/eblinqx.png" alt="Eblinqx" srcset="/assets/files/eblinqx.480x0x0x100.png 480w, /assets/files/eblinqx.960x0x0x100.png 960w, /assets/files/eblinqx.1920x0x0x100.png 1920w, /assets/files/eblinqx.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px">
+						</a>
+						<a class="heading-5 dark not-xs not-sm" href="https://verzekeringhypotheek.blinqx.tech/producten/eblinqx/compleet" target="_blank">Ontdek eBlinqx</a>
+						
+						<a class="icon-1 dark" href="tel:0207582111" data-color="fill">
+							<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve" id="svg-pzpm19wku4vy0e89ciredfa0mf4fyb5q">
+<style type="text/css">
+	#svg-pzpm19wku4vy0e89ciredfa0mf4fyb5q .st0{fill:#95C11F;}
+</style>
+<g>
+	<path class="st0" d="M28.1,22c0-0.1-0.1-0.2-0.1-0.2c-0.1-0.1-0.1-0.1-0.2-0.1l-6.1-1.8c-0.1,0-0.2,0-0.3,0c-0.1,0-0.2,0.1-0.3,0.2
+		l-1.7,2.4c-2.3-0.7-4.4-2-6.1-3.7c-1.7-1.7-3-3.8-3.7-6.1l2.4-1.7c0.1-0.1,0.2-0.2,0.2-0.3c0-0.1,0-0.2,0-0.3l-1.8-6
+		c0-0.1-0.1-0.2-0.1-0.2C10.2,4,10.1,3.9,10,3.9C9.7,3.8,9.3,3.7,9,3.7c-0.2,0-0.4-0.1-0.6-0.1C7.7,3.6,7.1,3.7,6.5,4S5.4,4.5,5,5
+		c-0.4,0.4-0.8,1-1,1.5C3.7,7.1,3.6,7.7,3.6,8.3c0,5.3,2.1,10.4,5.9,14.2c3.8,3.8,8.9,5.9,14.2,5.9c0.6,0,1.2-0.1,1.8-0.4
+		c0.6-0.2,1.1-0.6,1.5-1c0.4-0.4,0.8-1,1-1.5c0.2-0.6,0.4-1.2,0.4-1.8c0-0.2,0-0.4,0-0.6C28.3,22.7,28.2,22.3,28.1,22z"/>
+</g>
+</svg>
+						</a>
+						<a class="heading-5 dark not-xs not-sm" href="tel:0207582111">Bel ons op 020 - 758 21 11</a>
+						
+						<a class="icon-1 dark" href="mailto:&#104;&#101;&#108;&#108;&#111;&#64;&#98;&#108;&#105;&#110;&#113;&#120;&#46;&#116;&#101;&#99;&#104;" data-color="fill">
+							<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve" id="svg-mp30dqm5sflvqt9darpm0gs1cjvif40p">
+<style type="text/css">
+	#svg-mp30dqm5sflvqt9darpm0gs1cjvif40p .st0{fill:#95C11F;}
+</style>
+<g>
+	<polygon class="st0" points="3.6,8.7 3.6,22.9 11.2,15.8 	"/>
+	<polygon class="st0" points="26.7,7.2 5.3,7.2 16,17.2 	"/>
+	<polygon class="st0" points="28.4,22.9 28.4,8.7 20.8,15.8 	"/>
+	<polygon class="st0" points="16,20.2 12.8,17.3 5.2,24.4 26.8,24.4 19.2,17.3 	"/>
+</g>
+</svg>
+						</a>			
+						<div class="heading-5 dark not-xs not-sm"><a href="mailto:&#104;&#101;&#108;&#108;&#111;&#64;&#98;&#108;&#105;&#110;&#113;&#120;&#46;&#116;&#101;&#99;&#104;" target="_blank">&#104;&#101;&#108;&#108;&#111;&#64;&#98;&#108;&#105;&#110;&#113;&#120;&#46;&#116;&#101;&#99;&#104;</a></div>	
+						
+						<a class="icon-1 dark" href="https://www.hypotheekbond.nl/inloggen?returnURL=%2Ftussenpersoon%2Ffastlane" target="_blank" data-color="fill">
+							<svg width="56" height="64" viewBox="0 0 56 64" fill="none" xmlns="http://www.w3.org/2000/svg" id="svg-vg6z1awc7k7rd9wz6qfvu0dy2e34flnq">
+<g clip-path="url(#clip0_804_2105)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 40L31 0V24H56L25 64V40H0ZM25 34V17.5367L12.2409 34H25ZM31 30V46.4633L43.7591 30H31Z" fill="#50B33B"/>
+</g>
+<defs>
+<clipPath id="svg-el-kgf3q776a66jp6hi6lqhhb9txripu846">
+<rect width="56" height="64" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+						</a>
+						<a class="heading-5 dark not-xs not-sm" href="https://www.hypotheekbond.nl/inloggen?returnURL=%2Ftussenpersoon%2Ffastlane" target="_blank">Inloggen</a>
+					
+					</div>
+				</div>
+			</div>
+		</header>
+		<header class="block-113-1 light" data-sticky="sticky" id="navbar">
+			<div class="container container-1">
+				<div class="row row-1">
+					<div class="col col-1 empty">
+					</div>
+					<div class="col col-2">
+						<div class="menu" data-menu_hamburger_size="md">
+							<nav class="menu-1 dark default-menu" data-levels="2">
+								<ul><li class="page-1007723"><a href="/">Over ons</a></li><li class="page-1007745"><a href="https://www.eventbrite.com/e/tickets-fastlane-advies-starttraining-1401301884659?aff=oddtdtcreator&keep_tld=1" target="_blank">Training</a></li><li class="has-submenu active page-1007736"><a href="/hoe-het-werkt/orientatie/">Hoe het werkt</a><div class="dropdown-menu-2 light dropdown-menu"><ul><li class="page-1007722"><a href="/hoe-het-werkt/orientatie/"><span class="icon"><img src="/assets/files/orientatie.50B33B.svg" alt="Fastlane-orientatie"></span><span class="text"><span class="name">Ori&euml;ntatie</span><span class="description">Ontdek de mogelijkheden</span></span></a></li><li class="page-1007724"><a href="/hoe-het-werkt/advies/"><span class="icon"><img src="/assets/files/advies.50B33B.svg" alt="Advies"></span><span class="text"><span class="name">Advies</span><span class="description">Start hier jouw advies</span></span></a></li><li class="page-1007738"><a href="/hoe-het-werkt/bemiddeling/"><span class="icon"><img src="/assets/files/bemiddeling.50B33B.svg" alt="Fastlane-bemiddeling"></span><span class="text"><span class="name">Bemiddeling</span><span class="description">Eenvoudige communicatie</span></span></a></li><li class="page-1007739"><a href="/hoe-het-werkt/nazorg/"><span class="icon"><img src="/assets/files/care.50B33B.svg" alt="Fastlane-nazorg"></span><span class="text"><span class="name">Nazorg</span><span class="description">Ondersteun je klanten</span></span></a></li><li class="active page-1071867"><a href="/hoe-het-werkt/releasenotes/"><span class="icon"><img src="/assets/files/beheer.50B33B.svg" alt="Beheer"></span><span class="text"><span class="name">Releasenotes</span><span class="description">De laatste updates</span></span></a></li><li class="page-1763075"><a href="/hoe-het-werkt/releasenotes-iframe/"><span class="icon"><img src="/assets/files/beheer.50B33B.svg" alt="Beheer"></span><span class="text"><span class="name">Releasenotes iframe</span><span class="description">De laatste updates</span></span></a></li></ul></div></li></ul>
+								<div class="button-wrapper not-md not-xs not-sm">
+									<a class="button-1 dark" href="/over-ons/demo-aanvragen/" target="popin"> Demo aanvragen</a>
+								</div>
+							</nav>
+							<div class="control-1 dark hamburger-menu-handler" data-color="fill"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="svg-a802hlz8lhzkl1si92poy1qlqkbfr6c5"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></div>
+							<nav class="hamburger-menu-4 dark hamburger-menu" data-levels="2">
+								<div class="control-1 light hamburger-menu-close" data-color="fill"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="svg-gr8uf1q29pbz7a31591af6p9p925ye9q"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></div>
+								<div class="container container-11">
+									<div class="row row-11">
+										<div class="col col-11">
+											<div class="media-1 light" id="media-1-jwfpuijm">
+												<img src="/assets/files/fastlane-logo.svg" alt="Fastlane-logo">
+											</div>
+										</div>
+									</div>
+									<div class="row row-12">
+										<div class="col col-12">
+											<div class="items">
+												<ul><li class="page-1007723"><a href="/">Over ons</a></li><li class="page-1007745"><a href="https://www.eventbrite.com/e/tickets-fastlane-advies-starttraining-1401301884659?aff=oddtdtcreator&keep_tld=1" target="_blank">Training</a></li><li class="has-submenu active page-1007736"><a href="/hoe-het-werkt/orientatie/">Hoe het werkt</a><ul><li class="page-1007722"><a href="/hoe-het-werkt/orientatie/">Ori&euml;ntatie</a></li><li class="page-1007724"><a href="/hoe-het-werkt/advies/">Advies</a></li><li class="page-1007738"><a href="/hoe-het-werkt/bemiddeling/">Bemiddeling</a></li><li class="page-1007739"><a href="/hoe-het-werkt/nazorg/">Nazorg</a></li><li class="active page-1071867"><a href="/hoe-het-werkt/releasenotes/">Releasenotes</a></li><li class="page-1763075"><a href="/hoe-het-werkt/releasenotes-iframe/">Releasenotes iframe</a></li></ul></li></ul>
+											</div>
+										</div>
+										<div class="col col-13">
+											<div class="box-11">
+												<div class="text-6 light">
+													<p><a href="mailto:&#104;&#101;&#108;&#108;&#111;&#64;&#98;&#108;&#105;&#110;&#113;&#120;&#46;&#116;&#101;&#99;&#104;" target="_blank">&#104;&#101;&#108;&#108;&#111;&#64;&#98;&#108;&#105;&#110;&#113;&#120;&#46;&#116;&#101;&#99;&#104;</a><br><a href="https://zakelijk.hypotheekbond.nl/" target="_blank">www.hypotheekbond.nl</a><br><a href="tel:0207582111" data-ol-has-click-handler="">020 758 21 11</a></p>
+												</div>
+												<a class="media-1 light" id="media-1-teqynaep" href="https://zakelijk.hypotheekbond.nl/" target="_blank">
+													<img src="/assets/files/logo-hypotheekbond.svg" alt="Hypotheekbond logo wit">
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<section class="block-92-4 light">
+			<div class="container container-1">
+				<div class="row row-1">
+					<div class="col col-4">
+						<div class="heading-1 dark">Releasenotes 2023</div>
+						<div class="text-3 dark">
+							<p>Hier informeren we jou over de nieuwste updates, functies en verbeteringen die we aan eBlinqx Hypotheekadvies hebben toegevoegd. Ons ontwikkelteam werkt constant aan het optimaliseren van eBlinqx Hypotheekadvies om jou een superieure gebruikerservaring te bieden. Of je nu al langer eBlinqx Hypotheekadvies gebruikt of net kennismaakt met ons product, hier vind je alle essentiële informatie over de recente wijzigingen.</p>
+						
+						</div>
+					</div>
+					<div class="col col-1">
+						<div class="accordion">
+							<article>
+								<div class="box listener empty">
+								</div>
+							</article>
+							<article>
+								<div class="handler-1 dark handler">December 2023</div>
+								<div class="box listener">
+									<div class="row row-2">
+										<div class="col col-3">
+											<div class="text-3 dark">
+												<p><strong>Onderstaand de updates die wij in de maand december hebben doorgevoerd.</strong></p>
+												<p></p>
+												<p><img src="/assets/files/releasenotes-2.png" style="vertical-align: baseline;" alt="Releasenotes (2)" srcset="/assets/files/releasenotes-2.480x0x0x100.png 480w, /assets/files/releasenotes-2.960x0x0x100.png 960w, /assets/files/releasenotes-2.1920x0x0x100.png 1920w, /assets/files/releasenotes-2.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"><strong>IT-17145: Wij hebben de link naar de releasenotes toegevoegd aan de eBlinqx Hypotheekadvies.</strong></p>
+												<p></p>
+												<p></p>
+												<p><strong><img src="/assets/files/voorwaarden.png" style="vertical-align: baseline;" alt="Voorwaarden" srcset="/assets/files/voorwaarden.480x0x0x100.png 480w, /assets/files/voorwaarden.960x0x0x100.png 960w, /assets/files/voorwaarden.1920x0x0x100.png 1920w, /assets/files/voorwaarden.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"></strong><strong>De voorwaarden zijn nu gemakkelijk bereikbaar via het dropdown menu.</strong></p>
+												<p><strong></strong></p>
+												<p><strong><img src="/assets/files/woonquotes-2024.png" style="vertical-align: baseline;" alt="Woonquotes 2024" srcset="/assets/files/woonquotes-2024.480x0x0x100.png 480w, /assets/files/woonquotes-2024.960x0x0x100.png 960w, /assets/files/woonquotes-2024.1920x0x0x100.png 1920w, /assets/files/woonquotes-2024.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"></strong><strong>De financieringslasttabellen voor 2024 staan live.</strong></p>
+												<p><strong><img src="/assets/files/studieschuld.png" style="vertical-align: baseline;" alt="Studieschuld" srcset="/assets/files/studieschuld.480x0x0x100.png 480w, /assets/files/studieschuld.960x0x0x100.png 960w, /assets/files/studieschuld.1920x0x0x100.png 1920w, /assets/files/studieschuld.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"></strong><strong>IT-16626: DUO Studieschuld op basis van gebruteerde verschuldigde maandlast</strong><br>Er wordt vanaf de rekendatum 01-01-2024 anders omgegaan met de DUO-studieschuld. De daadwerkelijk verschuldigde maandlast is nu leidend in plaats van de oorspronkelijke studieschuld. Bij gelijkblijvende rentes zal dit leiden tot het minder zwaar meewegen van de studieschuld wanneer extra aflossingen worden gedaan. Het termijnbedrag voor de studieschuld wordt gebruteerd.</p>
+												<p><img src="/assets/files/screenshot-2023-12-03-20-21-43.png" style="vertical-align: baseline;" alt="Screenshot 2023 12 03 20.21.43" srcset="/assets/files/screenshot-2023-12-03-20-21-43.480x0x0x100.png 480w, /assets/files/screenshot-2023-12-03-20-21-43.960x0x0x100.png 960w, /assets/files/screenshot-2023-12-03-20-21-43.1920x0x0x100.png 1920w, /assets/files/screenshot-2023-12-03-20-21-43.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"><strong>IT-16633: TRHK: Pulldownlijst met energielabels aangepast<br></strong>De bestaande lijst met de energielabels is vervangen door de nieuwe lijst per de rekendatum 01.01.2024</p>
+												<p><img src="/assets/files/energielabelb.png" style="vertical-align: baseline;" alt="EnergielabelB" srcset="/assets/files/energielabelb.480x0x0x100.png 480w, /assets/files/energielabelb.960x0x0x100.png 960w, /assets/files/energielabelb.1920x0x0x100.png 1920w, /assets/files/energielabelb.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"></p> <table> <tbody> <tr> <td>
+												<p><strong>Label</strong></p> </td> <td>
+												<p><strong>Extra bedrag</strong></p> </td> </tr> <tr> <td>
+												<p>G</p> </td> <td>
+												<p>€ 0</p> </td> </tr> <tr> <td>
+												<p><span style="background-color: #ffffff;">F</span></p> </td> <td>
+												<p><span style="background-color: #ffffff;">€ 0</span></p> </td> </tr> <tr> <td>
+												<p>E</p> </td> <td>
+												<p>€ 0</p> </td> </tr> <tr> <td>
+												<p>D</p> </td> <td>
+												<p>€ 5.000</p> </td> </tr> <tr> <td>
+												<p>C</p> </td> <td>
+												<p>€ 5.000</p> </td> </tr> <tr> <td>
+												<p>B</p> </td> <td>
+												<p>€ 10.000</p> </td> </tr> <tr> <td>
+												<p>A</p> </td> <td>
+												<p>€ 10.000</p> </td> </tr> <tr> <td>
+												<p>A+</p> </td> <td>
+												<p>€ 20.000</p> </td> </tr> <tr> <td>
+												<p>A++</p> </td> <td>
+												<p>€ 20.000</p> </td> </tr> <tr> <td>
+												<p>A+++</p> </td> <td>
+												<p>€ 30.000</p> </td> </tr> <tr> <td>
+												<p>A++++</p> </td> <td>
+												<p>€ 40.000</p> </td> </tr> <tr> <td>
+												<p>A++++ met garantie</p> </td> <td>
+												<p>€ 50.000</p> </td> </tr> </tbody> </table>
+												<p><strong>IT-16</strong><strong>623: Extra hypotheek afhankelijk van het energielabel van de woning</strong><br>Een aanbieder van hypothecair krediet kan bij het aangaan van een hypothecair krediet de bedragen die behoren bij het energielabel van de woning zoals opgenomen in bovenstaand tabel buiten beschouwing laten bij het vaststellen van de financieringslast. Bij deze regeling is de minimale inkomensgrens vervallen.</p>
+												<p><img src="/assets/files/energielabelc.png" style="vertical-align: baseline;" alt="EnergielabelC" srcset="/assets/files/energielabelc.480x0x0x100.png 480w, /assets/files/energielabelc.960x0x0x100.png 960w, /assets/files/energielabelc.1920x0x0x100.png 1920w, /assets/files/energielabelc.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"></p> <table> <tbody> <tr> <td>
+												<p><strong>Label</strong></p> </td> <td>
+												<p><strong>Extra bedrag</strong></p> </td> </tr> <tr> <td>
+												<p>Geen energielabel</p> </td> <td>
+												<p>€ 10.000</p> </td> </tr> <tr> <td>
+												<p>Geen geldig energielabel</p> </td> <td>
+												<p>€ 10.000</p> </td> </tr> <tr> <td>
+												<p>G</p> </td> <td>
+												<p>€ 20.000</p> </td> </tr> <tr> <td>
+												<p>F</p> </td> <td>
+												<p>€ 20.000</p> </td> </tr> <tr> <td>
+												<p>E</p> </td> <td>
+												<p>€ 20.000</p> </td> </tr> <tr> <td>
+												<p>D</p> </td> <td>
+												<p>€ 15.000</p> </td> </tr> <tr> <td>
+												<p>C</p> </td> <td>
+												<p>€ 15.000</p> </td> </tr> <tr> <td>
+												<p>B</p> </td> <td>
+												<p>€ 10.000</p> </td> </tr> <tr> <td>
+												<p>A</p> </td> <td>
+												<p>€ 10.000</p> </td> </tr> <tr> <td>
+												<p>A+</p> </td> <td>
+												<p>€ 10.000</p> </td> </tr> <tr> <td>
+												<p>A++</p> </td> <td>
+												<p>€ 10.000</p> </td> </tr> <tr> <td>
+												<p>A+++</p> </td> <td>
+												<p>€ 10.000</p> </td> </tr> <tr> <td>
+												<p>A++++</p> </td> <td>
+												<p>€ 10.000</p> </td> </tr> <tr> <td>
+												<p>A++++ met garantie</p> </td> <td>
+												<p>€ 10.000</p> </td> </tr> </tbody> </table>
+												<p><strong>IT-16625: Extra hypotheekbedrag bij energiebesparende maatregelen | Verduurzamen<br></strong>Voor het treffen van energiebesparende voorzieningen in een woning worden de bovenstaande bedragen, behorend bij het energielabel van de woning, buiten beschouwing gelaten bij het vaststellen van de financieringslast. De minimale inkomensgrens is vervallen.</p>
+												<p></p>
+												<p><img src="/assets/files/screenshot-2023-12-03-20-55-20-1.png" style="vertical-align: baseline;" alt="Screenshot 2023 12 03 20.55.20 (1)" srcset="/assets/files/screenshot-2023-12-03-20-55-20-1.480x0x0x100.png 480w, /assets/files/screenshot-2023-12-03-20-55-20-1.960x0x0x100.png 960w, /assets/files/screenshot-2023-12-03-20-55-20-1.1920x0x0x100.png 1920w, /assets/files/screenshot-2023-12-03-20-55-20-1.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"><strong>IT-16622: Alleenstaande consument met toetsinkomen vanaf € 28.000<br></strong>Indien het hypothecair krediet bedoeld is voor een consument die alleenstaand is en een toetsinkomen heeft dat hoger is dan € 28.000 wordt € 16.000 buiten beschouwing gelaten bij het vaststellen van de financieringslast.</p>
+												<p></p>
+												<p></p>
+												<p></p>
+												<p></p>
+												<p><strong></strong></p>
+												<p><strong></strong></p>
+												<p></p>
+												<p></p>
+											
+											</div>
+										</div>
+									</div>
+								</div>
+							</article>
+							<article>
+								<div class="handler-1 dark handler">November 2023</div>
+								<div class="box listener">
+									<div class="row row-2">
+										<div class="col col-3">
+											<div class="text-3 dark">
+												<p><img data-size="480x480" src="/assets/files/werkgeversregelingen.png" style="vertical-align: baseline;" alt="Werkgeversregelingen" srcset="/assets/files/werkgeversregelingen.480x0x0x100.png 480w, /assets/files/werkgeversregelingen.960x0x0x100.png 960w, /assets/files/werkgeversregelingen.1920x0x0x100.png 1920w, /assets/files/werkgeversregelingen.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"><strong>🚀 'Werkgeversregelingen'!</strong><br>Vandaag introduceren we met trots 'Werkgeversregelingen', het nieuwste hoofdstuk in onze inventarisatietool. Dit is de volgende stap in het optimaliseren van jouw hypotheekadviesproces en het maakt het beoordelen van financi&euml;le situaties nog completer en effici&euml;nter.<br><br>Met 'Werkgeversregelingen' kun je nu de volgende belangrijke aspecten in kaart brengen:<br>🌟 Pensioenregeling<br>🌟 WULBZ<br>🌟 Inkomensverzekeringen via de werkgever<br>🌟 Auto van de zaak<br>🌟 Fiets van de zaak<br><br>Dit betekent dat jouw hypotheekadvies nu rekening kan houden met een nog breder scala aan financi&euml;le aspecten, wat leidt tot nog beter onderbouwde beslissingen voor jouw klanten.</p>
+												<p></p>
+												<p></p>
+												<p><img data-size="480x480" src="/assets/files/gebruteerde-toetslast-1.png" style="vertical-align: baseline;" alt="Gebruteerde toetslast (1)" srcset="/assets/files/gebruteerde-toetslast-1.480x0x0x100.png 480w, /assets/files/gebruteerde-toetslast-1.960x0x0x100.png 960w, /assets/files/gebruteerde-toetslast-1.1920x0x0x100.png 1920w, /assets/files/gebruteerde-toetslast-1.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"></p>
+												<p><strong>Gebruteerde toetslast<br></strong>Indien de resterende renteaftrek van een leningdeel korter is dan 10 jaar, dient te toetslast gebruteerd te worden. Dit doen we door de woonquote van box 1 te delen door de woonquote van box 3 en te vermenigvuldigen met de toetslast.</p>
+												<p></p>
+												<p></p>
+												<p><img data-size="480x480" src="/assets/files/woonquote-box-3.png" style="vertical-align: baseline;" alt="Woonquote Box 3" srcset="/assets/files/woonquote-box-3.480x0x0x100.png 480w, /assets/files/woonquote-box-3.960x0x0x100.png 960w, /assets/files/woonquote-box-3.1920x0x0x100.png 1920w, /assets/files/woonquote-box-3.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"><strong>Woonquote box 3<br></strong>Naast de woonquote van box 1 vermelden wij nu ook de woonquote van box 3 en het bruteringspercentage. Dit bruteringspercentage gebruiken we indien de resterende renteaftrek korter is dan 120 maanden.</p>
+												<p><img data-size="480x480" src="/assets/files/lx.png" style="vertical-align: baseline;" alt="LX" srcset="/assets/files/lx.480x0x0x100.png 480w, /assets/files/lx.960x0x0x100.png 960w, /assets/files/lx.1920x0x0x100.png 1920w, /assets/files/lx.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"><strong>LX-aanvragen via HDN</strong><br>Vanaf deze maand in het mogelijk om rechtstreeks een overlijdensrisicoverzekering en of een woonlastenbeschermer aan te vragen bij de aanbieder van jouw keuze via het HDN-netwerk.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</article>
+							<article>
+								<div class="handler-1 dark handler">Oktober 2023</div>
+								<div class="box listener">
+									<div class="row row-2">
+										<div class="col col-3">
+											<div class="text-3 dark">
+												<p class="heading-3 dark"><strong>Onderstaand de updates die wij in de maand oktober hebben doorgevoerd.</strong></p>
+												<p><img src="/assets/files/vergelijk-geldverstrekkers.png" style="vertical-align: baseline;" alt="Vergelijk geldverstrekkers" srcset="/assets/files/vergelijk-geldverstrekkers.480x0x0x100.png 480w, /assets/files/vergelijk-geldverstrekkers.960x0x0x100.png 960w, /assets/files/vergelijk-geldverstrekkers.1920x0x0x100.png 1920w, /assets/files/vergelijk-geldverstrekkers.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"><strong>IT: 16341:</strong> Het vergelijken van geldverstrekkers is nu te vinden in het gedeelte 'Hypotheek samenstellen', in plaats van in het menu aan de linkerkant van het scherm.</p>
+												<p></p>
+												<p><strong><img src="/assets/files/vergelijk-verzekeringen-1.png" style="vertical-align: baseline;" alt="Vergelijk verzekeringen (1)" srcset="/assets/files/vergelijk-verzekeringen-1.480x0x0x100.png 480w, /assets/files/vergelijk-verzekeringen-1.960x0x0x100.png 960w, /assets/files/vergelijk-verzekeringen-1.1920x0x0x100.png 1920w, /assets/files/vergelijk-verzekeringen-1.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px">IT: 16341:</strong> Het vergelijken van verzekeringen is nu te vinden in het gedeelte 'Verzekeringen samenstellen', in plaats van in het menu aan de linkerkant van het scherm.</p>
+												<p></p>
+												<p><strong><img src="/assets/files/verzekeringen-samenstellen-1.png" style="vertical-align: baseline;" alt="Verzekeringen samenstellen (1)" srcset="/assets/files/verzekeringen-samenstellen-1.480x0x0x100.png 480w, /assets/files/verzekeringen-samenstellen-1.960x0x0x100.png 960w, /assets/files/verzekeringen-samenstellen-1.1920x0x0x100.png 1920w, /assets/files/verzekeringen-samenstellen-1.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px">IT-16341:</strong> De titel van het hoofdstuk over verzekeringen is aangepast van "Verzekeringen" naar "Verzekeringen samenstellen".</p>
+												<p></p>
+												<p><img src="/assets/files/verzekeringen-lx.png" style="vertical-align: baseline;" alt="Verzekeringen LX" srcset="/assets/files/verzekeringen-lx.480x0x0x100.png 480w, /assets/files/verzekeringen-lx.960x0x0x100.png 960w, /assets/files/verzekeringen-lx.1920x0x0x100.png 1920w, /assets/files/verzekeringen-lx.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"><strong>IT-16341:</strong> We hebben het menu bij het onderdeel 'Verzekeringen aanvragen' uitgebreid met een nieuwe sectie voor verzekeringen die je individueel kunt aanvragen.</p>
+												<p><img src="/assets/files/screenshot-2023-10-16-10-27-49.png" style="vertical-align: baseline;" alt="Screenshot 2023 10 16 10.27.49" srcset="/assets/files/screenshot-2023-10-16-10-27-49.480x0x0x100.png 480w, /assets/files/screenshot-2023-10-16-10-27-49.960x0x0x100.png 960w, /assets/files/screenshot-2023-10-16-10-27-49.1920x0x0x100.png 1920w, /assets/files/screenshot-2023-10-16-10-27-49.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"><strong>I</strong><strong>T-13290:</strong> De financieringslast van een hypothecair krediet mag niet hoger zijn dan de toegestane financieringslast. Bij een annuïtair of lineair leningdeel is de resterende looptijd het uitgangspunt. Bij de overige aflosvormen is dat 30 jaar, indien het op basis van de persoonlijke omstandigheden van de consument verantwoord is. In geval van een leningdeel met een verpand opbouwproduct mag ook worden gerekend met de annuitaire last van de netto schuld, rekening houdend met de resterende looptijd.<br>Binnen de eBlinqx Hypotheekadvies kun je vanaf vandaag toetsen op basis van de volledige of resterende looptijd en op basis van de bruto of netto schuld.</p>
+												<p><img src="/assets/files/finly-2.png" style="vertical-align: baseline;" alt="Finly (2)" srcset="/assets/files/finly-2.480x0x0x100.png 480w, /assets/files/finly-2.960x0x0x100.png 960w, /assets/files/finly-2.1920x0x0x100.png 1920w, /assets/files/finly-2.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px">Finly is binnen eBlinqx Hypotheekadvies ingeregeld als serviceprovider. Hierdoor is het mogelijk om jouw hypotheekaanvragen via het HDN-platform naar Finly te sturen.</p>
+												<p></p>
+												<p><img src="/assets/files/screenshot-2023-10-16-11-13-11-1.png" style="vertical-align: baseline;" alt="Screenshot 2023 10 16 11.13.11 (1)" srcset="/assets/files/screenshot-2023-10-16-11-13-11-1.480x0x0x100.png 480w, /assets/files/screenshot-2023-10-16-11-13-11-1.960x0x0x100.png 960w, /assets/files/screenshot-2023-10-16-11-13-11-1.1920x0x0x100.png 1920w, /assets/files/screenshot-2023-10-16-11-13-11-1.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"><strong>IT-15912: </strong>Naast nieuwe features wil eBlinqx Hypotheekadvies ook user interface verbeteringen doorvoeren. Vandaag de knop 'Nieuwe berekening'. Hiermee wordt het voor de adviseurs makkelijker om een nieuwe berekening aan te maken en te switchen tussen bestaande berekeningen.</p>
+												<h1 class="heading-2 has-sub has-sub has-sub has-sub has-sub has-sub has-sub has-sub has-sub has-sub has-sub empty empty empty empty empty empty empty empty empty empty empty empty empty empty dark"></h1>
+												<h2 class="heading-2 has-sub has-sub empty empty empty empty empty dark"><img src="/assets/files/energielabel-bij-nieuwbouw.png" style="vertical-align: baseline;" alt="Energielabel bij nieuwbouw" srcset="/assets/files/energielabel-bij-nieuwbouw.480x0x0x100.png 480w, /assets/files/energielabel-bij-nieuwbouw.960x0x0x100.png 960w, /assets/files/energielabel-bij-nieuwbouw.1920x0x0x100.png 1920w, /assets/files/energielabel-bij-nieuwbouw.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"></h2>
+												<p><strong>IT-15556:</strong> Het is nu mogelijk om een energielabel te selecteren en op te slaan bij een nieuwbouwwoning, zelfs als de postcode van het onderpand nog niet is vastgesteld.&nbsp;</p>
+												<p></p>
+												<p><strong><img src="/assets/files/screenshot-2023-10-11-18-43-20.png" style="vertical-align: baseline;" alt="Screenshot 2023 10 11 18.43.20" srcset="/assets/files/screenshot-2023-10-11-18-43-20.480x0x0x100.png 480w, /assets/files/screenshot-2023-10-11-18-43-20.960x0x0x100.png 960w, /assets/files/screenshot-2023-10-11-18-43-20.1920x0x0x100.png 1920w, /assets/files/screenshot-2023-10-11-18-43-20.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px">IT-13837</strong>: Er is een nieuwe doelstelling toegevoegd aan de eBlinqx Hypotheekadvies: "Mijn overwaarde opnemen." Daarnaast kun je nu aangeven waarvoor je het geld van deze Box-3 financiering wilt gebruiken.</p>
+												<p><img src="/assets/files/engelse-samenvatting.png" style="vertical-align: baseline;" alt="Engelse samenvatting" srcset="/assets/files/engelse-samenvatting.480x0x0x100.png 480w, /assets/files/engelse-samenvatting.960x0x0x100.png 960w, /assets/files/engelse-samenvatting.1920x0x0x100.png 1920w, /assets/files/engelse-samenvatting.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"><strong>IT-11445</strong>: Het aantal beschikbare rapporten in de eBlinqx Hypotheekadvies is uitgebreid met een Engelstalige samenvatting. Dit is vooral handig voor expats die overwegen een huis in Nederland te kopen.</p>
+												<p></p>
+												<p><strong><img src="/assets/files/screenshot-2023-10-11-18-59-05.png" style="vertical-align: baseline;" alt="Screenshot 2023 10 11 18.59.05" srcset="/assets/files/screenshot-2023-10-11-18-59-05.480x0x0x100.png 480w, /assets/files/screenshot-2023-10-11-18-59-05.960x0x0x100.png 960w, /assets/files/screenshot-2023-10-11-18-59-05.1920x0x0x100.png 1920w, /assets/files/screenshot-2023-10-11-18-59-05.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px">IT-15523:</strong> Het inkomstenformulier biedt de optie om aan te geven of je het inkomen van de ondernemer wilt baseren op de inkomsten van de laatste drie jaar of op de Inkomensverklaring ondernemer. Deze keuze wordt nu ingevuld op het aanvraagformulier van HDN.</p>
+												<p></p>
+												<p><strong><img src="/assets/files/ebv-toepassen.png" style="vertical-align: baseline;" alt="EBV toepassen" srcset="/assets/files/ebv-toepassen.480x0x0x100.png 480w, /assets/files/ebv-toepassen.960x0x0x100.png 960w, /assets/files/ebv-toepassen.1920x0x0x100.png 1920w, /assets/files/ebv-toepassen.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px">IT-15953:</strong> Een aanbieder van hypothecaire leningen kan ervoor kiezen om bij het afsluiten van een nieuwe hypotheek of bij het verhogen van een bestaande hypotheek voor energiebesparende aanpassingen aan een huis, een deel van het hypotheekbedrag, niet mee te rekenen bij het berekenen van de maandelijkse financiële lasten. Deze 'vrijstelling' kan worden toegevoegd aan een specifiek leningdeel of omgeslagen worden over alle leningdelen.</p>
+												<p></p>
+												<p><strong><img src="/assets/files/periode-inkomen.png" style="vertical-align: baseline;" alt="Periode inkomen" srcset="/assets/files/periode-inkomen.480x0x0x100.png 480w, /assets/files/periode-inkomen.960x0x0x100.png 960w, /assets/files/periode-inkomen.1920x0x0x100.png 1920w, /assets/files/periode-inkomen.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px">IT-15744:</strong> Bij het onderdeel 'Inkomen' in het inventarisatiedeel, kun je bij inkomen uit loondienst naast het jaarinkomen nu ook het maandinkomen van jouw klant invullen.</p>
+												<p></p>
+												<p></p>
+												<p></p>
+												<p></p>
+												<p></p>
+												<p></p>
+											
+											</div>
+										</div>
+									</div>
+								</div>
+							</article>
+							<article>
+								<div class="handler-1 dark handler">September 2023</div>
+								<div class="box listener">
+									<div class="row row-2">
+										<div class="col col-3">
+											<div class="text-3 dark">
+												<h2 class="heading-2 has-sub has-sub empty empty empty empty empty empty dark"></h2>
+												<p><img src="/assets/files/inkomen.png" style="vertical-align: baseline;" alt="Inkomen" srcset="/assets/files/inkomen.480x0x0x100.png 480w, /assets/files/inkomen.960x0x0x100.png 960w, /assets/files/inkomen.1920x0x0x100.png 1920w, /assets/files/inkomen.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"><strong>IT-15506:</strong> In het deel waar we de inkomensgegevens verzamelen, hebben we een teller toegevoegd. Hiermee kun je zien hoeveel verschillende bronnen van inkomen er zijn toegevoegd.</p>
+												<p><img src="/assets/files/doelstelling-1.png" style="vertical-align: baseline;" alt="Doelstelling" srcset="/assets/files/doelstelling-1.480x0x0x100.png 480w, /assets/files/doelstelling-1.960x0x0x100.png 960w, /assets/files/doelstelling-1.1920x0x0x100.png 1920w, /assets/files/doelstelling-1.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"><strong>IT-15621</strong>: Als er nog geen dossier is aangemaakt, starten we in Fastlane Orientatie met de doelstelling 'Een bestaande woning kopen'. De mogelijkheid om de 'Huidige situatie te evalueren' is niet meer beschikbaar, omdat er op dat moment nog geen bestaande situatie is om te beoordelen.<img src="/assets/files/huidige-woning.png" style="vertical-align: baseline;" alt="Huidige woning" srcset="/assets/files/huidige-woning.480x0x0x100.png 480w, /assets/files/huidige-woning.960x0x0x100.png 960w, /assets/files/huidige-woning.1920x0x0x100.png 1920w, /assets/files/huidige-woning.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"><strong>IT-15529: </strong>We hebben het adviesrapport uitgebreid met informatie over de woonoppervlakte, de verkoopprijs van de huidige woning.</p>
+												<p><strong></strong></p>
+												<p><strong></strong></p>
+												<p><strong></strong></p>
+												<p><strong></strong></p>
+												<p><strong></strong></p>
+												<p><strong><img src="/assets/files/startdatum-onderneming.png" style="vertical-align: baseline;" alt="Startdatum onderneming" srcset="/assets/files/startdatum-onderneming.480x0x0x100.png 480w, /assets/files/startdatum-onderneming.960x0x0x100.png 960w, /assets/files/startdatum-onderneming.1920x0x0x100.png 1920w, /assets/files/startdatum-onderneming.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"></strong><strong>IT-15311:</strong> Vanaf nu nemen we de datum, waarop een bedrijf begonnen is, mee wanneer we het totale inkomen berekenen.</p>
+												<p><strong><img src="/assets/files/energielabel-1.png" style="vertical-align: baseline;" alt="Energielabel (1)" srcset="/assets/files/energielabel-1.480x0x0x100.png 480w, /assets/files/energielabel-1.960x0x0x100.png 960w, /assets/files/energielabel-1.1920x0x0x100.png 1920w, /assets/files/energielabel-1.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px">iT: 14914: </strong>Als we een bestaand dossier in de eBlinqx Hypotheekadvies laden, voegen we standaard de doelstelling 'Huidige situatie evalueren' toe. Als de adviseur deze doelstelling wijzigt naar bijvoorbeeld 'Een bestaande woning kopen', dan verwijderen we de huidige gegevens over het onderpand en vervangen we deze door de nieuwe gegevens, inclusief het nieuwe energielabel.</p>
+												<p><img src="/assets/files/toetslast-1.png" style="vertical-align: baseline;" alt="Toetslast (1)" srcset="/assets/files/toetslast-1.480x0x0x100.png 480w, /assets/files/toetslast-1.960x0x0x100.png 960w, /assets/files/toetslast-1.1920x0x0x100.png 1920w, /assets/files/toetslast-1.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"><strong>IT-15432: </strong>Vanaf vandaag zullen we in de adviesmotivatie de teksten bij de toetsmomenten, voorzien van de bijbehorende bedragen voor de verantwoorde financieringslast en de verantwoorde hypotheekhoogte.</p>
+												<p><img src="/assets/files/nhg-kosten.png" style="vertical-align: baseline;" alt="NHG kosten" srcset="/assets/files/nhg-kosten.480x0x0x100.png 480w, /assets/files/nhg-kosten.960x0x0x100.png 960w, /assets/files/nhg-kosten.1920x0x0x100.png 1920w, /assets/files/nhg-kosten.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"><strong>IT-15586: </strong>Vanwege een fout in de applicatie werden de NHG-kosten niet meegerekend in de totale financieringskosten en financieringsbehoefte, zowel in de applicatie zelf als in de rapporten. Dit is nu gerepareerd.</p>
+												<p></p>
+												<p><img src="/assets/files/fiscaal-regime-1.png" style="vertical-align: baseline;" alt="Fiscaal regime (1)" srcset="/assets/files/fiscaal-regime-1.480x0x0x100.png 480w, /assets/files/fiscaal-regime-1.960x0x0x100.png 960w, /assets/files/fiscaal-regime-1.1920x0x0x100.png 1920w, /assets/files/fiscaal-regime-1.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"><strong>IT-15472: </strong>Bij het overzetten van een bestaande hypotheek vanuit PortefeuilleSignalen naar de eBlinqx Hypotheekadvies, weten we of het leningdeel is afgesloten vóór of na 1 januari 2013. Ook hebben we de einddatum van de renteaftrek vanuit PortefeuilleSignalen. We gaan deze informatie koppelen aan de juiste velden in de eBlinqx Hypotheekadvies-berekening. Als het bestaande leningdeel als een box 3 lening wordt beschouwd, zullen we het veld 'Fiscaal regime' invullen met het antwoord 'Fiscaal regime niet van toepassing'. Daarnaast willen we nieuwe leningdelen in de eBlinqx Hypotheekadvies automatisch voorinvullen met: Fiscaal regime: → Vanaf 1 januari 2013 en Aftrekbaar: → 30 jaar of volgens de looptijd.<strong></strong></p>
+												<p><strong><img src="/assets/files/screenshot-2023-09-08-16-00-41.png" style="vertical-align: baseline;" alt="Screenshot 2023 09 08 16.00.41" srcset="/assets/files/screenshot-2023-09-08-16-00-41.480x0x0x100.png 480w, /assets/files/screenshot-2023-09-08-16-00-41.960x0x0x100.png 960w, /assets/files/screenshot-2023-09-08-16-00-41.1920x0x0x100.png 1920w, /assets/files/screenshot-2023-09-08-16-00-41.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"></strong><strong>IT-15257: </strong>Bij sommige geldverstrekkers, zoals Argenta, verstrekken ze nieuw geld alleen onder een vrij specifieke voorwaarde of label. IBij Argenta is de productnaam van de Argenta Hypotheek veranderd naar Argenta Special Line.</p>
+												<p><img src="/assets/files/soort-regeling-1.png" style="vertical-align: baseline;" alt="Soort regeling (1)" srcset="/assets/files/soort-regeling-1.480x0x0x100.png 480w, /assets/files/soort-regeling-1.960x0x0x100.png 960w, /assets/files/soort-regeling-1.1920x0x0x100.png 1920w, /assets/files/soort-regeling-1.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"><strong>IT-15471:</strong> We hebben twee nieuwe velden toevoegd aan de sectie 'Bestaande hypotheek' in PortefeuilleSignalen. De nieuwe velden zijn: 'Soort regeling' en 'Rangorde'. Voor deze velden voegen we een keuzemenu toe dat gebaseerd is op het HDN-schema. De antwoorden die hierin worden gekozen, worden automatisch ingevuld in het HDN-formulier voor de huidige hypotheek van de klant.</p>
+												<p><strong><img src="/assets/files/soort-onderpand-2.png" style="vertical-align: baseline;" alt="Soort onderpand (2)" srcset="/assets/files/soort-onderpand-2.480x0x0x100.png 480w, /assets/files/soort-onderpand-2.960x0x0x100.png 960w, /assets/files/soort-onderpand-2.1920x0x0x100.png 1920w, /assets/files/soort-onderpand-2.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"></strong><strong>I</strong><strong>T-14992: </strong>We hebben de sectie 'Huidige woning' in PortefeuilleSignalen uitgebreid door een nieuw veld toe te voegen, namelijk 'Soort onderpand' volgens het HDN-schema. Hierbij wordt aan het keuzemenu een lijst met opties toegevoegd die overeenkomt met het HDN-schema voor 'Soort onderpand'.&nbsp;<strong></strong></p>
+												<p><strong><img src="/assets/files/afgiftedatum-2.png" style="vertical-align: baseline;" alt="Afgiftedatum (2)" srcset="/assets/files/afgiftedatum-2.480x0x0x100.png 480w, /assets/files/afgiftedatum-2.960x0x0x100.png 960w, /assets/files/afgiftedatum-2.1920x0x0x100.png 1920w, /assets/files/afgiftedatum-2.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"></strong><strong>IT-15479: </strong>We gaan een nieuwe functie toevoegen aan Fastlane Advies, specifiek in de sectie 'Onderpand'. In deze functie kan de adviseur de datum invullen waarop het energielabel is afgegeven. Daarnaast voegen we een handige link toe met de tekst "Zoek je energielabel". Als je hierop klikt, kom je terecht op de website waar je jouw energielabel kunt opzoeken. Het antwoord van deze zoekopdracht wordt automatisch gekoppeld aan het aanvraagformulier voor HDN.</p>
+												<p></p>
+												<p><strong><img src="/assets/files/hypotheekrente-vanaf-aow-datum.png" style="vertical-align: baseline;" alt="Hypotheekrente vanaf AOW datum" srcset="/assets/files/hypotheekrente-vanaf-aow-datum.480x0x0x100.png 480w, /assets/files/hypotheekrente-vanaf-aow-datum.960x0x0x100.png 960w, /assets/files/hypotheekrente-vanaf-aow-datum.1920x0x0x100.png 1920w, /assets/files/hypotheekrente-vanaf-aow-datum.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"></strong><strong>IT-14571: </strong>Wanneer degene die de aanvraag indient of de medeaanvrager de leeftijd heeft bereikt waarop ze recht hebben op AOW, gaan we opnieuw berekenen hoeveel ze kunnen lenen. We nemen daarbij een toetsrente van 5,00%, tenzij de adviseur deze in de 'Instellingen' heeft aangepast. In dat geval gebruiken we het specifieke rentepercentage dat is ingesteld door de adviseur.</p>
+												<p><strong><img src="/assets/files/verkoop-onder-voorwaarden.png" style="vertical-align: baseline;" alt="Verkoop onder voorwaarden" srcset="/assets/files/verkoop-onder-voorwaarden.480x0x0x100.png 480w, /assets/files/verkoop-onder-voorwaarden.960x0x0x100.png 960w, /assets/files/verkoop-onder-voorwaarden.1920x0x0x100.png 1920w, /assets/files/verkoop-onder-voorwaarden.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"></strong><strong>IT-15001: </strong>In PortefeuilleSignalen stellen we onder "Woningstatus" de vraag: Ben je van plan je huidige woning te verkopen? Als de adviseur hierop met ja antwoordt, stellen we een aanvullende vraag: Wil je je huis verkopen onder specifieke voorwaarden? We geven de adviseur dan een keuzemenu met de opties ja of nee. Als de adviseur voor "ja" kiest, laten we het HDN-keuzemenu zien met verschillende opties. De keuze die de adviseur hier maakt, vullen we automatisch in het HDN-formulier in.<strong></strong></p>
+												<p><strong><img src="/assets/files/einddatum-renteaftrek.png" style="vertical-align: baseline;" alt="Einddatum renteaftrek" srcset="/assets/files/einddatum-renteaftrek.480x0x0x100.png 480w, /assets/files/einddatum-renteaftrek.960x0x0x100.png 960w, /assets/files/einddatum-renteaftrek.1920x0x0x100.png 1920w, /assets/files/einddatum-renteaftrek.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"></strong><strong>IT-14426:&nbsp;</strong>We gaan de vraag 'Wat is de einddatum voor renteaftrek?' vooraf invullen in het HDN-aanvraagformulier. Hiervoor gebruiken we de passeerdatum en voegen we de 'Periode aftrekbaar' toe die we vinden in de eBlinqx Hypotheekadvies. Dus als de passeerdatum bijvoorbeeld 01-10-2023 is en de periode aftrekbaar 18 jaar en 5 maanden bedraagt, dan krijgen we als antwoord op de vraag 'Einddatum renteaftrek' 01-03-2042.</p>
+												<p><strong><img src="/assets/files/huidige-woning-verkopen-nee.png" style="vertical-align: baseline;" alt="Huidige woning verkopen Nee" srcset="/assets/files/huidige-woning-verkopen-nee.480x0x0x100.png 480w, /assets/files/huidige-woning-verkopen-nee.960x0x0x100.png 960w, /assets/files/huidige-woning-verkopen-nee.1920x0x0x100.png 1920w, /assets/files/huidige-woning-verkopen-nee.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"></strong><strong>IT-15426: </strong>Als je als doel hebt om je hypotheek over te sluiten, wordt het HDN-vraagstuk 'Huidige woning verkopen (Ja/Nee)' automatisch ingevuld worden met het antwoord 'Nee'.<strong></strong></p>
+												<p><img src="/assets/files/premie-totale-looptijd-1.png" style="vertical-align: baseline;" alt="Premie totale looptijd" srcset="/assets/files/premie-totale-looptijd-1.480x0x0x100.png 480w, /assets/files/premie-totale-looptijd-1.960x0x0x100.png 960w, /assets/files/premie-totale-looptijd-1.1920x0x0x100.png 1920w, /assets/files/premie-totale-looptijd-1.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"><strong>IR-15496:</strong> Als je besluit om een andere verzekeraar te kiezen voor je woonlastenverzekering, dan wordt de premie nu opnieuw berekend voor de hele periode van de verzekering.</p>
+												<p><img src="/assets/files/nieuwbouw.png" style="vertical-align: baseline;" alt="Nieuwbouw" srcset="/assets/files/nieuwbouw.480x0x0x100.png 480w, /assets/files/nieuwbouw.960x0x0x100.png 960w, /assets/files/nieuwbouw.1920x0x0x100.png 1920w, /assets/files/nieuwbouw.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"><strong>IT: 11165:</strong>&nbsp;Bij het doel om een nieuwbouwwoning te kopen, hebben we nieuwe velden toegevoegd: <br>We hebben een keuzemenu toevoegd met de volgende opties: CPO bouw; Zelfbouw en Projectbouw.<br>Als de keuze zelfbouw is, hebben we opnieuw een keuzemenu toegevoegd met opties: Zelfbouw met één aannemer, Zelfbouw met meerdere aannemers, en Zelfbouw zonder aannemer.<br>Als de keuze CPO bouw of Projectbouw is, hebben we de velden: Plannummer project en Bouwnummer onderpand hieraan toegevoegd.<br>Alle ingevoerde gegevens zullen vervolgens worden gekoppeld aan ons HDN-formulier.</p>
+												<p><img src="/assets/files/verbergen.png" style="vertical-align: baseline;" alt="Verbergen" srcset="/assets/files/verbergen.480x0x0x100.png 480w, /assets/files/verbergen.960x0x0x100.png 960w, /assets/files/verbergen.1920x0x0x100.png 1920w, /assets/files/verbergen.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"><strong>IT: 14619:</strong> Wanneer het inkomensformulier is ingevuld (specificatie van het inkomen), verbergen we de velden 'Functie' en 'Inkomstenbron' in het CRM-gedeelte.</p>
+												<p></p>
+												<p><img src="/assets/files/kredietbedrag.png" style="vertical-align: baseline;" alt="Kredietbedrag" srcset="/assets/files/kredietbedrag.480x0x0x100.png 480w, /assets/files/kredietbedrag.960x0x0x100.png 960w, /assets/files/kredietbedrag.1920x0x0x100.png 1920w, /assets/files/kredietbedrag.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"><strong>IT: 15516:</strong> Bij het 'Doorlopend krediet' bepalen we de toetslast als volgt: We nemen het kredietbedrag en vermenigvuldigen dit met 2%.</p>
+												<p></p>
+												<p><strong><img src="/assets/files/onvoorwaardelijk-verkocht-nee.png" style="vertical-align: baseline;" alt="Onvoorwaardelijk verkocht Nee" srcset="/assets/files/onvoorwaardelijk-verkocht-nee.480x0x0x100.png 480w, /assets/files/onvoorwaardelijk-verkocht-nee.960x0x0x100.png 960w, /assets/files/onvoorwaardelijk-verkocht-nee.1920x0x0x100.png 1920w, /assets/files/onvoorwaardelijk-verkocht-nee.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"></strong><strong>IT: 15514: </strong>Als de klant zijn of haar huidige woning nog niet definitief heeft verkocht, berekenen wij het bedrag dat overbrugd moet worden op deze manier: we nemen 90% van de 'verkoopprijs' van de woning, trekken de verkoopkosten en het resterende hypotheekbedrag ervan af.</p>
+											
+											</div>
+										</div>
+									</div>
+								</div>
+							</article>
+							<article>
+								<div class="box listener">
+									<div class="row row-2">
+										<div class="col col-3">
+											<div class="text-3 dark">
+												<p>Dit zijn de wijzigingen die we in september hebben gemaakt:</p>
+												<p><strong></strong></p>
+												<p><strong></strong></p>
+												<p><strong>IT: 15516:</strong> Bij het 'Doorlopend krediet' bepalen we de toetslast als volgt: We nemen het kredietbedrag en vermenigvuldigen dit met 2%.</p>
+												<p></p>
+												<p><strong><img data-size="480x480" src="/assets/files/onvoorwaardelijk-verkocht-nee.png" style="vertical-align: baseline;" alt="Onvoorwaardelijk verkocht Nee" srcset="/assets/files/onvoorwaardelijk-verkocht-nee.480x0x0x100.png 480w, /assets/files/onvoorwaardelijk-verkocht-nee.960x0x0x100.png 960w, /assets/files/onvoorwaardelijk-verkocht-nee.1920x0x0x100.png 1920w, /assets/files/onvoorwaardelijk-verkocht-nee.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"></strong><strong>IT: 15514: </strong>Als de klant zijn of haar huidige woning nog niet definitief heeft verkocht, berekenen wij het bedrag dat overbrugd moet worden op deze manier: we nemen 90% van de 'verkoopprijs' van de woning, trekken de verkoopkosten en het resterende hypotheekbedrag ervan af.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</article>
+							<article>
+								<div class="handler-1 dark handler">Augustus 2023</div>
+								<div class="box listener">
+									<div class="row row-2">
+										<div class="col col-3">
+											<div class="text-3 dark">
+												<p data-pm-slice="1 1 []"><strong><img src="/assets/files/screenshot-2023-08-30-20-43-13-1.png" style="vertical-align: baseline;" alt="Screenshot 2023 08 30 20.43.13 (1)" srcset="/assets/files/screenshot-2023-08-30-20-43-13-1.480x0x0x100.png 480w, /assets/files/screenshot-2023-08-30-20-43-13-1.960x0x0x100.png 960w, /assets/files/screenshot-2023-08-30-20-43-13-1.1920x0x0x100.png 1920w, /assets/files/screenshot-2023-08-30-20-43-13-1.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px">IT-18383:</strong> De verplichtingen in eBlinqx Hypotheekadvies ADVIES worden automatisch ingevuld vanuit het CRM-gedeelte. In eBlinqx Hypotheekadvies ORIENTATIE kun je zelf de verplichtingen toevoegen. Deze worden <span style="text-decoration: underline;">niet</span> bewaard in het CRM-gedeelte.</p>
+												<p data-pm-slice="1 1 []"><img src="/assets/files/verplichtingen-1.png" style="vertical-align: baseline;" alt="Verplichtingen (1)" srcset="/assets/files/verplichtingen-1.480x0x0x100.png 480w, /assets/files/verplichtingen-1.960x0x0x100.png 960w, /assets/files/verplichtingen-1.1920x0x0x100.png 1920w, /assets/files/verplichtingen-1.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"><strong>IT-18383: </strong>Als je de verplichtingen van de klant aanpast nadat je een berekening hebt gemaakt en opgeslagen, zullen alle berekeningen die je hebt gedaan automatisch opnieuw worden uitgevoerd.</p>
+												<p data-pm-slice="1 1 []"></p>
+												<p data-pm-slice="1 1 []"><img src="/assets/files/toetsmomenten.png" style="vertical-align: baseline;" alt="Toetsmomenten" srcset="/assets/files/toetsmomenten.480x0x0x100.png 480w, /assets/files/toetsmomenten.960x0x0x100.png 960w, /assets/files/toetsmomenten.1920x0x0x100.png 1920w, /assets/files/toetsmomenten.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"><strong>IT-15272:</strong> De toetsmomenten beginnen vanaf de werkelijke startdatum, niet meer vanaf de eerste dag van die maand. Bijvoorbeeld: Als een klant op 4-8-2029 met pensioen gaat, laten we het toetsmoment zien vanaf 4-8-2029, en niet langer vanaf 1-8-2029.</p>
+												<p data-pm-slice="1 1 []"><img src="/assets/files/screenshot-2023-08-30-20-39-53-1.png" style="vertical-align: baseline;" alt="Screenshot 2023 08 30 20.39.53 (1)" srcset="/assets/files/screenshot-2023-08-30-20-39-53-1.480x0x0x100.png 480w, /assets/files/screenshot-2023-08-30-20-39-53-1.960x0x0x100.png 960w, /assets/files/screenshot-2023-08-30-20-39-53-1.1920x0x0x100.png 1920w, /assets/files/screenshot-2023-08-30-20-39-53-1.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"><strong>IT-14999:</strong> De vraag in het HDN-aanvraagformulier: ‘Betalingsmethode advieskosten' wordt automatisch ingevuld met het antwoord: 'Meefinancieren in de hypotheek’&nbsp;</p>
+												<p data-pm-slice="1 1 []"><img src="/assets/files/screenshot-2023-08-30-20-29-16-1.png" style="vertical-align: baseline;" alt="Screenshot 2023 08 30 20.29.16 (1)" srcset="/assets/files/screenshot-2023-08-30-20-29-16-1.480x0x0x100.png 480w, /assets/files/screenshot-2023-08-30-20-29-16-1.960x0x0x100.png 960w, /assets/files/screenshot-2023-08-30-20-29-16-1.1920x0x0x100.png 1920w, /assets/files/screenshot-2023-08-30-20-29-16-1.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"><strong>IT-14991:&nbsp;</strong>In de leesmodus van het dashboard in het CRM-gedeelte zijn de volgende velden verwijderd:</p> <ol>
+												<li>Dienstverband</li>
+												<li>AOW-inkomen</li>
+												<li>Datum van vaststelling</li> </ol>
+												<p><img src="/assets/files/screenshot-2023-08-30-20-33-34-1.png" style="vertical-align: baseline;" alt="Screenshot 2023 08 30 20.33.34 (1)" srcset="/assets/files/screenshot-2023-08-30-20-33-34-1.480x0x0x100.png 480w, /assets/files/screenshot-2023-08-30-20-33-34-1.960x0x0x100.png 960w, /assets/files/screenshot-2023-08-30-20-33-34-1.1920x0x0x100.png 1920w, /assets/files/screenshot-2023-08-30-20-33-34-1.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"><strong>IT-15005:</strong>&nbsp;We hebben twee nieuwe velden toegevoegd aan een leningdeel in eBlinqx Hypotheekadvies. De opties die je kiest in deze velden worden overgenomen naar het HDN-aanvraagformulier:</p> <ol>
+												<li>Type leningdeel</li>
+												<li>Fiscaal regime</li> </ol>
+												<p><img src="/assets/files/opslaan.png" style="vertical-align: baseline;" alt="Opslaan" srcset="/assets/files/opslaan.480x0x0x100.png 480w, /assets/files/opslaan.960x0x0x100.png 960w, /assets/files/opslaan.1920x0x0x100.png 1920w, /assets/files/opslaan.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"><strong>IT-15367:</strong> Wanneer je nieuwe informatie van de klant toevoegt en opslaat in het CRM-gedeelte, blijven we nu op dezelfde pagina. Na het indrukken van de knop om op te slaan, word je niet meer automatisch naar een andere pagina gestuurd.</p>
+												<p><img src="/assets/files/screenshot-2023-08-30-19-30-31-1.png" style="vertical-align: baseline;" alt="Screenshot 2023 08 30 19.30.31 (1)" srcset="/assets/files/screenshot-2023-08-30-19-30-31-1.480x0x0x100.png 480w, /assets/files/screenshot-2023-08-30-19-30-31-1.960x0x0x100.png 960w, /assets/files/screenshot-2023-08-30-19-30-31-1.1920x0x0x100.png 1920w, /assets/files/screenshot-2023-08-30-19-30-31-1.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"><strong>IT-15395:</strong> We hebben de term 'Toetslast GHF' veranderd naar 'Toetslast ANM' (Annuïteit op maandbasis). Dit sluit nu beter aan bij de termen die gebruikt worden in de TRHK.</p>
+												<p><img src="/assets/files/toegestane-financieringslast-1.png" style="vertical-align: baseline;" alt="Toegestane financieringslast (1)" srcset="/assets/files/toegestane-financieringslast-1.480x0x0x100.png 480w, /assets/files/toegestane-financieringslast-1.960x0x0x100.png 960w, /assets/files/toegestane-financieringslast-1.1920x0x0x100.png 1920w, /assets/files/toegestane-financieringslast-1.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"><strong>IT-15394:</strong> We hebben de term 'Verantwoorde toetslast' veranderd naar 'Toegestane financieringslast'. Dit sluit nu beter aan bij de termen die gebruikt worden in de TRHK.</p>
+												<p><img src="/assets/files/screenshot-2023-08-31-11-06-37.png" style="vertical-align: baseline;" alt="Screenshot 2023 08 31 11.06.37" srcset="/assets/files/screenshot-2023-08-31-11-06-37.480x0x0x100.png 480w, /assets/files/screenshot-2023-08-31-11-06-37.960x0x0x100.png 960w, /assets/files/screenshot-2023-08-31-11-06-37.1920x0x0x100.png 1920w, /assets/files/screenshot-2023-08-31-11-06-37.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"><strong>IT-12301:</strong> Bij de doelstelling 'Mijn hypotheek oversluiten' worden de HDN-vragen: 'Huidige hypotheek aflossen (Ja/Nee)' en Huidig leningdeel aflossen (Ja/Nee) standaard beantwoord met Ja.</p>
+												<p></p>
+												<p><img src="/assets/files/nog-af-te-lossen-bedrag-1.png" style="vertical-align: baseline;" alt="Nog af te lossen bedrag (1)" srcset="/assets/files/nog-af-te-lossen-bedrag-1.480x0x0x100.png 480w, /assets/files/nog-af-te-lossen-bedrag-1.960x0x0x100.png 960w, /assets/files/nog-af-te-lossen-bedrag-1.1920x0x0x100.png 1920w, /assets/files/nog-af-te-lossen-bedrag-1.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"><strong>IT-14996:</strong> Bij een aflopend krediet of persoonlijke lening wordt het geleende bedrag en het resterende af te lossen bedrag nu automatisch ingevuld in het HDN-formulier.</p>
+												<p></p>
+												<p><img src="/assets/files/soort-onderpand-1.png" style="vertical-align: baseline;" alt="Soort onderpand (1)" srcset="/assets/files/soort-onderpand-1.480x0x0x100.png 480w, /assets/files/soort-onderpand-1.960x0x0x100.png 960w, /assets/files/soort-onderpand-1.1920x0x0x100.png 1920w, /assets/files/soort-onderpand-1.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"><strong>IT-12550:</strong> &nbsp;In het eBlinqx Hypotheekadvies-advies is een nieuw veld toegevoegd genaamd 'Soort onderpand', en dit veld is verbonden met het HDN-aanvraagformulier.</p>
+												<p></p>
+												<p><img src="/assets/files/fiscaal-regime.png" style="vertical-align: baseline;" alt="Fiscaal regime" srcset="/assets/files/fiscaal-regime.480x0x0x100.png 480w, /assets/files/fiscaal-regime.960x0x0x100.png 960w, /assets/files/fiscaal-regime.1920x0x0x100.png 1920w, /assets/files/fiscaal-regime.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"><strong>IT-15003:</strong> In het eBlinqx Hypotheekadvies-advies is een nieuw veld toegevoegd genaamd 'Fiscaal regime', en dit veld is verbonden met het HDN-aanvraagformulier.</p>
+												<p><img src="/assets/files/inkomensgegevens.png" style="vertical-align: baseline;" alt="Inkomensgegevens" srcset="/assets/files/inkomensgegevens.480x0x0x100.png 480w, /assets/files/inkomensgegevens.960x0x0x100.png 960w, /assets/files/inkomensgegevens.1920x0x0x100.png 1920w, /assets/files/inkomensgegevens.png 1921w" sizes="(max-width: 480px) 480px, (max-width: 960px) 960px, (max-width: 1920px) 1920px, 1921px"><strong>IT-15386:</strong> Als je het inkomen van de klant aanpast nadat je een berekening hebt gemaakt en opgeslagen, zullen alle berekeningen die je hebt gedaan automatisch opnieuw worden uitgevoerd.</p>
+												<p></p>
+											
+											</div>
+										</div>
+									</div>
+								</div>
+							</article>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="block-56-1 light">
+			<div class="container container-1">
+				<div class="row row-1">
+					<div class="col col-1">
+						<div class="box">
+							<div class="button-wrapper">
+								<article>
+									<a class="button-4 dark" href="/hoe-het-werkt/releasenotes/releasenotes-2023/">Jaar 2023</a>
+								</article>
+								<article>
+									<a class="button-4 dark" href="/hoe-het-werkt/releasenotes/releasenotes-2024/">Jaar 2024</a>
+								</article>
+								<article>
+									<a class="button-4 dark" href="/hoe-het-werkt/releasenotes/releasenotes-2025/">Jaar 2025</a>
+								</article>
+								<article>
+									<a class="button-4 dark" href="/hoe-het-werkt/releasenotes/releasenotes-2026/">Jaar 2026</a>
+								</article>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="block-83-2 light" data-anchor="contact">
+			<div class="container container-1">
+				<div class="row row-1">
+					<div class="col col-1" data-effect="slide-left">
+						<div class="box">
+							<div class="heading-1 dark"><em>Snel</em> meer weten?</div>
+							<div class="text-2 dark">
+								<p>Vraag een demo aan of bel ons op <span style="color: #140035; font-size: 18px; font-family: 'Be Vietnam Pro'; font-weight: 800;"><a href="tel:Bel ons op 020 - 758 21 11" target="_blank">020 758 21 11</a></span></p>
+							</div>
+							<form class="form-1" data-form_type="response" data-form_id="22" action="/scripts/response.php" novalidate id="form-22-1">
+								<input type="hidden" name="id" value="22">
+								<div class="form-field-0">
+									<input type="text" name="field_0" required autocomplete="off">
+								</div>
+								<div class="form-field-1 dark">
+									<input type="text" placeholder="Bedrijfsnaam*" name="field_5" required="required">
+								</div>
+								<div class="form-field-1 dark">
+									<input type="text" placeholder="Contactpersoon*" name="field_3" required="required">
+								</div>
+								<div class="form-field-1 dark">
+									<input type="email" placeholder="E-mailadres*" name="field_2">
+								</div>
+								<div class="form-field-1 dark">
+									<input type="tel" placeholder="Telefoonnummer*" name="field_1" required="required">
+								</div>
+								<button class="button-1 dark g-recaptcha" data-sitekey="6LdVpyEaAAAAAFFSQvL6nLuFQsAbISeYEiM2h381" data-action="submit" data-type="v3" data-callback="submitForm22_1">Demo aanvragen</button>
+							</form>
+							<script>
+								function submitForm22_1(token) {
+									$('#form-22-1').trigger('submit', [token]);
+								}
+							</script>
+						</div>
+					</div>
+					<div class="col col-2 not-sm not-xs not-md empty">
+						
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer class="block-34-1 light">
+			<div class="container container-1">
+				<div class="row row-1">
+					<div class="col col-1">
+						<div class="box-1">
+							<div class="heading-6 dark">eBlinqx Hypotheekadvies</div>
+							<div class="text-6 dark">
+								<p><a href="/" data-ol-has-click-handler="">Over eBlinqxHypotheekadvies</a><br><a href="/hoe-het-werkt/orientatie/" data-ol-has-click-handler="">Ori&euml;ntatie</a><br><a href="/hypotheeksoftware/" data-ol-has-click-handler="">Hypotheekadvies software</a><br><a href="/adviessoftware/" data-ol-has-click-handler="">Adviessoftware</a><br><a href="/hdn-certificaat/">HDN Certificaat</a><br><a href="https://www.portefeuillesignalen.nl" target="_blank" data-ol-has-click-handler="">Signalen</a><br><a href="https://www.uwkluis.nl/zakelijk/" target="_blank">Klantportaal Uwkluis</a><br><a href="https://www.dutchmedialab.nl/websitetools/" target="_blank">Websitetools</a><br><a href="/hoe-het-werkt/releasenotes/">Releasenotes</a></p>
+							</div>
+						</div>
+					</div>
+					<div class="col col-2">
+						<div class="box-2">
+							<div class="heading-6 dark">Over ons</div>
+							<div class="text-6 dark">
+								<p><a href="https://verzekeringhypotheek.blinqx.tech/algemene-leveringsvoorwaarden-en-verwerkersovereenkomsten" target="_blank">Privacy voorwaarden</a><br><a href="https://verzekeringhypotheek.blinqx.tech/cookieverklaring" target="_blank">Cookiebeleid</a></p>
+							</div>
+						</div>
+					</div>
+					<div class="col col-3">
+						<div class="box-3">
+							<div class="heading-6 dark">Contact</div>
+							<div class="text-6 dark">
+								<p><a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x47c5e48e69cebfa7:0x805b13bc777e649f?sa=X&amp;ved=1t:8290&amp;hl=nl&amp;ictx=111" target="_blank">Hullenbergweg 109,<br>1101 CL Amsterdam</a><br><a href="mailto:&#104;&#101;&#108;&#108;&#111;&#64;&#98;&#108;&#105;&#110;&#113;&#120;&#46;&#116;&#101;&#99;&#104;" target="_blank">&#104;&#101;&#108;&#108;&#111;&#64;&#98;&#108;&#105;&#110;&#113;&#120;&#46;&#116;&#101;&#99;&#104;</a></p>
+							</div>
+						</div>
+					</div>
+					<div class="col col-8">
+						<div class="button-wrapper">
+							<a class="button-1 dark" href="/over-ons/demo-aanvragen/" target="popin">Demo aanvragen</a>
+						</div>
+					</div>
+				</div>
+				<div class="row row-2">
+					<div class="col col-7">
+						<div class="separator-1 dark empty"></div>
+					</div>
+					<div class="col col-5 empty">
+					</div>
+					<div class="col col-6 empty">
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+        
+        <script src="/assets/vendors/flatpickr/flatpickr.min.js"></script>
+<script src="/assets/vendors/flatpickr/nl.js"></script>
+<script src="/assets/js/script.js?v=1789020964"></script>
+<script>
+    window.addEventListener('load', () => {
+        new Cookie();
+new Menu();
+new Sticky();
+new Effect();
+new Form();
+new Popin();
+new Accordion();
+new Anchor();
+
+
+if (window.parent !== window) {
+            window.parent.postMessage({'height': document.body.scrollHeight});
+        }
+    });
+</script>
+    </body>
+</html>

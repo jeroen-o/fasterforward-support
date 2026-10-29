@@ -1,0 +1,48 @@
+{
+ "id": "yobppl61w56n",
+ "name": "eBlinqx Connect: lijst of kolomweergave",
+ "steps": [
+  {
+   "flow": "Default",
+   "kind": "popup",
+   "title": "",
+   "html": "<h2><strong>Lijst- of kolomweergave van email in eBlinqx Connect</strong></h2><p>Ontdek hoe je e-mailinstellingen eenvoudig configureert in eBlinqx</p>",
+   "page": "82768fdb-7bab-4160-98ca-ac66501a0517"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Via het hamburgermenu open je de instellingen.</p>",
+   "page": "82768fdb-7bab-4160-98ca-ac66501a0517"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Schakel naar de lijstweergave.</p>",
+   "page": "82768fdb-7bab-4160-98ca-ac66501a0517"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Wissel naar de kolomweergave.</p>",
+   "page": "1c1448c1-7410-4734-a975-f1a2d4d84964"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>verschuif de kolom naar eigen wens.</p>",
+   "page": "45ee232a-affb-479c-8b03-7d6cf9da4646"
+  },
+  {
+   "flow": "Default",
+   "kind": "popup",
+   "title": "",
+   "html": "<p>Jouw e-mailinstellingen, jouw controle.</p>",
+   "page": "505ad5e4-4eba-40e8-ba8f-c1a59bf98873"
+  }
+ ]
+}

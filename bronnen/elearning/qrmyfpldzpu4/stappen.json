@@ -1,0 +1,76 @@
+{
+ "id": "qrmyfpldzpu4",
+ "name": "eBlinqx Connect: aanmaken van een dienst.",
+ "steps": [
+  {
+   "flow": "Default",
+   "kind": "popup",
+   "title": "",
+   "html": "<h2><strong>Een nieuwe dienst aanmaken in eBlinqx Connect</strong></h2><p>Ontdek hoe eenvoudig je een dienst toevoegt, configureert en koppelt aan een klantdossier.</p>",
+   "page": "cbb51838-e8dc-4033-89b3-8f945ca41ef6"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Start het aanmaken van een nieuw product via de knop \"Nieuw product\"</p>",
+   "page": "cbb51838-e8dc-4033-89b3-8f945ca41ef6"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Kies \"Dienst\" als producttype.</p>",
+   "page": "ddfcb83c-c27d-46e9-b275-360cd4fe8510"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Bevestig je keuze en ga verder naar de detailconfiguratie van de dienst.</p>",
+   "page": "c0cd3b12-1d29-46a5-b168-305a28c04d1e"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Klik op het '+' om vervolgens een keuze te maken uit jullie producten qua dienstverlening.</p>",
+   "page": "83516e70-964a-4e06-9ebd-ee66f04cda3a"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Maak hier de selectie.</p>",
+   "page": "80277640-ddcd-4e96-bba4-8b6c3b9bed65"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Als er kosten aan de dienstverlening zitten, dan worden deze hier getoond.</p>",
+   "page": "0ff105df-3409-464e-b7be-5b383fd29f42"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Bevestig de keuze.</p>",
+   "page": "3e8d77b6-cf64-4e80-b7a7-9202ecd0421c"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>De dienst is nu aangemaakt en volg nu de stappen in de workflow.</p>",
+   "page": "5a43d506-986f-43bc-b49c-ad08aad2e659"
+  },
+  {
+   "flow": "Default",
+   "kind": "popup",
+   "title": "",
+   "html": "<h2><strong>Ready to Make an Impact?</strong></h2><p>Thanks for exploring! Ready to see how this can work for you? Our team is here to help you get started.</p>",
+   "page": "0860759c-27ff-415e-a142-5cb0906e938b"
+  }
+ ]
+}

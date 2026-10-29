@@ -271,3 +271,27 @@ ol.steps h3{margin:0 0 8px;font-size:17px;color:#333}
 .snum{display:inline-block;background:var(--yellow);color:#000;font-size:12px;font-weight:700;padding:1px 8px;margin-right:10px;vertical-align:2px}
 .sshot img{display:block;max-width:100%;height:auto;border:1px solid #E3E3E3;margin:10px 0 6px}
 nav.main a{padding:2px 9px}
+ol.steps li.sflow{border-top:0;padding:10px 0 0}
+ol.steps li.sflow h2{font-size:21px;margin:18px 0 0}
+ol.steps .sshot img{margin:4px 0 14px}
+ol.steps p{margin:0 0 10px}
+.jump{font-size:14px;margin:0 0 10px}
+.jump a,.pager a{color:var(--link);text-decoration:none}
+.pager{display:flex;justify-content:space-between;gap:12px;margin:28px 0 8px;font-size:14px}
+.flnotes img{display:block;margin:10px 0 16px;border:1px solid #E3E3E3}
+.feed .feed-h{margin-top:36px}
+@media (min-width:901px){nav.main a{font-size:13px;padding:2px 8px}}
+@media (min-width:901px){
+  .brand{width:260px}
+  .brand span{margin-left:75px;font-size:12.5px}
+  nav.main a{font-size:12.5px;padding:2px 7px;letter-spacing:0}
+  .head-row{flex-wrap:nowrap}
+}
+@media (min-width:901px){
+  .head-row{gap:14px}
+  nav.main a{padding:2px 6px}
+  nav.main ul{flex-wrap:nowrap}
+}
+@media (min-width:901px) and (max-width:1000px){
+  nav.main ul{flex-wrap:wrap}
+}

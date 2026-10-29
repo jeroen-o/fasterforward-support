@@ -53,7 +53,7 @@ LIVE_DIR = os.path.join(SRC, "live-2026-10-20")  # pagina's van de live site, 20
 SKIP_PATH = re.compile(r"^(wp-content|wp-includes|wp-json|wp-admin|feed|comments|author|tag|tags|page|xmlrpc|"
                        r"search|\?|.*?/feed$|.*?/page/\d+$|.*?/amp$|.*?/embed$)")
 FEEDS = {"Nieuws": "nieuws", "Tips": "tips", "Release notes": "releasenotes"}
-OUTDIRS = ["elearning", "video", "kennisbank", "categorien", "category", "nieuws", "tips", "releasenotes", "zoeken",
+OUTDIRS = ["releasenotes-hypotheekadvies", "elearning", "video", "kennisbank", "categorien", "category", "nieuws", "tips", "releasenotes", "zoeken",
            "contact", "trainingen", "assets"]
 
 
@@ -529,7 +529,7 @@ class Page:
     def rel(self, target):
         """Link naar een sitepad ('' = home) of bestand."""
         pre = "../" * self.depth
-        if target.endswith((".html", ".css", ".js", ".png", ".jpg", ".xml")):
+        if re.search(r"\.[a-z0-9]{2,5}$", target.rsplit("/", 1)[-1], re.I):
             return pre + target
         return pre + (target + "/" if target else "") + "index.html"
 
@@ -538,7 +538,8 @@ def page_url(p):
     return p["path"]
 
 
-NAV = [("Home", ""), ("Nieuws", "nieuws"), ("Tips", "tips"), ("E-learning", "elearning"), ("Release notes", "releasenotes"),
+NAV = [("Home", ""), ("Nieuws", "nieuws"), ("Tips", "tips"), ("E-learning", "elearning"),
+       ("Releasenotes Fastlane", "releasenotes-hypotheekadvies"), ("Release notes", "releasenotes"),
        ("Trainingen", "trainingen"), ("Contact support", "contact")]
 
 
@@ -955,9 +956,12 @@ def render_search(pages, cats):
         for v in g["videos"]:
             idx.append({"t": v["t"], "h": "video/index.html#v-" + v["id"], "c": "Video's › " + g["group"], "k": "video",
                         "x": " ".join(x for x in (v.get("ch"), g["group"]) if x)})
+    for m in fastlane_months()[0]:
+        idx.append({"t": f'Releasenotes eBlinqx Hypotheekadvies – {m["label"]}', "h": f'releasenotes-hypotheekadvies/{m["slug"]}/index.html',
+                    "c": "Releasenotes Hypotheekadvies (Fastlane)", "k": "release", "d": m["label"], "x": m["text"][:20000]})
     for it in elearning_items():
         idx.append({"t": it["t"], "h": "elearning/" + it["slug"] + "/index.html", "c": "E-learning › " + it["prod"], "k": "video",
-                    "x": " ".join(" ".join([st["h"]] + st["p"]) for st in it["steps"]) or it["t"]})
+                    "x": " ".join(st["h"] + " " + st["text"] for st in it["steps"])[:15000] or it["t"]})
     os.makedirs(os.path.join(ROOT, "zoeken"), exist_ok=True)
     with open(os.path.join(ROOT, "zoeken", "zoekindex.js"), "w", encoding="utf8") as fh:
         fh.write("window.ZOEKINDEX=" + json.dumps(idx, ensure_ascii=False, separators=(",", ":")) + ";\n")
@@ -1157,14 +1161,15 @@ def elearning_items():
               "slug": slugify(t), "steps": []}
         f = os.path.join(ELEARN_DIR, sid, "stappen.json")
         if os.path.exists(f):
-            for st in json.load(open(f, encoding="utf8")):
-                lines = [x.strip() for x in st["text"].split("\n")]
-                lines = [x for x in lines if x and not re.fullmatch(r"\d+\s*/\s*\d+", x) and x not in st.get("btn", [])]
-                if not lines:
-                    continue
-                head = lines[0] if len(lines) > 1 and len(lines[0]) < 90 else ""
-                body = lines[1:] if head else lines
-                it["steps"].append({"h": head, "p": body, "img": f"bronnen/elearning/{sid}/{st['file']}"})
+            data = json.load(open(f, encoding="utf8"))
+            prev = None
+            for st in data["steps"]:
+                img = None
+                if st.get("page") and st["page"] != prev and os.path.exists(os.path.join(ELEARN_DIR, sid, st["page"] + ".webp")):
+                    img = f'bronnen/elearning/{sid}/{st["page"]}.webp'
+                prev = st.get("page") or prev
+                it["steps"].append({"h": st.get("title", ""), "html": st.get("html", ""), "img": img,
+                                    "flow": st.get("flow", ""), "text": html.unescape(re.sub(r"<[^>]+>", " ", st.get("html", "")))})
         items.append(it)
     return items
 
@@ -1174,7 +1179,8 @@ def render_elearning():
     pg = Page("elearning")
     cards = []
     for it in items:
-        thumb = (pg.rel(it["steps"][0]["img"]) if it["steps"] else
+        first_img = next((st["img"] for st in it["steps"] if st["img"]), None)
+        thumb = (pg.rel(first_img) if first_img else
                  pg.rel(f'assets/video/{it["yt"]}.jpg') if it["yt"] else "")
         n = f'{len(it["steps"])} stappen' if it["steps"] else ("video" if it["yt"] else "interactieve demo")
         cards.append(
@@ -1199,7 +1205,8 @@ def render_elearning():
                     f'<button class="play" type="button" aria-label="Video afspelen"><svg class="ic"><use href="#i-play"/></svg></button></div></div>')
         else:
             demo_url = f'https://blinqx.storylane.io/demo/{it["id"]}?embed=inline'
-            first = pg.rel(it["steps"][0]["img"]) if it["steps"] else ""
+            fi = next((st["img"] for st in it["steps"] if st["img"]), None)
+            first = pg.rel(fi) if fi else ""
             demo = (f'<div class="video demo"><div class="frame" data-sl="{esc(demo_url)}">'
                     f'{f"<img src=\"{first}\" alt=\"\">" if first else ""}'
                     f'<button class="play" type="button" aria-label="Start de interactieve e-learning"><svg class="ic"><use href="#i-play"/></svg><span>Start de interactieve e-learning</span></button></div>'
@@ -1207,12 +1214,16 @@ def render_elearning():
                     f'{f" · wachtwoord: <b>{esc(it["pw"])}</b>" if it["pw"] else ""}</p></div>')
         steps = ""
         if it["steps"]:
-            lis = []
+            parts, flow = [], None
+            flows = {st["flow"] for st in it["steps"]}
             for i, st in enumerate(it["steps"], 1):
-                ps = "".join(f"<p>{linkify(x)}</p>" for x in st["p"])
-                lis.append(f'<li id="stap-{i}"><h3><span class="snum">Stap {i}</span>{esc(st["h"])}</h3>{ps}'
-                           f'<a class="sshot" href="{pg.rel(st["img"])}" target="_blank" rel="noopener"><img src="{pg.rel(st["img"])}" alt="Stap {i}: {esc(st["h"])}" loading="lazy"></a></li>')
-            steps = f'<h2 id="stappen">Alle stappen</h2><ol class="steps">{"".join(lis)}</ol>'
+                if len(flows) > 1 and st["flow"] != flow:
+                    flow = st["flow"]
+                    parts.append(f'<li class="sflow"><h2 id="{slugify(flow)}">{esc(flow)}</h2></li>')
+                shot = (f'<a class="sshot" href="{pg.rel(st["img"])}" target="_blank" rel="noopener"><img src="{pg.rel(st["img"])}" alt="Scherm bij stap {i}" loading="lazy"></a>'
+                        if st["img"] else "")
+                parts.append(f'<li id="stap-{i}"><h3><span class="snum">Stap {i}</span>{esc(st["h"])}</h3>{st["html"]}{shot}</li>')
+            steps = f'<h2 id="stappen">Alle stappen</h2><ol class="steps">{"".join(parts)}</ol>'
         others = "".join(f'<li><a href="{pg.rel("elearning/" + o["slug"])}">{esc(o["t"])}</a></li>' for o in items if o is not it)
         meta = f'{esc(it["prod"])} · {"video" if it["yt"] else "interactieve demo"}{f" · {len(it["steps"])} stappen" if it["steps"] else ""}'
         body = f"""{crumbs(pg, [("E-learning", "elearning"), (it["t"], None)])}
@@ -1235,6 +1246,115 @@ document.addEventListener("click", e => {{
 }});
 </script>"""
         write(path, layout(pg, it["t"], body, "elearning", f'E-learning {it["prod"]}: {it["t"]}'))
+
+
+FL_DIR = os.path.join(SRC, "fastlane")
+FL_BASE = "https://fastlane.hypotheekbond.nl"
+FL_TITLE = "Releasenotes eBlinqx Hypotheekadvies (Fastlane)"
+
+
+def fastlane_months():
+    """Releasenotes per maand uit bronnen/fastlane/releasenotes-<jaar>.html (fastlane.hypotheekbond.nl)."""
+    from urllib.parse import urljoin
+    out, intro = [], ""
+    for f in sorted(glob.glob(os.path.join(FL_DIR, "releasenotes-20*.html")), reverse=True):
+        year = re.search(r"(\d{4})", os.path.basename(f)).group(1)
+        doc = open(f, encoding="utf8").read()
+        if not intro:
+            m = re.search(r'<div class="heading-1 dark">[^<]*</div>\s*<div class="text-3 dark">(.*?)</div>', doc, re.S)
+            intro = html.unescape(re.sub(r"<[^>]+>", "", m.group(1))).strip() if m else ""
+        acc = doc[doc.find('<div class="accordion">'):]
+        for head, box in re.findall(r'<article>\s*<div class="handler[^"]*">(.*?)</div>\s*<div class="box listener">(.*?)</article>', acc, re.S):
+            head = re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", "", head))).strip()
+            mm = re.match(r"(\w+)\s+(\d{4})", head)
+            month = MONTHS.get(mm.group(1).lower()) if mm else None
+            cnt = re.search(r"\((\d+)\s*verbetering", head)
+            box = re.sub(r'(href|src|srcset)="(/[^"]*)"', lambda m: f'{m.group(1)}="{urljoin(FL_BASE, m.group(2))}"', box)
+            box = re.sub(r'<p class="heading-2[^"]*">\s*Releasenotes\s*</p>', "", box)
+            c = htmlclean.Cleaner()
+            c.feed(box)
+            c.close()
+            body = "".join(c.out)
+            body = re.sub(r"(<br>\s*){3,}", "<br><br>", body)
+            body = re.sub(r"<p>\s*(<br>\s*)*</p>", "", body)
+            text = re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", body))).strip()
+            label = f"{mm.group(1).capitalize()} {mm.group(2)}" if mm else head
+            out.append({"label": label, "head": head, "year": year, "month": month or 0,
+                        "count": int(cnt.group(1)) if cnt else None, "html": body, "text": text,
+                        "slug": f"{mm.group(2)}-{month:02d}" if month else slugify(head),
+                        "src": f"{FL_BASE}/hoe-het-werkt/releasenotes/releasenotes-{year}/"})
+    out.sort(key=lambda x: (x["year"], x["month"]), reverse=True)
+    return out, intro
+
+
+def fl_resolve(pg, h):
+    def img(m):
+        u = html.unescape(m.group(2))
+        if u.startswith("/"):
+            u = FL_BASE + u
+        if u.startswith(FL_BASE + "/assets/"):
+            stem = os.path.splitext(os.path.basename(u.split("?")[0]))[0]
+            name = re.sub(r"\.\d+x\d+x\d+x\d+$", "", stem) + ".webp"  # verkleinde variant -> origineel
+            if os.path.exists(os.path.join(FL_DIR, "img", name)):
+                return f'{m.group(1)}="{pg.rel("bronnen/fastlane/img/" + name)}"'
+        return f'{m.group(1)}="{esc(u)}"'
+    h = re.sub(r'(src|href)="IMG:([^"]+)"', img, h)
+    h = re.sub(r'href="SITE:([^"]*)"', lambda m: f'href="{esc(resolve_site(pg, html.unescape(m.group(1))))}"', h)
+    return h
+
+
+def fl_excerpt(t):
+    t = re.sub(r"^📢\s*", "", t)
+    t = re.sub(r"\[IT-\d+\]", "", t)
+    return (t[:240].rsplit(" ", 1)[0] + "…") if len(t) > 240 else t
+
+
+def render_fastlane():
+    months, intro = fastlane_months()
+    if not months:
+        return
+    pg = Page("releasenotes-hypotheekadvies")
+    years = []
+    for y in sorted({m["year"] for m in months}, reverse=True):
+        cards = "".join(
+            f'<article class="card"><h3><a href="{pg.rel("releasenotes-hypotheekadvies/" + m["slug"])}">Releasenotes {esc(m["label"])}</a></h3>'
+            f'{f"<p class=\"date\">{m["count"]} verbeteringen</p>" if m["count"] else ""}'
+            f'<p>{esc(fl_excerpt(m["text"]))}</p>'
+            f'<a class="readmore" href="{pg.rel("releasenotes-hypotheekadvies/" + m["slug"])}">Lees verder</a></article>'
+            for m in months if m["year"] == y)
+        years.append(f'<h2 class="feed-h" id="jaar-{y}">{y}</h2><div class="cards">{cards}</div>')
+    jump = " · ".join(f'<a href="#jaar-{y}">{y}</a>' for y in sorted({m["year"] for m in months}, reverse=True))
+    body = f"""{crumbs(pg, [(FL_TITLE, None)])}
+<main class="feed"><div class="wrap">
+  <h1>{esc(FL_TITLE)}</h1>
+  <p class="lead">{esc(intro)}</p>
+  <p class="jump">Ga naar: {jump}</p>
+  {"".join(years)}
+  <p class="src">Bron: <a href="{FL_BASE}/hoe-het-werkt/releasenotes/" target="_blank" rel="noopener">fastlane.hypotheekbond.nl</a></p>
+</div></main>"""
+    write("releasenotes-hypotheekadvies", layout(pg, FL_TITLE, body, "releasenotes-hypotheekadvies", intro))
+    for i, m in enumerate(months):
+        path = "releasenotes-hypotheekadvies/" + m["slug"]
+        pg = Page(path)
+        others = "".join(f'<li><a href="{pg.rel("releasenotes-hypotheekadvies/" + o["slug"])}">{esc(o["label"])}</a></li>'
+                         for o in months[max(0, i - 4):i + 6] if o is not m)
+        nav = []
+        if i + 1 < len(months):
+            nav.append(f'<a href="{pg.rel("releasenotes-hypotheekadvies/" + months[i + 1]["slug"])}">« {esc(months[i + 1]["label"])}</a>')
+        if i > 0:
+            nav.append(f'<a href="{pg.rel("releasenotes-hypotheekadvies/" + months[i - 1]["slug"])}">{esc(months[i - 1]["label"])} »</a>')
+        body = f"""{crumbs(pg, [(FL_TITLE, "releasenotes-hypotheekadvies"), (m["label"], None)])}
+<main class="article"><div class="wrap cols">
+  <article>
+    <h1>Releasenotes eBlinqx Hypotheekadvies – {esc(m["label"])}</h1>
+    {f'<p class="meta">{m["count"]} verbeteringen</p>' if m["count"] else ""}
+    <div class="content flnotes">{fl_resolve(pg, m["html"])}</div>
+    <p class="pager">{" &nbsp; ".join(nav)}</p>
+    <p class="src">Bron: <a href="{esc(m["src"])}" target="_blank" rel="noopener">fastlane.hypotheekbond.nl</a></p>
+  </article>
+  <aside class="related"><h2>Andere maanden:</h2><ul>{others}</ul><p><a href="{pg.rel("releasenotes-hypotheekadvies")}">Alle releasenotes »</a></p></aside>
+</div></main>"""
+        write(path, layout(pg, f'Releasenotes {m["label"]} – eBlinqx Hypotheekadvies', body, "releasenotes-hypotheekadvies", fl_excerpt(m["text"])))
 
 
 def render_404():
@@ -1297,6 +1417,7 @@ def main():
     render_kennisbank(cats)
     render_video()
     render_elearning()
+    render_fastlane()
     render_search(pages, cats)
     render_home(cats, feeds, pages)
     render_404()

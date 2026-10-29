@@ -1,0 +1,76 @@
+{
+ "id": "os253q6smdac",
+ "name": "eBlinqx Connect: email aanmaken en verzenden",
+ "steps": [
+  {
+   "flow": "Default",
+   "kind": "popup",
+   "title": "",
+   "html": "<h2><strong>Verstuur Emails met eBlinqx</strong></h2><p>Ontdek hoe je in enkele stappen een email aanmaakt, koppelt aan een dossier en verstuurt. Laten we beginnen!</p>",
+   "page": "84cea376-5583-4ed3-bb48-5f3525480f2d"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Open de emailmodule vanuit de zwarte balk.</p>",
+   "page": "84cea376-5583-4ed3-bb48-5f3525480f2d"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Je bevindt je nu in jouw mailbox. Vanaf deze plek verstuur je emails die <strong>NIET</strong> gekoppeld worden aan dossiers. Het is mogelijk om toegang te hebben tot meerdere mailboxen binnen jullie organisatie.</p><p>Tip: verstuur email altijd vanuit een dossier, zodat deze uitgaande mail aan het dossier is gekoppeld.</p>",
+   "page": "dda58afa-839d-4b8e-aaee-201cc730d586"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Je bevindt je nu in een klantdossier. Als je vanuit hier een email opstelt, is deze gelijk gekoppeld aan het dossier.</p>",
+   "page": "4fceb0e7-29c8-4ccb-b996-4420d75b10b1"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Op deze plaats zie je vanuit welke mailbox de mail verzonden wordt. Heb je dus toegang tot meerdere mailboxen, dan maak je hier eventueel een keuze. De mailbox van jou voorkeur kun je instellen bij de persoonlijke instellingen.</p>",
+   "page": "334540e6-1675-446e-855a-d3cbc7daac5c"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Koppel eventueel de uitgaande mail direct aan een Taak of Product. Op deze manier kun je op een later tijdstip de mail sneller terugvinden.</p>",
+   "page": "8fbb176b-e65c-415c-af8d-c8f13cd81625"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Selecteer hier een standaard tekst of een andere handtekening.</p>",
+   "page": "8fbb176b-e65c-415c-af8d-c8f13cd81625"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Voeg hier bestanden toe vanuit het dossier of bestanden van buiten eBlinqx.</p>",
+   "page": "8fbb176b-e65c-415c-af8d-c8f13cd81625"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Verstuur de email direct of op een later tijdstip. Bevestig de geplande verzending — eBlinqx regelt de rest automatisch.</p>",
+   "page": "e2c95061-94c6-419d-a0a0-32117fd56f32"
+  },
+  {
+   "flow": "Default",
+   "kind": "popup",
+   "title": "",
+   "html": "<p>Snel, gekoppeld aan het juiste dossier en of product.</p>",
+   "page": "81449ffa-47ac-46a3-a78b-1f52f9deaf79"
+  }
+ ]
+}

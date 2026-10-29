@@ -1,0 +1,181 @@
+{
+ "id": "npl75yisvkpf",
+ "name": "eBlinqx Connect: basis opstarten en inloggen",
+ "steps": [
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p><strong>eBlinqx Connect openen</strong></p><p>In de adresbalk van je browser voer je de URL in die je hebt ontvangen na de implementatie. Meestal is dat '<em>jouwbedrijfsnaam.vh.eblinqx.tech</em>'.</p><p><strong>Tip:</strong></p><p>Sla deze URL link direct op als favoriet, zodat je de omgeving altijd snel kan openen.</p>",
+   "page": "4e7e2410-9f0e-4ba0-9156-985f2e8ce523"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p><strong>Inloggen</strong></p><p>Log hier in met jouw gegevens om het dashboard van eBlinqx Connect te openen.</p><p>Het is verplicht om <strong>two factor authentication</strong> te gebruiken. Hiermee ben je extra goed beveiligd.</p>",
+   "page": "4e7e2410-9f0e-4ba0-9156-985f2e8ce523"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p><strong>Snelkoppelingen en tegels</strong></p><p>Welkom op het dashboard van eBlinqx Connect. De blauwe pictogrammen linksboven zijn snelkoppelingen.<br>Onder de snelkoppelingen staan tegels met informatie zoals, 'Laatst bezochte dossiers'.</p>",
+   "page": "4d572910-6b36-4ac3-8482-efcf03f9bd83"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p><strong>Dashboard instellen</strong></p><p>Het dashboard is de startpagina van je dag. Daarom is het belangrijk om deze in te richten naar jouw wensen.<br><br><em>Klik op de snelkoppeling </em><strong><em>'Dashboard'</em></strong><em> om jouw dashboard in te stellen.</em></p>",
+   "page": "4d572910-6b36-4ac3-8482-efcf03f9bd83"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p><strong>Snelkoppeling instellen</strong></p><p>Hier sleep je de gewenste snelkoppelingen van links naar rechts. De snelkoppelingen aan de rechterzijde zie je op je dashboard. Getoonde snelkoppelingen aan de linkerzijde zijn beschikbaar en gekoppeld aan een type gebruikesaccount.</p>",
+   "page": "f281a430-a21a-459a-85df-c479b787cd85"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p><strong>Tegels instellen</strong></p><p>Hetzelfde geldt voor de tegels op jouw dashboard.</p><p>Ook de tegels zijn gekoppeld<br>aan een type gebruikesaccount.</p>",
+   "page": "f281a430-a21a-459a-85df-c479b787cd85"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p><strong>Tegel Bladwijzers aanpassen</strong></p><p>De tegel met bladwijzers kan je zelf aanpassen.</p><p><em>Klik hiervoor op de knop rechtsonder in de tegel.</em></p><p>Bladwijzers kunnen bijvoorbeeld linkjes zijn naar maatschappijen, extranetten of locaties binnen eBlinqx Connect.</p>",
+   "page": "4d572910-6b36-4ac3-8482-efcf03f9bd83"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Hier kan je bladwijzers toevoegen, wijzigen of verwijderen. </p><p><em>Klik op de pijl 'omhoog' om terug te keren naar het dashboard</em></p>",
+   "page": "bb0ab1d9-3e20-49e5-a0e8-540abb302afa"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p><strong>Klanten zoeken</strong></p><p>Vanaf het dashboard open je ook klantdossiers. Om te zoeken voer je een zoekopdracht in en klik je vervolgens op het 'vergrootglas' of druk op Enter.</p>",
+   "page": "4d572910-6b36-4ac3-8482-efcf03f9bd83"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p><strong>Modules</strong></p><p>De zwarte balk, die overigens altijd zichtbaar is in eBlinqx Connect, bevat symbolen die gelijk een module openen. De getoonde modules zijn gekoppeld aan het type gebruikersaccount.</p><p><strong>Tip:</strong></p><p><em>Gebruik </em><strong><em>CTRL+klik</em></strong><em> (of klik muiswiel) om snel meerdere modules te openen in nieuwe tabbladen. Zo open je aan het begin van je dag bijvoorbeeld je e-mail, agenda en takenlijst.</em></p>",
+   "page": "4d572910-6b36-4ac3-8482-efcf03f9bd83"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p><strong>Dashboard</strong></p><p>Als je hier klikt, dan kom je op de startpagina van het dashboard.</p>",
+   "page": "4d572910-6b36-4ac3-8482-efcf03f9bd83"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p><strong>Dossier</strong></p><p>Hier zie je de 10 laatst bezochte dossiers en kun je tevens een nieuwe zoekopdracht starten naar een dossier.</p>",
+   "page": "4d572910-6b36-4ac3-8482-efcf03f9bd83"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p><strong>e-mail</strong></p><p>Hiermee open je de e-mailmodule. Het getal geeft aantal<br>ongelezen mails weer. De maximale waarde is 9+.</p>",
+   "page": "4d572910-6b36-4ac3-8482-efcf03f9bd83"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p><strong>kalender/agenda</strong></p><p>Hiermee open je kalender/agenda module.</p>",
+   "page": "4d572910-6b36-4ac3-8482-efcf03f9bd83"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p><strong>takenoverzicht</strong></p><p>Hier vind je een overzicht van taken, zowel persoonlijke taken als groepstaken. Taken aangemaakt door een collega of door eBlinqx Connect.</p><p>Het is verstandig om de werkdag te starten met het takenoverzicht en deze minimaal twee keer per dag te openen.</p>",
+   "page": "4d572910-6b36-4ac3-8482-efcf03f9bd83"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p><strong>rapportage manager</strong></p><p>Hier vind je een overzicht van alle rapportages die voor jou beschikbaar zijn. De inhoud is afhankelijk van het type gebruikersaccount.</p>",
+   "page": "4d572910-6b36-4ac3-8482-efcf03f9bd83"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p><strong>campagnemanager</strong></p><p>Hier maak je een mailing aan om bijvoorbeeld een nieuwsbrief naar je klanten te sturen.</p>",
+   "page": "4d572910-6b36-4ac3-8482-efcf03f9bd83"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p><strong>schademelding</strong></p><p>Hier vind je een overzicht van schademeldingen binnen de portefeuille.</p>",
+   "page": "4d572910-6b36-4ac3-8482-efcf03f9bd83"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p><strong>track &amp; trace</strong></p><p>Via deze module doorzoek je de producten en diensten van je klanten.</p>",
+   "page": "4d572910-6b36-4ac3-8482-efcf03f9bd83"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p><strong>managementinformatie</strong></p><p>Via deze module krijg je inzicht in zaken zoals omzet, kosten, aantal afspraken en aantal nieuwe klanten.</p>",
+   "page": "4d572910-6b36-4ac3-8482-efcf03f9bd83"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p><strong>SMART</strong></p><p>Via SMART voer je acties op specifieke klantselecties. Bijvoorbeeld een actie voor klanten die wel een opstalverzekering hebben, maar geen inboedelverzekering. Of klanten met een aflosvrij leningdeel binnen de hypotheekconstructie.</p>",
+   "page": "4d572910-6b36-4ac3-8482-efcf03f9bd83"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p><strong>notities</strong></p><p>Dit is jouw persoonlijke kladblok in eBlinqx Connect. Deze kan je vanuit iedere pagina openen.</p>",
+   "page": "4d572910-6b36-4ac3-8482-efcf03f9bd83"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p><strong>gebruikersmenu</strong></p><p>Middels deze knop open je het gebruiksmenu.</p>",
+   "page": "4d572910-6b36-4ac3-8482-efcf03f9bd83"
+  },
+  {
+   "flow": "Default",
+   "kind": "hotspot",
+   "title": "",
+   "html": "<p>Hier wijzig je je persoonlijke instellingen en vind je de mogelijkheid om de eBlinqx Connect app te activeren.</p>",
+   "page": "07fec157-e47c-4b5d-ad55-7b988d8c5434"
+  },
+  {
+   "flow": "Default",
+   "kind": "tooltip",
+   "title": "",
+   "html": "<p><strong>Einde basistraining</strong></p>",
+   "page": "6673ce8a-9085-4f44-ad10-07aec8ca5e99"
+  }
+ ]
+}

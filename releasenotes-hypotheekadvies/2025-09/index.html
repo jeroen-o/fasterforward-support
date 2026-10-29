@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Releasenotes September 2025 – eBlinqx Hypotheekadvies - Blinqx Support</title>
+<meta name="description" content="Onderstaande updates hebben wij in de maand september doorgevoerd: 📑 IT-27963: Aanbiedernamen verwijderd uit Oriëntatierapport In het Oriëntatierapport worden aanbiedernamen nergens meer getoond. Dit geldt o.a. voor: Hypotheekconstructie,…">
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="icon" href="../../assets/favicon.png">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
+    <symbol id="i-mail-o" viewBox="0 0 24 24"><path d="M2 5h20v14H2zm2 2v.4l8 5.6 8-5.6V7zm16 2.8-8 5.6-8-5.6V17h16z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><path d="M10 2a8 8 0 0 1 6.32 12.9l5.4 5.4-1.42 1.42-5.4-5.4A8 8 0 1 1 10 2zm0 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 64 64"><circle cx="7" cy="12" r="6"/><circle cx="7" cy="32" r="6"/><circle cx="7" cy="52" r="6"/><rect x="18" y="7" width="44" height="10" rx="2"/><rect x="18" y="27" width="44" height="10" rx="2"/><rect x="18" y="47" width="44" height="10" rx="2"/></symbol>
+    <symbol id="i-home" viewBox="0 0 64 64"><path d="M32 6 2 32l4 5 4-3.4V58h18V42h8v16h18V33.6l4 3.4 4-5-10-8.7V10h-8v7.4z"/></symbol>
+    <symbol id="i-car" viewBox="0 0 64 64"><path d="M16 10h32a6 6 0 0 1 5.7 4.1L58 27a7 7 0 0 1 4 6.3V48a3 3 0 0 1-3 3h-3v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H20v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-4H5a3 3 0 0 1-3-3V33.3A7 7 0 0 1 6 27l4.3-12.9A6 6 0 0 1 16 10zm1.5 7-3.3 10h35.6l-3.3-10zM13 34a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm38 0a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 64 64"><path d="M4 12a4 4 0 0 1 4-4h16l6 6h22a4 4 0 0 1 4 4v6H18a6 6 0 0 0-5.6 3.9L4 50z"/><path d="M18 28h44l-10 26H6z"/></symbol>
+    <symbol id="i-desktop" viewBox="0 0 64 64"><path d="M2 6h60v40H38v6h8v6H18v-6h8v-6H2zm6 6v28h48V12z"/></symbol>
+    <symbol id="i-comments" viewBox="0 0 64 64"><path d="M26 4c13.8 0 24 8.6 24 19s-10.2 19-24 19c-2.6 0-5-.3-7.3-.8C14.6 44 9.6 46 3 46c3-3 4.8-6.2 5.3-9.6C4.4 33 2 28.2 2 23 2 12.6 12.2 4 26 4z"/><path d="M54 24.5c5 3.4 8 8.3 8 13.5 0 4.2-1.8 8-4.8 11 .4 3.6 2 6.8 4.8 9.5-6 0-10.6-1.8-14.3-4.4-2.1.5-4.4.7-6.7.7-7 0-13.1-2.4-17-6.2 14.3-.4 30-8.8 30-24.1z"/></symbol>
+    <symbol id="i-envelope" viewBox="0 0 64 64"><path d="M4 12h56a2 2 0 0 1 2 2v3L32 37 2 17v-3a2 2 0 0 1 2-2z"/><path d="M2 23.5 32 43.5l30-20V50a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-euro" viewBox="0 0 64 64"><path d="M42 6c5 0 9.5 1.2 13 3.2l-2.6 8.2A19 19 0 0 0 42 14.5c-7.4 0-12.7 4.6-14.6 11.5H46l-2 7H26.3l-.05 2 .05 2H42l-2 7H27.4c1.9 7 7.2 11.5 14.6 11.5 4 0 7.6-1 10.4-2.9L55 61c-3.6 2-8 3-13 3-12.7 0-22.2-8-24.4-20H10l2-7h5.06L17 35l.06-2H10l2-7h5.6C19.8 14 29.3 6 42 6z"/></symbol>
+    <symbol id="i-file" viewBox="0 0 64 64"><path d="M10 2h28v18h18v38a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4zm32 0 14 14H42zM16 30v6h32v-6zm0 10v6h32v-6zm0 10v6h32v-6z"/></symbol>
+    <symbol id="i-rss" viewBox="0 0 64 64"><circle cx="11" cy="53" r="8"/><path d="M3 23a38 38 0 0 1 38 38H31A28 28 0 0 0 3 33z"/><path d="M3 3a58 58 0 0 1 58 58H51A48 48 0 0 0 3 13z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="rgba(0,0,0,.65)"/><path d="M26 20v24l20-12z" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="item"><svg class="ic"><use href="#i-phone"/></svg><a class="tel" href="tel:+31850180069">085 018 00 69</a></span>
+    <span class="sep" aria-hidden="true"></span>
+    <span class="item"><svg class="ic"><use href="#i-mail-o"/></svg><a class="mail" href="mailto:support-eblinqx@blinqx.tech">support-eblinqx@blinqx.tech</a></span>
+    <a class="li" href="https://www.linkedin.com/company/blinqx/" target="_blank" rel="noopener" aria-label="Blinqx op LinkedIn">in</a>
+  </div>
+</div>
+<header class="site">
+  <div class="wrap">
+    <div class="head-row">
+      <a class="brand" href="../../index.html" aria-label="Blinqx support — home">
+        <img src="../../assets/logo-mark.png" alt="Blinqx" width="470" height="119">
+        <span>powered by Faster Forward</span>
+      </a>
+      <nav class="main" aria-label="Hoofdmenu"><ul><li><a href="../../index.html">Home</a></li><li><a href="../../nieuws/index.html">Nieuws</a></li><li><a href="../../tips/index.html">Tips</a></li><li><a href="../../elearning/index.html">E-learning</a></li><li><a href="../../releasenotes-hypotheekadvies/index.html" aria-current="page">Releasenotes Fastlane</a></li><li><a href="../../releasenotes/index.html">Release notes</a></li><li><a href="../../trainingen/index.html">Trainingen</a></li><li><a href="../../contact/index.html">Contact support</a></li></ul></nav>
+    </div>
+    <div class="search-row">
+      <form class="search" action="../../zoeken/index.html" method="get" role="search">
+        <label class="field">
+          <svg class="ic"><use href="#i-search"/></svg>
+          <input type="search" name="q" placeholder="Zoek hier op onderwerp" aria-label="Zoek op onderwerp">
+        </label>
+        <button type="submit">Zoeken</button>
+      </form>
+      <div class="status">Mogelijke incidenten en de systeemstatus vind je op onze <a href="https://status.fasterforward.nl/" target="_blank" rel="noopener">statuspagina</a>.</div>
+    </div>
+  </div>
+</header>
+<div class="crumbs"><div class="wrap"><nav aria-label="Kruimelpad"><a href="../../releasenotes-hypotheekadvies/index.html">Releasenotes eBlinqx Hypotheekadvies (Fastlane)</a><span class="sep" aria-hidden="true">›</span><span aria-current="page">September 2025</span></nav></div></div>
+<main class="article"><div class="wrap cols">
+  <article>
+    <h1>Releasenotes eBlinqx Hypotheekadvies – September 2025</h1>
+    
+    <div class="content flnotes">
+									
+										
+											
+												<p><strong>Onderstaande updates hebben wij in de maand september doorgevoerd:<br><br><img src="../../bronnen/fastlane/img/schermafbeelding-2025-09-30-213315.webp" alt="Schermafbeelding 2025 09 30 213315" loading="lazy"><br></strong></p>
+												<h3><strong>📑 IT-27963: Aanbiedernamen verwijderd uit Oriëntatierapport</strong></h3>
+												<p>In het Oriëntatierapport worden aanbiedernamen nergens meer getoond. Dit geldt o.a. voor: Hypotheekconstructie, Arbeidsongeschiktheid, Werkloosheid en Overlijden.<br>In het Adviesrapport blijven de aanbiedernamen uiteraard wél gewoon zichtbaar, zodat je daar je klant concreet kunt informeren. Zo heb je nu heldere en neutrale Oriëntatierapporten, precies zoals het hoort in deze fase van het adviesproces.</p>
+												<p><strong><br><img src="../../bronnen/fastlane/img/meenemen-naar-advies-1.webp" alt="Meenemen naar advies" loading="lazy"><br></strong></p>
+												<h3><strong>✅ IT-27433: Checkbox ‘Meenemen naar advies’ altijd zichtbaar bij ORV</strong></h3>
+												<p>We hebben een verbetering doorgevoerd bij het invoeren van een bestaande overlijdensrisicoverzekering (ORV). Tot nu toe kon het voorkomen dat de checkbox ‘Meenemen naar advies’ ontbrak, waardoor je niet expliciet kon vastleggen of de ORV in de nieuwe adviessituatie moest worden meegenomen. Wat is er verbeterd?</p>
+												<ul>
+													<li>
+		<p>De checkbox is nu altijd zichtbaar, ongeacht de herkomst van de polis.</p>
+		</li>
+													<li>
+		<p>Jij bepaalt dus altijd zelf of de bestaande ORV wel of niet onderdeel uitmaakt van het advies.</p>
+		</li>
+													<li>
+		<p>Dit zorgt voor een complete en transparante vastlegging, helemaal in lijn met de AFM- en interne vereisten.</p>
+		</li>
+												</ul>
+												<p>👉 Zo houd jij de regie en weet je zeker dat je advies volledig en correct wordt vastgelegd.</p>
+												<p><strong><br><img src="../../bronnen/fastlane/img/kopieeren.webp" alt="Kopieeren" loading="lazy"><br></strong></p>
+												<h3><strong>📑 IT-27960: Snel een kopie maken van je berekening</strong></h3>
+												<p>Je kunt vanaf nu heel eenvoudig een bestaande berekening kopiëren via <em>Berekeningen inladen</em>. Wat levert dit je op?</p>
+												<ul>
+													<li>
+		<p>Je hoeft geen berekening meer helemaal opnieuw op te bouwen.</p>
+		</li>
+													<li>
+		<p>Met één klik maak je een kopie en kun je direct varianten uitwerken.</p>
+		</li>
+													<li>
+		<p>Handig wanneer je meerdere scenario’s naast elkaar wilt leggen voor je klant.</p>
+		</li>
+												</ul>
+												<p>👉 Zo werk je sneller, flexibeler en heb je altijd direct vergelijkingsmateriaal bij de hand.<br><br></p>
+												<p><strong><img src="../../bronnen/fastlane/img/downloaden.webp" alt="Downloaden" loading="lazy"><br></strong></p>
+												<h3><strong>📄 IT-19096: Acceptatie- en beheernormen nu beschikbaar als losse download</strong></h3>
+												<p>Op verzoek van veel kantoren hebben we een handige uitbreiding toegevoegd: je kunt de Acceptatie- en Beheernormen op rekendatum nu als los document downloaden. Wat betekent dit voor jou?</p>
+												<ul>
+													<li>
+		<p>Je kunt de normen eenvoudig apart opslaan of delen.</p>
+		</li>
+													<li>
+		<p>Dit maakt het nog makkelijker om de financiële onderbouwing van je aanvraag mee te sturen naar de geldverstrekker.</p>
+		</li>
+													<li>
+		<p>Je wint tijd en hebt altijd een overzichtelijk document bij de hand.</p>
+		</li>
+												</ul>
+												<p>👉 Zo wordt het onderbouwen van je advies richting geldverstrekkers nog eenvoudiger en professioneler.<br><br></p>
+												<p><strong><img src="../../bronnen/fastlane/img/uitkering-verzekering.webp" alt="Uitkering verzekering" loading="lazy"><br></strong></p>
+												<h3><strong>⚖️ IT-27971: Bestaande ORV nu correct meegenomen bij advies volgens de GHF-methodiek</strong></h3>
+												<p>Goed nieuws: bij advisering op basis van de Gedragscode Hypothecaire Financieringen (GHF) wordt een bestaande overlijdensrisicoverzekering (ORV) <strong>van een alleenstaande klant</strong> nu altijd correct meegenomen in je advies. Tot nu toe werd een bestaande ORV, ongeacht of deze wel of niet verpand was, niet zichtbaar verwerkt in het advies. Dit kon leiden tot een onvolledig beeld in je rapportage. Wat is er verbeterd?</p>
+												<ul>
+													<li>
+		<p>De bestaande ORV wordt nu altijd meegenomen zodra jij dit in het dossier selecteert.</p>
+		</li>
+													<li>
+		<p>Dit geldt zowel voor verpande als niet-verpande polissen.</p>
+		</li>
+													<li>
+		<p>De berekeningen en weergave sluiten volledig aan bij de instellingen in het dossier.</p>
+		</li>
+												</ul>
+												<p>👉 Daarmee heb jij altijd een volledig en betrouwbaar advies, precies zoals je klant mag verwachten.</p>
+												<p><strong><img src="../../bronnen/fastlane/img/schermafbeelding-2025-09-30-210937.webp" alt="Schermafbeelding 2025 09 30 210937" loading="lazy"><br></strong></p>
+												<h3><strong>🧮 IT-27984: Correcte berekening bij WIA Excedentverzekering</strong></h3>
+												<p>We hebben een belangrijke verbetering doorgevoerd in de berekening van de WIA Excedentverzekering. Tot nu toe kon het gebeuren dat eBlinqx Hypotheekadvies óók een uitkering berekende wanneer het jaarsalaris van je klant lager lag dan het maximale WIA-jaarloon (in 2025: € 75.864). Hierdoor werd het resterend inkomen soms onterecht twee keer aangevuld en kreeg je klant een te rooskleurig beeld van zijn of haar financiële situatie bij arbeidsongeschiktheid. Wat is er verbeterd?</p>
+												<ul>
+													<li>
+		<p>eBlinqx Hypotheekadvies controleert nu eerst of het jaarsalaris boven het maximale WIA-jaarloon uitkomt.</p>
+		</li>
+													<li>
+		<p>Alleen dán wordt er een excedentuitkering berekend.</p>
+		</li>
+													<li>
+		<p>Bij een jaarsalaris onder dit maximum wordt er geen onterechte uitkering meer toegevoegd.</p>
+		</li>
+												</ul>
+												<p>👉 Daarmee weet jij zeker dat je berekening klopt en dat je klant een realistisch beeld krijgt van het financiële vangnet bij arbeidsongeschiktheid.</p>
+												<p><strong><img src="../../bronnen/fastlane/img/schermafbeelding-2025-09-30-210606.webp" alt="Schermafbeelding 2025 09 30 210606" loading="lazy"><br></strong></p>
+												<h3><strong>🛡️IT-27494: WGA Uitgebreid Inkomensverzekering nu zichtbaar bij ‘Verantwoord blijven wonen’</strong></h3>
+												<p>We hebben een belangrijk detail verbeterd in de weergave van inkomensverzekeringen. Tot nu toe werd de WGA Uitgebreid Inkomensverzekering wel meegerekend in de berekening en in de sidebar, maar niet getoond in het verdiepende scherm bij Arbeidsongeschiktheid → Verantwoord blijven wonen. Daardoor was het overzicht voor jou en je klant niet compleet. Wat is er verbeterd?</p>
+												<ul>
+													<li>
+		<p>De WGA Uitgebreid Inkomensverzekering wordt nu ook netjes weergegeven in het verdiepende scherm.</p>
+		</li>
+													<li>
+		<p>Je krijgt zo altijd een volledig beeld van de financiële situatie bij arbeidsongeschiktheid.</p>
+		</li>
+													<li>
+		<p>Dit maakt je advies betrouwbaarder en transparanter richting je klant.</p>
+		</li>
+												</ul>
+												<p>👉 Kortom: jouw berekening en je verdiepende scherm zijn nu weer helemaal in lijn met elkaar.</p>
+												<p><strong><img src="../../bronnen/fastlane/img/schermafbeelding-2025-09-30-210305.webp" alt="Schermafbeelding 2025 09 30 210305" loading="lazy"><br></strong></p>
+												<h3><strong>⌨️ IT-27400: Soepeler navigeren met de TAB-toets in de financieringsopzet</strong></h3>
+												<p>Werk je op een Apple-computer? Dan heb je misschien gemerkt dat de TAB-toets niet altijd deed wat je verwachtte in de financieringsopzet. De cursor sprong namelijk eerst naar het euroteken en pas daarna naar het invoerveld. Dat maakte het aanpassen van bedragen wat omslachtig. Wat is er verbeterd?</p>
+												<ul>
+													<li>
+		<p>De TAB-toets zet je nu direct in het invoerveld.</p>
+		</li>
+													<li>
+		<p>Je kunt daardoor vloeiender door de velden heen navigeren.</p>
+		</li>
+													<li>
+		<p>Het invoeren of aanpassen van bedragen gaat een stuk sneller en prettiger.</p>
+		</li>
+												</ul>
+												<p>👉 Zo werk je met minder klikken en meer gemak door je financieringsopzet heen.</p>
+												
+												<h3><strong><img src="../../bronnen/fastlane/img/schermafbeelding-2025-09-30-205953.webp" alt="Schermafbeelding 2025 09 30 205953" loading="lazy"><br></strong></h3>
+												<h3><strong><br>✂️ IT-27970: Geen dubbele tekst meer bij Werkloosheid in de adviesmotivering</strong></h3>
+												<p>We hebben de adviesmotivering bij het onderdeel Werkloosheid een stuk duidelijker gemaakt. Wat is er verbeterd?: De tekst komt nu alleen nog maar terecht waar hij hoort: bij het onderdeel Advies. Bij Risicobereidheid zie je voortaan alleen de teksten die daar thuishoren. Je adviesmotivering oogt hierdoor strakker en professioneler. Kortom: je rapportages zijn nu overzichtelijker, met alleen de juiste teksten op de juiste plek.</p>
+												<p><strong><img src="../../bronnen/fastlane/img/eigendomsverhouding-1.webp" alt="Eigendomsverhouding" loading="lazy"></strong></p>
+												<h3><strong>✅ IT-27929: Verbetering eigendomsverhouding in dynamische velden</strong></h3>
+												<p>Vanaf nu worden de dynamische velden in je teksten altijd gevuld met de juiste eigendomsverhouding. Tot nu toe pakten deze velden soms onterecht de eigendomsverhouding van een bestaande woning van de klant. Dit kon zorgen voor verwarring in je rapportages. Wat is er veranderd?</p>
+												<ul>
+													<li>
+		<p>De dynamische velden sluiten nu direct aan op wat je in de sidebar hebt ingevuld.</p>
+		</li>
+													<li>
+		<p>Dat kan de standaard <strong>50% / 50%</strong> zijn óf de percentages die je zelf handmatig aanpast.</p>
+		</li>
+													<li>
+		<p>Je teksten zijn hierdoor altijd in lijn met de actuele eigendomsverhouding die jij met je klant hebt besproken.</p>
+		</li>
+												</ul>
+												<p>👉 Daarmee bespaar je tijd en weet je zeker dat je rapportage altijd klopt met de gekozen verdeling.</p>
+												<p><strong><br><br><img src="../../bronnen/fastlane/img/hoofdsom.webp" alt="Hoofdsom" loading="lazy"><br></strong></p>
+												<h3><strong>👉 IT-27974: Meer rust bij hypotheekvrije woningen </strong></h3>
+												<p>Heb je klanten met een eigen woning waar géén hypotheek meer op rust? Dan merk je meteen het verschil!<br>eBlinqx Hypotheekadvies blijft nu volledig rustig en stabiel, zodat jij zonder gedoe je advies kunt uitwerken. Kortom: meer overzicht, minder ruis en een soepel adviesproces. </p>
+												
+												
+												<p><strong><img src="../../bronnen/fastlane/img/niet-downloaden.webp" alt="Niet downloaden" loading="lazy"></strong></p>
+												<h3><strong>👉 IT-27903: Rapport downloaden bij 10-jaar-voor-AOW</strong></h3>
+												<p>Vanaf nu helpt eBlinqx Hypotheekadvies jou nog beter om te werken volgens de geldende toetsregels. Wanneer jouw klant binnen 10 jaar van de AOW-leeftijd zit én de hypotheekconstructie <strong>niet passend is</strong>, kun je het rapport <strong>niet downloaden</strong>. Op deze manier word je direct gewezen op de benodigde aanpassingen in de constructie, zodat je zeker weet dat het rapport altijd aansluit bij de toetsregels en je klant een correct en compleet advies ontvangt. Pas de constructie eenvoudig aan en zodra deze wél passend is, kun je het rapport direct downloaden zoals je gewend bent.<strong></strong></p>
+												<p><strong><img src="../../bronnen/fastlane/img/schermafbeelding-2025-09-26-144142.webp" alt="Schermafbeelding 2025 09 26 144142" loading="lazy"><br></strong></p>
+												<h3><strong>👉 IT-27877 – Maximale Hypotheekberekening </strong></h3>
+												<p>Met deze release is de Maximale Hypotheekberekening verder verbeterd. Je merkt dit onder andere in de standaardinstellingen, de presentatie in de software en de rapportage.</p>
+												<h4><strong>Wat is er nieuw of aangepast?</strong></h4>
+												<ul>
+													<li>Bij het openen van Fastlane Oriëntatie start je nu direct in de doelstelling <em>Maximale hypotheek berekenen (bestaande woning)</em>.</li>
+													<li>Bestaande bouw krijgt standaard energielabel C.</li>
+													<li>Nieuwbouw krijgt standaard energielabel A+++</li>
+													<li>In de output zie je onder de titel <em>Maximale hypotheek berekenen</em> nu een huis-icoon met 3 regels: Marktwaarde woning, WOZ-waarde en Energielabel</li>
+													<li>Bij downloaden van een rapport staat standaard het sjabloon Oriëntatierapport klaar.</li>
+													<li>Eigen geld van aanvrager en mede-aanvrager wordt automatisch berekend en samengevoegd.</li>
+													<li>Het totale premiebedrag wordt automatisch meegenomen in zowel de bruto- als de netto woonlasten.</li>
+												</ul>
+												<h4><strong>Wat betekent dit voor jou?</strong></h4>
+												<p>De berekening en rapportage sluiten nu beter aan op de praktijk: duidelijker energielabels, verbeterde presentatie én altijd het juiste rapporttype. </p>
+												<h3><strong><br><img src="../../bronnen/fastlane/img/rapport-type.webp" alt="Rapport Type" loading="lazy"><br><br>📄 IT-27923 – Nog makkelijker werken met het sjabloon </strong><em><strong>Orientatierapport</strong><br></em>Vanaf nu blijft het gekozen sjabloon <em>Orientatierapport</em> altijd behouden wanneer je een rapport downloadt in Fastlane Oriëntatie bij de doelstelling <em>Maximale hypotheek berekenen</em>. Je kunt dus met volle vrijheid onderdelen aan- of uitvinken, terwijl het sjabloon gewoon actief blijft. Wat betekent dit voor jou?</h3>
+												<ul>
+													<li>
+		<p>Je houdt altijd het sjabloon <em>Orientatierapport</em> in beeld.</p>
+		</li>
+													<li>
+		<p>Je kunt de inhoud flexibel samenstellen door vinkjes aan of uit te zetten.</p>
+		</li>
+													<li>
+		<p>Je werkt sneller en zonder onderbreking door.</p>
+		</li>
+												</ul>
+												<p><strong>Voordeel voor jou:</strong><br>Meer gebruiksgemak én meer controle: jij bepaalt zelf eenvoudig welke onderdelen je meeneemt in je rapport, terwijl je sjabloon altijd hetzelfde blijft.</p>
+												<p><strong><br><img src="../../bronnen/fastlane/img/bedrag.webp" alt="Bedrag" loading="lazy"><br></strong></p>
+												<h3><strong>🌱 IT-27958 – Minimale en maximale bedragen voor groene leningdelen toegevoegd</strong><br>eBlinqx Hypotheekadvies ondersteunt nu de minimale en maximale leenbedragen die gelden voor groene leningdelen bij verschillende geldverstrekkers. Hierdoor worden verduurzamingshypotheken beter gevalideerd en sluit de software naadloos aan op de actuele acceptatieregels van de aanbieders.</h3>
+												<p>Wat betekent dit voor jou als adviseur?</p>
+												<ul>
+													<li>
+		<p>✅ Bij het toevoegen van een groen leningdeel wordt automatisch gecontroleerd of het bedrag binnen de toegestane bandbreedte valt.</p>
+		</li>
+													<li>
+		<p>✅ Minder kans op foutmeldingen of afwijzingen bij het indienen van aanvragen.</p>
+		</li>
+													<li>
+		<p>✅ Altijd up-to-date met de actuele productvoorwaarden van de geldverstrekkers.</p>
+		</li>
+												</ul>
+												<p><strong>Voorbeelden van opgenomen regels:</strong></p>
+												<ul>
+													<li>
+		<p>ABN AMRO Duurzaam Wonen: minimaal € 5.000 – maximaal € 25.000</p>
+		</li>
+													<li>
+		<p>ASN Hypotheek: minimaal € 2.500 – maximaal € 30.000</p>
+		</li>
+													<li>
+		<p>Allianz Groen Hypotheek: maximaal € 35.000</p>
+		</li>
+													<li>
+		<p>Rabobank Groenhypotheek: maximaal € 150.000</p>
+		</li>
+													<li>
+		<p>a.s.r. Verduurzamingshypotheek: maximaal € 65.000</p>
+		</li>
+												</ul>
+												<p><strong>Wat hoef jij te doen?</strong><br>Niets. eBlinqx Hypotheekadvies past de validatie automatisch toe bij het opstellen van de financieringsopzet.</p>
+												<p><strong><br><img src="../../bronnen/fastlane/img/duurzaam-wonen.webp" alt="Duurzaam wonen" loading="lazy"><br></strong></p>
+												<h3><strong>🚀 IT-27865 – Ondersteuning voor duurzame leningdelen uit Renteadmin</strong></h3>
+												<p>eBlinqx Hypotheekadvies is uitgebreid zodat duurzame leningdelen nu correct worden herkend en verwerkt. Dit betekent dat adviseurs bij het inlezen van rentestanden en leningdelen geen beperkingen meer ervaren en duurzame leningdelen probleemloos onderdeel uitmaken van de berekening en de output. Voordelen voor de adviseur:</p>
+												<ul>
+													<li>
+		<p>✅ Volledige verwerking van duurzame leningdelen vanuit Renteadmin</p>
+		</li>
+													<li>
+		<p>✅ Minder kans op fouten of ontbrekende data in de financieringsopzet</p>
+		</li>
+													<li>
+		<p>✅ Naadloze integratie met bestaande berekeningen en rapportages</p>
+		</li>
+												</ul>
+												<p><strong>Wat hoef jij te doen?</strong><br>Niets! Deze verbetering draait automatisch mee in de software.</p>
+												<p><strong><br><img src="../../bronnen/fastlane/img/john.webp" alt="John" loading="lazy"><br></strong></p>
+												<p><strong>💡 IT-27840 – Namen opslaan mét symbolen<br></strong>In de vernieuwde <em>Save calculation</em>-modal kon je tot nu toe geen namen gebruiken waarin symbolen stonden, zoals bijvoorbeeld “John | ABN AMRO”. Dat kwam doordat de validatie bepaalde tekens blokkeerde. We hebben dit aangepast: vanaf nu kun je weer alle gewenste namen gebruiken, inclusief symbolen. Zo kun je jouw berekeningen duidelijker labelen en makkelijker terugvinden.</p>
+												<p><strong><img src="../../bronnen/fastlane/img/schermafbeelding-2025-09-26-140914.webp" alt="Schermafbeelding 2025 09 26 140914" loading="lazy"></strong></p>
+												<h3><strong>✨ IT-27803 – Nieuwe dynamische velden voor AO, WW en overlijden</strong></h3>
+												<p>Goed nieuws! Vanaf nu hoef je veel minder handmatig werk te doen bij het opnemen van scenario’s rond arbeidsongeschiktheid (AO), werkloosheid (WW) en overlijden in je adviesrapport. We hebben de ontbrekende dynamische velden toegevoegd aan de tekstenbibliotheek. Hierdoor worden alle relevante scenario’s automatisch gevuld en netjes opgenomen in je rapport. Dit scheelt tijd, voorkomt fouten en maakt je adviesrapport consistenter en professioneler. Je kunt nu gebruikmaken van de volgende dynamische velden:</p>
+												<ul>
+													<li>
+		<p>Rekeninkomen WULBZ 1e jaar aanvrager</p>
+		</li>
+													<li>
+		<p>Rekeninkomen WULBZ 2e jaar aanvrager</p>
+		</li>
+													<li>
+		<p>Rekeninkomen AO aanvrager</p>
+		</li>
+													<li>
+		<p>Rekeninkomen WULBZ 1e jaar partner</p>
+		</li>
+													<li>
+		<p>Rekeninkomen WULBZ 2e jaar partner</p>
+		</li>
+													<li>
+		<p>Rekeninkomen AO partner</p>
+		</li>
+													<li>
+		<p>Scenario WW aanvrager resterend inkomen</p>
+		</li>
+													<li>
+		<p>Scenario WW partner resterend inkomen</p>
+		</li>
+												</ul>
+												<p><strong><img src="../../bronnen/fastlane/img/download.webp" alt="Download" loading="lazy"><br></strong></p>
+												<h3><strong>💡</strong><strong>IT-27849 – Rapporten alleen afdrukken bij correcte berekening</strong></h3>
+												<p>Om je nog meer zekerheid te geven, kun je een rapport voortaan alleen afdrukken wanneer de berekening correct is uitgevoerd. Verschijnt er een rode balk met foutmeldingen? Dan wordt de downloadknop automatisch uitgegrijsd. Zo weet je zeker dat je alleen complete en juiste berekeningen met je klant deelt.<br>Dit voorkomt misverstanden en geeft je meer vertrouwen in de kwaliteit van je rapporten.</p>
+												<p><strong><img src="../../bronnen/fastlane/img/bedrag-in-verbouwingsdepot.webp" alt="Bedrag in verbouwingsdepot" loading="lazy"><br></strong></p>
+												<h3><strong>💡 </strong><strong>IT-27534 – Slimmere verwerking van het verbouwingsdepot</strong></h3>
+												<p>Vanaf nu wordt het veld ‘Bedrag in verbouwingsdepot’ in het HDN-aanvraagformulier (AX) altijd correct gevuld. Wanneer jouw klant bij een reguliere verbouwing (dus niet verduurzaming) het bedrag níet in een bouwdepot wil plaatsen, wordt dit automatisch op de juiste manier verwerkt. Het veld is nu verplicht óf wordt – als je het leeglaat – automatisch gevuld met € 0,00. Het voordeel voor jou en je klant:</p>
+												<ul>
+													<li>
+		<p>Geen onterechte plaatsing van verbouwingsbedragen in een bouwdepot.</p>
+		</li>
+													<li>
+		<p>Geen onnodige bewijslast met bonnen en facturen.</p>
+		</li>
+													<li>
+		<p>Minder administratieve lasten en een soepelere aanvraag.</p>
+		</li>
+												</ul>
+												<p>Zo kun je de aanvraag sneller en zorgelozer afronden, terwijl je klant precies krijgt wat hij of zij wil.</p>
+												<p><strong><img src="../../bronnen/fastlane/img/ingangsdatum-1.webp" alt="Ingangsdatum" loading="lazy"></strong></p>
+												<h3><strong>💡 </strong><strong>IT-27490 – Ingangsdatum verzekering altijd synchroon met sidebar</strong></h3>
+												<p>Goed nieuws: de ingangsdatum van de verzekering in het HDN-formulier sluit nu altijd perfect aan op wat je in de sidebar bij <em>Verzekeringen samenstellen</em> hebt ingevoerd. Of het nu gaat om de automatisch geprefillde Rekendatum of een datum die je zelf hebt aangepast of bevestigd – deze wordt nu 1-op-1 overgenomen in het HDN-LX-aanvraagformulier. Zo werk je met nog meer zekerheid en consistentie: de gekozen ingangsdatum is altijd leidend en komt overal exact overeen.</p>
+												<p><strong><img src="../../bronnen/fastlane/img/hdn-aanvraag-1.webp" alt="HDN aanvraag (1)" loading="lazy"></strong></p>
+												<h3><strong>💡 </strong><strong>IT-27756: Vernieuwde HDN-statuspagina: duidelijker en overzichtelijker!</strong></h3>
+												<p>Met deze release hebben we de HDN-statuspagina een mooie update gegeven. Je ziet nu een duidelijke vernieuwen-knop, zodat je altijd zeker weet of een aanvraag correct is verzonden – ook als je terug navigeert. Daarnaast hebben we een refactor van de code doorgevoerd, waardoor de pagina sneller en stabieler werkt. We onderzoeken bovendien extra verbeteringen rondom het redirecten naar de juiste berekening en het terugnavigeren na verzenden, zodat je straks nog soepeler door je workflow gaat. Kortom: je hebt meer controle, meer overzicht en een soepelere ervaring bij het werken met HDN-aanvragen!</p>
+												<p><strong><img src="../../bronnen/fastlane/img/taf.webp" alt="TAF" loading="lazy"><br></strong></p>
+												<h3><strong>✅ IT-27493 – Correcte productnaam TAF Inkomensverzekering in HDN-LX</strong></h3>
+												<p>Vanaf nu wordt in het HDN-LX-aanvraagformulier de juiste commerciële productnaam voor de TAF Inkomensverzekering gebruikt. Voorheen werd onterecht de naam <em>“Maandlastbeschermer IPTIQ”</em> ingevuld. Dit is nu aangepast naar de correcte productnaam: “TAF Inkomensbeschermer IPTIQ”. Wanneer je een TAF Inkomensverzekering selecteert in je aanvraag, wordt voortaan automatisch de juiste productnaam doorgegeven. Dit voorkomt verwarring richting de aanbieder en maakt je aanvraag direct correct en compleet.</p>
+												<p><strong><img src="../../bronnen/fastlane/img/bruto-jaarinkomen.webp" alt="Bruto Jaarinkomen" loading="lazy"><br></strong></p>
+												<h3><strong>📝 IT-27390 – Bruto jaarinkomen automatisch ingevuld bij HDN-aanvraag Inkomensverzekering</strong></h3>
+												<p>Vanaf nu wordt het veld ‘Bruto jaarinkomen’ in het HDN-LX-aanvraagformulier voor een inkomensverzekering automatisch voor je ingevuld.</p>
+												<p>✅ Geen dubbel werk meer: het inkomen dat je al in eBlinqx Hypotheekadvies hebt vastgelegd, wordt direct meegenomen<br>✅ Minder kans op foutmeldingen of ontbrekende gegevens<br>✅ Sneller en efficiënter aanvragen van inkomensverzekeringen</p>
+												<p>Zo kun jij je aanvraag nóg sneller en foutloos afronden.</p>
+												<p><strong><img src="../../bronnen/fastlane/img/huur.webp" alt="Huur" loading="lazy"><br></strong></p>
+												<h3><strong>✅ IT-27250: Automatisch invullen bruto huurlasten bij huurwoning</strong></h3>
+												<p>Vanaf nu worden de bruto huurlasten automatisch geprefilld in het HDN-aanvraagformulier wanneer je klant in een huurwoning woont. Voorheen moest je dit veld zelf invullen. Als dit ontbrak, gaf het systeem een foutmelding zoals: <em>“16391 – Het is verplicht om de verplichting 'Bruto Huurlasten' op te geven wanneer de HuidigeWoonsituatie een Huurwoning betreft. </em>Deze foutmelding zorgde regelmatig voor verwarring. De jaarhuur wordt nu automatisch ingevuld bij de Verplichtingen in het HDN-formulier. Je ontvangt geen onnodige foutmeldingen meer en kunt je aanvraag sneller en foutloos indienen.</p>
+												<p><strong><img src="../../bronnen/fastlane/img/schermafbeelding-2025-09-15-115126.webp" alt="Schermafbeelding 2025 09 15 115126" loading="lazy"></strong></p>
+												<h3><strong>💡 IT-27806 – Consistente styling bij het opslaan van een berekening</strong></h3>
+												<p>Vanaf nu is het Save calculation-scherm in dezelfde stijl vormgegeven als het scherm dat je al kent bij het laden van een berekening. Dankzij deze update ziet alles er niet alleen strakker uit, maar werkt het ook prettiger en consistenter.</p>
+												<p>✅ Eenduidige look &amp; feel<br>✅ Meer gebruiksgemak<br>✅ Geen verschil meer tussen laden en opslaan</p>
+												<p>Zo blijf je zonder afleiding werken met een herkenbare en overzichtelijke interface.</p>
+												<p><strong><img src="../../bronnen/fastlane/img/schermafbeelding-2025-09-11-143838.webp" alt="Schermafbeelding 2025 09 11 143838" loading="lazy"></strong></p>
+												<p><strong>👉 IT-26899 – Aanbieders inkomensaanvullers zichtbaar in je adviesrapport<br></strong>Vanaf nu worden in je adviesrapport ook de aanbieders van inkomensaanvullers getoond. Voorheen zag je alleen de verzekeraars van de ORV en woonlastenbeschermers, waardoor het overzicht niet volledig was. Daarnaast is het vergelijkend overzicht opnieuw vormgegeven, zodat het er overzichtelijker en professioneler uitziet. De optie ‘Custom’ (zelf samenstellen) is verwijderd, zodat alleen de daadwerkelijke aanbieders zichtbaar zijn. Hiermee presenteer je een vollediger en consistenter adviesrapport richting jouw klant.</p>
+												<p><strong><img src="../../bronnen/fastlane/img/10-jaar-voor-aow.webp" alt="10 jaar voor aow" loading="lazy"><br></strong></p>
+												<p><strong>👉 IT-27772 – Nieuwe layout voor verantwoorde hypotheek 10 jaar voor AOW<br></strong>De weergave van de verantwoorde hypotheek 10 jaar voor AOW is vernieuwd! Zowel in de normale versie als in de blow-up chart is de tekstindeling en styling aangepast. Dankzij de nieuwe layout ziet de informatie er overzichtelijker uit, zonder dat het onnodig veel ruimte inneemt. Zo kun jij de cijfers en toelichting sneller lezen en nog beter met je klant bespreken. Een duidelijker en strakker overzicht, zodat jij je volledig kunt focussen op het adviesgesprek.</p>
+												<p><strong><img src="../../bronnen/fastlane/img/schermafbeelding-2025-09-11-113536.webp" alt="Schermafbeelding 2025 09 11 113536" loading="lazy"></strong></p>
+												<h3><strong>👉 IT-27726 – Verbeteringen aan het leave-calculation venster</strong></h3>
+												<p>Vanaf nu heb je meer flexibiliteit bij het gebruik van het leave-calculation venster. Waar je dit voorheen alleen kon uitschakelen, kun je het nu ook eenvoudig weer inschakelen via de instellingen. Daarnaast hebben we ervoor gezorgd dat het venster niet onterecht meer verschijnt zodra je een berekening opent zonder daarin wijzigingen te doen. Hierdoor werk je sneller en zonder onderbrekingen, terwijl je zelf de controle houdt over hoe je met het venster wilt werken. Kortom: jij bepaalt wanneer dit hulpmiddel jou ondersteunt.</p>
+												<p><img src="../../bronnen/fastlane/img/geboortedatum.webp" alt="Geboortedatum" loading="lazy"></p>
+												<p><strong>👉 IT-27731 – Onterechte melding “ongeldige geboortedatum” opgelost</strong><br>Bij het invoeren van een geldige geboortedatum kreeg je soms onterecht de foutmelding <em>“ongeldige geboortedatum”</em>. Dit was een visuele bug die al langere tijd aanwezig was. De berekeningen, zoals de maximale hypotheek, werden hierdoor nooit beïnvloed. Het ging uitsluitend om een verwarrende melding in beeld. Vanaf nu verschijnt de melding alleen nog als je daadwerkelijk een onmogelijke geboortedatum invoert (bijvoorbeeld 31-02-2024). Voer je een geldige datum in, dan zie je geen foutmelding meer. Hiermee kun je klantgegevens invoeren zonder onterechte meldingen en werk je een stuk zorgelozer.</p>
+												<p><img src="../../bronnen/fastlane/img/fiscaal-eigenaar-leningdeel.webp" alt="Fiscaal eigenaar leningdeel" loading="lazy"></p>
+												<p><strong>👉 IT-27743 – Dynamisch veld ‘Fiscaal eigenaar leningdeel’ beschikbaar in tekstenbibliotheek<br></strong>Vanaf nu kun je in de tekstenbibliotheek gebruikmaken van een extra dynamisch veld: ‘Fiscaal eigenaar leningdeel’. Met deze uitbreiding kun je bij het opstellen van sjablonen, zoals een draagplichtovereenkomst, per leningdeel aangeven wie de fiscaal eigenaar is. Dit veld is beschikbaar voor alle 9 leningdelen die je in eBlinqx Hypotheekadvies kunt ondersteunen. Hiermee wordt het opstellen van draagplichtovereenkomsten nog completer en eenvoudiger.</p>
+												
+												<p><strong><img src="../../bronnen/fastlane/img/schermafbeelding-2025-09-08-182126.webp" alt="Schermafbeelding 2025 09 08 182126" loading="lazy"></strong><strong><br></strong></p>
+												<h3><strong>📢 </strong><strong>IT-27336: Correcte weergave van e-mailadres in voetregel adviesrapport</strong></h3>
+												<p>Vanaf nu wordt het e-mailadres in de voetregel van het adviesrapport correct weergegeven. Voorheen kon er in sommige gevallen onterecht een extra teken (bijvoorbeeld een ‘0’) achter het e-mailadres verschijnen. Kortom: Het e-mailadres van jouw kantoor wordt altijd juist en volledig weergegeven. Rapportages ogen hierdoor professioneler en voorkomen verwarring bij de klant en je hoeft niet langer handmatig in te grijpen; de contactgegevens in de rapporten zijn automatisch correct.</p>
+												<p><img src="../../bronnen/fastlane/img/grafieken-schalen.webp" alt="Grafieken schalen" loading="lazy"><strong><br></strong></p>
+												<h3><strong>📢 </strong><strong>IT-27686 – Grafieken schalen nu automatisch mee bij vergroten van het scherm</strong></h3>
+												<p>Vanaf nu worden de grafieken in eBlinqx Hypotheekadvies direct en scherp weergegeven wanneer je het scherm vergroot via de knop linksonder. Bij het vergroten van het scherm schaalt de volledige pagina inclusief de grafieken direct mee. Grafieken blijven altijd scherp en in de juiste verhouding zichtbaar, ongeacht de schermgrootte. Dit zorgt voor een professioneler en prettiger gebruik van de visuele weergaven in eBlinqx Hypotheekadvies.</p>
+												<p><img src="../../bronnen/fastlane/img/borgtochtprovisie.webp" alt="Borgtochtprovisie" loading="lazy"><strong><br></strong></p>
+												<h3><strong>📢 </strong><strong>IT-25418: Automatisch invullen van NHG bij aankoop bestaande woning of nieuwbouwwoning</strong></h3>
+												<p>Vanaf nu vult eBlinqx Hypotheekadvies automatisch de juiste NHG-keuze in bij leningdelen, wanneer de doelstelling is: Een bestaande woning kopen, of Een nieuwbouwwoning kopen.<br>Indien aan de NHG-voorwaarden wordt voldaan, wordt bij alle leningdelen standaard de optie ‘NHG incl. kosten’ ingevuld. Wanneer de koopsom of marktwaarde boven de NHG-grens uitkomt, wordt automatisch ‘Geen NHG’ geselecteerd. Voordelen voor jou als adviseur: Leningdelen worden direct correct opgenomen in de financieringsopzet. Handmatig aanpassen of corrigeren via eigen geld is niet meer nodig. Minder foutgevoelig en efficiënter adviesproces.<br>Komt de koopsom of marktwaarde boven de NHG-grens, dan vult eBlinqx Hypotheekadvies automatisch ‘Geen NHG’ in. Voor andere doelstellingen (bijvoorbeeld verbouwing) wordt de NHG-optie niet automatisch ingevuld – de adviseur maakt dan zelf de keuze.</p>
+												<p><img src="../../bronnen/fastlane/img/over-2-jaar.webp" alt="Over 2 jaar" loading="lazy"></p>
+												<h3><strong>📢 </strong><strong>IT-27723: Verbetering weergave lijndiagram bij 10 jaar voor AOW-leeftijd</strong></h3>
+												<p>Vanaf nu wordt de lijndiagram getoond zodra een klant 10 jaar of korter voor de AOW-datum zit. Voorheen werd de lijndiagram pas zichtbaar wanneer de klant al binnen die periode terechtkwam.</p>
+												<ul>
+													<li>
+		<p>Je krijgt eerder inzicht in de ontwikkeling van het inkomen richting AOW.</p>
+		</li>
+													<li>
+		<p>Dit maakt het gesprek met de klant over betaalbaarheid en financiële planning overzichtelijker en accurater.</p>
+		</li>
+													<li>
+		<p>Minder kans op verrassingen, omdat de signalering nu gelijk vanaf de grens van 10 jaar zichtbaar is.</p>
+		</li>
+												</ul>
+												<p><img src="../../bronnen/fastlane/img/variabele-rente.webp" alt="Variabele rente" loading="lazy"></p>
+												<h3><strong>📢 </strong><strong>IT-27414: Hypotheken met variabele rente nu ook te inventariseren en op te slaan</strong></h3>
+												<p>Vanaf nu is het mogelijk om bij de inventarisatie van een huidige hypotheek ook te kiezen voor de rentevorm “maandvariabele rente”. Wat betekent dit voor jou als adviseur?</p>
+												<ul>
+													<li>
+		<p>Je kunt nu de werkelijke situatie van de klant volledig en correct invoeren.</p>
+		</li>
+													<li>
+		<p>Hypotheken met een variabele rente worden zonder foutmelding opgeslagen.</p>
+		</li>
+													<li>
+		<p>Deze keuze wordt voortaan correct meegenomen in zowel de rapportages als de berekeningen.</p>
+		</li>
+												</ul>
+												<p>Hiermee is een belangrijke beperking weggenomen en beschik je over een vollediger beeld van de bestaande hypotheekconstructie van je klant.</p>
+												<p><img src="../../bronnen/fastlane/img/schermafbeelding-2025-09-08-185126.webp" alt="Schermafbeelding 2025 09 08 185126" loading="lazy"></p>
+												<h3><strong>📢 IT-27529: </strong><strong>Verbeterde weergave van motivatieteksten in rapporten</strong><br></h3>
+												<p>Vanaf nu worden de witregels in jouw motivatieteksten correct overgenomen in de rapport-downloads. Wanneer jij in eBlinqx Hypotheekadvies een motivatietekst invoert met witregels of enters, zie je deze voortaan exact zo terug in het rapport. De opmaak sluit daardoor naadloos aan bij wat jij zelf in eBlinqx Hypotheekadvies hebt opgesteld.</p>
+												<p>🔹 <strong>Wat betekent dit voor jou?</strong></p>
+												<ul>
+													<li>
+		<p>Je rapporten ogen professioneler richting de klant.</p>
+		</li>
+													<li>
+		<p>Je hoeft teksten niet meer handmatig aan te passen na het downloaden.</p>
+		</li>
+													<li>
+		<p>Jouw ingevoerde teksten worden consistent en overzichtelijk gepresenteerd.</p>
+		</li>
+												</ul>
+												<p>Met deze verbetering kun jij je volledig richten op de inhoud van je advies, zonder tijd kwijt te zijn aan correcties in de vormgeving van het rapport.</p>
+												<p><img src="../../bronnen/fastlane/img/orv-alleenstaande.webp" alt="ORV alleenstaande" loading="lazy"></p>
+												<h3><strong>📢 IT-27378: Automatisch toevoegen ORV bij CBI-advies voor alleenstaande</strong></h3>
+												<p>Wanneer jij een advies opstelt op basis van de CBI-methodiek en het gaat om een alleenstaande, voegt eBlinqx Hypotheekadvies voortaan automatisch een overlijdensrisicoverzekering (ORV) toe aan de financieringsopzet.</p>
+												<ul>
+													<li>
+		<p>Het verzekerd bedrag wordt gelijkgesteld aan het volledige hypotheekbedrag.</p>
+		</li>
+													<li>
+		<p>De dekking is annuïtair dalend.</p>
+		</li>
+													<li>
+		<p>Het dekkingspercentage is gebaseerd op de gewogen gemiddelde toetsrente.</p>
+		</li>
+													<li>
+		<p>De looptijd staat standaard op 30 jaar of tot de AOW-leeftijd (indien eerder). </p>
+		</li>
+													<li>
+		<p>Je hebt altijd de mogelijkheid om de ORV handmatig te wijzigen of te verwijderen.</p>
+		</li>
+												</ul>
+												<p>Met deze uitbreiding zorg je eenvoudig voor een vollediger en zorgvuldiger advies richting je alleenstaande klant en voorkom je dat dit belangrijke risico over het hoofd wordt gezien. </p>
+												<p><img src="../../bronnen/fastlane/img/schermafbeelding-2025-09-08-190633.webp" alt="Schermafbeelding 2025 09 08 190633" loading="lazy"></p>
+												<h3><strong>📢 IT-27687: Looptijd verlengen bij leningdelen met fiscaal regime vanaf 1-1-2013 geblokkeerd</strong><br>Wanneer je in de inventarisatie een leningdeel hebt met de kwalificatie <em>Fiscaal Regime vanaf 1-1-2013</em>, kun je de looptijd van dit leningdeel niet langer verlengen. Inkorten van de looptijd blijft gewoon mogelijk. </h3>
+												<h3>Wil je de looptijd toch verlengen? Dan moet je eerst in de sidebar kiezen voor <em>Fiscaal regime niet van toepassing</em>. Houd er rekening mee dat de rente over dit leningdeel dan niet langer aftrekbaar is.<br>Zo voorkomen we dat je per ongeluk een leningdeel met fiscaal regime 1-1-2013 verlengt, terwijl dit fiscaal niet is toegestaan.</h3>
+												
+												<p><img src="../../bronnen/fastlane/img/schermafbeelding-2025-09-08-191143.webp" alt="Schermafbeelding 2025 09 08 191143" loading="lazy"></p>
+												<h3><strong>📢 IT-26997: HDN-aanvragen verhuisd naar een aparte pagina</strong><br>Je vindt je HDN-aanvragen voortaan niet meer in de sidebar, maar op een eigen pagina binnen de actieve berekening.</h3>
+												<ul>
+													<li>
+		<p>Op de nieuwe HDN-pagina zie je alleen de aanvragen die bij jouw huidige berekening horen.</p>
+		</li>
+													<li>
+		<p>Je krijgt direct inzicht in de status: verzonden of nog openstaand.</p>
+		</li>
+													<li>
+		<p>Het totaaloverzicht van alle aanvragen blijft beschikbaar onder <em>Werkvoorraad</em>.</p>
+		</li>
+												</ul>
+												<p>🔹 <strong>Wat levert dit jou op?</strong></p>
+												<ul>
+													<li>
+		<p>Meer rust en overzicht in je scherm.</p>
+		</li>
+													<li>
+		<p>Betere controle over de status van jouw HDN-aanvragen.</p>
+		</li>
+													<li>
+		<p>Minder kans dat je een aanvraag vergeet te verzenden.</p>
+		</li>
+												</ul>
+												<p>Met deze wijziging heb je meer grip en overzicht op je HDN-aanvragen, precies op het niveau waar je ermee werkt.<br><br></p>
+												<p><img src="../../bronnen/fastlane/img/voorletters-1-1.webp" alt="Voorletters (1)" loading="lazy"></p>
+												<h3><strong>📢 IT-26816: Automatisch toevoegen van punten tussen voorletters</strong><br>Vanaf nu hoef jij je geen zorgen meer te maken over de juiste schrijfwijze van voorletters. eBlinqx Hypotheekadvies voegt automatisch punten toe wanneer je deze vergeet. Hoe werkt het?</h3>
+												<ul>
+													<li>
+		<p>Bij het opslaan zet eBlinqx Hypotheekadvies automatisch punten tussen en na elke letter.</p>
+		</li>
+													<li>
+		<p>Voorbeeld: als je <em>SGA</em> invoert, wordt dit automatisch <em>S.G.A.</em></p>
+		</li>
+													<li>
+		<p>Dit geldt voor 2 tot 5 hoofdletters zonder spaties of leestekens.</p>
+		</li>
+													<li>
+		<p>Als jij de voorletters al correct hebt ingevoerd (bijv. <em>S.G.A.</em>), blijft dit ongewijzigd.</p>
+		</li>
+												</ul>
+												<p><strong>Wat betekent dit voor jou?</strong></p>
+												<ul>
+													<li>
+		<p>Je hebt altijd een consistente en professionele weergave van voorletters in je dossiers en rapporten.</p>
+		</li>
+													<li>
+		<p>Je hoeft zelf geen extra correcties meer uit te voeren.</p>
+		</li>
+												</ul>
+												
+											
+											
+										
+									
+								
+							</div>
+    <p class="pager"><a href="../../releasenotes-hypotheekadvies/2025-08/index.html">« Augustus 2025</a> &nbsp; <a href="../../releasenotes-hypotheekadvies/2025-10/index.html">Oktober 2025 »</a></p>
+    <p class="src">Bron: <a href="https://fastlane.hypotheekbond.nl/hoe-het-werkt/releasenotes/releasenotes-2025/" target="_blank" rel="noopener">fastlane.hypotheekbond.nl</a></p>
+  </article>
+  <aside class="related"><h2>Andere maanden:</h2><ul><li><a href="../../releasenotes-hypotheekadvies/2026-01/index.html">Januari 2026</a></li><li><a href="../../releasenotes-hypotheekadvies/2025-12/index.html">December 2025</a></li><li><a href="../../releasenotes-hypotheekadvies/2025-11/index.html">November 2025</a></li><li><a href="../../releasenotes-hypotheekadvies/2025-10/index.html">Oktober 2025</a></li><li><a href="../../releasenotes-hypotheekadvies/2025-08/index.html">Augustus 2025</a></li><li><a href="../../releasenotes-hypotheekadvies/2025-07/index.html">Juli 2025</a></li><li><a href="../../releasenotes-hypotheekadvies/2025-06/index.html">Juni 2025</a></li><li><a href="../../releasenotes-hypotheekadvies/2025-05/index.html">Mei 2025</a></li><li><a href="../../releasenotes-hypotheekadvies/2025-04/index.html">April 2025</a></li></ul><p><a href="../../releasenotes-hypotheekadvies/index.html">Alle releasenotes »</a></p></aside>
+</div></main>
+<footer>
+  <div class="wrap">
+    <span>Copyright © 2024 Blinqx powered by Faster Forward</span>
+    <nav aria-label="Beleid">
+      <a href="../../supportbeleid/index.html">Supportbeleid</a>
+      <a href="../../opdrachtenbeleid/index.html">Opdrachtenbeleid</a>
+      <a href="../../klachtenbeleid/index.html">Klachtenbeleid</a>
+      <a href="../../wensenbeleid/index.html">Wensenbeleid</a>
+      <a href="../../video/index.html">Video's</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
