@@ -570,6 +570,18 @@ def share_block(pg, title, description):
             ':"mailto:?subject="+encodeURIComponent(a.dataset.t+" – Blinqx Support")+"&body="+encodeURIComponent(m+"\\n\\n"+u);});})();</script>')
 
 
+_VERSIES = {}
+
+
+def asset_versie(naam):
+    """Korte hash van een bestand in tools/, zodat browsers na een wijziging direct de nieuwe versie laden."""
+    if naam not in _VERSIES:
+        import hashlib
+        f = os.path.join(TOOLS, "assets", naam) if os.path.exists(os.path.join(TOOLS, "assets", naam)) else os.path.join(TOOLS, naam)
+        _VERSIES[naam] = hashlib.md5(open(f, "rb").read()).hexdigest()[:8]
+    return _VERSIES[naam]
+
+
 def layout(pg, title, body, active=None, description=""):
     nav = "".join(
         (f'<li class="ext"><a href="{t}" target="_blank" rel="noopener">{esc(n)}</a></li>'
@@ -583,7 +595,7 @@ def layout(pg, title, body, active=None, description=""):
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{esc(title)}{" - " if title else ""}Blinqx Support</title>
 {f'<meta name="description" content="{esc(description[:300])}">' if description else ""}
-<link rel="stylesheet" href="{pg.rel('assets/site.css')}">
+<link rel="stylesheet" href="{pg.rel('assets/site.css')}?v={asset_versie('site.css')}">
 <link rel="icon" href="{pg.rel('assets/favicon.png')}">
 </head>
 <body>
@@ -1021,7 +1033,10 @@ def render_search(pages, cats):
             for k in ("t", "c", "x"):
                 if r.get(k):
                     r[k] = kluis_tekst(r[k])
-        fh.write("window.ZOEKINDEX=" + json.dumps(idx, ensure_ascii=False, separators=(",", ":")) + ";\n")
+        idx_js = "window.ZOEKINDEX=" + json.dumps(idx, ensure_ascii=False, separators=(",", ":")) + ";\n"
+        fh.write(idx_js)
+    import hashlib
+    idx_v = hashlib.md5(idx_js.encode("utf8")).hexdigest()[:8]
     body = f"""{crumbs(pg, [("Zoeken", None)])}
 <main class="subpage searchpage"><div class="wrap">
   <h1 id="sh">Zoeken</h1>
@@ -1036,8 +1051,8 @@ def render_search(pages, cats):
   <div class="exlist" id="sres"></div>
   <p><button type="button" id="smore" class="smore" hidden>Toon meer resultaten</button></p>
 </div></main>
-<script src="zoekindex.js"></script>
-<script src="zoeken.js"></script>"""
+<script src="zoekindex.js?v={idx_v}"></script>
+<script src="zoeken.js?v={asset_versie('zoeken.js')}"></script>"""
     write("zoeken", layout(pg, "Zoeken", body))
     shutil.copy(os.path.join(TOOLS, "zoeken.js"), os.path.join(ROOT, "zoeken", "zoeken.js"))
 
