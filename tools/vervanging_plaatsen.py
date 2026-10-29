@@ -65,7 +65,8 @@ def eerste_zin(t):
     if re.search(r"zoom|crop|hergebruik|hetzelfde|dezelfde", zin, re.I) or len(zin) < 8:
         return ""  # geen bruikbare omschrijving: bijschrift uit de bestandsnaam
     zin = re.sub(r"^(het|de|een)\s+", "", zin, flags=re.I)
-    return (zin[:1].upper() + zin[1:])[:220]
+    zin = zin[:1].upper() + zin[1:]
+    return zin if len(zin) <= 200 else zin[:200].rsplit(" ", 1)[0] + " …"
 
 
 bron = sys.argv[1]

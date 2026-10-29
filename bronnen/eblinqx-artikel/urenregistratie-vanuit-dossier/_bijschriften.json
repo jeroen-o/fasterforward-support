@@ -1,0 +1,6 @@
+{
+ "registratie-aanmaken-vanuit-timer.png": "Registratie aanmaken-formulier dat opent na het klikken op het klokicoon, met het extra veld \"Verstreken volgens timer: 00:00:11\" en de Uren/Minuten-schuifbalken al op de verstreken tijd gezet",
+ "registratie-formulier-urenregistratie-aangevinkt.png": "Volledige \"Registratie aanmaken\"-formulier (via snelactie \"Registratie aanmaken\" > tabblad COMMUNICATIE > REGISTRATIE) met alle velden: Taak/Product, Datum/Tijd, Onderwerp, Soort (dropdown), Uren- en …",
+ "registratie-lijst-filter-overzicht.png": "REGISTRATIE-tabblad met het volledige filterpaneel (Datum/Taak/Onderwerp/Persoon/Media/ Mediumtype/Schademelding/Product/Toon/Soort registratie/Facturabel/ Systeemregistraties/Vragenregistraties) en …",
+ "timer-gestart-pauze-reset.png": "Close-up van de timer-knoppenbalk met de lopende tijd (00:00:07), de oranje pauze-knop, de roze reset-knop en het klokicoon"
+}

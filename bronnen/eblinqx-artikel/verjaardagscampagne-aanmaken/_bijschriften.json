@@ -1,0 +1,11 @@
+{
+ "actie-email-adres-template-zoomed.png": "Actie email adres template zoomed",
+ "actie-email-en-bericht-html-editor.jpg": "E-mail-blok (E-mailbox afzender/Naam/E-mailadres afzender/Onderwerp/Naam+E-mailadres ontvanger/Template/Bewaar e-mail in dossier) en direct daaronder de volledige \"Bericht html\"-rich text-editor met …",
+ "actie-herhaling-en-filter-ingesteld.png": "Actie herhaling en filter ingesteld",
+ "actie-volledig-algemeen-tabblad.jpg": "Volledige ALGEMEEN-tabblad van een actie, met het \"Herhalings actie\"-blok rechts (Startdatum/ Interval \"Dagelijks\"/tot einddatum) en Bronvermelding-checkboxes (Aplaza import/Bestaande relatie/Externe …",
+ "resultaat-tab-voorbeeld-uitvoeren.jpg": "RESULTAAT-tabblad met de knoppen \"Voorbeeld\" en \"Uitvoeren\", en het Resultaat-overzicht (Verwerkt/Verzonden/Afgeleverd/Onbezorgbaar/Gelezen, elk met percentage en aantal), plus de \"Kliks\"-tabel en …",
+ "resultaat-tab-zoomed.png": "Resultaat tab zoomed",
+ "selectie-filter-status-zoomed.png": "Selectie filter status zoomed",
+ "selectie-tab-ontvangerslijst-met-filters.jpg": "SELECTIE-tabblad met het statusfilter (Gelezen/Verzonden/Onbezorgbaar/Afgeleverd/ Niet verzonden/Niet verwerkt) en de volledige ontvangerslijst met echte (demo-)personen inclusief geboortedatum …",
+ "verjaardagscampagne-algemeen-met-acties.png": "Campagne zelf (Omschrijving \"Verjaardagscampagne automatisch uitvoeren\", Start-/ Einddatum, Organisatie \"Alle\") met het \"Acties\"-blok eronder: 4 echte acties met bron \"CRM - Personen die vandaag …"
+}

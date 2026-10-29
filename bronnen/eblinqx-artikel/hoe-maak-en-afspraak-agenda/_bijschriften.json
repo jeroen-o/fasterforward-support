@@ -1,0 +1,5 @@
+{
+ "afspraak-formulier-ingevuld-naam-locatie.jpg": "\"Taak aanmaken\"-formulier met een ingevulde naam (\"Adviesgesprek hypotheek\"), een ingevulde Locatie (\"Kantoor Steen Hypotheken, Amsterdam\") en de aangevinkte \"Herhaling\"-sectie",
+ "herhaling-interval-dropdown.jpg": "Interval-dropdown aangeklikt (native HTML-select, de opties zelf renderen niet zichtbaar in de screenshot — bekende tool-beperking)",
+ "kalender-weekweergave-na-annuleren.jpg": "Terugkeer naar de hoofdkalender nadat het formulier via \"Annuleren\" gesloten is, zonder dat er een afspraak is opgeslagen"
+}
