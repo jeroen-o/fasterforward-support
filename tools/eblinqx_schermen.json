@@ -1,0 +1,19 @@
+{
+  "_uitleg": "Actuele schermafbeeldingen uit de eBlinqx Connect-demo (fictieve klant), per kennisbankartikel. Bestanden staan in bronnen/eblinqx/.",
+  "schermen": {
+    "dossieroverzicht": "Het klantdossier in eBlinqx Connect: dossiergegevens, snelacties rechtsboven en de tabbladen",
+    "klantgegevens": "Tabblad Partijen & objecten: personen, organisaties, panden, adviseur en businesspartners",
+    "hoofdmenu": "De dossiertabbladen met het uitgeklapte menu Meer (TP incasso boekingen, Boekingen, Workflow)",
+    "invoerscherm_inkomen": "Startpagina > Financiële situatie: inkomen, woonlasten en verplichtingen van de klant"
+  },
+  "artikelen": {
+    "kennisbank/hoe-maak-dossier-aan": ["dossieroverzicht"],
+    "kennisbank/verhuizing-aanmaken": ["dossieroverzicht"],
+    "kennisbank/urgente-registratie": ["dossieroverzicht"],
+    "kennisbank/dossiernotitie": ["dossieroverzicht"],
+    "kennisbank/dossier-samenvatting-downloaden": ["dossieroverzicht"],
+    "kennisbank/extra-partijen-toevoegen-aan-het-dossier": ["klantgegevens"],
+    "kennisbank/tp-incasso-boekingen": ["hoofdmenu"],
+    "kennisbank/welke-adviespakketten-koppelt-eblinqx": ["invoerscherm_inkomen"]
+  }
+}

@@ -44,6 +44,7 @@ PRODUCT_SUPPORT = [
 ]
 
 # Webinar-replays op WebinarGeek die bij een bestaand artikel horen.
+EBLINQX_SCHERMEN = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "eblinqx_schermen.json"), encoding="utf-8"))
 REPLAYS = {
     "webinar-nieuwe-feature-mytp": "https://fasterforward.webinargeek.com/watch/replay/2652088/faaf06952e67e0ce558425566f97772a/",
 }
@@ -946,6 +947,12 @@ def render_article(cats, feeds, p):
             figs.append(f'<figure><a href="{esc(src)}" target="_blank" rel="noopener"><img src="{esc(src)}" alt="{esc(im["alt"])}" loading="lazy" onerror="this.closest(\'figure\').remove()"></a>'
                         f'{f"<figcaption>{esc(im["alt"])}</figcaption>" if im["alt"] else ""}</figure>')
         imgs = '<section class="figs"><h2>Afbeeldingen bij dit artikel</h2>' + "".join(figs) + "</section>"
+    nu = EBLINQX_SCHERMEN["artikelen"].get(p["path"].strip("/"), [])
+    if nu:
+        imgs = ('<section class="figs nu"><h2>Zo ziet het er nu uit in eBlinqx Connect</h2>' + "".join(
+            f'<figure><a href="{pg.rel("bronnen/eblinqx/" + n + ".webp")}" target="_blank" rel="noopener">'
+            f'<img src="{pg.rel("bronnen/eblinqx/" + n + ".webp")}" alt="{esc(EBLINQX_SCHERMEN["schermen"][n])}" width="1440" height="840" loading="lazy"></a>'
+            f'<figcaption>{esc(EBLINQX_SCHERMEN["schermen"][n])}</figcaption></figure>' for n in nu) + "</section>") + imgs
     shot = ""  # screenshots van de Wayback-opname worden niet meer getoond; de echte afbeeldingen staan in het artikel
     if p["path"] not in ("contact",) and (p.get("rawhtml") or p["lines"]):
         imgs += ('<div class="feedback"><span class="fb-q">Was deze informatie nuttig?</span>'
