@@ -759,7 +759,8 @@ def resolve_img(pg, url):
         url = BASE + url
     rel = img_local(url)
     if rel:
-        for cand in (rel, "bronnen/wayback/" + rel):
+        # eigen vervangende schermafbeeldingen (tools/vervanging_plaatsen.py) gaan voor de archiefversie
+        for cand in ("bronnen/vervanging/" + rel, rel, "bronnen/wayback/" + rel):
             if os.path.exists(os.path.join(ROOT, cand)):
                 return pg.rel(cand)
     return wayback_img(url)
