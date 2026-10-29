@@ -54,7 +54,7 @@ LIVE_DIR = os.path.join(SRC, "live-2026-10-20")  # pagina's van de live site, 20
 SKIP_PATH = re.compile(r"^(wp-content|wp-includes|wp-json|wp-admin|feed|comments|author|tag|tags|page|xmlrpc|"
                        r"search|\?|.*?/feed$|.*?/page/\d+$|.*?/amp$|.*?/embed$)")
 FEEDS = {"Nieuws": "nieuws", "Tips": "tips", "Release notes": "releasenotes"}
-OUTDIRS = ["releasenotes-hypotheekadvies", "elearning", "video", "kennisbank", "categorien", "category", "nieuws", "tips", "releasenotes", "zoeken",
+OUTDIRS = ["tags", "tag", "releasenotes-hypotheekadvies", "elearning", "video", "kennisbank", "categorien", "category", "nieuws", "tips", "releasenotes", "zoeken",
            "contact", "trainingen", "assets"]
 
 
@@ -1794,12 +1794,80 @@ def render_404():
     write("404.html", html_)
 
 
+def redirect_doel(path, cats):
+    """Oud adres -> (doelpad, zoekterm of None). None als er geen zinnig doel is."""
+    p = path.strip("/")
+    if re.match(r"(wp-|feed|comments|xmlrpc)", p) or "wp-login" in p:
+        return None
+    m = re.match(r"(.*)/embed$", p)
+    if m:
+        return (m.group(1), None)
+    m = re.match(r"tags?/([^/]+)", p)
+    if m:
+        return ("zoeken", m.group(1).replace("-", " "))
+    p = re.sub(r"/page/\d+$", "", p)
+    vast = {"category/release": "releasenotes", "category/algemeen": "nieuws", "categorien/elements": "kennisbank",
+            "categorien/eblinqx": "kennisbank"}
+    if p in vast:
+        return (vast[p], None)
+    if os.path.exists(os.path.join(ROOT, p, "index.html")):
+        return (p, None)
+    # oude (sub)categorie: best passende huidige categorie of subcategorie op naam
+    slug = re.sub(r"^(category|categorien)/", "", p)
+    slug = re.sub(r"^artikelen-?|\d+$|-(eblinqx|elements)\d*$", "", slug)
+    woorden = set(slug.split("-")) - {""}
+    best, score = None, 0
+    for cname, c in cats.items():
+        kand = [(cname, cat_target(cats, cname))] + [(sn, sub_target(cats, cname, sb)) for sn, sb in c["subs"].items() if sb["items"]]
+        for naam, doel in kand:
+            n = set(slugify(naam).split("-"))
+            sc = len(woorden & n) / max(1, len(woorden | n))
+            if sc > score and os.path.exists(os.path.join(ROOT, doel, "index.html")):
+                best, score = doel, sc
+    return (best if score >= 0.5 else "kennisbank", None)
+
+
+def render_redirects(cats):
+    """Doorverwijzingen voor oude adressen die geen eigen pagina meer hebben (tags, paginering, oude categorieën)."""
+    from urllib.parse import quote
+    oud = set()
+    s = open(os.path.join(SRC, "inventaris.html"), encoding="utf8").read()
+    for d in json.loads(re.search(r"const DATA = (\[.*?\]);\n", s, re.S).group(1)):
+        oud.add(d["u"])
+    cf = os.path.join(WAYBACK_DIR, "_cdx.json")
+    if os.path.exists(cf):
+        oud |= {o for _, o, m in json.load(open(cf)) if "html" in (m or "")}
+    n = 0
+    for u in sorted(oud):
+        path = re.sub(r"^https?://(www\.)?support\.fasterforward\.nl", "", u.split("#")[0].split("?")[0]).strip("/")
+        if not path or os.path.exists(os.path.join(ROOT, path, "index.html")) or re.search(r"\.\w{2,4}$", path):
+            continue
+        doel = redirect_doel(path, cats)
+        if not doel or doel[0] == path:
+            continue
+        pg = Page(path)
+        href = pg.rel(doel[0]) + (f"?q={quote(doel[1])}" if doel[1] else "")
+        absu = SITE_URL + (doel[0] + "/" if doel[0] else "") + (f"?q={quote(doel[1])}" if doel[1] else "")
+        write(path, f"""<!doctype html>
+<html lang="nl"><head><meta charset="utf-8"><title>Doorverwijzen… - Blinqx Support</title>
+<meta name="robots" content="noindex"><link rel="canonical" href="{esc(absu)}">
+<meta http-equiv="refresh" content="0; url={esc(href)}">
+<script>location.replace({json.dumps(href)} + location.hash);</script></head>
+<body><p>Deze pagina is verhuisd. Ga naar <a href="{esc(href)}">de nieuwe pagina</a>.</p></body></html>
+""", kluis=False)
+        n += 1
+    print(f"doorverwijzingen: {n}")
+
+
 def render_sitemap(pages):
     urls = set()
     for f in glob.glob(os.path.join(ROOT, "**", "index.html"), recursive=True):
         rel = os.path.relpath(os.path.dirname(f), ROOT).replace(os.sep, "/")
         if rel.split("/")[0] in ("bronnen", "tools", "zoeken", "assets", ".github"):
             continue
+        with open(f, encoding="utf8") as fh:
+            if 'http-equiv="refresh"' in fh.read(600):
+                continue  # doorverwijzing, geen eigen pagina
         urls.add("" if rel == "." else rel)
     xml = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     xml += [f"  <url><loc>{SITE_URL}{u + '/' if u else ''}</loc></url>" for u in sorted(urls)]
@@ -1856,6 +1924,7 @@ def main():
     render_search(pages, cats)
     render_home(cats, feeds, pages)
     render_404()
+    render_redirects(cats)
     render_sitemap(pages)
 
     # markeer root-mappen met gegenereerde inhoud zodat een volgende build ze kan opruimen
