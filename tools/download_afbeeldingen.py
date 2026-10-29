@@ -47,7 +47,7 @@ def image_list():
 
 def fetch(url):
     req = urllib.request.Request(url, headers=HEADERS)
-    with urllib.request.urlopen(req, timeout=40) as r:
+    with urllib.request.urlopen(req, timeout=30) as r:
         ctype = r.headers.get("Content-Type", "")
         data = r.read()
     if "text/html" in ctype:
@@ -58,42 +58,53 @@ def fetch(url):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--max", type=int, default=0)
+    ap.add_argument("--werkers", type=int, default=6)
+    ap.add_argument("--max-minuten", type=float, default=0)
     args = ap.parse_args()
+    from concurrent.futures import ThreadPoolExecutor
+    start = time.time()
 
-    imgs = image_list()
-    ok = skipped = 0
-    failed = []
-    for i, (src, waybacks) in enumerate(imgs.items()):
-        if args.max and i >= args.max:
-            break
+    todo = []
+    skipped = 0
+    for src, waybacks in image_list().items():
         rel = local_path(src)
         if not rel:
             continue
-        dest = os.path.join(ROOT, rel)
-        alt = os.path.join(ROOT, "bronnen", "wayback", rel)
-        if (os.path.exists(dest) and os.path.getsize(dest) > 0) or os.path.exists(alt):
+        # afbeeldingen komen in bronnen/wayback/ (zelfde plek als tools/wayback-ophalen.py); build.py vindt ze daar
+        dest = os.path.join(ROOT, "bronnen", "wayback", rel)
+        if os.path.exists(dest) or os.path.exists(os.path.join(ROOT, rel)):
             skipped += 1
             continue
-        tries = [w for w in waybacks if w] + [f"https://web.archive.org/web/2026im_/{src}", src]
+        todo.append((src, waybacks, dest))
+    if args.max:
+        todo = todo[:args.max]
+    print(f"{len(todo)} op te halen, {skipped} al aanwezig", flush=True)
+    ok, failed = [], []
+
+    def one(item):
+        src, waybacks, dest = item
+        if args.max_minuten and time.time() - start > args.max_minuten * 60:
+            return
         last = None
-        for url in tries:
+        for url in [w for w in waybacks if w][:1] + [f"https://web.archive.org/web/2026im_/{src}"]:
             try:
                 data = fetch(url)
                 os.makedirs(os.path.dirname(dest), exist_ok=True)
                 with open(dest, "wb") as fh:
                     fh.write(data)
-                ok += 1
-                last = None
-                break
+                ok.append(src)
+                return
             except Exception as e:  # volgende bron proberen
                 last = e
-        if last:
-            failed.append((src, str(last)))
-        if i % 50 == 0:
-            print(f"... {i}/{len(imgs)} verwerkt ({ok} nieuw, {skipped} al aanwezig, {len(failed)} mislukt)", flush=True)
-        time.sleep(0.2)  # lichte throttling, aardig voor archive.org
+        failed.append((src, str(last)))
+        time.sleep(0.3)  # lichte throttling, aardig voor archive.org
 
-    print(f"\nKlaar: {ok} nieuw, {skipped} al aanwezig, {len(failed)} mislukt.")
+    with ThreadPoolExecutor(args.werkers) as ex:
+        for i, _ in enumerate(ex.map(one, todo), 1):
+            if i % 100 == 0:
+                print(f"... {i}/{len(todo)} ({len(ok)} nieuw, {len(failed)} mislukt)", flush=True)
+
+    print(f"\nKlaar: {len(ok)} nieuw, {skipped} al aanwezig, {len(failed)} mislukt.")
     if failed:
         with open(os.path.join(ROOT, "tools", "mislukte_afbeeldingen.txt"), "w", encoding="utf-8") as f:
             for url, err in failed:

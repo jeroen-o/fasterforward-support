@@ -1,11 +1,14 @@
 name: Internet Archive ophalen en site bouwen
 
 # Handmatig starten via Actions -> "Internet Archive ophalen en site bouwen" -> Run workflow.
-# 1. tools/wayback-ophalen.py haalt per URL de nieuwste gearchiveerde versie van support.fasterforward.nl
-#    op (HTML, afbeeldingen, pdf's) naar bronnen/wayback/. Al aanwezige bestanden worden overgeslagen.
-# 2. tools/download_afbeeldingen.py vult ontbrekende afbeeldingen aan.
-# 3. tools/build.py bouwt de site opnieuw; het resultaat wordt gecommit.
-# Is het ophalen nog niet klaar (tijdslimiet) en is er voortgang geboekt, dan start de workflow zichzelf opnieuw.
+#
+# Taak 1 (ophalen): tools/wayback-ophalen.py haalt de gearchiveerde pagina's, afbeeldingen en pdf's van
+#   support.fasterforward.nl op naar bronnen/wayback/. Elke 25 minuten wordt de voortgang gecommit, zodat er
+#   nooit werk verloren gaat. Alleen bronnen/wayback/ wordt gecommit: daar komt verder niemand aan, dus er
+#   ontstaan geen botsingen met andere wijzigingen.
+# Taak 2 (bouwen): bouwt de site op de nieuwste versie van main en commit het resultaat. Mislukt de push omdat
+#   main intussen is veranderd, dan wordt opnieuw gebouwd op de nieuwe versie (er wordt nooit samengevoegd).
+# Taak 3: is het ophalen nog niet klaar en is er voortgang geboekt, dan start de workflow zichzelf opnieuw.
 on:
   workflow_dispatch:
     inputs:
@@ -26,46 +29,85 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  run:
+  ophalen:
     runs-on: ubuntu-latest
-    timeout-minutes: 350
+    timeout-minutes: 330
+    outputs:
+      onaf: ${{ steps.loop.outputs.onaf }}
+      nieuw: ${{ steps.loop.outputs.nieuw }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Pagina's en bestanden uit de Wayback Machine
-        id: ophalen
-        run: |
-          ARGS="--uit bronnen/wayback --pauze 0.8"
-          if [ "${{ inputs.alleen_kennisbank }}" = "true" ]; then ARGS="$ARGS --kennisbank"; fi
-          set +e
-          timeout 280m python3 tools/wayback-ophalen.py $ARGS 2>&1 | tee ophalen.log | grep -v '^[0-9]*/[0-9]* ' | tail -200
-          code=${PIPESTATUS[0]}
-          set -e
-          echo "Laatste voortgang:"; grep '^[0-9]*/[0-9]* ' ophalen.log | tail -3 || true
-          rm -f ophalen.log
-          if [ "$code" = "124" ]; then echo "onaf=true" >> "$GITHUB_OUTPUT"; else echo "onaf=false" >> "$GITHUB_OUTPUT"; fi
-      - name: Ontbrekende afbeeldingen aanvullen
-        if: steps.ophalen.outputs.onaf == 'false'
-        run: timeout 40m python3 tools/download_afbeeldingen.py || true
-      - name: Site bouwen
-        run: python3 tools/build.py
-      - name: Committen
-        id: commit
+      - name: Ophalen in blokken van 25 minuten, voortgang steeds committen
+        id: loop
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
-          git add -A
-          if git diff --cached --quiet; then echo "nieuw=false" >> "$GITHUB_OUTPUT"; exit 0; fi
-          echo "nieuw=true" >> "$GITHUB_OUTPUT"
-          git commit -q -m "Inhoud uit het Internet Archive bijgewerkt (ronde ${{ inputs.ronde }})"
-          for i in 1 2 3 4 5; do git pull -q --rebase && git push && break; sleep 10; done
+          ARGS="--uit bronnen/wayback --pauze 0.5 --werkers 4 --max-minuten 25"
+          if [ "${{ inputs.alleen_kennisbank }}" = "true" ]; then ARGS="$ARGS --kennisbank"; fi
+          start=$(date +%s); nieuw=false; onaf=true
+          commit_data() {
+            git add bronnen/wayback tools/mislukte_afbeeldingen.txt 2>/dev/null || true
+            git diff --cached --quiet && return 0
+            git commit -q -m "Internet Archive: $1 (ronde ${{ inputs.ronde }})"
+            nieuw=true
+            for i in 1 2 3 4 5; do
+              git pull -q --rebase origin main && git push -q origin HEAD:main && return 0
+              sleep 10
+            done
+            echo "::error::Pushen van de opgehaalde bestanden is mislukt"; exit 1
+          }
+          while true; do
+            set +e; python3 tools/wayback-ophalen.py $ARGS; code=$?; set -e
+            if [ "$code" = "0" ]; then
+              timeout 40m python3 tools/download_afbeeldingen.py --max-minuten 35 || true
+              onaf=false
+            fi
+            commit_data "pagina's en bestanden"
+            [ "$onaf" = "false" ] && break
+            [ $(( $(date +%s) - start )) -gt $(( 270 * 60 )) ] && break
+          done
+          echo "onaf=$onaf" >> "$GITHUB_OUTPUT"
+          echo "nieuw=$nieuw" >> "$GITHUB_OUTPUT"
+
+  bouwen:
+    needs: ophalen
+    if: always() && needs.ophalen.result != 'cancelled'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Site bouwen op de nieuwste main en committen
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          for i in 1 2 3 4 5; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            python3 tools/build.py
+            git add -A
+            git diff --cached --quiet && { echo "Geen wijzigingen in de site."; exit 0; }
+            git commit -q -m "Site opnieuw gebouwd met inhoud uit het Internet Archive"
+            git push -q origin HEAD:main && exit 0
+            echo "main is intussen gewijzigd; opnieuw bouwen op de nieuwe versie"; sleep 15
+          done
+          echo "::error::Pushen van de gebouwde site is mislukt"; exit 1
+
+  volgende-ronde:
+    needs: [ophalen, bouwen]
+    if: needs.ophalen.outputs.onaf == 'true' && needs.ophalen.outputs.nieuw == 'true'
+    runs-on: ubuntu-latest
+    steps:
       - name: Volgende ronde starten
-        if: steps.ophalen.outputs.onaf == 'true' && steps.commit.outputs.nieuw == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh workflow run afbeeldingen.yml --ref main \
+          gh workflow run afbeeldingen.yml --repo "${{ github.repository }}" --ref main \
             -f alleen_kennisbank=${{ inputs.alleen_kennisbank }} \
             -f ronde=$(( ${{ inputs.ronde }} + 1 ))
