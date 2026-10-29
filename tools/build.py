@@ -984,21 +984,32 @@ def render_feed(name, items):
     path = FEEDS[name]
     pg = Page(path)
     h2, intro, img = FEED_META[name]
-    cards = []
+
+    def card(x):
+        d = x["posted"] or x["updated"]
+        return (f'<article class="card"><h3><a href="{pg.rel(x["path"])}">{esc(x["t"])}</a></h3>'
+                f'{f"<p class=\"date\">{fmt_date(d)}</p>" if d else ""}'
+                f'{f"<p>{esc(x["excerpt"])}</p>" if x.get("excerpt") else ""}'
+                f'<a class="readmore" href="{pg.rel(x["path"])}">Lees verder</a></article>')
+
+    # Per jaar groeperen (zoals bij de releasenotes van Hypotheekadvies); zonder datum onderaan.
+    groups = {}
     for x in items:
         d = x["posted"] or x["updated"]
-        cards.append(
-            f'<article class="card"><h3><a href="{pg.rel(x["path"])}">{esc(x["t"])}</a></h3>'
-            f'{f"<p class=\"date\">{fmt_date(d)}</p>" if d else ""}'
-            f'{f"<p>{esc(x["excerpt"])}</p>" if x.get("excerpt") else ""}'
-            f'<a class="readmore" href="{pg.rel(x["path"])}">Lees verder</a></article>')
-    body = f"""{hero(pg, "Releasenotes Connect" if name == "Release notes" else name, img)}
+        groups.setdefault(str(d.year) if d else "Overige berichten", []).append(x)
+    keys = sorted((k for k in groups if k.isdigit()), reverse=True) + [k for k in groups if not k.isdigit()]
+    jump = " · ".join(f'<a href="#jaar-{slugify(k)}">{esc(k)}</a>' for k in keys)
+    blocks = "".join(f'<h2 class="feed-h" id="jaar-{slugify(k)}">{esc(k)}</h2><div class="cards">{"".join(card(x) for x in groups[k])}</div>'
+                     for k in keys)
+    title = FEED_LABEL.get(name, name)
+    body = f"""{hero(pg, title, img)}
 <main class="feed"><div class="wrap">
   <h2 class="feed-h">{esc(h2)}</h2>
-  <p>{esc(intro)}</p>
-  <div class="cards">{"".join(cards)}</div>
+  <p>{esc(intro)} {len(items)} berichten.</p>
+  {f'<p class="jump">Ga naar: {jump}</p>' if len(keys) > 1 else ""}
+  {blocks}
 </div></main>"""
-    write(path, layout(pg, name, body, path))
+    write(path, layout(pg, title, body, path, f"{title}: {intro}"))
 
 
 def render_kennisbank(cats):
