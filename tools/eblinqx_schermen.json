@@ -49,7 +49,24 @@
     "account_menu": "Het accountmenu rechtsboven: Mijn instellingen, Support website, Wissel administratie, Wachtwoord wijzigen",
     "mijn_instellingen": "Mijn instellingen: gebruikersaccount, authenticator-app, taal, startpagina's, standaard e-mailbox en handtekening",
     "schade_uitbetalingen": "Verzekeringen > Schade uitbetalingen goedkeuren",
-    "toekomstige_mutaties": "Verzekeringen > Overzicht toekomstige mutaties"
+    "toekomstige_mutaties": "Verzekeringen > Overzicht toekomstige mutaties",
+    "crm": "Startpagina > CRM: CRM-kenmerken, aanspreekvorm, voorkeurstaal, herkomst en verwerkte campagnes",
+    "export_klantportaal": "Export > Klantportaal: personen koppelen aan UwKluis / Online klantportaal, synchroniseren en brondataverzoeken",
+    "export_finly": "Export > Finly formulieren: nieuw formulier aanmaken en de status van verstuurde formulieren",
+    "partijen_algemeen": "Partijen & objecten > persoon > Algemeen: naam, geslacht, geboortedatum, burgerlijke staat, telefoon en e-mail",
+    "hypotheek_bankgarantie": "Productkaart hypotheek > Bankgarantie: bankgarantie aanvragen en de status volgen",
+    "hypotheek_inkomen": "Productkaart hypotheek > Inkomen: de inkomens die bij deze hypotheek horen",
+    "timer": "De timer rechtsboven in het dossier (gestart): tijd automatisch registreren",
+    "registratie_soort": "Registratie aanmaken > Soort: de beschikbare soorten registraties",
+    "administraties": "Financieel > Stamgegevens > Administraties onderhoud",
+    "deelnemeroverzichten": "Financieel > Overzichten > Deelnemeroverzichten",
+    "grootboekkaart": "Financieel > Overzichten > Grootboekkaart overzicht",
+    "boeking_invoeren": "Financieel > Boekingen > Boeking invoeren: kies het dagboek (kas, bank, rekening-courant …)",
+    "vaste_boekingen": "Financieel > Boekingen > Vaste boekingen",
+    "openstaande_posten": "Financieel > Overzichten > Openstaande postenoverzicht: kies een grootboekrekening",
+    "inkoopregister": "Financieel > Inkoopfacturen > Inkoopregister",
+    "soort_documenten": "Beheer > Documenten > Soort documenten beheer: categorieën en soorten documenten",
+    "emailgroepen": "Beheer > Email > E-mailgroepen"
   },
   "artikelen": {
     "kennisbank/hoe-maak-dossier-aan": [
@@ -151,13 +168,16 @@
       "productkaart_verzekering"
     ],
     "kennisbank/registratie-aanmaken": [
-      "registratie_aanmaken"
+      "registratie_aanmaken",
+      "registratie_soort"
     ],
     "kennisbank/zelf-type-registraties-aanmaken": [
-      "registratie_aanmaken"
+      "registratie_aanmaken",
+      "registratie_soort"
     ],
     "kennisbank/urenregistratie-vanuit-dossier": [
-      "registratie_aanmaken"
+      "registratie_aanmaken",
+      "timer"
     ],
     "kennisbank/hoe-maak-ik-een-e-mail-in-een-dossier-aan": [
       "email_aanmaken"
@@ -189,7 +209,8 @@
       "productkaart_hypotheek"
     ],
     "kennisbank/bankgaranties-aanvragen": [
-      "productkaart_hypotheek"
+      "productkaart_hypotheek",
+      "hypotheek_bankgarantie"
     ],
     "kennisbank/hypotheek-staat-op-vervallen-loopt-nog-nu": [
       "productkaart_hypotheek"
@@ -210,19 +231,24 @@
       "afschriften_importeren"
     ],
     "kennisbank/boeking-zoeken": [
-      "menu_financieel"
+      "menu_financieel",
+      "boeking_invoeren"
     ],
     "kennisbank/invoeren-boeking-elements": [
-      "menu_financieel"
+      "menu_financieel",
+      "boeking_invoeren"
     ],
     "kennisbank/inlezen-boeking": [
-      "menu_financieel"
+      "menu_financieel",
+      "boeking_invoeren"
     ],
     "kennisbank/vaste-boekingen": [
-      "menu_financieel"
+      "menu_financieel",
+      "vaste_boekingen"
     ],
     "kennisbank/boekingsverslag": [
-      "menu_financieel"
+      "menu_financieel",
+      "grootboekkaart"
     ],
     "kennisbank/facturen-overzicht": [
       "menu_financieel",
@@ -233,11 +259,13 @@
       "debiteurenkaarten"
     ],
     "kennisbank/hoe-soort-document-toevoegen": [
-      "menu_beheer"
+      "menu_beheer",
+      "soort_documenten"
     ],
     "kennisbank/hoe-maak-mailgroep-aan": [
       "menu_beheer",
-      "email_opties"
+      "email_opties",
+      "emailgroepen"
     ],
     "kennisbank/aplaza-berichten-verwerken": [
       "menu_verzekeringen",
@@ -296,7 +324,8 @@
     ],
     "kennisbank/debiteurenverschil-tussen-de-balans-en-debiteurenkaarten": [
       "balans_winst_verlies",
-      "debiteurenkaarten"
+      "debiteurenkaarten",
+      "openstaande_posten"
     ],
     "kennisbank/organisatie-financieel-inrichten": [
       "balans_winst_verlies"
@@ -334,7 +363,8 @@
       "campagnemanager"
     ],
     "kennisbank/verjaardagscampagne-aanmaken": [
-      "campagnemanager"
+      "campagnemanager",
+      "crm"
     ],
     "kennisbank/campagne-op-basis-van-een-csv-bestand": [
       "campagnemanager"
@@ -346,7 +376,8 @@
       "managementinformatie"
     ],
     "kennisbank/persoon-toevoegen-aan-dossier": [
-      "organisatie_personen"
+      "organisatie_personen",
+      "partijen_algemeen"
     ],
     "kennisbank/hoe-maak-ik-een-nieuwe-verzekeringsmaatschappij-aan": [
       "organisatie_personen"
@@ -467,7 +498,8 @@
       "export"
     ],
     "kennisbank/gemakkelijk-formulieren-toesturen-met-finly": [
-      "export"
+      "export",
+      "export_finly"
     ],
     "kennisbank/hoe-maak-en-incasso-batch": [
       "incasso_excasso"
@@ -524,6 +556,93 @@
     ],
     "kennisbank/mutatievoorstellen-aanmaken": [
       "toekomstige_mutaties"
+    ],
+    "kennisbank/aanspreken-met-u-of-jij": [
+      "crm"
+    ],
+    "kennisbank/herkomst-instellen-in-dossier": [
+      "crm"
+    ],
+    "kennisbank/voorkeurstaal-instellen-in-het-dossier": [
+      "crm"
+    ],
+    "kennisbank/uwkluis-koppeling": [
+      "export_klantportaal"
+    ],
+    "kennisbank/uwkluis-authenticeren": [
+      "export_klantportaal"
+    ],
+    "kennisbank/brondataverzoek-aanmaken-uwkluis": [
+      "export_klantportaal"
+    ],
+    "kennisbank/ondertekenen-van-documenten-uwkluis": [
+      "export_klantportaal"
+    ],
+    "kennisbank/vanuit-meerdere-dossiers-uwkluis-op-een-e-mailadres": [
+      "export_klantportaal"
+    ],
+    "kennisbank/online-formulieren-versturen": [
+      "export_finly"
+    ],
+    "kennisbank/gegevens-bij-kvk-ophalen": [
+      "partijen_algemeen"
+    ],
+    "kennisbank/klanten-verifieren-met-debiteurenzeker": [
+      "partijen_algemeen"
+    ],
+    "kennisbank/inkomensverklaring-ondernemer-aanvragen": [
+      "hypotheek_inkomen"
+    ],
+    "kennisbank/automatisch-tijd-registreren": [
+      "timer"
+    ],
+    "kennisbank/automatisch-tijd-registreren-in-elements": [
+      "timer"
+    ],
+    "kennisbank/urenregistratie-in-het-personeelsdossier": [
+      "timer"
+    ],
+    "kennisbank/kredietcheck-vastleggen-volgens-wwft": [
+      "registratie_soort"
+    ],
+    "kennisbank/administratie-instellen": [
+      "administraties"
+    ],
+    "kennisbank/administratie-instellen-elements": [
+      "administraties"
+    ],
+    "kennisbank/productgroep-verwerking-administratie": [
+      "administraties"
+    ],
+    "kennisbank/sluit-jaar-boekhoudkundig-af": [
+      "administraties"
+    ],
+    "kennisbank/waar-maak-ik-mijn-factuurnummers": [
+      "administraties"
+    ],
+    "kennisbank/deelnemeroverzichten": [
+      "deelnemeroverzichten"
+    ],
+    "kennisbank/beloningen-voor-deelnemers-instellen": [
+      "deelnemeroverzichten"
+    ],
+    "kennisbank/auditfile": [
+      "grootboekkaart"
+    ],
+    "kennisbank/voorlopige-omzet-boeken-accrual-accounting": [
+      "grootboekkaart"
+    ],
+    "kennisbank/inkoop-factuur-verwerken": [
+      "inkoopregister"
+    ],
+    "kennisbank/inkoopfactuur-vanuit-een-e-mail-aanmaken": [
+      "inkoopregister"
+    ],
+    "kennisbank/inkoop-via-aanmaken": [
+      "inkoopregister"
+    ],
+    "kennisbank/hoe-maak-ik-een-categorie-aan": [
+      "soort_documenten"
     ]
   }
 }
