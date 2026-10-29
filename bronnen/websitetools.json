@@ -1,0 +1,135 @@
+{
+ "opgehaald": "2026-10-29",
+ "bron": "https://verzekeringhypotheek.blinqx.tech/partners/rekentools-voor-op-de-website",
+ "groepen": [
+  {
+   "g": "Hypotheek berekenen",
+   "tools": [
+    {
+     "t": "Maximale hypotheek",
+     "url": "https://ca5f0678-c68f-466c-b96b-1df9b27455b3.tools.hypotheekbond.nl/maxmortgage"
+    },
+    {
+     "t": "Kan ik deze woning kopen?",
+     "url": "https://9767d520-e4f2-46d7-8aa0-5dc1c4b56557.tools.hypotheekbond.nl/kidwk"
+    },
+    {
+     "t": "Maandlasten berekenen",
+     "url": "https://e0d090fa-043c-4ed5-a4c8-5757884685fc.tools.hypotheekbond.nl/looptijdrente"
+    },
+    {
+     "t": "Maandlastengrafiek",
+     "url": "https://2cf15bb7-ace5-4d8f-891c-2a65bd68f9e6.tools.hypotheekbond.nl/maandlastengrafiek"
+    },
+    {
+     "t": "Hypotheek nu & straks",
+     "url": "https://da0c3065-4744-4864-9e68-68b1e9a6941e.tools.hypotheekbond.nl/hns"
+    },
+    {
+     "t": "Van huren naar kopen",
+     "url": "https://74132995-5d2c-4450-8c42-a5c6c068939d.tools.hypotheekbond.nl/hnk"
+    }
+   ]
+  },
+  {
+   "g": "Rentes vergelijken",
+   "tools": [
+    {
+     "t": "Renteoverzicht",
+     "url": "https://d7d0405f-f9e2-411b-b5fc-5d9314853eb4.tools.hypotheekbond.nl/renteoverzicht"
+    },
+    {
+     "t": "Volledig renteoverzicht",
+     "url": "https://d7d0405f-f9e2-411b-b5fc-5d9314853eb4.tools.hypotheekbond.nl/renteoverzicht/all"
+    },
+    {
+     "t": "Rente top 5",
+     "url": "https://35ede3cc-22ff-4b8d-9e03-8eade5bc00df.tools.hypotheekbond.nl/rente-top-5"
+    },
+    {
+     "t": "Topafslag",
+     "url": "https://79352705-6aac-4d69-bdcf-b5f53bcc7561.tools.hypotheekbond.nl/topafslag"
+    },
+    {
+     "t": "Spaarrente top 10",
+     "url": "https://a858ca8c-d5c5-4e6e-afe4-bc43ec7ce039.tools.hypotheekbond.nl/spaar-rente"
+    }
+   ]
+  },
+  {
+   "g": "Aflossen & besparen",
+   "tools": [
+    {
+     "t": "Hypotheekbespaarcheck",
+     "url": "https://a98477a6-3877-41c4-85fb-6c7a29ea9709.tools.hypotheekbond.nl/hypotheekbespaarcheck"
+    },
+    {
+     "t": "Maandlasten bij aflossen",
+     "url": "https://8c5a126a-d1a6-48f0-928a-db308413d7e0.tools.hypotheekbond.nl/maandlasten-bij-aflossen"
+    },
+    {
+     "t": "Hoeveel wilt u aflossen?",
+     "url": "https://15b60449-4525-4dd8-84e0-2ac171fed57b.tools.hypotheekbond.nl/hoeveel-aflossen"
+    },
+    {
+     "t": "Vast bedrag per maand aflossen",
+     "url": "https://33b557a1-b4cd-4041-ab59-c377b13ce9c6.tools.hypotheekbond.nl/vast-bedrag-per-maand"
+    },
+    {
+     "t": "Aflossen of beleggen?",
+     "url": "https://9d3f36f2-77d0-4228-868a-06e5bfdde6f2.tools.hypotheekbond.nl/aflossen-of-beleggen"
+    }
+   ]
+  },
+  {
+   "g": "Sparen & verzekeren",
+   "tools": [
+    {
+     "t": "Hoeveel levert sparen op?",
+     "url": "https://1d87386d-bcdf-40ba-9b5b-38b120434b3a.tools.hypotheekbond.nl/hoeveel-levert-sparen-op"
+    },
+    {
+     "t": "Overlijdensrisicoverzekering",
+     "url": "https://c698ab16-2a63-435d-b8bb-de8f500d9bf2.tools.hypotheekbond.nl/orv"
+    }
+   ]
+  },
+  {
+   "g": "Woning & verduurzamen",
+   "tools": [
+    {
+     "t": "Woningwaarde",
+     "url": "https://f388b829-468a-4003-b84e-452b78499333.tools.hypotheekbond.nl/woningwaarde"
+    },
+    {
+     "t": "Duurzaamheidsprofiel",
+     "url": "https://duurzaamheidsprofiel.hypotheekbond.nl"
+    }
+   ]
+  },
+  {
+   "g": "Klantinzicht",
+   "tools": [
+    {
+     "t": "Inventarisatie",
+     "url": "https://inventarisatie.hypotheekbond.nl/82c7becb-d06b-465e-995b-37dc122053aa"
+    },
+    {
+     "t": "Zelfreflectie",
+     "url": "https://46158772-02db-4e14-81d9-e253df135a36.tools.hypotheekbond.nl/zelfreflectie"
+    }
+   ]
+  }
+ ],
+ "disclaimer": "Let op: de uitkomsten van deze rekentools zijn indicatief en bedoeld als eerste oriëntatie. Ze zijn gebaseerd op de ingevulde gegevens en houden geen rekening met de volledige persoonlijke situatie van de klant. Aan de berekeningen kunnen geen rechten worden ontleend en ze vormen geen financieel advies in de zin van de Wft. De tools worden geleverd door Hypotheekbond en openen op een website van die partij; ingevulde gegevens worden daar verwerkt.",
+ "contact": [
+  {
+   "naam": "Milan Akavia",
+   "mail": "milan.akavia@blinqx.tech"
+  },
+  {
+   "naam": "Jeroen Oversteegen",
+   "mail": "jeroen.oversteegen@blinqx.tech"
+  }
+ ]
+}

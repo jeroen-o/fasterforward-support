@@ -1067,6 +1067,11 @@ def render_search(pages, cats):
         pv = re.sub(r"<script\b.*?</script>|<style\b.*?</style>", " ", pv, flags=re.S)
         idx.append({"t": "Proces-versneller: alles op een rij", "h": "procesversneller/index.html", "c": "Proces-versneller", "k": "kennisbank",
                     "x": re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", pv)))[:15000] + " procesversneller ockto brondata"})
+    wtf = os.path.join(SRC, "websitetools.json")
+    if os.path.exists(wtf):
+        wt = json.load(open(wtf, encoding="utf8"))
+        idx.append({"t": "Websitetools: rekentools voor op je website", "h": "websitetools/index.html", "c": "Websitetools", "k": "kennisbank",
+                    "x": " ".join(g["g"] + " " + " ".join(t["t"] for t in g["tools"]) for g in wt["groepen"]) + " rekentool rekentools website hypotheekbond leads"})
     tf = os.path.join(SRC, "academy", "trainingen.json")
     if os.path.exists(tf):
         for t in json.load(open(tf, encoding="utf8"))["trainingen"]:
@@ -1123,6 +1128,7 @@ def render_home(cats, feeds, pages):
         for name, icon in TOP)
     tiles += (f'<a class="tile" href="{pg.rel("elearning")}"><svg class="ic"><use href="#i-cap"/></svg>E-learning</a>'
               f'<a class="tile" href="{pg.rel("video")}"><svg class="ic"><use href="#i-video"/></svg>Video\'s</a>'
+              f'<a class="tile" href="{pg.rel("websitetools")}"><svg class="ic"><use href="#i-calc"/></svg>Websitetools</a>'
               f'<a class="tile tile-wide" href="{pg.rel("procesversneller")}"><svg class="ic"><use href="#i-bolt"/></svg>'
               f'<span class="tw"><span>Proces-versneller</span><small>Brondata ophalen via Ockto: zo werkt het in eBlinqx</small></span></a>')
 
@@ -1548,6 +1554,34 @@ def render_procesversneller():
     write("procesversneller", head + doc + "\n</body>\n</html>\n", kluis=False)
 
 
+def render_websitetools():
+    """Websitetools: rekentools voor op de website van de adviseur (bronnen/websitetools.json)."""
+    f = os.path.join(SRC, "websitetools.json")
+    if not os.path.exists(f):
+        return
+    data = json.load(open(f, encoding="utf8"))
+    pg = Page("websitetools")
+    groups = "".join(
+        f'<section class="wtgroup"><h2>{esc(g["g"])}</h2><div class="wtbtns">'
+        + "".join(f'<a class="wtbtn" href="{esc(t["url"])}" target="_blank" rel="noopener">{esc(t["t"])} <span aria-hidden="true">↗</span></a>'
+                  for t in g["tools"]) + "</div></section>"
+        for g in data["groepen"])
+    n = sum(len(g["tools"]) for g in data["groepen"])
+    contact = " of ".join(f'{esc(c["naam"])} (<a href="mailto:{esc(c["mail"])}">{esc(c["mail"])}</a>)' for c in data["contact"])
+    body = f"""{crumbs(pg, [("Websitetools", None)])}
+<main class="subpage"><div class="wrap">
+  <h1>Websitetools</h1>
+  <p class="lead">Rekentools voor op je eigen website: laat bezoekers zelf hun maximale hypotheek, maandlasten of de actuele rentes bekijken en zet ze zo om in leads. Er zijn {n} tools in {len(data["groepen"])} rubrieken. Klik op een tool om een voorbeeld te bekijken (opent in een nieuw tabblad).</p>
+  {groups}
+  <div class="oud wtnote" role="note">{esc(data["disclaimer"])}</div>
+  <h2 class="wth">Websitetools op je eigen website?</h2>
+  <p>De rekentools zijn in de huisstijl van je kantoor op je eigen website te plaatsen. Neem voor meer informatie contact op met {contact}.</p>
+  <p class="src">Bron: <a href="{esc(data["bron"])}" target="_blank" rel="noopener">verzekeringhypotheek.blinqx.tech</a> (stand {fmt_date(date.fromisoformat(data["opgehaald"]))}).</p>
+</div></main>"""
+    write("websitetools", layout(pg, "Websitetools", body, None,
+                                 "Rekentools voor op de website van je advieskantoor: hypotheek berekenen, rentes vergelijken, aflossen, verduurzamen en klantinzicht."))
+
+
 def render_404():
     # GitHub Pages serveert 404.html vanaf de root; absolute paden zijn daar niet bekend, dus root-relatief.
     pg = Page("")
@@ -1641,6 +1675,7 @@ def main():
     render_fastlane()
     render_trainingen()
     render_procesversneller()
+    render_websitetools()
     render_search(pages, cats)
     render_home(cats, feeds, pages)
     render_404()

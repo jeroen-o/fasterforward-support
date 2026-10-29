@@ -354,3 +354,18 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
 .tile-wide small{font-weight:400;font-size:15px;line-height:1.35}
 @media (max-width:900px){.tile-wide{grid-column:span 3;padding:22px}}
 @media (max-width:640px){.tile-wide{grid-column:span 2;padding:20px 18px;gap:16px}.tile-wide .ic{font-size:44px;flex-shrink:0}.tile-wide small{font-size:13.5px}}
+/* websitetools */
+.wtgroup h2{font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#5A6675;margin:30px 0 12px}
+.wtbtns{display:flex;flex-wrap:wrap;gap:10px}
+.wtbtn{display:inline-block;background:var(--yellow);color:#000;font-weight:700;font-size:15px;text-decoration:none;padding:11px 20px;border-radius:999px;border:2px solid var(--yellow)}
+.wtbtn:hover{border-color:#000}
+.wtnote{margin-top:34px}
+.wth{font-size:21px;color:var(--heading);margin:30px 0 8px}
+/* 13 gewone tegels + brede Proces-versneller (2 kolommen): rijen van 5 blijven vol */
+@media (min-width:901px){.tile-wide{grid-column:span 2}}
+@media (max-width:900px){.tile-wide{grid-column:span 2}}
+@media (max-width:640px){
+  .tile-wide{grid-column:span 1;flex-direction:column;justify-content:center;text-align:center;gap:10px;padding:10px}
+  .tile-wide .tw small{display:none}
+  .tile-wide .ic{font-size:46px}
+}
