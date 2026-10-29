@@ -314,3 +314,7 @@ nav.main li.ext a::after{content:"↗";font-size:.85em;margin-left:3px;color:#8A
 .share-b.wa:hover .ic{color:#128C4B}
 @media (max-width:640px){.share-l{width:100%}.share-b{flex:1;justify-content:center}}
 @media print{.share{display:none}}
+/* deelknoppen geel */
+.share-b{background:var(--yellow);border-color:var(--yellow);color:#000}
+.share-b:hover,.share-b:focus-visible{background:#FFD83D;border-color:#000}
+.share-b .ic,.share-b.wa .ic,.share-b.wa:hover .ic{color:#000}
