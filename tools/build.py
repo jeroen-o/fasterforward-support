@@ -772,7 +772,16 @@ KLUIS = "UwKluis / Online klantportaal"
 KLUIS_RE = re.compile(r"(?<![\w/.-])[Uu]w\s?[Kk]luis(?![\w-])(?!\s*/\s*Online klantportaal)")
 
 
+# Verouderde contactgegevens van Faster Forward -> huidige gegevens van Blinqx support (eBlinqx Connect).
+OUD_CONTACT = [
+    (re.compile(r"support@fasterforward\.nl", re.I), "support-eblinqx@blinqx.tech"),
+    (re.compile(r"0164[\s-]?271[\s-]?281"), "085 018 00 69"),
+]
+
+
 def kluis_tekst(t):
+    for pat, nieuw in OUD_CONTACT:
+        t = pat.sub(nieuw, t)
     return KLUIS_RE.sub(KLUIS, t)
 
 
@@ -783,6 +792,8 @@ def kluis_html(doc):
     # ook in de deeltekst (data-msg) en de beschrijving van de pagina
     out = "".join(parts)
     out = re.sub(r'((?:data-msg|data-t|content)=")([^"]*)"', lambda m: m.group(1) + kluis_tekst(m.group(2)) + '"', out)
+    for pat, nieuw in OUD_CONTACT:  # ook in mailto:/tel:-links
+        out = re.sub(r'(href="(?:mailto|tel):)([^"]*)"', lambda m: m.group(1) + pat.sub(nieuw, m.group(2)) + '"', out)
     return out
 
 
