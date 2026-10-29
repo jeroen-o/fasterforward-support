@@ -545,6 +545,31 @@ NAV = [("Home", ""), ("Nieuws", "nieuws"), ("Tips", "tips"), ("E-learning", "ele
        ("Overig contact", "https://verzekeringhypotheek.blinqx.tech/contact")]
 
 
+# Openbaar adres van de site (voor de deelknoppen als JavaScript uit staat; met JavaScript wordt het echte adres gebruikt).
+SITE_URL = os.environ.get("SITE_URL", "https://jeroen-o.github.io/fasterforward-support/")
+
+
+def share_block(pg, title, description):
+    from urllib.parse import quote
+    url = SITE_URL + (pg.path + "/" if pg.path and not pg.path.endswith(".html") else "")
+    t = title or "Blinqx Support"
+    d = re.sub(r"\s+", " ", description or "").strip()
+    if len(d) > 200:
+        d = d[:200].rsplit(" ", 1)[0] + "…"
+    msg = f"Hoi, dit is misschien handig voor je: {t}" + (f" – {d}" if d else "")
+    mail = f"mailto:?subject={quote(t + ' – Blinqx Support')}&body={quote(msg + chr(10) + chr(10) + url)}"
+    wa = f"https://wa.me/?text={quote(msg + ' ' + url)}"
+    return (f'<section class="share" aria-label="Deel deze pagina"><div class="wrap">'
+            f'<span class="share-l">Deel dit met een collega:</span>'
+            f'<a class="share-b mail" href="{esc(mail)}" data-msg="{esc(msg)}" data-t="{esc(t)}"><svg class="ic"><use href="#i-mail-o"/></svg>E-mail</a>'
+            f'<a class="share-b wa" href="{esc(wa)}" target="_blank" rel="noopener" data-msg="{esc(msg)}"><svg class="ic"><use href="#i-wa"/></svg>WhatsApp</a>'
+            f'</div></section>'
+            '<script>(function(){var u=location.href.split("#")[0].replace(/index\\.html(?=$|\\?)/,"");'
+            'document.querySelectorAll(".share-b").forEach(function(a){var m=a.dataset.msg;'
+            'a.href=a.classList.contains("wa")?"https://wa.me/?text="+encodeURIComponent(m+" "+u)'
+            ':"mailto:?subject="+encodeURIComponent(a.dataset.t+" – Blinqx Support")+"&body="+encodeURIComponent(m+"\\n\\n"+u);});})();</script>')
+
+
 def layout(pg, title, body, active=None, description=""):
     nav = "".join(
         (f'<li class="ext"><a href="{t}" target="_blank" rel="noopener">{esc(n)}</a></li>'
@@ -593,6 +618,7 @@ def layout(pg, title, body, active=None, description=""):
   </div>
 </header>
 {body}
+{share_block(pg, title, description)}
 <footer>
   <div class="wrap">
     <span>Copyright © 2024 Blinqx powered by Faster Forward</span>

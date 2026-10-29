@@ -303,3 +303,14 @@ nav.main li.ext a::after{content:"↗";font-size:.85em;margin-left:3px;color:#8A
 }
 /* 12 tegels: 4 per rij op desktop */
 @media (min-width:901px){.tiles{grid-template-columns:repeat(4,1fr);gap:30px 25px}.tile{aspect-ratio:232/150}}
+/* deelknoppen */
+.share{border-top:1px solid #E3E3E3;background:#FAFAFA}
+.share .wrap{display:flex;align-items:center;flex-wrap:wrap;gap:10px 14px;padding-block:18px}
+.share-l{font-weight:600;font-size:14px;color:#333;margin-right:4px}
+.share-b{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border:2px solid #000;background:#fff;color:#000;text-decoration:none;font-size:14px;font-weight:600}
+.share-b .ic{width:18px;height:18px}
+.share-b:hover{background:var(--yellow)}
+.share-b.wa .ic{color:#25D366}
+.share-b.wa:hover .ic{color:#128C4B}
+@media (max-width:640px){.share-l{width:100%}.share-b{flex:1;justify-content:center}}
+@media print{.share{display:none}}
