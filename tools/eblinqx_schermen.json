@@ -4,16 +4,195 @@
     "dossieroverzicht": "Het klantdossier in eBlinqx Connect: dossiergegevens, snelacties rechtsboven en de tabbladen",
     "klantgegevens": "Tabblad Partijen & objecten: personen, organisaties, panden, adviseur en businesspartners",
     "hoofdmenu": "De dossiertabbladen met het uitgeklapte menu Meer (TP incasso boekingen, Boekingen, Workflow)",
-    "invoerscherm_inkomen": "Startpagina > Financiële situatie: inkomen, woonlasten en verplichtingen van de klant"
+    "invoerscherm_inkomen": "Startpagina > Financiële situatie: inkomen, woonlasten en verplichtingen van de klant",
+    "documenten": "Tabblad Documenten: mappenstructuur links, documenten met soort, omschrijving en datum, knop Document toevoegen",
+    "stukkenlijst": "Tabblad Stukkenlijst: tellers per status en de lijsten Openstaande stukken en Stukken gereed",
+    "taken": "Tabblad Taken: filters (soort, status, prioriteit, datum, toewijzing) en de takenlijst",
+    "kalender": "Tabblad Kalender: weekweergave met datumselectie en personen",
+    "communicatie": "Tabblad Communicatie > E-mail: alle e-mails in het dossier, met de knop Opstellen",
+    "registratie_aanmaken": "Registratie aanmaken: taak, product, soort registratie, tijd en tekst met standaardtekst",
+    "email_aanmaken": "E-mail aanmaken vanuit het dossier: e-mailbox, ontvangers, onderwerp en bericht",
+    "productkaart_dienst": "Productkaart van een dienst (financieel advies): status, behandeling, kostprijs en verkoopprijs",
+    "productkaart_hypotheek": "Productkaart hypotheek: algemene gegevens, onderpand, contacten en subtabbladen",
+    "menu_financieel": "Hoofdmenu Financieel: balans, boekingen, crediteuren, debiteuren, bankieren, facturatie, overzichten en prolongaties",
+    "menu_beheer": "Hoofdmenu Beheer: CRM, documenten, e-mail, koppelingen, Ockto en taken en afspraken",
+    "menu_verzekeringen": "Hoofdmenu Verzekeringen: Aplaza, overzichten, Risk, schades en de Poliszoeker"
   },
   "artikelen": {
-    "kennisbank/hoe-maak-dossier-aan": ["dossieroverzicht"],
-    "kennisbank/verhuizing-aanmaken": ["dossieroverzicht"],
-    "kennisbank/urgente-registratie": ["dossieroverzicht"],
-    "kennisbank/dossiernotitie": ["dossieroverzicht"],
-    "kennisbank/dossier-samenvatting-downloaden": ["dossieroverzicht"],
-    "kennisbank/extra-partijen-toevoegen-aan-het-dossier": ["klantgegevens"],
-    "kennisbank/tp-incasso-boekingen": ["hoofdmenu"],
-    "kennisbank/welke-adviespakketten-koppelt-eblinqx": ["invoerscherm_inkomen"]
+    "kennisbank/hoe-maak-dossier-aan": [
+      "dossieroverzicht"
+    ],
+    "kennisbank/verhuizing-aanmaken": [
+      "dossieroverzicht"
+    ],
+    "kennisbank/urgente-registratie": [
+      "dossieroverzicht",
+      "registratie_aanmaken"
+    ],
+    "kennisbank/dossiernotitie": [
+      "dossieroverzicht"
+    ],
+    "kennisbank/dossier-samenvatting-downloaden": [
+      "dossieroverzicht"
+    ],
+    "kennisbank/extra-partijen-toevoegen-aan-het-dossier": [
+      "klantgegevens"
+    ],
+    "kennisbank/tp-incasso-boekingen": [
+      "hoofdmenu"
+    ],
+    "kennisbank/welke-adviespakketten-koppelt-eblinqx": [
+      "invoerscherm_inkomen"
+    ],
+    "kennisbank/document-uploaden-in-het-dossier": [
+      "documenten"
+    ],
+    "kennisbank/document-mappen-dossier-aanmaken": [
+      "documenten"
+    ],
+    "kennisbank/documenten-verplaatsen-naar-andere-stukkenlijst": [
+      "documenten"
+    ],
+    "kennisbank/pdf-documenten-splitsen-en-samenvoegen-vanuit-een-dossier": [
+      "documenten"
+    ],
+    "kennisbank/documenten-automatisch-censureren": [
+      "documenten"
+    ],
+    "kennisbank/controle-geldigheid-document-en-andere-functionaliteiten": [
+      "documenten"
+    ],
+    "kennisbank/stukkenlijst": [
+      "stukkenlijst"
+    ],
+    "kennisbank/hoe-wordt-stukkenlijst-gevuld": [
+      "stukkenlijst"
+    ],
+    "kennisbank/hoe-breid-ik-de-stukkenlijst-uit": [
+      "stukkenlijst"
+    ],
+    "kennisbank/hoe-maak-stukkenlijst-template": [
+      "stukkenlijst"
+    ],
+    "kennisbank/stukken-naar-maatschappij-versturen": [
+      "stukkenlijst"
+    ],
+    "kennisbank/e-mail-bijlage-koppelen-aan-stukkenlijst": [
+      "stukkenlijst"
+    ],
+    "kennisbank/hoe-maak-ik-een-taak-aan": [
+      "taken"
+    ],
+    "kennisbank/hoe-taak-afronden-als-er-geen-vinkje-staat": [
+      "taken"
+    ],
+    "kennisbank/takenfilter-bewaren-uitloggen": [
+      "taken"
+    ],
+    "kennisbank/hoe-stel-kalender": [
+      "kalender"
+    ],
+    "kennisbank/hoe-maak-en-afspraak-agenda": [
+      "kalender"
+    ],
+    "kennisbank/collega-toegang-agenda": [
+      "kalender"
+    ],
+    "kennisbank/koppelen-google-agenda": [
+      "kalender"
+    ],
+    "kennisbank/hoe-koppel-ik-een-e-mail-aan-het-dossier": [
+      "communicatie"
+    ],
+    "kennisbank/communicatie-aan-polis-koppelen-en-inzien": [
+      "communicatie"
+    ],
+    "kennisbank/registratie-aanmaken": [
+      "registratie_aanmaken"
+    ],
+    "kennisbank/zelf-type-registraties-aanmaken": [
+      "registratie_aanmaken"
+    ],
+    "kennisbank/urenregistratie-vanuit-dossier": [
+      "registratie_aanmaken"
+    ],
+    "kennisbank/hoe-maak-ik-een-e-mail-in-een-dossier-aan": [
+      "email_aanmaken"
+    ],
+    "kennisbank/hoe-maak-ik-een-e-mail-aan": [
+      "email_aanmaken"
+    ],
+    "kennisbank/bijlage-aan-e-mail-toevoegen": [
+      "email_aanmaken"
+    ],
+    "kennisbank/dienst-levens-inkomensproduct-aanmaken": [
+      "productkaart_dienst"
+    ],
+    "kennisbank/factureren-vanuit-de-productkaart": [
+      "productkaart_dienst"
+    ],
+    "kennisbank/hoe-pas-ik-de-status-van-een-product-aan": [
+      "productkaart_dienst"
+    ],
+    "kennisbank/aandachtspunten-product-aanmaken-in-dossier": [
+      "productkaart_dienst"
+    ],
+    "kennisbank/hypotheekinformatie": [
+      "productkaart_hypotheek"
+    ],
+    "kennisbank/versiebeheer-en-mutaties-op-hypotheken": [
+      "productkaart_hypotheek"
+    ],
+    "kennisbank/bankgaranties-aanvragen": [
+      "productkaart_hypotheek"
+    ],
+    "kennisbank/hypotheek-staat-op-vervallen-loopt-nog-nu": [
+      "productkaart_hypotheek"
+    ],
+    "kennisbank/woningwaarde-duurzaamheid-en-maximale-hypotheek-berekenen": [
+      "productkaart_hypotheek"
+    ],
+    "kennisbank/handmatig-prolongeren-maatschappij-incasso": [
+      "menu_financieel"
+    ],
+    "kennisbank/1-prolongatie-import": [
+      "menu_financieel"
+    ],
+    "kennisbank/hoe-importeer-bankafschrift": [
+      "menu_financieel"
+    ],
+    "kennisbank/boeking-zoeken": [
+      "menu_financieel"
+    ],
+    "kennisbank/invoeren-boeking-elements": [
+      "menu_financieel"
+    ],
+    "kennisbank/inlezen-boeking": [
+      "menu_financieel"
+    ],
+    "kennisbank/vaste-boekingen": [
+      "menu_financieel"
+    ],
+    "kennisbank/boekingsverslag": [
+      "menu_financieel"
+    ],
+    "kennisbank/facturen-overzicht": [
+      "menu_financieel"
+    ],
+    "kennisbank/debiteur-aanmaken": [
+      "menu_financieel"
+    ],
+    "kennisbank/hoe-soort-document-toevoegen": [
+      "menu_beheer"
+    ],
+    "kennisbank/hoe-maak-mailgroep-aan": [
+      "menu_beheer"
+    ],
+    "kennisbank/aplaza-berichten-verwerken": [
+      "menu_verzekeringen"
+    ],
+    "kennisbank/aplaza-offerte-berichten-verwerken": [
+      "menu_verzekeringen"
+    ]
   }
 }
