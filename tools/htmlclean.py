@@ -17,12 +17,13 @@ ALLOWED = {
     "blockquote": (), "code": (), "pre": (), "sup": (), "sub": (), "iframe": ("src",),
 }
 VOID = {"br", "hr", "img"}
-DROP = {"script", "style", "form", "noscript", "button", "select", "textarea", "svg", "head", "nav"}
+DROP = {"script", "style", "form", "noscript", "button", "select", "textarea", "svg", "head", "nav", "h1"}
 HOST_RE = re.compile(r"^https?://(?:www\.)?support\.fasterforward\.nl", re.I)
 EMBED_RE = re.compile(r"^(https?:)?//(www\.)?(youtube(-nocookie)?\.com/embed/|player\.vimeo\.com/video/)", re.I)
 # Blokken die we niet willen meenemen (eigen inhoudsopgave, 'laatste releases', feedback, deelknoppen).
 SKIP_CLASS = re.compile(r"ub_table-of-contents|rnld-berichten|ht-voting|sharedaddy|jp-relatedposts|"
-                        r"related|pagesidebar|sidebar|widget|breadcrumb|comments|nav-links|meta_tags", re.I)
+                        r"related|pagesidebar|sidebar|widget|breadcrumb|comments|nav-links|meta_tags|"
+                        r"hkb-article__lastupdated|hkb-article-tags|hkb-feedback|hkb-article__title|ht-voting", re.I)
 
 
 class Cleaner(HTMLParser):
@@ -145,7 +146,8 @@ def find_content(doc):
     """Stuk HTML met de eigenlijke inhoud van de pagina."""
     m = re.search(r'<div id="content"[^>]*>(.*)', doc, re.S)
     body = m.group(1) if m else doc
-    for pat in (r'<article[^>]*class="[^"]*singlepost[^"]*"[^>]*>', r'<div class="contact_form"[^>]*>',
+    for pat in (r'<article[^>]*class="[^"]*singlepost[^"]*"[^>]*>', r'<div class="hkb-article__content"[^>]*>',
+                r'<div class="contact_form"[^>]*>',
                 r'<div[^>]*class="[^"]*(?:entry-content|kb-content|ht-article-content|post-content)[^"]*"[^>]*>',
                 r"<article[^>]*>"):
         mm = re.search(pat, body)
@@ -153,6 +155,7 @@ def find_content(doc):
             body = body[mm.end():]
             break
     for end in ('<div class="clear"></div>', '<p class="posted">', '<table class="rnld', 'class="pagesidebar"',
+                '<div class="hkb-article__lastupdated', '<div class="hkb-article-tags', '<div class="hkb-feedback',
                 '<footer', 'id="footer"', 'class="ht-voting', '<div class="nieuwsbrief'):
         i = body.find(end)
         if i > 200:
@@ -172,6 +175,12 @@ def extract(doc):
     hero = re.search(r"class=['\"]header-image['\"][^>]*background-image:\s*url\(\"?'?([^\"')]+)", doc)
     posted = re.search(r'<p class="posted">\s*(.*?)</p>', doc, re.S)
     posted = html.unescape(re.sub(r"<[^>]+>", "", posted.group(1))).strip() if posted else ""
+    updated = ""
+    if not posted:
+        lu = re.search(r'class="hkb-article__lastupdated"[^>]*>(.*?)</div>', doc, re.S)
+        if lu:
+            # 'Laatste update: 7 december 2022' -> zelfde vorm als bij de releases ('(Laatste update: …)')
+            updated = re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", "", lu.group(1)))).strip()
     crumbs = []
     bc = re.search(r'<(?:div|nav|ul|ol)[^>]*(?:id|class)="[^"]*breadcrumb[^"]*"[^>]*>(.*?)</(?:div|nav|ul|ol)>', doc, re.S)
     if bc:
@@ -186,5 +195,5 @@ def extract(doc):
     out = re.sub(r"<p>\s*(<br>)?\s*</p>", "", out)
     out = re.sub(r"<(strong|em|b|i|span)>\s*</\1>", "", out)
     out = re.sub(r"\n\s*\n+", "\n", out).strip()
-    return {"title": title, "html": out, "posted": posted,
+    return {"title": title, "html": out, "posted": posted, "updated": updated,
             "hero": unwrap_wayback(hero.group(1)) if hero else None, "crumbs": crumbs}

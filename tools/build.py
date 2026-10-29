@@ -376,6 +376,8 @@ def build_structure(pages):
             if m and raw["posted"]:
                 p["posted"] = parse_date(m.group(1)) or p["posted"]
                 p["updated"] = parse_date(m.group(2) or "") or p["updated"]
+            if raw.get("updated"):
+                p["updated"] = parse_date(raw["updated"]) or p["updated"]
             if not p["crumb"] and raw["crumbs"]:
                 cr = [c for c in raw["crumbs"] if c.lower() not in ("home", "kennisbank", "support")]
                 if cr and cr[-1].lower() == (p["t"] or "").lower():
