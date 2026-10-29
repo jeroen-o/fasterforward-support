@@ -547,7 +547,7 @@ NAV = [("Home", ""), ("Nieuws", "nieuws"), ("Tips", "tips"), ("E-learning", "ele
 
 def layout(pg, title, body, active=None, description=""):
     nav = "".join(
-        (f'<li class="ext"><a href="{t}" target="_blank" rel="noopener">{esc(n)}<span class="sr"> (opent in nieuw tabblad)</span></a></li>'
+        (f'<li class="ext"><a href="{t}" target="_blank" rel="noopener">{esc(n)}</a></li>'
          if t.startswith("http") else
          f'<li><a href="{pg.rel(t)}"{" aria-current=\"page\"" if active == t else ""}>{esc(n)}</a></li>')
         for n, t in NAV)
