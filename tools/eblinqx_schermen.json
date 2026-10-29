@@ -16,7 +16,25 @@
     "productkaart_hypotheek": "Productkaart hypotheek: algemene gegevens, onderpand, contacten en subtabbladen",
     "menu_financieel": "Hoofdmenu Financieel: balans, boekingen, crediteuren, debiteuren, bankieren, facturatie, overzichten en prolongaties",
     "menu_beheer": "Hoofdmenu Beheer: CRM, documenten, e-mail, koppelingen, Ockto en taken en afspraken",
-    "menu_verzekeringen": "Hoofdmenu Verzekeringen: Aplaza, overzichten, Risk, schades en de Poliszoeker"
+    "menu_verzekeringen": "Hoofdmenu Verzekeringen: Aplaza, overzichten, Risk, schades en de Poliszoeker",
+    "handmatig_prolongeren": "Financieel > Prolongaties > Handmatig prolongeren: zoeken op maand, maatschappij, kantoor en productsoort",
+    "prolongatie_import": "Financieel > Prolongaties > Prolongatie import: overzicht van ingelezen batches met filters en statuskleuren",
+    "portefeuillewaarde": "Financieel > Portefeuillewaarde: vergoedingen en premie per maatschappij en branche",
+    "facturenoverzicht": "Financieel > Facturatie > Facturenoverzicht: filters, factuurstatus, jaarbalk en de lijst met facturen",
+    "afschriften_importeren": "Financieel > Elektronisch bankieren > Afschriften importeren",
+    "balans_winst_verlies": "Financieel > Balans / Winst- & Verliesrekening",
+    "debiteurenkaarten": "Financieel > Debiteuren > Debiteurenkaarten (grootboekkaart 1200 - Debiteuren)",
+    "email_inbox": "De e-mailmodule (e-mailicoon bovenin): mailboxen en mappen links, berichten rechts",
+    "agenda": "De agenda (kalendericoon bovenin): uitnodigingen, datumselectie, personen en weekweergave",
+    "takenoverzicht": "Het takenoverzicht (takenicoon bovenin): filters links, alle taken met dossier, product en persoon",
+    "rapportagemanager": "De rapportagemanager (rapportage-icoon bovenin): beschikbare rapportages per categorie",
+    "campagnemanager": "De campagnemanager (campagne-icoon bovenin): overzicht van campagnes",
+    "managementinformatie": "Managementinformatie: dashboards voor CRM, financieel en dossier",
+    "organisatie_personen": "Beheer > CRM > Organisatie & Personen: organisaties en personen zoeken en beheren",
+    "nhb_kantoor_selectie": "Beheer > Koppelingen > NHB kantoor selectie",
+    "dossieropties": "Het ☰-menu in het klantdossier: Dossier instellingen, Dossierhistorie en Klantgegevens downloaden",
+    "menu_producten": "Hoofdmenu Producten: Signalen > Hypotheekbond",
+    "productkaart_verzekering": "Productkaart schadeverzekering (pakketpolis): algemeen, behandeling, herkomst en de pakketonderdelen"
   },
   "artikelen": {
     "kennisbank/hoe-maak-dossier-aan": [
@@ -81,31 +99,39 @@
       "stukkenlijst"
     ],
     "kennisbank/hoe-maak-ik-een-taak-aan": [
-      "taken"
+      "taken",
+      "takenoverzicht"
     ],
     "kennisbank/hoe-taak-afronden-als-er-geen-vinkje-staat": [
-      "taken"
+      "taken",
+      "takenoverzicht"
     ],
     "kennisbank/takenfilter-bewaren-uitloggen": [
-      "taken"
+      "taken",
+      "takenoverzicht"
     ],
     "kennisbank/hoe-stel-kalender": [
-      "kalender"
+      "kalender",
+      "agenda"
     ],
     "kennisbank/hoe-maak-en-afspraak-agenda": [
-      "kalender"
+      "kalender",
+      "agenda"
     ],
     "kennisbank/collega-toegang-agenda": [
-      "kalender"
+      "kalender",
+      "agenda"
     ],
     "kennisbank/koppelen-google-agenda": [
-      "kalender"
+      "kalender",
+      "agenda"
     ],
     "kennisbank/hoe-koppel-ik-een-e-mail-aan-het-dossier": [
       "communicatie"
     ],
     "kennisbank/communicatie-aan-polis-koppelen-en-inzien": [
-      "communicatie"
+      "communicatie",
+      "productkaart_verzekering"
     ],
     "kennisbank/registratie-aanmaken": [
       "registratie_aanmaken"
@@ -120,7 +146,8 @@
       "email_aanmaken"
     ],
     "kennisbank/hoe-maak-ik-een-e-mail-aan": [
-      "email_aanmaken"
+      "email_aanmaken",
+      "email_inbox"
     ],
     "kennisbank/bijlage-aan-e-mail-toevoegen": [
       "email_aanmaken"
@@ -153,13 +180,16 @@
       "productkaart_hypotheek"
     ],
     "kennisbank/handmatig-prolongeren-maatschappij-incasso": [
-      "menu_financieel"
+      "menu_financieel",
+      "handmatig_prolongeren"
     ],
     "kennisbank/1-prolongatie-import": [
-      "menu_financieel"
+      "menu_financieel",
+      "prolongatie_import"
     ],
     "kennisbank/hoe-importeer-bankafschrift": [
-      "menu_financieel"
+      "menu_financieel",
+      "afschriften_importeren"
     ],
     "kennisbank/boeking-zoeken": [
       "menu_financieel"
@@ -177,10 +207,12 @@
       "menu_financieel"
     ],
     "kennisbank/facturen-overzicht": [
-      "menu_financieel"
+      "menu_financieel",
+      "facturenoverzicht"
     ],
     "kennisbank/debiteur-aanmaken": [
-      "menu_financieel"
+      "menu_financieel",
+      "debiteurenkaarten"
     ],
     "kennisbank/hoe-soort-document-toevoegen": [
       "menu_beheer"
@@ -193,6 +225,148 @@
     ],
     "kennisbank/aplaza-offerte-berichten-verwerken": [
       "menu_verzekeringen"
+    ],
+    "kennisbank/tussenpersoon-incasso-posten-handmatig-prolongeren": [
+      "handmatig_prolongeren"
+    ],
+    "kennisbank/tussenpersoon-incasso-verwerken-prolongatie": [
+      "handmatig_prolongeren"
+    ],
+    "kennisbank/handmatig-adn-prolongatiebericht-inlezen": [
+      "prolongatie_import"
+    ],
+    "kennisbank/prolongatie-instellen-dagboeken": [
+      "prolongatie_import"
+    ],
+    "kennisbank/prolongatie-instellen-marges": [
+      "prolongatie_import"
+    ],
+    "kennisbank/prolongatie-instellen-por-codes": [
+      "prolongatie_import"
+    ],
+    "kennisbank/tussenpersoon-incasso-verwerken-mutaties": [
+      "prolongatie_import"
+    ],
+    "kennisbank/portefeuillewaarde-overzicht": [
+      "portefeuillewaarde"
+    ],
+    "kennisbank/facturen-op-betalingsoverzicht": [
+      "facturenoverzicht"
+    ],
+    "kennisbank/factuur-aanmaken": [
+      "facturenoverzicht"
+    ],
+    "kennisbank/factuur-crediteren": [
+      "facturenoverzicht"
+    ],
+    "kennisbank/herhalingsfactuur-aanmaken": [
+      "facturenoverzicht"
+    ],
+    "kennisbank/tussenpersoon-incasso-posten-factureren": [
+      "facturenoverzicht"
+    ],
+    "kennisbank/tp-incasso-factuur-wel-boeken-niet-versturen": [
+      "facturenoverzicht"
+    ],
+    "kennisbank/bank-inrichten-importeren-bankafschriften": [
+      "afschriften_importeren"
+    ],
+    "kennisbank/debiteurenverschil-tussen-de-balans-en-debiteurenkaarten": [
+      "balans_winst_verlies",
+      "debiteurenkaarten"
+    ],
+    "kennisbank/organisatie-financieel-inrichten": [
+      "balans_winst_verlies"
+    ],
+    "kennisbank/mappen-beheren-in-de-e-mailmodule": [
+      "email_inbox"
+    ],
+    "kennisbank/hoe-maak-mailingregel-aan": [
+      "email_inbox"
+    ],
+    "kennisbank/prullenbak-e-mail": [
+      "email_inbox"
+    ],
+    "kennisbank/e-mailmanager": [
+      "email_inbox"
+    ],
+    "kennisbank/instellen-e-mail-elements": [
+      "email_inbox"
+    ],
+    "kennisbank/waarom-komt-e-mail-aan": [
+      "email_inbox"
+    ],
+    "kennisbank/rapportage-gebruiken": [
+      "rapportagemanager"
+    ],
+    "kennisbank/beheer-rapportage": [
+      "rapportagemanager"
+    ],
+    "kennisbank/campagne-verzenden-op-basis-van-rapportage-csv-bestand-zonder-kolom-e-mailadres": [
+      "rapportagemanager"
+    ],
+    "kennisbank/hoe-maak-campagne-aan": [
+      "campagnemanager"
+    ],
+    "kennisbank/verjaardagscampagne-aanmaken": [
+      "campagnemanager"
+    ],
+    "kennisbank/campagne-op-basis-van-een-csv-bestand": [
+      "campagnemanager"
+    ],
+    "kennisbank/smart-selecties-en-acties": [
+      "campagnemanager"
+    ],
+    "kennisbank/managementinformatie": [
+      "managementinformatie"
+    ],
+    "kennisbank/persoon-toevoegen-aan-dossier": [
+      "organisatie_personen"
+    ],
+    "kennisbank/hoe-maak-ik-een-nieuwe-verzekeringsmaatschappij-aan": [
+      "organisatie_personen"
+    ],
+    "kennisbank/nationale-hypotheekbond-nhb": [
+      "nhb_kantoor_selectie"
+    ],
+    "kennisbank/gemakkelijk-klantgegevens-exporteren-naar-yes-co": [
+      "dossieropties"
+    ],
+    "kennisbank/bepaal-zelf-instellingen-instellingen": [
+      "dossieropties"
+    ],
+    "kennisbank/hypotheekbond-product-aanmaken": [
+      "menu_producten"
+    ],
+    "kennisbank/schadeverzekering-opvoeren": [
+      "productkaart_verzekering"
+    ],
+    "kennisbank/hoe-verwerk-ik-een-schadeverzekering-in-elements": [
+      "productkaart_verzekering"
+    ],
+    "kennisbank/pakketpolis-invoeren-verschillende-ingangsdata": [
+      "productkaart_verzekering"
+    ],
+    "kennisbank/dekking-toevoegen-en-instellingen-wijzigen": [
+      "productkaart_verzekering"
+    ],
+    "kennisbank/velden-pakketonderdeel-verzekering": [
+      "productkaart_verzekering"
+    ],
+    "kennisbank/polis-opschorten-of-beeindigen": [
+      "productkaart_verzekering"
+    ],
+    "kennisbank/polisblad-als-contract-aanmerken": [
+      "productkaart_verzekering"
+    ],
+    "kennisbank/case-schadeverzekering": [
+      "productkaart_verzekering"
+    ],
+    "kennisbank/schade-en-levensverzekeringen-omnummeren": [
+      "productkaart_verzekering"
+    ],
+    "kennisbank/hoe-maak-ik-een-nieuw-verzekeringsproduct-aan": [
+      "productkaart_verzekering"
     ]
   }
 }
