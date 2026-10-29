@@ -79,6 +79,8 @@ for dirpath, _, files in os.walk(bron):
     for f in sorted(files):
         if not f.lower().endswith(IMG):
             continue
+        if re.search(r"-geen-", f):
+            continue  # 'negatieve bevinding' (menu zonder het onderdeel in het demo-account): niet tonen, misleidend
         src = os.path.join(dirpath, f)
         if not art:
             mis.append(f"{map_}/{f} (geen artikel met deze mapnaam)")
