@@ -704,8 +704,30 @@ def hero(pg, title, img):
             f'<div class="wrap"><h1>{esc(title)}</h1></div></div>')
 
 
+# Productnaam: overal beide namen tonen ("UwKluis / Online klantportaal"). Alleen in zichtbare tekst,
+# niet in links of bestandsnamen; samenstellingen (Uwkluis-koppeling) blijven ongemoeid.
+KLUIS = "UwKluis / Online klantportaal"
+KLUIS_RE = re.compile(r"(?<![\w/.-])[Uu]w\s?[Kk]luis(?![\w-])(?!\s*/\s*Online klantportaal)")
+
+
+def kluis_tekst(t):
+    return KLUIS_RE.sub(KLUIS, t)
+
+
+def kluis_html(doc):
+    parts = re.split(r"(<script\b.*?</script>|<style\b.*?</style>|<[^>]+>)", doc, flags=re.S | re.I)
+    for i in range(0, len(parts), 2):
+        parts[i] = kluis_tekst(parts[i])
+    # ook in de deeltekst (data-msg) en de beschrijving van de pagina
+    out = "".join(parts)
+    out = re.sub(r'((?:data-msg|data-t|content)=")([^"]*)"', lambda m: m.group(1) + kluis_tekst(m.group(2)) + '"', out)
+    return out
+
+
 def write(path, content):
     full = os.path.join(ROOT, path) if path.endswith((".html", ".xml")) else os.path.join(ROOT, path, "index.html")
+    if full.endswith(".html"):
+        content = kluis_html(content)
     os.makedirs(os.path.dirname(full), exist_ok=True)
     with open(full, "w", encoding="utf8") as fh:
         fh.write(content)
@@ -995,6 +1017,10 @@ def render_search(pages, cats):
                     "x": " ".join(st["h"] + " " + st["text"] for st in it["steps"])[:15000] or it["t"]})
     os.makedirs(os.path.join(ROOT, "zoeken"), exist_ok=True)
     with open(os.path.join(ROOT, "zoeken", "zoekindex.js"), "w", encoding="utf8") as fh:
+        for r in idx:
+            for k in ("t", "c", "x"):
+                if r.get(k):
+                    r[k] = kluis_tekst(r[k])
         fh.write("window.ZOEKINDEX=" + json.dumps(idx, ensure_ascii=False, separators=(",", ":")) + ";\n")
     body = f"""{crumbs(pg, [("Zoeken", None)])}
 <main class="subpage searchpage"><div class="wrap">
