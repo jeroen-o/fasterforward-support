@@ -34,7 +34,22 @@
     "nhb_kantoor_selectie": "Beheer > Koppelingen > NHB kantoor selectie",
     "dossieropties": "Het ☰-menu in het klantdossier: Dossier instellingen, Dossierhistorie en Klantgegevens downloaden",
     "menu_producten": "Hoofdmenu Producten: Signalen > Hypotheekbond",
-    "productkaart_verzekering": "Productkaart schadeverzekering (pakketpolis): algemeen, behandeling, herkomst en de pakketonderdelen"
+    "productkaart_verzekering": "Productkaart schadeverzekering (pakketpolis): algemeen, behandeling, herkomst en de pakketonderdelen",
+    "aplaza_inbox": "Verzekeringen > Aplaza inbox: berichten zoeken op dossier, maatschappij, adviseur, soort bericht en matchstatus",
+    "prolongatie_verschillen": "Prolongaties > tabblad Verschillen: verschillen tussen ADN en eBlinqx Connect controleren",
+    "prolongatie_instellingen": "Prolongaties > tabblad Instellingen: grootboekrekeningen voor bijboeken, afschrijven en onbekend per administratie",
+    "dossier_instellingen": "☰ > Dossier instellingen: administratie (kantoor), status, omschrijving en relatienummer van het dossier",
+    "product_aanmaken": "Nieuw product in het dossier: hypotheek, verzekeringen, vermogen en bancair, contract of dienst",
+    "export": "Tabblad Export: gegevens selecteren en exporteren naar onder meer klantportaal, Finly, Adviesbox, FinRust, Figlo, Nextens, Findesk en Risk",
+    "incasso_excasso": "Financieel > Incasso- en excassobestanden maken",
+    "toewijzingsregels": "Financieel > Toewijzingsregels definiëren",
+    "betalingsherinneringen": "Financieel > Betalingsherinneringen: selectie op kantoor, factuurdatum, dagen openstaand en soort boeking",
+    "email_opties": "E-mailmodule > ☰ Emailbox opties: map toevoegen, mailgroepen, automatisch antwoord, mailingregels",
+    "afspraak_aanmaken": "Nieuwe afspraak in de agenda: dossier, tijden, genodigden, locatie en notificatie",
+    "account_menu": "Het accountmenu rechtsboven: Mijn instellingen, Support website, Wissel administratie, Wachtwoord wijzigen",
+    "mijn_instellingen": "Mijn instellingen: gebruikersaccount, authenticator-app, taal, startpagina's, standaard e-mailbox en handtekening",
+    "schade_uitbetalingen": "Verzekeringen > Schade uitbetalingen goedkeuren",
+    "toekomstige_mutaties": "Verzekeringen > Overzicht toekomstige mutaties"
   },
   "artikelen": {
     "kennisbank/hoe-maak-dossier-aan": [
@@ -60,7 +75,8 @@
       "hoofdmenu"
     ],
     "kennisbank/welke-adviespakketten-koppelt-eblinqx": [
-      "invoerscherm_inkomen"
+      "invoerscherm_inkomen",
+      "export"
     ],
     "kennisbank/document-uploaden-in-het-dossier": [
       "documenten"
@@ -116,7 +132,8 @@
     ],
     "kennisbank/hoe-maak-en-afspraak-agenda": [
       "kalender",
-      "agenda"
+      "agenda",
+      "afspraak_aanmaken"
     ],
     "kennisbank/collega-toegang-agenda": [
       "kalender",
@@ -153,7 +170,8 @@
       "email_aanmaken"
     ],
     "kennisbank/dienst-levens-inkomensproduct-aanmaken": [
-      "productkaart_dienst"
+      "productkaart_dienst",
+      "product_aanmaken"
     ],
     "kennisbank/factureren-vanuit-de-productkaart": [
       "productkaart_dienst"
@@ -218,13 +236,16 @@
       "menu_beheer"
     ],
     "kennisbank/hoe-maak-mailgroep-aan": [
-      "menu_beheer"
+      "menu_beheer",
+      "email_opties"
     ],
     "kennisbank/aplaza-berichten-verwerken": [
-      "menu_verzekeringen"
+      "menu_verzekeringen",
+      "aplaza_inbox"
     ],
     "kennisbank/aplaza-offerte-berichten-verwerken": [
-      "menu_verzekeringen"
+      "menu_verzekeringen",
+      "aplaza_inbox"
     ],
     "kennisbank/tussenpersoon-incasso-posten-handmatig-prolongeren": [
       "handmatig_prolongeren"
@@ -236,7 +257,8 @@
       "prolongatie_import"
     ],
     "kennisbank/prolongatie-instellen-dagboeken": [
-      "prolongatie_import"
+      "prolongatie_import",
+      "prolongatie_instellingen"
     ],
     "kennisbank/prolongatie-instellen-marges": [
       "prolongatie_import"
@@ -245,7 +267,8 @@
       "prolongatie_import"
     ],
     "kennisbank/tussenpersoon-incasso-verwerken-mutaties": [
-      "prolongatie_import"
+      "prolongatie_import",
+      "toekomstige_mutaties"
     ],
     "kennisbank/portefeuillewaarde-overzicht": [
       "portefeuillewaarde"
@@ -279,10 +302,12 @@
       "balans_winst_verlies"
     ],
     "kennisbank/mappen-beheren-in-de-e-mailmodule": [
-      "email_inbox"
+      "email_inbox",
+      "email_opties"
     ],
     "kennisbank/hoe-maak-mailingregel-aan": [
-      "email_inbox"
+      "email_inbox",
+      "email_opties"
     ],
     "kennisbank/prullenbak-e-mail": [
       "email_inbox"
@@ -339,7 +364,8 @@
       "menu_producten"
     ],
     "kennisbank/schadeverzekering-opvoeren": [
-      "productkaart_verzekering"
+      "productkaart_verzekering",
+      "product_aanmaken"
     ],
     "kennisbank/hoe-verwerk-ik-een-schadeverzekering-in-elements": [
       "productkaart_verzekering"
@@ -367,6 +393,137 @@
     ],
     "kennisbank/hoe-maak-ik-een-nieuw-verzekeringsproduct-aan": [
       "productkaart_verzekering"
+    ],
+    "kennisbank/aplaza": [
+      "aplaza_inbox"
+    ],
+    "kennisbank/adn-berichten-ontvangen": [
+      "aplaza_inbox"
+    ],
+    "kennisbank/verwerken-adn-berichten": [
+      "aplaza_inbox"
+    ],
+    "kennisbank/adn-tabbladen-overzicht": [
+      "aplaza_inbox"
+    ],
+    "kennisbank/aplaza-inrichten-aplaza-al-in-gebruik": [
+      "aplaza_inbox"
+    ],
+    "kennisbank/matching-adn-posten": [
+      "prolongatie_verschillen"
+    ],
+    "kennisbank/adn-batch-verwerken-met-mutatievoorstellen": [
+      "prolongatie_verschillen"
+    ],
+    "kennisbank/adn-batch-verwerken-met-zonder-tussenrekening": [
+      "prolongatie_verschillen"
+    ],
+    "kennisbank/boekingsperiode-adn-bericht-wijzigen": [
+      "prolongatie_verschillen"
+    ],
+    "kennisbank/tussenrekeningen-incasso-en-excasso-instellen": [
+      "prolongatie_instellingen"
+    ],
+    "kennisbank/hoe-wijzig-status-dossier": [
+      "dossier_instellingen"
+    ],
+    "kennisbank/hoe-wijzig-kantoor-dossier": [
+      "dossier_instellingen"
+    ],
+    "kennisbank/dossiersysteemstatus-indelen": [
+      "dossier_instellingen"
+    ],
+    "kennisbank/huisstijl-van-dossieroverzichten-instellen": [
+      "dossier_instellingen"
+    ],
+    "kennisbank/pensioen-opvoeren": [
+      "product_aanmaken"
+    ],
+    "kennisbank/serviceabonnement-voor-onderhoud-aanmaken": [
+      "product_aanmaken"
+    ],
+    "kennisbank/hoe-verwerk-ik-een-adviesdienst-in-elements": [
+      "product_aanmaken"
+    ],
+    "kennisbank/opdracht-tot-dienstverlening-maken": [
+      "product_aanmaken"
+    ],
+    "kennisbank/diensten-en-contracten-indexeren": [
+      "product_aanmaken"
+    ],
+    "kennisbank/adviesbox-online-instellen-en-gebruiken": [
+      "export"
+    ],
+    "kennisbank/figlo-koppeling": [
+      "export"
+    ],
+    "kennisbank/finrust-koppeling": [
+      "export"
+    ],
+    "kennisbank/fastlane-advies-gebruiken": [
+      "export"
+    ],
+    "kennisbank/nextens-koppeling": [
+      "export"
+    ],
+    "kennisbank/gemakkelijk-formulieren-toesturen-met-finly": [
+      "export"
+    ],
+    "kennisbank/hoe-maak-en-incasso-batch": [
+      "incasso_excasso"
+    ],
+    "kennisbank/excassobatch-aanmaken": [
+      "incasso_excasso"
+    ],
+    "kennisbank/schade-uitbetaling-aan-derden": [
+      "incasso_excasso",
+      "schade_uitbetalingen"
+    ],
+    "kennisbank/toewijzingsregels": [
+      "toewijzingsregels"
+    ],
+    "kennisbank/betalingsherinneringen-bekijken": [
+      "betalingsherinneringen"
+    ],
+    "kennisbank/betalingsherinnering-versturen": [
+      "betalingsherinneringen"
+    ],
+    "kennisbank/hoe-stel-afwezigheidsassistent": [
+      "email_opties"
+    ],
+    "kennisbank/collega-uitnodigen-afspraak": [
+      "afspraak_aanmaken"
+    ],
+    "kennisbank/locatie-in-een-afspraak": [
+      "afspraak_aanmaken"
+    ],
+    "kennisbank/notificatie-voor-afspraak": [
+      "afspraak_aanmaken"
+    ],
+    "kennisbank/ga-veilig-om-met-je-wachtwoorden": [
+      "account_menu"
+    ],
+    "kennisbank/waar-wijzig-ik-mijn-handtekening": [
+      "account_menu",
+      "mijn_instellingen"
+    ],
+    "kennisbank/two-factor-authentication": [
+      "mijn_instellingen"
+    ],
+    "kennisbank/wachtwoord-en-two-factor-authentication-mfa-resetten": [
+      "mijn_instellingen"
+    ],
+    "kennisbank/pop-up-notificaties-uitschakelen": [
+      "mijn_instellingen"
+    ],
+    "kennisbank/e-mail-notificatie": [
+      "mijn_instellingen"
+    ],
+    "kennisbank/foutieve-schadebetaling-corrigeren": [
+      "schade_uitbetalingen"
+    ],
+    "kennisbank/mutatievoorstellen-aanmaken": [
+      "toekomstige_mutaties"
     ]
   }
 }
