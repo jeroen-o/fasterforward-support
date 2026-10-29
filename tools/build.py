@@ -729,8 +729,27 @@ def related(cats, feeds, p):
     return out[:6]
 
 
+VEROUDERD_VOOR = date(2023, 1, 1)
+MAANDEN = list(MONTHS)
+
+
+def verouderd(p):
+    """(datumtekst) als dit een kennisbankartikel is dat vóór 2023 voor het laatst is bijgewerkt, anders None."""
+    cr = p["crumb"] or []
+    if not cr or cr[0] not in dict(TOP):
+        return None
+    d = p["updated"] or p["posted"]
+    if d:
+        return "op " + fmt_date(d) if d < VEROUDERD_VOOR else None
+    w = wb_date(p)
+    if w and w < VEROUDERD_VOOR and p.get("rawsrc") != "live":
+        return f"in {MAANDEN[w.month - 1]} {w.year}"
+    return None
+
+
 def render_article(cats, feeds, p):
     pg = Page(p["path"])
+    oud = verouderd(p)
     if p.get("rawhtml"):
         body_html, toc = raw_to_html(pg, p["rawhtml"])
     else:
@@ -810,6 +829,7 @@ def render_article(cats, feeds, p):
     <article>
       {h1}
       {f'<p class="meta">{" · ".join(meta)}</p>' if meta else ""}
+      {f'<div class="oud" role="note"><strong>Let op: mogelijk verouderd.</strong> Dit artikel is voor het laatst bijgewerkt {esc(oud)} en beschrijft mogelijk een oudere versie van de software (Elements). Schermen en werkwijze kunnen in eBlinqx afwijken. Twijfel je? <a href="{pg.rel("contact")}">Neem contact op met support</a>.</div>' if oud else ""}
       <div class="content">{body_html}</div>
       {imgs}
       {shot}
@@ -921,7 +941,7 @@ def render_search(pages, cats):
             continue
         d = p["posted"] or p["updated"]
         idx.append({"t": p["t"], "h": p["path"] + "/index.html", "c": " › ".join(p["crumb"] or []),
-                    "k": search_kind(p), "d": fmt_date(d) if d else "",
+                    "k": search_kind(p), "d": fmt_date(d) if d else "", "o": 1 if verouderd(p) else 0,
                     "x": re.sub(r"\s+", " ", " ".join(p["lines"]))[:15000]})
     for name, c in cats.items():
         if c["subs"] or c["loose"]:

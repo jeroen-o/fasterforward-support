@@ -256,3 +256,6 @@ main h1{font-size:30px;font-weight:700;color:var(--heading);margin:0 0 26px;line
 .kbadge{display:inline-block;background:var(--yellow);color:#000;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.03em;padding:1px 7px;margin-right:8px}
 .smore{appearance:none;border:2px solid #000;background:#fff;padding:10px 20px;font:15px var(--font);cursor:pointer}
 .smore:hover{background:var(--yellow)}
+.oud{background:#FFF6D1;border-left:4px solid var(--yellow);padding:12px 16px;margin:0 0 24px;font-size:14px;line-height:1.55;color:#333}
+.oud a{color:var(--link)}
+.obadge{display:inline-block;border:1px solid #C9A400;color:#7A6200;font-size:11px;padding:0 6px;margin-left:6px;border-radius:3px}

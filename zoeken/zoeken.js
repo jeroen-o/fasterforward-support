@@ -67,6 +67,7 @@
           else if (r._x.indexOf(" " + nq) !== -1) total += 12;
         }
         if (r.k === "categorie") total += 3;
+        if (r.o) total -= 5;
         out.push([total + hit * 10, r]);
       });
       out.sort(function (a, b) { return b[0] - a[0]; });
@@ -115,7 +116,7 @@
     var href = r.ext ? r.h : "../" + r.h;
     var ext = r.ext ? ' target="_blank" rel="noopener"' : "";
     return '<article class="ex"><p class="cpath"><span class="kbadge">' + LABEL[r.k] + "</span>" + esc(r.c) +
-      (r.d ? " · " + esc(r.d) : "") + "</p>" +
+      (r.d ? " · " + esc(r.d) : "") + (r.o ? ' <span class="obadge">mogelijk verouderd</span>' : "") + "</p>" +
       '<h2><a href="' + esc(href) + '"' + ext + ">" + highlight(r.t) + "</a></h2>" +
       (r.x && r.k !== "video" ? "<p>" + snippet(r.x) + "</p>" : "") + "</article>";
   }
