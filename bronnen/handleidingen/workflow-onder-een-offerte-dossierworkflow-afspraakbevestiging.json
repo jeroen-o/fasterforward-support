@@ -1,0 +1,8 @@
+{
+  "type": "aanvulling",
+  "doel": "workflow-onder-een-offerte",
+  "titel": "Dossierworkflows, afspraakbevestiging en facturen vanuit de workflow",
+  "samenvatting": "Workflows op dossierniveau, bijlagen bij de afspraakbevestiging laten wijzigen en een factuur aanmaken vanuit een workflowstap.",
+  "html": "<h3>Dossierworkflow toevoegen of verwijderen</h3><p>Naast workflows onder een offerte, taak of factuur kun je ook op dossierniveau een workflow starten. Dit doe je vanuit het tabblad <strong>Workflow</strong> op dossierniveau of vanuit het blok rechts bovenin het dossier. Onder het tabblad Workflow kun je dossierworkflows ook verwijderen. Je hebt hiervoor wel het juiste recht nodig. Dossierworkflows worden meestal gebruikt voor campagnes van De Nationale Hypotheekbond.</p><h3>Bijlagen in de afspraakbevestiging wijzigen</h3><p>Met de afspraakbevestiging worden vaak bijlagen meegestuurd, zoals een dienstverleningsovereenkomst en voorwaarden. De afspraakbevestiging wordt verstuurd vanuit de workflow. Wil je andere bijlagen meesturen, stuur de nieuwe bijlagen dan naar support (support-eblinqx@blinqx.tech). Wij passen de workflow voor je aan.</p><h3>Factuur aanmaken vanuit de workflow</h3><p>Een workflow kan doorgaans zelf geen factuur aanmaken. Daarom zit er in sommige workflows een handmatige stap zoals <strong>Klik hier om eerst de factuur aan te maken</strong>. Kies je deze stap, dan word je doorgestuurd naar het tabblad <strong>Financieel</strong> in het dossier, waar je de factuur aanmaakt.</p>",
+  "bron": "workflow.pdf: Workflows toevoegen en verwijderen; Bijlagen in afspraakbevestiging wijzigen; Factuur aanmaken vanuit workflow"
+}

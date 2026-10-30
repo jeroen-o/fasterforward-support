@@ -1,0 +1,8 @@
+{
+  "type": "aanvulling",
+  "doel": "rapportage-gebruiken",
+  "titel": "Medewerkers toegang geven tot een rapportage",
+  "samenvatting": "Hoe je specifieke gebruikers of workflowgroepen aan een rapportage koppelt en waar je informatie over een rapportage vindt.",
+  "html": "<p>In de rapportagemanager staat achter een rapportage een schildicoon. Klik je hierop, dan opent een koppelscherm waarin je specifieke gebruikers en/of workflowgroepen aan de rapportage koppelt. Zo bepaal je welke medewerkers de rapportage zien:</p><ul><li>Gebruikers met het recht om alle rapportages te zien (vaak beheerders) zien altijd alle rapportages, ongeacht wie er gekoppeld is.</li><li>Andere gebruikers zien alleen de rapportages waaraan zij zelf, of een workflowgroep waarin zij zitten, gekoppeld zijn.</li><li>Is aan een rapportage niemand gekoppeld, dan zien alleen gebruikers met het recht om alle rapportages te zien deze rapportage.</li></ul><h3>Informatie over de rapportage</h3><p>Achter een rapportage kan een informatie-icoon (i) staan. Hier lees je wat de rapportage precies ophaalt en of het om een BI-rapportage gaat.</p>",
+  "bron": "Rapportagemanager en managementinformatie: Werkwijze – Rapportage manager (Bepaalde medewerkers toegang geven tot de rapportage, Informatie)"
+}

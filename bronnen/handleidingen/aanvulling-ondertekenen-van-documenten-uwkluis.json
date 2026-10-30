@@ -1,0 +1,8 @@
+{
+  "type": "aanvulling",
+  "doel": "ondertekenen-van-documenten-uwkluis",
+  "titel": "Digitale handtekening via SignRequest",
+  "samenvatting": "De digitale handtekening in UwKluis / Online klantportaal loopt niet meer via Stiply maar via SignRequest; bestaande ondertekenverzoeken worden na activatie automatisch gesynchroniseerd.",
+  "html": "<h2>SignRequest in plaats van Stiply</h2>\n<p>De digitale handtekening in UwKluis / Online klantportaal werd voorheen ondersteund door Stiply. Dit is vervangen door SignRequest. Ondertekenen met het digitale vinkje werkt zoals hierboven beschreven.</p>\n<p>Let op: SignRequest wordt nog niet door alle maatschappijen geaccepteerd als officiële ondertekening. Controleer dit bij twijfel bij de betreffende maatschappij.</p>\n<h2>Bestaande ondertekenverzoeken na activatie</h2>\n<p>Ondertekenverzoeken en Finly-formulieren die al in het klantdossier klaarstaan, worden na het activeren automatisch naar de nieuwe UwKluis / Online klantportaal van de klant gesynchroniseerd. Je hoeft hiervoor niet meer handmatig te synchroniseren.</p>",
+  "bron": "klantportaal.pdf: Gebruik van Klantportaal (Ondertekenen van documenten in Klantportaal)"
+}

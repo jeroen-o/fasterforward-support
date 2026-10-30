@@ -1,0 +1,8 @@
+{
+  "type": "aanvulling",
+  "doel": "stukkenlijst-serviceprovider",
+  "titel": "Vinkje zonder datum in de kolom DX verzonden",
+  "samenvatting": "Waarom in de kolom DX verzonden soms wel een vinkje maar geen datum staat, en hoe je een nieuw document voor zo'n stuk opnieuw naar de maatschappij verstuurt.",
+  "html": "<p>In de stukkenlijst serviceprovider staat in de kolom <strong>DX verzonden</strong> een datum en een vinkje als het stuk is verzonden naar en ontvangen door de maatschappij. Het kan voorkomen dat het vinkje er nog wel staat, maar de datum niet meer.</p>\n<h2>Oorzaak</h2>\n<p>Dit gebeurt als een gebruiker onder het stuk een ander of nieuw document uploadt. Bij het opnieuw koppelen van een document aan een stuk worden onder andere de verzenddatum en de verzendwijze van het stuk leeggemaakt. Daardoor is er geen datum meer zichtbaar in de stukkenlijst (bijvoorbeeld bij ‘het getekende renteaanbod’).</p>\n<p>Het vinkje blijft staan, omdat er voor dit stuk al een document naar de maatschappij is verzonden. Om dezelfde reden kan het nieuwe document niet nog een keer via HDN worden verstuurd: anders zijn er twee documenten voor hetzelfde stuk in behandeling bij de maatschappij.</p>\n<h2>Nieuw document toch versturen</h2>\n<p>Om het stuk opnieuw naar de maatschappij te versturen, moet de maatschappij het stuk eerst afkeuren. Zodra er vanuit de maatschappij een nieuw DA-bericht binnenkomt met de bijgewerkte status van het stuk, worden de verzenddatums leeggemaakt. Daarna kun je het nieuwe document versturen.</p>",
+  "bron": "serviceprovider.pdf: Datum staat niet meer in kolom DX verzonden"
+}

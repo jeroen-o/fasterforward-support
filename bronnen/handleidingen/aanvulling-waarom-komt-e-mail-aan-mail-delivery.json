@@ -1,0 +1,8 @@
+{
+  "type": "aanvulling",
+  "doel": "waarom-komt-e-mail-aan",
+  "titel": "Melding van Mail Delivery Subsystem ontvangen",
+  "samenvatting": "Wat een Mail Delivery Subsystem-melding betekent en wat je ermee kunt doen.",
+  "html": "<p>Wordt een verstuurde e-mail bij de ontvanger tegengehouden, dan ontvang je meestal een melding van ‘Mail Delivery Subsystem’. In deze melding staat waarom de e-mail niet kon worden afgeleverd. Veelvoorkomende oorzaken zijn:</p><ul><li><strong>Het e-mailadres bestaat niet of is onjuist.</strong> Controleer het e-mailadres en stuur de e-mail opnieuw naar het juiste adres.</li><li><strong>Het SPF-record is niet goed ingesteld.</strong> Je e-mailbeheerder moet het SPF-record dan (opnieuw) instellen, zie hierboven.</li></ul><p>In de meeste gevallen ligt de oplossing dus bij jezelf of bij je e-mailbeheerder en niet in eBlinqx Connect.</p>",
+  "bron": "E-mail: Foutmeldingen – Mail delivery subsystem meldingen"
+}

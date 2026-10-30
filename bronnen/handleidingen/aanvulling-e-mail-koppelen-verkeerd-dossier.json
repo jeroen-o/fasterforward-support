@@ -1,0 +1,8 @@
+{
+  "type": "aanvulling",
+  "doel": "hoe-koppel-ik-een-e-mail-aan-het-dossier",
+  "titel": "E-mail wordt aan het verkeerde dossier gekoppeld",
+  "samenvatting": "Hoe eBlinqx Connect bepaalt aan welk dossier een e-mail wordt gekoppeld en wat je doet als dit niet gewenst is.",
+  "html": "<p>Bij het automatisch koppelen van een e-mail kijkt eBlinqx Connect in deze volgorde:</p><ol><li>Is de e-mail een reactie op een e-mail die vanuit eBlinqx Connect is verstuurd? Dan wordt gekoppeld op basis van technische gegevens die eBlinqx Connect onzichtbaar aan de e-mail meegeeft.</li><li>Staat er een koppelcode in het onderwerp, zoals <em>#D</em> voor een dossier? Dan wordt op basis daarvan gekoppeld.</li><li>Lukt dat niet, dan wordt gekeken naar het e-mailadres van de ontvanger (bij een uitgaande e-mail) of van de afzender (bij een binnenkomende e-mail). Komt dit e-mailadres in precies één dossier voor, dan wordt de e-mail aan dat dossier gekoppeld.</li></ol><p>Wordt een e-mail op basis van het e-mailadres aan een dossier gekoppeld terwijl dat niet de bedoeling is? Dan kun je dit op twee manieren oplossen:</p><ol><li>Verwijder het betreffende e-mailadres uit het dossier.</li><li>Of voeg het e-mailadres ook toe aan een ander dossier. Het e-mailadres komt dan niet meer in één dossier voor, waardoor e-mails niet meer automatisch aan het dossier worden gekoppeld.</li></ol>",
+  "bron": "E-mail: Werkwijze – E-mail koppelen (Extra informatie automatisch koppelen) en Foutmeldingen – E-mail wordt onder verkeerd dossier gekoppeld"
+}

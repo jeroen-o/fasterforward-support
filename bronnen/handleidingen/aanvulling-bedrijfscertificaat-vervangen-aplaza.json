@@ -1,0 +1,8 @@
+{
+  "type": "aanvulling",
+  "doel": "bedrijfscertificaat-in-elements-vervangen",
+  "titel": "Welk wachtwoord hoort bij het certificaat en waar moet het nog meer vervangen worden?",
+  "samenvatting": "Welk wachtwoord je gebruikt bij het ophalen van het verlengde certificaat en waar je het nieuwe certificaat nog meer moet doorgeven.",
+  "html": "<h3>Welk wachtwoord gebruik je?</h3>\n<p>Welk wachtwoord bij het bedrijfscertificaat hoort, hangt af van de dienst die je bij Solera afneemt:</p>\n<ul>\n<li><strong>TIME Berichten en Documenten</strong>: het certificaat heeft een adres in de vorm cijfers@inca.aims.abz.nl. Hiervoor gebruik je het vaste wachtwoord van de I09-postbus dat Solera heeft aangeleverd. Haal je het verlengde certificaat op met een zelfbedacht wachtwoord, dan werkt het niet in eBlinqx Connect.</li>\n<li><strong>Alleen TIME Documenten (EMS/Aplaza)</strong>: het certificaat heeft een adres in de vorm cijfers@xnet.abz.nl en is niet gekoppeld aan een I09-postbus. Het wachtwoord bepaal je zelf. Bij het verlengen heb je het oude wachtwoord niet nodig: in de ABC-tool kun je een nieuw wachtwoord instellen voordat je kiest voor vernieuwen (of in twee stappen: intrekken en ophalen).</li>\n</ul>\n<h3>Certificaat ook elders vervangen</h3>\n<ul>\n<li>Het bedrijfscertificaat wordt zowel voor Aplaza als voor ADN gebruikt. Gebruik je beide, dan wordt het certificaat voor beide vervangen.</li>\n<li>Vergeet niet het vernieuwde certificaat ook bij a.s.r. (Cockpit) en Nationale-Nederlanden (adviseur.nn.nl) te vervangen.</li>\n</ul>",
+  "bron": "aplaza.pdf: Inrichting: Gegevens ophalen bij de klant ADN en Aplaza (bedrijfscertificaat/wachtwoord); Werkwijze: Verlengd bedrijfscertificaat verwerken (Certificaat ook verwerken voor ADN, ASR en NN)"
+}

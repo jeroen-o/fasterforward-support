@@ -1,0 +1,8 @@
+{
+  "type": "aanvulling",
+  "doel": "api-koppeling",
+  "titel": "Aanmelden voor de API",
+  "samenvatting": "Hoe het aanmelden voor de API van eBlinqx Connect verloopt, van aanmeldformulier tot ondertekening door jou en de implementerende partij.",
+  "html": "<h2>Aanmeldformulier</h2>\n<p>Wil je (of je softwareleverancier) aansluiten op de API, dan verloopt de aanmelding via een aanmeldformulier. Na je e-mail aan support ontvang je een e-mail met een link naar dit formulier, een verwijzing naar api.fasterforward.nl en de API-voorwaarden.</p>\n<ol>\n<li>Je vult als opdrachtgever je bedrijfsgegevens in en de gegevens van de implementerende partij (de partij die de koppeling bouwt).</li>\n<li>Je ondertekent het formulier.</li>\n<li>De implementerende partij ontvangt een e-mail met het verzoek het formulier ook te ondertekenen.</li>\n<li>Zodra de implementerende partij heeft getekend, ontvangen beide partijen en Blinqx een e-mail met het getekende formulier als pdf.</li>\n</ol>\n<h2>Technische informatie en hulp</h2>\n<p>Op api.fasterforward.nl staat alle informatie over de API. De implementerende partij kan hiermee de koppeling bouwen. Heeft de implementerende partij hulp nodig bij het gebruik van de API, dan wordt dit als opdracht behandeld.</p>",
+  "bron": "api.pdf: Aanmelden en website API"
+}

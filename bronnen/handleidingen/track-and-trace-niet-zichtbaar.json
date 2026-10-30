@@ -1,0 +1,8 @@
+{
+  "type": "aanvulling",
+  "doel": "hoe-krijg-overzicht-al-lopende-aanvragen",
+  "titel": "Dossier of product niet zichtbaar in Track and Trace",
+  "samenvatting": "Waarom je een dossier, product of het Track and Trace-icoon niet ziet en waarom collega's andere aantallen zien.",
+  "html": "<p>Zie je een dossier of product niet terug in Track and Trace, dan kan dat de volgende oorzaken hebben.</p><h3>Rechten per producttype</h3><p>Voor elk type product dat in Track and Trace wordt getoond, is er een apart recht. Heb je bijvoorbeeld wel het recht voor hypotheken, maar niet voor diensten, dan zie je wel de hypotheken maar niet de diensten. Ook voor het Track and Trace-icoon in de menubalk heb je de juiste rechten nodig. Rechten pas je niet zelf aan; lees hierover <a href=\"SITE:/kennisbank/rechten-aan-laten-passen/\">Rechten aan laten passen</a>.</p><h3>Status niet gekoppeld aan jouw workflowgroep</h3><p>In Track and Trace kun je zoeken op de statussen die gekoppeld zijn aan de workflowgroepen waar je in zit. Heeft een dossier of product een status die daar niet bij staat, dan zie je het niet. De status moet dan worden gekoppeld aan een workflowgroep waar je in zit. Neem hiervoor contact op met support (support-eblinqx@blinqx.tech). Lees ook <a href=\"SITE:/kennisbank/workflowgroepen/\">Workflowgroepen</a>.</p><p>Omdat dit per workflowgroep verschilt, kunnen twee gebruikers in Track and Trace verschillende aantallen zien.</p>",
+  "bron": "track-and-trace-en-smart.pdf: Dossier/product is niet zichtbaar in Track and Trace; Verschillen tussen resultaten Track and Trace en Portefeuillewaarde-overzicht (punt 3)"
+}

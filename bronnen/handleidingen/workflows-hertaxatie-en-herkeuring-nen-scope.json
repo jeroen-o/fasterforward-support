@@ -1,0 +1,9 @@
+{
+  "type": "nieuw",
+  "slug": "workflows-hertaxatie-en-herkeuring-nen-scope",
+  "titel": "Workflows voor hertaxatie en herkeuring (NEN en SCOPE)",
+  "categorie": "Dossier > Workflow",
+  "samenvatting": "Met standaard schadeworkflows bewaak je hertaxaties en NEN- en SCOPE-herkeuringen bij zakelijke polissen.",
+  "html": "<p>NEN en SCOPE zijn keuringen die zakelijk worden gebruikt voor onder andere elektra, panden en zonnepanelen. In eBlinqx Connect zijn workflows beschikbaar die deze keuringen en hertaxaties bewaken en hierop inspelen.</p>\n<h2>Beschikbare workflows</h2>\n<ul>\n<li>Schade 11: Hertaxatie bedrijfspand / Inventaris / Scope verdeler</li>\n<li>Schade 12: Hertaxatie bedrijfspand</li>\n<li>Schade 13: Hertaxatie inventaris</li>\n<li>Schade 14: Herkeuring SCOPE 10 / NEN</li>\n<li>Schade 15: Herkeuring SCOPE 12 / Zonnepanelen</li>\n</ul>\n<h2>Werking</h2>\n<p>Als je de workflow aanzet, is deze zichtbaar bij de lopende polissen. Staat de workflow (nog) niet bij een lopende polis, bijvoorbeeld bij polissen die al bestonden voordat je met eBlinqx Connect werkte, dan kun je de workflow handmatig opstarten.</p>\n<p>Lees meer over workflows in <a href=\"SITE:/kennisbank/workflows/\">De mogelijkheden van workflows</a>.</p>",
+  "bron": "schades.pdf: NEN en SCOPE"
+}

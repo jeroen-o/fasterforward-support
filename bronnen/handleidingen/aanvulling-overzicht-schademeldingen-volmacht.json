@@ -1,0 +1,8 @@
+{
+  "type": "aanvulling",
+  "doel": "overzicht-schademeldingen",
+  "titel": "Kolommen in het overzicht en volmacht schademeldingen",
+  "samenvatting": "Uitleg over de kolom Branche in het overzicht van schademeldingen en hoe je een volmacht schademelding herkent.",
+  "html": "<h3>Kolom Branche</h3>\n<p>In het overzicht van schademeldingen (binnen en buiten het dossier) staat de kolom <strong>Branche</strong>. Hier zie je de branche van de polis waaraan de schademelding gekoppeld is. Bij schademeldingen op een provinciale verzekering of inkomensverzekering wordt de branche overgenomen uit de categorie/branche van het gekoppelde offertedeel. Is die niet bekend of niet ingericht, dan staat er 999 - Overig. Zo heeft de kolom altijd een waarde.</p>\n<h3>Volmacht schademeldingen</h3>\n<p>Werk je met volmachtverzekeringen, dan zie je ook de volmacht schademeldingen in het overzicht. Je herkent ze aan een afwijkend icoon vóór de regel. Bij deze schademeldingen worden de kolommen Polisomschrijving, Object en Branche gevuld met de informatie uit DIAS.</p>",
+  "bron": "volmacht.pdf: Schademelding Volmacht (Schademelding overzicht binnen/buiten dossier)"
+}

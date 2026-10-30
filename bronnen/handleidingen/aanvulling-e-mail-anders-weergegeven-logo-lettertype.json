@@ -1,0 +1,8 @@
+{
+  "type": "aanvulling",
+  "doel": "e-mail-wordt-anders-weergegeven-ontvanger",
+  "titel": "Logo als bijlage en afwijkend lettertype",
+  "samenvatting": "Waarom een logo uit je handtekening als bijlage kan aankomen en waarom je het standaard lettertype alleen bij de ontvanger ziet.",
+  "html": "<h3>Logo of afbeelding uit de handtekening komt aan als bijlage</h3><p>E-mail kan in drie formaten worden weergegeven: HTML, rich text en platte tekst (plain text). eBlinqx Connect verstuurt e-mail in HTML, dus ook je handtekening is in HTML. Gebruikt de ontvanger platte tekst, dan kunnen afbeeldingen niet in de tekst worden getoond. Afbeeldingen en logo’s uit de handtekening komen dan als bijlage bij de ontvanger binnen. Dit is niet vanuit eBlinqx Connect te voorkomen.</p><h3>Ingesteld lettertype zie je niet in eBlinqx Connect</h3><p>In de e-mailmanager kun je op het tabblad <strong>Template</strong> een standaard lettertype voor uitgaande e-mails instellen. Dit lettertype wordt pas toegepast nadat de e-mail is verzonden en is dus alleen zichtbaar bij de ontvanger. In eBlinqx Connect zelf wordt tekst altijd in hetzelfde standaard lettertype getoond; dat kun je niet wijzigen.</p>",
+  "bron": "E-mail: Foutmeldingen – Handtekening/logo als bijlage bij ontvanger; Inrichting – Template e-mail"
+}

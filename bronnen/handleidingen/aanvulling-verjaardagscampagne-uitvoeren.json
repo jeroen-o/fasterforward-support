@@ -1,0 +1,8 @@
+{
+  "type": "aanvulling",
+  "doel": "verjaardagscampagne-aanmaken",
+  "titel": "Wat gebeurt er bij het automatisch uitvoeren?",
+  "samenvatting": "Wat het achterliggende proces bij een herhalingscampagne doet en waarom je niet zelf op Uitvoeren klikt.",
+  "html": "<p>Een herhalingscampagne wordt automatisch uitgevoerd door het achterliggende proces. Op het tabblad <em>Resultaat</em> staat wel de knop <strong>Uitvoeren</strong>, maar daar hoef je niet op te klikken. Bij elke keer dat het proces de campagne uitvoert, gebeurt het volgende:</p><ul><li>de actie die je hebt aangemaakt wordt uitgevoerd (verzonden);</li><li>er wordt een nieuwe actie aangemaakt (een kopie);</li><li>de selectie wordt opnieuw opgehaald.</li></ul><p>Hiervoor hoef je zelf niets te doen, mits alles juist is ingericht. Klik je toch op <strong>Uitvoeren</strong>, dan wordt de herhalingscampagne ook uitgevoerd. Het nadeel is dat je de oorspronkelijke campagneactie, van waaruit de herhaling wordt aangemaakt, daarna niet meer kunt aanpassen.</p><p>Wordt je herhalingscampagne niet uitgevoerd? Neem hiervoor contact op met support (support-eblinqx@blinqx.tech).</p>",
+  "bron": "Campagnemanager: Werkwijze – Herhalingscampagne/klanten die jarig zijn (Knop uitvoeren)"
+}

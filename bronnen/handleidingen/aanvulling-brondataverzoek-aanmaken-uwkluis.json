@@ -1,0 +1,8 @@
+{
+  "type": "aanvulling",
+  "doel": "brondataverzoek-aanmaken-uwkluis",
+  "titel": "Veilig Ophalen gestopt en brondataverzoek vóór activatie",
+  "samenvatting": "Sinds juli 2026 kan Veilig Ophalen niet meer worden gebruikt en sinds 11 augustus 2026 kun je een brondataverzoek al klaarzetten voordat de klant UwKluis / Online klantportaal activeert.",
+  "html": "<h2>Veilig Ophalen niet meer beschikbaar</h2>\n<p>Sinds juli 2026 is het niet meer mogelijk om Veilig Ophalen te gebruiken. Veilig Ophalen staat niet meer in de workflows. Brondata opvragen via UwKluis / Online klantportaal kan alleen nog met Ockto.</p>\n<h2>Brondataverzoek klaarzetten vóór activatie</h2>\n<p>Vanaf de release van 11 augustus 2026 kun je een brondataverzoek al klaarzetten voordat de klant UwKluis / Online klantportaal heeft geactiveerd. De stap om de brondata te versturen vindt dan niet plaats na de activatie, maar al bij de stap waarin je de uitnodiging verstuurt. Zodra de klant UwKluis / Online klantportaal activeert en inlogt, staat het verzoek al voor hem klaar.</p>\n<p>Dit wordt aangestuurd vanuit de workflow. Wil je deze werkwijze gebruiken en werkt je workflow nog niet zo? Neem hiervoor contact op met support (support-eblinqx@blinqx.tech).</p>\n<h2>Naam bij het verzoek</h2>\n<p>Is het brondataverzoek voor de eerste persoon of de partner aangemaakt, dan ziet de klant in UwKluis / Online klantportaal de naam van die persoon bij het verzoek. Zo weet de klant voor wie het verzoek bedoeld is. Dit is alleen ter herkenning: bij het ontvangen van de gegevens koppel je het resultaat zelf aan de juiste persoon in het dossier.</p>",
+  "bron": "klantportaal.pdf: Gebruik van Klantportaal (Brondata verzoeken aanmaken; Naam in verzoeken)"
+}

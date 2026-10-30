@@ -1,0 +1,8 @@
+{
+  "type": "aanvulling",
+  "doel": "managementinformatie",
+  "titel": "Verschil tussen grafiek en rapportage bij afgekeurde stukken",
+  "samenvatting": "Waarom het aantal afgekeurde stukken in de grafiek kan afwijken van het aantal in een rapportage.",
+  "html": "<p>De grafiek <em>Afgekeurde stukken per maand</em> toont de geschiedenis van de stukken. Een stuk kan meerdere keren zijn afgekeurd en komt dan ook meerdere keren in de grafiek voor. Er zijn ook rapportages die afgekeurde stukken tonen, zoals <em>Management – Hypotheekaanvraag niet FTR</em>. Zo’n rapportage toont alleen de stukken die op dit moment de status afgekeurd hebben, zodat je daar gericht actie op kunt ondernemen. Daardoor kan het aantal in de rapportage afwijken van het aantal in de grafiek.</p><p>Ook kan de rapportage een paar regels minder bevatten dan de grafiek: een stuk dat meerdere keren is afgekeurd, staat in de rapportage maar één keer, in de grafiek niet.</p><p>Verwijderde stukken worden wél meegeteld in de grafiek en de rapportage. Stukkenlijsten worden namelijk automatisch verwijderd als het product wordt gearchiveerd; zonder deze stukken zouden er gaten in de cijfers ontstaan.</p>",
+  "bron": "Rapportagemanager en managementinformatie: Werkwijze – Managementinformatie (Afgekeurde stukken per maand rapportage en grafiek)"
+}

@@ -1,0 +1,8 @@
+{
+  "type": "aanvulling",
+  "doel": "prolongatie-instellen-por-codes",
+  "titel": "Wat is een POR-code en wat is SIVI?",
+  "samenvatting": "Korte uitleg over de opbouw van een POR-code en de rol van SIVI bij standaarden zoals ADN-berichten.",
+  "html": "<h2>Opbouw van een POR-code</h2>\n<p>Een POR-code bestaat uit een letter en drie cijfers. Door de POR-code te combineren met het polisnummer ontstaat een uniek nummer voor het digitale berichtenverkeer, zoals ADN en Aplaza. Het beheer van de POR-codes is in 2007 overgedragen aan SIVI.</p>\n<h2>Wat is SIVI?</h2>\n<p>SIVI is het kennis- en standaardisatie-instituut voor de financiële dienstverlening. SIVI ontwikkelt standaarden waarmee de verschillende systemen in de financiële wereld met elkaar kunnen communiceren, en zorgt voor de vastlegging, het onderhoud en het raadpleegbaar zijn van deze gegevensstandaarden.</p>\n<p>Een voorbeeld zijn de XML-berichten die via ADN worden verstuurd en ontvangen. In deze berichten zijn de velden volgens de ADN-standaard gevuld met polisinformatie. Ieder veld in eBlinqx Connect heeft een ADN-attribuut en -entiteit. Zo komt bijvoorbeeld de ingangsdatum altijd op de juiste plek terecht.</p>\n<p>Bij SIVI zijn ook alle maatschappijen vastgelegd. Hun POR-codes kun je opzoeken in ‘POR online’ op <a href=\"https://www.sivi.org\">www.sivi.org</a>.</p>",
+  "bron": "overig.pdf: Begrippen nader toegelicht – POR-codes; SIVI"
+}

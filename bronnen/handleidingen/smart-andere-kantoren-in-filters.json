@@ -1,0 +1,8 @@
+{
+  "type": "aanvulling",
+  "doel": "smart-selecties-en-acties",
+  "titel": "Andere kantoren zichtbaar in de filters",
+  "samenvatting": "Waarom je in SMART andere kantoren in de filters ziet en hoe je dit laat aanpassen.",
+  "html": "<p>Welke kantoren je in de filters van SMART ziet, hangt af van je rechten. Heb je het recht om dossiers van meerdere kantoren te zien, dan staan die kantoren ook in de filters.</p><p>Wil je niet dat een gebruiker andere kantoren in de filters ziet, dan moet dit recht voor die gebruiker worden uitgezet, of moet de gebruiker uit de betreffende rechtengroep worden gehaald. Rechten pas je niet zelf aan. Neem hiervoor contact op met support (support-eblinqx@blinqx.tech). Lees ook <a href=\"SITE:/kennisbank/rechten-aan-laten-passen/\">Rechten aan laten passen</a>.</p>",
+  "bron": "track-and-trace-en-smart.pdf: Meerdere deelnemers te zien in de SMART module"
+}
