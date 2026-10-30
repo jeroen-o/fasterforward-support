@@ -51,6 +51,7 @@ REPLAYS = {
 # Pad waaronder de site draait (voor 404.html). GitHub Pages: /<repo>/; eigen domein: /
 SITE_BASE = os.environ.get("SITE_BASE", "/fasterforward-support/")
 WAYBACK_DIR = os.path.join(SRC, "wayback")      # uitvoer van tools/wayback-ophalen.py
+HANDLEIDING_DATUM = "30 oktober 2026"  # datum waarop de handleidingteksten zijn toegevoegd
 LIVE_DIR = os.path.join(SRC, "live-2026-10-20")  # pagina's van de live site, 20 oktober 2026
 SKIP_PATH = re.compile(r"^(wp-content|wp-includes|wp-json|wp-admin|feed|comments|author|tag|tags|page|xmlrpc|"
                        r"search|\?|.*?/feed$|.*?/page/\d+$|.*?/amp$|.*?/embed$)")
@@ -343,6 +344,24 @@ def load_sources():
         seen = set()
         p["imgs"] = [im for im in p["imgs"] if freq[im["src"]] <= 3 and not (im["src"] in seen or seen.add(im["src"]))
                      and re.search(r"\.(png|jpe?g|gif|webp)$", im["src"], re.I)]
+    # 5. Nieuwe en aangevulde kennisbankartikelen (klantgerichte delen uit de supporthandleidingen, bronnen/handleidingen/)
+    for f in sorted(glob.glob(os.path.join(SRC, "handleidingen", "*.json"))):
+        d = json.load(open(f, encoding="utf8"))
+        if d.get("type") == "nieuw":
+            p = get(BASE + "/kennisbank/" + d["slug"] + "/")
+            if p.get("raw"):
+                continue  # bestaat al: originele tekst gaat voor
+            p["t"], p["kind"], p["c"] = d["titel"], "Artikel", "kennisbank"
+            p["crumb"] = [c.strip() for c in d["categorie"].split(">")]
+            p["summary"] = d.get("samenvatting", "")
+            p["raw"] = {"title": d["titel"], "html": d["html"], "posted": "", "updated": HANDLEIDING_DATUM,
+                        "hero": None, "ogimg": None, "crumbs": []}
+            p["rawsrc"] = "handleiding"
+        elif d.get("type") == "aanvulling":
+            p = pages.get(norm(BASE + "/kennisbank/" + d["doel"] + "/"))
+            if p and p.get("raw"):
+                p["raw"]["html"] += f'<h2>{html.escape(d["titel"])}</h2>' + d["html"]
+                p["raw"]["updated"] = HANDLEIDING_DATUM
     return pages
 
 
