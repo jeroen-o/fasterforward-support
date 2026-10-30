@@ -1,0 +1,8 @@
+{
+ "type": "aanvulling",
+ "doel": "figlo-koppeling",
+ "titel": "AX-bericht uit Figlo handmatig uploaden",
+ "samenvatting": "Komt de aanvraag uit Figlo niet automatisch binnen, dan kun je het HDN AX-bericht zelf uploaden in de HDN inbox.",
+ "html": "<p>Komt de aanvraag uit Figlo niet automatisch in eBlinqx Connect binnen, dan kun je het HDN AX-bericht ook handmatig uploaden:</p><ol><li>Ga naar de <strong>HDN inbox</strong> en klik op de knop <strong>HDN-bericht uploaden</strong>.</li><li>Kies bij het berichttype <strong>AX OfferteAanvraag</strong>. Welke berichttypes je kunt kiezen, hangt af van of je beheerder bent.</li><li>Vul de gekleurde (verplichte) velden in: bij <strong>Bestand</strong> upload je het AX-bericht uit Figlo, de <strong>Schemaversie</strong> staat al ingevuld en bij <strong>Ontvangercode</strong> kies je de maatschappij. Dit is de lijst van maatschappijen die bij HDN bekend zijn; die staat los van de maatschappijen die in jouw omgeving zijn ingericht. De overige velden zijn optioneel.</li><li>Klik op opslaan. Het bericht komt in de HDN inbox te staan. Zie je een oranje mapje voor het bericht, dan moet je het nog verder aanvullen.</li></ol><p>Lees meer in <a href=\"SITE:/kennisbank/hdn-berichten-handmatig-uploaden/\">HDN berichten handmatig uploaden</a>.</p>",
+ "bron": "aangeleverd door Jeroen Oversteegen, 30 oktober 2026"
+}
