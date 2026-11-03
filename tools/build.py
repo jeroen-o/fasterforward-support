@@ -49,7 +49,7 @@ REPLAYS = {
     "webinar-nieuwe-feature-mytp": "https://fasterforward.webinargeek.com/watch/replay/2652088/faaf06952e67e0ce558425566f97772a/",
 }
 # Pad waaronder de site draait (voor 404.html). GitHub Pages: /<repo>/; eigen domein: /
-SITE_BASE = os.environ.get("SITE_BASE", "/fasterforward-support/")
+SITE_BASE = os.environ.get("SITE_BASE", "/")
 WAYBACK_DIR = os.path.join(SRC, "wayback")      # uitvoer van tools/wayback-ophalen.py
 HANDLEIDING_DATUM = "30 oktober 2026"  # datum waarop de handleidingteksten zijn toegevoegd
 LIVE_DIR = os.path.join(SRC, "live-2026-10-20")  # pagina's van de live site, 20 oktober 2026
@@ -613,7 +613,7 @@ NAV = [("Home", ""), ("Nieuws", "nieuws"), ("Tips", "tips"), ("E-learning", "ele
 
 
 # Openbaar adres van de site (voor de deelknoppen als JavaScript uit staat; met JavaScript wordt het echte adres gebruikt).
-SITE_URL = os.environ.get("SITE_URL", "https://jeroen-o.github.io/fasterforward-support/")
+SITE_URL = os.environ.get("SITE_URL", "https://support-eblinqx-connect.nl/")
 
 
 def share_block(pg, title, description):

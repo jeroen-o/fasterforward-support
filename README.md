@@ -60,7 +60,7 @@ Wayback Machine geladen.
 
 ## Hosting
 
-De site draait op GitHub Pages: https://jeroen-o.github.io/fasterforward-support/ . Bij een eigen domein
+De site draait op GitHub Pages: https://support-eblinqx-connect.nl/ . Bij een eigen domein
 (bijv. support.fasterforward.nl) bouwen met `SITE_BASE=/ python3 tools/build.py` (alleen nodig voor `404.html`).
 
 ## Nog te doen
