@@ -506,3 +506,11 @@ form.search{min-width:0}
 .sitekaart .sitebtn{margin-top:auto;padding-top:10px}
 .sitekaart .sitebtn .btn-out{font-size:15px;padding:9px 16px;min-width:0}
 .sitekaart .sitebeeld img{object-fit:contain}
+/* team */
+.team{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin:10px 0 24px}
+.team .lid{text-align:center}
+.team .lid img{width:100%;max-width:200px;aspect-ratio:1;object-fit:cover;border-radius:50%;display:block;margin:0 auto 12px;background:var(--yellow)}
+.team .lid h3{margin:0 0 4px;font-size:17px}
+.team .lid .rol{margin:0 0 8px;color:#555;font-size:14px;min-height:2.6em}
+.team .lid p{font-size:14px;margin:0;overflow-wrap:anywhere}
+@media (max-width:900px){.team{grid-template-columns:repeat(2,minmax(0,1fr))}}

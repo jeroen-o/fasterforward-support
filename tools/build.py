@@ -1277,6 +1277,13 @@ def render_search(pages, cats):
             for v in json.load(open(dmf, encoding="utf8")):
                 idx.append({"t": v["titel"] + " (" + v["site"] + ")", "h": v["url"], "ext": 1, "c": "Demo-kantoor › " + v["site"],
                             "k": "overig", "x": "demo demokantoor " + (v.get("omschrijving") or "") + " " + v["tekst"]})
+        for fn, label in (("site.json", "Adviesbox › Website"), ("helpcenter.json", "Adviesbox › Helpcenter")):
+            abf = os.path.join(SRC, "adviesbox", fn)
+            if os.path.exists(abf):
+                for v in json.load(open(abf, encoding="utf8")):
+                    idx.append({"t": v["titel"] + (" (Adviesbox)" if "dviesbox" not in v["titel"] else ""), "h": v["url"], "ext": 1,
+                                "c": label + (" › " + v["collectie"] if v.get("collectie") else ""), "k": "overig",
+                                "x": "adviesbox " + (v.get("omschrijving") or "") + " " + v["tekst"] + " " + " ".join(b["naam"] for b in v.get("bijlagen", []))})
         for st in sites_laden():
             idx.append({"t": f"{st['naam']}: {st['ondertitel']}", "h": f"sites/{st['slug']}/index.html", "c": "Websites", "k": "kennisbank",
                         "x": st["naam"] + " " + st["naam"].replace(".nl", "").replace(".net", "") + " " + st["url"] + " " + " ".join(st["tekst"])})
@@ -2765,6 +2772,54 @@ def sites_laden():
     return json.load(open(f, encoding="utf8")) if os.path.exists(f) else []
 
 
+def adviesbox_extra(pg):
+    """Extra inhoud voor sites/adviesbox-nl: functies, modules, ondersteuning, handleidingen en het helpcenter."""
+    hcf = os.path.join(SRC, "adviesbox", "helpcenter.json")
+    hc = json.load(open(hcf, encoding="utf8")) if os.path.exists(hcf) else []
+    blokken = [
+        ("Klantprofiel volgens de Wft", "Aan de hand van de adviesaanleiding stel je een volledig klantprofiel op, met de richtlijnen van de Wft als basis. Dat profiel gebruik je bij het vormen en motiveren van het advies."),
+        ("Scenario's en tekorten", "Vanuit de inventarisatie en het klantprofiel zie je direct of er tekorten ontstaan, met scenario's voor aflossen, overlijden, arbeidsongeschiktheid, werkloosheid en pensioen."),
+        ("Elektronisch aanvragen", "Vraag een hypotheek, bankgarantie of taxatie elektronisch aan via HDN of rechtstreeks bij de aanbieder. Adviesbox is volledig HDN-gecertificeerd."),
+        ("Rapporten", "Kies uit standaardrapporten: inventarisatierapport, kort rapport, hypotheekrapport en financieel plan. Rapporten pas je naar wens aan."),
+        ("Netto besteedbaar inkomen", "Een van de invalshoeken bij het advies, met gebruik van de geschatte uitgaven van het Nibud."),
+        ("Hypotheekvergelijker", "Vergelijkt alle hypotheeklabels over de hele looptijd op rente, voorwaarden en maximale verstrekking, inclusief automatische rentedaling. Zo vergelijk je op totale kosten in plaats van alleen op de beginrente."),
+    ]
+    wt = "".join(f'<div class="wtwhy"><h3>{esc(t)}</h3><p>{esc(x)}</p></div>' for t, x in blokken)
+    bijlagen = {}
+    for a in hc:
+        for b in a.get("bijlagen", []):
+            bijlagen[b["bestand"]] = b["naam"]
+    dl = "".join(f'<li><a href="{pg.rel(f)}">{esc(n)}</a> (pdf)</li>' for f, n in sorted(bijlagen.items(), key=lambda x: x[1]))
+    coll = {}
+    for a in hc:
+        coll.setdefault(a["collectie"], []).append(a)
+    hc_html = "".join(
+        f'<details class="wtfaq"><summary>{esc(c)} ({len(lst)})</summary><ul>'
+        + "".join(f'<li><a href="{esc(a["url"])}" target="_blank" rel="noopener">{esc(a["titel"])}</a></li>' for a in sorted(lst, key=lambda x: x["titel"].lower()))
+        + "</ul></details>" for c, lst in coll.items())
+    return f"""
+  <h2 class="wth">Wat kun je met Adviesbox?</h2>
+  <div class="wtwhys">{wt}</div>
+  <div class="mhz-duo">
+    <div><h2 class="wth">Module Klantdossier</h2>
+      <p>Klantdossier is een uitbreiding van Adviesbox voor het opbouwen van het klantdossier: een uitgebreide administratie, taken en notities, een productoverzicht met alle lopende producten en portefeuillemeldingen die je waarschuwen als je aandacht nodig is. De Wft verplicht je het hele adviestraject te documenteren; elke klant krijgt automatisch een klantmap voor documenten en correspondentie.</p>
+      <p>Met de online inventarisatie in je eigen huisstijl vult je klant zelf zijn gegevens en klantprofiel in. Met de extra module Brondata haalt de klant zijn gegevens op bij verschillende overheidsinstanties, via een beveiligde verbinding.</p></div>
+    <div><h2 class="wth">Overstappen naar Adviesbox</h2>
+      <p>Met de overstapservice stap je eenvoudig over: tijdens een persoonlijk intakegesprek komen installatie, server of cloud, koppelingen en de samenwerking met je serviceprovider aan bod. Loopt het contract met je huidige leverancier nog, dan gebruik je Adviesbox tot de einddatum gratis, met een maximum van 6 maanden (volgens adviesbox.nl).</p>
+      <p>Wil je eerst proberen? Vraag een gratis proeflicentie aan: je ontvangt per e-mail een licentiecode voor 14 dagen Adviesbox.</p></div>
+  </div>
+  <h2 class="wth">Koppelingen</h2>
+  <p>Vanuit Adviesbox vraag je aan bij geldverstrekkers en verzekeraars. Daarnaast koppelt Adviesbox onder meer met Advieskeuze.nl (reviewplatform), ANVA CRM, Assistant, EDR Creditservice (kredietwaardigheid), Elements / eBlinqx en de Nationale Hypotheekbond (signalering). Het actuele overzicht staat in de <a href="https://www.adviesbox.nl/productkaartefficientbemiddelen" target="_blank" rel="noopener">productkaart efficiënt bemiddelen</a>.</p>
+  <h2 class="wth">Ondersteuning</h2>
+  <p>Voor Adviesbox heb je een licentiecode nodig; die ontvang je na een proeflicentie of bestelling. Een vraag, probleem of suggestie meld je in Adviesbox via <strong>Help &gt; Melding maken</strong>; daarna wordt contact met je opgenomen. Er zijn trainingen, waaronder een gratis starttraining, en je kunt een persoonlijk consult inplannen.</p>
+  {f'<h3>Handleidingen</h3><ul>{dl}</ul>' if dl else ""}
+  <h2 class="wth">Helpcenter Adviesbox</h2>
+  <p>Alle {len(hc)} artikelen uit het <a href="https://support-adviesbox.vh.blinqx.tech/nl/" target="_blank" rel="noopener">Adviesbox-helpcenter</a>, per rubriek. Ze zijn ook doorzoekbaar via de zoekfunctie van deze site.</p>
+  {hc_html}
+  <h2 class="wth">Contact</h2>
+  <p>Adviesbox (Blinqx), Harderwijkweg 5b, 2803 PW Gouda · <a href="tel:+31850180069">085 018 00 69</a> · <a href="mailto:secretariaat@blinqx.tech">secretariaat@blinqx.tech</a></p>"""
+
+
 def render_sites():
     """Per website uit tools/sites.json een pagina sites/<slug>/ met beschrijving, afbeelding en knop (geen tegel)."""
     lijst = sites_laden()
@@ -2786,6 +2841,7 @@ def render_sites():
   <div class="mhz-intro"><div>{"".join(f"<p>{esc(t)}</p>" for t in s["tekst"])}
     <p class="btn-row"><a class="btn-out cta" href="{esc(s["url"])}" target="_blank" rel="noopener" aria-label="Bezoek website {esc(s["naam"])}">Bezoek website ↗</a></p></div>
     {fig}</div>
+  {adviesbox_extra(pg) if s["slug"] == "adviesbox-nl" else ""}
   {f'<h2 class="wth">Lees ook</h2><ul>{rel}</ul>' if rel else ""}
   <p><a href="{pg.rel("sites")}">← Alle websites</a></p>
   <p class="src">Bron: <a href="{esc(s["url"])}" target="_blank" rel="noopener">{esc(s["naam"].lower())}</a> (stand 4 november 2026).</p>
@@ -2824,12 +2880,23 @@ def render_banking():
            f'{chr(32) + "style=" + chr(34) + "max-width:340px;margin:0 auto;display:block" + chr(34) if s.get("logo") else ""}></figure>'
            if (s.get("logo") or s.get("afbeelding")) else "")
         + "</div>" for s in lijst)
+    leden = [("Igor Driessen", "Director Banking &amp; Financial Services", "igor-driessen", "+31620615614", "06 20 61 56 14", "igor.driessen@blinqx.tech"),
+             ("Bob van Dam", "Product Enablement Manager", "bob-van-dam", "+31643811940", "06 43 81 19 40", "bob.van.dam@blinqx.tech"),
+             ("Oscar Kuypers", "Business Development Manager", "oscar-kuypers", "+31628321881", "06 28 32 18 81", "oscar.kuypers@blinqx.tech"),
+             ("Jeroen Oversteegen", "Non Executive Director Business Partners", "jeroen-oversteegen", "+31621247257", "06 21 24 72 57", "jeroen.oversteegen@blinqx.tech"),
+             ("Jos van Driesum", "Directeur Products", "jos-van-driesum", "+31644081447", "06 44 08 14 47", "jos.van.driesum@blinqx.tech"),
+             ("Dennes Roes", "Directeur Hypotheken · Founder eBlinqx Hypotheekadvies", "dennes-roes", "+31651117893", "06 51 11 78 93", "")]
+    team = "".join(f'<div class="lid"><img src="{pg.rel("bronnen/team/" + f + ".webp")}" alt="{esc(n)}" loading="lazy">'
+                   f'<h3>{esc(n)}</h3><p class="rol">{r}</p><p><a href="tel:{tel}">M: {telt}</a>{"<br><a href=" + chr(34) + "mailto:" + m + chr(34) + ">" + m + "</a>" if m else ""}</p></div>'
+                   for n, r, f, tel, telt, m in leden)
     body = f"""{crumbs(pg, [("Banking &amp; Insurance", None)])}
 <main class="subpage mhz"><div class="wrap">
   <h1>Banking &amp; Insurance</h1>
   <p class="lead">Oplossingen voor banken, geldverstrekkers en verzekeraars: klanten zelf inzicht geven in hun financiële situatie met één helder cijfer, en grip op het renteproces van analyse tot publicatie.</p>
   {blokken}
   <p class="mhz-tip">Meer weten? Mail <a href="mailto:relatie-vh@blinqx.tech">relatie-vh@blinqx.tech</a> of bel <a href="tel:+31207582111">020 758 21 11</a>.</p>
+  <h2 class="wth">Ons team</h2>
+  <div class="team">{team}</div>
 </div></main>"""
     write("banking-insurance", layout(pg, "Banking & Insurance: Hypotheekcijfer.nl, Pensioencijfer.nl en Renteadministratie.nl", body, None,
                                       "Hypotheekcijfer.nl en Pensioencijfer.nl: klanten van banken en verzekeraars krijgen met één cijfer inzicht in de betaalbaarheid van hun hypotheek en in hun pensioen."))

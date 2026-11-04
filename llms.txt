@@ -59,7 +59,7 @@
 
 - [Websites van Blinqx Verzekering & Hypotheek](https://support-eblinqx-connect.nl/sites/): Overzicht van alle websites rondom eBlinqx, de Nationale Hypotheekbond en Blinqx Verzekering & Hypotheek.
 - [Actiefbeheerscan.nl](https://support-eblinqx-connect.nl/sites/actiefbeheerscan-nl/): Met Actiefbeheerscan stuur je je klant een uitnodiging voor een digitaal formulier.
-- [Adviesbox.nl](https://support-eblinqx-connect.nl/sites/adviesbox-nl/): Adviesbox, tot begin 2013 bekend onder de namen Hypobox en Planningbox, ondersteunt de financieel adviseur bij het opstellen van een financieel advies: van…
+- [Adviesbox.nl](https://support-eblinqx-connect.nl/sites/adviesbox-nl/): Adviesbox, tot begin 2013 bekend onder de namen Hypobox en Planningbox, ondersteunt de financieel adviseur bij het opstellen van een financieel advies.
 - [Aplaza.nl](https://support-eblinqx-connect.nl/sites/aplaza-nl/): Aplaza koppelt de softwaresystemen van verzekeringsadviseurs met de extranetten van verzekeraars en serviceproviders.
 - [Beheer.mijnhuiszaken.nl](https://support-eblinqx-connect.nl/sites/beheer-mijnhuiszaken-nl/): In de beheeromgeving van MijnHuiszaken maak je als adviseur direct zelf het zoekprofiel voor je klant aan.
 - [Dias.nl](https://support-eblinqx-connect.nl/sites/dias-nl/): DIAS is geïntegreerd in het aanbod van Blinqx Verzekering & Hypotheek, als onderdeel van één platform.
