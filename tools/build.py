@@ -1249,7 +1249,8 @@ def render_search(pages, cats):
         wt = json.load(open(wtf, encoding="utf8"))
         idx.append({"t": "Makelaar Software: Yes-co", "h": "yes-co/index.html", "c": "Makelaar Software", "k": "kennisbank",
                     "x": YES_INTRO + " yesco yes co makelaarssoftware makelaar software crm funda pararius publiceren nieuwbouw "
-                    "projecten digitaal ondertekenen wwft ubo app market pro plus prijs demo"})
+                    "projecten digitaal ondertekenen wwft ubo app market pro plus prijs demo tools voor vastgoed toolsvoorvastgoed "
+                    "woningwaarderapport waarderapport vastgoed publiceren tiara startende makelaar hypotheek toolset"})
         idx.append({"t": "MijnHuiszaken: realtime woningaanbod voor je klanten", "h": "mijnhuiszaken/index.html", "c": "MijnHuiszaken",
                     "k": "kennisbank", "x": MHZ_INTRO + " woningaanbod NVM makelaar e-mailalerts zoekprofiel woningwaarde Wwft "
                     "aankoopdossier verkoopdossier digitaal ondertekenen leads tarieven demo mijn huiszaken mijnhuiszaken.nl"})
@@ -1963,6 +1964,21 @@ def render_yesco():
     <p><strong>Yes-co Pro</strong> (max. 10 gebruikers) en <strong>Yes-co Pro Plus</strong> (onbeperkt aantal gebruikers, plus website-responseformulieren en Mailchimp-koppeling). Beide met:</p>
     <ul>{li}</ul>
     <p><a class="btn-out cta" href="{YES_URL}prijs/" target="_blank" rel="noopener">Bekijk de prijzen</a></p></div>
+  <h2 class="wth" id="tools-voor-vastgoed">Tools voor vastgoed</h2>
+  <p><a href="https://www.toolsvoorvastgoed.nl/" target="_blank" rel="noopener">Toolsvoorvastgoed.nl</a> is een initiatief van Yes-co en De Nationale Hypotheekbond: slimme online tools voor álle vastgoedprofessionals, om efficiënt en kostenbewust te werken en je klant tegelijk een optimale beleving te bieden. Het aanbod in één overzicht:</p>
+  <div class="wtwhys">
+    <div class="wtwhy"><h3>Vastgoed publiceren</h3><p>Met Yes-co beheer je vastgoedobjecten en relaties en publiceer je met één druk op de knop naar Funda, Jaap, Huislijn, Pararius of je eigen website. Inclusief wizard voor koop- en huurovereenkomsten, Wwft-checks en digitaal ondertekenen; geschikt voor verkoop, verhuur, aankoop, aanhuur, nieuwbouw en bedrijfsonroerendgoed.</p></div>
+    <div class="wtwhy"><h3>Online klantdossier</h3><p>Met <a href="{pg.rel("mijnhuiszaken")}">MijnHuiszaken</a> nodig je je klant per mail uit voor een eigen, beveiligde omgeving: hypotheekberekening met actuele rentes, het volledige woningaanbod met realtime alerts, en losse diensten zoals een waarderapport, kadastrale kaart of uittreksel van de hypotheek- of eigendomsakte. Makelaar en adviseur wisselen onderling leads uit.</p></div>
+    <div class="wtwhy"><h3>Rekentools voor je website</h3><p>Maandlasten, ‘Kan ik deze woning kopen?’, duurzaamheidsrapport, ‘Wat kan ik lenen met mijn huurlasten?’, maximale hypotheek en hypotheekrente top 5. De tools rekenen realtime met actuele rentes en alle aanbieders, en nodigen de bezoeker altijd uit om contact met jou op te nemen. Zie ook de <a href="{pg.rel("websitetools")}">websitetools</a>.</p></div>
+    <div class="wtwhy"><h3>Woningwaarderapport</h3><p>Geef je klant een geautomatiseerd overzicht van de waarde van zijn woning, een sterke aanleiding voor een gesprek over verkopen, verhuizen of de hypotheek aanpassen.</p></div>
+  </div>
+  <h3>Starten als makelaar?</h3>
+  <p>Yes-co is geschikt voor alle makelaars, aangesloten bij NVM, Vastgoedpro of VBO, of ongebonden. Zo start je:</p>
+  <ol><li>Vraag via Funda een Tiara-aansluitnummer aan.</li><li>Neem contact op voor een demo van de software.</li><li>Voer je klanten en vastgoedobjecten in.</li><li>Publiceer je objecten zodra je er klaar voor bent.</li></ol>
+  <table class="mhz-tabel"><thead><tr><th>Dienst (toolsvoorvastgoed.nl)</th><th>Prijs</th></tr></thead><tbody>
+    <tr><td>Hypotheek toolset (6 rekentools, per maand opzegbaar)</td><td>€ 80 per maand</td></tr>
+    <tr><td>MijnHuiszaken online klantdossier</td><td>€ 79 per maand</td></tr></tbody></table>
+  <p class="src">Let op: yes-co.nl noemt voor de hypotheektools € 65 per maand plus € 225 eenmalig; toolsvoorvastgoed.nl noemt € 80 per maand. Vraag de actuele prijs op bij Yes-co.</p>
   <p class="mhz-tip">Werk je als hypotheekadviseur samen met een makelaar? Combineer Yes-co met <a href="{pg.rel("mijnhuiszaken")}">MijnHuiszaken</a> en de <a href="{pg.rel("websitetools")}">websitetools</a>, en lees hoe je <a href="{pg.rel("kennisbank/gemakkelijk-klantgegevens-exporteren-naar-yes-co")}">klantgegevens vanuit eBlinqx Connect naar Yes-co exporteert</a>.</p>
   <h2 class="wth">Veelgestelde vragen</h2>
   {faq_html}
