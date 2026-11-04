@@ -1307,7 +1307,7 @@ def render_search(pages, cats):
                         "x": st["naam"] + " " + st["naam"].replace(".nl", "").replace(".net", "") + " " + st["url"] + " " + " ".join(st["tekst"])
                         + " " + " ".join(k + " " + " ".join(it) for k, it in st.get("secties", []))})
         idx.append({"t": "Banking & Insurance: Hypotheekcijfer.nl en Pensioencijfer.nl", "h": "banking-insurance/index.html", "c": "Banking & Insurance",
-                    "k": "kennisbank", "x": "banking insurance bank verzekeraar geldverstrekker hypotheekcijfer pensioencijfer hypotheekcheck pensioen cijfer renteadministratie rentetool rente publicatie analyse hypotheekrente api webservices hypotheekvoorwaarden api voorwaarden hypotheek validatie engine validatie validation engine hippoline data intelligence"})
+                    "k": "kennisbank", "x": "banking insurance bank verzekeraar geldverstrekker hypotheekcijfer pensioencijfer hypotheekcheck pensioen cijfer renteadministratie rentetool rente publicatie analyse hypotheekrente api webservices hypotheekvoorwaarden api voorwaarden hypotheek validatie engine validatie validation engine"})
         idx.append({"t": "Handige websites", "h": "sites/index.html", "c": "Handige websites", "k": "kennisbank",
                     "x": "websites domeinen links " + " ".join(st["naam"] for st in sites_laden())})
         idx.append({"t": "Finly CRM: klantgegevens, workflows en communicatie op één plek", "h": "finly-crm/index.html", "c": "Finly CRM",
@@ -2889,7 +2889,7 @@ def render_sites():
 def render_banking():
     """Tegel Banking & Insurance: Hypotheekcijfer.nl en Pensioencijfer.nl."""
     pg = Page("banking-insurance")
-    volg = ["hypotheekcijfer-nl", "pensioencijfer-nl", "renteadministratie-nl", "hypotheekrente-api-nl", "hippoline-nl"]
+    volg = ["hypotheekcijfer-nl", "pensioencijfer-nl", "renteadministratie-nl", "hypotheekrente-api-nl"]
     lijst = sorted((s for s in sites_laden() if s["slug"] in volg), key=lambda s: volg.index(s["slug"]))
     blokken = "".join(
         f'<div class="mhz-duo"><div><h2 class="wth">{esc(s["naam"])}</h2><p><strong>{esc(s["ondertitel"])}</strong></p>'
