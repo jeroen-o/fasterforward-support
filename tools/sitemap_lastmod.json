@@ -108,7 +108,7 @@
 "d": "2026-11-04"
 },
 "banking-insurance": {
-"h": "6c0e644dbfbc8d06",
+"h": "f00f73c25442ecf8",
 "d": "2026-11-04"
 },
 "bedank-je-klanten-na-betaling-via-mollie": {
@@ -3200,7 +3200,7 @@
 "d": "2026-11-04"
 },
 "sites": {
-"h": "05bb59dda86d02f1",
+"h": "f8e8bfc32e927e71",
 "d": "2026-11-04"
 },
 "sites/accountancy-blinqx-ai": {
@@ -3281,6 +3281,10 @@
 },
 "sites/hypotheekcijfer-nl": {
 "h": "926952077160f113",
+"d": "2026-11-04"
+},
+"sites/hypotheekrente-api-nl": {
+"h": "595b836ddf3aa16d",
 "d": "2026-11-04"
 },
 "sites/hypotheekservicegesprek-nl": {

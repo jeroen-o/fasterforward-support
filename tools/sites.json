@@ -984,5 +984,56 @@
   ],
   "afbeelding": "bronnen/sites/fiscale-aangifte.webp",
   "logo": "bronnen/sites/logo-fiscale-aangifte.webp"
+ },
+ {
+  "slug": "hypotheekrente-api-nl",
+  "naam": "Hypotheekrente-api.nl",
+  "url": "https://www.hypotheekrente-api.nl/",
+  "ondertitel": "Hypotheekrente-API en webservices voor ontwikkelaars en geldverstrekkers",
+  "tekst": [
+   "Hypotheekrente-api.nl ontvangt actuele informatie over de hypotheekrentetarieven van verschillende aanbieders (onder meer banken, verzekeraars en regiepartijen) en combineert die tot één totaaloverzicht. Met de hypotheekrente-API ontwikkel je zelf een hypotheektool of websitetool en gebruik je de rentes in eigen apps en platformen. Een voorbeeld van een toepassing is de Hypotheekrente-app."
+  ],
+  "secties": [
+   [
+    "API's en webservices",
+    [
+     "Hypotheekrente-API met actuele rentetarieven.",
+     "Maximale hypotheek, bruto-netto, NHG, belasting, maximum LTV en maximum LTI.",
+     "Inkomen bepalen en ondernemersinkomen bepalen.",
+     "Rente top 5, annuïteiten, lineair, postcode en HDN-import, en nog veel meer (zie de Hypotheek API-catalogus op de website)."
+    ]
+   ],
+   [
+    "Ook beschikbaar",
+    [
+     "Woningwaarderapport, duurzaamheidsrapport en actief klantbeheer."
+    ]
+   ],
+   [
+    "Contact",
+    [
+     "Hypotheekrente-api.nl is een initiatief van de Nationale Hypotheekbond. Meer informatie: Jeroen Oversteegen, 06 21 24 72 57, jeroen.oversteegen@blinqx.tech."
+    ]
+   ]
+  ],
+  "gerelateerd": [
+   [
+    "hypotheekrente-app",
+    "Hypotheekrente-app"
+   ],
+   [
+    "sites/renteadministratie-nl",
+    "Renteadministratie.nl"
+   ],
+   [
+    "websitetools",
+    "Websitetools"
+   ],
+   [
+    "banking-insurance",
+    "Banking & Insurance"
+   ]
+  ],
+  "afbeelding": "bronnen/sites/hypotheekrente-api-nl.webp"
  }
 ]
