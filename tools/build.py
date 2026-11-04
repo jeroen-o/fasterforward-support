@@ -1242,7 +1242,7 @@ def render_search(pages, cats):
     for g in json.load(open(os.path.join(TOOLS, "videos.json"), encoding="utf8")):
         for v in g["videos"]:
             idx.append({"t": v["t"], "h": "video/index.html#v-" + v["id"], "c": "Video's › " + g["group"], "k": "video",
-                        "x": " ".join(x for x in (v.get("ch"), g["group"]) if x)})
+                        "x": " ".join(x for x in (v.get("ch"), g["group"], v.get("x")) if x)})
     pvf = os.path.join(SRC, "procesversneller.html")
     if os.path.exists(pvf):
         pv = open(pvf, encoding="utf8").read()
@@ -1513,7 +1513,11 @@ def render_video():
         for v in g["videos"]:
             meta = " · ".join(x for x in (v.get("ch"), fmt_dur(v.get("d"))) if x)
             thumb = pg.rel(f'assets/video/{v["id"]}.jpg')
-            if v.get("url"):
+            if v.get("vimeo"):
+                vs.append(f'<div class="video" id="v-{esc(v["id"])}"><div class="frame" data-vimeo="{esc(v["vimeo"])}"><img src="{thumb}" alt="" loading="lazy">'
+                          f'<button class="play" type="button" aria-label="Speel {esc(v["t"])} af"><svg class="ic"><use href="#i-play"/></svg></button></div>'
+                          f'<h3><a href="https://vimeo.com/{esc(v["vimeo"])}" target="_blank" rel="noopener">{esc(v["t"])}</a></h3><p>{esc(meta)}</p></div>')
+            elif v.get("url"):
                 vs.append(f'<div class="video" id="v-{esc(v["id"])}"><a class="frame" href="{esc(v["url"])}" target="_blank" rel="noopener"><img src="{thumb}" alt="" loading="lazy">'
                           f'<span class="play"><svg class="ic"><use href="#i-play"/></svg></span></a>'
                           f'<h3><a href="{esc(v["url"])}" target="_blank" rel="noopener">{esc(v["t"])}</a></h3><p>{esc(meta)}</p></div>')
@@ -1525,15 +1529,17 @@ def render_video():
     body = f"""{crumbs(pg, [("Video's", None)])}
 <main class="subpage"><div class="wrap">
   <h1>Video's</h1>
-  <p class="lead">Instructievideo's, webinars en presentaties over Faster Forward Elements en eBlinqx. Video's worden pas van YouTube geladen als je op afspelen klikt.</p>
+  <p class="lead">Instructievideo's, webinars en presentaties over Faster Forward Elements en eBlinqx. Video's worden pas van YouTube of Vimeo geladen als je op afspelen klikt.</p>
   {"".join(sections)}
 </div></main>
 <script>
 document.addEventListener("click", e => {{
-  const b = e.target.closest("[data-yt] .play");
+  const b = e.target.closest("[data-yt] .play, [data-vimeo] .play");
   if (!b) return;
-  const f = b.closest("[data-yt]");
-  f.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${{f.dataset.yt}}?autoplay=1&rel=0" title="Video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+  const f = b.closest("[data-yt], [data-vimeo]");
+  f.innerHTML = f.dataset.vimeo
+    ? `<iframe src="https://player.vimeo.com/video/${{f.dataset.vimeo}}?autoplay=1&dnt=1" title="Video" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`
+    : `<iframe src="https://www.youtube-nocookie.com/embed/${{f.dataset.yt}}?autoplay=1&rel=0" title="Video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
 }});
 </script>"""
     write("video", layout(pg, "Video's", body))
