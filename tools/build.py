@@ -1931,7 +1931,7 @@ def render_yesco():
          "Er zijn twee abonnementen, Pro en Pro Plus, vanaf € 75 per maand (volgens yes-co.nl, november 2026). Extra functionaliteit en "
          "publicatiekanalen betaal je alleen als je ze gebruikt."),
         ("Wat kosten de hypotheektools van Yes-co?",
-         "De volledige toolset kost € 65 per maand, plus eenmalig € 225 voor de implementatie (volgens yes-co.nl, november 2026)."),
+         "De volledige hypotheek toolset (zes rekentools) kost € 80 per maand en is per maand opzegbaar."),
     ]
     faq_html = "".join(f'<details class="wtfaq"><summary>{esc(q)}</summary><p>{esc(a)}</p></details>' for q, a in faq)
     faq_ld = json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
@@ -1978,7 +1978,6 @@ def render_yesco():
   <table class="mhz-tabel"><thead><tr><th>Dienst (toolsvoorvastgoed.nl)</th><th>Prijs</th></tr></thead><tbody>
     <tr><td>Hypotheek toolset (6 rekentools, per maand opzegbaar)</td><td>€ 80 per maand</td></tr>
     <tr><td>MijnHuiszaken online klantdossier</td><td>€ 79 per maand</td></tr></tbody></table>
-  <p class="src">Let op: yes-co.nl noemt voor de hypotheektools € 65 per maand plus € 225 eenmalig; toolsvoorvastgoed.nl noemt € 80 per maand. Vraag de actuele prijs op bij Yes-co.</p>
   <p class="mhz-tip">Werk je als hypotheekadviseur samen met een makelaar? Combineer Yes-co met <a href="{pg.rel("mijnhuiszaken")}">MijnHuiszaken</a> en de <a href="{pg.rel("websitetools")}">websitetools</a>, en lees hoe je <a href="{pg.rel("kennisbank/gemakkelijk-klantgegevens-exporteren-naar-yes-co")}">klantgegevens vanuit eBlinqx Connect naar Yes-co exporteert</a>.</p>
   <h2 class="wth">Veelgestelde vragen</h2>
   {faq_html}
