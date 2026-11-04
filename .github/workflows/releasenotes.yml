@@ -1,7 +1,8 @@
-name: Releasenotes Hypotheekadvies controleren
+name: Releasenotes controleren
 
-# Elke ochtend (en handmatig via Actions -> Run workflow): nieuwe releasenotes van eBlinqx Hypotheekadvies ophalen
-# van fastlane.hypotheekbond.nl en uit het helpcenter (tools/fastlane_sync.py), de site opnieuw bouwen en publiceren.
+# Elke ochtend (en handmatig via Actions -> Run workflow): nieuwe releasenotes ophalen van eBlinqx Hypotheekadvies
+# (fastlane.hypotheekbond.nl en het helpcenter, tools/fastlane_sync.py) en van FinConnect en DIAS Assurantie
+# (documenten op verzekeringhypotheek.blinqx.tech/releasenotes, tools/rn_overig_sync.py); daarna bouwen en publiceren.
 # Is er niets nieuws, dan gebeurt er niets.
 on:
   schedule:
@@ -26,23 +27,25 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install -q pillow
+      - run: pip install -q pillow && sudo apt-get install -y -q poppler-utils
       - name: Nieuwe releasenotes ophalen, bouwen en publiceren
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
           python3 tools/fastlane_sync.py | tee uitvoer.txt
-          if grep -q "Gewijzigd: niets" uitvoer.txt; then echo "Geen nieuwe releasenotes."; exit 0; fi
-          wat=$(sed -n 's/^Gewijzigd: //p' uitvoer.txt)
+          python3 tools/rn_overig_sync.py | tee -a uitvoer.txt
+          if [ "$(grep -c "Gewijzigd: niets" uitvoer.txt)" = "2" ]; then echo "Geen nieuwe releasenotes."; exit 0; fi
+          wat=$(sed -n 's/^Gewijzigd: //p' uitvoer.txt | grep -v '^niets$' | paste -sd ', ')
           rm uitvoer.txt
           for i in 1 2 3 4 5; do
             python3 tools/build.py
             git add -A
             git diff --cached --quiet && exit 0
-            git commit -q -m "Releasenotes Hypotheekadvies bijgewerkt: $wat"
+            git commit -q -m "Releasenotes bijgewerkt: $wat"
             git push -q origin HEAD:main && exit 0
             echo "main is intussen gewijzigd; opnieuw op de nieuwste versie"; sleep 15
             git fetch -q origin main && git reset -q --hard origin/main
             python3 tools/fastlane_sync.py > /dev/null
+            python3 tools/rn_overig_sync.py > /dev/null
           done
           echo "::error::Pushen mislukt"; exit 1
