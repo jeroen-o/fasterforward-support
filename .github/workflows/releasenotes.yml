@@ -1,0 +1,48 @@
+name: Releasenotes Hypotheekadvies controleren
+
+# Elke ochtend (en handmatig via Actions -> Run workflow): nieuwe releasenotes van eBlinqx Hypotheekadvies ophalen
+# van fastlane.hypotheekbond.nl en uit het helpcenter (tools/fastlane_sync.py), de site opnieuw bouwen en publiceren.
+# Is er niets nieuws, dan gebeurt er niets.
+on:
+  schedule:
+    - cron: "17 5 * * *"   # 05:17 UTC = 06:17/07:17 Nederlandse tijd
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: wayback
+  cancel-in-progress: false
+
+jobs:
+  controleren:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q pillow
+      - name: Nieuwe releasenotes ophalen, bouwen en publiceren
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          python3 tools/fastlane_sync.py | tee uitvoer.txt
+          if grep -q "Gewijzigd: niets" uitvoer.txt; then echo "Geen nieuwe releasenotes."; exit 0; fi
+          wat=$(sed -n 's/^Gewijzigd: //p' uitvoer.txt)
+          rm uitvoer.txt
+          for i in 1 2 3 4 5; do
+            python3 tools/build.py
+            git add -A
+            git diff --cached --quiet && exit 0
+            git commit -q -m "Releasenotes Hypotheekadvies bijgewerkt: $wat"
+            git push -q origin HEAD:main && exit 0
+            echo "main is intussen gewijzigd; opnieuw op de nieuwste versie"; sleep 15
+            git fetch -q origin main && git reset -q --hard origin/main
+            python3 tools/fastlane_sync.py > /dev/null
+          done
+          echo "::error::Pushen mislukt"; exit 1

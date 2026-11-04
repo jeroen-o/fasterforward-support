@@ -1604,18 +1604,30 @@ def fastlane_months():
                         "count": int(cnt.group(1)) if cnt else None, "html": body, "text": text,
                         "slug": f"{mm.group(2)}-{month:02d}" if month else slugify(head),
                         "src": f"{FL_BASE}/hoe-het-werkt/releasenotes/releasenotes-{year}/"})
-    # Losse releasenotes uit het helpcenter (tools/fastlane_artikel.py); vervangen een maand uit het overzicht
-    for f in sorted(glob.glob(os.path.join(FL_DIR, "artikelen", "*.json"))):
+    # Losse releases uit het helpcenter (tools/fastlane_sync.py): per maand gebundeld, alleen voor maanden die
+    # (nog) niet op fastlane.hypotheekbond.nl staan.
+    bestaand = {x["slug"] for x in out}
+    per_maand = {}
+    for f in sorted(glob.glob(os.path.join(FL_DIR, "artikelen", "*.json")), reverse=True):
         d = json.load(open(f, encoding="utf8"))
+        slug = f'{d["year"]}-{d["month"]:02d}'
+        if slug not in bestaand:
+            per_maand.setdefault(slug, []).append(d)
+    for slug, rel in per_maand.items():
+        delen = []
+        for d in rel:  # nieuwste release eerst
+            kop = f'Release {d["datum"]}' + (f' ({d["count"]} wijzigingen)' if d["count"] else "")
+            delen.append(f'<h2>{html.escape(kop)}</h2>{d["html"]}<p><a href="{html.escape(d["src"])}">Bekijk deze release in het helpcenter</a></p>')
         c = htmlclean.Cleaner()
-        c.feed(d["html"])
+        c.feed("".join(delen))
         c.close()
         body = "".join(c.out)
-        slug = f'{d["year"]}-{d["month"]:02d}'
-        out = [x for x in out if x["slug"] != slug]
-        out.append({"label": d["label"], "head": d["titel"], "year": str(d["year"]), "month": d["month"],
-                    "count": d["count"], "html": body, "text": re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", body))).strip(),
-                    "slug": slug, "src": d["src"]})
+        y, m = slug.split("-")
+        totaal = sum(d["count"] or 0 for d in rel) or None
+        out.append({"label": f"{[k for k, v in MONTHS.items() if v == int(m)][0].capitalize()} {y}", "head": rel[0]["titel"],
+                    "year": y, "month": int(m), "count": totaal, "html": body,
+                    "text": re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", body))).strip(),
+                    "slug": slug, "src": rel[0]["src"]})
     out.sort(key=lambda x: (x["year"], x["month"]), reverse=True)
     return out, intro
 
