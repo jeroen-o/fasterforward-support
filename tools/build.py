@@ -2701,20 +2701,47 @@ def render_redirects(cats):
     print(f"doorverwijzingen: {n}")
 
 
+LASTMOD = os.path.join(TOOLS, "sitemap_lastmod.json")
+
+
 def render_sitemap(pages):
-    urls = set()
+    """sitemap.xml met <lastmod>. Per pagina wordt een hash van de inhoud bewaard in tools/sitemap_lastmod.json; verandert
+    de inhoud, dan wordt lastmod de builddatum. Eerste keer: de wijzigingsdatum uit de WordPress-database, anders vandaag."""
+    import hashlib, datetime
+    vandaag = datetime.date.today().isoformat()
+    wp = {}
+    wpf = os.path.join(WPDB_DIR, "paginas.json")
+    if os.path.exists(wpf):
+        for d in json.load(open(wpf, encoding="utf8")):
+            m = re.fullmatch(r"(\d{1,2}) (\w+) (\d{4})", (d.get("gewijzigd") or "").strip())
+            if m and m.group(2) in MAANDEN:
+                wp[d["pad"].strip("/")] = f"{m.group(3)}-{MAANDEN.index(m.group(2)) + 1:02d}-{int(m.group(1)):02d}"
+    oud = json.load(open(LASTMOD, encoding="utf8")) if os.path.exists(LASTMOD) else {}
+    nieuw = {}
     for f in glob.glob(os.path.join(ROOT, "**", "index.html"), recursive=True):
         rel = os.path.relpath(os.path.dirname(f), ROOT).replace(os.sep, "/")
-        if rel.split("/")[0] in ("bronnen", "tools", "zoeken", "assets", ".github"):
+        if rel.split("/")[0] in ("bronnen", "tools", "zoeken", "assets", ".github", "downloads"):
             continue
-        with open(f, encoding="utf8") as fh:
-            if 'http-equiv="refresh"' in fh.read(600):
-                continue  # doorverwijzing, geen eigen pagina
-        urls.add("" if rel == "." else rel)
+        with open(f, "rb") as fh:
+            inhoud = fh.read()
+        if b'http-equiv="refresh"' in inhoud[:600]:
+            continue  # doorverwijzing, geen eigen pagina
+        u = "" if rel == "." else rel
+        h = hashlib.sha1(inhoud).hexdigest()[:16]
+        vorig = oud.get(u)
+        if vorig and vorig["h"] == h:
+            nieuw[u] = vorig
+        else:
+            nieuw[u] = {"h": h, "d": vandaag if vorig else min(wp.get(u, vandaag), vandaag)}
+    with open(LASTMOD, "w", encoding="utf8") as fh:
+        json.dump(dict(sorted(nieuw.items())), fh, ensure_ascii=False, indent=0)
+        fh.write("\n")
     xml = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
-    xml += [f"  <url><loc>{SITE_URL}{u + '/' if u else ''}</loc></url>" for u in sorted(urls)]
+    xml += [f"  <url><loc>{SITE_URL}{u + '/' if u else ''}</loc><lastmod>{nieuw[u]['d']}</lastmod></url>" for u in sorted(nieuw)]
     xml.append("</urlset>")
     write("sitemap.xml", "\n".join(xml) + "\n")
+    with open(os.path.join(ROOT, "robots.txt"), "w", encoding="utf8") as fh:
+        fh.write(f"User-agent: *\nAllow: /\nDisallow: /tools/\n\nSitemap: {SITE_URL}sitemap.xml\n")
 
 
 # ---------------------------------------------------------------- main
