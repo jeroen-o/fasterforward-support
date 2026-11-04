@@ -1251,6 +1251,10 @@ def render_search(pages, cats):
                     "x": YES_INTRO + " yesco yes co makelaarssoftware makelaar software crm funda pararius publiceren nieuwbouw "
                     "projecten digitaal ondertekenen wwft ubo app market pro plus prijs demo tools voor vastgoed toolsvoorvastgoed "
                     "woningwaarderapport waarderapport vastgoed publiceren tiara startende makelaar hypotheek toolset"})
+        idx.append({"t": "Hypotheekrente-app: alle actuele rentes bij de hand", "h": "hypotheekrente-app/index.html",
+                    "c": "Hypotheekrente-app", "k": "kennisbank", "x": HRA_INTRO + " hypotheekrente app renteapp rentetarieven "
+                    "rente overzicht geldverstrekkers app store google play android iphone eigen huisstijl white label hypotheekbond " +
+                    " ".join(t for t, _ in HRA_TOOLS)})
         idx.append({"t": "Actiefbeheerscan: digitale formulieren voor nazorg en beheer", "h": "actiefbeheerscan/index.html",
                     "c": "Actiefbeheerscan", "k": "kennisbank", "x": ABS_INTRO + " actief beheer scan actiefbeheerscan nazorg klantbeheer "
                     "digitale formulieren webformulieren uitnodigingsmail reminder leads tarieven demo dutch media lab " +
@@ -1342,6 +1346,7 @@ def render_home(cats, feeds, pages):
               f'<a class="tile" href="{pg.rel("mijnhuiszaken")}"><svg class="ic"><use href="#i-home"/></svg>MijnHuiszaken</a>'
               f'<a class="tile" href="{pg.rel("yes-co")}"><svg class="ic"><use href="#i-desktop"/></svg>Makelaar Software</a>'
               f'<a class="tile" href="{pg.rel("actiefbeheerscan")}"><svg class="ic"><use href="#i-list"/></svg>Actiefbeheerscan</a>'
+              f'<a class="tile" href="{pg.rel("hypotheekrente-app")}"><svg class="ic"><use href="#i-phone"/></svg>Hypotheekrente-app</a>'
               f'<a class="tile" href="{pg.rel("procesversneller")}"><svg class="ic"><use href="#i-bolt"/></svg>Proces-versneller</a>')
 
     def a(path, label):
@@ -2110,6 +2115,74 @@ def render_actiefbeheerscan():
                                      "hypotheek, pensioen en verzekeringen. € 39 per maand, volledig voor je ingericht."))
 
 
+HRA_URL = "https://www.hypotheekrente-app.nl/"
+HRA_INTRO = ("De Hypotheekrente-app van De Nationale Hypotheekbond zet alle actuele hypotheekrentes bij de hand: dagelijks "
+             "bijgewerkt, van variabel tot 30 jaar vast, van alle actieve en inactieve geldverstrekkers. De app is gratis te "
+             "downloaden in de App Store en Google Play, en is ook verkrijgbaar als eigen app in de look & feel van je kantoor.")
+HRA_TOOLS = [
+    ("Renteoverzicht met rentevergelijker", "https://consumenten.hypotheekbond.nl/rekentools/hypotheekrente-overzicht-met-rentevergelijker/"),
+    ("Renteoverzicht", "https://consumenten.hypotheekbond.nl/rekentools/hypotheekrente-overzicht/"),
+    ("Maximale hypotheek", "https://consumenten.hypotheekbond.nl/rekentools/bereken-je-maximale-hypotheek/"),
+    ("Oversluitcheck", "https://consumenten.hypotheekbond.nl/rekentools/hypotheekcheck-bespaarcheck/"),
+    ("Kan ik deze woning kopen?", "https://consumenten.hypotheekbond.nl/rekentools/kan-ik-deze-woning-kopen/"),
+    ("Maandlast berekenen", "https://consumenten.hypotheekbond.nl/rekentools/maandlasten-hypotheek-berekenen/"),
+    ("Woningwaarde berekenen", "http://www.rwwr.nl/woningwaarderapport/"),
+    ("ORV-premie berekenen", "https://consumenten.hypotheekbond.nl/rekentools/kan-ik-besparen-op-mijn-overlijdensrisico-verzekering/"),
+]
+
+
+def render_hypotheekrenteapp():
+    """Hypotheekrente-app van De Nationale Hypotheekbond (bron: www.hypotheekrente-app.nl, november 2026)."""
+    pg = Page("hypotheekrente-app")
+    voordelen = [
+        ("Altijd actueel", "De rentes worden elke dag bijgewerkt."),
+        ("Alle rentes", "Van variabel tot 30 jaar vast: alles is in één oogopslag inzichtelijk."),
+        ("Alle geldverstrekkers", "Zowel actieve als inactieve geldverstrekkers worden getoond."),
+        ("Gratis voor je klant", "De app is gratis te downloaden voor iPhone en Android."),
+        ("In je eigen huisstijl", "Wil je een eigen app met actuele rentetarieven? Die is te krijgen in de look & feel van je "
+         "kantoor, zodat je klant jouw naam ziet bij elke renteberekening."),
+        ("Reden voor contact", "Rente is hét moment om met je klant in gesprek te gaan: bij een renteverlenging, oversluiten "
+         "of een aankoop. Met de app blijf jij het aanspreekpunt."),
+    ]
+    blokken = "".join(f'<div class="wtwhy"><h3>{esc(t)}</h3><p>{esc(x)}</p></div>' for t, x in voordelen)
+    tools = "".join(f'<li><a href="{esc(u)}" target="_blank" rel="noopener">{esc(t)}</a></li>' for t, u in HRA_TOOLS)
+    faq = [
+        ("Wat is de Hypotheekrente-app?", HRA_INTRO),
+        ("Hoe vaak worden de rentes bijgewerkt?", "Elke dag."),
+        ("Kan ik de app in mijn eigen huisstijl krijgen?",
+         "Ja, de app is beschikbaar in de look & feel van je eigen kantoor. Neem contact op voor de mogelijkheden en kosten."),
+        ("Waar download ik de app?", "Gratis in de App Store (iPhone) en Google Play (Android)."),
+    ]
+    faq_html = "".join(f'<details class="wtfaq"><summary>{esc(q)}</summary><p>{esc(a)}</p></details>' for q, a in faq)
+    faq_ld = json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+        {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]},
+        ensure_ascii=False).replace("</", "<\\/")
+    body = f"""{crumbs(pg, [("Hypotheekrente-app", None)])}
+<main class="subpage mhz"><div class="wrap">
+  <h1>Hypotheekrente-app</h1>
+  <p class="lead">Alle actuele rentetarieven bij de hand, voor jou en je klant.</p>
+  <div class="mhz-intro"><div><p>{esc(HRA_INTRO)}</p>
+    <p class="btn-row"><a class="btn-out cta" href="https://apps.apple.com/nl/app/hypotheekbond/id1047122249" target="_blank" rel="noopener">Download in de App Store</a>
+    <a class="btn-out" href="https://play.google.com/store/apps/details?id=nl.hypotheekbond.renteoverzicht" target="_blank" rel="noopener">Download in Google Play</a></p></div>
+    <figure><img src="{pg.rel("bronnen/hypotheekrente-app/mockup.webp")}" alt="De Hypotheekrente-app op een telefoon met het renteoverzicht" loading="lazy"></figure></div>
+  <h2 class="wth">Waarom de Hypotheekrente-app?</h2>
+  <div class="wtwhys">{blokken}</div>
+  <p class="mhz-tip">Let op: de rentes in de app zijn indicatief en geen aanbod of advies. De werkelijke rente hangt af van de situatie van je klant en de voorwaarden van de geldverstrekker.</p>
+  <h2 class="wth">Een eigen app met actuele rentetarieven?</h2>
+  <p>Neem contact op voor een app in de look & feel van je kantoor: mail <a href="mailto:hello@blinqx.tech">hello@blinqx.tech</a>, bel <a href="tel:+31207582111">020 758 21 11</a> of gebruik het contactformulier op <a href="{HRA_URL}" target="_blank" rel="noopener">hypotheekrente-app.nl</a>.</p>
+  <h2 class="wth">Meer tools van De Nationale Hypotheekbond</h2>
+  <p>Tools voor consumenten die je eenvoudig op je website integreert (zie ook <a href="{pg.rel("websitetools")}">Websitetools</a>):</p>
+  <ul>{tools}</ul>
+  <h2 class="wth">Veelgestelde vragen</h2>
+  {faq_html}
+  <script type="application/ld+json">{faq_ld}</script>
+  <p class="src">Bron: <a href="{HRA_URL}" target="_blank" rel="noopener">www.hypotheekrente-app.nl</a> (stand 4 november 2026).</p>
+</div></main>"""
+    write("hypotheekrente-app", layout(pg, "Hypotheekrente-app: alle actuele rentes bij de hand", body, None,
+                                       "De gratis Hypotheekrente-app van De Nationale Hypotheekbond: dagelijks bijgewerkte "
+                                       "hypotheekrentes van alle geldverstrekkers, ook als app in je eigen huisstijl."))
+
+
 def render_mijnhuiszaken():
     """MijnHuiszaken: klantomgeving met realtime woningaanbod (bron: aansluiten.mijnhuiszaken.nl, november 2026)."""
     pg = Page("mijnhuiszaken")
@@ -2559,6 +2632,7 @@ def main():
     render_mijnhuiszaken()
     render_yesco()
     render_actiefbeheerscan()
+    render_hypotheekrenteapp()
     render_downloads()
     render_nieuwsbrief()
     render_privacy()
