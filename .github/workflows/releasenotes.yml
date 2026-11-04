@@ -2,7 +2,8 @@ name: Releasenotes controleren
 
 # Elke ochtend (en handmatig via Actions -> Run workflow): nieuwe releasenotes ophalen van eBlinqx Hypotheekadvies
 # (fastlane.hypotheekbond.nl en het helpcenter, tools/fastlane_sync.py) en van FinConnect en DIAS Assurantie
-# (documenten op verzekeringhypotheek.blinqx.tech/releasenotes, tools/rn_overig_sync.py); daarna bouwen en publiceren.
+# (documenten op verzekeringhypotheek.blinqx.tech/releasenotes, tools/rn_overig_sync.py) en de zoekindex van de
+# eBlinqx-website (alle pagina's van verzekeringhypotheek.blinqx.tech, tools/vh_sync.py); daarna bouwen en publiceren.
 # Is er niets nieuws, dan gebeurt er niets.
 on:
   schedule:
@@ -21,7 +22,7 @@ concurrency:
 jobs:
   controleren:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
         with:
@@ -36,7 +37,8 @@ jobs:
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
           python3 tools/fastlane_sync.py | tee uitvoer.txt
           python3 tools/rn_overig_sync.py | tee -a uitvoer.txt
-          if [ "$(grep -c "Gewijzigd: niets" uitvoer.txt)" = "2" ]; then echo "Geen nieuwe releasenotes."; exit 0; fi
+          python3 tools/vh_sync.py | tee -a uitvoer.txt
+          if [ "$(grep -c "Gewijzigd: niets" uitvoer.txt)" = "3" ]; then echo "Geen nieuwe releasenotes."; exit 0; fi
           wat=$(sed -n 's/^Gewijzigd: //p' uitvoer.txt | grep -v '^niets$' | paste -sd ', ')
           rm uitvoer.txt
           for i in 1 2 3 4 5; do
@@ -49,6 +51,7 @@ jobs:
             git fetch -q origin main && git reset -q --hard origin/main
             python3 tools/fastlane_sync.py > /dev/null
             python3 tools/rn_overig_sync.py > /dev/null
+            python3 tools/vh_sync.py > /dev/null
           done
           echo "::error::Pushen mislukt"; exit 1
 

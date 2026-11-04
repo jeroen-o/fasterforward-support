@@ -1282,6 +1282,13 @@ def render_search(pages, cats):
                     "aankoopdossier verkoopdossier digitaal ondertekenen leads tarieven demo mijn huiszaken mijnhuiszaken.nl"})
         idx.append({"t": "Websitetools: rekentools voor op je website", "h": "websitetools/index.html", "c": "Websitetools", "k": "kennisbank",
                     "x": " ".join(g["g"] + " " + " ".join(t["t"] for t in g["tools"]) for g in wt["groepen"]) + " rekentool rekentools website hypotheekbond leads"})
+    vhf = os.path.join(SRC, "vh-site", "index.json")
+    if os.path.exists(vhf):
+        for v in json.load(open(vhf, encoding="utf8")):
+            d = v.get("datum") or ""
+            idx.append({"t": v["titel"], "h": v["url"], "ext": 1, "c": "eBlinqx website › " + v["soort"], "k": "website",
+                        "d": fmt_date(date.fromisoformat(d)) if re.fullmatch(r"\d{4}-\d{2}-\d{2}", d) else "",
+                        "x": (v.get("omschrijving") or "") + " " + v.get("tekst", "")})
     for i in downloads_items():
         idx.append({"t": i["t"], "h": "downloads/index.html", "c": "Downloads › " + i["rub"], "k": "overig",
                     "d": i["datum"], "x": i["t"] + " pdf download " + i["rub"]})
@@ -1323,6 +1330,7 @@ def render_search(pages, cats):
     <button type="button" data-k="release" aria-pressed="false">Releasenotes</button>
     <button type="button" data-k="nieuws" aria-pressed="false">Nieuws &amp; tips</button>
     <button type="button" data-k="video" aria-pressed="false">Video's &amp; e-learning</button>
+    <button type="button" data-k="website" aria-pressed="false">eBlinqx website</button>
   </div>
   <p id="scount" class="meta" aria-live="polite"></p>
   <div class="exlist" id="sres"></div>
