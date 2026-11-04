@@ -479,3 +479,4 @@ figure .img-volgt{margin:0}
 .partner-tekst img{max-width:100%;height:auto}
 .pintro figure img{max-height:260px;width:auto;max-width:100%;object-fit:contain;margin:0 auto;display:block}.pintro{align-items:center}
 .mhz-video{margin:10px 0 22px}.mhz-video video{width:100%;height:auto;aspect-ratio:16/9;background:#000;border-radius:6px;display:block}.mhz-video figcaption{font-size:14px;color:#555;margin-top:6px}
+.video .frame video{position:absolute;inset:0;width:100%;height:100%;background:#000}

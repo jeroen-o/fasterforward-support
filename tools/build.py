@@ -1513,7 +1513,11 @@ def render_video():
         for v in g["videos"]:
             meta = " · ".join(x for x in (v.get("ch"), fmt_dur(v.get("d"))) if x)
             thumb = pg.rel(f'assets/video/{v["id"]}.jpg')
-            if v.get("vimeo"):
+            if v.get("mp4"):
+                vs.append(f'<div class="video" id="v-{esc(v["id"])}"><div class="frame"><video controls preload="none" playsinline poster="{thumb}" '
+                          f'aria-label="{esc(v["t"])}"><source src="{pg.rel(v["mp4"])}" type="video/mp4"></video></div>'
+                          f'<h3>{esc(v["t"])}</h3><p>{esc(meta)}</p></div>')
+            elif v.get("vimeo"):
                 vs.append(f'<div class="video" id="v-{esc(v["id"])}"><div class="frame" data-vimeo="{esc(v["vimeo"])}"><img src="{thumb}" alt="" loading="lazy">'
                           f'<button class="play" type="button" aria-label="Speel {esc(v["t"])} af"><svg class="ic"><use href="#i-play"/></svg></button></div>'
                           f'<h3><a href="https://vimeo.com/{esc(v["vimeo"])}" target="_blank" rel="noopener">{esc(v["t"])}</a></h3><p>{esc(meta)}</p></div>')
