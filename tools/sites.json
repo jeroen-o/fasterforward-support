@@ -641,5 +641,28 @@
    ]
   ],
   "afbeelding": "bronnen/sites/sivi-nl.webp"
+ },
+ {
+  "slug": "hippoline-nl",
+  "naam": "HippoLine.nl",
+  "url": "https://hippoline.nl/",
+  "ondertitel": "Data intelligence: betrouwbare data als fundament voor sturing en AI",
+  "tekst": [
+   "HippoLine maakt van data betrouwbare stuurinformatie. HippoLine verbindt systemen, brengt data samen en bouwt het fundament waarop organisaties dagelijks sturen, beslissen, innoveren én AI verantwoord inzetten. Banken, verzekeraars en andere financiële dienstverleners vertrouwen al bijna 20 jaar op HippoLine.",
+   "Voor de assurantiebranche is er het HippoLine Insurance Platform (HIP): een data- en analyseplatform dat data ontsluit uit systemen als ANVA, DIAS en eBlinqx Volmacht en vertaalt naar actuele inzichten in processen, resultaten en commerciële kansen.",
+   "Verder: datastrategie, data-integratie en infrastructuur, datavisualisatie en rapportages (BI-dashboards), een Data Intelligence Platform, ERP-analytics, advanced analytics en AI, consultancy, de Data APK en trainingen in de Data Academy (onder meer Qlik Sense). Met de Quickscan Datavolwassenheid meet je hoe datavolwassen je organisatie is."
+  ],
+  "gerelateerd": [
+   [
+    "sites/dias-nl",
+    "Dias.nl"
+   ],
+   [
+    "banking-insurance",
+    "Banking & Insurance"
+   ]
+  ],
+  "afbeelding": null,
+  "logo": "bronnen/sites/logo-hippoline-nl.webp"
  }
 ]

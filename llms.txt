@@ -55,9 +55,9 @@
 - [Banking & Insurance](https://support-eblinqx-connect.nl/banking-insurance/): Hypotheekcijfer.nl en Pensioencijfer.nl: klanten van banken en verzekeraars krijgen met één cijfer inzicht in de betaalbaarheid van hun hypotheek en in hun…
 - [Procesversneller: alles op een rij](https://support-eblinqx-connect.nl/procesversneller/): Hoe werkt de Procesversneller in eBlinqx: brondata ophalen via Ockto, wat het je kantoor oplevert en antwoorden op veelgestelde vragen.
 
-## Websites
+## Handige websites
 
-- [Websites van Blinqx Verzekering & Hypotheek](https://support-eblinqx-connect.nl/sites/): Overzicht van alle websites rondom eBlinqx, de Nationale Hypotheekbond en Blinqx Verzekering & Hypotheek.
+- [Handige websites](https://support-eblinqx-connect.nl/sites/): Overzicht van alle websites rondom eBlinqx, de Nationale Hypotheekbond en Blinqx Verzekering & Hypotheek.
 - [Actiefbeheerscan.nl](https://support-eblinqx-connect.nl/sites/actiefbeheerscan-nl/): Met Actiefbeheerscan stuur je je klant een uitnodiging voor een digitaal formulier.
 - [Adviesbox.nl](https://support-eblinqx-connect.nl/sites/adviesbox-nl/): Adviesbox, tot begin 2013 bekend onder de namen Hypobox en Planningbox, ondersteunt de financieel adviseur bij het opstellen van een financieel advies.
 - [Aplaza.nl](https://support-eblinqx-connect.nl/sites/aplaza-nl/): Aplaza koppelt de softwaresystemen van verzekeringsadviseurs met de extranetten van verzekeraars en serviceproviders.
@@ -71,6 +71,7 @@
 - [Finly.nl](https://support-eblinqx-connect.nl/sites/finly-nl/): Finly is online software voor efficiënt en klantvriendelijk klantcontact in de financiële dienstverlening, met onder meer webcamadvies, het Finly CRM, slimme…
 - [Finrust.nl](https://support-eblinqx-connect.nl/sites/finrust-nl/): FinRust is adviessoftware die adviseurs met een snel proces en heldere rapporten helpt klanten beter en completer te bedienen, ‘execution only’ te vermijden…
 - [HDN.nl](https://support-eblinqx-connect.nl/sites/hdn-nl/): HDN (Hypotheken Data Netwerk) zorgt voor veilige, zorgvuldige en slimme informatie-uitwisseling in het financiële woondomein.
+- [HippoLine.nl](https://support-eblinqx-connect.nl/sites/hippoline-nl/): HippoLine maakt van data betrouwbare stuurinformatie. HippoLine verbindt systemen, brengt data samen en bouwt het fundament waarop organisaties dagelijks…
 - [Hypotheekbond.nl](https://support-eblinqx-connect.nl/sites/hypotheekbond-nl/): De Nationale Hypotheekbond vergelijkt en controleert hypotheken: niet alleen op rente, maar ook op alle overige kosten.
 - [Hypotheekbos.nl](https://support-eblinqx-connect.nl/sites/hypotheekbos-nl/): Het Hypotheekbos is een initiatief van de Nationale Hypotheekbond en Blinqx. Samen met adviseurs en hun relaties planten we bomen: inmiddels zijn er ruim…
 - [Hypotheekcijfer.nl](https://support-eblinqx-connect.nl/sites/hypotheekcijfer-nl/): Met de hypotheekcheck op Hypotheekcijfer.nl bepaalt de consument zijn hypotheekcijfer en krijgt hij direct inzicht in de betaalbaarheid van zijn hypotheek, nu…

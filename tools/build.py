@@ -792,7 +792,7 @@ def layout(pg, title, body, active=None, description=""):
       <a href="{pg.rel('nieuwsbrief')}">Nieuwsbrief</a>
       <a href="{pg.rel('privacy')}">Privacy</a>
       <a href="{pg.rel('demo-kantoor')}">Demo-kantoor</a>
-      <a href="{pg.rel('sites')}">Websites</a>
+      <a href="{pg.rel('sites')}">Handige websites</a>
       <a href="https://verzekeringhypotheek.blinqx.tech/" target="_blank" rel="noopener">eBlinqx website</a>
     </nav>
   </div>
@@ -1285,11 +1285,11 @@ def render_search(pages, cats):
                                 "c": label + (" › " + v["collectie"] if v.get("collectie") else ""), "k": "overig",
                                 "x": "adviesbox " + (v.get("omschrijving") or "") + " " + v["tekst"] + " " + " ".join(b["naam"] for b in v.get("bijlagen", []))})
         for st in sites_laden():
-            idx.append({"t": f"{st['naam']}: {st['ondertitel']}", "h": f"sites/{st['slug']}/index.html", "c": "Websites", "k": "kennisbank",
+            idx.append({"t": f"{st['naam']}: {st['ondertitel']}", "h": f"sites/{st['slug']}/index.html", "c": "Handige websites", "k": "kennisbank",
                         "x": st["naam"] + " " + st["naam"].replace(".nl", "").replace(".net", "") + " " + st["url"] + " " + " ".join(st["tekst"])})
         idx.append({"t": "Banking & Insurance: Hypotheekcijfer.nl en Pensioencijfer.nl", "h": "banking-insurance/index.html", "c": "Banking & Insurance",
                     "k": "kennisbank", "x": "banking insurance bank verzekeraar geldverstrekker hypotheekcijfer pensioencijfer hypotheekcheck pensioen cijfer renteadministratie rentetool rente publicatie analyse"})
-        idx.append({"t": "Websites van Blinqx Verzekering & Hypotheek", "h": "sites/index.html", "c": "Websites", "k": "kennisbank",
+        idx.append({"t": "Handige websites", "h": "sites/index.html", "c": "Handige websites", "k": "kennisbank",
                     "x": "websites domeinen links " + " ".join(st["naam"] for st in sites_laden())})
         idx.append({"t": "Finly CRM: klantgegevens, workflows en communicatie op één plek", "h": "finly-crm/index.html", "c": "Finly CRM",
                     "k": "kennisbank", "x": FINLY_INTRO + " finly crm customer relationship management dias anva dstny awi my tp adviesbox "
@@ -2834,7 +2834,7 @@ def render_sites():
                 klein = ' style="max-width:340px;margin:0 auto;display:block"'  # logo niet opblazen
         fig = (f'<figure><a href="{esc(s["url"])}" target="_blank" rel="noopener"><img src="{pg.rel(beeld)}" '
                f'alt="Logo {esc(s["naam"])}" loading="lazy"{klein}></a></figure>' if beeld else "")
-        body = f"""{crumbs(pg, [("Websites", "sites"), (s["naam"], None)])}
+        body = f"""{crumbs(pg, [("Handige websites", "sites"), (s["naam"], None)])}
 <main class="subpage mhz"><div class="wrap">
   <h1>{esc(s["naam"])}</h1>
   <p class="lead">{esc(s["ondertitel"])}</p>
@@ -2843,7 +2843,7 @@ def render_sites():
   {adviesbox_extra(pg) if s["slug"] == "adviesbox-nl" else ""}
   {f'<h2 class="wth">Lees ook</h2><ul>{rel}</ul>' if rel else ""}
   <p class="btn-row bezoek"><a class="btn-out cta" href="{esc(s["url"])}" target="_blank" rel="noopener" aria-label="Bezoek website {esc(s["naam"])}">Bezoek website ↗</a></p>
-  <p><a href="{pg.rel("sites")}">← Alle websites</a></p>
+  <p><a href="{pg.rel("sites")}">← Alle handige websites</a></p>
   <p class="src">Bron: <a href="{esc(s["url"])}" target="_blank" rel="noopener">{esc(s["naam"].lower())}</a> (stand 4 november 2026).</p>
 </div></main>"""
         write("sites/" + s["slug"], layout(pg, f"{s['naam']}: {s['ondertitel']}", body, None, " ".join(s["tekst"])), kluis=False)
@@ -2856,13 +2856,13 @@ def render_sites():
         + f'<h3><a href="{pg.rel("sites/" + s["slug"])}">{esc(s["naam"])}</a></h3><p>{esc(s["ondertitel"])}</p>'
         f'<p class="sitebtn"><a class="btn-out cta" href="{pg.rel("sites/" + s["slug"])}" aria-label="Meer info over {esc(s["naam"])}">Meer info</a></p></div>'
         for s in sorted(lijst, key=lambda x: x["naam"].lower()))
-    body = f"""{crumbs(pg, [("Websites", None)])}
+    body = f"""{crumbs(pg, [("Handige websites", None)])}
 <main class="subpage mhz"><div class="wrap">
-  <h1>Websites van Blinqx Verzekering &amp; Hypotheek</h1>
+  <h1>Handige websites</h1>
   <p class="lead">Alle websites rondom eBlinqx, de Nationale Hypotheekbond en Blinqx Verzekering &amp; Hypotheek op een rij, plus de belangrijke partijen in de keten. Klik op ‘Meer info’ voor alles over de partij en de link naar hun website.</p>
   <div class="wtwhys pkaarten">{kaarten}</div>
 </div></main>"""
-    write("sites", layout(pg, "Websites van Blinqx Verzekering & Hypotheek", body, None,
+    write("sites", layout(pg, "Handige websites", body, None,
                           "Overzicht van alle websites rondom eBlinqx, de Nationale Hypotheekbond en Blinqx Verzekering & Hypotheek."), kluis=False)
 
 
@@ -3462,7 +3462,7 @@ def main():
         ("Partners", ["partners"] + sorted(u for u in info if u.startswith("partners/"))),
         ("Productinformatie", ["websitetools", "mijnhuiszaken", "yes-co", "tools-voor-vastgoed", "woningwaarderapport",
                                "actiefbeheerscan", "hypotheekrente-app", "finly-crm", "demo-kantoor", "banking-insurance", "procesversneller"]),
-        ("Websites", ["sites"] + sorted(u for u in info if u.startswith("sites/"))),
+        ("Handige websites", ["sites"] + sorted(u for u in info if u.startswith("sites/"))),
         ("Releasenotes", ["releasenotes", "releasenotes-hypotheekadvies", "releasenotes-finconnect", "releasenotes-dias"]),
         ("Nieuws, tips en leren", ["nieuws", "tips", "elearning", "video", "trainingen", "downloads"]),
         ("Beleid", ["supportbeleid", "opdrachtenbeleid", "klachtenbeleid", "wensenbeleid", "privacy"]),
