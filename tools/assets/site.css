@@ -482,3 +482,11 @@ figure .img-volgt{margin:0}
 .video .frame video{position:absolute;inset:0;width:100%;height:100%;background:#000}
 .kanalen{margin:6px 0 22px}.kanalen p{margin:10px 0 8px}.kanalen .wtbtn{font-size:14px;padding:8px 14px}
 .finly figure img{max-width:340px;margin:0 auto;display:block}
+/* losse videopagina's */
+.vpagina .vplayer{position:relative;aspect-ratio:16/9;background:#000;overflow:hidden;border-radius:6px;margin:12px 0 18px;max-width:960px}
+.vpagina .vplayer img,.vpagina .vplayer video{width:100%;height:100%;object-fit:cover;display:block}
+.vpagina .vplayer iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vpagina .vtekst{max-width:760px}
+.vpagina .vplayer .play{position:absolute;inset:0;border:0;padding:0;background:transparent;cursor:pointer}
+.vpagina .vplayer .play .ic{position:absolute;left:50%;top:50%;width:84px;height:84px;transform:translate(-50%,-50%);transition:transform .15s}
+.vpagina .vplayer .play:hover .ic{transform:translate(-50%,-50%) scale(1.08)}

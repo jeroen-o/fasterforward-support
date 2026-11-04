@@ -1239,10 +1239,10 @@ def render_search(pages, cats):
             if sub["items"]:
                 idx.append({"t": sub["name"], "h": sub_target(cats, name, sub) + "/index.html", "c": "Kennisbank › " + name,
                             "k": "categorie", "x": " ".join(x["t"] for x in sub["items"])})
-    for g in json.load(open(os.path.join(TOOLS, "videos.json"), encoding="utf8")):
-        for v in g["videos"]:
-            idx.append({"t": v["t"], "h": "video/index.html#v-" + v["id"], "c": "Video's › " + g["group"], "k": "video",
-                        "x": " ".join(x for x in (v.get("ch"), g["group"], v.get("x")) if x)})
+    for v in video_lijst():
+        idx.append({"t": v["t"], "h": "video/" + v["slug"] + "/index.html", "c": "Video's › " + v["groep"], "k": "video",
+                    "d": fmt_date(date.fromisoformat(v["datum"])) if re.fullmatch(r"\d{4}-\d{2}-\d{2}", v["datum"]) else "",
+                    "x": " ".join(x for x in (v.get("ch"), v["groep"], v.get("x"), v["tekst"]) if x)})
     frf = os.path.join(TOOLS, "finrust_videos.json")
     if os.path.exists(frf):
         idx.append({"t": "FinRust-video's", "h": "video/finrust/index.html", "c": "Video's", "k": "video",
@@ -1501,9 +1501,135 @@ def fmt_dur(d):
     return f"{d // 3600}:{d % 3600 // 60:02d}:{d % 60:02d}" if d >= 3600 else f"{d // 60}:{d % 60:02d}"
 
 
+VIDEO_EXTRA = [  # eigen video's die op een productpagina staan
+    {"id": "mijnhuiszaken-promo", "mp4": "bronnen/mijnhuiszaken/mijnhuiszaken-promo.mp4", "poster": "bronnen/mijnhuiszaken/mijnhuiszaken-promo.webp",
+     "t": "MijnHuiszaken voor hypotheekadviseurs", "d": 186, "ch": "MijnHuiszaken", "groep": "Productvideo's", "pagina": ("mijnhuiszaken", "MijnHuiszaken"),
+     "beschrijving": "Altijd in beeld vanaf de eerste zoekopdracht. In drie minuten zie je hoe MijnHuiszaken werkt voor hypotheekadviseurs: "
+                     "één klantomgeving gekoppeld aan jouw naam, realtime NVM-woningaanbod voor je klanten, je eigen logo in hun omgeving en "
+                     "in de e-mailalerts, de klantreis tijdens de oriëntatie en de tarieven (€ 79 per maand voor 1.000 klanten, € 350 eenmalig)."},
+    {"id": "rekentools-video", "mp4": "bronnen/websitetools/rekentools-video.mp4", "poster": "bronnen/websitetools/rekentools-video.webp",
+     "t": "Rekentools voor op de website van de adviseur", "d": 156, "ch": "Blinqx Verzekering & Hypotheek", "groep": "Productvideo's",
+     "pagina": ("websitetools", "Websitetools"),
+     "beschrijving": "Een compleet pakket rekentools van Blinqx voor de website van je kantoor, gekoppeld aan eBlinqx. De video laat per "
+                     "categorie zien welke tools er zijn: hypotheek berekenen (maximale hypotheek, maandlasten, kan ik deze woning kopen?), "
+                     "aflossen en besparen, woning en verduurzamen, en klantinzicht. De uitkomsten zijn indicatief en geen advies."},
+]
+VIDEO_BESCHRIJVING = {  # eigen omschrijving waar YouTube er geen (bruikbare) heeft
+    "kassa-2016": "Fragment uit het consumentenprogramma Kassa (BNNVARA, 2016) over te dure premies voor overlijdensrisicoverzekeringen. "
+                  "Namens de Nationale Hypotheekbond schuiven Jos van Driesum, Wouter Abbink en Jeroen Oversteegen aan.",
+    "gouden-lotus-2018": "De Nationale Hypotheekbond won in 2018 de Gouden Lotus. Jos van Driesum nam de prijs in ontvangst en vertelt erover.",
+    "quinn-mail-90s": "In 90 seconden zie je hoe je Quinn Mail gebruikt in eBlinqx: een e-mail openen, met AI een antwoord laten opstellen, "
+                      "een taak aanmaken vanuit de mail en de mail koppelen aan het dossier.",
+}
+STOP = set("de het een en van in op met voor naar je jouw u uw hoe wat is bij aan te over of dat deze die zo ook als door om tot "
+           "maak ik wij we elements faster forward eblinqx connect video uitleg nieuw nieuwe".split())
+
+
+def video_lijst():
+    """Alle video's met een eigen pagina: tools/videos.json (+ meta) en VIDEO_EXTRA. Slugs zijn stabiel en uniek."""
+    meta_f = os.path.join(TOOLS, "video_meta.json")
+    meta = json.load(open(meta_f, encoding="utf8")) if os.path.exists(meta_f) else {}
+    uit, gezien = [], set()
+    alle = [dict(v, groep=g["group"]) for g in json.load(open(os.path.join(TOOLS, "videos.json"), encoding="utf8")) for v in g["videos"]]
+    for v in alle + [dict(v) for v in VIDEO_EXTRA]:
+        m = meta.get(v["id"], {})
+        import unicodedata
+        slug = slugify(unicodedata.normalize("NFKD", v["t"]).encode("ascii", "ignore").decode())
+        if slug in gezien:
+            slug = (slug[:48] + "-" + slugify(v["id"]))[:60]
+        gezien.add(slug)
+        tekst = VIDEO_BESCHRIJVING.get(v["id"]) or v.get("beschrijving") or m.get("beschrijving", "")
+        tekst = re.sub(r"https?://\S+", "", tekst)
+        tekst = "\n".join(l.strip() for l in tekst.split("\n") if l.strip() and not re.match(r"^(#|Meer (info|informatie)|Kijk op|Bezoek|Volg ons)", l.strip(), re.I))
+        tekst = re.sub(r"\s*#\w+", "", tekst).strip()
+        if len(tekst) < 40:
+            tekst = (f"{v['t']}: een video van {v.get('ch') or 'Blinqx'} uit de rubriek ‘{v['groep']}’ op de supportsite van "
+                     "eBlinqx Connect (voorheen Faster Forward Elements).")
+        uit.append(dict(v, slug=slug, tekst=tekst[:900], datum=m.get("datum") or v.get("datum") or "",
+                        duur=m.get("duur") or v.get("d") or 0))
+    return uit
+
+
+def gerelateerd(v, artikelen):
+    woorden = {w for w in re.findall(r"[a-zà-ÿ]{4,}", (v["t"] + " " + v.get("x", "")).lower()) if w not in STOP}
+    if not woorden:
+        return []
+    score = []
+    for p in artikelen:
+        tw = {w for w in re.findall(r"[a-zà-ÿ]{4,}", p["t"].lower()) if w not in STOP}
+        n = len(woorden & tw)
+        if n >= 2 or (n == 1 and len(tw) <= 2):
+            score.append((n, p))
+    score.sort(key=lambda x: (-x[0], len(x[1]["t"])))
+    return [p for _, p in score[:3]]
+
+
+def render_videopaginas(pages):
+    artikelen = [p for p in pages.values() if not p.get("skip") and p.get("role") == "article" and p["path"].startswith("kennisbank/")]
+    for v in video_lijst():
+        pg = Page("video/" + v["slug"])
+        groot = f"bronnen/video/groot/{v['id']}.jpg"
+        bron = v.get("poster") or (groot if os.path.exists(os.path.join(ROOT, groot)) else f"assets/video/{v['id']}.jpg")
+        thumb, thumb_abs = pg.rel(bron), SITE_URL + bron
+        if v.get("mp4"):
+            speler = (f'<div class="vplayer"><video controls preload="none" playsinline poster="{thumb}" width="1280" height="720">'
+                      f'<source src="{pg.rel(v["mp4"])}" type="video/mp4"></video></div>')
+            ld_extra = {"contentUrl": SITE_URL + v["mp4"]}
+            extern = ""
+        elif v.get("vimeo"):
+            speler = (f'<div class="vplayer frame" data-vimeo="{esc(v["vimeo"])}"><img src="{thumb}" alt="" loading="lazy">'
+                      f'<button class="play" type="button" aria-label="Speel {esc(v["t"])} af"><svg class="ic"><use href="#i-play"/></svg></button></div>')
+            ld_extra = {"embedUrl": f"https://player.vimeo.com/video/{v['vimeo']}"}
+            extern = f'<a href="https://vimeo.com/{esc(v["vimeo"])}" target="_blank" rel="noopener">Bekijk op Vimeo ↗</a>'
+        elif v.get("url"):
+            speler = (f'<div class="vplayer frame"><a href="{esc(v["url"])}" target="_blank" rel="noopener"><img src="{thumb}" alt="" loading="lazy">'
+                      f'<span class="play"><svg class="ic"><use href="#i-play"/></svg></span></a></div>')
+            ld_extra = {"embedUrl": v["url"]}
+            extern = f'<a href="{esc(v["url"])}" target="_blank" rel="noopener">Bekijk de replay op WebinarGeek ↗</a>'
+        else:
+            speler = (f'<div class="vplayer frame" data-yt="{esc(v["id"])}"><img src="{thumb}" alt="" loading="lazy">'
+                      f'<button class="play" type="button" aria-label="Speel {esc(v["t"])} af"><svg class="ic"><use href="#i-play"/></svg></button></div>')
+            ld_extra = {"embedUrl": f"https://www.youtube-nocookie.com/embed/{v['id']}"}
+            extern = f'<a href="https://www.youtube.com/watch?v={esc(v["id"])}" target="_blank" rel="noopener">Bekijk op YouTube ↗</a>'
+        meta = " · ".join(x for x in (v.get("ch"), fmt_dur(v["duur"]) if v["duur"] else "",
+                                      fmt_date(date.fromisoformat(v["datum"])) if re.fullmatch(r"\d{4}-\d{2}-\d{2}", v["datum"]) else "") if x)
+        alineas = "".join(f"<p>{esc(a)}</p>" for a in v["tekst"].split("\n") if a.strip())
+        rel = gerelateerd(v, artikelen)
+        lees = ""
+        if v.get("pagina"):
+            lees += f'<li><a href="{pg.rel(v["pagina"][0])}">{esc(v["pagina"][1])}</a></li>'
+        lees += "".join(f'<li><a href="{pg.rel(p["path"])}">{esc(p["t"])}</a></li>' for p in rel)
+        ld = {"@context": "https://schema.org", "@type": "VideoObject", "name": v["t"], "description": v["tekst"][:500],
+              "thumbnailUrl": thumb_abs, "uploadDate": v["datum"] or "2026-11-04", "inLanguage": "nl-NL"}
+        if v["duur"]:
+            ld["duration"] = f"PT{int(v['duur']) // 60}M{int(v['duur']) % 60}S"
+        ld.update(ld_extra)
+        body = f"""{crumbs(pg, [("Video's", "video"), (v["t"], None)])}
+<main class="subpage vpagina"><div class="wrap">
+  <h1>{esc(v["t"])}</h1>
+  <p class="meta">{esc(meta)}{" · " + extern if extern else ""}</p>
+  {speler}
+  <div class="vtekst">{alineas}</div>
+  {f'<h2 class="wth">Lees ook</h2><ul>{lees}</ul>' if lees else ""}
+  <p><a href="{pg.rel("video")}#v-{esc(v["id"])}">← Alle video's</a> · rubriek: {esc(v["groep"])}</p>
+</div></main>
+<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False).replace("</", "<\\\\/")}</script>
+<script>
+document.addEventListener("click", e => {{
+  const b = e.target.closest("[data-yt] .play, [data-vimeo] .play"); if (!b) return;
+  const f = b.closest("[data-yt], [data-vimeo]");
+  f.innerHTML = f.dataset.vimeo
+    ? `<iframe src="https://player.vimeo.com/video/${{f.dataset.vimeo}}?autoplay=1&dnt=1" title="Video" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`
+    : `<iframe src="https://www.youtube-nocookie.com/embed/${{f.dataset.yt}}?autoplay=1&rel=0" title="Video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+}});
+</script>"""
+        write("video/" + v["slug"], layout(pg, f"{v['t']} (video)", body, None, v["tekst"]))
+
+
 def render_video():
     pg = Page("video")
     groups = json.load(open(os.path.join(TOOLS, "videos.json"), encoding="utf8"))
+    vslug = {v["id"]: v["slug"] for v in video_lijst()}
     el = [l.rstrip("\n").split("|") for l in open(os.path.join(TOOLS, "elearning.txt"), encoding="utf8")
           if l.strip() and not l.startswith("#")]
     cards = []
@@ -1529,19 +1655,19 @@ def render_video():
             if v.get("mp4"):
                 vs.append(f'<div class="video" id="v-{esc(v["id"])}"><div class="frame"><video controls preload="none" playsinline poster="{thumb}" '
                           f'aria-label="{esc(v["t"])}"><source src="{pg.rel(v["mp4"])}" type="video/mp4"></video></div>'
-                          f'<h3>{esc(v["t"])}</h3><p>{esc(meta)}</p></div>')
+                          f'<h3><a href="{pg.rel("video/" + vslug[v["id"]])}">{esc(v["t"])}</a></h3><p>{esc(meta)}</p></div>')
             elif v.get("vimeo"):
                 vs.append(f'<div class="video" id="v-{esc(v["id"])}"><div class="frame" data-vimeo="{esc(v["vimeo"])}"><img src="{thumb}" alt="" loading="lazy">'
                           f'<button class="play" type="button" aria-label="Speel {esc(v["t"])} af"><svg class="ic"><use href="#i-play"/></svg></button></div>'
-                          f'<h3><a href="https://vimeo.com/{esc(v["vimeo"])}" target="_blank" rel="noopener">{esc(v["t"])}</a></h3><p>{esc(meta)}</p></div>')
+                          f'<h3><a href="{pg.rel("video/" + vslug[v["id"]])}">{esc(v["t"])}</a></h3><p>{esc(meta)}</p></div>')
             elif v.get("url"):
                 vs.append(f'<div class="video" id="v-{esc(v["id"])}"><a class="frame" href="{esc(v["url"])}" target="_blank" rel="noopener"><img src="{thumb}" alt="" loading="lazy">'
                           f'<span class="play"><svg class="ic"><use href="#i-play"/></svg></span></a>'
-                          f'<h3><a href="{esc(v["url"])}" target="_blank" rel="noopener">{esc(v["t"])}</a></h3><p>{esc(meta)}</p></div>')
+                          f'<h3><a href="{pg.rel("video/" + vslug[v["id"]])}">{esc(v["t"])}</a></h3><p>{esc(meta)}</p></div>')
             else:
                 vs.append(f'<div class="video" id="v-{esc(v["id"])}"><div class="frame" data-yt="{esc(v["id"])}"><img src="{thumb}" alt="" loading="lazy">'
                           f'<button class="play" type="button" aria-label="Speel {esc(v["t"])} af"><svg class="ic"><use href="#i-play"/></svg></button></div>'
-                          f'<h3><a href="https://www.youtube.com/watch?v={esc(v["id"])}" target="_blank" rel="noopener">{esc(v["t"])}</a></h3><p>{esc(meta)}</p></div>')
+                          f'<h3><a href="{pg.rel("video/" + vslug[v["id"]])}">{esc(v["t"])}</a></h3><p>{esc(meta)}</p></div>')
         sections.append(f'<section class="vgroup"><h2>{esc(g["group"])}</h2><div class="vgrid">{"".join(vs)}</div></section>')
     body = f"""{crumbs(pg, [("Video's", None)])}
 <main class="subpage"><div class="wrap">
@@ -3089,6 +3215,7 @@ def main():
         render_feed(name, items)
     render_kennisbank(cats)
     render_video()
+    render_videopaginas(pages)
     render_finrust()
     render_elearning()
     render_fastlane()
