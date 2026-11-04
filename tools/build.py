@@ -792,6 +792,7 @@ def layout(pg, title, body, active=None, description=""):
       <a href="{pg.rel('nieuwsbrief')}">Nieuwsbrief</a>
       <a href="{pg.rel('privacy')}">Privacy</a>
       <a href="{pg.rel('demo-kantoor')}">Demo-kantoor</a>
+      <a href="{pg.rel('sites')}">Websites</a>
       <a href="https://verzekeringhypotheek.blinqx.tech/" target="_blank" rel="noopener">eBlinqx website</a>
     </nav>
   </div>
@@ -1276,6 +1277,13 @@ def render_search(pages, cats):
             for v in json.load(open(dmf, encoding="utf8")):
                 idx.append({"t": v["titel"] + " (" + v["site"] + ")", "h": v["url"], "ext": 1, "c": "Demo-kantoor › " + v["site"],
                             "k": "overig", "x": "demo demokantoor " + (v.get("omschrijving") or "") + " " + v["tekst"]})
+        for st in sites_laden():
+            idx.append({"t": f"{st['naam']}: {st['ondertitel']}", "h": f"sites/{st['slug']}/index.html", "c": "Websites", "k": "kennisbank",
+                        "x": st["naam"] + " " + st["naam"].replace(".nl", "").replace(".net", "") + " " + st["url"] + " " + " ".join(st["tekst"])})
+        idx.append({"t": "Banking & Insurance: Hypotheekcijfer.nl en Pensioencijfer.nl", "h": "banking-insurance/index.html", "c": "Banking & Insurance",
+                    "k": "kennisbank", "x": "banking insurance bank verzekeraar geldverstrekker hypotheekcijfer pensioencijfer hypotheekcheck pensioen cijfer"})
+        idx.append({"t": "Websites van Blinqx Verzekering & Hypotheek", "h": "sites/index.html", "c": "Websites", "k": "kennisbank",
+                    "x": "websites domeinen links " + " ".join(st["naam"] for st in sites_laden())})
         idx.append({"t": "Finly CRM: klantgegevens, workflows en communicatie op één plek", "h": "finly-crm/index.html", "c": "Finly CRM",
                     "k": "kennisbank", "x": FINLY_INTRO + " finly crm customer relationship management dias anva dstny awi my tp adviesbox "
                     "rapportage dashboard csv workflows signalen instelbaarheid demo " + " ".join(t + " " + x for t, x in FINLY_TOOLS)})
@@ -1397,6 +1405,8 @@ def render_home(cats, feeds, pages):
               f'<a class="tile" href="{pg.rel("actiefbeheerscan")}"><svg class="ic"><use href="#i-list"/></svg>Actiefbeheerscan</a>'
               f'<a class="tile" href="{pg.rel("hypotheekrente-app")}"><svg class="ic"><use href="#i-percent"/></svg>Hypotheekrente-app</a>'
               f'<a class="tile" href="{pg.rel("finly-crm")}"><svg class="ic"><use href="#i-crm"/></svg>Finly CRM</a>'
+              f'<a class="tile" href="{pg.rel("banking-insurance")}"><svg class="ic"><use href="#i-bank"/></svg>Banking &amp; Insurance</a>'
+              f'<a class="tile" href="https://verzekeringhypotheek.blinqx.tech/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-globe"/></svg>Website Blinqx Verzekering &amp; Hypotheek ↗</a>'
               f'<a class="tile" href="{pg.rel("partners")}"><svg class="ic"><use href="#i-partners"/></svg>Partners</a>'
               f'<a class="tile" href="{pg.rel("procesversneller")}"><svg class="ic"><use href="#i-bolt"/></svg>Proces-versneller</a>')
 
@@ -2749,6 +2759,68 @@ def render_demokantoor():
                                  "MijnHuiszaken en UwKluis op de website van een adviseur. Wil je dit ook? Laat het ons weten."))
 
 
+def sites_laden():
+    f = os.path.join(TOOLS, "sites.json")
+    return json.load(open(f, encoding="utf8")) if os.path.exists(f) else []
+
+
+def render_sites():
+    """Per website uit tools/sites.json een pagina sites/<slug>/ met beschrijving, afbeelding en knop (geen tegel)."""
+    lijst = sites_laden()
+    for s in lijst:
+        pg = Page("sites/" + s["slug"])
+        rel = "".join(f'<li><a href="{pg.rel(p)}">{esc(l)}</a></li>' for p, l in s["gerelateerd"])
+        fig = (f'<figure><a href="{esc(s["url"])}" target="_blank" rel="noopener"><img src="{pg.rel(s["afbeelding"])}" '
+               f'alt="{esc(s["naam"])}" loading="lazy"></a></figure>' if s.get("afbeelding") else "")
+        body = f"""{crumbs(pg, [("Websites", "sites"), (s["naam"], None)])}
+<main class="subpage mhz"><div class="wrap">
+  <h1>{esc(s["naam"])}</h1>
+  <p class="lead">{esc(s["ondertitel"])}</p>
+  <div class="mhz-intro"><div>{"".join(f"<p>{esc(t)}</p>" for t in s["tekst"])}
+    <p class="btn-row"><a class="btn-out cta" href="{esc(s["url"])}" target="_blank" rel="noopener">Naar {esc(s["naam"])} ↗</a></p></div>
+    {fig}</div>
+  {f'<h2 class="wth">Lees ook</h2><ul>{rel}</ul>' if rel else ""}
+  <p><a href="{pg.rel("sites")}">← Alle websites</a></p>
+  <p class="src">Bron: <a href="{esc(s["url"])}" target="_blank" rel="noopener">{esc(s["naam"].lower())}</a> (stand 4 november 2026).</p>
+</div></main>"""
+        write("sites/" + s["slug"], layout(pg, f"{s['naam']}: {s['ondertitel']}", body, None, " ".join(s["tekst"])))
+    # overzicht (alleen via footer en zoeker bereikbaar, geen tegel)
+    pg = Page("sites")
+    kaarten = "".join(f'<a class="wtwhy pkaart" href="{pg.rel("sites/" + s["slug"])}">'
+                      + (f'<img src="{pg.rel(s["afbeelding"])}" alt="" loading="lazy">' if s.get("afbeelding") else "")
+                      + f'<h3>{esc(s["naam"])}</h3><p>{esc(s["ondertitel"])}</p></a>' for s in sorted(lijst, key=lambda x: x["naam"].lower()))
+    body = f"""{crumbs(pg, [("Websites", None)])}
+<main class="subpage mhz"><div class="wrap">
+  <h1>Websites van Blinqx Verzekering &amp; Hypotheek</h1>
+  <p class="lead">Alle websites rondom eBlinqx, de Nationale Hypotheekbond en Blinqx Verzekering &amp; Hypotheek op een rij. Klik op een website voor een korte beschrijving en de link.</p>
+  <div class="wtwhys pkaarten">{kaarten}</div>
+</div></main>"""
+    write("sites", layout(pg, "Websites van Blinqx Verzekering & Hypotheek", body, None,
+                          "Overzicht van alle websites rondom eBlinqx, de Nationale Hypotheekbond en Blinqx Verzekering & Hypotheek."))
+
+
+def render_banking():
+    """Tegel Banking & Insurance: Hypotheekcijfer.nl en Pensioencijfer.nl."""
+    pg = Page("banking-insurance")
+    lijst = [s for s in sites_laden() if s["slug"] in ("hypotheekcijfer-nl", "pensioencijfer-nl")]
+    blokken = "".join(
+        f'<div class="mhz-duo"><div><h2 class="wth">{esc(s["naam"])}</h2><p><strong>{esc(s["ondertitel"])}</strong></p>'
+        + "".join(f"<p>{esc(t)}</p>" for t in s["tekst"])
+        + f'<p class="btn-row"><a class="btn-out cta" href="{esc(s["url"])}" target="_blank" rel="noopener">Naar {esc(s["naam"])} ↗</a>'
+        f'<a class="btn-out" href="{pg.rel("sites/" + s["slug"])}">Meer over {esc(s["naam"])}</a></p></div>'
+        + (f'<figure><img src="{pg.rel(s["afbeelding"])}" alt="{esc(s["naam"])}" loading="lazy"></figure>' if s.get("afbeelding") else "")
+        + "</div>" for s in lijst)
+    body = f"""{crumbs(pg, [("Banking &amp; Insurance", None)])}
+<main class="subpage mhz"><div class="wrap">
+  <h1>Banking &amp; Insurance</h1>
+  <p class="lead">Oplossingen voor banken, geldverstrekkers en verzekeraars om klanten zelf inzicht te geven in hun financiële situatie, met één helder cijfer.</p>
+  {blokken}
+  <p class="mhz-tip">Meer weten? Mail <a href="mailto:relatie-vh@blinqx.tech">relatie-vh@blinqx.tech</a> of bel <a href="tel:+31207582111">020 758 21 11</a>.</p>
+</div></main>"""
+    write("banking-insurance", layout(pg, "Banking & Insurance: Hypotheekcijfer.nl en Pensioencijfer.nl", body, None,
+                                      "Hypotheekcijfer.nl en Pensioencijfer.nl: klanten van banken en verzekeraars krijgen met één cijfer inzicht in de betaalbaarheid van hun hypotheek en in hun pensioen."))
+
+
 def render_mijnhuiszaken():
     """MijnHuiszaken: klantomgeving met realtime woningaanbod (bron: aansluiten.mijnhuiszaken.nl, november 2026)."""
     pg = Page("mijnhuiszaken")
@@ -3292,6 +3364,8 @@ def main():
     render_partners()
     render_finly()
     render_demokantoor()
+    render_sites()
+    render_banking()
     render_downloads()
     render_nieuwsbrief()
     render_privacy()
@@ -3306,7 +3380,8 @@ def main():
         ("Start", ["", "kennisbank", "contact", "zoeken"]),
         ("Partners", ["partners"] + sorted(u for u in info if u.startswith("partners/"))),
         ("Productinformatie", ["websitetools", "mijnhuiszaken", "yes-co", "tools-voor-vastgoed", "woningwaarderapport",
-                               "actiefbeheerscan", "hypotheekrente-app", "finly-crm", "demo-kantoor", "procesversneller"]),
+                               "actiefbeheerscan", "hypotheekrente-app", "finly-crm", "demo-kantoor", "banking-insurance", "procesversneller"]),
+        ("Websites", ["sites"] + sorted(u for u in info if u.startswith("sites/"))),
         ("Releasenotes", ["releasenotes", "releasenotes-hypotheekadvies", "releasenotes-finconnect", "releasenotes-dias"]),
         ("Nieuws, tips en leren", ["nieuws", "tips", "elearning", "video", "trainingen", "downloads"]),
         ("Beleid", ["supportbeleid", "opdrachtenbeleid", "klachtenbeleid", "wensenbeleid", "privacy"]),

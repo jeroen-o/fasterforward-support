@@ -1,0 +1,507 @@
+[
+ {
+  "slug": "hypotheekbond-nl",
+  "naam": "Hypotheekbond.nl",
+  "url": "https://consumenten.hypotheekbond.nl/",
+  "ondertitel": "De Nationale Hypotheekbond, a Blinqx company",
+  "tekst": [
+   "De Nationale Hypotheekbond vergelijkt en controleert hypotheken: niet alleen op rente, maar ook op alle overige kosten. Zo krijgen consumenten de zekerheid van de laagste maandlasten.",
+   "Voor adviseurs ontwikkelt de Hypotheekbond technologische oplossingen die consumenten en adviseurs voorzien van actuele en transparante informatie, zoals de rekentools voor op je website en de Hypotheekrente-app."
+  ],
+  "gerelateerd": [
+   [
+    "websitetools",
+    "Websitetools"
+   ],
+   [
+    "hypotheekrente-app",
+    "Hypotheekrente-app"
+   ]
+  ],
+  "afbeelding": "bronnen/sites/hypotheekbond-nl.webp"
+ },
+ {
+  "slug": "fasterforward-nl",
+  "naam": "Fasterforward.nl",
+  "url": "https://fasterforward.nl/",
+  "ondertitel": "Faster Forward is onderdeel van Blinqx Verzekering & Hypotheek",
+  "tekst": [
+   "Faster Forward is onderdeel van Blinqx Verzekering & Hypotheek. Faster Forward Elements is volledig geïntegreerd in eBlinqx: het alles-in-één platform dat zorgt voor optimale klantbinding in elke fase.",
+   "Fasterforward.nl verwijst door naar de pagina over Faster Forward op de website van Blinqx Verzekering & Hypotheek. Op deze supportsite vind je de kennisbank, releasenotes en e-learning van eBlinqx Connect (voorheen Elements)."
+  ],
+  "gerelateerd": [
+   [
+    "kennisbank",
+    "Kennisbank eBlinqx Connect"
+   ],
+   [
+    "releasenotes",
+    "Releasenotes"
+   ]
+  ],
+  "afbeelding": "bronnen/sites/fasterforward-nl.webp"
+ },
+ {
+  "slug": "uwkluis-nl",
+  "naam": "Uwkluis.nl",
+  "url": "https://uwkluis.nl/",
+  "ondertitel": "UwKluis / Online klantportaal",
+  "tekst": [
+   "Met het klantportaal (UwKluis) geef je je klant duidelijk overzicht en toegang tot al zijn financiële informatie op één centrale, beveiligde plek.",
+   "Uwkluis.nl verwijst door naar de pagina Klantportaal op de website van Blinqx Verzekering & Hypotheek. In de kennisbank lees je hoe je het klantportaal in eBlinqx Connect inricht en gebruikt."
+  ],
+  "gerelateerd": [
+   [
+    "categorien/uwkluis",
+    "Kennisbank: UwKluis / Online klantportaal"
+   ],
+   [
+    "video/uwkluis-veilig-ophalen",
+    "Video: Uwkluis – Veilig Ophalen"
+   ]
+  ],
+  "afbeelding": "bronnen/sites/uwkluis-nl.webp"
+ },
+ {
+  "slug": "veiligophalen-nl",
+  "naam": "VeiligOphalen.nl",
+  "url": "https://www.veiligophalen.nl/",
+  "ondertitel": "Financiële gegevens snel, veilig en simpel ophalen",
+  "tekst": [
+   "Voor een hypotheek, lening of verzekering heeft een financieel dienstverlener van alles van je klant nodig: gegevens die je niet zo 1-2-3 vindt. Met de app Veilig Ophalen verzamelt de klant precies wat nodig is, bij de bron.",
+   "Zo werkt het: scan de code, haal je gegevens op bij de overheidsinstanties en check & deel ze. Wat de klant deelt, bepaalt hij zelf."
+  ],
+  "gerelateerd": [
+   [
+    "procesversneller",
+    "Proces-versneller"
+   ],
+   [
+    "video/uwkluis-veilig-ophalen",
+    "Video: Uwkluis – Veilig Ophalen"
+   ]
+  ],
+  "afbeelding": "bronnen/sites/veiligophalen-nl.webp"
+ },
+ {
+  "slug": "fastlane-hypotheekadvies-nl",
+  "naam": "Fastlane-hypotheekadvies.nl",
+  "url": "https://www.fastlane-hypotheekadvies.nl/",
+  "ondertitel": "Hypotheekadviessoftware voor hypotheekadviseurs",
+  "tekst": [
+   "Fastlane Hypotheekadvies Software (nu eBlinqx Hypotheekadvies) ondersteunt de hypotheekadviseur bij het geven van hypotheekadvies, bij het aanvragen en bij de bemiddeling van de hypotheek.",
+   "Onder meer: koppeling met Faster Forward en PortefeuilleSignalen, voorwaarden vergelijken van de Hypotheekbond, inzicht in risico's bij AO en WW, looptijdrente, gratis woningwaarde, HDN, energielabel, scenario's, klantprofiel en een volautomatisch adviesrapport."
+  ],
+  "gerelateerd": [
+   [
+    "releasenotes-hypotheekadvies",
+    "Releasenotes eBlinqx Hypotheekadvies"
+   ],
+   [
+    "elearning",
+    "E-learning"
+   ]
+  ],
+  "afbeelding": "bronnen/sites/fastlane-hypotheekadvies-nl.webp"
+ },
+ {
+  "slug": "dias-nl",
+  "naam": "Dias.nl",
+  "url": "https://dias.nl/",
+  "ondertitel": "DIAS Software is onderdeel van Blinqx Verzekering & Hypotheek",
+  "tekst": [
+   "DIAS is geïntegreerd in het aanbod van Blinqx Verzekering & Hypotheek, als onderdeel van één platform.",
+   "Dias.nl verwijst door naar de pagina over DIAS op de website van Blinqx Verzekering & Hypotheek. De releasenotes van DIAS Assurantie en DIAS Cloud vind je op deze supportsite."
+  ],
+  "gerelateerd": [
+   [
+    "releasenotes-dias",
+    "Releasenotes DIAS Assurantie"
+   ]
+  ],
+  "afbeelding": "bronnen/sites/dias-nl.webp"
+ },
+ {
+  "slug": "adviesbox-nl",
+  "naam": "Adviesbox.nl",
+  "url": "https://adviesbox.nl/",
+  "ondertitel": "Financiële planning, advies, bemiddeling en administratie",
+  "tekst": [
+   "Adviesbox, tot begin 2013 bekend onder de namen Hypobox en Planningbox, ondersteunt de financieel adviseur bij het opstellen van een financieel advies: van het berekenen van de maximale leencapaciteit tot een financieringsopzet.",
+   "Alle fiscale en sociale cijfers zijn verwerkt in Adviesbox en worden dagelijks automatisch bijgewerkt. Van geldverstrekkers zijn producten, rentes en voorwaarden opgenomen, en van verzekeraars worden de premies exact berekend."
+  ],
+  "gerelateerd": [
+   [
+    "finly-crm",
+    "Finly CRM (koppelt met Adviesbox)"
+   ]
+  ],
+  "afbeelding": null
+ },
+ {
+  "slug": "findata-nl",
+  "naam": "Findata.nl",
+  "url": "https://findata.nl/",
+  "ondertitel": "Verwijst naar Blinqx Verzekering & Hypotheek",
+  "tekst": [
+   "Findata.nl verwijst door naar de website van Blinqx Verzekering & Hypotheek: het alles-in-één platform eBlinqx waarmee je volledig inzicht in je klanten krijgt."
+  ],
+  "gerelateerd": [
+   [
+    "procesversneller",
+    "Proces-versneller: brondata ophalen"
+   ]
+  ],
+  "afbeelding": "bronnen/sites/findata-nl.webp"
+ },
+ {
+  "slug": "my-tp-net",
+  "naam": "My-TP.net",
+  "url": "https://my-tp.net/",
+  "ondertitel": "My TP is onderdeel van Blinqx Verzekering & Hypotheek",
+  "tekst": [
+   "My TP is geïntegreerd in het aanbod van Blinqx Verzekering & Hypotheek, als onderdeel van één platform. Met My TP vergelijk je verzekeringen.",
+   "My-TP.net verwijst door naar de pagina over My TP op de website van Blinqx Verzekering & Hypotheek."
+  ],
+  "gerelateerd": [
+   [
+    "video/in-een-klik-verzekeringen-vergelijken-met-my-tp",
+    "Webinar: in één klik verzekeringen vergelijken met My TP"
+   ]
+  ],
+  "afbeelding": "bronnen/sites/my-tp-net.webp"
+ },
+ {
+  "slug": "finrust-nl",
+  "naam": "Finrust.nl",
+  "url": "https://finrust.nl/",
+  "ondertitel": "FinRust is onderdeel van Blinqx Verzekering & Hypotheek",
+  "tekst": [
+   "FinRust is adviessoftware die adviseurs met een snel proces en heldere rapporten helpt klanten beter en completer te bedienen, ‘execution only’ te vermijden en onderhoud op de hypotheek- en verzekeringsportefeuille vorm te geven.",
+   "FinRust is geïntegreerd in het aanbod van Blinqx Verzekering & Hypotheek; finrust.nl verwijst door naar de pagina over FinRust op de website van Blinqx."
+  ],
+  "gerelateerd": [
+   [
+    "video/finrust",
+    "FinRust-video's"
+   ],
+   [
+    "video/data-van-eblinqx-naar-finrust",
+    "Video: data van eBlinqx naar FinRust"
+   ]
+  ],
+  "afbeelding": "bronnen/sites/finrust-nl.webp"
+ },
+ {
+  "slug": "finly-nl",
+  "naam": "Finly.nl",
+  "url": "https://finly.nl/",
+  "ondertitel": "Online software voor advies op afstand",
+  "tekst": [
+   "Finly is online software voor efficiënt en klantvriendelijk klantcontact in de financiële dienstverlening, met onder meer webcamadvies, het Finly CRM, slimme formulieren en workflows.",
+   "Op finly.nl log je in op Finly. Meer over het CRM lees je op de pagina Finly CRM."
+  ],
+  "gerelateerd": [
+   [
+    "finly-crm",
+    "Finly CRM"
+   ]
+  ],
+  "afbeelding": "bronnen/finly/logo.webp"
+ },
+ {
+  "slug": "yes-co-nl",
+  "naam": "Yes-co.nl",
+  "url": "https://www.yes-co.nl/",
+  "ondertitel": "Makelaarssoftware",
+  "tekst": [
+   "Yes-co is CRM-software voor makelaars: objecten en relaties beheren en publiceren naar Funda en andere kanalen, voor een vast en laag maandbedrag. Je bepaalt zelf welke extra functionaliteiten je activeert.",
+   "Ook grote kantoren met meerdere vestigingen werken in één systeem met verschillende toegangsniveaus, en woningzoekers krijgen realtime woningaanbod via MijnHuiszaken."
+  ],
+  "gerelateerd": [
+   [
+    "yes-co",
+    "Makelaar Software: Yes-co"
+   ],
+   [
+    "tools-voor-vastgoed",
+    "Tools voor vastgoed"
+   ]
+  ],
+  "afbeelding": "bronnen/sites/yes-co-nl.webp"
+ },
+ {
+  "slug": "mijnhuiszaken-nl",
+  "naam": "MijnHuiszaken.nl",
+  "url": "https://mijnhuiszaken.nl/",
+  "ondertitel": "De klantomgeving van MijnHuiszaken",
+  "tekst": [
+   "Op MijnHuiszaken.nl loggen woningzoekers en huiseigenaren in op hun eigen omgeving: het actuele woningaanbod, e-mailalerts, de geschatte waarde van hun woning en contact met hun adviseur en makelaar."
+  ],
+  "gerelateerd": [
+   [
+    "mijnhuiszaken",
+    "MijnHuiszaken voor adviseurs"
+   ],
+   [
+    "video/mijnhuiszaken-voor-hypotheekadviseurs",
+    "Video: MijnHuiszaken voor hypotheekadviseurs"
+   ]
+  ],
+  "afbeelding": "bronnen/mijnhuiszaken/image-dashboard.webp"
+ },
+ {
+  "slug": "hypotheekcijfer-nl",
+  "naam": "Hypotheekcijfer.nl",
+  "url": "https://www.hypotheekcijfer.nl/",
+  "ondertitel": "Wat is uw hypotheekcijfer?",
+  "tekst": [
+   "Met de hypotheekcheck op Hypotheekcijfer.nl bepaalt de consument zijn hypotheekcijfer en krijgt hij direct inzicht in de betaalbaarheid van zijn hypotheek, nu en in de toekomst: bijvoorbeeld als hij met pensioen gaat, als de hypotheekrenteaftrek eindigt of als de einddatum van de hypotheek nadert.",
+   "De consument ontvangt van zijn geldverstrekker een brief met een persoonlijke code en start daarmee de check. Daarna volgen tips en een rapport. Vragen? Hypotheekcijfer.nl is bereikbaar op werkdagen van 09:00 tot 17:00 uur via 020 758 21 11 of info@hypotheekcijfer.nl."
+  ],
+  "gerelateerd": [
+   [
+    "banking-insurance",
+    "Banking & Insurance"
+   ]
+  ],
+  "afbeelding": "bronnen/sites/hypotheekcijfer-nl.webp"
+ },
+ {
+  "slug": "pensioencijfer-nl",
+  "naam": "Pensioencijfer.nl",
+  "url": "https://www.pensioencijfer.nl/",
+  "ondertitel": "Aandacht voor je pensioen",
+  "tekst": [
+   "Pensioencijfer.nl helpt consumenten aandacht te geven aan hun pensioen, met één helder cijfer. Het werkt volgens het bewezen principe van Hypotheekcijfer.nl, toegepast op pensioen.",
+   "De Kring van Pensioenspecialisten (KPS) riep Pensioencijfer.nl uit tot winnaar van de KPS Hackathon 2024. De jury: bewezen succesvol in de hypotheekbranche met Hypotheekcijfer.nl, bestaande technieken gecombineerd met een cijfer, en het past goed bij doorlopend beheer en nodigt consumenten uit zich te verdiepen."
+  ],
+  "gerelateerd": [
+   [
+    "banking-insurance",
+    "Banking & Insurance"
+   ]
+  ],
+  "afbeelding": "bronnen/sites/pensioencijfer-nl.webp"
+ },
+ {
+  "slug": "duurzaamheidsprofiel-nl",
+  "naam": "Duurzaamheidsprofiel.nl",
+  "url": "https://www.duurzaamheidsprofiel.nl/",
+  "ondertitel": "Gratis duurzaamheidsrapport van een woning",
+  "tekst": [
+   "Vul postcode en huisnummer in en download direct het gratis Duurzaamheidsprofiel van een (toekomstige) woning: hoe de woning scoort in energieverbruik en hoe je dat verlaagt, bijvoorbeeld door beter isoleren of slimmer verwarmen.",
+   "Een duurzamere woning betekent lagere maandlasten, meer wooncomfort, een beter milieu, een hogere verkoopprijs en soms rentekorting. Het initiatief wordt beheerd door Blinqx (hallo@blinqx.tech, 020 758 21 11)."
+  ],
+  "gerelateerd": [
+   [
+    "partners/duurzaamheidsprofiel-gratis-duurzaamheidsrapport",
+    "Partner: Duurzaamheidsprofiel"
+   ],
+   [
+    "tools-voor-vastgoed",
+    "Tools voor vastgoed"
+   ]
+  ],
+  "afbeelding": "bronnen/sites/duurzaamheidsprofiel-nl.webp"
+ },
+ {
+  "slug": "finconnect-nl",
+  "naam": "Finconnect.nl",
+  "url": "https://finconnect.nl/",
+  "ondertitel": "FinConnect is onderdeel van Blinqx Verzekering & Hypotheek",
+  "tekst": [
+   "Met de overname van FinConnect door Blinqx gaat FinConnect verder als onderdeel van de totaaloplossing van Blinqx: slimme formulieren en naverrekenen.",
+   "Finconnect.nl verwijst door naar de pagina over FinConnect op de website van Blinqx. De releasenotes van FinConnect vind je op deze supportsite."
+  ],
+  "gerelateerd": [
+   [
+    "releasenotes-finconnect",
+    "Releasenotes FinConnect"
+   ]
+  ],
+  "afbeelding": "bronnen/sites/finconnect-nl.webp"
+ },
+ {
+  "slug": "hollandwebservices-nl",
+  "naam": "Hollandwebservices.nl",
+  "url": "https://www.hollandwebservices.nl/",
+  "ondertitel": "Holland Webservices",
+  "tekst": [
+   "Hollandwebservices.nl hoort bij de websites rondom Blinqx Verzekering & Hypotheek en de Nationale Hypotheekbond. De website is op dit moment (november 2026) niet bereikbaar."
+  ],
+  "gerelateerd": [
+   [
+    "websitetools",
+    "Websitetools"
+   ]
+  ],
+  "afbeelding": null
+ },
+ {
+  "slug": "rwwr-nl",
+  "naam": "Rwwr.nl",
+  "url": "https://rwwr.nl/",
+  "ondertitel": "Gratis woningwaarderapport",
+  "tekst": [
+   "Rwwr.nl verwijst door naar het gratis woningwaarderapport: ideaal voor de hypotheekadviseur en zijn klanten. Geef je klant een geautomatiseerd overzicht van de waarde van zijn woning, een sterke aanleiding voor een gesprek."
+  ],
+  "gerelateerd": [
+   [
+    "woningwaarderapport",
+    "Woningwaarderapport"
+   ],
+   [
+    "partners/gratis-woningwaarde-rapport",
+    "Partner: Gratis woningwaarde-rapport"
+   ]
+  ],
+  "afbeelding": "bronnen/yes-co/tvv-woningwaarderapport.webp"
+ },
+ {
+  "slug": "looptijdrente-nl",
+  "naam": "Looptijdrente.nl",
+  "url": "https://www.looptijdrente.nl/",
+  "ondertitel": "Hoeveel kunt u besparen?",
+  "tekst": [
+   "De looptijdrente geeft een veel beter beeld van de totale kosten van een hypotheek gedurende de hele looptijd. Hypotheekrentes worden meestal vergeleken op de aanvangsrente, zonder rekening te houden met het vervallen van renteopslagen.",
+   "Bij de looptijdrente vervalt de renteopslag automatisch als er voldoende is afgelost: zodra de lening in een lagere risicoklasse valt, verlaagt de geldverstrekker de rente. Het verschil is vooral groot bij lineaire en annuïtaire hypotheken; bij aflossingsvrij en meestal bij NHG speelt het niet."
+  ],
+  "gerelateerd": [
+   [
+    "video/automatisch-verlagen-risico-opslag-hypotheekbond-bij-radar-2",
+    "Video: automatisch verlagen risico-opslag"
+   ]
+  ],
+  "afbeelding": "bronnen/sites/looptijdrente-nl.webp"
+ },
+ {
+  "slug": "hypotheekbos-nl",
+  "naam": "Hypotheekbos.nl",
+  "url": "https://www.hypotheekbos.nl/",
+  "ondertitel": "Plant je mee? Het Nationale Hypotheekbos",
+  "tekst": [
+   "Het Hypotheekbos is een initiatief van de Nationale Hypotheekbond en Blinqx. Samen met adviseurs en hun relaties planten we bomen: inmiddels zijn er ruim 15.000 bomen de grond in gegaan. Op 12 maart 2022 ging de eerste spa de grond in.",
+   "Bomen planten helpt CO₂ terug te dringen en draagt bij aan biodiversiteit en beter grondwater. Partner Life Terra heeft er een onderwijsprogramma voor kinderen bij ontwikkeld. Bij een donatie van 100 bomen of meer word je vermeld als partner en ontvang je een uitnodiging voor de bomenplantdagen."
+  ],
+  "gerelateerd": [],
+  "afbeelding": "bronnen/sites/hypotheekbos-nl.webp"
+ },
+ {
+  "slug": "schermdelen-nl",
+  "naam": "Schermdelen.nl",
+  "url": "https://schermdelen.nl/",
+  "ondertitel": "Meekijken op het scherm van je adviseur",
+  "tekst": [
+   "Via Schermdelen.nl kijkt de klant mee op het scherm van zijn adviseur: direct videocontact zonder app of download, en veilig bestanden delen. De klant vult de sessiecode van de adviseur en zijn naam in en is direct verbonden.",
+   "Schermdelen.nl is onderdeel van Finly, a Blinqx company."
+  ],
+  "gerelateerd": [
+   [
+    "finly-crm",
+    "Finly CRM"
+   ],
+   [
+    "contact",
+    "Contact support (scherm delen met support)"
+   ]
+  ],
+  "afbeelding": "bronnen/sites/schermdelen-nl.webp"
+ },
+ {
+  "slug": "nazorg-formulieren-nl",
+  "naam": "Nazorg-formulieren.nl",
+  "url": "https://www.nazorg-formulieren.nl/",
+  "ondertitel": "Complete nazorgscans voor beheer en nazorg van je portefeuille",
+  "tekst": [
+   "Om nazorg en actief klantbeheer in te vullen zijn er 20 slimme nazorgscans waarmee je direct kunt beginnen. Daarmee geef je invulling aan je zorgplicht.",
+   "Je stuurt de formulieren geautomatiseerd naar de klant; reminders en het beheer van alle reacties zijn geregeld. Zo voorkom je dat bestaande klanten weglopen en haal je meer uit je huidige klanten."
+  ],
+  "gerelateerd": [
+   [
+    "actiefbeheerscan",
+    "Actiefbeheerscan"
+   ],
+   [
+    "kennisbank/online-formulieren-versturen",
+    "Digitale formulieren versturen"
+   ]
+  ],
+  "afbeelding": "bronnen/sites/nazorg-formulieren-nl.webp"
+ },
+ {
+  "slug": "beheer-mijnhuiszaken-nl",
+  "naam": "Beheer.mijnhuiszaken.nl",
+  "url": "https://beheer.mijnhuiszaken.nl/",
+  "ondertitel": "Beheeromgeving van MijnHuiszaken voor adviseurs",
+  "tekst": [
+   "In de beheeromgeving van MijnHuiszaken maak je als adviseur direct zelf het zoekprofiel voor je klant aan. Geen wachten, geen drempel: de klant zit bij je aan tafel en verlaat het gesprek met een werkende zoekopdracht."
+  ],
+  "gerelateerd": [
+   [
+    "mijnhuiszaken",
+    "MijnHuiszaken voor adviseurs"
+   ],
+   [
+    "partners/mijnhuiszaken",
+    "Partner: MijnHuiszaken"
+   ]
+  ],
+  "afbeelding": "bronnen/mijnhuiszaken/images-hero-desktop.webp"
+ },
+ {
+  "slug": "tulpmakelaars-nl",
+  "naam": "Tulpmakelaars.nl",
+  "url": "https://www.tulpmakelaars.nl/",
+  "ondertitel": "Tulp Makelaars",
+  "tekst": [
+   "Bij Tulp Makelaars krijg je je eigen team voor aankoop-, verkoop- en hypotheekadvies: alles goed en snel geregeld op één adres. Woningzoekers ontvangen realtime het nieuwste woningaanbod en begeleiding van hun eigen aankoopteam.",
+   "Met de makelaarszoeker vind je een aankoop- of verkoopmakelaar in de buurt, en via MijnHuiszaken zie je hoeveel mensen er op zoek zijn naar een woning zoals de jouwe."
+  ],
+  "gerelateerd": [
+   [
+    "mijnhuiszaken",
+    "MijnHuiszaken"
+   ],
+   [
+    "yes-co",
+    "Makelaar Software: Yes-co"
+   ]
+  ],
+  "afbeelding": "bronnen/sites/tulpmakelaars-nl.webp"
+ },
+ {
+  "slug": "hypotheekservicegesprek-nl",
+  "naam": "Hypotheekservicegesprek.nl",
+  "url": "https://www.hypotheekservicegesprek.nl/",
+  "ondertitel": "Een service van je eigen adviseur",
+  "tekst": [
+   "Via Hypotheekservicegesprek.nl nodigt een hypotheek- of financieel adviseur zijn klant uit voor een vragenlijst. Zo houdt de adviseur de gegevens up-to-date en beoordeelt hij de situatie opnieuw, als onderdeel van de nazorg.",
+   "In de uitnodiging ziet de klant welke adviseur hem gevraagd heeft informatie te delen."
+  ],
+  "gerelateerd": [
+   [
+    "actiefbeheerscan",
+    "Actiefbeheerscan"
+   ]
+  ],
+  "afbeelding": "bronnen/sites/hypotheekservicegesprek-nl.webp"
+ },
+ {
+  "slug": "webdelen-nl",
+  "naam": "Webdelen.nl",
+  "url": "https://www.webdelen.nl/",
+  "ondertitel": "Webcamadvies, videobellen en scherm delen",
+  "tekst": [
+   "Met Webdelen.nl voer je webcamadvies: videobellen, je klant laten meekijken op je scherm, samen berekeningen en aantekeningen maken en chatten. Ook gesprekken met meerdere deelnemers zijn geen probleem.",
+   "Webdelen.nl is gebaseerd op Google Meet. Voor elke vergadering wordt automatisch een unieke link gemaakt; de klant klikt op de link en zit in het gesprek."
+  ],
+  "gerelateerd": [
+   [
+    "finly-crm",
+    "Finly CRM"
+   ]
+  ],
+  "afbeelding": "bronnen/sites/webdelen-nl.webp"
+ }
+]
