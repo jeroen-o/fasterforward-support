@@ -763,5 +763,226 @@
   ],
   "afbeelding": "bronnen/sites/toetsinkomenberekenen-nl.webp",
   "logo": "bronnen/sites/logo-toetsinkomenberekenen-nl.webp"
+ },
+ {
+  "slug": "verzekeringhypotheek-blinqx-tech",
+  "naam": "Blinqx Verzekering & Hypotheek",
+  "url": "https://verzekeringhypotheek.blinqx.tech/",
+  "ondertitel": "De website van Blinqx Verzekering & Hypotheek: voor financieel adviseurs die vooruit denken",
+  "tekst": [
+   "Blinqx Verzekering & Hypotheek ontwikkelt eBlinqx: een alles-in-één platform dat zorgt voor optimale klantbinding in elke fase en waarmee je volledig inzicht in je klanten krijgt. Met passie voor de sector en échte kennis van zaken ontwikkelt Blinqx het platform van de toekomst, van en voor financieel adviseurs."
+  ],
+  "secties": [
+   [
+    "eBlinqx",
+    [
+     "eBlinqx V&H Compleet, eBlinqx Hypotheek, eBlinqx Verzekering, eBlinqx Volmacht, eBlinqx CRM en AI in eBlinqx."
+    ]
+   ],
+   [
+    "Add-ons en meer van Blinqx",
+    [
+     "Add-ons: Quinn Mail, Risicomanagement, Premievergelijk, Signalen, KYC en de Procesversneller.",
+     "Meer van Blinqx: Naverrekenen, Slimme Formulieren, Klantportaal, Automatisch Actief Klantbeheer, Financiële Planner, Engage, eBlinqx Fiscaal en integraties."
+    ]
+   ],
+   [
+    "Voor wie?",
+    [
+     "Hypotheekadviseurs, verzekeringsadviseurs, financieel advieskantoren, volmachten, serviceproviders, beurzen, adviesketens en geldverstrekkers."
+    ]
+   ],
+   [
+    "Meer op de website",
+    [
+     "Over ons, het team, de locaties, de overstapservice, vacatures, blogs en nieuws, events, de Academy, de partners en de podcast Business Boost. Alle pagina's van de website zijn ook doorzoekbaar via de zoekfunctie van deze supportsite."
+    ]
+   ]
+  ],
+  "gerelateerd": [
+   [
+    "partners",
+    "Partners van Blinqx"
+   ],
+   [
+    "banking-insurance",
+    "Banking & Insurance"
+   ],
+   [
+    "video",
+    "Video's"
+   ]
+  ],
+  "afbeelding": "bronnen/sites/verzekeringhypotheek-blinqx-tech.webp",
+  "logo": "bronnen/sites/logo-verzekeringhypotheek-blinqx-tech.webp"
+ },
+ {
+  "slug": "hyarchis-com",
+  "naam": "Hyarchis.com",
+  "url": "https://www.hyarchis.com/nl/",
+  "ondertitel": "AI-gedreven document management, compliance en KYC",
+  "tekst": [
+   "Hyarchis biedt AI-powered fintech-oplossingen voor regulatory compliance en operationele efficiëntie: document management, compliance management en KYC Lifecycle Management."
+  ],
+  "secties": [
+   [
+    "Document Management",
+    [
+     "Haal het maximale uit je digitale archief: dankzij AI worden gegevens geclassificeerd opgeslagen, teruggehaald en gedeeld, en monitor je de audit trail van wie wanneer aan welk document heeft gewerkt."
+    ]
+   ],
+   [
+    "Compliance Management",
+    [
+     "Controleer de juistheid van klantgegevens, doe PEP- en sanctiechecks en sla klantgegevens veilig op. Met een gestructureerd proces maak je van klant-onboarding een kans in plaats van een verplichting."
+    ]
+   ],
+   [
+    "KYC Lifecycle Management",
+    [
+     "Houd de controle over de hele customer journey: van onboarding tot monitoring en remediation. Haal alles uit je klantgegevens, onboard moeiteloos nieuwe klanten en voldoe aan wet- en regelgeving."
+    ]
+   ]
+  ],
+  "gerelateerd": [
+   [
+    "sites/accountancy-blinqx-ai",
+    "Blinqx Accountancy & Tax"
+   ]
+  ],
+  "afbeelding": "bronnen/sites/hyarchis-com.webp"
+ },
+ {
+  "slug": "accountancy-blinqx-ai",
+  "naam": "Blinqx Accountancy & Tax",
+  "url": "https://accountancy.blinqx.ai/",
+  "ondertitel": "AI-gedreven software voor accountants: één modulair platform",
+  "tekst": [
+   "Blinqx Accountancy & Tax is gebouwd op AI: van fiscale software tot CRM, HR, compliance en rapportage, versterkt met AI-agents die repetitief werk overnemen. Eén modulair platform dat meegroeit met je kantoor; je kiest zelf welke oplossingen je combineert."
+  ],
+  "secties": [
+   [
+    "Dienstverlening",
+    [
+     "eBlinqx Fiscaal en Fiscale aangifte (IB, VPB en OB), Wealth Monitor, Rapportage en Pensioen & Life-event advies."
+    ]
+   ],
+   [
+    "Kantoormanagement",
+    [
+     "CRM & Kantoor Manager, Document & Data management (veilig samenwerken met je klant vanuit één centrale omgeving, met automatische classificatie), KYC & Compliancy en HR & Personeelsbeheer."
+    ]
+   ],
+   [
+    "Starten",
+    [
+     "Plan een adviesgesprek of vraag een gratis proefaccount aan via de website. Er is ook informatie over overstappen van fiscale software, een kennisbank en support."
+    ]
+   ]
+  ],
+  "gerelateerd": [
+   [
+    "sites/fiscale-aangifte",
+    "Fiscale aangifte"
+   ],
+   [
+    "sites/pensioen-life-event-advies",
+    "Pensioen & Life-event advies"
+   ],
+   [
+    "sites/hyarchis-com",
+    "Hyarchis.com"
+   ]
+  ],
+  "afbeelding": "bronnen/sites/accountancy-blinqx-ai.webp",
+  "logo": "bronnen/sites/logo-accountancy-blinqx-ai.webp"
+ },
+ {
+  "slug": "pensioen-life-event-advies",
+  "naam": "Pensioen & Life-event advies",
+  "url": "https://accountancy.blinqx.ai/modulair-platform/pensioen-life-event-advies",
+  "ondertitel": "Blinqx Accountancy & Tax: financieel inzicht bij elk life-event",
+  "tekst": [
+   "Met Pensioen & Life-event advies reken je eenvoudig scenario's door voor je klant en maak je de (belasting)effecten van verschillende keuzes inzichtelijk. Zo geef je gericht advies op de momenten die ertoe doen."
+  ],
+  "secties": [
+   [
+    "Wat kun je ermee?",
+    [
+     "Geef klanten financieel inzicht bij elk life-event.",
+     "Bepaal levensdoelen samen met je klant en monitor ze op haalbaarheid.",
+     "Bespaar tijd met rekentools voor de benaderde marktwaarde (BMW) en ODV, en robotiseer je waarderingsberekening.",
+     "Combineer met andere oplossingen uit de Accountancy & Tax-suite en hergebruik de data."
+    ]
+   ],
+   [
+    "Modules",
+    [
+     "Benaderde Marktwaarde (BMW), Flexpensioen, Uit elkaar en Wealth Monitor: los te gebruiken of te combineren."
+    ]
+   ],
+   [
+    "Inrichting en beveiliging",
+    [
+     "Rapporten met je eigen logo en vestigingen, gebruikersrollen en -rechten, inloggen met 2FA en externe toegang via Microsoft Entra ID. Met de klantenkaart en het dossieroverzicht houd je overzicht, en via de API koppel je je datawarehouse of CRM."
+    ]
+   ]
+  ],
+  "gerelateerd": [
+   [
+    "sites/accountancy-blinqx-ai",
+    "Blinqx Accountancy & Tax"
+   ],
+   [
+    "sites/fiscale-aangifte",
+    "Fiscale aangifte"
+   ],
+   [
+    "sites/pensioencijfer-nl",
+    "Pensioencijfer.nl"
+   ]
+  ],
+  "afbeelding": "bronnen/sites/pensioen-life-event-advies.webp",
+  "logo": "bronnen/sites/logo-pensioen-life-event-advies.webp"
+ },
+ {
+  "slug": "fiscale-aangifte",
+  "naam": "Fiscale aangifte",
+  "url": "https://accountancy.blinqx.ai/modulair-platform/fiscale-aangifte",
+  "ondertitel": "Blinqx Accountancy & Tax: aangiftesoftware voor IB, VPB en OB met AI",
+  "tekst": [
+   "Complete aangiftesoftware voor alle aangiftestromen, met AI die het voorwerk doet. Met eBlinqx Fiscaal heb je overzicht vanuit één centrale databron en automatiseer je het uitvragen van informatie, machtigingen, uitwerking en accordering van aangiftes."
+  ],
+  "secties": [
+   [
+    "Waarom kantoren ervoor kiezen",
+    [
+     "Automatische werkvoorraad: machtigingen, uitstelverzoeken en klantverzoeken worden automatisch opgehaald en klaargezet.",
+     "Gerobotiseerd aangifteproces, van planning tot aangifte.",
+     "Realtime inzicht per klant in het belastbare bedrag, de status en de voortgang van je team.",
+     "Change history per medewerker, gekoppeld aan je CRM.",
+     "Een centraal klantoverzicht waarin je bezittingen koppelt aan gerelateerde personen en ondernemingen."
+    ]
+   ],
+   [
+    "Modules",
+    [
+     "Inkomstenbelasting (IB), met onder meer P- en W-biljet, machtigingen via VIA en SBA, vooraf ingevulde aangifte, uitstelregeling en voorlopige aanslagen.",
+     "Omzetbelasting (OB) en Vennootschapsbelasting (VPB). Alle modules zijn los af te nemen; per belastingsoort bepaal je zelf hoeveel dienstentegoed je afneemt."
+    ]
+   ]
+  ],
+  "gerelateerd": [
+   [
+    "sites/accountancy-blinqx-ai",
+    "Blinqx Accountancy & Tax"
+   ],
+   [
+    "sites/pensioen-life-event-advies",
+    "Pensioen & Life-event advies"
+   ]
+  ],
+  "afbeelding": "bronnen/sites/fiscale-aangifte.webp",
+  "logo": "bronnen/sites/logo-fiscale-aangifte.webp"
  }
 ]

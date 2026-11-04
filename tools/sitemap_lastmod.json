@@ -3200,7 +3200,11 @@
 "d": "2026-11-04"
 },
 "sites": {
-"h": "d593d630a845078c",
+"h": "05bb59dda86d02f1",
+"d": "2026-11-04"
+},
+"sites/accountancy-blinqx-ai": {
+"h": "b6f68f03390c5c0c",
 "d": "2026-11-04"
 },
 "sites/actiefbeheerscan-nl": {
@@ -3251,12 +3255,20 @@
 "h": "f2953eabf6383822",
 "d": "2026-11-04"
 },
+"sites/fiscale-aangifte": {
+"h": "644fa3843fbc384e",
+"d": "2026-11-04"
+},
 "sites/hdn-nl": {
 "h": "d8610064e2fe82a2",
 "d": "2026-11-04"
 },
 "sites/hippoline-nl": {
 "h": "0abb90f0d82a9123",
+"d": "2026-11-04"
+},
+"sites/hyarchis-com": {
+"h": "8d0c14ca8a5dccf1",
 "d": "2026-11-04"
 },
 "sites/hypotheekbond-nl": {
@@ -3295,6 +3307,10 @@
 "h": "8a79ea6b92604902",
 "d": "2026-11-04"
 },
+"sites/pensioen-life-event-advies": {
+"h": "4b06d0e7e641a439",
+"d": "2026-11-04"
+},
 "sites/pensioencijfer-nl": {
 "h": "c0cbe18de83fd83d",
 "d": "2026-11-04"
@@ -3329,6 +3345,10 @@
 },
 "sites/veiligophalen-nl": {
 "h": "89bf1c763511cb1e",
+"d": "2026-11-04"
+},
+"sites/verzekeringhypotheek-blinqx-tech": {
+"h": "008e4d097fa46e22",
 "d": "2026-11-04"
 },
 "sites/webdelen-nl": {
