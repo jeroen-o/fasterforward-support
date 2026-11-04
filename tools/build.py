@@ -2720,7 +2720,7 @@ def render_sitemap(pages):
     nieuw = {}
     for f in glob.glob(os.path.join(ROOT, "**", "index.html"), recursive=True):
         rel = os.path.relpath(os.path.dirname(f), ROOT).replace(os.sep, "/")
-        if rel.split("/")[0] in ("bronnen", "tools", "zoeken", "assets", ".github", "downloads"):
+        if rel.split("/")[0] in ("bronnen", "tools", "zoeken", "assets", ".github"):
             continue
         with open(f, "rb") as fh:
             inhoud = fh.read()
