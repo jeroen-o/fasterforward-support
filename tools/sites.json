@@ -39,7 +39,8 @@
     "Releasenotes"
    ]
   ],
-  "afbeelding": "bronnen/sites/fasterforward-nl.webp"
+  "afbeelding": "bronnen/sites/fasterforward-nl.webp",
+  "logo": "bronnen/sites/logo-fasterforward-nl.webp"
  },
  {
   "slug": "uwkluis-nl",
@@ -60,7 +61,8 @@
     "Video: Uwkluis – Veilig Ophalen"
    ]
   ],
-  "afbeelding": "bronnen/sites/uwkluis-nl.webp"
+  "afbeelding": "bronnen/sites/uwkluis-nl.webp",
+  "logo": "bronnen/sites/logo-uwkluis-nl.webp"
  },
  {
   "slug": "veiligophalen-nl",
@@ -119,7 +121,8 @@
     "Releasenotes DIAS Assurantie"
    ]
   ],
-  "afbeelding": "bronnen/sites/dias-nl.webp"
+  "afbeelding": "bronnen/sites/dias-nl.webp",
+  "logo": "bronnen/sites/logo-dias-nl.webp"
  },
  {
   "slug": "adviesbox-nl",
@@ -136,7 +139,8 @@
     "Finly CRM (koppelt met Adviesbox)"
    ]
   ],
-  "afbeelding": "bronnen/sites/adviesbox-nl.webp"
+  "afbeelding": "bronnen/sites/adviesbox-nl.webp",
+  "logo": "bronnen/sites/adviesbox-nl.webp"
  },
  {
   "slug": "findata-nl",
@@ -152,7 +156,8 @@
     "Proces-versneller: brondata ophalen"
    ]
   ],
-  "afbeelding": "bronnen/sites/findata-nl.webp"
+  "afbeelding": "bronnen/sites/findata-nl.webp",
+  "logo": "bronnen/sites/logo-findata-nl.webp"
  },
  {
   "slug": "my-tp-net",
@@ -169,7 +174,8 @@
     "Webinar: in één klik verzekeringen vergelijken met My TP"
    ]
   ],
-  "afbeelding": "bronnen/sites/my-tp-net.webp"
+  "afbeelding": "bronnen/sites/my-tp-net.webp",
+  "logo": "bronnen/sites/logo-my-tp-net.webp"
  },
  {
   "slug": "finrust-nl",
@@ -190,7 +196,8 @@
     "Video: data van eBlinqx naar FinRust"
    ]
   ],
-  "afbeelding": "bronnen/sites/finrust-nl.webp"
+  "afbeelding": "bronnen/sites/finrust-nl.webp",
+  "logo": "bronnen/sites/logo-finrust-nl.webp"
  },
  {
   "slug": "finly-nl",
@@ -282,7 +289,8 @@
     "Banking & Insurance"
    ]
   ],
-  "afbeelding": "bronnen/sites/pensioencijfer-nl.webp"
+  "afbeelding": "bronnen/sites/pensioencijfer-nl.webp",
+  "logo": "bronnen/sites/logo-pensioencijfer-nl.webp"
  },
  {
   "slug": "duurzaamheidsprofiel-nl",
@@ -320,23 +328,8 @@
     "Releasenotes FinConnect"
    ]
   ],
-  "afbeelding": "bronnen/sites/finconnect-nl.webp"
- },
- {
-  "slug": "hollandwebservices-nl",
-  "naam": "Hollandwebservices.nl",
-  "url": "https://www.hollandwebservices.nl/",
-  "ondertitel": "Holland Webservices",
-  "tekst": [
-   "Hollandwebservices.nl hoort bij de websites rondom Blinqx Verzekering & Hypotheek en de Nationale Hypotheekbond. De website is op dit moment (november 2026) niet bereikbaar."
-  ],
-  "gerelateerd": [
-   [
-    "websitetools",
-    "Websitetools"
-   ]
-  ],
-  "afbeelding": null
+  "afbeelding": "bronnen/sites/finconnect-nl.webp",
+  "logo": "bronnen/sites/logo-finconnect-nl.webp"
  },
  {
   "slug": "rwwr-nl",
@@ -503,5 +496,66 @@
    ]
   ],
   "afbeelding": "bronnen/sites/webdelen-nl.webp"
+ },
+ {
+  "slug": "aplaza-nl",
+  "naam": "Aplaza.nl",
+  "url": "https://aplaza.nl/",
+  "ondertitel": "Koppelt je softwaresysteem met verzekeraars en serviceproviders",
+  "tekst": [
+   "Aplaza koppelt de softwaresystemen van verzekeringsadviseurs met de extranetten van verzekeraars en serviceproviders. Daardoor hoef je nooit meer in te loggen bij de aanbieder en behoren dubbele invoer en tijdrovende administratieve handelingen tot het verleden. Al meer dan 1.700 verzekeringsadviseurs werken ermee.",
+   "Documenten en berichten komen direct in het juiste klantdossier, zodat je klantinformatie altijd up-to-date is, je minder fouten maakt en je klanten sneller helpt. Gegevens komen veilig binnen in je softwaresysteem. Voor het gebruik van Aplaza betaal je geen extra bijdrage aan Aplaza of je softwareleverancier."
+  ],
+  "gerelateerd": [
+   [
+    "categorien/aplaza",
+    "Kennisbank: Aplaza"
+   ]
+  ],
+  "afbeelding": null,
+  "logo": "bronnen/sites/logo-aplaza-nl.webp"
+ },
+ {
+  "slug": "renteadministratie-nl",
+  "naam": "Renteadministratie.nl",
+  "url": "https://www.renteadministratie.nl/nl/",
+  "ondertitel": "De alles-in-1 rentetool voor geldverstrekkers: van analyse tot publicatie",
+  "tekst": [
+   "Renteadministratie.nl is hypotheekrente-administratie- en analysesoftware van Blinqx voor geldverstrekkers. Het vereenvoudigt het hele renteproces: rentes verwerken volgens de goldensource-methode (iedereen werkt op één plek), analyseren met standaardanalyses en publiceren naar interne en externe locaties.",
+   "Ideaal voor geldverstrekkers die grip willen op het renteproces, analyses willen maken op basis van aangekondigde rentes, realtime inzicht willen in hun positie, realtime willen publiceren naar meer dan 500 websites en hun rentetarieven willen distribueren naar alle hypotheekadviseurs.",
+   "Abonnementen (volgens renteadministratie.nl, november 2026): Publicatie € 540 per maand en Analyse € 1.250 per maand. Vraag een demo aan via de website of bel 020 758 21 11."
+  ],
+  "gerelateerd": [
+   [
+    "banking-insurance",
+    "Banking & Insurance"
+   ],
+   [
+    "hypotheekrente-app",
+    "Hypotheekrente-app"
+   ]
+  ],
+  "afbeelding": "bronnen/sites/renteadministratie-nl.webp"
+ },
+ {
+  "slug": "actiefbeheerscan-nl",
+  "naam": "Actiefbeheerscan.nl",
+  "url": "https://www.actiefbeheerscan.nl/",
+  "ondertitel": "Eenvoudige nazorg, beheer en leads met digitale formulieren",
+  "tekst": [
+   "Met Actiefbeheerscan stuur je je klant een uitnodiging voor een digitaal formulier. De klant vult zijn actuele situatie in en jij ziet direct waar verbeteringen of besparingen mogelijk zijn.",
+   "Er zijn templates voor jaarlijkse nazorg, status hypotheek, extra aflossen, pensioen, overlijdensrisico, uitvaart-, schade-, bedrijfs- en autoverzekering en klanttevredenheid. Je past ze naar eigen inzicht aan of voegt eigen formulieren toe."
+  ],
+  "gerelateerd": [
+   [
+    "actiefbeheerscan",
+    "Actiefbeheerscan: alles over de digitale formulieren en tarieven"
+   ],
+   [
+    "sites/nazorg-formulieren-nl",
+    "Nazorg-formulieren.nl"
+   ]
+  ],
+  "afbeelding": "bronnen/actiefbeheerscan/header.webp"
  }
 ]

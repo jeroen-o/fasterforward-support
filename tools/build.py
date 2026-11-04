@@ -1281,7 +1281,7 @@ def render_search(pages, cats):
             idx.append({"t": f"{st['naam']}: {st['ondertitel']}", "h": f"sites/{st['slug']}/index.html", "c": "Websites", "k": "kennisbank",
                         "x": st["naam"] + " " + st["naam"].replace(".nl", "").replace(".net", "") + " " + st["url"] + " " + " ".join(st["tekst"])})
         idx.append({"t": "Banking & Insurance: Hypotheekcijfer.nl en Pensioencijfer.nl", "h": "banking-insurance/index.html", "c": "Banking & Insurance",
-                    "k": "kennisbank", "x": "banking insurance bank verzekeraar geldverstrekker hypotheekcijfer pensioencijfer hypotheekcheck pensioen cijfer"})
+                    "k": "kennisbank", "x": "banking insurance bank verzekeraar geldverstrekker hypotheekcijfer pensioencijfer hypotheekcheck pensioen cijfer renteadministratie rentetool rente publicatie analyse"})
         idx.append({"t": "Websites van Blinqx Verzekering & Hypotheek", "h": "sites/index.html", "c": "Websites", "k": "kennisbank",
                     "x": "websites domeinen links " + " ".join(st["naam"] for st in sites_laden())})
         idx.append({"t": "Finly CRM: klantgegevens, workflows en communicatie op één plek", "h": "finly-crm/index.html", "c": "Finly CRM",
@@ -2771,13 +2771,14 @@ def render_sites():
     for s in lijst:
         pg = Page("sites/" + s["slug"])
         rel = "".join(f'<li><a href="{pg.rel(p)}">{esc(l)}</a></li>' for p, l in s["gerelateerd"])
+        beeld = s.get("logo") or s.get("afbeelding")
         klein = ""
-        if s.get("afbeelding"):
+        if beeld:
             from PIL import Image
-            if Image.open(os.path.join(ROOT, s["afbeelding"])).width < 500:
-                klein = ' style="max-width:320px;margin:0 auto;display:block"'  # logo niet opblazen
-        fig = (f'<figure><a href="{esc(s["url"])}" target="_blank" rel="noopener"><img src="{pg.rel(s["afbeelding"])}" '
-               f'alt="{esc(s["naam"])}" loading="lazy"{klein}></a></figure>' if s.get("afbeelding") else "")
+            if s.get("logo") or Image.open(os.path.join(ROOT, beeld)).width < 500:
+                klein = ' style="max-width:340px;margin:0 auto;display:block"'  # logo niet opblazen
+        fig = (f'<figure><a href="{esc(s["url"])}" target="_blank" rel="noopener"><img src="{pg.rel(beeld)}" '
+               f'alt="Logo {esc(s["naam"])}" loading="lazy"{klein}></a></figure>' if beeld else "")
         body = f"""{crumbs(pg, [("Websites", "sites"), (s["naam"], None)])}
 <main class="subpage mhz"><div class="wrap">
   <h1>{esc(s["naam"])}</h1>
@@ -2789,12 +2790,16 @@ def render_sites():
   <p><a href="{pg.rel("sites")}">← Alle websites</a></p>
   <p class="src">Bron: <a href="{esc(s["url"])}" target="_blank" rel="noopener">{esc(s["naam"].lower())}</a> (stand 4 november 2026).</p>
 </div></main>"""
-        write("sites/" + s["slug"], layout(pg, f"{s['naam']}: {s['ondertitel']}", body, None, " ".join(s["tekst"])))
+        write("sites/" + s["slug"], layout(pg, f"{s['naam']}: {s['ondertitel']}", body, None, " ".join(s["tekst"])), kluis=False)
     # overzicht (alleen via footer en zoeker bereikbaar, geen tegel)
     pg = Page("sites")
-    kaarten = "".join(f'<a class="wtwhy pkaart" href="{pg.rel("sites/" + s["slug"])}">'
-                      + (f'<img src="{pg.rel(s["afbeelding"])}" alt="" loading="lazy">' if s.get("afbeelding") else "")
-                      + f'<h3>{esc(s["naam"])}</h3><p>{esc(s["ondertitel"])}</p></a>' for s in sorted(lijst, key=lambda x: x["naam"].lower()))
+    kaarten = "".join(
+        f'<div class="wtwhy sitekaart">'
+        + (f'<a class="sitebeeld{" logo" if s.get("logo") else ""}" href="{pg.rel("sites/" + s["slug"])}" tabindex="-1" aria-hidden="true">'
+           f'<img src="{pg.rel(s.get("logo") or s["afbeelding"])}" alt="" loading="lazy"></a>' if (s.get("logo") or s.get("afbeelding")) else "")
+        + f'<h3><a href="{pg.rel("sites/" + s["slug"])}">{esc(s["naam"])}</a></h3><p>{esc(s["ondertitel"])}</p>'
+        f'<p class="sitebtn"><a class="btn-out cta" href="{esc(s["url"])}" target="_blank" rel="noopener">Ga naar de website ↗</a></p></div>'
+        for s in sorted(lijst, key=lambda x: x["naam"].lower()))
     body = f"""{crumbs(pg, [("Websites", None)])}
 <main class="subpage mhz"><div class="wrap">
   <h1>Websites van Blinqx Verzekering &amp; Hypotheek</h1>
@@ -2802,28 +2807,31 @@ def render_sites():
   <div class="wtwhys pkaarten">{kaarten}</div>
 </div></main>"""
     write("sites", layout(pg, "Websites van Blinqx Verzekering & Hypotheek", body, None,
-                          "Overzicht van alle websites rondom eBlinqx, de Nationale Hypotheekbond en Blinqx Verzekering & Hypotheek."))
+                          "Overzicht van alle websites rondom eBlinqx, de Nationale Hypotheekbond en Blinqx Verzekering & Hypotheek."), kluis=False)
 
 
 def render_banking():
     """Tegel Banking & Insurance: Hypotheekcijfer.nl en Pensioencijfer.nl."""
     pg = Page("banking-insurance")
-    lijst = [s for s in sites_laden() if s["slug"] in ("hypotheekcijfer-nl", "pensioencijfer-nl")]
+    volg = ["hypotheekcijfer-nl", "pensioencijfer-nl", "renteadministratie-nl"]
+    lijst = sorted((s for s in sites_laden() if s["slug"] in volg), key=lambda s: volg.index(s["slug"]))
     blokken = "".join(
         f'<div class="mhz-duo"><div><h2 class="wth">{esc(s["naam"])}</h2><p><strong>{esc(s["ondertitel"])}</strong></p>'
         + "".join(f"<p>{esc(t)}</p>" for t in s["tekst"])
         + f'<p class="btn-row"><a class="btn-out cta" href="{esc(s["url"])}" target="_blank" rel="noopener">Naar {esc(s["naam"])} ↗</a>'
         f'<a class="btn-out" href="{pg.rel("sites/" + s["slug"])}">Meer over {esc(s["naam"])}</a></p></div>'
-        + (f'<figure><img src="{pg.rel(s["afbeelding"])}" alt="{esc(s["naam"])}" loading="lazy"></figure>' if s.get("afbeelding") else "")
+        + (f'<figure><img src="{pg.rel(s.get("logo") or s["afbeelding"])}" alt="{esc(s["naam"])}" loading="lazy"'
+           f'{chr(32) + "style=" + chr(34) + "max-width:340px;margin:0 auto;display:block" + chr(34) if s.get("logo") else ""}></figure>'
+           if (s.get("logo") or s.get("afbeelding")) else "")
         + "</div>" for s in lijst)
     body = f"""{crumbs(pg, [("Banking &amp; Insurance", None)])}
 <main class="subpage mhz"><div class="wrap">
   <h1>Banking &amp; Insurance</h1>
-  <p class="lead">Oplossingen voor banken, geldverstrekkers en verzekeraars om klanten zelf inzicht te geven in hun financiële situatie, met één helder cijfer.</p>
+  <p class="lead">Oplossingen voor banken, geldverstrekkers en verzekeraars: klanten zelf inzicht geven in hun financiële situatie met één helder cijfer, en grip op het renteproces van analyse tot publicatie.</p>
   {blokken}
   <p class="mhz-tip">Meer weten? Mail <a href="mailto:relatie-vh@blinqx.tech">relatie-vh@blinqx.tech</a> of bel <a href="tel:+31207582111">020 758 21 11</a>.</p>
 </div></main>"""
-    write("banking-insurance", layout(pg, "Banking & Insurance: Hypotheekcijfer.nl en Pensioencijfer.nl", body, None,
+    write("banking-insurance", layout(pg, "Banking & Insurance: Hypotheekcijfer.nl, Pensioencijfer.nl en Renteadministratie.nl", body, None,
                                       "Hypotheekcijfer.nl en Pensioencijfer.nl: klanten van banken en verzekeraars krijgen met één cijfer inzicht in de betaalbaarheid van hun hypotheek en in hun pensioen."))
 
 

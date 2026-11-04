@@ -58,7 +58,9 @@
 ## Websites
 
 - [Websites van Blinqx Verzekering & Hypotheek](https://support-eblinqx-connect.nl/sites/): Overzicht van alle websites rondom eBlinqx, de Nationale Hypotheekbond en Blinqx Verzekering & Hypotheek.
+- [Actiefbeheerscan.nl](https://support-eblinqx-connect.nl/sites/actiefbeheerscan-nl/): Met Actiefbeheerscan stuur je je klant een uitnodiging voor een digitaal formulier.
 - [Adviesbox.nl](https://support-eblinqx-connect.nl/sites/adviesbox-nl/): Adviesbox, tot begin 2013 bekend onder de namen Hypobox en Planningbox, ondersteunt de financieel adviseur bij het opstellen van een financieel advies: van…
+- [Aplaza.nl](https://support-eblinqx-connect.nl/sites/aplaza-nl/): Aplaza koppelt de softwaresystemen van verzekeringsadviseurs met de extranetten van verzekeraars en serviceproviders.
 - [Beheer.mijnhuiszaken.nl](https://support-eblinqx-connect.nl/sites/beheer-mijnhuiszaken-nl/): In de beheeromgeving van MijnHuiszaken maak je als adviseur direct zelf het zoekprofiel voor je klant aan.
 - [Dias.nl](https://support-eblinqx-connect.nl/sites/dias-nl/): DIAS is geïntegreerd in het aanbod van Blinqx Verzekering & Hypotheek, als onderdeel van één platform.
 - [Duurzaamheidsprofiel.nl](https://support-eblinqx-connect.nl/sites/duurzaamheidsprofiel-nl/): Vul postcode en huisnummer in en download direct het gratis Duurzaamheidsprofiel van een (toekomstige) woning: hoe de woning scoort in energieverbruik en hoe…
@@ -68,7 +70,6 @@
 - [Findata.nl](https://support-eblinqx-connect.nl/sites/findata-nl/): Findata.nl verwijst door naar de website van Blinqx Verzekering & Hypotheek: het alles-in-één platform eBlinqx waarmee je volledig inzicht in je klanten krijgt.
 - [Finly.nl](https://support-eblinqx-connect.nl/sites/finly-nl/): Finly is online software voor efficiënt en klantvriendelijk klantcontact in de financiële dienstverlening, met onder meer webcamadvies, het Finly CRM, slimme…
 - [Finrust.nl](https://support-eblinqx-connect.nl/sites/finrust-nl/): FinRust is adviessoftware die adviseurs met een snel proces en heldere rapporten helpt klanten beter en completer te bedienen, ‘execution only’ te vermijden…
-- [Hollandwebservices.nl](https://support-eblinqx-connect.nl/sites/hollandwebservices-nl/): Hollandwebservices.nl hoort bij de websites rondom Blinqx Verzekering & Hypotheek en de Nationale Hypotheekbond.
 - [Hypotheekbond.nl](https://support-eblinqx-connect.nl/sites/hypotheekbond-nl/): De Nationale Hypotheekbond vergelijkt en controleert hypotheken: niet alleen op rente, maar ook op alle overige kosten.
 - [Hypotheekbos.nl](https://support-eblinqx-connect.nl/sites/hypotheekbos-nl/): Het Hypotheekbos is een initiatief van de Nationale Hypotheekbond en Blinqx. Samen met adviseurs en hun relaties planten we bomen: inmiddels zijn er ruim…
 - [Hypotheekcijfer.nl](https://support-eblinqx-connect.nl/sites/hypotheekcijfer-nl/): Met de hypotheekcheck op Hypotheekcijfer.nl bepaalt de consument zijn hypotheekcijfer en krijgt hij direct inzicht in de betaalbaarheid van zijn hypotheek, nu…
@@ -78,10 +79,11 @@
 - [My-TP.net](https://support-eblinqx-connect.nl/sites/my-tp-net/): My TP is geïntegreerd in het aanbod van Blinqx Verzekering & Hypotheek, als onderdeel van één platform. Met My TP vergelijk je verzekeringen.
 - [Nazorg-formulieren.nl](https://support-eblinqx-connect.nl/sites/nazorg-formulieren-nl/): Om nazorg en actief klantbeheer in te vullen zijn er 20 slimme nazorgscans waarmee je direct kunt beginnen. Daarmee geef je invulling aan je zorgplicht.
 - [Pensioencijfer.nl](https://support-eblinqx-connect.nl/sites/pensioencijfer-nl/): Pensioencijfer.nl helpt consumenten aandacht te geven aan hun pensioen, met één helder cijfer.
+- [Renteadministratie.nl](https://support-eblinqx-connect.nl/sites/renteadministratie-nl/): Renteadministratie.nl is hypotheekrente-administratie- en analysesoftware van Blinqx voor geldverstrekkers.
 - [Rwwr.nl](https://support-eblinqx-connect.nl/sites/rwwr-nl/): Rwwr.nl verwijst door naar het gratis woningwaarderapport: ideaal voor de hypotheekadviseur en zijn klanten.
 - [Schermdelen.nl](https://support-eblinqx-connect.nl/sites/schermdelen-nl/): Via Schermdelen.nl kijkt de klant mee op het scherm van zijn adviseur: direct videocontact zonder app of download, en veilig bestanden delen.
 - [Tulpmakelaars.nl](https://support-eblinqx-connect.nl/sites/tulpmakelaars-nl/): Bij Tulp Makelaars krijg je je eigen team voor aankoop-, verkoop- en hypotheekadvies: alles goed en snel geregeld op één adres.
-- [UwKluis / Online klantportaal.nl](https://support-eblinqx-connect.nl/sites/uwkluis-nl/): Met het klantportaal (UwKluis / Online klantportaal) geef je je klant duidelijk overzicht en toegang tot al zijn financiële informatie op één centrale…
+- [Uwkluis.nl](https://support-eblinqx-connect.nl/sites/uwkluis-nl/): Met het klantportaal (UwKluis) geef je je klant duidelijk overzicht en toegang tot al zijn financiële informatie op één centrale, beveiligde plek.
 - [VeiligOphalen.nl](https://support-eblinqx-connect.nl/sites/veiligophalen-nl/): Voor een hypotheek, lening of verzekering heeft een financieel dienstverlener van alles van je klant nodig: gegevens die je niet zo 1-2-3 vindt.
 - [Webdelen.nl](https://support-eblinqx-connect.nl/sites/webdelen-nl/): Met Webdelen.nl voer je webcamadvies: videobellen, je klant laten meekijken op je scherm, samen berekeningen en aantekeningen maken en chatten.
 - [Yes-co.nl](https://support-eblinqx-connect.nl/sites/yes-co-nl/): Yes-co is CRM-software voor makelaars: objecten en relaties beheren en publiceren naar Funda en andere kanalen, voor een vast en laag maandbedrag.

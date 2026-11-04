@@ -12,7 +12,7 @@ UIT = os.path.join(ROOT, "bronnen", "sites")
 UA = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) supportsite eBlinqx", "Accept-Language": "nl"}
 SITES = ["hypotheekbond.nl", "fasterforward.nl", "uwkluis.nl", "veiligophalen.nl", "fastlane-hypotheekadvies.nl", "dias.nl",
          "adviesbox.nl", "findata.nl", "my-tp.net", "finrust.nl", "finly.nl", "yes-co.nl", "mijnhuiszaken.nl", "hypotheekcijfer.nl",
-         "pensioencijfer.nl", "duurzaamheidsprofiel.nl", "finconnect.nl", "hollandwebservices.nl", "rwwr.nl", "looptijdrente.nl",
+         "pensioencijfer.nl", "duurzaamheidsprofiel.nl", "finconnect.nl", "rwwr.nl", "looptijdrente.nl",
          "hypotheekbos.nl", "schermdelen.nl", "nazorg-formulieren.nl", "beheer.mijnhuiszaken.nl", "tulpmakelaars.nl",
          "hypotheekservicegesprek.nl", "webdelen.nl"]
 
