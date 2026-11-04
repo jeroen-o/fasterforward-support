@@ -1944,7 +1944,7 @@ def render_yesco():
   <div class="mhz-intro"><div><p>{esc(YES_INTRO)}</p>
     <p class="btn-row"><a class="btn-out cta" href="{YES_URL}contact/" target="_blank" rel="noopener">Gratis demo aanvragen</a>
     <a class="btn-out" href="https://login.yes-co.com/" target="_blank" rel="noopener">Inloggen in Yes-co</a></p></div>
-    <figure>{img("app-market.webp", "Yes-co App Market op een laptop")}</figure></div>
+    <figure>{img("crm-apparaten.webp", "Yes-co op laptop, tablet en telefoon")}</figure></div>
   <h2 class="wth">Daarom kiezen kantoren voor Yes-co</h2>
   <div class="wtwhys">{blokken}</div>
   <div class="mhz-duo">
@@ -1957,24 +1957,31 @@ def render_yesco():
     <div><h2 class="wth">Projecten en nieuwbouw</h2>
       <p>Met de module Nieuwbouw Project beheer je als projectontwikkelaar of makelaar al je nieuwbouwprojecten en werk je geautomatiseerd samen met ontwikkelaar, makelaar en consument. Voor het uitponden van huurcomplexen gebruik je de module Bestaande Bouw Project. Dossier-, archief- en sleutelnummers worden automatisch toegekend.</p></div>
   </div>
+  <div class="mhz-duo">
+    <div><h2 class="wth">Digitaal ondertekenen</h2>
+      <p>Maak koop- en huurcontracten met de wizard, altijd volgens de laatste regels, en laat ze met één druk op de knop digitaal ondertekenen. Met het digitaal opleveringsrapport en de geïntegreerde Wwft- en UBO-checks heb je alles in één systeem.</p></div>
+    <figure>{img("tvv-ondertekenen.webp", "Digitaal ondertekenen op een tablet")}</figure>
+  </div>
   <h2 class="wth">Voor wie?</h2>
   <div class="wtbtns">{wie}</div>
   <h2 class="wth">Abonnementen</h2>
-  <div class="mhz-prijs"><p class="mhz-bedrag">vanaf € 75,- <small>per maand</small></p>
+  <div class="mhz-duo"><div class="mhz-prijs"><p class="mhz-bedrag">vanaf € 75,- <small>per maand</small></p>
     <p><strong>Yes-co Pro</strong> (max. 10 gebruikers) en <strong>Yes-co Pro Plus</strong> (onbeperkt aantal gebruikers, plus website-responseformulieren en Mailchimp-koppeling). Beide met:</p>
     <ul>{li}</ul>
     <p><a class="btn-out cta" href="{YES_URL}prijs/" target="_blank" rel="noopener">Bekijk de prijzen</a></p></div>
+    <figure>{img("app-market.webp", "De Yes-co App Market met extra functionaliteiten")}<figcaption>Extra functies en kanalen zet je aan via de App Market.</figcaption></figure></div>
   <h2 class="wth" id="tools-voor-vastgoed">Tools voor vastgoed</h2>
   <p><a href="https://www.toolsvoorvastgoed.nl/" target="_blank" rel="noopener">Toolsvoorvastgoed.nl</a> is een initiatief van Yes-co en De Nationale Hypotheekbond: slimme online tools voor álle vastgoedprofessionals, om efficiënt en kostenbewust te werken en je klant tegelijk een optimale beleving te bieden. Het aanbod in één overzicht:</p>
   <div class="wtwhys">
-    <div class="wtwhy"><h3>Vastgoed publiceren</h3><p>Met Yes-co beheer je vastgoedobjecten en relaties en publiceer je met één druk op de knop naar Funda, Jaap, Huislijn, Pararius of je eigen website. Inclusief wizard voor koop- en huurovereenkomsten, Wwft-checks en digitaal ondertekenen; geschikt voor verkoop, verhuur, aankoop, aanhuur, nieuwbouw en bedrijfsonroerendgoed.</p></div>
-    <div class="wtwhy"><h3>Online klantdossier</h3><p>Met <a href="{pg.rel("mijnhuiszaken")}">MijnHuiszaken</a> nodig je je klant per mail uit voor een eigen, beveiligde omgeving: hypotheekberekening met actuele rentes, het volledige woningaanbod met realtime alerts, en losse diensten zoals een waarderapport, kadastrale kaart of uittreksel van de hypotheek- of eigendomsakte. Makelaar en adviseur wisselen onderling leads uit.</p></div>
-    <div class="wtwhy"><h3>Rekentools voor je website</h3><p>Maandlasten, ‘Kan ik deze woning kopen?’, duurzaamheidsrapport, ‘Wat kan ik lenen met mijn huurlasten?’, maximale hypotheek en hypotheekrente top 5. De tools rekenen realtime met actuele rentes en alle aanbieders, en nodigen de bezoeker altijd uit om contact met jou op te nemen. Zie ook de <a href="{pg.rel("websitetools")}">websitetools</a>.</p></div>
-    <div class="wtwhy"><h3>Woningwaarderapport</h3><p>Geef je klant een geautomatiseerd overzicht van de waarde van zijn woning, een sterke aanleiding voor een gesprek over verkopen, verhuizen of de hypotheek aanpassen.</p></div>
+    <div class="wtwhy">{img("tvv-publiceren.webp", "Woningzoekers bekijken het aanbod")}<h3>Vastgoed publiceren</h3><p>Met Yes-co beheer je vastgoedobjecten en relaties en publiceer je met één druk op de knop naar Funda, Jaap, Huislijn, Pararius of je eigen website. Inclusief wizard voor koop- en huurovereenkomsten, Wwft-checks en digitaal ondertekenen; geschikt voor verkoop, verhuur, aankoop, aanhuur, nieuwbouw en bedrijfsonroerendgoed.</p></div>
+    <div class="wtwhy">{img("mijnhuiszaken-hypotheek-berekenen.webp", "Hypotheek berekenen in MijnHuiszaken")}<h3>Online klantdossier</h3><p>Met <a href="{pg.rel("mijnhuiszaken")}">MijnHuiszaken</a> nodig je je klant per mail uit voor een eigen, beveiligde omgeving: hypotheekberekening met actuele rentes, het volledige woningaanbod met realtime alerts, en losse diensten zoals een waarderapport, kadastrale kaart of uittreksel van de hypotheek- of eigendomsakte. Makelaar en adviseur wisselen onderling leads uit.</p></div>
+    <div class="wtwhy">{img("hypotheektoolset.webp", "De hypotheektoolset op verschillende schermen")}<h3>Rekentools voor je website</h3><p>Maandlasten, ‘Kan ik deze woning kopen?’, duurzaamheidsrapport, ‘Wat kan ik lenen met mijn huurlasten?’, maximale hypotheek en hypotheekrente top 5. De tools rekenen realtime met actuele rentes en alle aanbieders, en nodigen de bezoeker altijd uit om contact met jou op te nemen. Zie ook de <a href="{pg.rel("websitetools")}">websitetools</a>.</p></div>
+    <div class="wtwhy">{img("tvv-woningwaarderapport.webp", "Woningwaarderapport")}<h3>Woningwaarderapport</h3><p>Geef je klant een geautomatiseerd overzicht van de waarde van zijn woning, een sterke aanleiding voor een gesprek over verkopen, verhuizen of de hypotheek aanpassen.</p></div>
   </div>
-  <h3>Starten als makelaar?</h3>
+  <div class="mhz-duo"><div><h3>Starten als makelaar?</h3>
   <p>Yes-co is geschikt voor alle makelaars, aangesloten bij NVM, Vastgoedpro of VBO, of ongebonden. Zo start je:</p>
-  <ol><li>Vraag via Funda een Tiara-aansluitnummer aan.</li><li>Neem contact op voor een demo van de software.</li><li>Voer je klanten en vastgoedobjecten in.</li><li>Publiceer je objecten zodra je er klaar voor bent.</li></ol>
+  <ol><li>Vraag via Funda een Tiara-aansluitnummer aan.</li><li>Neem contact op voor een demo van de software.</li><li>Voer je klanten en vastgoedobjecten in.</li><li>Publiceer je objecten zodra je er klaar voor bent.</li></ol></div>
+  <figure>{img("tvv-startende-makelaar.webp", "Yes-co op laptop, tablet en telefoon voor de startende makelaar")}</figure></div>
   <table class="mhz-tabel"><thead><tr><th>Dienst (toolsvoorvastgoed.nl)</th><th>Prijs</th></tr></thead><tbody>
     <tr><td>Hypotheek toolset (6 rekentools, per maand opzegbaar)</td><td>€ 80 per maand</td></tr>
     <tr><td>MijnHuiszaken online klantdossier</td><td>€ 79 per maand</td></tr></tbody></table>
@@ -2033,9 +2040,19 @@ def render_mijnhuiszaken():
     <p>Meer dan de helft van de mensen die bij je langskomen of je website bezoeken, oriënteert zich al op de woningmarkt. Met hypotheekvragen zijn ze bij jou aan het juiste adres. Met MijnHuiszaken help je ze voortaan ook met het vinden van een woning, en bouw je een voorsprong op ten opzichte van andere hypotheekadviseurs.</p>
     <p class="btn-row"><a class="btn-out cta" href="{MHZ_URL}" target="_blank" rel="noopener">Demo aanvragen of aansluiten</a>
     <a class="btn-out" href="https://mijnhuiszaken.nl/" target="_blank" rel="noopener">Bekijk het woningaanbod</a></p></div>
-    <figure>{img("image-dashboard.webp", "Dashboard van MijnHuiszaken met woningwaarde, hypotheek, gevonden woningen en zoekopdrachten")}</figure></div>
+    <figure>{img("images-hero-desktop.webp", "Woningzoeker en hypotheekadviseur, verbonden via MijnHuiszaken")}</figure></div>
   <h2 class="wth">Waarom MijnHuiszaken?</h2>
   <div class="wtwhys">{blokken}</div>
+  <div class="mhz-duo">
+    <figure>{img("image-daarommhz.webp", "Hypotheekadviseur voor woningen met te-koopborden")}</figure>
+    <div><h2 class="wth">Neem de regie in eigen hand</h2>
+      <p>Van iedereen die bij je langskomt of je website bezoekt, oriënteert meer dan de helft zich al op de woningmarkt. Help hen voortaan ook met het vinden van een woning. Zo bouw je een grotere voorsprong op ten opzichte van andere hypotheekadviseurs, en is MijnHuiszaken ideaal om je klant bij aan- en verkoop te begeleiden.</p></div>
+  </div>
+  <div class="mhz-duo">
+    <div><h2 class="wth">Ook voor bestaande klanten</h2>
+      <p>Je klanten zien in hun dashboard de geschatte waarde van hun eigen woning, hun hypotheek, gevonden woningen en hoeveel mensen er op zoek zijn naar een woning zoals de hunne. Willen ze verhuizen? Dan weet jij dat als eerste.</p></div>
+    <figure>{img("image-dashboard.webp", "Dashboard van MijnHuiszaken met woningwaarde, hypotheek, gevonden woningen en zoekopdrachten")}</figure>
+  </div>
   <div class="mhz-duo">
     <div><h2 class="wth">Verstevig de band met je klant</h2>
       <p>Bind leads tijdens hun oriëntatie en stel zo je hypotheekadvies zeker. Uitnodigen is zo gebeurd: via een button op je website, een link in een e-mail of gewoon bij jou aan tafel. In MijnHuiszaken maakt de klant eenvoudig een zoekprofiel aan en vindt hij jouw logo en contactgegevens. Zo blijf je steeds in beeld, ook in de e-mailalerts met woningaanbod, en ben je altijd dichtbij voor vragen.</p></div>

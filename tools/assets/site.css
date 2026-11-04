@@ -455,3 +455,5 @@ figure .img-volgt{margin:0}
 .mhz-tabel{border-collapse:collapse;margin:14px 0;max-width:560px;width:100%}
 .mhz-tabel th,.mhz-tabel td{border:1px solid #E3E8EE;padding:8px 12px;text-align:left}
 .mhz-tabel th{background:#F7F8FA}
+.wtwhy>img{display:block;width:calc(100% + 36px);margin:-16px -18px 12px;height:170px;object-fit:cover;border-radius:8px 8px 0 0}
+.mhz figcaption{font-size:13px;color:#5B6573;margin-top:6px}
