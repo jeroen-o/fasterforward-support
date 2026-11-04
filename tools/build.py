@@ -1591,6 +1591,7 @@ def fastlane_months():
             cnt = re.search(r"\((\d+)\s*verbetering", head)
             box = re.sub(r'(href|src|srcset)="(/[^"]*)"', lambda m: f'{m.group(1)}="{urljoin(FL_BASE, m.group(2))}"', box)
             box = re.sub(r'<p class="heading-2[^"]*">\s*Releasenotes\s*</p>', "", box)
+            box = re.sub(r"<(/?)h1\b", r"<\1h2", box)  # h1 in een release (soms met alleen een afbeelding) niet weggooien
             c = htmlclean.Cleaner()
             c.feed(box)
             c.close()

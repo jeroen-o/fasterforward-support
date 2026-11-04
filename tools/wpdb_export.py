@@ -54,6 +54,7 @@ def inhoud(t):
     blokken = "<!-- wp:" in t
     t = re.sub(r"\[table id=(\d+)\s*/?\]", lambda m: "\n\n" + TABELLEN.get(m.group(1), "") + "\n\n", t)
     t = re.sub(r"<!--\s*/?wp:.*?-->", "", t, flags=re.S)
+    t = re.sub(r"<(/?)h1\b", r"<\1h2", t)  # de paginatitel is al de h1; h1's in de tekst worden h2
     t = re.sub(r"\[caption[^\]]*\](.*?)\[/caption\]", r"<figure>\1</figure>", t, flags=re.S)
     t = re.sub(r"\[embed\](.*?)\[/embed\]", r'<p><a href="\1">\1</a></p>', t, flags=re.S)
     t = re.sub(r"\[/?[a-z_][\w-]*(?:\s[^\]]*)?\]", "", t)  # overige shortcodes
