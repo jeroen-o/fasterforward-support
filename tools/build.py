@@ -650,7 +650,7 @@ class Page:
 
 
 NAV = [("Home", ""), ("Nieuws", "nieuws"), ("Tips", "tips"), ("E-learning", "elearning"),
-       ("Releasenotes Hypotheekadvies", "releasenotes-hypotheekadvies"), ("Releasenotes Connect", "releasenotes"),
+       ("Releasenotes", "releasenotes"),
        ("Trainingen", "trainingen"), ("Contact support", "contact"),
        ("Overig support", "https://verzekeringhypotheek.blinqx.tech/support"),
        ("Overig contact", "https://verzekeringhypotheek.blinqx.tech/contact")]
@@ -1177,6 +1177,7 @@ def render_feed(name, items):
     title = FEED_LABEL.get(name, name)
     body = f"""{hero(pg, title, img)}
 <main class="feed"><div class="wrap">
+  {rn_tabs(pg, "connect") if name == "Release notes" else ""}
   <h2 class="feed-h">{esc(h2)}</h2>
   <p>{esc(intro)} {len(items)} berichten.</p>
   {f'<p class="jump">Ga naar: {jump}</p>' if len(keys) > 1 else ""}
@@ -1259,6 +1260,14 @@ def render_search(pages, cats):
     for m in fastlane_months()[0]:
         idx.append({"t": f'Releasenotes eBlinqx Hypotheekadvies – {m["label"]}', "h": f'releasenotes-hypotheekadvies/{m["slug"]}/index.html',
                     "c": "Releasenotes Hypotheekadvies (Fastlane)", "k": "release", "d": m["label"], "x": m["text"]})
+    for k, naam, pad, extern in RN_DIENSTEN:
+        if k in ("connect", "hypotheekadvies"):
+            continue
+        idx.append({"t": f"Releasenotes {naam}", "h": pad + "/index.html", "c": f"Releasenotes {naam}", "k": "release",
+                    "x": RN_INTRO.get(k, "") + " releasenotes release updates " + naam})
+        for d in rn_overig().get(k, []):
+            idx.append({"t": d["titel"], "h": f'{pad}/{d["slug"]}/index.html', "c": f"Releasenotes {naam}", "k": "release",
+                        "d": d["datum"], "x": d["text"]})
     for it in elearning_items():
         idx.append({"t": it["t"], "h": "elearning/" + it["slug"] + "/index.html", "c": "E-learning › " + it["prod"], "k": "video",
                     "x": " ".join(st["h"] + " " + st["text"] for st in it["steps"])[:200000] or it["t"]})
@@ -1671,13 +1680,14 @@ def render_fastlane():
     jump = " · ".join(f'<a href="#jaar-{y}">{y}</a>' for y in sorted({m["year"] for m in months}, reverse=True))
     body = f"""{crumbs(pg, [(FL_TITLE, None)])}
 <main class="feed"><div class="wrap">
+  {rn_tabs(pg, "hypotheekadvies")}
   <h1>{esc(FL_TITLE)}</h1>
   <p class="lead">{esc(intro)}</p>
   <p class="jump">Ga naar: {jump}</p>
   {"".join(years)}
   <p class="src">Bron: <a href="{FL_BASE}/hoe-het-werkt/releasenotes/" target="_blank" rel="noopener">fastlane.hypotheekbond.nl</a></p>
 </div></main>"""
-    write("releasenotes-hypotheekadvies", layout(pg, FL_TITLE, body, "releasenotes-hypotheekadvies", intro))
+    write("releasenotes-hypotheekadvies", layout(pg, FL_TITLE, body, "releasenotes", intro))
     for i, m in enumerate(months):
         path = "releasenotes-hypotheekadvies/" + m["slug"]
         pg = Page(path)
@@ -1695,11 +1705,99 @@ def render_fastlane():
     {f'<p class="meta">{m["count"]} verbeteringen</p>' if m["count"] else ""}
     <div class="content flnotes">{fl_resolve(pg, m["html"])}</div>
     <p class="pager">{" &nbsp; ".join(nav)}</p>
-    <p class="src">Bron: <a href="{esc(m["src"])}" target="_blank" rel="noopener">fastlane.hypotheekbond.nl</a></p>
+    <p class="src">Bron: <a href="{esc(m["src"])}" target="_blank" rel="noopener">{"helpcenter eBlinqx Hypotheekadvies" if "support-fastlane" in m["src"] else "fastlane.hypotheekbond.nl"}</a></p>
   </article>
   <aside class="related"><h2>Andere maanden:</h2><ul>{others}</ul><p><a href="{pg.rel("releasenotes-hypotheekadvies")}">Alle releasenotes »</a></p></aside>
 </div></main>"""
-        write(path, layout(pg, f'Releasenotes {m["label"]} – eBlinqx Hypotheekadvies', body, "releasenotes-hypotheekadvies", fl_excerpt(m["text"])))
+        write(path, layout(pg, f'Releasenotes {m["label"]} – eBlinqx Hypotheekadvies', body, "releasenotes", fl_excerpt(m["text"])))
+
+
+# Releasenotes per dienst (zoals verzekeringhypotheek.blinqx.tech/releasenotes): tabjes bovenaan elke releasenotespagina
+RN_DIENSTEN = [
+    ("connect", "eBlinqx Connect", "releasenotes", None),
+    ("hypotheekadvies", "Hypotheekadvies (Fastlane)", "releasenotes-hypotheekadvies", None),
+    ("adviesbox", "Adviesbox", "releasenotes-adviesbox", "https://support.adviesbox.nl/portal/nl/kb/articles/releasenotes"),
+    ("finconnect", "FinConnect", "releasenotes-finconnect", None),
+    ("finly", "Finly", "releasenotes-finly", "https://blinqx.finly.nl/releases"),
+    ("dias", "DIAS Assurantie", "releasenotes-dias", None),
+]
+RN_INTRO = {
+    "adviesbox": ("De releasenotes van Adviesbox staan in het supportportaal van Adviesbox. Daar vind je per versie welke "
+                  "verbeteringen en nieuwe functies zijn doorgevoerd."),
+    "finly": ("De releasenotes van Finly (CRM) staan in Finly zelf. Je moet daarvoor eerst inloggen met je Blinqx-account "
+              "(single sign-on)."),
+    "finconnect": "Een overzicht met de meest recente updates binnen FinConnect (slimme formulieren en naverrekenen).",
+    "dias": "Releasenotes van DIAS Assurantie en DIAS Cloud (volmacht en provinciaal).",
+}
+RN_OVERIG_DIR = os.path.join(SRC, "releasenotes-overig")
+
+
+def rn_tabs(pg, actief):
+    items = "".join(
+        f'<a class="rn-tab{" actief" if k == actief else ""}" href="{pg.rel(pad)}"{" aria-current=\"page\"" if k == actief else ""}>{esc(naam)}</a>'
+        for k, naam, pad, _ in RN_DIENSTEN)
+    return f'<nav class="rn-tabs" aria-label="Releasenotes per dienst">{items}</nav>'
+
+
+def rn_overig():
+    """Releasenotes van FinConnect en DIAS (bronnen/releasenotes-overig/*.json), nieuwste eerst."""
+    uit = {}
+    for f in sorted(glob.glob(os.path.join(RN_OVERIG_DIR, "*.json"))):
+        d = json.load(open(f, encoding="utf8"))
+        c = htmlclean.Cleaner()
+        c.feed(d["html"])
+        c.close()
+        d["body"] = "".join(c.out)
+        d["text"] = re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", d["body"]))).strip()
+        uit.setdefault(d["dienst"], []).append(d)
+    for v in uit.values():
+        v.sort(key=lambda d: d["iso"], reverse=True)
+    return uit
+
+
+def render_releasenotes_overig():
+    data = rn_overig()
+    for k, naam, pad, extern in RN_DIENSTEN:
+        if k in ("connect", "hypotheekadvies"):
+            continue
+        pg = Page(pad)
+        titel = f"Releasenotes {naam}"
+        items = data.get(k, [])
+        if extern:
+            inhoud = (f'<p class="lead">{esc(RN_INTRO[k])}</p>'
+                      f'<p><a class="btn-out" href="{esc(extern)}" target="_blank" rel="noopener">Bekijk de releasenotes van {esc(naam)}</a></p>')
+        else:
+            cards = "".join(
+                f'<article class="card"><h3><a href="{pg.rel(pad + "/" + d["slug"])}">{esc(d["titel"])}</a></h3>'
+                f'<p class="date">{esc(d["datum"])}</p><p>{esc(fl_excerpt(d["text"]))}</p>'
+                f'<a class="readmore" href="{pg.rel(pad + "/" + d["slug"])}">Lees verder</a></article>' for d in items)
+            inhoud = f'<p class="lead">{esc(RN_INTRO.get(k, ""))}</p><div class="cards">{cards}</div>'
+        body = f"""{crumbs(pg, [(titel, None)])}
+<main class="feed"><div class="wrap">
+  {rn_tabs(pg, k)}
+  <h1>{esc(titel)}</h1>
+  {inhoud}
+  <p class="src">Overzicht van alle diensten: <a href="https://verzekeringhypotheek.blinqx.tech/releasenotes" target="_blank" rel="noopener">verzekeringhypotheek.blinqx.tech/releasenotes</a></p>
+</div></main>"""
+        write(pad, layout(pg, titel, body, "releasenotes", RN_INTRO.get(k, titel)))
+        for d in items:
+            ap = pad + "/" + d["slug"]
+            pg = Page(ap)
+            dl = (f'<p><a class="btn-out" href="{pg.rel(d["bestand"])}">Download het originele document</a></p>'
+                  if d.get("bestand") else "")
+            body = f"""{crumbs(pg, [(titel, pad), (d["datum"], None)])}
+<main class="article"><div class="wrap cols">
+  <article>
+    {rn_tabs(pg, k)}
+    <h1>{esc(d["titel"])}</h1>
+    <p class="meta">{esc(d["datum"])}</p>
+    <div class="content flnotes">{raw_to_html(pg, d["body"])[0]}</div>
+    {dl}
+    <p class="src">Bron: <a href="{esc(d["src"])}" target="_blank" rel="noopener">verzekeringhypotheek.blinqx.tech</a></p>
+  </article>
+  <aside class="related"><h2>Releasenotes {esc(naam)}</h2><ul>{"".join(f'<li><a href="{pg.rel(pad + "/" + o["slug"])}">{esc(o["titel"])}</a></li>' for o in items)}</ul></aside>
+</div></main>"""
+            write(ap, layout(pg, d["titel"], body, "releasenotes", fl_excerpt(d["text"])))
 
 
 def render_trainingen():
@@ -2049,6 +2147,7 @@ def main():
     render_video()
     render_elearning()
     render_fastlane()
+    render_releasenotes_overig()
     render_trainingen()
     render_procesversneller()
     render_websitetools()

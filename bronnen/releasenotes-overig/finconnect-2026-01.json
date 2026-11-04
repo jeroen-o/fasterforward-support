@@ -1,0 +1,10 @@
+{
+ "dienst": "finconnect",
+ "titel": "FinConnect updates januari 2026",
+ "datum": "januari 2026",
+ "iso": "2026-01-01",
+ "slug": "2026-01",
+ "html": "<p>In FinConnect zijn in de afgelopen periode een aantal wijzigingen doorgevoerd :</p><ul><li>Bij verplichte velden is nu voor een betere herkenning een * - teken opgenomen, zodat de verplichting al direct zichtbaar is, dit was een al langere levende wens vanuit aantal gebruikers</li><li>Er is een vraagtype “Kentekenvraag” toegevoegd, waarbij visueel direct herkenbaar is dat het om NL-kenteken gaat, in de beschikbare applicatieformulier is deze vraag ook toegevoegd</li><li>En een nieuw vraagtype om in één keer meerdere bestanden te kunnen uploaden (“bestandsupload multiple”)</li><li>Het importproces bij zowel slimme formulieren als naverrekenen is geoptimaliseerd, er kan nu alleen nog met csv-bestanden worden gewerkt, en de snelheid van importeren is aanzienlijk verbeterd</li></ul>",
+ "bestand": "downloads/releasenotes/FinConnect-updates-januari-2026.docx",
+ "src": "https://verzekeringhypotheek.blinqx.tech/wp-content/uploads/2026/01/FinConnect-updates-januari-2026.docx"
+}
