@@ -1224,7 +1224,7 @@ def render_search(pages, cats):
         d = p["posted"] or p["updated"]
         idx.append({"t": p["t"], "h": p["path"] + "/index.html", "c": " › ".join(FEED_LABEL.get(c, c) for c in (p["crumb"] or [])),
                     "k": search_kind(p), "d": fmt_date(d) if d else "", "o": 1 if verouderd(p) else 0,
-                    "x": re.sub(r"\s+", " ", " ".join(p["lines"]))[:15000]})
+                    "x": re.sub(r"\s+", " ", " ".join(p["lines"]))[:200000]})
     for name, c in cats.items():
         if c["subs"] or c["loose"]:
             idx.append({"t": name, "h": cat_target(cats, name) + "/index.html", "c": "Kennisbank", "k": "categorie",
@@ -1242,7 +1242,7 @@ def render_search(pages, cats):
         pv = open(pvf, encoding="utf8").read()
         pv = re.sub(r"<script\b.*?</script>|<style\b.*?</style>", " ", pv, flags=re.S)
         idx.append({"t": "Proces-versneller: alles op een rij", "h": "procesversneller/index.html", "c": "Proces-versneller", "k": "kennisbank",
-                    "x": re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", pv)))[:15000] + " procesversneller ockto brondata"})
+                    "x": re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", pv)))[:200000] + " procesversneller ockto brondata"})
     wtf = os.path.join(SRC, "websitetools.json")
     if os.path.exists(wtf):
         wt = json.load(open(wtf, encoding="utf8"))
@@ -1258,10 +1258,10 @@ def render_search(pages, cats):
                         "x": " ".join(t["meta"] + t["labels"]) + " training cursus opleiding"})
     for m in fastlane_months()[0]:
         idx.append({"t": f'Releasenotes eBlinqx Hypotheekadvies – {m["label"]}', "h": f'releasenotes-hypotheekadvies/{m["slug"]}/index.html',
-                    "c": "Releasenotes Hypotheekadvies (Fastlane)", "k": "release", "d": m["label"], "x": m["text"][:20000]})
+                    "c": "Releasenotes Hypotheekadvies (Fastlane)", "k": "release", "d": m["label"], "x": m["text"]})
     for it in elearning_items():
         idx.append({"t": it["t"], "h": "elearning/" + it["slug"] + "/index.html", "c": "E-learning › " + it["prod"], "k": "video",
-                    "x": " ".join(st["h"] + " " + st["text"] for st in it["steps"])[:15000] or it["t"]})
+                    "x": " ".join(st["h"] + " " + st["text"] for st in it["steps"])[:200000] or it["t"]})
     os.makedirs(os.path.join(ROOT, "zoeken"), exist_ok=True)
     with open(os.path.join(ROOT, "zoeken", "zoekindex.js"), "w", encoding="utf8") as fh:
         for r in idx:
