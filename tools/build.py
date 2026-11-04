@@ -1255,6 +1255,10 @@ def render_search(pages, cats):
                     "c": "Tools voor vastgoed", "k": "kennisbank", "x": TVV_INTRO + " toolsvoorvastgoed tools voor vastgoed makelaar "
                     "hypotheek toolset rekentools leads woningwaarderapport woningwaarde vastgoed publiceren online klantdossier "
                     "mijnhuiszaken yes-co tiara startende makelaar prijzen € 80 per maand " + " ".join(t for t, _ in TVV_TOOLS)})
+        idx.append({"t": "Woningwaarderapport: de waarde van de woning van je klant", "h": "woningwaarderapport/index.html",
+                    "c": "Woningwaarderapport", "k": "kennisbank", "x": "woningwaarderapport woningwaarde rapport waardeschatting "
+                    "woningwaarde berekenen waarde woning voorbeeldrapport tools voor vastgoed portefeuillesignalen verkopen verhuizen "
+                    "hypotheek aanpassen leads geautomatiseerd overzicht taxatie"})
         idx.append({"t": "Hypotheekrente-app: alle actuele rentes bij de hand", "h": "hypotheekrente-app/index.html",
                     "c": "Hypotheekrente-app", "k": "kennisbank", "x": HRA_INTRO + " hypotheekrente app renteapp rentetarieven "
                     "rente overzicht geldverstrekkers app store google play android iphone eigen huisstijl white label hypotheekbond " +
@@ -1350,8 +1354,9 @@ def render_home(cats, feeds, pages):
               f'<a class="tile" href="{pg.rel("mijnhuiszaken")}"><svg class="ic"><use href="#i-home"/></svg>MijnHuiszaken</a>'
               f'<a class="tile" href="{pg.rel("yes-co")}"><svg class="ic"><use href="#i-desktop"/></svg>Makelaar Software</a>'
               f'<a class="tile" href="{pg.rel("tools-voor-vastgoed")}"><svg class="ic"><use href="#i-folder"/></svg>Tools voor vastgoed</a>'
+              f'<a class="tile" href="{pg.rel("woningwaarderapport")}"><svg class="ic"><use href="#i-houseval"/></svg>Woningwaarderapport</a>'
               f'<a class="tile" href="{pg.rel("actiefbeheerscan")}"><svg class="ic"><use href="#i-list"/></svg>Actiefbeheerscan</a>'
-              f'<a class="tile" href="{pg.rel("hypotheekrente-app")}"><svg class="ic"><use href="#i-phone"/></svg>Hypotheekrente-app</a>'
+              f'<a class="tile" href="{pg.rel("hypotheekrente-app")}"><svg class="ic"><use href="#i-percent"/></svg>Hypotheekrente-app</a>'
               f'<a class="tile" href="{pg.rel("procesversneller")}"><svg class="ic"><use href="#i-bolt"/></svg>Proces-versneller</a>')
 
     def a(path, label):
@@ -2217,7 +2222,7 @@ def render_toolsvoorvastgoed():
     <div class="wtwhy">{img("tvv-publiceren.webp", "Woningzoekers bekijken het aanbod")}<h3>Vastgoed publiceren</h3><p>Met Yes-co beheer je vastgoedobjecten en relaties en publiceer je met één druk op de knop naar Funda, Jaap, Huislijn, Pararius of je eigen website. Inclusief wizard voor koop- en huurovereenkomsten, Wwft-checks en digitaal ondertekenen; geschikt voor verkoop, verhuur, aankoop, aanhuur, nieuwbouw en bedrijfsonroerendgoed.</p></div>
     <div class="wtwhy">{img("mijnhuiszaken-hypotheek-berekenen.webp", "Hypotheek berekenen in MijnHuiszaken")}<h3>Online klantdossier</h3><p>Met <a href="{pg.rel("mijnhuiszaken")}">MijnHuiszaken</a> nodig je je klant per mail uit voor een eigen, beveiligde omgeving: hypotheekberekening met actuele rentes, het volledige woningaanbod met realtime alerts, en losse diensten zoals een waarderapport, kadastrale kaart of uittreksel van de hypotheek- of eigendomsakte. Makelaar en adviseur wisselen onderling leads uit.</p></div>
     <div class="wtwhy">{img("hypotheektoolset.webp", "De hypotheektoolset op verschillende schermen")}<h3>Rekentools voor je website</h3><p>Maandlasten, ‘Kan ik deze woning kopen?’, duurzaamheidsrapport, ‘Wat kan ik lenen met mijn huurlasten?’, maximale hypotheek en hypotheekrente top 5. De tools rekenen realtime met actuele rentes en alle aanbieders, en nodigen de bezoeker altijd uit om contact met jou op te nemen. Zie ook de <a href="{pg.rel("websitetools")}">websitetools</a>.</p></div>
-    <div class="wtwhy">{img("tvv-woningwaarderapport.webp", "Woningwaarderapport")}<h3>Woningwaarderapport</h3><p>Geef je klant een geautomatiseerd overzicht van de waarde van zijn woning, een sterke aanleiding voor een gesprek over verkopen, verhuizen of de hypotheek aanpassen.</p></div>
+    <div class="wtwhy">{img("tvv-woningwaarderapport.webp", "Woningwaarderapport")}<h3>Woningwaarderapport</h3><p>Geef je klant een geautomatiseerd overzicht van de waarde van zijn woning, een sterke aanleiding voor een gesprek over verkopen, verhuizen of de hypotheek aanpassen. <a href="{pg.rel("woningwaarderapport")}">Meer over het woningwaarderapport</a>.</p></div>
   </div>
   <div class="mhz-duo"><div><h3>Starten als makelaar?</h3>
   <p>Yes-co is geschikt voor alle makelaars, aangesloten bij NVM, Vastgoedpro of VBO, of ongebonden. Zo start je:</p>
@@ -2246,6 +2251,68 @@ def render_toolsvoorvastgoed():
     write("tools-voor-vastgoed", layout(pg, "Tools voor vastgoed: slimme online tools voor vastgoedprofessionals", body, None,
                                         "Tools voor vastgoed van Yes-co en De Nationale Hypotheekbond: vastgoed publiceren, online "
                                         "klantdossier, hypotheek toolset (€ 80 per maand) en woningwaarderapport."))
+
+
+def render_woningwaarderapport():
+    """Woningwaarderapport (bron: www.toolsvoorvastgoed.nl/woningwaarde-rapport, november 2026)."""
+    pg = Page("woningwaarderapport")
+    img = lambda f, alt: f'<img src="{pg.rel("bronnen/yes-co/" + f)}" alt="{esc(alt)}" loading="lazy">'
+    url = TVV_URL + "woningwaarde-rapport/"
+    voordelen = [
+        ("Overzicht van de woningwaarde", "Je klant krijgt een geautomatiseerd rapport met de geschatte waarde van zijn of haar woning."),
+        ("Aanleiding voor een gesprek", "Een woningwaarde is hét moment om te praten over verkopen, verhuizen, extra lenen of de "
+         "hypotheek aanpassen."),
+        ("Weten wat je klant van plan is", "Bij de aanvraag geeft de klant aan waarom hij een waardeschatting wil (hypotheek "
+         "aanpassen, kopen, verkopen of nieuwsgierig) en of en wanneer hij wil verhuizen."),
+        ("Ook voor bestaande klanten", "Laat klanten in je portefeuille zien wat hun woning nu waard is en ontdek wie er in "
+         "beweging komt."),
+    ]
+    blokken = "".join(f'<div class="wtwhy"><h3>{esc(t)}</h3><p>{esc(x)}</p></div>' for t, x in voordelen)
+    faq = [
+        ("Wat is het woningwaarderapport?", "Een geautomatiseerd overzicht van de geschatte waarde van een woning, aangeboden via "
+         "Tools voor vastgoed (Yes-co en De Nationale Hypotheekbond)."),
+        ("Kan ik een voorbeeld zien?", "Ja. Op toolsvoorvastgoed.nl vraag je gratis een voorbeeldrapport aan, zoals je klant het ook "
+         "ontvangt. Je vult postcode, huisnummer, de reden van de waardeschatting en je contactgegevens in."),
+        ("Kan ik het rapport ook vanuit eBlinqx Connect ophalen?", "Ja, met PortefeuilleSignalen haal je de woningwaarde van een "
+         "dossier op via de knop ‘Woningwaarde’ onder het tabblad Berekeningen. Zie het kennisbankartikel over woningwaarde berekenen."),
+        ("Is het woningwaarderapport een taxatie?", "Nee. Het is een geautomatiseerde schatting en geen gevalideerd taxatierapport. "
+         "Voor een hypotheekaanvraag is meestal een taxatie door een erkend taxateur nodig."),
+    ]
+    faq_html = "".join(f'<details class="wtfaq"><summary>{esc(q)}</summary><p>{esc(a)}</p></details>' for q, a in faq)
+    faq_ld = json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+        {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]},
+        ensure_ascii=False).replace("</", "<\\/")
+    body = f"""{crumbs(pg, [("Woningwaarderapport", None)])}
+<main class="subpage mhz"><div class="wrap">
+  <h1>Woningwaarderapport</h1>
+  <p class="lead">Bied je klant een overzicht van de waarde van zijn woning, en een goede reden om met jou in gesprek te gaan.</p>
+  <div class="mhz-intro"><div><p>Met het woningwaarderapport van <a href="{pg.rel("tools-voor-vastgoed")}">Tools voor vastgoed</a> geef je je klant een geautomatiseerd overzicht van de waarde van zijn of haar woning. Een sterke aanleiding voor een gesprek over verkopen, verhuizen of de hypotheek aanpassen.</p>
+    <p>Benieuwd hoe het eruitziet? Vraag gratis een voorbeeldrapport aan, precies zoals je klant het ontvangt.</p>
+    <p class="btn-row"><a class="btn-out cta" href="{url}" target="_blank" rel="noopener">Gratis voorbeeldrapport aanvragen</a>
+    <a class="btn-out" href="{TVV_URL}contact/" target="_blank" rel="noopener">Neem contact op</a></p></div>
+    <figure>{img("tvv-woningwaarderapport.webp", "Woningwaarderapport in de hand")}</figure></div>
+  <h2 class="wth">Waarom een woningwaarderapport?</h2>
+  <div class="wtwhys">{blokken}</div>
+  <h2 class="wth">Zo vraag je een voorbeeldrapport aan</h2>
+  <ol class="abs-stappen">
+    <li><strong>Vul het adres in</strong><br>Postcode, huisnummer en eventueel een toevoeging.</li>
+    <li><strong>Geef de reden op</strong><br>Hypotheek aanpassen, verkopen, kopen, verkopen en kopen, of nieuwsgierig; en of en wanneer er een verhuizing gepland is.</li>
+    <li><strong>Vul je contactgegevens in</strong><br>Bedrijfsnaam, naam, e-mailadres en eventueel telefoonnummer. Je ontvangt het rapport per e-mail.</li>
+  </ol>
+  <h2 class="wth">In eBlinqx Connect</h2>
+  <p>Werk je met PortefeuilleSignalen, dan haal je de woningwaarde van een dossier op via de knop ‘Woningwaarde’ onder het tabblad Berekeningen. Lees meer in <a href="{pg.rel("kennisbank/woningwaarde-duurzaamheid-en-maximale-hypotheek-berekenen")}">Woningwaarde, duurzaamheid en maximale hypotheek berekenen</a>.</p>
+  <p class="mhz-tip">Let op: het woningwaarderapport is een geautomatiseerde schatting, geen taxatierapport en geen advies. Communiceer de waarde als indicatie naar je klant.</p>
+  <p>Zie ook: <a href="{pg.rel("tools-voor-vastgoed")}">Tools voor vastgoed</a>, <a href="{pg.rel("mijnhuiszaken")}">MijnHuiszaken</a> (met woningwaarde in het klantdashboard) en de <a href="{pg.rel("websitetools")}">websitetools</a>.</p>
+  <h2 class="wth">Veelgestelde vragen</h2>
+  {faq_html}
+  <script type="application/ld+json">{faq_ld}</script>
+  <h2 class="wth">Meer weten?</h2>
+  <p>Mail <a href="mailto:info@toolsvoorvastgoed.nl">info@toolsvoorvastgoed.nl</a> of bel <a href="tel:+31365238455">036 523 84 55</a>.</p>
+  <p class="src">Bron: <a href="{url}" target="_blank" rel="noopener">toolsvoorvastgoed.nl/woningwaarde-rapport</a> (stand 4 november 2026).</p>
+</div></main>"""
+    write("woningwaarderapport", layout(pg, "Woningwaarderapport: de waarde van de woning van je klant", body, None,
+                                        "Woningwaarderapport van Tools voor vastgoed: geef je klant een geautomatiseerd overzicht "
+                                        "van de woningwaarde en ontdek wie wil verkopen, verhuizen of de hypotheek aanpassen."))
 
 
 def render_mijnhuiszaken():
@@ -2697,6 +2764,7 @@ def main():
     render_mijnhuiszaken()
     render_yesco()
     render_toolsvoorvastgoed()
+    render_woningwaarderapport()
     render_actiefbeheerscan()
     render_hypotheekrenteapp()
     render_downloads()
