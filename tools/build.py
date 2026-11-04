@@ -1289,6 +1289,8 @@ def render_search(pages, cats):
             idx.append({"t": v["titel"], "h": v["url"], "ext": 1, "c": "eBlinqx website › " + v["soort"], "k": "website",
                         "d": fmt_date(date.fromisoformat(d)) if re.fullmatch(r"\d{4}-\d{2}-\d{2}", d) else "",
                         "x": (v.get("omschrijving") or "") + " " + v.get("tekst", "")})
+        idx.append({"t": "Vacatures bij Blinqx", "h": "https://careers.blinqx.tech/", "ext": 1, "c": "eBlinqx website › Over ons",
+                    "k": "website", "x": "vacatures vacature werken bij blinqx carrière careers baan solliciteren"})
     for i in downloads_items():
         idx.append({"t": i["t"], "h": "downloads/index.html", "c": "Downloads › " + i["rub"], "k": "overig",
                     "d": i["datum"], "x": i["t"] + " pdf download " + i["rub"]})

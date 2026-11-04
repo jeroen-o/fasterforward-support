@@ -100,6 +100,7 @@
         }
         if (r.k === "categorie") total += 3;
         if (r.o) total -= 5;
+        if (r.k === "website") total -= 4;   // eigen supportinhoud gaat bij gelijke score voor
         out.push([total + hit * 10, r]);
       });
       out.sort(function (a, b) { return b[0] - a[0]; });
@@ -145,7 +146,7 @@
     return out + esc(s.slice(i));
   }
 
-  var LABEL = { kennisbank: "Kennisbank", nieuws: "Nieuws", tips: "Tip", release: "Releasenotes", video: "Video", categorie: "Categorie", overig: "Pagina" };
+  var LABEL = { kennisbank: "Kennisbank", nieuws: "Nieuws", tips: "Tip", release: "Releasenotes", video: "Video", categorie: "Categorie", overig: "Pagina", website: "eBlinqx website" };
 
   function card(r) {
     var href = r.ext ? r.h : "../" + r.h;
