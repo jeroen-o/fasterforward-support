@@ -1279,7 +1279,7 @@ def render_search(pages, cats):
                     " ".join(t + " " + x for t, _, _, x in ABS_FORMULIEREN)})
         idx.append({"t": "MijnHuiszaken: realtime woningaanbod voor je klanten", "h": "mijnhuiszaken/index.html", "c": "MijnHuiszaken",
                     "k": "kennisbank", "x": MHZ_INTRO + " woningaanbod NVM makelaar e-mailalerts zoekprofiel woningwaarde Wwft "
-                    "aankoopdossier verkoopdossier digitaal ondertekenen leads tarieven demo mijn huiszaken mijnhuiszaken.nl"})
+                    "aankoopdossier verkoopdossier digitaal ondertekenen leads tarieven demo mijn huiszaken mijnhuiszaken.nl video promovideo uitleg"})
         idx.append({"t": "Websitetools: rekentools voor op je website", "h": "websitetools/index.html", "c": "Websitetools", "k": "kennisbank",
                     "x": " ".join(g["g"] + " " + " ".join(t["t"] for t in g["tools"]) for g in wt["groepen"]) + " rekentool rekentools website hypotheekbond leads"})
     vhf = os.path.join(SRC, "vh-site", "index.json")
@@ -2426,6 +2426,7 @@ document.querySelectorAll('.ptag').forEach(function(b){{b.addEventListener('clic
   <div class="mhz-intro pintro"><div><p class="lead">{esc(p["kort"])}</p>
     {f'<p class="mhz-tip">Uitgebreide informatie vind je ook op onze pagina <a href="{pp.rel(eigen[0])}">{esc(eigen[1])}</a>.</p>' if eigen else ""}</div>
     {f'<figure><img src="{pp.rel("bronnen/partners/" + p["afbeelding"])}" alt="{esc(p["titel"])}" loading="lazy"></figure>' if p["afbeelding"] else ""}</div>
+  {MHZ_VIDEO(pp) if p["slug"] == "mijnhuiszaken" else ""}
   <div class="partner-tekst">{inh}</div>
   <h2 class="wth">Contact en samenwerking</h2>
   <p>Door de samenwerking en koppeling met het eBlinqx-platform maken onze partners het proces voor de klant en het intermediair beter en efficiënter.{" Voor meer informatie, neem contact op met:" if p.get("contact") else " Meer weten over deze partner? Mail <a href=\"mailto:relatie-vh@blinqx.tech\">relatie-vh@blinqx.tech</a>."}</p>
@@ -2434,6 +2435,22 @@ document.querySelectorAll('.ptag').forEach(function(b){{b.addEventListener('clic
   <p class="src">Bron: <a href="{esc(p["bron"])}" target="_blank" rel="noopener">verzekeringhypotheek.blinqx.tech</a> (stand 4 november 2026).</p>
 </div></main>"""
         write("partners/" + p["slug"], layout(pp, f"{p['titel']} | Partner van Blinqx", body, None, p["kort"]))
+
+
+def MHZ_VIDEO(pg):
+    """Promovideo MijnHuiszaken (3:06) met VideoObject-gegevens voor Google en AI-zoekmachines."""
+    mp4, poster = pg.rel("bronnen/mijnhuiszaken/mijnhuiszaken-promo.mp4"), pg.rel("bronnen/mijnhuiszaken/mijnhuiszaken-promo.webp")
+    ld = json.dumps({"@context": "https://schema.org", "@type": "VideoObject", "name": "MijnHuiszaken voor hypotheekadviseurs",
+                     "description": "Altijd in beeld vanaf de eerste zoekopdracht: realtime NVM-woningaanbod voor je klanten, je eigen "
+                                    "logo in hun omgeving, inzicht in zoekgedrag en de tarieven (€ 79 per maand voor 1.000 klanten).",
+                     "thumbnailUrl": SITE_URL + "bronnen/mijnhuiszaken/mijnhuiszaken-promo.webp",
+                     "contentUrl": SITE_URL + "bronnen/mijnhuiszaken/mijnhuiszaken-promo.mp4",
+                     "uploadDate": "2026-11-04", "duration": "PT3M6S", "inLanguage": "nl-NL"}, ensure_ascii=False)
+    return (f'<figure class="mhz-video"><video controls preload="none" playsinline poster="{poster}" width="1920" height="1080">'
+            f'<source src="{mp4}" type="video/mp4">Je browser kan deze video niet afspelen. '
+            f'<a href="{mp4}">Download de video (mp4)</a>.</video>'
+            f'<figcaption>MijnHuiszaken voor hypotheekadviseurs: de propositie, de klantreis, de online omgeving van je klant en de tarieven (3 minuten).</figcaption></figure>'
+            f'<script type="application/ld+json">{ld}</script>')
 
 
 def render_mijnhuiszaken():
@@ -2479,6 +2496,8 @@ def render_mijnhuiszaken():
     <p class="btn-row"><a class="btn-out cta" href="{MHZ_URL}" target="_blank" rel="noopener">Demo aanvragen of aansluiten</a>
     <a class="btn-out" href="https://mijnhuiszaken.nl/" target="_blank" rel="noopener">Bekijk het woningaanbod</a></p></div>
     <figure>{img("images-hero-desktop.webp", "Woningzoeker en hypotheekadviseur, verbonden via MijnHuiszaken")}</figure></div>
+  <h2 class="wth">Bekijk de video</h2>
+  {MHZ_VIDEO(pg)}
   <h2 class="wth">Waarom MijnHuiszaken?</h2>
   <div class="wtwhys">{blokken}</div>
   <div class="mhz-duo">
