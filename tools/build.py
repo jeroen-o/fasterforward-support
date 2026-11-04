@@ -1408,7 +1408,7 @@ def render_home(cats, feeds, pages):
               f'<a class="tile" href="{pg.rel("mijnhuiszaken")}"><svg class="ic"><use href="#i-home"/></svg>MijnHuiszaken</a>'
               f'<a class="tile" href="{pg.rel("yes-co")}"><svg class="ic"><use href="#i-desktop"/></svg>Makelaar Software</a>'
               f'<a class="tile" href="{pg.rel("tools-voor-vastgoed")}"><svg class="ic"><use href="#i-folder"/></svg>Tools voor vastgoed</a>'
-              f'<a class="tile" href="{pg.rel("woningwaarderapport")}"><svg class="ic"><use href="#i-houseval"/></svg>Woningwaarderapport</a>'
+              f'<a class="tile" href="{pg.rel("woningwaarderapport")}"><svg class="ic"><use href="#i-houseval"/></svg>Woningwaarde rapport</a>'
               f'<a class="tile" href="{pg.rel("actiefbeheerscan")}"><svg class="ic"><use href="#i-list"/></svg>Actiefbeheerscan</a>'
               f'<a class="tile" href="{pg.rel("hypotheekrente-app")}"><svg class="ic"><use href="#i-percent"/></svg>Hypotheekrente-app</a>'
               f'<a class="tile" href="{pg.rel("finly-crm")}"><svg class="ic"><use href="#i-crm"/></svg>Finly CRM</a>'
