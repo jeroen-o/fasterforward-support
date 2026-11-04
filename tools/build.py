@@ -51,6 +51,7 @@ REPLAYS = {
 # Pad waaronder de site draait (voor 404.html). GitHub Pages: /<repo>/; eigen domein: /
 SITE_BASE = os.environ.get("SITE_BASE", "/")
 WAYBACK_DIR = os.path.join(SRC, "wayback")      # uitvoer van tools/wayback-ophalen.py
+WPDB_DIR = os.path.join(SRC, "wpdb-2026-10-21")  # WordPress-databaseback-up (tools/wpdb_export.py)
 HANDLEIDING_DATUM = "30 oktober 2026"  # datum waarop de handleidingteksten zijn toegevoegd
 LIVE_DIR = os.path.join(SRC, "live-2026-10-20")  # pagina's van de live site, 20 oktober 2026
 SKIP_PATH = re.compile(r"^(wp-content|wp-includes|wp-json|wp-admin|feed|comments|author|tag|tags|page|xmlrpc|"
@@ -281,6 +282,38 @@ def load_sources():
         if rel.startswith("kennisbank/"):
             p["c"] = p["c"] or "kennisbank"
 
+    # 0c. WordPress-databaseback-up van 21 oktober 2026 (tools/wpdb_export.py): de nieuwste versie van elke
+    #     gepubliceerde pagina; gaat voor de live-extract en het Internet Archive.
+    dj = os.path.join(WPDB_DIR, "paginas.json")
+    if os.path.exists(dj):
+        for d in json.load(open(dj, encoding="utf8")):
+            if not d["html"].strip():
+                continue
+            p = get(BASE + "/" + d["pad"] + "/")
+            doc = (f'<html><head><title>{html.escape(d["titel"])}</title></head><body><div id="content">'
+                   f'<h1>{html.escape(d["titel"])}</h1><div class="hkb-article__content">{d["html"]}</div>'
+                   f'<div class="clear"></div></div></body></html>')
+            raw = htmlclean.extract(doc)
+            raw["title"] = d["titel"]
+            if d["type"] == "post":
+                raw["posted"] = d["geplaatst"] + (f' (Laatste update: {d["gewijzigd"]})' if d["gewijzigd"] != d["geplaatst"] else "")
+            else:
+                raw["posted"], raw["updated"] = "", "Laatste update: " + d["gewijzigd"]
+            if d.get("afbeelding"):
+                raw["ogimg"] = d["afbeelding"]
+            p["raw"], p["rawsrc"] = raw, "wpdb"
+            p["t"] = p["t"] or d["titel"]
+            p["kind"] = p["kind"] or "Artikel"
+            p["dbtitel"] = d["titel"]
+            if d["type"] == "ht_kb":
+                p["c"] = p["c"] or "kennisbank"
+                if d["crumbs"]:
+                    p["dbcrumb"] = d["crumbs"]
+            elif d["categorie"]:
+                p["c"] = p["c"] or d["categorie"]
+            if d["uittreksel"]:
+                p["summary"] = p["summary"] or d["uittreksel"]
+
     # 1. Offline-archief (zip): kruimelpad, type, screenshot, tekst
     for f in sorted(glob.glob(os.path.join(SRC, "offline-archief/pages/*.html"))):
         s = open(f, encoding="utf8").read()
@@ -344,6 +377,12 @@ def load_sources():
         seen = set()
         p["imgs"] = [im for im in p["imgs"] if freq[im["src"]] <= 3 and not (im["src"] in seen or seen.add(im["src"]))
                      and re.search(r"\.(png|jpe?g|gif|webp)$", im["src"], re.I)]
+    # De databaseback-up is leidend voor titel en categorie (de oudere bronnen hierboven overschrijven die anders).
+    for p in pages.values():
+        if p.get("dbtitel"):
+            p["t"] = clean_title(p["dbtitel"])
+        if p.get("dbcrumb"):
+            p["crumb"] = p["dbcrumb"]
     # 5. Nieuwe en aangevulde kennisbankartikelen (klantgerichte delen uit de supporthandleidingen, bronnen/handleidingen/)
     for f in sorted(glob.glob(os.path.join(SRC, "handleidingen", "*.json"))):
         d = json.load(open(f, encoding="utf8"))
@@ -797,6 +836,8 @@ def resolve_site(pg, path):
 
 
 def raw_to_html(pg, h):
+    h = re.sub(r'<img[^>]*src="IMG:"[^>]*>', "", h)  # afbeelding zonder bron
+    h = re.sub(r'href="IMG:"', 'href="#"', h)
     h = re.sub(r'(href|src)="IMG:([^"]+)"', lambda m: f'{m.group(1)}="{esc(resolve_img(pg, html.unescape(m.group(2))))}"', h)
     h = re.sub(r'href="SITE:([^"]*)"', lambda m: f'href="{esc(resolve_site(pg, html.unescape(m.group(1))))}"', h)
     toc, used = [], set()
@@ -1873,12 +1914,24 @@ def render_redirects(cats):
     cf = os.path.join(WAYBACK_DIR, "_cdx.json")
     if os.path.exists(cf):
         oud |= {o for _, o, m in json.load(open(cf)) if "html" in (m or "")}
+    # Doorverwijzingen die al op de oude site stonden (plugin Redirection, uit de databaseback-up)
+    oudsite = {}
+    rf = os.path.join(WPDB_DIR, "doorverwijzingen.json")
+    if os.path.exists(rf):
+        for r in json.load(open(rf, encoding="utf8")):
+            oudsite[r["van"]] = r["naar"]
+            oud.add(BASE + "/" + r["van"] + "/")
     n = 0
     for u in sorted(oud):
         path = re.sub(r"^https?://(www\.)?support\.fasterforward\.nl", "", u.split("#")[0].split("?")[0]).strip("/")
         if not path or os.path.exists(os.path.join(ROOT, path, "index.html")) or re.search(r"\.\w{2,4}$", path):
             continue
-        doel = redirect_doel(path, cats)
+        naar = oudsite.get(path)
+        if naar is not None and not naar.startswith("http"):
+            naar = naar.strip("/")
+            doel = (naar, None) if (naar == "" or os.path.exists(os.path.join(ROOT, naar, "index.html"))) else redirect_doel(naar, cats)
+        else:
+            doel = redirect_doel(path, cats)
         if not doel or doel[0] == path:
             continue
         pg = Page(path)

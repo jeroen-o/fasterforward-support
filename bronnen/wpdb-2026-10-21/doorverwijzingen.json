@@ -1,0 +1,637 @@
+[
+ {
+  "van": "kennisbank/boekhouding",
+  "naar": "categorien/boekhouding",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/communicatie",
+  "naar": "categorien/communicatie",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/dossier",
+  "naar": "categorien/dossier",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/facturatie",
+  "naar": "categorien/facturatie",
+  "status": "301"
+ },
+ {
+  "van": "faqs",
+  "naar": "",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/hypotheek-aanvragen",
+  "naar": "categorien/hypotheek-aanvragen",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/koppelingen",
+  "naar": "categorien/koppelingen",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/producten",
+  "naar": "categorien/producten",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/prolongeren",
+  "naar": "categorien/prolongeren",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/rapportage",
+  "naar": "categorien/rapportage",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/beginnen-met-elements/dossiers",
+  "naar": "kennisbank/dossiers",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/beginnen-met-elements/eerste-gebruik",
+  "naar": "kennisbank/eerste-gebruik",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/beginnen-met-elements/goedomteweten",
+  "naar": "kennisbank/tips-tricks",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/beginnen-met-elements/paginas-knoppen",
+  "naar": "kennisbank/paginas-en-knoppen",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/beginnen-met-elements/starten-met-elements",
+  "naar": "kennisbank/beginnen-met-eblinqx",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/beginnen-met-elements/startpagina",
+  "naar": "kennisbank/startpagina",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/beginnen-met-elements/support",
+  "naar": "kennisbank/support",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/dossier/bijlage-aan-e-mail-toevoegen",
+  "naar": "kennisbank/bijlage-aan-e-mail-toevoegen",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/dossier/hoe-bepaal-zichtbaar-is-klant-mijndigimap",
+  "naar": "kennisbank/hoe-bepaal-zichtbaar-is-klant-mijndigimap",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/dossier/hoe-exporteer-dossier",
+  "naar": "kennisbank/hoe-exporteer-dossier",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/dossier/collega-toegang-agenda",
+  "naar": "kennisbank/collega-toegang-agenda",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/dossier/hoe-taak-afronden-als-er-geen-vinkje-staat",
+  "naar": "kennisbank/dossier/hoe-taak-afronden-als-er-geen-vinkje-staat",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/dossier/hoe-taak-laten-herhalen",
+  "naar": "2093",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/dossier/hoe-kijk-mee-klant-mijndigimap",
+  "naar": "2573",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/dossier/hoe-maak-en-afspraak-agenda",
+  "naar": "kennisbank/hoe-maak-en-afspraak-agenda",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/dossier/hoe-maak-dossier-aan",
+  "naar": "kennisbank/hoe-maak-dossier-aan",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/dossier/hoe-maak-pakket-aan",
+  "naar": "2706",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/dossier/hoe-maak-ik-een-taak-aan-voor-een-collega",
+  "naar": "kennisbank/hoe -maak-taak-aan-voor-een-collega",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/dossier/hoe-maak-ik-een-taak-aan",
+  "naar": "kennisbank/hoe-maak-ik-een-taak-aan",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/dossier/hoe-maak-terugkerende-afspraak-agenda",
+  "naar": "kennisbank/hoe-maak-terugkerende-afspraak-agenda",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/dossier/collega-uitnodigen-afspraak",
+  "naar": "kennisbank/collega-uitnodigen-afspraak",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/dossier/hoe-maak-ik-een-e-mail-in-een-dossier-aan",
+  "naar": "kennisbank/hoe-maak-ik-een-e-mail-in-een-dossier-aan",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/dossier/hoe-voeg-crm-kenmerk-toe-aan-dossier",
+  "naar": "kennisbank/hoe-voeg-crm-kenmerk-toe-aan-dossier",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/dossier/hoe-wijzig-naam-dossier",
+  "naar": "2238",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/dossier/hoe-wijzig-status-dossier",
+  "naar": "kennisbank/hoe-wijzig-status-dossier",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/dossier/hoe-wijzig-kantoor-dossier",
+  "naar": "2249",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/dossier/afspraak-wijzigen-verwijderen-agenda",
+  "naar": "2708",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/dossier/persoon-toevoegen-aan-dossier",
+  "naar": "kennisbank/persoon-toevoegen-aan-dossier",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/dossier/waarom-ontvangt-klant-digimap-inlog",
+  "naar": "kennisbank/waarom-ontvangt-klant-digimap-inlog",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/dossier/workflow-onder-een-factuur",
+  "naar": "2529",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/dossier/workflow-onder-een-offerte",
+  "naar": "kennisbank/workflow-onder-een-offerte",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/dossier/workflow-onder-een-taak",
+  "naar": "2530",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/dossier/workflows",
+  "naar": "kennisbank/workflows",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/boekhouding/bank-inrichten-importeren-bankafschriften",
+  "naar": "kennisbank/bank-inrichten-importeren-bankafschriften",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/boekhouding/debiteur-aanmaken",
+  "naar": "kennisbank/debiteur-aanmaken",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/boekhouding/enof-rekening-aanmaken",
+  "naar": "kennisbank/enof-rekening-aanmaken",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/boekhouding/hoe-importeer-bankafschrift",
+  "naar": "kennisbank/hoe-importeer-bankafschrift",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/boekhouding/hoe-maak-en-incasso-batch",
+  "naar": "kennisbank/hoe-maak-en-incasso-batch",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/boekhouding/hoe-sluit-jaar-boekhoudkundig-af",
+  "naar": "kennisbank/sluit-jaar-boekhoudkundig-af",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/boekhouding/hoe-verwerk-stornering",
+  "naar": "kennisbank/hoe-verwerk-stornering",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/boekhouding/mandaat",
+  "naar": "kennisbank/mandaat",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/communicatie/e-mail-notificatie",
+  "naar": "kennisbank/e-mail-notificatie",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/communicatie/e-mail-op-mobiele-telefoon",
+  "naar": "kennisbank/e-mail-op-mobiele-telefoon",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/communicatie/hoe-koppel-ik-een-e-mail-aan-het-dossier",
+  "naar": "kennisbank/hoe-koppel-ik-een-e-mail-aan-het-dossier",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/communicatie/hoe-koppel-e-mail-bijlage-aan-stukkenlijst",
+  "naar": "2113",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/communicatie/hoe-maak-campagne-aan",
+  "naar": "kennisbank/hoe-maak-campagne-aan",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/communicatie/hoe-maak-ik-een-e-mail-aan",
+  "naar": "kennisbank/hoe-maak-ik-een-e-mail-aan",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/communicatie/hoe-maak-e-mail-map-aan",
+  "naar": "",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/communicatie/hoe-maak-mailgroep-aan",
+  "naar": "kennisbank/hoe-maak-mailgroep-aan",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/communicatie/hoe-maak-mailingregel-aan",
+  "naar": "kennisbank/hoe-maak-mailingregel-aan",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/communicatie/hoe-maak-ik-een-standaard-tekst",
+  "naar": "kennisbank/hoe-maak-ik-een-standaard-tekst",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/communicatie/hoe-maak-tag",
+  "naar": "kennisbank/hoe-maak-tag",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/communicatie/hoe-maak-ik-een-template-voor-brievene-mail",
+  "naar": "kennisbank/hoe-maak-ik-een-template-voor-brievene-mail",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/communicatie/hoe-stel-afwezigheidsassistent",
+  "naar": "kennisbank/hoe-stel-afwezigheidsassistent",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/communicatie/wil-pdf-brief-formulier-opslaan",
+  "naar": "kennisbank/wil-pdf-bestand-brief-formulier-opslaan",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/communicatie/instellen-e-mail-elements",
+  "naar": "kennisbank/instellen-e-mail-eblinqx",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/communicatie/wat-is-een-tag",
+  "naar": "kennisbank/wat-is-een-tag",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/communicatie/werken-met-de-tekstverwerker",
+  "naar": "kennisbank/werken-met-de-tekstverwerker",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/facturatie/automatisch-factuur-aanmaken-vanuit-dossier",
+  "naar": "kennisbank/automatisch-factuur-aanmaken-vanuit-dossier",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/facturatie/factuur-aanmaken",
+  "naar": "",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/facturatie/waar-maak-ik-mijn-factuurnummers",
+  "naar": "kennisbank/waar-maak-ik-mijn-factuurnummers",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/koppelingen/koppelen-google-agenda",
+  "naar": "kennisbank/koppelen-google-agenda",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/koppelingen/welke-pakketten-elements-koppelen",
+  "naar": "",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/hypotheek-aanvragen/hoe-breid-ik-de-stukkenlijst-uit",
+  "naar": "kennisbank/hoe-soort-document-toevoegen",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/hypotheek-aanvragen/hoe-maak-ik-een-stukkenlijst-template",
+  "naar": "kennisbank/hoe-maak-stukkenlijst-template",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/hypotheek-aanvragen/hoe-stel-omgeving-hypotheek-proces",
+  "naar": "kennisbank/hoe-voer-maatschappij-op",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/hypotheek-aanvragen/hoe-verstuur-hdn-berichten",
+  "naar": "kennisbank/hoe-verstuur-hdn-bericht",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/hypotheek-aanvragen/hoe-weet-hdn-bericht-verzonden-is",
+  "naar": "kennisbank/hoe-weet-hdn-bericht-verzonden-is",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/hypotheek-aanvragen/hoe-wordt-stukkenlijst-gevuld-handmatig-en-hdn",
+  "naar": "kennisbank/hoe-wordt-stukkenlijst-gevuld",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/hypotheek-aanvragen/lx-apart-ax-versturen",
+  "naar": "kennisbank/lx-apart-ax-versturen-vanuit-adviespakket",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/hypotheek-aanvragen/vanuit-advies-pakket-advies-verwerken-ffwd-elements",
+  "naar": "kennisbank/vanuit-adviesapplicatie-advies-verwerken-ffwd-elements",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/hypotheek-aanvragen/welke-maatschappij-koppelt-hdn",
+  "naar": "2877",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/prolongeren/adn-berichten-ontvangen-elements",
+  "naar": "kennisbank/adn-berichten-ontvangen",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/prolongeren/prolongatie-instellen-dagboeken",
+  "naar": "kennisbank/prolongatie-instellen-dagboeken",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/prolongeren/prolongatie-instellen-marges",
+  "naar": "kennisbank/prolongatie-instellen-marges",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/prolongeren/prolongatie-instellen-por-codes",
+  "naar": "kennisbank/prolongatie-instellen-por-codes",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/producten/hoe-archiveer-product-offerte",
+  "naar": "kennisbank/hoe-archiveer-product-offerte",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/producten/hoe-krijg-overzicht-al-lopende-aanvragen",
+  "naar": "kennisbank/hoe-krijg-overzicht-al-lopende-aanvragen",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/producten/hoe-maak-ik-een-artikelgroep-aan",
+  "naar": "kennisbank/hoe-maak-ik-een-artikelgroep-aan",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/producten/hoe-maak-ik-een-categorie-aan",
+  "naar": "kennisbank/hoe-maak-ik-een-categorie-aan",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/producten/hoe-maak-inkoop-aan",
+  "naar": "kennisbank/inkoop-via-aanmaken",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/producten/hoe-maak-nieuw-product-aan",
+  "naar": "kennisbank/hoe-maak-nieuw-product-aan",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/producten/hoe-voer-maatschappij-op",
+  "naar": "kennisbank/hoe-maak-nieuwe-leverancier-aan",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/rapportage/rapportage-gebruiken",
+  "naar": "kennisbank/rapportage-gebruiken",
+  "status": "301"
+ },
+ {
+  "van": "release-elements-dashboard",
+  "naar": "24-april-release-elements-dashboard",
+  "status": "301"
+ },
+ {
+  "van": "het-nieuwe-elements-menu",
+  "naar": "het-nieuwe-elements-menu-2",
+  "status": "301"
+ },
+ {
+  "van": "wp-content/uploads/2019/05/Conversie-naar-Elements.pdf",
+  "naar": "wp-content/uploads/2019/05/Conversie-naar-Elements-1.pdf",
+  "status": "301"
+ },
+ {
+  "van": "nieuws-old/feed",
+  "naar": "feed",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/meerdere-e-mails-koppelen-aan-schademelding",
+  "naar": "kennisbank/e-mail-koppelen-aan-een-schademelding",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/nieuw-boekjaar-intructiefilm",
+  "naar": "kennisbank/sluit-jaar-boekhoudkundig-af",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/hoe-maak-terugkerende-afspraak-agenda",
+  "naar": "kennisbank/hoe-maak-en-afspraak-agenda",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/2-batch-verwerken",
+  "naar": "kennisbank/adn-batch-verwerken-met-mutatievoorstellen",
+  "status": "301"
+ },
+ {
+  "van": "nieuws/feed",
+  "naar": "feed",
+  "status": "301"
+ },
+ {
+  "van": "spellingscontrole-in-elements",
+  "naar": "kennisbank/spellingscontrole-in-eblinqx",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/handleiding-faster-forward-on-route",
+  "naar": "kennisbank/handleiding-eblinqx-on-route",
+  "status": "301"
+ },
+ {
+  "van": "bedrijfscertificaat-in-elements-vervangen",
+  "naar": "bedrijfscertificaat-in-eblinqx-vervangen",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/provisiematch-niet-gemaakt",
+  "naar": "kennisbank/geen-vergoedingsgroep-gevonden-oplossen",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/automatisch-tijd-registreren-in-elements",
+  "naar": "kennisbank/automatisch-tijd-registreren",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/beveiliging-faster-forward-elements",
+  "naar": "kennisbank/beveiliging-eblinqx",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/maatschappijbestanden-inlezen-elements",
+  "naar": "kennisbank/maatschappijbestanden-inlezen",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/avg-en-elements-veel-gestelde-vragen",
+  "naar": "kennisbank/avg-en-eblinqx-veel-gestelde-vragen",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/administratie-instellen-elements",
+  "naar": "kennisbank/administratie-instellen",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/beginnen-met-elements",
+  "naar": "kennisbank/beginnen-met-eblinqx",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/instellen-e-mail-elements",
+  "naar": "kennisbank/instellen-e-mail-eblinqx",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/adn-berichten-ontvangen-elements",
+  "naar": "kennisbank/adn-berichten-ontvangen",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/welke-adviespakketten-koppelt-elements",
+  "naar": "kennisbank/welke-adviespakketten-koppelt-eblinqx",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/on-route-app-voor-ios-gebruiken",
+  "naar": "kennisbank/on-route-app-gebruiken",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/functionaliteiten-faster-forward-on-route-app",
+  "naar": "kennisbank/on-route-app-gebruiken",
+  "status": "301"
+ },
+ {
+  "van": "categorien/elements",
+  "naar": "categorien/eblinqx",
+  "status": "301"
+ },
+ {
+  "van": "categorien/beginnen-met-elements",
+  "naar": "categorien/beginnen-met-eblinqx",
+  "status": "301"
+ },
+ {
+  "van": "categorien/elements-veilig",
+  "naar": "categorien/eblinqx-veilig",
+  "status": "301"
+ },
+ {
+  "van": "categorien/koppelingen-elements",
+  "naar": "categorien/koppelingen-eblinqx",
+  "status": "301"
+ },
+ {
+  "van": "categorien/koppelingen-elements2",
+  "naar": "categorien/koppelingen-eblinqx2",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/adn-batch-verwerken-met-zonder-tussenrekening",
+  "naar": "kennisbank/adn-batch-verwerken-met-mutatievoorstellen",
+  "status": "301"
+ },
+ {
+  "van": "kennisbank/standaard-afkeurredenen-beheren-serviceprovider",
+  "naar": "kennisbank/standaard-afkeurredenen-beheren",
+  "status": "301"
+ },
+ {
+  "van": "vragenlijst-afm-invullen",
+  "naar": "kennisbank/afm-marktmonitor-invullen-2",
+  "status": "301"
+ },
+ {
+  "van": "trainingen",
+  "naar": "https://verzekeringhypotheek.blinqx.tech/academy",
+  "status": "301"
+ }
+]

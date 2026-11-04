@@ -79,115 +79,111 @@
   <div class="wrap cols">
     <article>
       <h1>Gegevens ophalen door tags te maken</h1>
-      <p class="meta">Laatste update: 7 augustus 2019</p>
-      <div class="oud" role="note"><strong>Let op: mogelijk verouderd.</strong> Dit artikel is voor het laatst bijgewerkt op 7 augustus 2019 en beschrijft mogelijk een oudere versie van de software (Elements). Schermen en werkwijze kunnen in eBlinqx Connect afwijken. Twijfel je? <a href="../../contact/index.html">Neem contact op met support</a>.</div>
-      <div class="content"><p>Door gebruik te maken van tags kunt u gegevens uit het dossier ophalen om te gebruiken in een standaardtekst. Lees <a href="../../kennisbank/hoe-gebruik-ik-een-tag/index.html">hier</a> meer over het gebruik van tags in eBlinqx Connect.</p>
-<p>Daarnaast kun u ook zelf tags maken met behulp van de bestaande tags. Hieronder leest u welke functies er zijn en wordt er aan de hand van voorbeelden uitgelegd hoe u hier gebruik van kunt maken.</p>
-<h3 id="aparte-tag-functies">Aparte tag functies</h3>
-<h4 id="if-functie"><strong>If-Functie</strong></h4>
+      <p class="meta">Laatste update: 15 oktober 2025</p>
+      
+      <div class="content"><p>Met tags haal je gegevens op uit een dossier. Zo kun je automatisch gegevens inladen in een brief, registratie, sms e-mail of correspondentietekst.</p>
+<p>Wanneer je tags in een standaardtekst invoegt, hoef je deze gegevens nooit meer ‘keer op keer’ op te zoeken. Je voegt de standaardtekst in, waar de tags in staan, en alles wordt automatisch opgehaald en ingevuld na het opslaan.</p>
+<p>Enkele voorbeelden van tags zijn:</p>
+<figure><table><tbody><tr><td><strong>Tag</strong></td><td><strong>Resultaat</strong></td></tr><tr><td>[offerte-&gt;offertenummer]</td><td>Offertenummer van een specifiek product</td></tr><tr><td>[taak-&gt;adres-&gt;postcode]</td><td>Postcode die is ingesteld als locatie in een afspraak</td></tr><tr><td>[algemeen-&gt;vandaag-&gt;dd-mm-yyyy]</td><td>Datum van vandaag</td></tr></tbody></table></figure>
+<h2 id="0-gericht-informatie-ophalen">Gericht informatie ophalen</h2>
+<p>Je kunt hiervoor bestaande tags gebruiken (lees <a href="../../kennisbank/hoe-gebruik-ik-een-tag/index.html">hier</a> hoe je tags gebruikt) en je kunt zelf tags maken met behulp van de bestaande tags. Door zelf tags te maken, kun je heel gericht de juiste informatie ophalen uit een dossier. </p>
+<p>Hieronder lees je welke functies er zijn en wordt er aan de hand van voorbeelden uitgelegd hoe je zelf tags maakt. </p>
+<h2 id="1-functies-van-tags">Functies van tags</h2>
+<h3 id="2-if-functie">If-Functie</h3>
 <p>Een IF-functie legt een conditie op een bepaalde tag. Een voorbeeld is:</p>
-[if{offerte-&gt;aanvragers{1}-&gt;geslacht}==female]Mevrouw[/if]
-<p>Dit leest als: Als het geslacht van de eerste aanvrager ‘vrouw’ is, toon dan “Mevrouw”. Een IF-functie heeft de opbouw: [if{TAG}==UITKOMST TAG]Te tonen tekst[/if]
-<p>TIP: == betekent “is gelijk aan” en != betekent “is niet gelijk aan”</p>
-<h4 id="else-functie"><strong>Else-Functie</strong></h4>
+[if{offerte-&gt;aanvragers{1}-&gt;geslacht}==female]Mevrouw
+<p>Dit leest als: Als het geslacht van de eerste aanvrager 'vrouw' is, toon dan "Mevrouw". Een IF-functie heeft de opbouw: [if{TAG}==UITKOMST TAG]Te tonen tekst</p>
+<p>TIP: == betekent "is gelijk aan" en != betekent "is niet gelijk aan"</p>
+<h3 id="3-else-functie">Else-Functie</h3>
 <p>Een ELSE-functie zou er als volgt uit kunnen zien:</p>
-[if{offerte-&gt;aanvragers{1}-&gt;geslacht}==female]Mevrouw[else]De heer[/if]
-<p>Dit leest als: Als het geslacht van de eerste aanvrager ‘vrouw’ is, toon dan “Mevrouw” anders “De heer”. Een ELSE-functie staat altijd in een IF-functie, dus tussen [if] en [/if].</p>
-<h4 id="repeat-functie"><strong>Repeat-Functie</strong></h4>
+[if{offerte-&gt;aanvragers{1}-&gt;geslacht}==female]MevrouwDe heer
+<p>Dit leest als: Als het geslacht van de eerste aanvrager 'vrouw' is, toon dan "Mevrouw" anders "De heer". Een ELSE-functie staat altijd in een IF-functie, dus tussen  en .</p>
+<h3 id="4-repeat-functie">Repeat-Functie</h3>
 <p>De repeat functie is gemaakt om herhalende gegevens op te halen en kent de volgende opbouw:</p>
-[repeat{locatie waar je gaat zoeken}][informatie die u op wilt halen][/repeat]
-<p>Dus u begint met:</p>
-[repeat{<em>FUNCTIE</em>}][/repeat]
-<p>Vervolgens geef u aan welke info u wilt ophalen. Bijvoorbeeld de achternaam van alle relaties uit een dossier. Die informatie zet u met een tag tussen de begin en sluit repeats in.</p>
-[repeat{}][dossier-&gt;persoonrelaties-&gt;achternaam][/repeat]
-<p>Vervolgens plaatst u tussen de accolades de locatie waar u deze info kunt vinden, in dit geval bij dossier-&gt;persoonrelaties:</p>
-<p><em>[repeat{dossier-&gt;persoonrelaties}][dossier-&gt;persoonrelaties-&gt;achternaam][/repeat]</em></p>
-<p>In dit geval krijg u alle achternamen van de personen uit het dossier te zien, bijvoorbeeld:</p>
+[repeat{locatie waar je gaat zoeken}]
+<p>Dus je begint met:</p>
+[repeat{<em>FUNCTIE</em>}]
+<p>Vervolgens geef je aan welke info je wilt ophalen. Bijvoorbeeld de achternaam van alle relaties uit een dossier. Die informatie zet je met een tag tussen de begin en sluit repeats in.</p>
+[repeat{}][dossier-&gt;persoonrelaties-&gt;achternaam]
+<p>Vervolgens plaatst je tussen de accolades de locatie waar je deze info kunt vinden, in dit geval bij dossier-&gt;persoonrelaties:</p>
+<p><em>[repeat{dossier-&gt;persoonrelaties}][dossier-&gt;persoonrelaties-&gt;achternaam]</em></p>
+<p>In dit geval krijg je alle achternamen van de personen uit het dossier te zien, bijvoorbeeld:</p>
 <p><strong><em>JansenSchipperBoer</em></strong></p>
 <p>Ze staan dus aaneen gesloten. Door een spatie achter de tag [dossier-&gt;persoonrelaties-&gt;achternaam] te zetten, krijgt de opsomming ook een spatie.</p>
-<p><em>[repeat{dossier-&gt;persoonrelaties}][dossier-&gt;persoonrelaties-&gt;achternaam] [/repeat]</em> wordt:</p>
+<p><em>[repeat{dossier-&gt;persoonrelaties}][dossier-&gt;persoonrelaties-&gt;achternaam] </em> wordt:</p>
 <p><strong>Jansen Schipper Boer</strong></p>
-<p>U kunt ook een ‘Enter’ plaatsen na de tag.</p>
-<p><em>[repeat{dossier-&gt;persoonrelaties}][dossier-&gt;persoonrelaties-&gt;achternaam]</em></p>
-<p><em>[/repeat]</em></p>
+<p>Je kunt ook een 'Enter' plaatsen na de tag.</p>
+<p>[repeat{dossier-&gt;persoonrelaties}][dossier-&gt;persoonrelaties-&gt;achternaam] </p>
 <p>Dan is het resultaat:</p>
-<p><strong>Jansen<br>
-</strong><strong>Schipper<br>
-Boer</strong></p>
-<p>U kunt ook meerdere gegevens ophalen, zoals voorletters, tussenvoegsels en achternaam:</p>
-<p><em>[repeat{dossier-&gt;persoonrelaties}][dossier-&gt;persoonrelaties-&gt;voornaam] [dossier-&gt;persoonrelaties-&gt;tussenvoegsel] [dossier-&gt;persoonrelaties-&gt;achternaam]</em></p>
-<p><em>[/repeat]</em></p>
+<p><strong>Jansen<br></strong><strong>Schipper<br>Boer</strong></p>
+<p>Je kunt ook meerdere gegevens ophalen, zoals voorletters, tussenvoegsels en achternaam:</p>
+<p>[repeat{dossier-&gt;persoonrelaties}][dossier-&gt;persoonrelaties-&gt;voornaam] [dossier-&gt;persoonrelaties-&gt;tussenvoegsel] [dossier-&gt;persoonrelaties-&gt;achternaam] </p>
 <p>Dit geeft bijvoorbeeld als output:</p>
-<p><strong>Saskia  Jansen (LET OP: er staan 2 spaties tussen voor en achternaam)<br>
-</strong><strong>Bram  Schipper (LET OP: er staan 2 spaties tussen voor en achternaam)<br>
-Frank de Boer</strong></p>
-<p>Om de extra spatie te voorkomen kunt u een combinatie maken van een [repeat] en een [if]:</p>
-<p><em>[repeat{dossier-&gt;persoonrelaties}][dossier-&gt;persoonrelaties-&gt;voornaam] [if{dossier-&gt;persoonrelaties-&gt;tussenvoegsel}!=][dossier-&gt;persoonrelaties-&gt;tussenvoegsel] [/if][dossier-&gt;persoonrelaties-&gt;achternaam]</em></p>
-<p><em>[/repeat]</em></p>
+<p><strong>Saskia  Jansen (LET OP: er staan 2 spaties tussen voor en achternaam)<br></strong><strong>Bram  Schipper (LET OP: er staan 2 spaties tussen voor en achternaam)<br>Frank de Boer</strong></p>
+<p>Om de extra spatie te voorkomen kan je een combinatie maken van een </p>
+<p> en een : <em>[repeat{dossier-&gt;persoonrelaties}][dossier-&gt;persoonrelaties-&gt;voornaam] [if{dossier-&gt;persoonrelaties-&gt;tussenvoegsel}!=][dossier-&gt;persoonrelaties-&gt;tussenvoegsel] [dossier-&gt;persoonrelaties-&gt;achternaam]</em> </p>
 <p>Deze combinatie controleert meteen of het tussenvoegsel bestaat of niet. Als deze niet bestaat zal de extra spatie eruit worden gefilterd. Dit geeft dan als output:</p>
-<p><strong>Saskia Jansen<br>
-</strong><strong>Bram Schipper<br>
-Frank de Boer</strong></p>
-<h4 id="algemene-functies"><strong>Algemene Functies</strong></h4>
+<p><strong>Saskia Jansen<br></strong><strong>Bram Schipper<br>Frank de Boer</strong></p>
+<h3 id="5-algemene-functies">Algemene Functies</h3>
 <p>De algemene functies kunnen gebruikt worden in iedere tag (behalve waarvan de uitkomst een getal is). Deze algemene functies houden geen rekening met de waarde die in het veld staat. Voorbeeld van een dergelijke tag is:</p>
 [dossier-&gt;persoonrelaties-&gt;achternaam|allehoofdletter]
 <p>Alle letters worden dus als hoofdletters weergegeven, ongeacht hoe het staat ingevoerd. Hieronder volgt de beschrijving van een aantal functies.</p>
-<p>|allehoofdletter</p>
-<p>Deze tag zal alle letters in hoofdletters zetten<br>
-Voorbeeld:</p>
+<p><strong>|allehoofdletter</strong></p>
+<p>Deze tag zal alle letters in hoofdletters zetten<br>Voorbeeld:</p>
 <p>bergen op zoom zal worden: BERGEN OP ZOOM</p>
-<p>|zegge</p>
+<p><strong>|zegge</strong></p>
 <p>Deze tag zal de getallen voluit schrijven.</p>
-<p>|woordhoofdletter</p>
-<p>Deze tag zal de eerste letter van elk woord in deze tag als hoofdletter zetten<br>
-Voorbeeld:</p>
+<p><strong>|woordhoofdletter</strong></p>
+<p>Deze tag zal de eerste letter van elk woord in deze tag als hoofdletter zetten<br>Voorbeeld:</p>
 <p>bergen op zoom zal worden: Bergen Op Zoom</p>
-<p>|eerstehoofdletter</p>
-<p>Deze tag zal de eerste letter als hoofdletter zetten<br>
-Voorbeeld:</p>
+<p><strong>|eerstehoofdletter</strong></p>
+<p>Deze tag zal de eerste letter als hoofdletter zetten<br>Voorbeeld:</p>
 <p>bergen op zoom zal worden: Bergen op zoom</p>
-<p>|alleeneerstehoofdletter</p>
-<p>Deze tag zal de eerste letter als hoofdletter en (in tegenstelling tot |eerstehoofdletter) de rest als kleine letters neerzetten.<br>
-Voorbeeld:</p>
+<p><strong>|alleeneerstehoofdletter</strong></p>
+<p>Deze tag zal de eerste letter als hoofdletter en (in tegenstelling tot |eerstehoofdletter) de rest als kleine letters neerzetten.<br>Voorbeeld:</p>
 <p>BERGEN OP ZOOM zal worden: Bergen op zoom</p>
-<p>|geenhoofdletters</p>
-<p>Deze tag zal alle hoofdletters in kleine letters zetten<br>
-Voorbeeld:</p>
+<p><strong>|geenhoofdletters</strong></p>
+<p>Deze tag zal alle hoofdletters in kleine letters zetten<br>Voorbeeld:</p>
 <p>Bergen Op Zoom zal worden: bergen op zoom</p>
-<p>|voorloopnul</p>
-<p>Deze functie zal een 0 toevoegen aan een (onderdeel) van een datum of tijd.<br>
-Voorbeeld:</p>
+<p><strong>|voorloopnul</strong></p>
+<p>Deze functie zal een 0 toevoegen aan een (onderdeel) van een datum of tijd.<br>Voorbeeld:</p>
 <p>8-7-2012 zal worden 08-07-2012 als bijvoorbeeld de tags <u><em>[algemeen-&gt;vandaag-&gt;dagnummer|voorloopnul] </em></u>en<em>[algemeen-&gt;vandaag-&gt;maandnummer|voorloopnul]</em> worden gebruikt.</p>
 <p>Voor tijd geldt hetzelfde:</p>
 <p>9:5 is netter als dit wordt getoond als 09:05 en dit kan door bijvoorbeeld de tags [algemeen-&gt;vandaag-&gt;uur|voorloopnul]:[algemeen-&gt;vandaag-&gt;minuut|voorloopnul] worden gebruikt.</p>
 <p>LET OP: deze functie houdt wel rekening met het aantal karakters van de tag. Een tijd als 14:54 zal dus worden getoond als 14:54, en niet als 014:054 als gebruik wordt gemaakt van de functie |voorloopnul</p>
-<p>|maakvergelijkbaar</p>
+<p><strong>|maakvergelijkbaar</strong></p>
 <p>Deze functie zal van een getal met komma een punt maken zodat er een vergelijk gemaakt kan worden.</p>
 <p>Voorbeeld:</p>
 <p>1.500,00 zal met functie 1500.00 worden.</p>
 [offerte-&gt;hoofdsom|maakvergelijkbaar]
 <p>Daarnaast zijn er ook tags beschikbaar om het getal positief of negatief te maken. Gebruik hiervoor: |maakpositief  of|maaknegatief</p>
-<h4 id="specifieke-functies"><strong>Specifieke Functies</strong></h4>
-<p>|spatie</p>
+<p><strong>|zonderspaties</strong></p>
+<p>Deze functie zorgt ervoor dat de spaties eruit gehaald worden. Deze kan bijvoorbeeld gebruikt worden in de header bij het telefoonnummer.</p>
+<h3 id="6-specifieke-functies-"><strong>Specifieke Functies</strong></h3>
+<p><strong>|spatie</strong></p>
 <p>Deze is te gebruiken bij alle postcode tags en zal een spatie tussen de cijfers en letters zetten</p>
 <p>Voorbeeld:</p>
 <p>1232AA zal worden: 1232 AA</p>
-<p>|hoofdletter</p>
+<p><strong>|hoofdletter</strong></p>
 <p>Deze tag is alleen te gebruiken bij de tussenvoegsel tag om bij de aanhef het tussenvoegsel met hoofdletter te zetten</p>
 <p>Voorbeeld:</p>
 <p>Geachte heer de Krom zal worden: Geachte heer De Krom</p>
-<p>|width:X</p>
+<p><strong>|width:X</strong></p>
 <p>Om de breedte van een plaatje te forceren die een tag is opgeslagen (bijvoorbeeld een barcode), kan de breedte (width) worden ingesteld middels |width:X. Op de plaats van de X dient het aantal pixels gevuld te worden.</p>
 <p>Voorbeeld:</p>
 [dossier-&gt;barcode-&gt;document categorie barcode|width:150]
-<p>|height:X</p>
+<p><strong>|height:X</strong></p>
 <p>Om de hoogte van een plaatje te forceren die een tag is opgeslagen (bijvoorbeeld een barcode), kan de hoogte (height) worden ingesteld middels |height:X. Op de plaats van de X dient het aantal pixels gevuld te worden.</p>
 [dossier-&gt;barcode-&gt;document categorie barcode|height:50]
-<p>|type:{ID}</p>
-<p>Wanneer er een bepaalde document type barcode op bijvoorbeeld een brief geprint moet worden, zodat deze (bijvoorbeeld getekend) ingescand kan worden en direct op de goede plaats beland, moet het type van het document achter de tag worden geplakt. De ID’s zijn op te halen via de module ‘Document categorieën’ onder ‘Beheer’.</p>
+<p><strong>|type:{ID}</strong></p>
+<p>Wanneer er een bepaalde document type barcode op bijvoorbeeld een brief geprint moet worden, zodat deze (bijvoorbeeld getekend) ingescand kan worden en direct op de goede plaats beland, moet het type van het document achter de tag worden geplakt. De ID's zijn op te halen via de module 'Document categorieën' onder 'Beheer'.</p>
 <p>Voorbeeld:</p>
 [dossier-&gt;barcode-&gt;document categorie barcode|type:100]
-		</p></div>
+<p><strong>|gebruikinlink</strong></p>
+<p>Zo kan je bij een tag aangeven dat je deze specifiek gebruikt om een link te genereren. </p>
+<p><strong>algemeen-&gt;vandaag, algemeen-&gt;vandaag|eerstedag en algemeen-&gt;vandaag|eerstewerkdag</strong></p>
+<p>De tag algemeen-&gt;volgende maand zal als deze vandaag (op 1 januari 2025) wordt gebruikt de output geven 1 februari 2025. Wordt de tag op een dag gebruikt die in de volgende maand niet bestaat dan valt deze terug op de laatste wel bestaande dag. Wordt deze gebruikt op 29, 30 of 31 januari 2025 dan zal de output 28 februari 2025 zijn.</p>
+<p><a href="http://kennisbank.fasterforward.nl/books/communicatie/page/tags-maken-en-gebruiken/edit?content-id=bkmrk-deze-tag-heeft-ook-e&amp;content-text=Deze%20tag%20heeft%20ook%20extra%20functies%2C%20namelijk%C2%A0%7Ceerst" target="_blank" rel="noopener"></a>Deze tag heeft ook extra functies, namelijk |eerstedag en |eerstewerkdag zodat respectievelijk de eerste dag of eerste werkdag de output zal zijn. Ongeacht welke dag in de maand de tag gebruikt wordt zal de output altijd de eerste (werk)dag van de volgende maand zijn. Gebruik je de tag met de functie |eerstedag op 1, 14 of 31 januari 2025 dan krijg je als output altijd 1 februari 2025. Gebruik je op een willekeurig dag in januari de tag met de functie |eerstewerkdag dan krijg je altijd als output (maandag) 3 februari 2025. <strong>Let op</strong>, de functie |eerstewerkdag neemt de maandagen en zal geen rekening houden met feestdagen.</p></div>
       <div class="feedback"><span class="fb-q">Was deze informatie nuttig?</span><button type="button" data-fb="ja">Ja</button><button type="button" data-fb="nee">Nee</button><p class="fb-out" role="status" hidden></p></div>
       
       
