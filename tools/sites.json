@@ -1032,5 +1032,43 @@
    ]
   ],
   "afbeelding": "bronnen/sites/hypotheekrente-api-nl.webp"
+ },
+ {
+  "slug": "orv-api-nl",
+  "naam": "ORV-API.nl",
+  "url": "https://www.orv-api.nl/",
+  "ondertitel": "API om overlijdensrisicoverzekeringen te berekenen en te vergelijken",
+  "tekst": [
+   "Met de ORV-API bereken je de premie van alle overlijdensrisicoverzekeringen. Je maakt er zelf berekeningen mee of ontwikkelt bijvoorbeeld een ORV-vergelijker voor op je website. De API berekent onder meer de premies van TAF, Centraal Beheer, Goudse, Dazure, Allianz en Nationale Nederlanden."
+  ],
+  "secties": [
+   [
+    "Meer API's en rekentools",
+    [
+     "Naast de ORV-API zijn er API's voor onder meer de maximale hypotheek en de hypotheekrentetarieven (zie Hypotheekrente-api.nl), en kant-en-klare rekentools zoals op consumenten.hypotheekbond.nl."
+    ]
+   ],
+   [
+    "Contact",
+    [
+     "Meer informatie: info@hypotheekbond.nl of 020 758 21 11."
+    ]
+   ]
+  ],
+  "gerelateerd": [
+   [
+    "sites/hypotheekrente-api-nl",
+    "Hypotheekrente-api.nl"
+   ],
+   [
+    "banking-insurance",
+    "Banking & Insurance"
+   ],
+   [
+    "websitetools",
+    "Websitetools"
+   ]
+  ],
+  "afbeelding": "bronnen/sites/orv-api-nl.webp"
  }
 ]

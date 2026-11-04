@@ -85,6 +85,7 @@
 - [My-TP.net](https://support-eblinqx-connect.nl/sites/my-tp-net/): My TP is geïntegreerd in het aanbod van Blinqx Verzekering & Hypotheek, als onderdeel van één platform. Met My TP vergelijk je verzekeringen.
 - [Nazorg-formulieren.nl](https://support-eblinqx-connect.nl/sites/nazorg-formulieren-nl/): Om nazorg en actief klantbeheer in te vullen zijn er 20 slimme nazorgscans waarmee je direct kunt beginnen. Daarmee geef je invulling aan je zorgplicht.
 - [NHG.nl](https://support-eblinqx-connect.nl/sites/nhg-nl/): De Nationale Hypotheek Garantie (NHG) zet zich in om verantwoorde woonfinanciering voor meer consumenten mogelijk te maken.
+- [ORV-API.nl](https://support-eblinqx-connect.nl/sites/orv-api-nl/): Met de ORV-API bereken je de premie van alle overlijdensrisicoverzekeringen. Je maakt er zelf berekeningen mee of ontwikkelt bijvoorbeeld een ORV-vergelijker…
 - [Pensioen & Life-event advies](https://support-eblinqx-connect.nl/sites/pensioen-life-event-advies/): Met Pensioen & Life-event advies reken je eenvoudig scenario's door voor je klant en maak je de (belasting)effecten van verschillende keuzes inzichtelijk.
 - [Pensioencijfer.nl](https://support-eblinqx-connect.nl/sites/pensioencijfer-nl/): Pensioencijfer.nl helpt consumenten aandacht te geven aan hun pensioen, met één helder cijfer.
 - [Renteadministratie.nl](https://support-eblinqx-connect.nl/sites/renteadministratie-nl/): Renteadministratie.nl is hypotheekrente-administratie- en analysesoftware van Blinqx voor geldverstrekkers.
