@@ -1307,7 +1307,7 @@ def render_search(pages, cats):
                         "x": st["naam"] + " " + st["naam"].replace(".nl", "").replace(".net", "") + " " + st["url"] + " " + " ".join(st["tekst"])
                         + " " + " ".join(k + " " + " ".join(it) for k, it in st.get("secties", []))})
         idx.append({"t": "Banking & Insurance: Hypotheekcijfer.nl en Pensioencijfer.nl", "h": "banking-insurance/index.html", "c": "Banking & Insurance",
-                    "k": "kennisbank", "x": "banking insurance bank verzekeraar geldverstrekker hypotheekcijfer pensioencijfer hypotheekcheck pensioen cijfer renteadministratie rentetool rente publicatie analyse hypotheekrente api webservices hippoline data intelligence"})
+                    "k": "kennisbank", "x": "banking insurance bank verzekeraar geldverstrekker hypotheekcijfer pensioencijfer hypotheekcheck pensioen cijfer renteadministratie rentetool rente publicatie analyse hypotheekrente api webservices hypotheekvoorwaarden api voorwaarden hypotheek validatie engine validatie validation engine hippoline data intelligence"})
         idx.append({"t": "Handige websites", "h": "sites/index.html", "c": "Handige websites", "k": "kennisbank",
                     "x": "websites domeinen links " + " ".join(st["naam"] for st in sites_laden())})
         idx.append({"t": "Finly CRM: klantgegevens, workflows en communicatie op één plek", "h": "finly-crm/index.html", "c": "Finly CRM",
@@ -2914,7 +2914,12 @@ def render_banking():
   <h1>Banking &amp; Insurance</h1>
   <p class="lead">Oplossingen voor banken, geldverstrekkers en verzekeraars: klanten zelf inzicht geven in hun financiële situatie met één helder cijfer, en grip op het renteproces van analyse tot publicatie.</p>
   {blokken}
-  <p class="mhz-tip">Meer weten? Mail <a href="mailto:relatie-vh@blinqx.tech">relatie-vh@blinqx.tech</a> of bel <a href="tel:+31207582111">020 758 21 11</a>.</p>
+  <h2 class="wth">Ook beschikbaar: hypotheekvoorwaarden-API en hypotheek validatie engine</h2>
+  <div class="wtwhys">
+    <div class="wtwhy"><h3>Hypotheekvoorwaarden-API</h3><p>Naast de actuele rentes via de <a href="{pg.rel("sites/hypotheekrente-api-nl")}">hypotheekrente-API</a> zijn ook de hypotheekvoorwaarden van geldverstrekkers via een API beschikbaar, om in je eigen systemen, tools en vergelijkingen te gebruiken.</p></div>
+    <div class="wtwhy"><h3>Hypotheek validatie engine</h3><p>Met de hypotheek validatie engine controleer je hypotheekaanvragen en -gegevens geautomatiseerd, zodat je eerder ziet of een aanvraag compleet en juist is.</p></div>
+  </div>
+  <p class="mhz-tip">Meer weten over de API's en de validatie engine? Neem contact op met het team hieronder, mail <a href="mailto:relatie-vh@blinqx.tech">relatie-vh@blinqx.tech</a> of bel <a href="tel:+31207582111">020 758 21 11</a>.</p>
   <h2 class="wth">Ons team</h2>
   <div class="team">{team}</div>
 </div></main>"""
