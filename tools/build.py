@@ -842,7 +842,9 @@ def raw_to_html(pg, h):
     h = re.sub(r'href="SITE:([^"]*)"', lambda m: f'href="{esc(resolve_site(pg, html.unescape(m.group(1))))}"', h)
     # Afbeeldingen die niet meer bestaan (niet lokaal, alleen nog een archiefadres): weglaten in plaats van een leeg vak
     h = re.sub(r'<a href="https://web\.archive\.org/[^"]*"[^>]*>(.*?)</a>', r"\1", h, flags=re.S)
-    h = re.sub(r'<img[^>]*src="https://web\.archive\.org/[^"]*"[^>]*>', "", h)
+    # (data-origineel bewaart het oude adres, zodat tools/vervanging_plaatsen.py een nieuw scherm kan koppelen)
+    h = re.sub(r'<img[^>]*src="https://web\.archive\.org/web/[^/]+/([^"]*)"[^>]*>',
+               lambda m: f'<span class="img-volgt" role="img" aria-label="Afbeelding volgt" data-origineel="{m.group(1)}">Afbeelding volgt</span>', h)
     for _ in range(2):
         h = re.sub(r"<(figure|p|figcaption)>\s*(<br>\s*)*</\1>", "", h)
     toc, used = [], set()
