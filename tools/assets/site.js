@@ -90,7 +90,35 @@
     s.src = "https://chatbot-prod-we-ffapp.azurewebsites.net/assets/chat-embed.js";
     s.id = "my-chatbot-js";
     s.async = true;
+    s.onload = chatMobiel;
     document.body.appendChild(s);
+  }
+
+  /* Het chatscript blokkeert bij aanraken de klik (preventDefault op touchstart), waardoor de chat op telefoons niet
+     opent. Een korte tik (zonder slepen) opent de chat daarom hier zelf. Ligt de knop door eerder slepen (deels)
+     buiten beeld of midden in de pagina, dan zetten we hem terug rechtsonder. */
+  function chatMobiel() {
+    var icoon = document.getElementById("blinqx-chat-icon");
+    if (!icoon || !window.BlinqxChat) return;
+    var r = icoon.getBoundingClientRect();
+    if (r.right > window.innerWidth || r.bottom > window.innerHeight || r.left < 0 || r.top < 0 ||
+        (window.innerWidth < 700 && r.left < window.innerWidth - 140)) {
+      icoon.style.left = icoon.style.top = "auto";
+      icoon.style.right = icoon.style.bottom = "20px";
+      try { localStorage.removeItem("xPosition"); localStorage.removeItem("yPosition"); } catch (e) {}
+    }
+    var x = 0, y = 0, t = 0;
+    icoon.addEventListener("touchstart", function (e) {
+      x = e.touches[0].clientX; y = e.touches[0].clientY; t = Date.now();
+    }, { passive: true });
+    icoon.addEventListener("touchend", function (e) {
+      var c = e.changedTouches[0];
+      if (Math.abs(c.clientX - x) < 8 && Math.abs(c.clientY - y) < 8 && Date.now() - t < 600) window.BlinqxChat.open();
+    });
+    icoon.setAttribute("role", "button");
+    icoon.setAttribute("aria-label", "Chat met Quinn");
+    icoon.tabIndex = 0;
+    icoon.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); window.BlinqxChat.open(); } });
   }
   if (document.readyState === "complete") setTimeout(chat, 800);
   else window.addEventListener("load", function () { setTimeout(chat, 800); });

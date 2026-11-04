@@ -490,3 +490,7 @@ figure .img-volgt{margin:0}
 .vpagina .vplayer .play{position:absolute;inset:0;border:0;padding:0;background:transparent;cursor:pointer}
 .vpagina .vplayer .play .ic{position:absolute;left:50%;top:50%;width:84px;height:84px;transform:translate(-50%,-50%);transition:transform .15s}
 .vpagina .vplayer .play:hover .ic{transform:translate(-50%,-50%) scale(1.08)}
+/* smalle schermen en vergrote tekst (iPhone 'Paginazoom'/'Grotere tekst'): niets mag buiten beeld vallen */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+form.search{min-width:0}
+@media (max-width:480px){form.search{flex:1 1 100%}.search button{padding:0 12px}.status{width:100%}}
