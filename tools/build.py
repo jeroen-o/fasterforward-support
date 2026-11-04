@@ -1255,6 +1255,11 @@ def render_search(pages, cats):
                     "c": "Tools voor vastgoed", "k": "kennisbank", "x": TVV_INTRO + " toolsvoorvastgoed tools voor vastgoed makelaar "
                     "hypotheek toolset rekentools leads woningwaarderapport woningwaarde vastgoed publiceren online klantdossier "
                     "mijnhuiszaken yes-co tiara startende makelaar prijzen € 80 per maand " + " ".join(t for t, _ in TVV_TOOLS)})
+        idx.append({"t": "Partners van Blinqx Verzekering & Hypotheek", "h": "partners/index.html", "c": "Partners", "k": "kennisbank",
+                    "x": "partners partner samenwerking koppeling eblinqx " + " ".join(p["titel"] + " " + " ".join(p["tags"]) for p in partners_laden())})
+        for p in partners_laden():
+            idx.append({"t": p["titel"], "h": f"partners/{p['slug']}/index.html", "c": "Partners", "k": "kennisbank",
+                        "x": " ".join(p["tags"]) + " " + p["kort"] + " " + re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", p["html"])))})
         idx.append({"t": "Woningwaarderapport: de waarde van de woning van je klant", "h": "woningwaarderapport/index.html",
                     "c": "Woningwaarderapport", "k": "kennisbank", "x": "woningwaarderapport woningwaarde rapport waardeschatting "
                     "woningwaarde berekenen waarde woning voorbeeldrapport tools voor vastgoed portefeuillesignalen verkopen verhuizen "
@@ -1357,6 +1362,7 @@ def render_home(cats, feeds, pages):
               f'<a class="tile" href="{pg.rel("woningwaarderapport")}"><svg class="ic"><use href="#i-houseval"/></svg>Woningwaarderapport</a>'
               f'<a class="tile" href="{pg.rel("actiefbeheerscan")}"><svg class="ic"><use href="#i-list"/></svg>Actiefbeheerscan</a>'
               f'<a class="tile" href="{pg.rel("hypotheekrente-app")}"><svg class="ic"><use href="#i-percent"/></svg>Hypotheekrente-app</a>'
+              f'<a class="tile" href="{pg.rel("partners")}"><svg class="ic"><use href="#i-partners"/></svg>Partners</a>'
               f'<a class="tile" href="{pg.rel("procesversneller")}"><svg class="ic"><use href="#i-bolt"/></svg>Proces-versneller</a>')
 
     def a(path, label):
@@ -2315,6 +2321,105 @@ def render_woningwaarderapport():
                                         "van de woningwaarde en ontdek wie wil verkopen, verhuizen of de hypotheek aanpassen."))
 
 
+PARTNERS_URL = "https://verzekeringhypotheek.blinqx.tech/partners"
+PARTNER_EIGEN = {  # partner-slug -> eigen pagina op deze site
+    "mijnhuiszaken": ("mijnhuiszaken", "MijnHuiszaken"),
+    "yes-co-eblinqx-makelaars-software": ("yes-co", "Makelaar Software: Yes-co"),
+    "gratis-woningwaarde-rapport": ("woningwaarderapport", "Woningwaarderapport"),
+    "rekentools-voor-op-de-website": ("websitetools", "Websitetools"),
+}
+PARTNER_SAMENVATTING = {"rekentools-voor-op-de-website": "Rekentools van Hypotheekbond voor op de website van je advieskantoor: "
+                        "hypotheek berekenen, rentes vergelijken, aflossen, verduurzamen en klantinzicht."}
+
+
+def partners_laden():
+    f = os.path.join(SRC, "partners", "partners.json")
+    if not os.path.exists(f):
+        return []
+    lijst = json.load(open(f, encoding="utf8"))
+    for p in lijst:
+        h = p["html"]
+        h = re.sub(r"<p>(?:(?!</p>).)*(?:via onderstaande? knop|Download onderstaande buttons)(?:(?!</p>).)*</p>", "", h, flags=re.S)
+
+        def knop(m):
+            url = re.search(r'href="(https://formulier\.actiefbeheerscan\.nl/[^"]+)"', m.group(0)).group(1)
+            extra = re.search(r'of kijk op (<a [^>]+>.*?</a>)', m.group(0))
+            return (f'<p class="btn-row"><a class="btn-out cta" href="{url}" target="_blank" rel="noopener">Meer weten over deze samenwerking</a></p>'
+                    + (f"<p>Of kijk op {extra.group(1)}.</p>" if extra else ""))
+        h = re.sub(r"<p>(?:(?!</p>).)*klik hier(?:(?!</p>).)*</p>", knop, h, flags=re.S)
+        p["html"] = h
+        s = PARTNER_SAMENVATTING.get(p["slug"]) or p["samenvatting"]
+        if not s or s.endswith(("...", "…")):
+            eerste = next((html.unescape(re.sub(r"<[^>]+>", "", re.sub(r"^<strong>.*?</strong><br>", "", x))) for x in re.findall(r"<p>(.*?)</p>", p["html"], re.S)
+                           if len(x) > 60 and "relatie-vh@" not in x), s)
+            s = eerste
+        s = re.sub(r"\s+", " ", s).strip()
+        if len(s) > 200:
+            deel = s[:200]
+            zin = max(deel.rfind(". "), deel.rfind("! "), deel.rfind("? "))
+            s = deel[:zin + 1] if zin >= 80 else deel[:199].rsplit(" ", 1)[0] + "…"
+        p["kort"] = s
+        samen = {"Kennispatner": "Kennispartner", "Makelaar": "Makelaars", "Verzekering": "Verzekeren", "Hypotheek": "Hypotheekadvies",
+                 "Websitetools": "Rekentools", "Expertbox": None, "Draagplicht": None}
+        p["tags"] = sorted({samen.get(t, t) for t in (x.strip().capitalize() for x in p["tags"])} - {None})
+    return lijst
+
+
+def render_partners():
+    """Partners van Blinqx Verzekering & Hypotheek (bron: verzekeringhypotheek.blinqx.tech/partners, november 2026)."""
+    lijst = partners_laden()
+    if not lijst:
+        return
+    pg = Page("partners")
+    alle_tags = sorted({t for p in lijst for t in p["tags"]})
+    knoppen = '<button type="button" class="wtbtn ptag actief" data-tag="">Alle</button>' + "".join(
+        f'<button type="button" class="wtbtn ptag" data-tag="{esc(t)}">{esc(t)}</button>' for t in alle_tags)
+    kaarten = "".join(
+        f'<a class="wtwhy pkaart" href="{pg.rel("partners/" + p["slug"])}" data-tags="{esc("|".join(p["tags"]))}">'
+        + (f'<img src="{pg.rel("bronnen/partners/" + p["afbeelding"])}" alt="" loading="lazy">' if p["afbeelding"] else "")
+        + f'<h3>{esc(p["titel"])}</h3><p class="ptags">{esc(" · ".join(p["tags"]))}</p><p>{esc(p["kort"])}</p></a>'
+        for p in lijst)
+    body = f"""{crumbs(pg, [("Partners", None)])}
+<main class="subpage mhz"><div class="wrap">
+  <h1>Partners</h1>
+  <p class="lead">Door de samenwerking en koppeling met het eBlinqx-platform maken onze partners het proces voor de klant en het intermediair beter en efficiënter.</p>
+  <p>Hieronder vind je alle {len(lijst)} partners van Blinqx Verzekering &amp; Hypotheek: van woningwaarde, taxatie en verduurzamen tot kennispartners, bankgaranties, websites en software. Filter op onderwerp:</p>
+  <div class="wtbtns ptags-filter" role="group" aria-label="Filter op onderwerp">{knoppen}</div>
+  <div class="wtwhys pkaarten">{kaarten}</div>
+  <p class="mhz-tip">Meer weten over een partner of een samenwerking? Mail <a href="mailto:relatie-vh@blinqx.tech">relatie-vh@blinqx.tech</a>.</p>
+  <p class="src">Bron: <a href="{PARTNERS_URL}" target="_blank" rel="noopener">verzekeringhypotheek.blinqx.tech/partners</a> (stand 4 november 2026).</p>
+</div></main>
+<script>
+document.querySelectorAll('.ptag').forEach(function(b){{b.addEventListener('click',function(){{
+  var t=b.getAttribute('data-tag');document.querySelectorAll('.ptag').forEach(function(x){{x.classList.toggle('actief',x===b);x.setAttribute('aria-pressed',x===b)}});
+  document.querySelectorAll('.pkaart').forEach(function(k){{k.hidden=t&&k.getAttribute('data-tags').split('|').indexOf(t)<0}});
+}})}});
+</script>"""
+    write("partners", layout(pg, "Partners van Blinqx Verzekering & Hypotheek", body, None,
+                             f"Alle {len(lijst)} partners van Blinqx Verzekering & Hypotheek die aansluiten op eBlinqx: woningwaarde, "
+                             "taxatie, verduurzamen, bankgaranties, kennispartners, websites en software."))
+    for p in lijst:
+        pp = Page("partners/" + p["slug"])
+        eigen = PARTNER_EIGEN.get(p["slug"])
+        inh = p["html"]
+        # eerste kop die gelijk is aan de titel weglaten (staat al in de h1)
+        inh = re.sub(r"^<h2>(.*?)</h2>", lambda m: "" if re.sub(r"\W", "", m.group(1).lower()) == re.sub(r"\W", "", p["titel"].lower()) else m.group(0), inh)
+        body = f"""{crumbs(pp, [("Partners", "partners"), (p["titel"], None)])}
+<main class="subpage mhz"><div class="wrap">
+  <h1>{esc(p["titel"])}</h1>
+  <p class="ptags">{esc(" · ".join(p["tags"]))}</p>
+  <div class="mhz-intro pintro"><div><p class="lead">{esc(p["kort"])}</p>
+    {f'<p class="mhz-tip">Uitgebreide informatie vind je ook op onze pagina <a href="{pp.rel(eigen[0])}">{esc(eigen[1])}</a>.</p>' if eigen else ""}</div>
+    {f'<figure><img src="{pp.rel("bronnen/partners/" + p["afbeelding"])}" alt="{esc(p["titel"])}" loading="lazy"></figure>' if p["afbeelding"] else ""}</div>
+  <div class="partner-tekst">{inh}</div>
+  <h2 class="wth">Contact en samenwerking</h2>
+  <p>Door de samenwerking en koppeling met het eBlinqx-platform maken onze partners het proces voor de klant en het intermediair beter en efficiënter. Meer weten over deze partner? Mail <a href="mailto:relatie-vh@blinqx.tech">relatie-vh@blinqx.tech</a>.</p>
+  <p><a href="{pp.rel("partners")}">← Alle partners</a></p>
+  <p class="src">Bron: <a href="{esc(p["bron"])}" target="_blank" rel="noopener">verzekeringhypotheek.blinqx.tech</a> (stand 4 november 2026).</p>
+</div></main>"""
+        write("partners/" + p["slug"], layout(pp, f"{p['titel']} | Partner van Blinqx", body, None, p["kort"]))
+
+
 def render_mijnhuiszaken():
     """MijnHuiszaken: klantomgeving met realtime woningaanbod (bron: aansluiten.mijnhuiszaken.nl, november 2026)."""
     pg = Page("mijnhuiszaken")
@@ -2794,6 +2899,7 @@ def main():
     render_woningwaarderapport()
     render_actiefbeheerscan()
     render_hypotheekrenteapp()
+    render_partners()
     render_downloads()
     render_nieuwsbrief()
     render_privacy()
@@ -2806,6 +2912,7 @@ def main():
     kb = sorted((u for u in info if u.startswith("kennisbank/")), key=lambda u: info[u]["h1"].lower())
     seo.llms_txt(ROOT, SITE_URL, info, [
         ("Start", ["", "kennisbank", "contact", "zoeken"]),
+        ("Partners", ["partners"] + sorted(u for u in info if u.startswith("partners/"))),
         ("Productinformatie", ["websitetools", "mijnhuiszaken", "yes-co", "tools-voor-vastgoed", "woningwaarderapport",
                                "actiefbeheerscan", "hypotheekrente-app", "procesversneller"]),
         ("Releasenotes", ["releasenotes", "releasenotes-hypotheekadvies", "releasenotes-finconnect", "releasenotes-dias"]),

@@ -471,3 +471,10 @@ figure .img-volgt{margin:0}
 .tile{min-width:0;text-align:center;overflow-wrap:anywhere;hyphens:auto}
 @media (max-width:900px){.tiles{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:640px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* Partners */
+.ptags-filter{margin:10px 0 22px}.ptag{cursor:pointer;font-family:inherit;background:#fff}.ptag.actief{background:var(--yellow)}
+.pkaart{color:inherit;text-decoration:none;display:block}.pkaart:hover,.pkaart:focus-visible{border-color:#000}
+.pkaart img{aspect-ratio:16/10;object-fit:contain;background:#fff}
+.ptags{font-size:13px;color:#555;margin:2px 0 8px}
+.partner-tekst img{max-width:100%;height:auto}
+.pintro figure img{max-height:260px;width:auto;max-width:100%;object-fit:contain;margin:0 auto;display:block}.pintro{align-items:center}
