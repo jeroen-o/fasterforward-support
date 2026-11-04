@@ -465,3 +465,9 @@ figure .img-volgt{margin:0}
 .abs-form img{width:48px;height:48px;flex:none}
 .abs-form span{display:flex;flex-direction:column;gap:4px}.abs-form small{font-size:14px;line-height:1.4}
 .abs-form em{font-style:normal;text-decoration:underline;font-size:14px}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+/* lange tegelnamen (Woningwaarderapport) mogen het raster niet breder maken */
+.tiles{grid-template-columns:repeat(5,minmax(0,1fr))}
+.tile{min-width:0;text-align:center;overflow-wrap:anywhere;hyphens:auto}
+@media (max-width:900px){.tiles{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:640px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}

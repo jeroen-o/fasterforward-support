@@ -2801,6 +2801,18 @@ def main():
     render_home(cats, feeds, pages)
     render_404()
     render_redirects(cats)
+    import seo
+    info = seo.uitvoeren(ROOT, SITE_URL)
+    kb = sorted((u for u in info if u.startswith("kennisbank/")), key=lambda u: info[u]["h1"].lower())
+    seo.llms_txt(ROOT, SITE_URL, info, [
+        ("Start", ["", "kennisbank", "contact", "zoeken"]),
+        ("Productinformatie", ["websitetools", "mijnhuiszaken", "yes-co", "tools-voor-vastgoed", "woningwaarderapport",
+                               "actiefbeheerscan", "hypotheekrente-app", "procesversneller"]),
+        ("Releasenotes", ["releasenotes", "releasenotes-hypotheekadvies", "releasenotes-finconnect", "releasenotes-dias"]),
+        ("Nieuws, tips en leren", ["nieuws", "tips", "elearning", "video", "trainingen", "downloads"]),
+        ("Beleid", ["supportbeleid", "opdrachtenbeleid", "klachtenbeleid", "wensenbeleid", "privacy"]),
+        ("Kennisbank-artikelen", kb),
+    ])
     render_sitemap(pages)
 
     # markeer root-mappen met gegenereerde inhoud zodat een volgende build ze kan opruimen
