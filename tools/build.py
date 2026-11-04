@@ -1267,6 +1267,9 @@ def render_search(pages, cats):
                     "c": "Tools voor vastgoed", "k": "kennisbank", "x": TVV_INTRO + " toolsvoorvastgoed tools voor vastgoed makelaar "
                     "hypotheek toolset rekentools leads woningwaarderapport woningwaarde vastgoed publiceren online klantdossier "
                     "mijnhuiszaken yes-co tiara startende makelaar prijzen € 80 per maand " + " ".join(t for t, _ in TVV_TOOLS)})
+        idx.append({"t": "Demo-kantoor: een website met alles van Blinqx", "h": "demo-kantoor/index.html", "c": "Demo-kantoor", "k": "kennisbank",
+                    "x": "demo kantoor demokantoor demowebsite voorbeeld website Steen Hypotheken FierFinance rekentools actuele rentes "
+                    "mijnhuiszaken uwkluis financiële kluis duurzaamheidsprofiel pakketvergelijker website laten maken alles van Blinqx"})
         idx.append({"t": "Finly CRM: klantgegevens, workflows en communicatie op één plek", "h": "finly-crm/index.html", "c": "Finly CRM",
                     "k": "kennisbank", "x": FINLY_INTRO + " finly crm customer relationship management dias anva dstny awi my tp adviesbox "
                     "rapportage dashboard csv workflows signalen instelbaarheid demo " + " ".join(t + " " + x for t, x in FINLY_TOOLS)})
@@ -1388,6 +1391,7 @@ def render_home(cats, feeds, pages):
               f'<a class="tile" href="{pg.rel("actiefbeheerscan")}"><svg class="ic"><use href="#i-list"/></svg>Actiefbeheerscan</a>'
               f'<a class="tile" href="{pg.rel("hypotheekrente-app")}"><svg class="ic"><use href="#i-percent"/></svg>Hypotheekrente-app</a>'
               f'<a class="tile" href="{pg.rel("finly-crm")}"><svg class="ic"><use href="#i-crm"/></svg>Finly CRM</a>'
+              f'<a class="tile" href="{pg.rel("demo-kantoor")}"><svg class="ic"><use href="#i-globe"/></svg>Demo-kantoor</a>'
               f'<a class="tile" href="{pg.rel("partners")}"><svg class="ic"><use href="#i-partners"/></svg>Partners</a>'
               f'<a class="tile" href="{pg.rel("procesversneller")}"><svg class="ic"><use href="#i-bolt"/></svg>Proces-versneller</a>')
 
@@ -2690,6 +2694,50 @@ def render_finly():
                               "met koppelingen met DIAS, ANVA, Dstny, AWI en Adviesbox."))
 
 
+DEMO_STEEN = "https://www.steenhypotheken.nl/"
+DEMO_FIER = "https://app.mach3blocks.io/preview/?wid=112166&pid=3075367&pkey=8z2fs9ihio62x559t26ksewyz15r5peo&language=nl"
+
+
+def render_demokantoor():
+    """Demo-kantoren: voorbeeldwebsites van adviseurs met alle tools van Blinqx erin."""
+    pg = Page("demo-kantoor")
+    img = lambda f, alt: f'<img src="{pg.rel("bronnen/demo/" + f)}" alt="{esc(alt)}" loading="lazy">'
+    steen_onderdelen = ["Actuele rentestanden en het volledige renteoverzicht", "Rekentools: zelf berekenen", "Inzichttool en Financiële rust",
+                        "Financiële kluis (UwKluis) en brondata", "Duurzaamheidsprofiel", "Pakketvergelijker en schade melden",
+                        "MijnHuiszaken: woning zoeken en ‘Wat is mijn woning waard?’", "Nazorg en onderhoud", "Direct een afspraak maken"]
+    fier_onderdelen = ["Maximale hypotheek en ‘Kan ik deze woning kopen?’", "Mijn hypotheek nu & straks en ‘Kan ik besparen?’",
+                       "Rentekorting door topafslag", "Huren of kopen?", "Wat is deze woning waard?", "Overlijdensrisicopremie",
+                       "Actuele rentes, looptijdrente en spaarrente top 10", "Duurzaamheidsprofiel"]
+    li = lambda xs: "".join(f"<li>{esc(x)}</li>" for x in xs)
+    body = f"""{crumbs(pg, [("Demo-kantoor", None)])}
+<main class="subpage mhz"><div class="wrap">
+  <h1>Demo-kantoor: zo ziet een website met alles van Blinqx eruit</h1>
+  <p class="lead">Bekijk hoe de tools van Blinqx samenkomen op de website van een advieskantoor: rekentools, actuele rentes, MijnHuiszaken, UwKluis en de koppeling met eBlinqx.</p>
+  <div class="mhz-duo">
+    <div><h2 class="wth">Steen Hypotheken &amp; Verzekeringen</h2>
+      <p>Steen Hypotheken is het demo-kantoor van Blinqx Verzekering &amp; Hypotheek. Op deze website zie je hoe een adviseur alle onderdelen van Blinqx inzet voor zijn klanten, van de eerste oriëntatie tot nazorg:</p>
+      <ul>{li(steen_onderdelen)}</ul>
+      <p class="btn-row"><a class="btn-out cta" href="{DEMO_STEEN}" target="_blank" rel="noopener">Bekijk Steen Hypotheken ↗</a></p></div>
+    <figure><a href="{DEMO_STEEN}" target="_blank" rel="noopener">{img("steen-hypotheken.webp", "Homepage van demo-kantoor Steen Hypotheken & Verzekeringen")}</a></figure>
+  </div>
+  <div class="mhz-duo">
+    <figure><a href="{DEMO_FIER}" target="_blank" rel="noopener">{img("fierfinance.webp", "Demowebsite FierFinance met de pagina Zelf berekenen")}</a></figure>
+    <div><h2 class="wth">Demowebsite FierFinance</h2>
+      <p>Een tweede, moderne demowebsite laat zien hoe de rekentools een vaste plek krijgen op een kantoorwebsite. Op de pagina ‘Zelf berekenen’ rekent de bezoeker alvast zelf, en maakt daarna direct een afspraak:</p>
+      <ul>{li(fier_onderdelen)}</ul>
+      <p class="btn-row"><a class="btn-out cta" href="{DEMO_FIER}" target="_blank" rel="noopener">Bekijk de demowebsite ↗</a></p></div>
+  </div>
+  <p class="mhz-tip">Let op: dit zijn demowebsites. Namen, adressen en wettelijke gegevens zijn voorbeelden, en de uitkomsten van de rekentools zijn indicatief en geen advies.</p>
+  <h2 class="wth">Wil je ook een website met alles van Blinqx?</h2>
+  <p>Laat het ons weten. We vertellen je graag welke onderdelen je op je eigen website kunt inzetten en hoe ze aansluiten op eBlinqx. Neem contact op met Milan Akavia (<a href="mailto:milan.akavia@blinqx.tech">milan.akavia@blinqx.tech</a>) of Jeroen Oversteegen (<a href="mailto:jeroen.oversteegen@blinqx.tech">jeroen.oversteegen@blinqx.tech</a>), of mail <a href="mailto:relatie-vh@blinqx.tech?subject=Website%20met%20alles%20van%20Blinqx">relatie-vh@blinqx.tech</a>.</p>
+  <p class="btn-row"><a class="btn-out cta" href="mailto:relatie-vh@blinqx.tech?subject=Website%20met%20alles%20van%20Blinqx">Ja, ik wil ook zo'n website</a></p>
+  <p>Lees ook: <a href="{pg.rel("websitetools")}">Websitetools</a>, <a href="{pg.rel("mijnhuiszaken")}">MijnHuiszaken</a>, <a href="{pg.rel("actiefbeheerscan")}">Actiefbeheerscan</a> en <a href="{pg.rel("hypotheekrente-app")}">Hypotheekrente-app</a>.</p>
+</div></main>"""
+    write("demo-kantoor", layout(pg, "Demo-kantoor: een website met alles van Blinqx", body, None,
+                                 "Bekijk het demo-kantoor Steen Hypotheken en de demowebsite FierFinance: rekentools, actuele rentes, "
+                                 "MijnHuiszaken en UwKluis op de website van een adviseur. Wil je dit ook? Laat het ons weten."))
+
+
 def render_mijnhuiszaken():
     """MijnHuiszaken: klantomgeving met realtime woningaanbod (bron: aansluiten.mijnhuiszaken.nl, november 2026)."""
     pg = Page("mijnhuiszaken")
@@ -2918,6 +2966,7 @@ def render_websitetools():
   {faq_html}
   <script type="application/ld+json">{faq_ld}</script>
   <div class="oud wtnote" role="note">{esc(data["disclaimer"])}</div>
+  <p class="mhz-tip">Zie de rekentools live op een kantoorwebsite: bekijk ons <a href="{pg.rel("demo-kantoor")}">demo-kantoor</a>.</p>
   <h2 class="wth">Websitetools op je eigen website?</h2>
   <p>De rekentools zijn in de huisstijl van je kantoor op je eigen website te plaatsen. Neem voor meer informatie contact op met {contact}.</p>
   <p class="src">Bron: <a href="{esc(data["bron"])}" target="_blank" rel="noopener">verzekeringhypotheek.blinqx.tech</a> (stand {fmt_date(date.fromisoformat(data["opgehaald"]))}).</p>
@@ -3231,6 +3280,7 @@ def main():
     render_hypotheekrenteapp()
     render_partners()
     render_finly()
+    render_demokantoor()
     render_downloads()
     render_nieuwsbrief()
     render_privacy()
@@ -3245,7 +3295,7 @@ def main():
         ("Start", ["", "kennisbank", "contact", "zoeken"]),
         ("Partners", ["partners"] + sorted(u for u in info if u.startswith("partners/"))),
         ("Productinformatie", ["websitetools", "mijnhuiszaken", "yes-co", "tools-voor-vastgoed", "woningwaarderapport",
-                               "actiefbeheerscan", "hypotheekrente-app", "finly-crm", "procesversneller"]),
+                               "actiefbeheerscan", "hypotheekrente-app", "finly-crm", "demo-kantoor", "procesversneller"]),
         ("Releasenotes", ["releasenotes", "releasenotes-hypotheekadvies", "releasenotes-finconnect", "releasenotes-dias"]),
         ("Nieuws, tips en leren", ["nieuws", "tips", "elearning", "video", "trainingen", "downloads"]),
         ("Beleid", ["supportbeleid", "opdrachtenbeleid", "klachtenbeleid", "wensenbeleid", "privacy"]),
