@@ -472,12 +472,6 @@
   "afbeelding": "finconnect-nl.webp"
  },
  {
-  "domein": "hollandwebservices.nl",
-  "slug": "hollandwebservices-nl",
-  "url": "https://www.hollandwebservices.nl/",
-  "fout": "HTTP Error 404: Not Found"
- },
- {
   "domein": "rwwr.nl",
   "slug": "rwwr-nl",
   "url": "https://rwwr.nl/",

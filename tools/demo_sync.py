@@ -50,6 +50,8 @@ def main():
         for x in json.load(open(ff, encoding="utf8")):
             x["tekst"] = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", re.sub(r"<iframe.*?</iframe>", " ", x["tekst"], flags=re.S))).strip()
             alle.append(x)
+    for x in alle:  # Holland Webservices niet tonen (verzoek Jeroen, 5-11-2026)
+        x["tekst"] = re.sub(r"\s*-?\s*Holland ?webservices(\.nl)?\s*-?", " ", x["tekst"], flags=re.I)
     json.dump(alle, open(UIT, "w", encoding="utf8"), ensure_ascii=False, indent=0)
     print(f"demowebsites: {len(alle)} pagina's")
 
