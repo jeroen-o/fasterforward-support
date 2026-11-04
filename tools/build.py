@@ -1247,6 +1247,9 @@ def render_search(pages, cats):
     wtf = os.path.join(SRC, "websitetools.json")
     if os.path.exists(wtf):
         wt = json.load(open(wtf, encoding="utf8"))
+        idx.append({"t": "Makelaar Software: Yes-co", "h": "yes-co/index.html", "c": "Makelaar Software", "k": "kennisbank",
+                    "x": YES_INTRO + " yesco yes co makelaarssoftware makelaar software crm funda pararius publiceren nieuwbouw "
+                    "projecten digitaal ondertekenen wwft ubo app market pro plus prijs demo"})
         idx.append({"t": "MijnHuiszaken: realtime woningaanbod voor je klanten", "h": "mijnhuiszaken/index.html", "c": "MijnHuiszaken",
                     "k": "kennisbank", "x": MHZ_INTRO + " woningaanbod NVM makelaar e-mailalerts zoekprofiel woningwaarde Wwft "
                     "aankoopdossier verkoopdossier digitaal ondertekenen leads tarieven demo mijn huiszaken mijnhuiszaken.nl"})
@@ -1332,6 +1335,7 @@ def render_home(cats, feeds, pages):
               f'<a class="tile" href="{pg.rel("video")}"><svg class="ic"><use href="#i-video"/></svg>Video\'s</a>'
               f'<a class="tile" href="{pg.rel("websitetools")}"><svg class="ic"><use href="#i-calc"/></svg>Websitetools</a>'
               f'<a class="tile" href="{pg.rel("mijnhuiszaken")}"><svg class="ic"><use href="#i-home"/></svg>MijnHuiszaken</a>'
+              f'<a class="tile" href="{pg.rel("yes-co")}"><svg class="ic"><use href="#i-desktop"/></svg>Makelaar Software</a>'
               f'<a class="tile tile-wide" href="{pg.rel("procesversneller")}"><svg class="ic"><use href="#i-bolt"/></svg>'
               f'<span class="tw"><span>Proces-versneller</span><small>Brondata ophalen via Ockto: zo werkt het in eBlinqx</small></span></a>')
 
@@ -1885,6 +1889,93 @@ MHZ_INTRO = ("MijnHuiszaken is een online klantomgeving voor hypotheekadviseurs 
              "De klant gaat zelf aan de slag, en jij blijft al vanaf de oriëntatie in beeld.")
 
 
+YES_URL = "https://www.yes-co.nl/"
+YES_INTRO = ("Yes-co is CRM-software voor makelaars: objecten en relaties beheren en woningen publiceren naar Funda en meer dan "
+             "twintig andere woningsites, voor een vast en laag maandbedrag. Met koppelingen naar MijnHuiszaken, hypotheektools en "
+             "digitaal ondertekenen werkt de makelaar nauw samen met de hypotheekadviseur.")
+
+
+def render_yesco():
+    """Yes-co: makelaarssoftware (bron: www.yes-co.nl, november 2026)."""
+    pg = Page("yes-co")
+    img = lambda f, alt: f'<img src="{pg.rel("bronnen/yes-co/" + f)}" alt="{esc(alt)}" loading="lazy">'
+    voordelen = [
+        ("Uitgebreid CRM voor makelaars", "Objecten en relaties beheren, overzichten, templates, exports, agenda en factuurregels, "
+         "in de eigen huisstijl van je kantoor. Geschikt voor meerdere gebruikers en vestigingen met verschillende toegangsniveaus."),
+        ("Publiceren naar 20+ kanalen", "Per object kies je naar welke kanalen je publiceert, of je publiceert in één keer naar alle "
+         "gekoppelde kanalen: NVM/Funda, Funda in Business, Pararius, Huislijn, Huispedia, MijnHuiszaken, Woningbond en meer."),
+        ("Samenwerken met de hypotheekadviseur", "Via MijnHuiszaken zoeken klanten woningen en delen ze documenten met makelaar en "
+         "adviseur. Hypotheektools op de website laten bezoekers direct zien welke woningen financieel haalbaar zijn."),
+        ("Digitaal ondertekenen en Wwft", "Koop- en huurakte wizard, digitaal ondertekenen, een digitaal opleveringsrapport en "
+         "geïntegreerde Wwft- en UBO-checks."),
+        ("Nieuwbouw en projecten", "Met de projectmodules beheren makelaars en projectontwikkelaars nieuwbouw- en uitpondprojecten "
+         "van A tot Z, inclusief overzichten van geïnteresseerden, optanten en de status van bouwnummers."),
+        ("Betalen wat je gebruikt", "Een volledig CRM voor een vast maandbedrag; extra functionaliteit en publicatiekanalen zet je "
+         "aan via de App Market en betaal je alleen als je ze gebruikt."),
+    ]
+    blokken = "".join(f'<div class="wtwhy"><h3>{esc(t)}</h3><p>{esc(x)}</p></div>' for t, x in voordelen)
+    voor_wie = [("Startende makelaars en zzp’ers", "startende-makelaars"), ("Grote makelaarskantoren", "grote-makelaarskantoren"),
+                ("Projectontwikkelaars", "projectontwikkelaars"), ("Vastgoedbeheerders", "vastgoedbeheerders")]
+    wie = "".join(f'<a class="wtbtn" href="{YES_URL}{u}/" target="_blank" rel="noopener">{esc(t)} <span aria-hidden="true">↗</span></a>' for t, u in voor_wie)
+    pakket = ["Funda-koppeling", "Object- en relatiebeheer", "Overzichten", "Koop- en huurakte wizard", "Templates en snel printen",
+              "Exports", "Digitaal opleveringsrapport", "Agenda", "Digitaal samenwerken via MijnHuiszaken.nl", "Factuurregels",
+              "Gratis vermelding op Makelaarsbond.nl", "Gratis woningen publiceren op Woningbond.nl"]
+    li = "".join(f"<li>{esc(x)}</li>" for x in pakket)
+    faq = [
+        ("Wat is Yes-co?", YES_INTRO),
+        ("Wat heeft een hypotheekadviseur aan Yes-co?",
+         "Werk je samen met een makelaar die Yes-co gebruikt, of heb je zelf makelaars in dienst, dan deel je klanten, woningen en "
+         "documenten via MijnHuiszaken en de hypotheektools. Vanuit eBlinqx Connect kun je bovendien klantgegevens naar Yes-co exporteren."),
+        ("Wat kost Yes-co?",
+         "Er zijn twee abonnementen, Pro en Pro Plus, vanaf € 75 per maand (volgens yes-co.nl, november 2026). Extra functionaliteit en "
+         "publicatiekanalen betaal je alleen als je ze gebruikt."),
+        ("Wat kosten de hypotheektools van Yes-co?",
+         "De volledige toolset kost € 65 per maand, plus eenmalig € 225 voor de implementatie (volgens yes-co.nl, november 2026)."),
+    ]
+    faq_html = "".join(f'<details class="wtfaq"><summary>{esc(q)}</summary><p>{esc(a)}</p></details>' for q, a in faq)
+    faq_ld = json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+        {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]},
+        ensure_ascii=False).replace("</", "<\\/")
+    body = f"""{crumbs(pg, [("Makelaar Software: Yes-co", None)])}
+<main class="subpage mhz"><div class="wrap">
+  <h1>Makelaar Software: Yes-co</h1>
+  <p class="lead">Hét CRM-systeem voor de makelaar: werk op jouw manier, met volledige vrijheid, voor een vast en laag maandbedrag.</p>
+  <div class="mhz-intro"><div><p>{esc(YES_INTRO)}</p>
+    <p class="btn-row"><a class="btn-out cta" href="{YES_URL}contact/" target="_blank" rel="noopener">Gratis demo aanvragen</a>
+    <a class="btn-out" href="https://login.yes-co.com/" target="_blank" rel="noopener">Inloggen in Yes-co</a></p></div>
+    <figure>{img("app-market.webp", "Yes-co App Market op een laptop")}</figure></div>
+  <h2 class="wth">Daarom kiezen kantoren voor Yes-co</h2>
+  <div class="wtwhys">{blokken}</div>
+  <div class="mhz-duo">
+    <div><h2 class="wth">Publiceren naar alle kanalen</h2>
+      <p>Via Yes-co publiceer je objecten naar diverse marketingkanalen, inclusief je eigen website. Per object kies je de kanalen, of je publiceert, trekt in of meldt af bij alle gekoppelde kanalen in één keer. Kanalen activeer en deactiveer je zelf, en er komen regelmatig nieuwe koppelingen bij.</p></div>
+    <figure>{img("mcp-kanalen-new.webp", "Logo's van publicatiekanalen: Woningbond, MijnHuiszaken, Makelaarsbond, Huislijn, Funda, Pararius, Huispedia en meer")}</figure>
+  </div>
+  <div class="mhz-duo">
+    <figure>{img("projecten.webp", "Schermen van de projectmodule in Yes-co")}</figure>
+    <div><h2 class="wth">Projecten en nieuwbouw</h2>
+      <p>Met de module Nieuwbouw Project beheer je als projectontwikkelaar of makelaar al je nieuwbouwprojecten en werk je geautomatiseerd samen met ontwikkelaar, makelaar en consument. Voor het uitponden van huurcomplexen gebruik je de module Bestaande Bouw Project. Dossier-, archief- en sleutelnummers worden automatisch toegekend.</p></div>
+  </div>
+  <h2 class="wth">Voor wie?</h2>
+  <div class="wtbtns">{wie}</div>
+  <h2 class="wth">Abonnementen</h2>
+  <div class="mhz-prijs"><p class="mhz-bedrag">vanaf € 75,- <small>per maand</small></p>
+    <p><strong>Yes-co Pro</strong> (max. 10 gebruikers) en <strong>Yes-co Pro Plus</strong> (onbeperkt aantal gebruikers, plus website-responseformulieren en Mailchimp-koppeling). Beide met:</p>
+    <ul>{li}</ul>
+    <p><a class="btn-out cta" href="{YES_URL}prijs/" target="_blank" rel="noopener">Bekijk de prijzen</a></p></div>
+  <p class="mhz-tip">Werk je als hypotheekadviseur samen met een makelaar? Combineer Yes-co met <a href="{pg.rel("mijnhuiszaken")}">MijnHuiszaken</a> en de <a href="{pg.rel("websitetools")}">websitetools</a>, en lees hoe je <a href="{pg.rel("kennisbank/gemakkelijk-klantgegevens-exporteren-naar-yes-co")}">klantgegevens vanuit eBlinqx Connect naar Yes-co exporteert</a>.</p>
+  <h2 class="wth">Veelgestelde vragen</h2>
+  {faq_html}
+  <script type="application/ld+json">{faq_ld}</script>
+  <h2 class="wth">Meer weten?</h2>
+  <p>Vraag een vrijblijvende online demo aan via <a href="{YES_URL}contact/" target="_blank" rel="noopener">yes-co.nl</a>, mail <a href="mailto:info@yes-co.nl">info@yes-co.nl</a> of bel <a href="tel:+31365238455">036 523 84 55</a>.</p>
+  <p class="src">Bron: <a href="{YES_URL}" target="_blank" rel="noopener">www.yes-co.nl</a> (stand 4 november 2026). Prijzen en voorwaarden kunnen wijzigen.</p>
+</div></main>"""
+    write("yes-co", layout(pg, "Makelaar Software: Yes-co", body, None,
+                           "Yes-co: CRM-software voor makelaars. Objecten en relaties beheren, publiceren naar Funda en 20+ woningsites, "
+                           "digitaal ondertekenen, Wwft-checks en samenwerken met de hypotheekadviseur via MijnHuiszaken."))
+
+
 def render_mijnhuiszaken():
     """MijnHuiszaken: klantomgeving met realtime woningaanbod (bron: aansluiten.mijnhuiszaken.nl, november 2026)."""
     pg = Page("mijnhuiszaken")
@@ -2322,6 +2413,7 @@ def main():
     render_procesversneller()
     render_websitetools()
     render_mijnhuiszaken()
+    render_yesco()
     render_downloads()
     render_nieuwsbrief()
     render_privacy()
