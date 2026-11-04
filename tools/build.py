@@ -1247,6 +1247,9 @@ def render_search(pages, cats):
     wtf = os.path.join(SRC, "websitetools.json")
     if os.path.exists(wtf):
         wt = json.load(open(wtf, encoding="utf8"))
+        idx.append({"t": "MijnHuiszaken: realtime woningaanbod voor je klanten", "h": "mijnhuiszaken/index.html", "c": "MijnHuiszaken",
+                    "k": "kennisbank", "x": MHZ_INTRO + " woningaanbod NVM makelaar e-mailalerts zoekprofiel woningwaarde Wwft "
+                    "aankoopdossier verkoopdossier digitaal ondertekenen leads tarieven demo mijn huiszaken mijnhuiszaken.nl"})
         idx.append({"t": "Websitetools: rekentools voor op je website", "h": "websitetools/index.html", "c": "Websitetools", "k": "kennisbank",
                     "x": " ".join(g["g"] + " " + " ".join(t["t"] for t in g["tools"]) for g in wt["groepen"]) + " rekentool rekentools website hypotheekbond leads"})
     for i in downloads_items():
@@ -1328,6 +1331,7 @@ def render_home(cats, feeds, pages):
     tiles += (f'<a class="tile" href="{pg.rel("elearning")}"><svg class="ic"><use href="#i-cap"/></svg>E-learning</a>'
               f'<a class="tile" href="{pg.rel("video")}"><svg class="ic"><use href="#i-video"/></svg>Video\'s</a>'
               f'<a class="tile" href="{pg.rel("websitetools")}"><svg class="ic"><use href="#i-calc"/></svg>Websitetools</a>'
+              f'<a class="tile" href="{pg.rel("mijnhuiszaken")}"><svg class="ic"><use href="#i-home"/></svg>MijnHuiszaken</a>'
               f'<a class="tile tile-wide" href="{pg.rel("procesversneller")}"><svg class="ic"><use href="#i-bolt"/></svg>'
               f'<span class="tw"><span>Proces-versneller</span><small>Brondata ophalen via Ockto: zo werkt het in eBlinqx</small></span></a>')
 
@@ -1875,6 +1879,86 @@ def render_procesversneller():
     write("procesversneller", head + doc + "\n</body>\n</html>\n", kluis=False)
 
 
+MHZ_URL = "https://aansluiten.mijnhuiszaken.nl/"
+MHZ_INTRO = ("MijnHuiszaken is een online klantomgeving voor hypotheekadviseurs en makelaars. Je klant vindt er het actuele "
+             "woningaanbod van NVM-makelaars, e-mailalerts, rekentools en de geschatte waarde van zijn eigen woning. "
+             "De klant gaat zelf aan de slag, en jij blijft al vanaf de oriëntatie in beeld.")
+
+
+def render_mijnhuiszaken():
+    """MijnHuiszaken: klantomgeving met realtime woningaanbod (bron: aansluiten.mijnhuiszaken.nl, november 2026)."""
+    pg = Page("mijnhuiszaken")
+    img = lambda f, alt: f'<img src="{pg.rel("bronnen/mijnhuiszaken/" + f)}" alt="{esc(alt)}" loading="lazy">'
+    voordelen = [
+        ("Realtime woningaanbod", "Door de samenwerking met NVM-makelaars ziet je klant direct het nieuwste woningaanbod dat past bij "
+         "zijn of haar zoekwensen, met e-mailalerts zodra er een geschikte woning op de markt komt."),
+        ("Voortdurend in beeld", "Tijdens het zoeken naar een woning ben jij continu in beeld: je logo en contactgegevens staan in "
+         "de omgeving van de klant én in de e-mailalerts. Zo houd je mogelijke concurrentie buiten de deur."),
+        ("Inzicht in zoekgedrag", "Weet eerder dan de markt wie er in beweging komt. Je krijgt inzicht in het zoekgedrag van je "
+         "klanten en kunt op het juiste moment contact opnemen."),
+        ("Begeleiding bij aan- en verkoop", "Inclusief een Wwft-check, een aan- en verkoopdossier en digitaal ondertekenen."),
+        ("Ook voor bestaande klanten", "Je klanten zien de geschatte waarde van hun woning en hoeveel mensen er op zoek zijn naar "
+         "een woning zoals de hunne. Willen ze verhuizen? Dan weet jij het als eerste."),
+        ("Contact met één klik", "Worden de plannen concreet en is advies op maat nodig, dan neemt je klant met één klik contact "
+         "met je op."),
+    ]
+    blokken = "".join(f'<div class="wtwhy"><h3>{esc(t)}</h3><p>{esc(x)}</p></div>' for t, x in voordelen)
+    faq = [
+        ("Wat is MijnHuiszaken?", MHZ_INTRO),
+        ("Wat levert MijnHuiszaken een hypotheekadviseur op?",
+         "Je bindt leads al tijdens hun oriëntatie op de woningmarkt, blijft voortdurend in beeld en krijgt inzicht in wie er "
+         "gaat verhuizen. Zo bouw je een voorsprong op ten opzichte van andere adviseurs en stel je je hypotheekadvies zeker."),
+        ("Hoe nodig ik klanten uit?",
+         "Via een button op je website, een link in een e-mail of gewoon bij jou aan tafel. De klant maakt daarna zelf een "
+         "zoekprofiel aan en ziet in zijn omgeving jouw logo en contactgegevens."),
+        ("Wat kost MijnHuiszaken?",
+         "Voor de klant is MijnHuiszaken gratis. Voor jou als adviseur geldt € 79,- per maand voor 1.000 klanten, plus "
+         "eenmalig € 350,- voor het inrichten (tarief volgens aansluiten.mijnhuiszaken.nl, november 2026)."),
+    ]
+    faq_html = "".join(f'<details class="wtfaq"><summary>{esc(q)}</summary><p>{esc(a)}</p></details>' for q, a in faq)
+    faq_ld = json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+        {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]},
+        ensure_ascii=False).replace("</", "<\\/")
+    body = f"""{crumbs(pg, [("MijnHuiszaken", None)])}
+<main class="subpage mhz"><div class="wrap">
+  <h1>MijnHuiszaken</h1>
+  <p class="lead">Voorzie huizenzoekers van realtime woningaanbod en blijf vanaf dag één in beeld.</p>
+  <div class="mhz-intro"><div><p>{esc(MHZ_INTRO)}</p>
+    <p>Meer dan de helft van de mensen die bij je langskomen of je website bezoeken, oriënteert zich al op de woningmarkt. Met hypotheekvragen zijn ze bij jou aan het juiste adres. Met MijnHuiszaken help je ze voortaan ook met het vinden van een woning, en bouw je een voorsprong op ten opzichte van andere hypotheekadviseurs.</p>
+    <p class="btn-row"><a class="btn-out cta" href="{MHZ_URL}" target="_blank" rel="noopener">Demo aanvragen of aansluiten</a>
+    <a class="btn-out" href="https://mijnhuiszaken.nl/" target="_blank" rel="noopener">Bekijk het woningaanbod</a></p></div>
+    <figure>{img("image-dashboard.webp", "Dashboard van MijnHuiszaken met woningwaarde, hypotheek, gevonden woningen en zoekopdrachten")}</figure></div>
+  <h2 class="wth">Waarom MijnHuiszaken?</h2>
+  <div class="wtwhys">{blokken}</div>
+  <div class="mhz-duo">
+    <div><h2 class="wth">Verstevig de band met je klant</h2>
+      <p>Bind leads tijdens hun oriëntatie en stel zo je hypotheekadvies zeker. Uitnodigen is zo gebeurd: via een button op je website, een link in een e-mail of gewoon bij jou aan tafel. In MijnHuiszaken maakt de klant eenvoudig een zoekprofiel aan en vindt hij jouw logo en contactgegevens. Zo blijf je steeds in beeld, ook in de e-mailalerts met woningaanbod, en ben je altijd dichtbij voor vragen.</p></div>
+    <figure>{img("image-voortdurendinthepicture.webp", "Adviseur en klant geven elkaar een hand")}</figure>
+  </div>
+  <div class="mhz-duo">
+    <figure>{img("image-klantreis.webp", "Woningen met te-koopborden van NVM-makelaars")}</figure>
+    <div><h2 class="wth">Alles voor je klant op één plek</h2>
+      <p>In hun eigen online omgeving vinden je klanten alles wat ze nodig hebben: het Nederlandse woningaanbod van NVM-makelaars, filters voor hun voorkeuren, e-mailalerts, een aan- en verkoopdossier met digitaal ondertekenen, handige rekentools, hypotheeknieuws en de geschatte waarde van hun eigen woning.</p>
+      <p>MijnHuiszaken koppelt woningzoekers, hun hypotheekadviseur en hun aan- of verkoopmakelaar aan elkaar, zodat ze met één klik met elkaar in contact zijn.</p></div>
+  </div>
+  <h2 class="wth">Tarieven</h2>
+  <div class="mhz-prijs"><p class="mhz-bedrag">€ 79,- <small>per maand voor 1.000 klanten</small></p>
+    <ul><li>Gratis voor de klant</li><li>Compleet woningaanbod</li><li>Rekentools</li><li>Woningwaarde berekenen</li><li>Hypotheeknieuws</li></ul>
+    <p>Eenmalig inrichten: € 350,-</p>
+    <p><a class="btn-out cta" href="{MHZ_URL}tarieven/" target="_blank" rel="noopener">Account aanvragen</a></p></div>
+  <p class="mhz-tip">Tip: combineer MijnHuiszaken met de <a href="{pg.rel("websitetools")}">websitetools</a> op je eigen website. Bezoekers rekenen eerst zelf, zoeken daarna woningen in MijnHuiszaken, en jij blijft in beide stappen in beeld.</p>
+  <h2 class="wth">Veelgestelde vragen</h2>
+  {faq_html}
+  <script type="application/ld+json">{faq_ld}</script>
+  <h2 class="wth">Eerst zien, dan geloven?</h2>
+  <p>Boek vrijblijvend een online demo; binnen 20 minuten weet je hoe alles werkt. Bel <a href="tel:+31365238455">036 523 8455</a>, mail <a href="mailto:info@mijnhuiszaken.nl">info@mijnhuiszaken.nl</a> of vraag een demo aan via <a href="{MHZ_URL}contact/" target="_blank" rel="noopener">aansluiten.mijnhuiszaken.nl</a>.</p>
+  <p class="src">Bron: <a href="{MHZ_URL}" target="_blank" rel="noopener">aansluiten.mijnhuiszaken.nl</a> (stand 4 november 2026). Tarieven en voorwaarden kunnen wijzigen.</p>
+</div></main>"""
+    write("mijnhuiszaken", layout(pg, "MijnHuiszaken: realtime woningaanbod voor je klanten", body, None,
+                                  "MijnHuiszaken: klantomgeving voor hypotheekadviseurs met realtime NVM-woningaanbod, e-mailalerts, "
+                                  "rekentools en woningwaarde. Bind leads vanaf de oriëntatie en blijf in beeld bij aan- en verkoop."))
+
+
 def render_websitetools():
     """Websitetools: rekentools voor op de website van de adviseur (bronnen/websitetools.json)."""
     f = os.path.join(SRC, "websitetools.json")
@@ -2237,6 +2321,7 @@ def main():
     render_trainingen()
     render_procesversneller()
     render_websitetools()
+    render_mijnhuiszaken()
     render_downloads()
     render_nieuwsbrief()
     render_privacy()
