@@ -2784,7 +2784,7 @@ def render_sites():
   <h1>{esc(s["naam"])}</h1>
   <p class="lead">{esc(s["ondertitel"])}</p>
   <div class="mhz-intro"><div>{"".join(f"<p>{esc(t)}</p>" for t in s["tekst"])}
-    <p class="btn-row"><a class="btn-out cta" href="{esc(s["url"])}" target="_blank" rel="noopener">Naar {esc(s["naam"])} ↗</a></p></div>
+    <p class="btn-row"><a class="btn-out cta" href="{esc(s["url"])}" target="_blank" rel="noopener" aria-label="Bezoek website {esc(s["naam"])}">Bezoek website ↗</a></p></div>
     {fig}</div>
   {f'<h2 class="wth">Lees ook</h2><ul>{rel}</ul>' if rel else ""}
   <p><a href="{pg.rel("sites")}">← Alle websites</a></p>
@@ -2798,7 +2798,7 @@ def render_sites():
         + (f'<a class="sitebeeld{" logo" if s.get("logo") else ""}" href="{pg.rel("sites/" + s["slug"])}" tabindex="-1" aria-hidden="true">'
            f'<img src="{pg.rel(s.get("logo") or s["afbeelding"])}" alt="" loading="lazy"></a>' if (s.get("logo") or s.get("afbeelding")) else "")
         + f'<h3><a href="{pg.rel("sites/" + s["slug"])}">{esc(s["naam"])}</a></h3><p>{esc(s["ondertitel"])}</p>'
-        f'<p class="sitebtn"><a class="btn-out cta" href="{esc(s["url"])}" target="_blank" rel="noopener">Ga naar de website ↗</a></p></div>'
+        f'<p class="sitebtn"><a class="btn-out cta" href="{esc(s["url"])}" target="_blank" rel="noopener" aria-label="Bezoek website {esc(s["naam"])}">Bezoek website ↗</a></p></div>'
         for s in sorted(lijst, key=lambda x: x["naam"].lower()))
     body = f"""{crumbs(pg, [("Websites", None)])}
 <main class="subpage mhz"><div class="wrap">
@@ -2818,7 +2818,7 @@ def render_banking():
     blokken = "".join(
         f'<div class="mhz-duo"><div><h2 class="wth">{esc(s["naam"])}</h2><p><strong>{esc(s["ondertitel"])}</strong></p>'
         + "".join(f"<p>{esc(t)}</p>" for t in s["tekst"])
-        + f'<p class="btn-row"><a class="btn-out cta" href="{esc(s["url"])}" target="_blank" rel="noopener">Naar {esc(s["naam"])} ↗</a>'
+        + f'<p class="btn-row"><a class="btn-out cta" href="{esc(s["url"])}" target="_blank" rel="noopener" aria-label="Bezoek website {esc(s["naam"])}">Bezoek website ↗</a>'
         f'<a class="btn-out" href="{pg.rel("sites/" + s["slug"])}">Meer over {esc(s["naam"])}</a></p></div>'
         + (f'<figure><img src="{pg.rel(s.get("logo") or s["afbeelding"])}" alt="{esc(s["naam"])}" loading="lazy"'
            f'{chr(32) + "style=" + chr(34) + "max-width:340px;margin:0 auto;display:block" + chr(34) if s.get("logo") else ""}></figure>'
