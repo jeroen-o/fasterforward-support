@@ -1251,6 +1251,10 @@ def render_search(pages, cats):
                     "x": YES_INTRO + " yesco yes co makelaarssoftware makelaar software crm funda pararius publiceren nieuwbouw "
                     "projecten digitaal ondertekenen wwft ubo app market pro plus prijs demo tools voor vastgoed toolsvoorvastgoed "
                     "woningwaarderapport waarderapport vastgoed publiceren tiara startende makelaar hypotheek toolset"})
+        idx.append({"t": "Tools voor vastgoed: slimme online tools voor vastgoedprofessionals", "h": "tools-voor-vastgoed/index.html",
+                    "c": "Tools voor vastgoed", "k": "kennisbank", "x": TVV_INTRO + " toolsvoorvastgoed tools voor vastgoed makelaar "
+                    "hypotheek toolset rekentools leads woningwaarderapport woningwaarde vastgoed publiceren online klantdossier "
+                    "mijnhuiszaken yes-co tiara startende makelaar prijzen € 80 per maand " + " ".join(t for t, _ in TVV_TOOLS)})
         idx.append({"t": "Hypotheekrente-app: alle actuele rentes bij de hand", "h": "hypotheekrente-app/index.html",
                     "c": "Hypotheekrente-app", "k": "kennisbank", "x": HRA_INTRO + " hypotheekrente app renteapp rentetarieven "
                     "rente overzicht geldverstrekkers app store google play android iphone eigen huisstijl white label hypotheekbond " +
@@ -1345,6 +1349,7 @@ def render_home(cats, feeds, pages):
               f'<a class="tile" href="{pg.rel("websitetools")}"><svg class="ic"><use href="#i-calc"/></svg>Websitetools</a>'
               f'<a class="tile" href="{pg.rel("mijnhuiszaken")}"><svg class="ic"><use href="#i-home"/></svg>MijnHuiszaken</a>'
               f'<a class="tile" href="{pg.rel("yes-co")}"><svg class="ic"><use href="#i-desktop"/></svg>Makelaar Software</a>'
+              f'<a class="tile" href="{pg.rel("tools-voor-vastgoed")}"><svg class="ic"><use href="#i-folder"/></svg>Tools voor vastgoed</a>'
               f'<a class="tile" href="{pg.rel("actiefbeheerscan")}"><svg class="ic"><use href="#i-list"/></svg>Actiefbeheerscan</a>'
               f'<a class="tile" href="{pg.rel("hypotheekrente-app")}"><svg class="ic"><use href="#i-phone"/></svg>Hypotheekrente-app</a>'
               f'<a class="tile" href="{pg.rel("procesversneller")}"><svg class="ic"><use href="#i-bolt"/></svg>Proces-versneller</a>')
@@ -1980,20 +1985,7 @@ def render_yesco():
     <p><a class="btn-out cta" href="{YES_URL}prijs/" target="_blank" rel="noopener">Bekijk de prijzen</a></p></div>
     <figure>{img("app-market.webp", "De Yes-co App Market met extra functionaliteiten")}<figcaption>Extra functies en kanalen zet je aan via de App Market.</figcaption></figure></div>
   <h2 class="wth" id="tools-voor-vastgoed">Tools voor vastgoed</h2>
-  <p><a href="https://www.toolsvoorvastgoed.nl/" target="_blank" rel="noopener">Toolsvoorvastgoed.nl</a> is een initiatief van Yes-co en De Nationale Hypotheekbond: slimme online tools voor álle vastgoedprofessionals, om efficiënt en kostenbewust te werken en je klant tegelijk een optimale beleving te bieden. Het aanbod in één overzicht:</p>
-  <div class="wtwhys">
-    <div class="wtwhy">{img("tvv-publiceren.webp", "Woningzoekers bekijken het aanbod")}<h3>Vastgoed publiceren</h3><p>Met Yes-co beheer je vastgoedobjecten en relaties en publiceer je met één druk op de knop naar Funda, Jaap, Huislijn, Pararius of je eigen website. Inclusief wizard voor koop- en huurovereenkomsten, Wwft-checks en digitaal ondertekenen; geschikt voor verkoop, verhuur, aankoop, aanhuur, nieuwbouw en bedrijfsonroerendgoed.</p></div>
-    <div class="wtwhy">{img("mijnhuiszaken-hypotheek-berekenen.webp", "Hypotheek berekenen in MijnHuiszaken")}<h3>Online klantdossier</h3><p>Met <a href="{pg.rel("mijnhuiszaken")}">MijnHuiszaken</a> nodig je je klant per mail uit voor een eigen, beveiligde omgeving: hypotheekberekening met actuele rentes, het volledige woningaanbod met realtime alerts, en losse diensten zoals een waarderapport, kadastrale kaart of uittreksel van de hypotheek- of eigendomsakte. Makelaar en adviseur wisselen onderling leads uit.</p></div>
-    <div class="wtwhy">{img("hypotheektoolset.webp", "De hypotheektoolset op verschillende schermen")}<h3>Rekentools voor je website</h3><p>Maandlasten, ‘Kan ik deze woning kopen?’, duurzaamheidsrapport, ‘Wat kan ik lenen met mijn huurlasten?’, maximale hypotheek en hypotheekrente top 5. De tools rekenen realtime met actuele rentes en alle aanbieders, en nodigen de bezoeker altijd uit om contact met jou op te nemen. Zie ook de <a href="{pg.rel("websitetools")}">websitetools</a>.</p></div>
-    <div class="wtwhy">{img("tvv-woningwaarderapport.webp", "Woningwaarderapport")}<h3>Woningwaarderapport</h3><p>Geef je klant een geautomatiseerd overzicht van de waarde van zijn woning, een sterke aanleiding voor een gesprek over verkopen, verhuizen of de hypotheek aanpassen.</p></div>
-  </div>
-  <div class="mhz-duo"><div><h3>Starten als makelaar?</h3>
-  <p>Yes-co is geschikt voor alle makelaars, aangesloten bij NVM, Vastgoedpro of VBO, of ongebonden. Zo start je:</p>
-  <ol><li>Vraag via Funda een Tiara-aansluitnummer aan.</li><li>Neem contact op voor een demo van de software.</li><li>Voer je klanten en vastgoedobjecten in.</li><li>Publiceer je objecten zodra je er klaar voor bent.</li></ol></div>
-  <figure>{img("tvv-startende-makelaar.webp", "Yes-co op laptop, tablet en telefoon voor de startende makelaar")}</figure></div>
-  <table class="mhz-tabel"><thead><tr><th>Dienst (toolsvoorvastgoed.nl)</th><th>Prijs</th></tr></thead><tbody>
-    <tr><td>Hypotheek toolset (6 rekentools, per maand opzegbaar)</td><td>€ 80 per maand</td></tr>
-    <tr><td>MijnHuiszaken online klantdossier</td><td>€ 79 per maand</td></tr></tbody></table>
+  <p>Yes-co is samen met De Nationale Hypotheekbond het initiatief <a href="{pg.rel("tools-voor-vastgoed")}">Tools voor vastgoed</a>: vastgoed publiceren, een online klantdossier, rekentools voor je website en woningwaarderapporten. <a href="{pg.rel("tools-voor-vastgoed")}">Bekijk alle tools en prijzen</a>.</p>
   <p class="mhz-tip">Werk je als hypotheekadviseur samen met een makelaar? Combineer Yes-co met <a href="{pg.rel("mijnhuiszaken")}">MijnHuiszaken</a> en de <a href="{pg.rel("websitetools")}">websitetools</a>, en lees hoe je <a href="{pg.rel("kennisbank/gemakkelijk-klantgegevens-exporteren-naar-yes-co")}">klantgegevens vanuit eBlinqx Connect naar Yes-co exporteert</a>.</p>
   <h2 class="wth">Veelgestelde vragen</h2>
   {faq_html}
@@ -2181,6 +2173,79 @@ def render_hypotheekrenteapp():
     write("hypotheekrente-app", layout(pg, "Hypotheekrente-app: alle actuele rentes bij de hand", body, None,
                                        "De gratis Hypotheekrente-app van De Nationale Hypotheekbond: dagelijks bijgewerkte "
                                        "hypotheekrentes van alle geldverstrekkers, ook als app in je eigen huisstijl."))
+
+
+TVV_URL = "https://www.toolsvoorvastgoed.nl/"
+TVV_INTRO = ("Tools voor vastgoed is een initiatief van Yes-co en De Nationale Hypotheekbond: slimme online tools voor álle "
+             "vastgoedprofessionals. Een vastgoed-CRM, een online klantomgeving, rekentools, geautomatiseerde woningwaarderapporten "
+             "en je eigen vastgoedwebsite, om efficiënt en kostenbewust te werken en je klant tegelijk een optimale beleving te bieden.")
+TVV_TOOLS = [("Bereken de maandlasten", "maandlasten-berekenen"), ("Kan ik deze woning kopen?", "kan-ik-deze-woning-kopen"),
+             ("Duurzaamheidsrapport van je woning", "duurzaamheidsprofiel"), ("Wat kan ik lenen met mijn huurlasten?", "huren-naar-kopen"),
+             ("Bereken je maximale hypotheek", "maximale-hypotheek"), ("Hypotheekrente top 5", "hypotheekrente")]
+
+
+def render_toolsvoorvastgoed():
+    """Tools voor vastgoed: initiatief van Yes-co en De Nationale Hypotheekbond (bron: www.toolsvoorvastgoed.nl, november 2026)."""
+    pg = Page("tools-voor-vastgoed")
+    img = lambda f, alt: f'<img src="{pg.rel("bronnen/yes-co/" + f)}" alt="{esc(alt)}" loading="lazy">'
+    tools = "".join(f'<li><a href="{TVV_URL}tools/{u}/" target="_blank" rel="noopener">{esc(t)}</a></li>' for t, u in TVV_TOOLS)
+    faq = [
+        ("Wat is Tools voor vastgoed?", TVV_INTRO),
+        ("Welke rekentools zitten in de hypotheek toolset?",
+         "Maandlasten berekenen, Kan ik deze woning kopen?, duurzaamheidsrapport van je woning, Wat kan ik lenen met mijn "
+         "huurlasten?, maximale hypotheek en hypotheekrente top 5."),
+        ("Wat kost de hypotheek toolset?", "De volledige hypotheek toolset (zes rekentools) kost € 80 per maand en is per maand opzegbaar."),
+        ("Moet de bezoeker inloggen?", "Nee. De bezoeker krijgt direct een actuele berekening en wordt uitgenodigd om contact met je "
+         "op te nemen voor persoonlijk advies."),
+        ("Werken de tools op mijn website?", "Ja. De tools zijn geschikt voor iedere website, direct en volledig embedded te "
+         "installeren en met ieder systeem te koppelen."),
+    ]
+    faq_html = "".join(f'<details class="wtfaq"><summary>{esc(q)}</summary><p>{esc(a)}</p></details>' for q, a in faq)
+    faq_ld = json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+        {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]},
+        ensure_ascii=False).replace("</", "<\\/")
+    body = f"""{crumbs(pg, [("Tools voor vastgoed", None)])}
+<main class="subpage mhz"><div class="wrap">
+  <h1>Tools voor vastgoed</h1>
+  <p class="lead">Slimme online tools voor álle vastgoedprofessionals: werk efficiënt en geef je klant een optimale beleving.</p>
+  <div class="mhz-intro"><div><p>{esc(TVV_INTRO)}</p>
+    <p class="btn-row"><a class="btn-out cta" href="{TVV_URL}contact/" target="_blank" rel="noopener">Neem contact op</a>
+    <a class="btn-out" href="{TVV_URL}" target="_blank" rel="noopener">Naar toolsvoorvastgoed.nl</a></p></div>
+    <figure>{img("hypotheektoolset.webp", "De hypotheektoolset op verschillende schermen")}</figure></div>
+  <h2 class="wth">Het aanbod</h2>
+  <div class="wtwhys">
+    <div class="wtwhy">{img("tvv-publiceren.webp", "Woningzoekers bekijken het aanbod")}<h3>Vastgoed publiceren</h3><p>Met Yes-co beheer je vastgoedobjecten en relaties en publiceer je met één druk op de knop naar Funda, Jaap, Huislijn, Pararius of je eigen website. Inclusief wizard voor koop- en huurovereenkomsten, Wwft-checks en digitaal ondertekenen; geschikt voor verkoop, verhuur, aankoop, aanhuur, nieuwbouw en bedrijfsonroerendgoed.</p></div>
+    <div class="wtwhy">{img("mijnhuiszaken-hypotheek-berekenen.webp", "Hypotheek berekenen in MijnHuiszaken")}<h3>Online klantdossier</h3><p>Met <a href="{pg.rel("mijnhuiszaken")}">MijnHuiszaken</a> nodig je je klant per mail uit voor een eigen, beveiligde omgeving: hypotheekberekening met actuele rentes, het volledige woningaanbod met realtime alerts, en losse diensten zoals een waarderapport, kadastrale kaart of uittreksel van de hypotheek- of eigendomsakte. Makelaar en adviseur wisselen onderling leads uit.</p></div>
+    <div class="wtwhy">{img("hypotheektoolset.webp", "De hypotheektoolset op verschillende schermen")}<h3>Rekentools voor je website</h3><p>Maandlasten, ‘Kan ik deze woning kopen?’, duurzaamheidsrapport, ‘Wat kan ik lenen met mijn huurlasten?’, maximale hypotheek en hypotheekrente top 5. De tools rekenen realtime met actuele rentes en alle aanbieders, en nodigen de bezoeker altijd uit om contact met jou op te nemen. Zie ook de <a href="{pg.rel("websitetools")}">websitetools</a>.</p></div>
+    <div class="wtwhy">{img("tvv-woningwaarderapport.webp", "Woningwaarderapport")}<h3>Woningwaarderapport</h3><p>Geef je klant een geautomatiseerd overzicht van de waarde van zijn woning, een sterke aanleiding voor een gesprek over verkopen, verhuizen of de hypotheek aanpassen.</p></div>
+  </div>
+  <div class="mhz-duo"><div><h3>Starten als makelaar?</h3>
+  <p>Yes-co is geschikt voor alle makelaars, aangesloten bij NVM, Vastgoedpro of VBO, of ongebonden. Zo start je:</p>
+  <ol><li>Vraag via Funda een Tiara-aansluitnummer aan.</li><li>Neem contact op voor een demo van de software.</li><li>Voer je klanten en vastgoedobjecten in.</li><li>Publiceer je objecten zodra je er klaar voor bent.</li></ol></div>
+  <figure>{img("tvv-startende-makelaar.webp", "Yes-co op laptop, tablet en telefoon voor de startende makelaar")}</figure></div>
+  <table class="mhz-tabel"><thead><tr><th>Dienst (toolsvoorvastgoed.nl)</th><th>Prijs</th></tr></thead><tbody>
+    <tr><td>Hypotheek toolset (6 rekentools, per maand opzegbaar)</td><td>€ 80 per maand</td></tr>
+    <tr><td>MijnHuiszaken online klantdossier</td><td>€ 79 per maand</td></tr></tbody></table>
+  <h2 class="wth">Kansrijke leads met de hypotheektools</h2>
+  <p>De online hypotheektools geven geen standaard hypotheekberekening: het zijn universele plug-ins die rekenen met actuele rentes en aanbieders. Je biedt je klant optimale service, ontvangt direct kansrijke leads, en je klant is beter voorbereid als jullie in gesprek gaan.</p>
+  <div class="mhz-duo">
+    <div><h3>Voor de consument</h3><ul><li>Hoeft niet in te loggen</li><li>Krijgt direct een actuele berekening</li><li>Wordt altijd uitgenodigd om contact met je op te nemen voor persoonlijk advies</li></ul></div>
+    <div><h3>Voor de vastgoedprofessional</h3><ul><li>Geschikt voor iedere website, direct te installeren</li><li>Volledig embedded, met ieder systeem te koppelen</li><li>Realtime berekeningen met actuele rentes en alle aanbieders</li></ul></div>
+  </div>
+  <p>Probeer de tools:</p>
+  <ul>{tools}</ul>
+  <p class="mhz-tip">Let op: de uitkomsten van de rekentools zijn indicatief en geen hypotheekadvies. De tools nodigen de bezoeker daarom altijd uit voor persoonlijk advies.</p>
+  <p>Zie ook: <a href="{pg.rel("yes-co")}">Makelaar Software: Yes-co</a>, <a href="{pg.rel("mijnhuiszaken")}">MijnHuiszaken</a> en de <a href="{pg.rel("websitetools")}">websitetools</a>.</p>
+  <h2 class="wth">Veelgestelde vragen</h2>
+  {faq_html}
+  <script type="application/ld+json">{faq_ld}</script>
+  <h2 class="wth">Meer weten?</h2>
+  <p>Neem vrijblijvend contact op: mail <a href="mailto:info@toolsvoorvastgoed.nl">info@toolsvoorvastgoed.nl</a>, bel <a href="tel:+31365238455">036 523 84 55</a> of kijk op <a href="{TVV_URL}contact/" target="_blank" rel="noopener">toolsvoorvastgoed.nl</a>.</p>
+  <p class="src">Bron: <a href="{TVV_URL}" target="_blank" rel="noopener">www.toolsvoorvastgoed.nl</a> (stand 4 november 2026). Prijzen en voorwaarden kunnen wijzigen.</p>
+</div></main>"""
+    write("tools-voor-vastgoed", layout(pg, "Tools voor vastgoed: slimme online tools voor vastgoedprofessionals", body, None,
+                                        "Tools voor vastgoed van Yes-co en De Nationale Hypotheekbond: vastgoed publiceren, online "
+                                        "klantdossier, hypotheek toolset (€ 80 per maand) en woningwaarderapport."))
 
 
 def render_mijnhuiszaken():
@@ -2631,6 +2696,7 @@ def main():
     render_websitetools()
     render_mijnhuiszaken()
     render_yesco()
+    render_toolsvoorvastgoed()
     render_actiefbeheerscan()
     render_hypotheekrenteapp()
     render_downloads()
