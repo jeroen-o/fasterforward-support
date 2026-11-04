@@ -11,6 +11,8 @@ on:
 
 permissions:
   contents: write
+  actions: write
+  issues: write
 
 concurrency:
   group: wayback
@@ -49,3 +51,33 @@ jobs:
             python3 tools/rn_overig_sync.py > /dev/null
           done
           echo "::error::Pushen mislukt"; exit 1
+
+  bewaken:
+    # GitHub zet geplande workflows na 60 dagen zonder activiteit in de repository uit: elke run zet hem weer aan.
+    # Mislukt de controle, dan komt er een issue (met e-mailmelding); bij een geslaagde run wordt dat issue gesloten.
+    needs: controleren
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Geplande controle actief houden
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X PUT "repos/${{ github.repository }}/actions/workflows/releasenotes.yml/enable" || true
+      - name: Melding bij mislukte controle
+        if: needs.controleren.result == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          titel="Releasenotes-controle mislukt"
+          nr=$(gh issue list -R "${{ github.repository }}" --state open --search "$titel in:title" --json number --jq '.[0].number')
+          tekst="De dagelijkse releasenotes-controle is mislukt op $(date -u +%Y-%m-%d). Bekijk de run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          if [ -n "$nr" ]; then gh issue comment "$nr" -R "${{ github.repository }}" --body "$tekst"
+          else gh issue create -R "${{ github.repository }}" --title "$titel" --body "$tekst"; fi
+      - name: Melding sluiten na geslaagde controle
+        if: needs.controleren.result == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for nr in $(gh issue list -R "${{ github.repository }}" --state open --search "Releasenotes-controle mislukt in:title" --json number --jq '.[].number'); do
+            gh issue close "$nr" -R "${{ github.repository }}" --comment "De controle werkt weer."
+          done
