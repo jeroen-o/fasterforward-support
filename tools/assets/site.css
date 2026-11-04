@@ -426,3 +426,13 @@ figure .img-volgt{margin:0}
 .rn-tab:hover,.rn-tab:focus-visible{background:#DCE6F0}
 .rn-tab.actief{background:#FFCD00;color:#1D2632}
 @media (max-width:640px){.rn-tab{padding:6px 11px;font-size:.85rem}}
+
+/* Websitetools: waarom-blokken, tips en veelgestelde vragen */
+.wtwhys{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:18px 0 8px}
+.wtwhy{background:#fff;border:1px solid #E3E8EE;border-left:4px solid var(--yellow);border-radius:8px;padding:16px 18px}
+.wtwhy h3{margin:0 0 6px;font-size:17px;color:var(--heading)}
+.wtwhy p{margin:0;font-size:15px;line-height:1.55}
+.wttips{padding-left:20px}.wttips li{margin:6px 0}
+.wtfaq{border:1px solid #E3E8EE;border-radius:8px;padding:12px 16px;margin:8px 0;background:#fff}
+.wtfaq summary{cursor:pointer;font-weight:700;color:var(--heading)}
+.wtfaq p{margin:8px 0 0}

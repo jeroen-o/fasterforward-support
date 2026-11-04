@@ -1870,18 +1870,83 @@ def render_websitetools():
         for g in data["groepen"])
     n = sum(len(g["tools"]) for g in data["groepen"])
     contact = " of ".join(f'{esc(c["naam"])} (<a href="mailto:{esc(c["mail"])}">{esc(c["mail"])}</a>)' for c in data["contact"])
+    waarom = [
+        ("Meer en betere leads",
+         "Wie rekent, heeft een concrete vraag. Direct na de uitkomst kan de bezoeker een afspraak of adviesgesprek aanvragen. "
+         "Je ontvangt niet alleen contactgegevens, maar ook de situatie van de klant, zodat je het eerste gesprek goed voorbereid ingaat."),
+        ("Inzicht in je bezoekers",
+         "Je ziet waar bezoekers mee bezig zijn: hun maximale hypotheek, oversluiten, aflossen of verduurzamen. "
+         "Gebruik dat inzicht voor je marketing en om klanten op het juiste moment te benaderen."),
+        ("Een volwassen, professionele website",
+         "Actuele rentes en betrouwbare berekeningen laten zien dat je kantoor bij de tijd is. Een website die meer doet dan "
+         "informeren, wekt vertrouwen, juist bij een financiële beslissing van deze omvang."),
+        ("Beter gevonden in Google (SEO)",
+         "Rekentools zijn waardevolle, interactieve inhoud. Bezoekers blijven langer, komen terug voor de actuele rentes en zoeken "
+         "op termen als ‘maximale hypotheek berekenen’ of ‘actuele hypotheekrente’. Dat zijn signalen die zoekmachines belonen."),
+        ("Zichtbaar in AI-zoekmachines (GEO)",
+         "ChatGPT, Gemini en Copilot beantwoorden hypotheekvragen steeds vaker zelf en verwijzen daarbij naar bronnen. Pagina’s met "
+         "heldere uitleg, actuele cijfers en een rekenmodule zijn precies het soort bron dat zij noemen."),
+        ("Klanten blijven betrokken",
+         "Ook na het afsluiten: met de bespaarcheck en de tools voor aflossen en verduurzamen hebben bestaande klanten een reden om "
+         "terug te komen, en heb jij een natuurlijke aanleiding voor een vervolggesprek."),
+    ]
+    waarom_html = "".join(f'<div class="wtwhy"><h3>{esc(t)}</h3><p>{esc(x)}</p></div>' for t, x in waarom)
+    tips = [
+        "Geef elke tool een eigen pagina met een duidelijke titel en een korte uitleg in je eigen woorden, bijvoorbeeld "
+        "‘Bereken je maximale hypotheek’. Dat helpt zowel Google als AI-zoekmachines om je pagina te begrijpen en te tonen.",
+        "Zet direct onder de uitkomst een duidelijke vervolgstap, zoals ‘Plan een vrijblijvend oriëntatiegesprek’.",
+        "Laat aanvragen via je contactformulier binnenkomen in de leadinbox van eBlinqx Connect, zodat elke lead direct in je "
+        "werkproces staat.",
+        "Link vanuit je nieuwsberichten en blogs naar de tools, bijvoorbeeld bij een renteverandering naar het renteoverzicht.",
+        "Vermeld bij elke tool dat de uitkomst een indicatie is en geen advies, en verwijs voor persoonlijk advies naar een gesprek.",
+    ]
+    tips_html = "".join(f"<li>{esc(t)}</li>" for t in tips).replace(
+        "de leadinbox van eBlinqx Connect",
+        f'<a href="{pg.rel("kennisbank/leadinbox-gebruiken-vanaf-contactformulier-op-website")}">de leadinbox van eBlinqx Connect</a>')
+    faq = [
+        ("Wat zijn websitetools?",
+         f"Websitetools zijn rekentools die je op de website van je advieskantoor plaatst. Bezoekers berekenen er zelf hun maximale "
+         f"hypotheek, maandlasten, besparing bij aflossen of oversluiten, of bekijken de actuele hypotheekrentes. Er zijn {n} tools in "
+         f"{len(data['groepen'])} rubrieken."),
+        ("Waarom zijn rekentools belangrijk voor een hypotheekadviseur?",
+         "Woningzoekers oriënteren zich online, vaak al lang voordat ze een adviseur bellen. Met rekentools op je eigen website help je "
+         "ze in die fase al verder, maak je je kantoor zichtbaar en zet je bezoekers om in concrete adviesaanvragen."),
+        ("Helpen rekentools om beter gevonden te worden?",
+         "Ja. Interactieve en actuele inhoud zorgt ervoor dat bezoekers langer blijven en terugkomen, en sluit aan op veelgebruikte "
+         "zoekvragen. Met een duidelijke uitleg bij elke tool wordt je pagina ook eerder als bron genoemd door AI-zoekmachines."),
+        ("Zijn de uitkomsten een hypotheekadvies?",
+         "Nee. De uitkomsten zijn een indicatie op basis van de gegevens die de bezoeker invult. Voor een persoonlijk advies is altijd "
+         "een gesprek met een adviseur nodig."),
+        ("Hoe plaats ik een rekentool op mijn website?",
+         "De rekentools worden in de huisstijl van je kantoor op je website geplaatst. Neem contact op met Blinqx Verzekering & "
+         "Hypotheek; de contactgegevens staan onderaan deze pagina."),
+    ]
+    faq_html = "".join(f"<details class=\"wtfaq\"><summary>{esc(q)}</summary><p>{esc(a)}</p></details>" for q, a in faq)
+    faq_ld = json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+        {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]},
+        ensure_ascii=False).replace("</", "<\\/")
     body = f"""{crumbs(pg, [("Websitetools", None)])}
 <main class="subpage"><div class="wrap">
   <h1>Websitetools</h1>
   <p class="lead">Rekentools voor op je eigen website: laat bezoekers zelf hun maximale hypotheek, maandlasten of de actuele rentes bekijken en zet ze zo om in leads. Er zijn {n} tools in {len(data["groepen"])} rubrieken. Klik op een tool om een voorbeeld te bekijken (opent in een nieuw tabblad).</p>
+  <h2 class="wth">Waarom rekentools op je website?</h2>
+  <p>Een hypotheek begint online. Woningzoekers oriënteren zich vaak al weken voordat ze een adviseur bellen: hoeveel kan ik lenen, wat worden mijn maandlasten, wat doet de rente? Met de rekentools geef je die antwoorden op je eigen website en ben jij het kantoor dat ze als eerste verder helpt.</p>
+  <div class="wtwhys">{waarom_html}</div>
+  <h2 class="wth">De rekentools</h2>
   {groups}
+  <h2 class="wth">Zo haal je er het meeste uit</h2>
+  <ul class="wttips">{tips_html}</ul>
+  <h2 class="wth">Veelgestelde vragen</h2>
+  {faq_html}
+  <script type="application/ld+json">{faq_ld}</script>
   <div class="oud wtnote" role="note">{esc(data["disclaimer"])}</div>
   <h2 class="wth">Websitetools op je eigen website?</h2>
   <p>De rekentools zijn in de huisstijl van je kantoor op je eigen website te plaatsen. Neem voor meer informatie contact op met {contact}.</p>
   <p class="src">Bron: <a href="{esc(data["bron"])}" target="_blank" rel="noopener">verzekeringhypotheek.blinqx.tech</a> (stand {fmt_date(date.fromisoformat(data["opgehaald"]))}).</p>
 </div></main>"""
-    write("websitetools", layout(pg, "Websitetools", body, None,
-                                 "Rekentools voor op de website van je advieskantoor: hypotheek berekenen, rentes vergelijken, aflossen, verduurzamen en klantinzicht."))
+    write("websitetools", layout(pg, "Websitetools: rekentools voor je website", body, None,
+                                 "Rekentools voor de website van je advieskantoor: meer en betere leads, inzicht in bezoekers, een professionele "
+                                 "uitstraling en betere vindbaarheid in Google en AI-zoekmachines. Hypotheek berekenen, rentes, aflossen en verduurzamen."))
 
 
 def downloads_items():
