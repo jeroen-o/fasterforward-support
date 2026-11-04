@@ -1873,7 +1873,8 @@ def render_websitetools():
     waarom = [
         ("Meer en betere leads",
          "Wie rekent, heeft een concrete vraag. Direct na de uitkomst kan de bezoeker een afspraak of adviesgesprek aanvragen. "
-         "Je ontvangt niet alleen contactgegevens, maar ook de situatie van de klant, zodat je het eerste gesprek goed voorbereid ingaat."),
+         "De aanvraag komt rechtstreeks binnen in de leadinbox van eBlinqx Connect en/of in je mailbox, met niet alleen "
+         "contactgegevens maar ook de situatie van de klant. Zo ga je het eerste gesprek goed voorbereid in."),
         ("Inzicht in je bezoekers",
          "Je ziet waar bezoekers mee bezig zijn: hun maximale hypotheek, oversluiten, aflossen of verduurzamen. "
          "Gebruik dat inzicht voor je marketing en om klanten op het juiste moment te benaderen."),
@@ -1895,8 +1896,8 @@ def render_websitetools():
         "Geef elke tool een eigen pagina met een duidelijke titel en een korte uitleg in je eigen woorden, bijvoorbeeld "
         "‘Bereken je maximale hypotheek’. Dat helpt zowel Google als AI-zoekmachines om je pagina te begrijpen en te tonen.",
         "Zet direct onder de uitkomst een duidelijke vervolgstap, zoals ‘Plan een vrijblijvend oriëntatiegesprek’.",
-        "Laat aanvragen via je contactformulier binnenkomen in de leadinbox van eBlinqx Connect, zodat elke lead direct in je "
-        "werkproces staat.",
+        "Laat de aanvragen uit de tools rechtstreeks binnenkomen in de leadinbox van eBlinqx Connect en/of in je e-mail, zodat "
+        "elke lead direct in je werkproces staat.",
         "Link vanuit je nieuwsberichten en blogs naar de tools, bijvoorbeeld bij een renteverandering naar het renteoverzicht.",
         "Vermeld bij elke tool dat de uitkomst een indicatie is en geen advies, en verwijs voor persoonlijk advies naar een gesprek.",
     ]
@@ -1907,7 +1908,8 @@ def render_websitetools():
         ("Wat zijn websitetools?",
          f"Websitetools zijn rekentools die je op de website van je advieskantoor plaatst. Bezoekers berekenen er zelf hun maximale "
          f"hypotheek, maandlasten, besparing bij aflossen of oversluiten, of bekijken de actuele hypotheekrentes. Er zijn {n} tools in "
-         f"{len(data['groepen'])} rubrieken."),
+         f"{len(data['groepen'])} rubrieken. Aanvragen van bezoekers komen rechtstreeks binnen in de leadinbox van eBlinqx Connect "
+         f"en/of in je e-mail."),
         ("Waarom zijn rekentools belangrijk voor een hypotheekadviseur?",
          "Woningzoekers oriënteren zich online, vaak al lang voordat ze een adviseur bellen. Met rekentools op je eigen website help je "
          "ze in die fase al verder, maak je je kantoor zichtbaar en zet je bezoekers om in concrete adviesaanvragen."),
