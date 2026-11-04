@@ -663,7 +663,7 @@ SITE_URL = os.environ.get("SITE_URL", "https://support-eblinqx-connect.nl/")
 def share_block(pg, title, description):
     from urllib.parse import quote
     url = page_url(pg)
-    t = title or "Blinqx Support"
+    t = title or "Alles over Blinqx Verzekering & Hypotheek - Support"
     d = re.sub(r"\s+", " ", description or "").strip()
     if len(d) > 200:
         d = d[:200].rsplit(" ", 1)[0] + "…"
@@ -694,13 +694,13 @@ def head_meta(pg, title, description):
     d = re.sub(r"\s+", " ", description or "").strip() or SITE_DESC
     if len(d) > 290:
         d = d[:290].rsplit(" ", 1)[0] + "…"
-    t = title or "Blinqx Support"
+    t = title or "Alles over Blinqx Verzekering & Hypotheek - Support"
     u = page_url(pg)
-    img = SITE_URL + "assets/og-image.png"
+    img = SITE_URL + "assets/og-blinqx-vh.png"
     return "\n".join([
         f'<meta name="description" content="{esc(d)}">',
         f'<link rel="canonical" href="{esc(u)}">',
-        '<meta property="og:site_name" content="Blinqx Support">',
+        '<meta property="og:site_name" content="Blinqx Verzekering &amp; Hypotheek - Support">',
         '<meta property="og:locale" content="nl_NL">',
         f'<meta property="og:type" content="{"website" if not pg.path else "article"}">',
         f'<meta property="og:title" content="{esc(t)}">',
@@ -708,6 +708,9 @@ def head_meta(pg, title, description):
         f'<meta property="og:url" content="{esc(u)}">',
         f'<meta property="og:image" content="{img}">',
         '<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">',
+        '<meta property="og:image:type" content="image/png">',
+        '<meta property="og:image:alt" content="Blinqx Verzekering &amp; Hypotheek – Alles over Blinqx Verzekering &amp; Hypotheek - Support">',
+        f'<meta name="twitter:image" content="{img}">',
         '<meta name="twitter:card" content="summary_large_image">',
     ])
 
