@@ -1603,6 +1603,18 @@ def fastlane_months():
                         "count": int(cnt.group(1)) if cnt else None, "html": body, "text": text,
                         "slug": f"{mm.group(2)}-{month:02d}" if month else slugify(head),
                         "src": f"{FL_BASE}/hoe-het-werkt/releasenotes/releasenotes-{year}/"})
+    # Losse releasenotes uit het helpcenter (tools/fastlane_artikel.py); vervangen een maand uit het overzicht
+    for f in sorted(glob.glob(os.path.join(FL_DIR, "artikelen", "*.json"))):
+        d = json.load(open(f, encoding="utf8"))
+        c = htmlclean.Cleaner()
+        c.feed(d["html"])
+        c.close()
+        body = "".join(c.out)
+        slug = f'{d["year"]}-{d["month"]:02d}'
+        out = [x for x in out if x["slug"] != slug]
+        out.append({"label": d["label"], "head": d["titel"], "year": str(d["year"]), "month": d["month"],
+                    "count": d["count"], "html": body, "text": re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", body))).strip(),
+                    "slug": slug, "src": d["src"]})
     out.sort(key=lambda x: (x["year"], x["month"]), reverse=True)
     return out, intro
 

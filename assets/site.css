@@ -409,3 +409,13 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
 .img-volgt{display:flex;align-items:center;justify-content:center;min-height:120px;max-width:640px;margin:12px 0;padding:16px;
   border:2px dashed #C9D1DB;border-radius:8px;background:#F4F6F9;color:#5B6573;font-size:.95rem;font-style:italic;text-align:center}
 figure .img-volgt{margin:0}
+
+/* Releasenotes-tabellen (Ticket | Wijziging | Wat de adviseur merkt) op mobiel als kaartjes */
+@media (max-width: 640px){
+  .flnotes table, .flnotes tbody, .flnotes tr, .flnotes td{display:block;width:auto}
+  .flnotes thead{display:none}
+  .flnotes tr{border:1px solid #DDE2E9;border-radius:8px;margin:0 0 12px;padding:10px 12px;background:#fff}
+  .flnotes td{border:0;padding:2px 0}
+  .flnotes td:first-child{font-size:.85rem;color:#5B6573}
+  .flnotes td:nth-child(2){font-weight:700}
+}
