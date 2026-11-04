@@ -457,3 +457,11 @@ figure .img-volgt{margin:0}
 .mhz-tabel th{background:#F7F8FA}
 .wtwhy>img{display:block;width:calc(100% + 36px);margin:-16px -18px 12px;height:170px;object-fit:cover;border-radius:8px 8px 0 0}
 .mhz figcaption{font-size:13px;color:#5B6573;margin-top:6px}
+/* Actiefbeheerscan */
+.abs-stappen{padding-left:1.3em}.abs-stappen li{margin:0 0 12px}
+.abs-forms{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin:12px 0 18px}
+.abs-form{display:flex;gap:12px;align-items:flex-start;border:1px solid #ddd;border-radius:6px;padding:14px;color:inherit;text-decoration:none;background:#fff}
+.abs-form:hover,.abs-form:focus-visible{border-color:#000}
+.abs-form img{width:48px;height:48px;flex:none}
+.abs-form span{display:flex;flex-direction:column;gap:4px}.abs-form small{font-size:14px;line-height:1.4}
+.abs-form em{font-style:normal;text-decoration:underline;font-size:14px}

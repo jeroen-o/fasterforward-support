@@ -1251,6 +1251,10 @@ def render_search(pages, cats):
                     "x": YES_INTRO + " yesco yes co makelaarssoftware makelaar software crm funda pararius publiceren nieuwbouw "
                     "projecten digitaal ondertekenen wwft ubo app market pro plus prijs demo tools voor vastgoed toolsvoorvastgoed "
                     "woningwaarderapport waarderapport vastgoed publiceren tiara startende makelaar hypotheek toolset"})
+        idx.append({"t": "Actiefbeheerscan: digitale formulieren voor nazorg en beheer", "h": "actiefbeheerscan/index.html",
+                    "c": "Actiefbeheerscan", "k": "kennisbank", "x": ABS_INTRO + " actief beheer scan actiefbeheerscan nazorg klantbeheer "
+                    "digitale formulieren webformulieren uitnodigingsmail reminder leads tarieven demo dutch media lab " +
+                    " ".join(t + " " + x for t, _, _, x in ABS_FORMULIEREN)})
         idx.append({"t": "MijnHuiszaken: realtime woningaanbod voor je klanten", "h": "mijnhuiszaken/index.html", "c": "MijnHuiszaken",
                     "k": "kennisbank", "x": MHZ_INTRO + " woningaanbod NVM makelaar e-mailalerts zoekprofiel woningwaarde Wwft "
                     "aankoopdossier verkoopdossier digitaal ondertekenen leads tarieven demo mijn huiszaken mijnhuiszaken.nl"})
@@ -1337,8 +1341,8 @@ def render_home(cats, feeds, pages):
               f'<a class="tile" href="{pg.rel("websitetools")}"><svg class="ic"><use href="#i-calc"/></svg>Websitetools</a>'
               f'<a class="tile" href="{pg.rel("mijnhuiszaken")}"><svg class="ic"><use href="#i-home"/></svg>MijnHuiszaken</a>'
               f'<a class="tile" href="{pg.rel("yes-co")}"><svg class="ic"><use href="#i-desktop"/></svg>Makelaar Software</a>'
-              f'<a class="tile tile-wide" href="{pg.rel("procesversneller")}"><svg class="ic"><use href="#i-bolt"/></svg>'
-              f'<span class="tw"><span>Proces-versneller</span><small>Brondata ophalen via Ockto: zo werkt het in eBlinqx</small></span></a>')
+              f'<a class="tile" href="{pg.rel("actiefbeheerscan")}"><svg class="ic"><use href="#i-list"/></svg>Actiefbeheerscan</a>'
+              f'<a class="tile" href="{pg.rel("procesversneller")}"><svg class="ic"><use href="#i-bolt"/></svg>Proces-versneller</a>')
 
     def a(path, label):
         href, _ = link_for(path)
@@ -1998,6 +2002,114 @@ def render_yesco():
                            "digitaal ondertekenen, Wwft-checks en samenwerken met de hypotheekadviseur via MijnHuiszaken."))
 
 
+ABS_URL = "https://www.actiefbeheerscan.nl/"
+ABS_INTRO = ("Actiefbeheerscan is een tool voor nazorg, klantbeheer en leads van Blinqx Verzekering & Hypotheek. Je stuurt je "
+             "klant een uitnodiging voor een digitaal formulier, de klant vult zijn actuele situatie in en jij ziet direct waar "
+             "verbeteringen of besparingen mogelijk zijn.")
+ABS_FORMULIEREN = [
+    ("Jaarlijkse nazorg", "yearly", "PzSDxcFYAsLw6jCq", "Periodieke check van de situatie van je klant."),
+    ("Status hypotheek", "house", "GlYSvar7ShpvgOdk", "Past de hypotheek nog bij de situatie en wensen van je klant?"),
+    ("Extra aflossen?", "aflossingsvrij", "bBPNYc7RHSPSaU9g", "Inventariseer of je klant wil of kan aflossen."),
+    ("Gerust met pensioen?", "retirement", "dKQGiagOZA1wjcEl", "Breng de pensioenwensen en -situatie in kaart."),
+    ("Overlijdensrisico", "orv", "YeGIdMf9qGpZvKtW", "Controleer of de dekking nog aansluit."),
+    ("Uitvaartverzekering", "funeral", "EdvsaUPDAl10ANAi", "Check de uitvaartdekking van je klant."),
+    ("Schadeverzekering", "injury", "C2X3Ldey3KEre5cV", "Actualiseer de gegevens voor de schadeverzekeringen."),
+    ("Bedrijfsverzekering", "business-2", "AtfDGyjfOkO5mwAE", "Nazorg voor zakelijke klanten."),
+    ("Autoverzekering", "car", "FmvJRpOQLjHWpCfP", "Klopt de autoverzekering nog met de situatie?"),
+    ("Klanttevredenheid", "customer", "pmIZrVhGuf00mDkj", "Meet hoe tevreden je klanten zijn."),
+]
+
+
+def render_actiefbeheerscan():
+    """Actiefbeheerscan: digitale formulieren voor nazorg en beheer (bron: www.actiefbeheerscan.nl, november 2026)."""
+    pg = Page("actiefbeheerscan")
+    img = lambda f, alt: f'<img src="{pg.rel("bronnen/actiefbeheerscan/" + f)}" alt="{esc(alt)}" loading="lazy">'
+    voordelen = [
+        ("Eenvoud", "Start met Actiefbeheerscan zonder enige technische kennis. De digitale formulieren worden volledig voor je "
+         "ingericht en afgestemd op je kantoor."),
+        ("Flexibiliteit", "Richt Actiefbeheerscan in zoals dat past binnen jouw organisatie. Pas de templates naar eigen inzicht "
+         "aan of stel zelf nieuwe formulieren samen."),
+        ("Veilig & zeker", "Ontvang en bewaar actuele klantgegevens op een veilige wijze."),
+        ("Nazorg op de automatische piloot", "Verstuur uitnodigingen in één keer, eventueel met een automatische reminder. Zo "
+         "voldoe je eenvoudig aan je periodieke nazorg en houd je meer tijd over voor het gesprek met je klant."),
+        ("Leads uit je bestaande klanten", "Bestaande klanten zijn je meest waardevolle bezit. De antwoorden laten zien waar "
+         "een hypotheek, pensioen of verzekering niet meer past: aanleiding voor een nieuw gesprek."),
+        ("Ook op je website", "Je gebruikt de formulieren onbeperkt op je eigen website, zodat ook bezoekers hun situatie aan "
+         "je doorgeven."),
+    ]
+    blokken = "".join(f'<div class="wtwhy"><h3>{esc(t)}</h3><p>{esc(x)}</p></div>' for t, x in voordelen)
+    stappen = [
+        ("Stuur een uitnodigingsmail", "Stuur via het systeem een uitnodigingsmail naar de klant met een toelichting op het "
+         "formulier en het belang daarvan. Eventueel met automatische reminder."),
+        ("De klant vult het digitale formulier in", "De klant doorloopt het formulier en vult actuele informatie in over zijn "
+         "of haar situatie."),
+        ("Vind verbeteringen of besparingen", "Je krijgt hiervan bericht en hebt direct inzicht in mogelijke verbeteringen "
+         "of besparingen."),
+    ]
+    stap_html = "".join(f"<li><strong>{esc(t)}</strong><br>{esc(x)}</li>" for t, x in stappen)
+    forms = "".join(
+        f'<a class="abs-form" href="https://formulier.actiefbeheerscan.nl/s/{code}" target="_blank" rel="noopener">'
+        f'<img src="{pg.rel("bronnen/actiefbeheerscan/" + ic + ".svg")}" alt="" loading="lazy">'
+        f'<span><strong>{esc(t)}</strong><small>{esc(x)}</small><em>Bekijk formulier ›</em></span></a>'
+        for t, ic, code, x in ABS_FORMULIEREN)
+    faq = [
+        ("Wat is Actiefbeheerscan?", ABS_INTRO),
+        ("Welke digitale formulieren zijn er?",
+         "Er zijn templates voor jaarlijkse nazorg, status hypotheek, extra aflossen, pensioen, overlijdensrisico, "
+         "uitvaartverzekering, schadeverzekering, bedrijfsverzekering, autoverzekering en klanttevredenheid. Je past ze naar "
+         "eigen inzicht aan en kunt ook eigen formulieren toevoegen."),
+        ("Heb ik technische kennis nodig?",
+         "Nee. De digitale formulieren worden volledig voor je ingericht en afgestemd op je kantoor."),
+        ("Wat kost Actiefbeheerscan?",
+         "€ 39,- per maand plus eenmalig € 159,- inrichtingskosten. Daarvoor verstuur je 1.000 formulieren per maand, gebruik je "
+         "de formulieren onbeperkt op je website en stel je zelf formulieren samen (tarief volgens actiefbeheerscan.nl, "
+         "november 2026)."),
+        ("Bij wie kan ik terecht met vragen?",
+         "Voor ondersteuning bij het maken of koppelen van formulieren: 085 401 16 71 (maandag t/m vrijdag 09:00–17:30) of "
+         "service@dutchmedialab.nl. Voor informatie en een demo: relatie-vh@blinqx.tech of 020 758 21 11."),
+    ]
+    faq_html = "".join(f'<details class="wtfaq"><summary>{esc(q)}</summary><p>{esc(a)}</p></details>' for q, a in faq)
+    faq_ld = json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+        {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]},
+        ensure_ascii=False).replace("</", "<\\/")
+    body = f"""{crumbs(pg, [("Actiefbeheerscan", None)])}
+<main class="subpage mhz"><div class="wrap">
+  <h1>Actiefbeheerscan</h1>
+  <p class="lead">Jouw klanten ontzorgen, nu en in de toekomst: eenvoudige nazorg, beheer en leads met digitale formulieren.</p>
+  <div class="mhz-intro"><div><p>{esc(ABS_INTRO)}</p>
+    <p>Bestaande klanten zijn je meest waardevolle bezit. Met Actiefbeheerscan geef je periodieke nazorg snel en gemakkelijk invulling, zorg je voor een positieve klantervaring en houd je meer tijd over om met je klant in gesprek te gaan.</p>
+    <p class="btn-row"><a class="btn-out cta" href="{ABS_URL}contact/" target="_blank" rel="noopener">Demo aanvragen</a>
+    <a class="btn-out" href="https://formulier.actiefbeheerscan.nl/login" target="_blank" rel="noopener">Inloggen</a></p></div>
+    <figure>{img("header.webp", "Digitaal formulier van Actiefbeheerscan op laptop en telefoon")}</figure></div>
+  <h2 class="wth">Waarom Actiefbeheerscan?</h2>
+  <div class="wtwhys">{blokken}</div>
+  <div class="mhz-duo">
+    <div><h2 class="wth">Hoe werkt Actiefbeheerscan?</h2><ol class="abs-stappen">{stap_html}</ol></div>
+    <figure>{img("resultaat.webp", "Tevreden adviseur")}</figure>
+  </div>
+  <h2 class="wth" id="digitale-formulieren">De digitale formulieren</h2>
+  <p>Je kunt de templates naar eigen inzicht aanpassen en eigen formulieren toevoegen. Bekijk de voorbeelden:</p>
+  <div class="abs-forms">{forms}</div>
+  <p class="mhz-tip">Let op: dit zijn voorbeeldformulieren. Wat je hier invult, komt niet bij een adviseur terecht.</p>
+  <h2 class="wth">Tarieven</h2>
+  <div class="mhz-prijs"><p class="mhz-bedrag">€ 39,- <small>per maand</small></p>
+    <ul><li>1.000 formulieren per maand versturen</li><li>Onbeperkt gebruik op je website</li><li>Toegang tot de digitale formulieren</li><li>Zelf digitale formulieren samenstellen</li></ul>
+    <p>Eenmalige inrichtingskosten: € 159,-</p>
+    <p><a class="btn-out cta" href="{ABS_URL}contact/" target="_blank" rel="noopener">Neem contact op</a></p></div>
+  <p class="mhz-tip">Tip: combineer Actiefbeheerscan met de <a href="{pg.rel("websitetools")}">websitetools</a> en <a href="{pg.rel("mijnhuiszaken")}">MijnHuiszaken</a>. Zo houd je zowel nieuwe als bestaande klanten in beeld.</p>
+  <h2 class="wth">Veelgestelde vragen</h2>
+  {faq_html}
+  <script type="application/ld+json">{faq_ld}</script>
+  <h2 class="wth">Contact</h2>
+  <p><strong>Ondersteuning</strong> bij het maken van een digitaal formulier of het koppelen van Actiefbeheerscan: bel <a href="tel:+31854011671">085 401 16 71</a> (maandag t/m vrijdag 09:00–17:30) of mail <a href="mailto:service@dutchmedialab.nl">service@dutchmedialab.nl</a>.</p>
+  <p><strong>Informatie en demo:</strong> mail <a href="mailto:relatie-vh@blinqx.tech">relatie-vh@blinqx.tech</a>, bel <a href="tel:+31207582111">020 758 21 11</a> of kijk op <a href="{ABS_URL}contact/" target="_blank" rel="noopener">actiefbeheerscan.nl/contact</a>.</p>
+  <p class="src">Bron: <a href="{ABS_URL}" target="_blank" rel="noopener">www.actiefbeheerscan.nl</a> (stand 4 november 2026). Tarieven en voorwaarden kunnen wijzigen.</p>
+</div></main>"""
+    write("actiefbeheerscan", layout(pg, "Actiefbeheerscan: digitale formulieren voor nazorg en beheer", body, None,
+                                     "Actiefbeheerscan: eenvoudige nazorg, klantbeheer en leads met digitale formulieren voor "
+                                     "hypotheek, pensioen en verzekeringen. € 39 per maand, volledig voor je ingericht."))
+
+
 def render_mijnhuiszaken():
     """MijnHuiszaken: klantomgeving met realtime woningaanbod (bron: aansluiten.mijnhuiszaken.nl, november 2026)."""
     pg = Page("mijnhuiszaken")
@@ -2446,6 +2558,7 @@ def main():
     render_websitetools()
     render_mijnhuiszaken()
     render_yesco()
+    render_actiefbeheerscan()
     render_downloads()
     render_nieuwsbrief()
     render_privacy()
