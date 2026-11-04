@@ -51,6 +51,8 @@ REPLAYS = {
 # Pad waaronder de site draait (voor 404.html). GitHub Pages: /<repo>/; eigen domein: /
 SITE_BASE = os.environ.get("SITE_BASE", "/")
 WAYBACK_DIR = os.path.join(SRC, "wayback")      # uitvoer van tools/wayback-ophalen.py
+# Dubbele artikelen: de oude versie verwijst door naar de nieuwe (oud pad -> nieuw pad)
+VERVANGEN = {"kennisbank/handleiding-faster-forward-on-route": "kennisbank/handleiding-eblinqx-on-route"}
 WPDB_DIR = os.path.join(SRC, "wpdb-2026-10-21")  # WordPress-databaseback-up (tools/wpdb_export.py)
 HANDLEIDING_DATUM = "30 oktober 2026"  # datum waarop de handleidingteksten zijn toegevoegd
 LIVE_DIR = os.path.join(SRC, "live-2026-10-20")  # pagina's van de live site, 20 oktober 2026
@@ -470,6 +472,9 @@ def build_structure(pages):
     for p in pages.values():
         if p["path"] == "":
             p["skip"] = True
+            continue
+        if p["path"] in VERVANGEN:
+            p["skip"] = True  # oude dubbele versie: wordt een doorverwijzing (render_redirects)
             continue
         if p["path"] in ("kennisbank", "video", "zoeken", "categorien", "category"):
             p["skip"] = True  # overzichtspagina's maken we zelf
@@ -1933,6 +1938,9 @@ def render_redirects(cats):
         for r in json.load(open(rf, encoding="utf8")):
             oudsite[r["van"]] = r["naar"]
             oud.add(BASE + "/" + r["van"] + "/")
+    for van, naar in VERVANGEN.items():
+        oudsite[van] = naar
+        oud.add(BASE + "/" + van + "/")
     n = 0
     for u in sorted(oud):
         path = re.sub(r"^https?://(www\.)?support\.fasterforward\.nl", "", u.split("#")[0].split("?")[0]).strip("/")
