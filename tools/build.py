@@ -840,6 +840,11 @@ def raw_to_html(pg, h):
     h = re.sub(r'href="IMG:"', 'href="#"', h)
     h = re.sub(r'(href|src)="IMG:([^"]+)"', lambda m: f'{m.group(1)}="{esc(resolve_img(pg, html.unescape(m.group(2))))}"', h)
     h = re.sub(r'href="SITE:([^"]*)"', lambda m: f'href="{esc(resolve_site(pg, html.unescape(m.group(1))))}"', h)
+    # Afbeeldingen die niet meer bestaan (niet lokaal, alleen nog een archiefadres): weglaten in plaats van een leeg vak
+    h = re.sub(r'<a href="https://web\.archive\.org/[^"]*"[^>]*>(.*?)</a>', r"\1", h, flags=re.S)
+    h = re.sub(r'<img[^>]*src="https://web\.archive\.org/[^"]*"[^>]*>', "", h)
+    for _ in range(2):
+        h = re.sub(r"<(figure|p|figcaption)>\s*(<br>\s*)*</\1>", "", h)
     toc, used = [], set()
 
     def add_id(m):
@@ -1004,10 +1009,15 @@ def render_article(cats, feeds, p):
         figs = []
         for im in p["imgs"]:
             rel = img_local(im["src"])
-            src = pg.rel(rel) if rel and os.path.exists(os.path.join(ROOT, rel)) else (im["w"] or wayback_img(im["src"]))
+            lokaal = [c for c in ("bronnen/vervanging/" + (rel or ""), rel or "", "bronnen/wayback/" + (rel or ""))
+                      if rel and os.path.isfile(os.path.join(ROOT, c))]
+            if not lokaal:
+                continue  # afbeelding is verloren gegaan
+            src = pg.rel(lokaal[0])
             figs.append(f'<figure><a href="{esc(src)}" target="_blank" rel="noopener"><img src="{esc(src)}" alt="{esc(im["alt"])}" loading="lazy" onerror="this.closest(\'figure\').remove()"></a>'
                         f'{f"<figcaption>{esc(im["alt"])}</figcaption>" if im["alt"] else ""}</figure>')
-        imgs = '<section class="figs"><h2>Afbeeldingen bij dit artikel</h2>' + "".join(figs) + "</section>"
+        if figs:
+            imgs = '<section class="figs"><h2>Afbeeldingen bij dit artikel</h2>' + "".join(figs) + "</section>"
     nu = [("bronnen/eblinqx/" + n + ".webp", EBLINQX_SCHERMEN["schermen"][n])
           for n in EBLINQX_SCHERMEN["artikelen"].get(p["path"].strip("/"), [])]
     # extra actuele schermen per artikel (tools/vervanging_plaatsen.py)
@@ -1139,7 +1149,7 @@ def render_feed(name, items):
     def card(x):
         d = x["posted"] or x["updated"]
         img = ""
-        if x.get("thumb"):
+        if x.get("thumb") and not resolve_img(pg, x["thumb"]).startswith("http"):
             img = (f'<a class="card-img" href="{pg.rel(x["path"])}" tabindex="-1" aria-hidden="true">'
                    f'<img src="{esc(resolve_img(pg, x["thumb"]))}" alt="" loading="lazy" '
                    f'onerror="this.closest(\'.card\').classList.remove(\'has-img\');this.parentNode.remove()"></a>')
