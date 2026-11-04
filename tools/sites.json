@@ -125,7 +125,7 @@
   "slug": "adviesbox-nl",
   "naam": "Adviesbox.nl",
   "url": "https://adviesbox.nl/",
-  "ondertitel": "Financiële planning, advies, bemiddeling en administratie",
+  "ondertitel": "Adviesbox, a Blinqx company: financiële planning, advies, bemiddeling en administratie",
   "tekst": [
    "Adviesbox, tot begin 2013 bekend onder de namen Hypobox en Planningbox, ondersteunt de financieel adviseur bij het opstellen van een financieel advies: van het berekenen van de maximale leencapaciteit tot een financieringsopzet.",
    "Alle fiscale en sociale cijfers zijn verwerkt in Adviesbox en worden dagelijks automatisch bijgewerkt. Van geldverstrekkers zijn producten, rentes en voorwaarden opgenomen, en van verzekeraars worden de premies exact berekend."
@@ -136,7 +136,7 @@
     "Finly CRM (koppelt met Adviesbox)"
    ]
   ],
-  "afbeelding": null
+  "afbeelding": "bronnen/sites/adviesbox-nl.webp"
  },
  {
   "slug": "findata-nl",

@@ -2770,8 +2770,13 @@ def render_sites():
     for s in lijst:
         pg = Page("sites/" + s["slug"])
         rel = "".join(f'<li><a href="{pg.rel(p)}">{esc(l)}</a></li>' for p, l in s["gerelateerd"])
+        klein = ""
+        if s.get("afbeelding"):
+            from PIL import Image
+            if Image.open(os.path.join(ROOT, s["afbeelding"])).width < 500:
+                klein = ' style="max-width:320px;margin:0 auto;display:block"'  # logo niet opblazen
         fig = (f'<figure><a href="{esc(s["url"])}" target="_blank" rel="noopener"><img src="{pg.rel(s["afbeelding"])}" '
-               f'alt="{esc(s["naam"])}" loading="lazy"></a></figure>' if s.get("afbeelding") else "")
+               f'alt="{esc(s["naam"])}" loading="lazy"{klein}></a></figure>' if s.get("afbeelding") else "")
         body = f"""{crumbs(pg, [("Websites", "sites"), (s["naam"], None)])}
 <main class="subpage mhz"><div class="wrap">
   <h1>{esc(s["naam"])}</h1>
