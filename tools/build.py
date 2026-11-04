@@ -652,6 +652,7 @@ class Page:
 NAV = [("Home", ""), ("Nieuws", "nieuws"), ("Tips", "tips"), ("E-learning", "elearning"),
        ("Releasenotes", "releasenotes"),
        ("Trainingen", "trainingen"), ("Contact support", "contact"),
+       ("eBlinqx website", "https://verzekeringhypotheek.blinqx.tech/"),
        ("Overig support", "https://verzekeringhypotheek.blinqx.tech/support"),
        ("Overig contact", "https://verzekeringhypotheek.blinqx.tech/contact")]
 
@@ -790,6 +791,7 @@ def layout(pg, title, body, active=None, description=""):
       <a href="{pg.rel('downloads')}">Downloads</a>
       <a href="{pg.rel('nieuwsbrief')}">Nieuwsbrief</a>
       <a href="{pg.rel('privacy')}">Privacy</a>
+      <a href="https://verzekeringhypotheek.blinqx.tech/" target="_blank" rel="noopener">eBlinqx website</a>
     </nav>
   </div>
 </footer>
@@ -2113,7 +2115,7 @@ def render_actiefbeheerscan():
   <script type="application/ld+json">{faq_ld}</script>
   <h2 class="wth">Contact</h2>
   <p><strong>Ondersteuning</strong> bij het maken van een digitaal formulier of het koppelen van Actiefbeheerscan: bel <a href="tel:+31854011671">085 401 16 71</a> (maandag t/m vrijdag 09:00–17:30) of mail <a href="mailto:service@dutchmedialab.nl">service@dutchmedialab.nl</a>.</p>
-  <p><strong>Informatie en demo:</strong> mail <a href="mailto:relatie-vh@blinqx.tech">relatie-vh@blinqx.tech</a>, bel <a href="tel:+31207582111">020 758 21 11</a> of kijk op <a href="{ABS_URL}contact/" target="_blank" rel="noopener">actiefbeheerscan.nl/contact</a>.</p>
+  <p><strong>Informatie en demo:</strong> neem contact op met Milan Akavia (<a href="mailto:milan.akavia@blinqx.tech">milan.akavia@blinqx.tech</a>) of Jeroen Oversteegen (<a href="mailto:jeroen.oversteegen@blinqx.tech">jeroen.oversteegen@blinqx.tech</a>), mail <a href="mailto:relatie-vh@blinqx.tech">relatie-vh@blinqx.tech</a>, bel <a href="tel:+31207582111">020 758 21 11</a> of kijk op <a href="{ABS_URL}contact/" target="_blank" rel="noopener">actiefbeheerscan.nl/contact</a>.</p>
   <p class="src">Bron: <a href="{ABS_URL}" target="_blank" rel="noopener">www.actiefbeheerscan.nl</a> (stand 4 november 2026). Tarieven en voorwaarden kunnen wijzigen.</p>
 </div></main>"""
     write("actiefbeheerscan", layout(pg, "Actiefbeheerscan: digitale formulieren voor nazorg en beheer", body, None,
@@ -2416,7 +2418,8 @@ document.querySelectorAll('.ptag').forEach(function(b){{b.addEventListener('clic
     {f'<figure><img src="{pp.rel("bronnen/partners/" + p["afbeelding"])}" alt="{esc(p["titel"])}" loading="lazy"></figure>' if p["afbeelding"] else ""}</div>
   <div class="partner-tekst">{inh}</div>
   <h2 class="wth">Contact en samenwerking</h2>
-  <p>Door de samenwerking en koppeling met het eBlinqx-platform maken onze partners het proces voor de klant en het intermediair beter en efficiënter. Meer weten over deze partner? Mail <a href="mailto:relatie-vh@blinqx.tech">relatie-vh@blinqx.tech</a>.</p>
+  <p>Door de samenwerking en koppeling met het eBlinqx-platform maken onze partners het proces voor de klant en het intermediair beter en efficiënter.{" Voor meer informatie, neem contact op met:" if p.get("contact") else " Meer weten over deze partner? Mail <a href=\"mailto:relatie-vh@blinqx.tech\">relatie-vh@blinqx.tech</a>."}</p>
+  {"<ul>" + "".join(f'<li>{esc(n)} – <a href="mailto:{esc(m)}">{esc(m)}</a></li>' for n, m in p.get("contact", [])) + "</ul><p>Zij vertellen je alles over de mogelijkheden.</p>" if p.get("contact") else ""}
   <p><a href="{pp.rel("partners")}">← Alle partners</a></p>
   <p class="src">Bron: <a href="{esc(p["bron"])}" target="_blank" rel="noopener">verzekeringhypotheek.blinqx.tech</a> (stand 4 november 2026).</p>
 </div></main>"""

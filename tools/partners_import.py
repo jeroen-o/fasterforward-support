@@ -32,11 +32,31 @@ def inline(x):
     return re.sub(r"\s+", " ", x).strip()
 
 
+TOEGESTAAN = {"Milan Akavia": "milan.akavia@blinqx.tech", "Jeroen Oversteegen": "jeroen.oversteegen@blinqx.tech",
+              "Diana Blom": "diana.blom@blinqx.tech"}  # mogen genoemd worden (akkoord Jeroen, 4-11-2026)
+
+
 def persoonlijk(x):
     tekst = t(x)
+    for naam, mail in TOEGESTAAN.items():
+        tekst = tekst.replace(naam, "").replace(mail, "")
     if re.search(r"[\w.-]+@blinqx\.tech", tekst) and "relatie-vh@" not in tekst:
         return True
     return bool(re.search(r"(contact op met|neem contact met|vraag het aan) [A-Z][a-z]+ [A-Z]", tekst))
+
+
+def contactpersonen(s):
+    i = s.find("Contact en samenwerking")
+    if i < 0:
+        return []
+    j = s.find("Wil je meer weten over deze partner", i)
+    seg = s[i:j if j > 0 else i + 4000]
+    uit = []
+    for li in re.findall(r"<li\b[^>]*>(.*?)</li>", seg, re.S):
+        for naam, mail in TOEGESTAAN.items():
+            if naam in t(li) and (naam, mail) not in uit:
+                uit.append((naam, mail))
+    return uit
 
 
 def haal_img(url, doel):
@@ -102,7 +122,7 @@ def main(map_):
                     print("afbeelding mislukt", slug, e)
                     afb = None
         uit.append({"slug": slug, "titel": titel, "tags": tags, "samenvatting": samenvatting, "html": "".join(blokken),
-                    "afbeelding": afb, "bron": BRON + slug})
+                    "afbeelding": afb, "bron": BRON + slug, "contact": contactpersonen(s)})
         print(slug, "|", titel, "|", tags, "|", len(blokken), "blokken")
     json.dump(uit, open(os.path.join(UIT, "partners.json"), "w", encoding="utf8"), ensure_ascii=False, indent=1)
 
