@@ -1,6 +1,6 @@
 {
 "": {
-"h": "4e88502ef7be3d0f",
+"h": "e2b6ae1faa6cf4f2",
 "d": "2026-11-04"
 },
 "14-nieuwe-features-en-verbeteringen": {
@@ -3444,7 +3444,11 @@
 "d": "2026-11-04"
 },
 "video": {
-"h": "9cffe1bd9b9f38d5",
+"h": "0c8cfd8d186426f3",
+"d": "2026-11-04"
+},
+"video/finrust": {
+"h": "756678ed646e9ba6",
 "d": "2026-11-04"
 },
 "voorbereidingen-op-hdn-26-en-verbeteringen-portefeuillesignalen": {
@@ -3496,7 +3500,7 @@
 "d": "2026-11-04"
 },
 "websitetools": {
-"h": "73aaee5d871141ff",
+"h": "f2e600458819114d",
 "d": "2026-11-04"
 },
 "welke-bestandsformaten-kunnen-elements-geupload-worden": {

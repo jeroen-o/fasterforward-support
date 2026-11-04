@@ -1243,6 +1243,13 @@ def render_search(pages, cats):
         for v in g["videos"]:
             idx.append({"t": v["t"], "h": "video/index.html#v-" + v["id"], "c": "Video's › " + g["group"], "k": "video",
                         "x": " ".join(x for x in (v.get("ch"), g["group"], v.get("x")) if x)})
+    frf = os.path.join(TOOLS, "finrust_videos.json")
+    if os.path.exists(frf):
+        idx.append({"t": "FinRust-video's", "h": "video/finrust/index.html", "c": "Video's", "k": "video",
+                    "x": "finrust video's instructievideo adviessoftware youtube kanaal"})
+        for v in json.load(open(frf, encoding="utf8"))["videos"]:
+            idx.append({"t": v["t"], "h": "video/finrust/index.html#v-" + v["id"], "c": "Video's › FinRust", "k": "video",
+                        "x": "finrust " + v["t"]})
     pvf = os.path.join(SRC, "procesversneller.html")
     if os.path.exists(pvf):
         pv = open(pvf, encoding="utf8").read()
@@ -1281,7 +1288,7 @@ def render_search(pages, cats):
                     "k": "kennisbank", "x": MHZ_INTRO + " woningaanbod NVM makelaar e-mailalerts zoekprofiel woningwaarde Wwft "
                     "aankoopdossier verkoopdossier digitaal ondertekenen leads tarieven demo mijn huiszaken mijnhuiszaken.nl video promovideo uitleg"})
         idx.append({"t": "Websitetools: rekentools voor op je website", "h": "websitetools/index.html", "c": "Websitetools", "k": "kennisbank",
-                    "x": " ".join(g["g"] + " " + " ".join(t["t"] for t in g["tools"]) for g in wt["groepen"]) + " rekentool rekentools website hypotheekbond leads"})
+                    "x": " ".join(g["g"] + " " + " ".join(t["t"] for t in g["tools"]) for g in wt["groepen"]) + " rekentool rekentools website hypotheekbond leads video uitleg"})
     vhf = os.path.join(SRC, "vh-site", "index.json")
     if os.path.exists(vhf):
         for v in json.load(open(vhf, encoding="utf8")):
@@ -1418,7 +1425,8 @@ def render_home(cats, feeds, pages):
       <h2 id="home-wt-h">Websitetools: meer leads uit je eigen website</h2>
       <p>Een hypotheek begint online. Met 22 rekentools op de website van je kantoor berekenen bezoekers zelf hun maximale hypotheek, maandlasten of de actuele rentes, en ben jij het kantoor dat ze als eerste verder helpt.</p>
       <div class="wtwhys">{"".join(f'<div class="wtwhy"><h3>{esc(t)}</h3><p>{esc(x)}</p></div>' for t, x in WT_KORT)}</div>
-      <p class="home-wt-cta"><a class="btn-out cta" href="{pg.rel('websitetools')}">Bekijk de rekentools en lees meer »</a></p>
+      <p class="home-wt-cta btn-row"><a class="btn-out cta" href="{pg.rel('websitetools')}">Bekijk de rekentools en lees meer »</a>
+        <a class="btn-out" href="{pg.rel('websitetools')}#video">▶ Bekijk de video</a></p>
       <p class="home-wt-note">De uitkomsten van de rekentools zijn indicatief en geen advies.</p>
     </section>
 
@@ -1507,7 +1515,8 @@ def render_video():
             f'<span class="play"><svg class="ic"><use href="#i-play"/></svg></span></a>'
             f'<h3><a href="{esc(url)}" target="_blank" rel="noopener">{esc(t)}</a></h3>'
             f'<p>{esc(prod)} · {"interactieve demo" if not yt else "video"}{f" · wachtwoord: <b>{esc(pw)}</b>" if pw else ""}</p></div>')
-    sections = [f'<p class="note">Op zoek naar de interactieve instructies? Die staan op de pagina <a href="{pg.rel("elearning")}">E-learning</a>.</p>']
+    sections = [f'<p class="note">Op zoek naar de interactieve instructies? Die staan op de pagina <a href="{pg.rel("elearning")}">E-learning</a>. '
+                f'Alle instructievideo\'s van FinRust vind je op <a href="{pg.rel("video/finrust")}">FinRust-video\'s</a>.</p>']
     for g in groups:
         vs = []
         for v in g["videos"]:
@@ -2549,6 +2558,56 @@ def render_mijnhuiszaken():
                                   "rekentools en woningwaarde. Bind leads vanaf de oriëntatie en blijf in beeld bij aan- en verkoop."))
 
 
+def video_fig(pg, mp4, poster, naam, omschrijving, duur, bijschrift, anker="video"):
+    """Eigen video (mp4 in bronnen/) met VideoObject-gegevens voor Google en AI-zoekmachines."""
+    ld = json.dumps({"@context": "https://schema.org", "@type": "VideoObject", "name": naam, "description": omschrijving,
+                     "thumbnailUrl": SITE_URL + poster, "contentUrl": SITE_URL + mp4, "uploadDate": "2026-11-04",
+                     "duration": duur, "inLanguage": "nl-NL"}, ensure_ascii=False)
+    return (f'<figure class="mhz-video" id="{anker}"><video controls preload="none" playsinline poster="{pg.rel(poster)}" width="1920" height="1080">'
+            f'<source src="{pg.rel(mp4)}" type="video/mp4">Je browser kan deze video niet afspelen. '
+            f'<a href="{pg.rel(mp4)}">Download de video (mp4)</a>.</video><figcaption>{esc(bijschrift)}</figcaption></figure>'
+            f'<script type="application/ld+json">{ld}</script>')
+
+
+def render_finrust():
+    """Alle video's van het YouTube-kanaal FinRust (tools/finrust_videos.json, bijgewerkt door tools/yt_sync.py)."""
+    f = os.path.join(TOOLS, "finrust_videos.json")
+    if not os.path.exists(f):
+        return
+    d = json.load(open(f, encoding="utf8"))
+    pg = Page("video/finrust")
+    kaarten = "".join(
+        f'<div class="video" id="v-{esc(v["id"])}" data-zoek="{esc(v["t"].lower())}"><div class="frame" data-yt="{esc(v["id"])}">'
+        f'<img src="{pg.rel("assets/video/" + v["id"] + ".jpg")}" alt="" loading="lazy">'
+        f'<button class="play" type="button" aria-label="Speel {esc(v["t"])} af"><svg class="ic"><use href="#i-play"/></svg></button></div>'
+        f'<h3><a href="https://www.youtube.com/watch?v={esc(v["id"])}" target="_blank" rel="noopener">{esc(v["t"])}</a></h3>'
+        f'<p>FinRust{" · " + fmt_date(date.fromisoformat(v["datum"])) if v.get("datum") else ""}</p></div>' for v in d["videos"])
+    body = f"""{crumbs(pg, [("Video's", "video"), ("FinRust", None)])}
+<main class="subpage"><div class="wrap">
+  <h1>FinRust-video's</h1>
+  <p class="lead">Alle {len(d["videos"])} instructievideo's van <a href="https://finrust.nl/" target="_blank" rel="noopener">FinRust</a>: adviessoftware die adviseurs met een snel proces en heldere rapporten helpt klanten beter en completer te bedienen, ‘execution only’ te vermijden en onderhoud op de hypotheek- en verzekeringsportefeuille vorm te geven. Video's worden pas van YouTube geladen als je op afspelen klikt.</p>
+  <p><label for="frfilter"><strong>Filter op onderwerp:</strong></label><br><input id="frfilter" type="search" placeholder="bijvoorbeeld lijfrente, ORV, pensioen" style="width:100%;max-width:420px;padding:10px;font:inherit;border:1px solid #999;border-radius:4px"> <span id="frtel" aria-live="polite"></span></p>
+  <div class="vgrid">{kaarten}</div>
+  <p class="src">Bron: <a href="{d["url"]}" target="_blank" rel="noopener">YouTube-kanaal FinRust</a>. Nieuwe video's komen er automatisch bij.</p>
+</div></main>
+<script>
+document.addEventListener("click", e => {{
+  const b = e.target.closest("[data-yt] .play"); if (!b) return;
+  const f = b.closest("[data-yt]");
+  f.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${{f.dataset.yt}}?autoplay=1&rel=0" title="Video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+}});
+const fi = document.getElementById("frfilter"), tel = document.getElementById("frtel");
+fi.addEventListener("input", () => {{
+  const q = fi.value.toLowerCase().trim(); let n = 0;
+  document.querySelectorAll("[data-zoek]").forEach(k => {{ const ok = !q || q.split(/\s+/).every(w => k.dataset.zoek.includes(w)); k.hidden = !ok; if (ok) n++; }});
+  tel.textContent = q ? n + " video's" : "";
+}});
+</script>"""
+    write("video/finrust", layout(pg, "FinRust-video's: instructievideo's adviessoftware", body, None,
+                                  f"Alle {len(d['videos'])} instructievideo's van FinRust: hypotheek, pensioen, lijfrente, ORV, "
+                                  "vermogen en financiële planning in de adviessoftware van FinRust."))
+
+
 def render_websitetools():
     """Websitetools: rekentools voor op de website van de adviseur (bronnen/websitetools.json)."""
     f = os.path.join(SRC, "websitetools.json")
@@ -2624,6 +2683,12 @@ def render_websitetools():
 <main class="subpage"><div class="wrap">
   <h1>Websitetools</h1>
   <p class="lead">Rekentools voor op je eigen website: laat bezoekers zelf hun maximale hypotheek, maandlasten of de actuele rentes bekijken en zet ze zo om in leads. Er zijn {n} tools in {len(data["groepen"])} rubrieken. Klik op een tool om een voorbeeld te bekijken (opent in een nieuw tabblad).</p>
+  <h2 class="wth">Bekijk de video</h2>
+  {video_fig(pg, "bronnen/websitetools/rekentools-video.mp4", "bronnen/websitetools/rekentools-video.webp",
+             "Rekentools voor op de website van de adviseur",
+             "Een compleet pakket rekentools van Blinqx voor de website van je kantoor, gekoppeld aan eBlinqx: hypotheek berekenen, "
+             "aflossen en besparen, woning en verduurzamen, klantinzicht.", "PT2M36S",
+             "Rekentools voor op de website: het complete pakket per categorie, gekoppeld aan eBlinqx (2,5 minuut).")}
   <h2 class="wth">Waarom rekentools op je website?</h2>
   <p>Een hypotheek begint online. Woningzoekers oriënteren zich vaak al weken voordat ze een adviseur bellen: hoeveel kan ik lenen, wat worden mijn maandlasten, wat doet de rente? Met de rekentools geef je die antwoorden op je eigen website en ben jij het kantoor dat ze als eerste verder helpt.</p>
   <div class="wtwhys">{waarom_html}</div>
@@ -2932,6 +2997,7 @@ def main():
         render_feed(name, items)
     render_kennisbank(cats)
     render_video()
+    render_finrust()
     render_elearning()
     render_fastlane()
     render_releasenotes_overig()
