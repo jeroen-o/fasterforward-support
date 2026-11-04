@@ -1241,6 +1241,20 @@ def render_search(pages, cats):
             if sub["items"]:
                 idx.append({"t": sub["name"], "h": sub_target(cats, name, sub) + "/index.html", "c": "Kennisbank › " + name,
                             "k": "categorie", "x": " ".join(x["t"] for x in sub["items"])})
+    for t_, h_, x_ in [
+            ("Home: Blinqx Support voor eBlinqx Connect", "index.html", "home start supportsite kennisbank releasenotes e-learning video's contact"),
+            ("Kennisbank: alle handleidingen", "kennisbank/index.html", "kennisbank handleidingen artikelen uitleg instructies categorieën"),
+            ("Nieuws", "nieuws/index.html", "nieuws nieuwsberichten actueel updates"),
+            ("Tips", "tips/index.html", "tips handigheden trucs"),
+            ("Releasenotes eBlinqx Connect", "releasenotes/index.html", "releasenotes release nieuwe versie updates wijzigingen eBlinqx Connect"),
+            ("Releasenotes eBlinqx Hypotheekadvies (Fastlane)", "releasenotes-hypotheekadvies/index.html", "releasenotes hypotheekadvies fastlane updates"),
+            ("E-learning: interactieve instructies", "elearning/index.html", "e-learning elearning interactieve demo instructies leren"),
+            ("Video's", "video/index.html", "video's video instructievideo webinars youtube vimeo"),
+            ("Trainingen (Blinqx Academy)", "trainingen/index.html", "trainingen training cursus academy opleiding"),
+            ("Nieuwsbrief", "nieuwsbrief/index.html", "nieuwsbrief aanmelden inschrijven e-mail updates"),
+            ("Privacy", "privacy/index.html", "privacy privacyverklaring cookies avg gegevens")]:
+        if os.path.exists(os.path.join(ROOT, h_)) or h_ == "index.html":
+            idx.append({"t": t_, "h": h_, "c": "Overzicht", "k": "overig", "x": x_})
     for v in video_lijst():
         idx.append({"t": v["t"], "h": "video/" + v["slug"] + "/index.html", "c": "Video's › " + v["groep"], "k": "video",
                     "d": fmt_date(date.fromisoformat(v["datum"])) if re.fullmatch(r"\d{4}-\d{2}-\d{2}", v["datum"]) else "",
@@ -3382,8 +3396,46 @@ def render_sitemap(pages):
     with open(LASTMOD, "w", encoding="utf8") as fh:
         json.dump(dict(sorted(nieuw.items())), fh, ensure_ascii=False, indent=0)
         fh.write("\n")
-    xml = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
-    xml += [f"  <url><loc>{SITE_URL}{u + '/' if u else ''}</loc><lastmod>{nieuw[u]['d']}</lastmod></url>" for u in sorted(nieuw)]
+    def media(u):
+        """Afbeeldingen (image-sitemap) en video's (video-sitemap) van een pagina."""
+        f = os.path.join(ROOT, u, "index.html") if u else os.path.join(ROOT, "index.html")
+        s_ = open(f, encoding="utf8").read()
+        mm = re.search(r"<main\b.*?</main>", s_, re.S)
+        main = mm.group(0) if mm else ""
+        uit, gezien = [], set()
+        for im in re.findall(r"<img\b[^>]*>", main)[:20]:
+            src = re.search(r'\ssrc="([^"]+)"', im)
+            if not src or src.group(1).startswith(("data:", "http")) or src.group(1).endswith(".svg"):
+                continue
+            absu = SITE_URL + os.path.normpath(os.path.join(u, src.group(1))).replace(os.sep, "/").lstrip("./")
+            if absu in gezien:
+                continue
+            gezien.add(absu)
+            alt = (re.search(r'\salt="([^"]*)"', im) or [None, ""])[1]
+            uit.append(f"<image:image><image:loc>{esc(absu)}</image:loc>" + (f"<image:title>{alt}</image:title>" if alt else "") + "</image:image>")
+        for ld in re.findall(r'<script type="application/ld\+json"[^>]*>(.*?)</script>', s_, re.S):
+            try:
+                j = json.loads(ld)
+            except Exception:  # noqa: BLE001
+                continue
+            if isinstance(j, dict) and j.get("@type") == "VideoObject" and j.get("thumbnailUrl"):
+                v = (f"<video:video><video:thumbnail_loc>{esc(j['thumbnailUrl'])}</video:thumbnail_loc>"
+                     f"<video:title>{esc(j['name'][:100])}</video:title><video:description>{esc(j.get('description', j['name'])[:2000])}</video:description>")
+                if j.get("contentUrl"):
+                    v += f"<video:content_loc>{esc(j['contentUrl'])}</video:content_loc>"
+                elif j.get("embedUrl"):
+                    v += f"<video:player_loc>{esc(j['embedUrl'])}</video:player_loc>"
+                m_ = re.fullmatch(r"PT(\d+)M(\d+)S", j.get("duration", ""))
+                if m_:
+                    v += f"<video:duration>{int(m_.group(1)) * 60 + int(m_.group(2))}</video:duration>"
+                if re.fullmatch(r"\d{4}-\d{2}-\d{2}", j.get("uploadDate", "")):
+                    v += f"<video:publication_date>{j['uploadDate']}</video:publication_date>"
+                uit.append(v + "</video:video>")
+        return "".join(uit)
+    xml = ['<?xml version="1.0" encoding="UTF-8"?>',
+           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" '
+           'xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">']
+    xml += [f"  <url><loc>{SITE_URL}{u + '/' if u else ''}</loc><lastmod>{nieuw[u]['d']}</lastmod>{media(u)}</url>" for u in sorted(nieuw)]
     xml.append("</urlset>")
     write("sitemap.xml", "\n".join(xml) + "\n")
     with open(os.path.join(ROOT, "robots.txt"), "w", encoding="utf8") as fh:
@@ -3463,6 +3515,7 @@ def main():
         ("Productinformatie", ["websitetools", "mijnhuiszaken", "yes-co", "tools-voor-vastgoed", "woningwaarderapport",
                                "actiefbeheerscan", "hypotheekrente-app", "finly-crm", "demo-kantoor", "banking-insurance", "procesversneller"]),
         ("Handige websites", ["sites"] + sorted(u for u in info if u.startswith("sites/"))),
+        ("Video's", ["video", "video/finrust"] + sorted(u for u in info if u.startswith("video/") and u != "video/finrust")),
         ("Releasenotes", ["releasenotes", "releasenotes-hypotheekadvies", "releasenotes-finconnect", "releasenotes-dias"]),
         ("Nieuws, tips en leren", ["nieuws", "tips", "elearning", "video", "trainingen", "downloads"]),
         ("Beleid", ["supportbeleid", "opdrachtenbeleid", "klachtenbeleid", "wensenbeleid", "privacy"]),

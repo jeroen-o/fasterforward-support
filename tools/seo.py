@@ -185,6 +185,44 @@ def uitvoeren(root, site_url, overslaan=("bronnen", "tools", "assets", ".github"
                     {"@type": "ListItem", "position": n + 1, "name": k[0], "item": k[1]} for n, k in enumerate(lijst)]})
         ld = json.dumps({"@context": "https://schema.org", "@graph": graaf}, ensure_ascii=False).replace("</", "<\\/")
         head += f'\n<script type="application/ld+json" id="seo-ld">{ld}</script>\n'
+        # alt-teksten: lege of ontbrekende alt aanvullen vanuit de context (kaarttitel, bijschrift, kop of paginatitel)
+        naam_pg = i["h1"] or i["titel_nieuw"].replace(SUFFIX, "")
+        mm = re.search(r"<main\b.*?</main>", rest, re.S)
+        if mm:
+            main = mm.group(0)
+            artikel = 'class="article"' in main[:200]
+
+            def alt(m):
+                tag = m.group(0)
+                a = re.search(r'\salt="([^"]*)"', tag)
+                if a and a.group(1).strip():
+                    return tag
+                na = main[m.end():m.end() + 900]
+                voor = main[max(0, m.start() - 2500):m.start()]
+                ctx = re.search(r"<figcaption[^>]*>(.*?)</figcaption>", na, re.S) or re.search(r"<h[2-4][^>]*>(.*?)</h[2-4]>", na[:500], re.S)
+                kop = re.findall(r"<h[2-4][^>]*>(.*?)</h[2-4]>", voor, re.S)
+                if artikel:
+                    k = tekst(kop[-1]) if kop else ""
+                    txt = f"Schermafbeelding: {k} ({naam_pg})" if k and k != naam_pg else f"Schermafbeelding bij {naam_pg}"
+                else:
+                    txt = tekst(ctx.group(1)) if ctx else (tekst(kop[-1]) if kop else naam_pg)
+                txt = esc(txt[:140])
+                if a:
+                    return tag[:a.start()] + f' alt="{txt}"' + tag[a.end():]
+                return tag.replace("<img", f'<img alt="{txt}"', 1)
+            nieuw_main = re.sub(r"<img\b[^>]*>", alt, main)
+            rest = rest.replace(main, nieuw_main, 1)
+            # eigen deelafbeelding voor video-, websites-, partner- en productpagina's
+            if u.startswith(("video/", "sites/", "partners/", "banking-insurance", "mijnhuiszaken", "yes-co", "tools-voor-vastgoed",
+                             "woningwaarderapport", "actiefbeheerscan", "hypotheekrente-app", "finly-crm", "demo-kantoor", "websitetools")):
+                eerste = re.search(r'<(?:img[^>]*\ssrc|video[^>]*\sposter)="([^"]+\.(?:webp|jpe?g|png))"', nieuw_main)
+                if eerste:
+                    absu = site_url + os.path.normpath(os.path.join(os.path.dirname(os.path.relpath(f, root)), eerste.group(1))).replace(os.sep, "/")
+                    head = re.sub(r'<meta property="og:image" content="[^"]*">', f'<meta property="og:image" content="{absu}">', head)
+                    head = re.sub(r'<meta name="twitter:image" content="[^"]*">', f'<meta name="twitter:image" content="{absu}">', head)
+                    head = re.sub(r'<meta property="og:image:width" content="\d+"><meta property="og:image:height" content="\d+">\n?', "", head)
+                    head = re.sub(r'<meta property="og:image:type" content="[^"]*">\n?', "", head)
+                    head = re.sub(r'<meta property="og:image:alt" content="[^"]*">', f'<meta property="og:image:alt" content="{esc(naam_pg)}">', head)
         # h1
         zonder_script = re.sub(r"<script\b.*?</script>", "", rest, flags=re.S)
         n_h1 = len(re.findall(r"<h1[\s>]", zonder_script))
