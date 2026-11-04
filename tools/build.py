@@ -1291,6 +1291,10 @@ def render_search(pages, cats):
             for v in json.load(open(dmf, encoding="utf8")):
                 idx.append({"t": v["titel"] + " (" + v["site"] + ")", "h": v["url"], "ext": 1, "c": "Demo-kantoor › " + v["site"],
                             "k": "overig", "x": "demo demokantoor " + (v.get("omschrijving") or "") + " " + v["tekst"]})
+        nhgf = os.path.join(SRC, "nhg", "pages.json")
+        if os.path.exists(nhgf):
+            for v in json.load(open(nhgf, encoding="utf8")):
+                idx.append({"t": v["titel"] + " (NHG)", "h": v["url"], "ext": 1, "c": "NHG.nl", "k": "overig", "x": "nhg nationale hypotheek garantie " + v["tekst"]})
         for fn, label in (("site.json", "Adviesbox › Website"), ("helpcenter.json", "Adviesbox › Helpcenter")):
             abf = os.path.join(SRC, "adviesbox", fn)
             if os.path.exists(abf):
@@ -1300,9 +1304,10 @@ def render_search(pages, cats):
                                 "x": "adviesbox " + (v.get("omschrijving") or "") + " " + v["tekst"] + " " + " ".join(b["naam"] for b in v.get("bijlagen", []))})
         for st in sites_laden():
             idx.append({"t": f"{st['naam']}: {st['ondertitel']}", "h": f"sites/{st['slug']}/index.html", "c": "Handige websites", "k": "kennisbank",
-                        "x": st["naam"] + " " + st["naam"].replace(".nl", "").replace(".net", "") + " " + st["url"] + " " + " ".join(st["tekst"])})
+                        "x": st["naam"] + " " + st["naam"].replace(".nl", "").replace(".net", "") + " " + st["url"] + " " + " ".join(st["tekst"])
+                        + " " + " ".join(k + " " + " ".join(it) for k, it in st.get("secties", []))})
         idx.append({"t": "Banking & Insurance: Hypotheekcijfer.nl en Pensioencijfer.nl", "h": "banking-insurance/index.html", "c": "Banking & Insurance",
-                    "k": "kennisbank", "x": "banking insurance bank verzekeraar geldverstrekker hypotheekcijfer pensioencijfer hypotheekcheck pensioen cijfer renteadministratie rentetool rente publicatie analyse"})
+                    "k": "kennisbank", "x": "banking insurance bank verzekeraar geldverstrekker hypotheekcijfer pensioencijfer hypotheekcheck pensioen cijfer renteadministratie rentetool rente publicatie analyse hippoline data intelligence"})
         idx.append({"t": "Handige websites", "h": "sites/index.html", "c": "Handige websites", "k": "kennisbank",
                     "x": "websites domeinen links " + " ".join(st["naam"] for st in sites_laden())})
         idx.append({"t": "Finly CRM: klantgegevens, workflows en communicatie op één plek", "h": "finly-crm/index.html", "c": "Finly CRM",
@@ -2854,6 +2859,7 @@ def render_sites():
   <p class="lead">{esc(s["ondertitel"])}</p>
   <div class="mhz-intro"><div>{"".join(f"<p>{esc(t)}</p>" for t in s["tekst"])}</div>
     {fig}</div>
+  {"".join(f'<h2 class="wth">{esc(kop)}</h2>' + ("<ul>" + "".join(f"<li>{esc(x)}</li>" for x in items) + "</ul>" if len(items) > 1 else f"<p>{esc(items[0])}</p>") for kop, items in s.get("secties", []))}
   {adviesbox_extra(pg) if s["slug"] == "adviesbox-nl" else ""}
   {f'<h2 class="wth">Lees ook</h2><ul>{rel}</ul>' if rel else ""}
   <p class="btn-row bezoek"><a class="btn-out cta" href="{esc(s["url"])}" target="_blank" rel="noopener" aria-label="Bezoek website {esc(s["naam"])}">Bezoek website ↗</a></p>
@@ -2883,7 +2889,7 @@ def render_sites():
 def render_banking():
     """Tegel Banking & Insurance: Hypotheekcijfer.nl en Pensioencijfer.nl."""
     pg = Page("banking-insurance")
-    volg = ["hypotheekcijfer-nl", "pensioencijfer-nl", "renteadministratie-nl"]
+    volg = ["hypotheekcijfer-nl", "pensioencijfer-nl", "renteadministratie-nl", "hippoline-nl"]
     lijst = sorted((s for s in sites_laden() if s["slug"] in volg), key=lambda s: volg.index(s["slug"]))
     blokken = "".join(
         f'<div class="mhz-duo"><div><h2 class="wth">{esc(s["naam"])}</h2><p><strong>{esc(s["ondertitel"])}</strong></p>'

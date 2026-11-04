@@ -565,20 +565,81 @@
   "url": "https://www.nhg.nl/",
   "ondertitel": "Nationale Hypotheek Garantie: verantwoord lenen en prettig wonen",
   "tekst": [
-   "De Nationale Hypotheek Garantie (NHG) staat voor een verantwoorde en betaalbare hypotheek. Met NHG kan een huizenkoper erop vertrouwen dat de hypotheek past bij zijn persoonlijke situatie en portemonnee.",
-   "Kan een huiseigenaar door bijvoorbeeld werkloosheid, arbeidsongeschiktheid, scheiding of overlijden de hypotheek niet meer betalen, dan helpt NHG om de woonlasten betaalbaar te houden. Hypotheken met NHG hebben bovendien vaak een lagere rente. Op nhg.nl vind je de voorwaarden en kostengrens, nieuws over wijzigingen en informatie voor professionals (zoals het verwerken van NHG-aanvragen en de werkgeversverklaring)."
+   "De Nationale Hypotheek Garantie (NHG) zet zich in om verantwoorde woonfinanciering voor meer consumenten mogelijk te maken. Iedereen die een woning koopt onder de NHG-grens, kan een hypotheek met NHG afsluiten. Met NHG weet je klant zeker dat de hypotheek past bij zijn inkomen.",
+   "NHG is een borgstelling (Burgerlijk Wetboek, artikel 7:850 en verder) die NHG aan de geldverstrekker verstrekt, voor de duur van de lening. Een hypotheek met NHG sluit je af via een hypotheekadviseur of direct bij de geldverstrekker."
   ],
   "gerelateerd": [
    [
-    "kennisbank/hoe-verstuur-hdn-bericht",
-    "Kennisbank: hoe verstuur ik een HDN-bericht?"
+    "sites/toetsinkomenberekenen-nl",
+    "Toetsinkomenberekenen.nl (IBL)"
+   ],
+   [
+    "sites/hdn-nl",
+    "HDN.nl"
    ],
    [
     "sites/looptijdrente-nl",
-    "Looptijdrente.nl (NHG en risicoklassen)"
+    "Looptijdrente.nl"
+   ],
+   [
+    "kennisbank/hoe-verstuur-hdn-bericht",
+    "Kennisbank: hoe verstuur ik een HDN-bericht?"
    ]
   ],
-  "afbeelding": "bronnen/sites/nhg-nl.webp"
+  "afbeelding": "bronnen/sites/nhg-nl.webp",
+  "secties": [
+   [
+    "De voordelen van NHG",
+    [
+     "Een hypotheek die past bij het inkomen: je klant leent nooit te veel en houdt genoeg over voor andere uitgaven.",
+     "Een vangnet als de relatie eindigt, de partner overlijdt of het inkomen daalt door werkloosheid of arbeidsongeschiktheid.",
+     "Een lagere hypotheekrente: geldverstrekkers belonen de extra zekerheid met rentekorting.",
+     "Kwijtschelding van een restschuld onder voorwaarden, als de woning buiten de schuld van de klant met verlies verkocht moet worden.",
+     "Verduurzamingsmaatregelen meefinancieren tot 106% van de woningwaarde, en de hypotheek verhogen voor bijvoorbeeld een verbouwing.",
+     "Ook mogelijk voor starters, senioren, ondernemers en mensen zonder vast contract."
+    ]
+   ],
+   [
+    "Kosten en NHG-grens 2026",
+    [
+     "Eenmalige borgtochtprovisie in 2026: 0,4% over de totale hypotheek. Deze is aftrekbaar van de belasting; door de lagere rente verdient je klant de kosten meestal snel terug.",
+     "NHG-grens 2026: het aankoopbedrag mag maximaal € 470.000 zijn, inclusief eventuele verbouwingskosten. Met energiebesparende voorzieningen kan tot € 498.200 geleend worden; het extra bedrag moet dan volledig aan die maatregelen worden besteed.",
+     "Met de NHG Sneltoets op nhg.nl bereken je hoeveel er met NHG geleend kan worden."
+    ]
+   ],
+   [
+    "Wat verandert er in 2027?",
+    [
+     "Vanaf 1 januari 2027 gelden nieuwe Voorwaarden en normen (persbericht NHG, 30 oktober 2026).",
+     "De NHG-grens stijgt naar € 500.000; met energiebesparende maatregelen kan tot maximaal € 530.000 geleend worden.",
+     "Bij woningen met energielabel E, F of G wordt standaard € 20.000 extra meegefinancierd voor energiebesparende maatregelen; de koper zet het budget binnen twee jaar in.",
+     "Bij een woning met een hoog funderingsrisico moeten geldverstrekkers de verwachte herstelkosten meewegen."
+    ]
+   ],
+   [
+    "Hulp van NHG",
+    [
+     "Hulp als het inkomen daalt: geldverstrekker of adviseur zoekt naar een manier om de hypotheek weer betaalbaar te maken.",
+     "Hulp als de relatie eindigt en hulp na het overlijden van de partner, met oplossingen om in de woning te blijven waar mogelijk.",
+     "Kwijtschelding van een restschuld: de geldverstrekker dient een verliesdeclaratie in bij NHG, die beoordeelt of de restschuld wordt kwijtgescholden. Ook verhuizen met een restschuld is onder voorwaarden mogelijk.",
+     "Beheertoets: als de leefsituatie van je klant verandert, maakt de Beheertoets duidelijk wat de maximale maandlast is."
+    ]
+   ],
+   [
+    "Verduurzamen met NHG",
+    [
+     "Bij het afsluiten, verhogen of oversluiten van een hypotheek met NHG kunnen energiebesparende maatregelen direct worden meegefinancierd, vaak met extra leenruimte. Met het NHG Energiebespaarbudget hoeft je klant nog niet te kiezen welke maatregelen hij neemt.",
+     "Voor kleine VvE's (7 of minder leden) is er de Stimuleringslening kleine VvE van SVn met borg van NHG, voor verduurzaming en (achterstallig) onderhoud."
+    ]
+   ],
+   [
+    "Voor professionals",
+    [
+     "Op nhg.nl/professional vind je de Voorwaarden en normen (en het archief), de toolkit voor professionals (werkgeversverklaring, inkomensverklaring, rekenhulp verduurzamen, keuzehulpen), de Inkomensbepaling Loondienst (IBL), de arbeidsmarktscan en perspectiefverklaring voor ondernemers en mensen zonder vast contract, en de inlog voor Mijn NHG.",
+     "Let op: bedragen en voorwaarden zijn overgenomen van nhg.nl (stand november 2026). Raadpleeg altijd de actuele Voorwaarden en normen."
+    ]
+   ]
+  ]
  },
  {
   "slug": "hdn-nl",
@@ -664,5 +725,43 @@
   ],
   "afbeelding": null,
   "logo": "bronnen/sites/logo-hippoline-nl.webp"
+ },
+ {
+  "slug": "toetsinkomenberekenen-nl",
+  "naam": "Toetsinkomenberekenen.nl",
+  "url": "https://www.toetsinkomenberekenen.nl/",
+  "ondertitel": "IBL: bereken het toetsinkomen voor Inkomensbepaling Loondienst",
+  "tekst": [
+   "Met Toetsinkomenberekenen.nl van HDN bereken je in drie stappen het toetsinkomen volgens de rekenregels van Inkomensbepaling Loondienst (IBL). Met IBL wordt het inkomen van een klant in loondienst bepaald op basis van het UWV-verzekeringsbericht, ook bij een hypotheek met NHG."
+  ],
+  "secties": [
+   [
+    "Zo werkt het",
+    [
+     "Stap 1: voer de maandelijkse of vierwekelijkse eigen bijdrage aan de pensioenregeling en/of verzekeringen in, zoals vermeld op de meest recente salarisstrook.",
+     "Stap 2: upload het UWV-verzekeringsbericht van de klant.",
+     "Stap 3: bereken het toetsinkomen."
+    ]
+   ],
+   [
+    "Goed om te weten",
+    [
+     "Meer informatie over IBL en de actuele rekenregels vind je op de website van HDN. Vragen? Mail servicedesk@hdn.nl.",
+     "Volgens de juridische mededeling op de site gebruik je de tool voor eigen rekening en risico: de gebruiker is zelf verantwoordelijk voor het controleren van de berekeningen en uitkomsten."
+    ]
+   ]
+  ],
+  "gerelateerd": [
+   [
+    "sites/hdn-nl",
+    "HDN.nl"
+   ],
+   [
+    "sites/nhg-nl",
+    "NHG.nl"
+   ]
+  ],
+  "afbeelding": "bronnen/sites/toetsinkomenberekenen-nl.webp",
+  "logo": "bronnen/sites/logo-toetsinkomenberekenen-nl.webp"
  }
 ]

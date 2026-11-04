@@ -108,7 +108,7 @@
 "d": "2026-11-04"
 },
 "banking-insurance": {
-"h": "90c9f3ed9e4e8952",
+"h": "6c0e644dbfbc8d06",
 "d": "2026-11-04"
 },
 "bedank-je-klanten-na-betaling-via-mollie": {
@@ -3200,139 +3200,143 @@
 "d": "2026-11-04"
 },
 "sites": {
-"h": "fac02ec41ac54691",
+"h": "d593d630a845078c",
 "d": "2026-11-04"
 },
 "sites/actiefbeheerscan-nl": {
-"h": "5d31c664f7d94b22",
+"h": "e47ff060fbe54bb3",
 "d": "2026-11-04"
 },
 "sites/adviesbox-nl": {
-"h": "e8f94555091b33cc",
+"h": "744ad9aa87ca80ae",
 "d": "2026-11-04"
 },
 "sites/aplaza-nl": {
-"h": "afe37309b1f806c3",
+"h": "63d7e6d56058a495",
 "d": "2026-11-04"
 },
 "sites/beheer-mijnhuiszaken-nl": {
-"h": "680d215b97e64eaa",
+"h": "a272863d9a167c32",
 "d": "2026-11-04"
 },
 "sites/dias-nl": {
-"h": "3accaad4e44c6f27",
+"h": "c5b6c257c9ce8e5d",
 "d": "2026-11-04"
 },
 "sites/duurzaamheidsprofiel-nl": {
-"h": "5c544d501f72be78",
+"h": "e02a30d3c7c158aa",
 "d": "2026-11-04"
 },
 "sites/fasterforward-nl": {
-"h": "ed73bb15225b4aa0",
+"h": "080708198e291ee7",
 "d": "2026-11-04"
 },
 "sites/fastlane-hypotheekadvies-nl": {
-"h": "e6e25e725a552ab7",
+"h": "8b2dd4a765d7df3c",
 "d": "2026-11-04"
 },
 "sites/finconnect-nl": {
-"h": "85716b9d692f725c",
+"h": "72259f44f1fbeef5",
 "d": "2026-11-04"
 },
 "sites/findata-nl": {
-"h": "d4da7312921085a2",
+"h": "127b465b47ee838a",
 "d": "2026-11-04"
 },
 "sites/finly-nl": {
-"h": "b6b6c1cddf0cdaca",
+"h": "1c6bc3df8fffc031",
 "d": "2026-11-04"
 },
 "sites/finrust-nl": {
-"h": "08b06fef4bc1dfa4",
+"h": "f2953eabf6383822",
 "d": "2026-11-04"
 },
 "sites/hdn-nl": {
-"h": "400dc61de4ffe11c",
+"h": "d8610064e2fe82a2",
 "d": "2026-11-04"
 },
 "sites/hippoline-nl": {
-"h": "20fe0bfbb644f517",
+"h": "0abb90f0d82a9123",
 "d": "2026-11-04"
 },
 "sites/hypotheekbond-nl": {
-"h": "0fc0af9d0fe9be99",
+"h": "7adea9f654d44f01",
 "d": "2026-11-04"
 },
 "sites/hypotheekbos-nl": {
-"h": "eddf3839246b1068",
+"h": "7e67dfd1ce6d9e87",
 "d": "2026-11-04"
 },
 "sites/hypotheekcijfer-nl": {
-"h": "12600646ceae072f",
+"h": "926952077160f113",
 "d": "2026-11-04"
 },
 "sites/hypotheekservicegesprek-nl": {
-"h": "7aaf6cc3ee337165",
+"h": "e344168842d7cff3",
 "d": "2026-11-04"
 },
 "sites/looptijdrente-nl": {
-"h": "976c5044840d20bf",
+"h": "722ccabdf8d3b2c8",
 "d": "2026-11-04"
 },
 "sites/mijnhuiszaken-nl": {
-"h": "89dc957bafebcd10",
+"h": "c954bb6539634dea",
 "d": "2026-11-04"
 },
 "sites/my-tp-net": {
-"h": "1e183a3dfc0c3795",
+"h": "f3e2153b60e1de1b",
 "d": "2026-11-04"
 },
 "sites/nazorg-formulieren-nl": {
-"h": "cfed23018d8f8090",
+"h": "30c8494e2b2704f9",
 "d": "2026-11-04"
 },
 "sites/nhg-nl": {
-"h": "49c44c32c2be95c5",
+"h": "8a79ea6b92604902",
 "d": "2026-11-04"
 },
 "sites/pensioencijfer-nl": {
-"h": "64f494d89aac1a79",
+"h": "c0cbe18de83fd83d",
 "d": "2026-11-04"
 },
 "sites/renteadministratie-nl": {
-"h": "7c5df74a4d104460",
+"h": "e28ad0140662da97",
 "d": "2026-11-04"
 },
 "sites/rwwr-nl": {
-"h": "f44d889213b8576b",
+"h": "b2191fca17c16550",
 "d": "2026-11-04"
 },
 "sites/schermdelen-nl": {
-"h": "aea8deb2c6f9fe9b",
+"h": "63c2a95b0408fdf9",
 "d": "2026-11-04"
 },
 "sites/sivi-nl": {
-"h": "2f2919ca26d13767",
+"h": "8cc7bbd7b6d336a2",
+"d": "2026-11-04"
+},
+"sites/toetsinkomenberekenen-nl": {
+"h": "ddc33f2db797d995",
 "d": "2026-11-04"
 },
 "sites/tulpmakelaars-nl": {
-"h": "360b54fbf4ae2c13",
+"h": "1df0fd8d269f2d0c",
 "d": "2026-11-04"
 },
 "sites/uwkluis-nl": {
-"h": "751389fa74055a8a",
+"h": "c376a68e856ad068",
 "d": "2026-11-04"
 },
 "sites/veiligophalen-nl": {
-"h": "014503ee6244764a",
+"h": "89bf1c763511cb1e",
 "d": "2026-11-04"
 },
 "sites/webdelen-nl": {
-"h": "f39aaca7e8dcf0ee",
+"h": "8d0d0b325fc64358",
 "d": "2026-11-04"
 },
 "sites/yes-co-nl": {
-"h": "cb5b66a627f7cba0",
+"h": "bca21807d804bab9",
 "d": "2026-11-04"
 },
 "sms-berichten-op-een-slimme-manier-inzetten": {
