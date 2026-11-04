@@ -791,6 +791,7 @@ def layout(pg, title, body, active=None, description=""):
       <a href="{pg.rel('downloads')}">Downloads</a>
       <a href="{pg.rel('nieuwsbrief')}">Nieuwsbrief</a>
       <a href="{pg.rel('privacy')}">Privacy</a>
+      <a href="{pg.rel('demo-kantoor')}">Demo-kantoor</a>
       <a href="https://verzekeringhypotheek.blinqx.tech/" target="_blank" rel="noopener">eBlinqx website</a>
     </nav>
   </div>
@@ -1270,6 +1271,11 @@ def render_search(pages, cats):
         idx.append({"t": "Demo-kantoor: een website met alles van Blinqx", "h": "demo-kantoor/index.html", "c": "Demo-kantoor", "k": "kennisbank",
                     "x": "demo kantoor demokantoor demowebsite voorbeeld website Steen Hypotheken FierFinance rekentools actuele rentes "
                     "mijnhuiszaken uwkluis financiële kluis duurzaamheidsprofiel pakketvergelijker website laten maken alles van Blinqx"})
+        dmf = os.path.join(SRC, "demo", "index.json")
+        if os.path.exists(dmf):
+            for v in json.load(open(dmf, encoding="utf8")):
+                idx.append({"t": v["titel"] + " (" + v["site"] + ")", "h": v["url"], "ext": 1, "c": "Demo-kantoor › " + v["site"],
+                            "k": "overig", "x": "demo demokantoor " + (v.get("omschrijving") or "") + " " + v["tekst"]})
         idx.append({"t": "Finly CRM: klantgegevens, workflows en communicatie op één plek", "h": "finly-crm/index.html", "c": "Finly CRM",
                     "k": "kennisbank", "x": FINLY_INTRO + " finly crm customer relationship management dias anva dstny awi my tp adviesbox "
                     "rapportage dashboard csv workflows signalen instelbaarheid demo " + " ".join(t + " " + x for t, x in FINLY_TOOLS)})
@@ -1391,7 +1397,6 @@ def render_home(cats, feeds, pages):
               f'<a class="tile" href="{pg.rel("actiefbeheerscan")}"><svg class="ic"><use href="#i-list"/></svg>Actiefbeheerscan</a>'
               f'<a class="tile" href="{pg.rel("hypotheekrente-app")}"><svg class="ic"><use href="#i-percent"/></svg>Hypotheekrente-app</a>'
               f'<a class="tile" href="{pg.rel("finly-crm")}"><svg class="ic"><use href="#i-crm"/></svg>Finly CRM</a>'
-              f'<a class="tile" href="{pg.rel("demo-kantoor")}"><svg class="ic"><use href="#i-globe"/></svg>Demo-kantoor</a>'
               f'<a class="tile" href="{pg.rel("partners")}"><svg class="ic"><use href="#i-partners"/></svg>Partners</a>'
               f'<a class="tile" href="{pg.rel("procesversneller")}"><svg class="ic"><use href="#i-bolt"/></svg>Proces-versneller</a>')
 
@@ -1633,7 +1638,11 @@ document.addEventListener("click", e => {{
 def render_video():
     pg = Page("video")
     groups = json.load(open(os.path.join(TOOLS, "videos.json"), encoding="utf8"))
-    vslug = {v["id"]: v["slug"] for v in video_lijst()}
+    vl = {v["id"]: v for v in video_lijst()}
+    vslug = {k: v["slug"] for k, v in vl.items()}
+    for g in groups:  # nieuwste eerst; video's zonder bekende datum achteraan
+        g["videos"].sort(key=lambda v: vl[v["id"]]["datum"] or "0000", reverse=True)
+    groups.sort(key=lambda g: max((vl[v["id"]]["datum"] or "0000") for v in g["videos"]), reverse=True)
     el = [l.rstrip("\n").split("|") for l in open(os.path.join(TOOLS, "elearning.txt"), encoding="utf8")
           if l.strip() and not l.startswith("#")]
     cards = []
@@ -1654,7 +1663,9 @@ def render_video():
     for g in groups:
         vs = []
         for v in g["videos"]:
-            meta = " · ".join(x for x in (v.get("ch"), fmt_dur(v.get("d"))) if x)
+            dt = vl[v["id"]]["datum"]
+            meta = " · ".join(x for x in (v.get("ch"), fmt_dur(v.get("d") or vl[v["id"]]["duur"]),
+                                          fmt_date(date.fromisoformat(dt)) if len(dt) == 10 else dt) if x)
             thumb = pg.rel(f'assets/video/{v["id"]}.jpg')
             if v.get("mp4"):
                 vs.append(f'<div class="video" id="v-{esc(v["id"])}"><div class="frame"><video controls preload="none" playsinline poster="{thumb}" '
