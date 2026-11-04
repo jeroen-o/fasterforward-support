@@ -1267,6 +1267,9 @@ def render_search(pages, cats):
                     "c": "Tools voor vastgoed", "k": "kennisbank", "x": TVV_INTRO + " toolsvoorvastgoed tools voor vastgoed makelaar "
                     "hypotheek toolset rekentools leads woningwaarderapport woningwaarde vastgoed publiceren online klantdossier "
                     "mijnhuiszaken yes-co tiara startende makelaar prijzen € 80 per maand " + " ".join(t for t, _ in TVV_TOOLS)})
+        idx.append({"t": "Finly CRM: klantgegevens, workflows en communicatie op één plek", "h": "finly-crm/index.html", "c": "Finly CRM",
+                    "k": "kennisbank", "x": FINLY_INTRO + " finly crm customer relationship management dias anva dstny awi my tp adviesbox "
+                    "rapportage dashboard csv workflows signalen instelbaarheid demo " + " ".join(t + " " + x for t, x in FINLY_TOOLS)})
         idx.append({"t": "Partners van Blinqx Verzekering & Hypotheek", "h": "partners/index.html", "c": "Partners", "k": "kennisbank",
                     "x": "partners partner samenwerking koppeling eblinqx " + " ".join(p["titel"] + " " + " ".join(p["tags"]) for p in partners_laden())})
         for p in partners_laden():
@@ -1384,6 +1387,7 @@ def render_home(cats, feeds, pages):
               f'<a class="tile" href="{pg.rel("woningwaarderapport")}"><svg class="ic"><use href="#i-houseval"/></svg>Woningwaarderapport</a>'
               f'<a class="tile" href="{pg.rel("actiefbeheerscan")}"><svg class="ic"><use href="#i-list"/></svg>Actiefbeheerscan</a>'
               f'<a class="tile" href="{pg.rel("hypotheekrente-app")}"><svg class="ic"><use href="#i-percent"/></svg>Hypotheekrente-app</a>'
+              f'<a class="tile" href="{pg.rel("finly-crm")}"><svg class="ic"><use href="#i-crm"/></svg>Finly CRM</a>'
               f'<a class="tile" href="{pg.rel("partners")}"><svg class="ic"><use href="#i-partners"/></svg>Partners</a>'
               f'<a class="tile" href="{pg.rel("procesversneller")}"><svg class="ic"><use href="#i-bolt"/></svg>Proces-versneller</a>')
 
@@ -2490,6 +2494,78 @@ def MHZ_VIDEO(pg):
             f'<script type="application/ld+json">{ld}</script>')
 
 
+FINLY_URL = "https://www.getfinly.com/crm"
+FINLY_INTRO = ("Finly CRM is het CRM van Finly, a Blinqx company: één centrale plek waar jij en je collega's contact- en "
+               "relatiegegevens, verzekeringen, workflows, documenten, formulieren, signalen en de communicatiegeschiedenis van je "
+               "klanten beheren. Zo begrijp je klanten beter en geef je gepersonaliseerd advies.")
+FINLY_TOOLS = [
+    ("Engage", "Ontvang signalen en verstuur (geautomatiseerd) uitnodigingen aan prospects en klanten, met toegang tot de agenda van je verkopers en adviseurs."),
+    ("Plan", "Prospects en klanten plannen zelf online een afspraak in de met Outlook gekoppelde agenda van je adviseurs."),
+    ("Prepare", "Klanten uploaden, downloaden en ondertekenen documenten en vullen formulieren in op een beveiligde voorbereidingspagina."),
+    ("Meet", "Co-browsen, schermdelen, videochat en veilig documenten uitwisselen tijdens online verkoop- en adviesgesprekken."),
+    ("Close", "Een gestructureerd verkoop- of adviesproces met gepersonaliseerde adviesrapporten en voorstellen."),
+    ("Flow", "Workflows als extra brein: geen klant of prospect valt tussen wal en schip en je houdt grip op je portefeuille."),
+]
+
+
+def render_finly():
+    """Finly CRM (bron: www.getfinly.com/crm, november 2026)."""
+    pg = Page("finly-crm")
+    img = lambda f, alt: f'<img src="{pg.rel("bronnen/finly/" + f)}" alt="{esc(alt)}" loading="lazy">'
+    tools = "".join(f'<div class="wtwhy"><h3>{esc(t)}</h3><p>{esc(x)}</p></div>' for t, x in FINLY_TOOLS)
+    faq = [
+        ("Wat is Finly CRM?", FINLY_INTRO),
+        ("Met welke systemen koppelt Finly?", "Met bronsystemen als DIAS en ANVA, en daarnaast onder meer met telefonie (Dstny), "
+         "vergelijkingssoftware (AWI en MY TP) en hypotheeksoftware (Adviesbox)."),
+        ("Kan ik rapportages maken in Finly?", "Ja. Vrijwel elk onderdeel is te exporteren naar CSV, het dashboard is vrij in te richten "
+         "met werklijsten, en de data is te koppelen aan managementrapportagesystemen."),
+        ("Waar vind ik support voor Finly?", "In het helpcenter op support-finly.vh.blinqx.tech. De actuele systeemstatus staat op status.finly.nl."),
+    ]
+    faq_html = "".join(f'<details class="wtfaq"><summary>{esc(q)}</summary><p>{esc(a)}</p></details>' for q, a in faq)
+    faq_ld = json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+        {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]},
+        ensure_ascii=False).replace("</", "<\\\\/")
+    body = f"""{crumbs(pg, [("Finly CRM", None)])}
+<main class="subpage mhz finly"><div class="wrap">
+  <h1>Finly CRM</h1>
+  <p class="lead">Alle klantgegevens, workflows en communicatie op één plek: voor persoonlijk advies en duurzame klantrelaties.</p>
+  <div class="mhz-intro"><div><p>{esc(FINLY_INTRO)}</p>
+    <p>Finly CRM helpt ook bij het beheren van verkoopkansen, het maken van offertes en het opvolgen van acties, bij het bewaken van compliance en het stroomlijnen van administratieve taken. Het CRM is eenvoudig schaalbaar en wordt continu verbeterd, zonder dat je daar als gebruiker last van hebt.</p>
+    <p class="btn-row"><a class="btn-out cta" href="https://www.getfinly.com/online-demo" target="_blank" rel="noopener">Plan een online demo</a>
+    <a class="btn-out" href="https://www.finly.nl/login" target="_blank" rel="noopener">Inloggen in Finly</a></p></div>
+    <figure>{img("egra3.webp", "Team werkt samen aan een klantdossier in Finly")}</figure></div>
+  <div class="mhz-duo">
+    <figure>{img("egra2.webp", "Laptop met verbindingen naar verschillende systemen")}</figure>
+    <div><h2 class="wth">Integraties</h2>
+      <p>Finly koppelt met de belangrijke bronsystemen van de Nederlandse financiële dienstverlening, zoals <strong>DIAS</strong> en <strong>ANVA</strong>. De integraties:</p>
+      <ul><li>brengen gegevens uit verschillende bronsystemen samen, zodat je altijd actuele en volledige klantgegevens hebt;</li><li>voorkomen dubbele invoer: dat bespaart tijd en verkleint de kans op fouten;</li><li>helpen bij compliance doordat het CRM samenwerkt met compliance- en reguleringshulpmiddelen.</li></ul>
+      <p>Daarnaast koppelt Finly met telefonie (Dstny), vergelijkingssoftware (AWI en MY TP) en hypotheeksoftware (Adviesbox).</p></div>
+  </div>
+  <div class="mhz-duo">
+    <div><h2 class="wth">Rapportage en analyse</h2>
+      <p>Finly geeft inzicht in je bedrijfsprestaties, zoals verkoopcijfers en klantsegmentatie, zodat je beslissingen op data baseert. Vrijwel elk onderdeel is te exporteren naar CSV. Het dashboard richt je vrij in, met werklijsten voor je medewerkers en grafieken of tabellen om op te acteren. Uit de data ontstaan bovendien signalen voor medewerkers of klanten, en je koppelt Finly eenvoudig aan managementrapportagesystemen.</p></div>
+    <figure>{img("egra6.webp", "Dashboard met grafieken en rapportages")}</figure>
+  </div>
+  <h2 class="wth">Tools in Finly CRM</h2>
+  <div class="wtwhys">{tools}</div>
+  <div class="mhz-duo">
+    <figure>{img("egra8.webp", "Mengpaneel als symbool voor instelbaarheid")}</figure>
+    <div><h2 class="wth">Unieke instelbaarheid</h2>
+      <p>Pas functionaliteiten, workflows en schermen aan op de specifieke behoeften van je kantoor en je doelgroep. Zo sluit Finly naadloos aan op je organisatie en werk je effectiever en efficiënter.</p></div>
+  </div>
+  <p class="mhz-tip">Lees ook de <a href="https://support-finly.vh.blinqx.tech/nl/" target="_blank" rel="noopener">Finly-helpcenter</a> en bekijk de <a href="https://status.finly.nl" target="_blank" rel="noopener">systeemstatus van Finly</a>.</p>
+  <h2 class="wth">Veelgestelde vragen</h2>
+  {faq_html}
+  <script type="application/ld+json">{faq_ld}</script>
+  <h2 class="wth">Contact</h2>
+  <p>Finly, a Blinqx company · Oude Fabriekstraat 7, 3812 NR Amersfoort. <a href="https://www.getfinly.com/online-demo" target="_blank" rel="noopener">Plan een online demo</a> of bekijk de <a href="https://verzekeringhypotheek.blinqx.tech/contact" target="_blank" rel="noopener">contactgegevens</a>.</p>
+  <p class="src">Bron: <a href="{FINLY_URL}" target="_blank" rel="noopener">getfinly.com/crm</a> (stand 4 november 2026).</p>
+</div></main>"""
+    write("finly-crm", layout(pg, "Finly CRM: klantgegevens, workflows en communicatie op één plek", body, None,
+                              "Finly CRM van Blinqx: klantgegevens, verzekeringen, workflows, documenten en signalen centraal, "
+                              "met koppelingen met DIAS, ANVA, Dstny, AWI en Adviesbox."))
+
+
 def render_mijnhuiszaken():
     """MijnHuiszaken: klantomgeving met realtime woningaanbod (bron: aansluiten.mijnhuiszaken.nl, november 2026)."""
     pg = Page("mijnhuiszaken")
@@ -3029,6 +3105,7 @@ def main():
     render_actiefbeheerscan()
     render_hypotheekrenteapp()
     render_partners()
+    render_finly()
     render_downloads()
     render_nieuwsbrief()
     render_privacy()
@@ -3043,7 +3120,7 @@ def main():
         ("Start", ["", "kennisbank", "contact", "zoeken"]),
         ("Partners", ["partners"] + sorted(u for u in info if u.startswith("partners/"))),
         ("Productinformatie", ["websitetools", "mijnhuiszaken", "yes-co", "tools-voor-vastgoed", "woningwaarderapport",
-                               "actiefbeheerscan", "hypotheekrente-app", "procesversneller"]),
+                               "actiefbeheerscan", "hypotheekrente-app", "finly-crm", "procesversneller"]),
         ("Releasenotes", ["releasenotes", "releasenotes-hypotheekadvies", "releasenotes-finconnect", "releasenotes-dias"]),
         ("Nieuws, tips en leren", ["nieuws", "tips", "elearning", "video", "trainingen", "downloads"]),
         ("Beleid", ["supportbeleid", "opdrachtenbeleid", "klachtenbeleid", "wensenbeleid", "privacy"]),

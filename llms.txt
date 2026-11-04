@@ -50,6 +50,7 @@
 - [Woningwaarderapport](https://support-eblinqx-connect.nl/woningwaarderapport/): Woningwaarderapport van Tools voor vastgoed: geef je klant een geautomatiseerd overzicht van de woningwaarde en ontdek wie wil verkopen, verhuizen of de…
 - [Actiefbeheerscan](https://support-eblinqx-connect.nl/actiefbeheerscan/): Actiefbeheerscan: eenvoudige nazorg, klantbeheer en leads met digitale formulieren voor hypotheek, pensioen en verzekeringen.
 - [Hypotheekrente-app](https://support-eblinqx-connect.nl/hypotheekrente-app/): De gratis Hypotheekrente-app van De Nationale Hypotheekbond: dagelijks bijgewerkte hypotheekrentes van alle geldverstrekkers, ook als app in je eigen huisstijl.
+- [Finly CRM](https://support-eblinqx-connect.nl/finly-crm/): Finly CRM van Blinqx: klantgegevens, verzekeringen, workflows, documenten en signalen centraal, met koppelingen met DIAS, ANVA, Dstny, AWI en Adviesbox.
 - [Procesversneller: alles op een rij](https://support-eblinqx-connect.nl/procesversneller/): Hoe werkt de Procesversneller in eBlinqx: brondata ophalen via Ockto, wat het je kantoor oplevert en antwoorden op veelgestelde vragen.
 
 ## Releasenotes
