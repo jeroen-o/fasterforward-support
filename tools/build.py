@@ -1542,6 +1542,24 @@ def render_video():
     body = f"""{crumbs(pg, [("Video's", None)])}
 <main class="subpage"><div class="wrap">
   <h1>Video's</h1>
+  <nav class="kanalen" aria-label="Videokanalen">
+    <p><strong>Onze kanalen:</strong></p>
+    <div class="wtbtns">
+      <a class="wtbtn" href="https://www.youtube.com/@BlinqxVerzekeringHypotheek" target="_blank" rel="noopener">YouTube: Blinqx Verzekering &amp; Hypotheek ↗</a>
+      <a class="wtbtn" href="https://www.youtube.com/@Blinqx" target="_blank" rel="noopener">YouTube: Blinqx ↗</a>
+      <a class="wtbtn" href="https://www.youtube.com/@FasterForwardTV" target="_blank" rel="noopener">YouTube: FasterForwardTV ↗</a>
+      <a class="wtbtn" href="https://www.youtube.com/@FFWDelements" target="_blank" rel="noopener">YouTube: FFWD Elements ↗</a>
+    </div>
+    <p><strong>Partners:</strong></p>
+    <div class="wtbtns">
+      <a class="wtbtn" href="{pg.rel("video/finrust")}">FinRust: alle video's op deze site</a>
+      <a class="wtbtn" href="https://www.youtube.com/@FinRust" target="_blank" rel="noopener">YouTube: FinRust ↗</a>
+      <a class="wtbtn" href="https://www.youtube.com/@nationalehypotheekbond4615" target="_blank" rel="noopener">YouTube: Nationale Hypotheekbond ↗</a>
+      <a class="wtbtn" href="https://vimeo.com/user93926830" target="_blank" rel="noopener">Vimeo: Nationale Hypotheekbond ↗</a>
+      <a class="wtbtn" href="https://www.youtube.com/@DstnyNL" target="_blank" rel="noopener">YouTube: Dstny ↗</a>
+      <a class="wtbtn" href="https://www.youtube.com/@businessapps2514" target="_blank" rel="noopener">YouTube: Business Apps ↗</a>
+    </div>
+  </nav>
   <p class="lead">Instructievideo's, webinars en presentaties over Faster Forward Elements en eBlinqx. Video's worden pas van YouTube of Vimeo geladen als je op afspelen klikt.</p>
   {"".join(sections)}
 </div></main>
