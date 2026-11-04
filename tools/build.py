@@ -1408,7 +1408,8 @@ def render_home(cats, feeds, pages):
               f'<a class="tile" href="{pg.rel("banking-insurance")}"><svg class="ic"><use href="#i-bank"/></svg>Banking &amp; Insurance</a>'
               f'<a class="tile" href="https://verzekeringhypotheek.blinqx.tech/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-globe"/></svg>Website Blinqx Verzekering &amp; Hypotheek ↗</a>'
               f'<a class="tile" href="{pg.rel("partners")}"><svg class="ic"><use href="#i-partners"/></svg>Partners</a>'
-              f'<a class="tile" href="{pg.rel("procesversneller")}"><svg class="ic"><use href="#i-bolt"/></svg>Proces-versneller</a>')
+              f'<a class="tile" href="{pg.rel("procesversneller")}"><svg class="ic"><use href="#i-bolt"/></svg>Proces-versneller</a>'
+              f'<a class="tile" href="{pg.rel("sites/hypotheekbos-nl")}"><svg class="ic"><use href="#i-tree"/></svg>Hypotheekbos</a>')
 
     def a(path, label):
         href, _ = link_for(path)
