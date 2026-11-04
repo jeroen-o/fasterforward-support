@@ -1301,6 +1301,17 @@ def render_search(pages, cats):
     shutil.copy(os.path.join(TOOLS, "zoeken.js"), os.path.join(ROOT, "zoeken", "zoeken.js"))
 
 
+# Korte versie van het verhaal op /websitetools/ voor de homepage
+WT_KORT = [
+    ("Meer en betere leads", "Aanvragen komen rechtstreeks in de leadinbox van eBlinqx Connect en/of je mail, inclusief de situatie van de klant."),
+    ("Inzicht in je bezoekers", "Zie waar bezoekers mee bezig zijn: lenen, oversluiten, aflossen of verduurzamen."),
+    ("Een professionele website", "Actuele rentes en betrouwbare berekeningen wekken vertrouwen."),
+    ("Beter gevonden in Google", "Interactieve, actuele inhoud die aansluit op veelgezochte hypotheekvragen."),
+    ("Zichtbaar in AI-zoekmachines", "ChatGPT, Gemini en Copilot noemen pagina’s met heldere uitleg en actuele cijfers als bron."),
+    ("Klanten blijven betrokken", "Bespaarcheck, aflossen en verduurzamen: een natuurlijke aanleiding voor een vervolggesprek."),
+]
+
+
 def render_home(cats, feeds, pages):
     pg = Page("")
 
@@ -1353,6 +1364,14 @@ def render_home(cats, feeds, pages):
       <a class="btn-out" href="{pg.rel('elearning')}">E-learning</a>
     </div>
     <div class="tiles">{tiles}</div>
+
+    <section class="home-wt" aria-labelledby="home-wt-h">
+      <h2 id="home-wt-h">Websitetools: meer leads uit je eigen website</h2>
+      <p>Een hypotheek begint online. Met 22 rekentools op de website van je kantoor berekenen bezoekers zelf hun maximale hypotheek, maandlasten of de actuele rentes, en ben jij het kantoor dat ze als eerste verder helpt.</p>
+      <div class="wtwhys">{"".join(f'<div class="wtwhy"><h3>{esc(t)}</h3><p>{esc(x)}</p></div>' for t, x in WT_KORT)}</div>
+      <p class="home-wt-cta"><a class="btn-out cta" href="{pg.rel('websitetools')}">Bekijk de rekentools en lees meer »</a></p>
+      <p class="home-wt-note">De uitkomsten van de rekentools zijn indicatief en geen advies.</p>
+    </section>
 
     <h2>Actualiteiten</h2>
     <div class="news-bars">
