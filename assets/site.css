@@ -514,3 +514,4 @@ form.search{min-width:0}
 .team .lid .rol{margin:0 0 8px;color:#555;font-size:14px;min-height:2.6em}
 .team .lid p{font-size:14px;margin:0;overflow-wrap:anywhere}
 @media (max-width:900px){.team{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.bezoek{margin-top:28px}

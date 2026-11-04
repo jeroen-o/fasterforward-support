@@ -2838,11 +2838,11 @@ def render_sites():
 <main class="subpage mhz"><div class="wrap">
   <h1>{esc(s["naam"])}</h1>
   <p class="lead">{esc(s["ondertitel"])}</p>
-  <div class="mhz-intro"><div>{"".join(f"<p>{esc(t)}</p>" for t in s["tekst"])}
-    <p class="btn-row"><a class="btn-out cta" href="{esc(s["url"])}" target="_blank" rel="noopener" aria-label="Bezoek website {esc(s["naam"])}">Bezoek website ↗</a></p></div>
+  <div class="mhz-intro"><div>{"".join(f"<p>{esc(t)}</p>" for t in s["tekst"])}</div>
     {fig}</div>
   {adviesbox_extra(pg) if s["slug"] == "adviesbox-nl" else ""}
   {f'<h2 class="wth">Lees ook</h2><ul>{rel}</ul>' if rel else ""}
+  <p class="btn-row bezoek"><a class="btn-out cta" href="{esc(s["url"])}" target="_blank" rel="noopener" aria-label="Bezoek website {esc(s["naam"])}">Bezoek website ↗</a></p>
   <p><a href="{pg.rel("sites")}">← Alle websites</a></p>
   <p class="src">Bron: <a href="{esc(s["url"])}" target="_blank" rel="noopener">{esc(s["naam"].lower())}</a> (stand 4 november 2026).</p>
 </div></main>"""
@@ -2854,12 +2854,12 @@ def render_sites():
         + (f'<a class="sitebeeld{" logo" if s.get("logo") else ""}" href="{pg.rel("sites/" + s["slug"])}" tabindex="-1" aria-hidden="true">'
            f'<img src="{pg.rel(s.get("logo") or s["afbeelding"])}" alt="" loading="lazy"></a>' if (s.get("logo") or s.get("afbeelding")) else "")
         + f'<h3><a href="{pg.rel("sites/" + s["slug"])}">{esc(s["naam"])}</a></h3><p>{esc(s["ondertitel"])}</p>'
-        f'<p class="sitebtn"><a class="btn-out cta" href="{esc(s["url"])}" target="_blank" rel="noopener" aria-label="Bezoek website {esc(s["naam"])}">Bezoek website ↗</a></p></div>'
+        f'<p class="sitebtn"><a class="btn-out cta" href="{pg.rel("sites/" + s["slug"])}" aria-label="Meer info over {esc(s["naam"])}">Meer info</a></p></div>'
         for s in sorted(lijst, key=lambda x: x["naam"].lower()))
     body = f"""{crumbs(pg, [("Websites", None)])}
 <main class="subpage mhz"><div class="wrap">
   <h1>Websites van Blinqx Verzekering &amp; Hypotheek</h1>
-  <p class="lead">Alle websites rondom eBlinqx, de Nationale Hypotheekbond en Blinqx Verzekering &amp; Hypotheek op een rij. Klik op een website voor een korte beschrijving en de link.</p>
+  <p class="lead">Alle websites rondom eBlinqx, de Nationale Hypotheekbond en Blinqx Verzekering &amp; Hypotheek op een rij, plus de belangrijke partijen in de keten. Klik op ‘Meer info’ voor alles over de partij en de link naar hun website.</p>
   <div class="wtwhys pkaarten">{kaarten}</div>
 </div></main>"""
     write("sites", layout(pg, "Websites van Blinqx Verzekering & Hypotheek", body, None,

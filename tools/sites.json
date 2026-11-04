@@ -558,5 +558,88 @@
    ]
   ],
   "afbeelding": "bronnen/actiefbeheerscan/header.webp"
+ },
+ {
+  "slug": "nhg-nl",
+  "naam": "NHG.nl",
+  "url": "https://www.nhg.nl/",
+  "ondertitel": "Nationale Hypotheek Garantie: verantwoord lenen en prettig wonen",
+  "tekst": [
+   "De Nationale Hypotheek Garantie (NHG) staat voor een verantwoorde en betaalbare hypotheek. Met NHG kan een huizenkoper erop vertrouwen dat de hypotheek past bij zijn persoonlijke situatie en portemonnee.",
+   "Kan een huiseigenaar door bijvoorbeeld werkloosheid, arbeidsongeschiktheid, scheiding of overlijden de hypotheek niet meer betalen, dan helpt NHG om de woonlasten betaalbaar te houden. Hypotheken met NHG hebben bovendien vaak een lagere rente. Op nhg.nl vind je de voorwaarden en kostengrens, nieuws over wijzigingen en informatie voor professionals (zoals het verwerken van NHG-aanvragen en de werkgeversverklaring)."
+  ],
+  "gerelateerd": [
+   [
+    "kennisbank/hoe-verstuur-hdn-bericht",
+    "Kennisbank: hoe verstuur ik een HDN-bericht?"
+   ],
+   [
+    "sites/looptijdrente-nl",
+    "Looptijdrente.nl (NHG en risicoklassen)"
+   ]
+  ],
+  "afbeelding": "bronnen/sites/nhg-nl.webp"
+ },
+ {
+  "slug": "hdn-nl",
+  "naam": "HDN.nl",
+  "url": "https://www.hdn.nl/",
+  "ondertitel": "Hypotheken Data Netwerk: alle partijen in de financiële keten verbonden",
+  "tekst": [
+   "HDN (Hypotheken Data Netwerk) zorgt voor veilige, zorgvuldige en slimme informatie-uitwisseling in het financiële woondomein. Via HDN wisselen adviseurs, geldverstrekkers, serviceproviders, taxateurs en notarissen gegevens uit volgens één standaard.",
+   "Met eBlinqx Connect verstuur en ontvang je HDN-berichten, zoals hypotheekaanvragen, offertes en statusmeldingen. Hoe je HDN inricht (HDN-codes, de HDN-inbox en de inlogmethode) en wat er verandert met de HDN-releases, lees je in de kennisbank en de releasenotes."
+  ],
+  "gerelateerd": [
+   [
+    "kennisbank/hoe-verstuur-hdn-bericht",
+    "Hoe verstuur ik een HDN-bericht?"
+   ],
+   [
+    "kennisbank/hdn-certificaat",
+    "HDN-certificaat"
+   ],
+   [
+    "kennisbank/hdn-codes-aanmaken",
+    "HDN-codes aanmaken"
+   ],
+   [
+    "kennisbank/hdn-inbox",
+    "HDN-inbox"
+   ],
+   [
+    "kennisbank/hdn-foutmeldingen",
+    "HDN-foutmeldingen"
+   ],
+   [
+    "releasenotes",
+    "Releasenotes eBlinqx Connect (HDN-releases)"
+   ]
+  ],
+  "afbeelding": "bronnen/sites/hdn-nl.webp"
+ },
+ {
+  "slug": "sivi-nl",
+  "naam": "SIVI.nl",
+  "url": "https://www.sivi.org/",
+  "ondertitel": "Kennis- en standaardisatie-instituut voor de financiële dienstverlening",
+  "tekst": [
+   "SIVI maakt digitale samenwerking standaard. Als kennis- en standaardisatie-instituut voor de financiële dienstverlening maakt SIVI betrouwbare en efficiënte digitale samenwerking mogelijk in de verzekerings-, pensioen- en verzuimketen, door standaarden te ontwikkelen en te beheren.",
+   "De bekendste is SIVI AFS (All Finance Standaard): dé standaard voor berichtuitwisseling, vastlegging van gegevens en het ontwikkelen van services binnen de Nederlandse financiële dienstverlening. Op SIVI AFS zijn onder meer de ADN-berichten gebaseerd waarmee eBlinqx Connect polis- en prolongatiegegevens van verzekeraars inleest. (sivi.nl verwijst naar sivi.org.)"
+  ],
+  "gerelateerd": [
+   [
+    "kennisbank/adn-berichten-ontvangen",
+    "ADN-berichten ontvangen"
+   ],
+   [
+    "kennisbank/adn-inrichten-bedrijfscertificaat",
+    "ADN inrichten met bedrijfscertificaat"
+   ],
+   [
+    "sites/aplaza-nl",
+    "Aplaza.nl"
+   ]
+  ],
+  "afbeelding": "bronnen/sites/sivi-nl.webp"
  }
 ]
