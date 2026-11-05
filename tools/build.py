@@ -1491,6 +1491,7 @@ def render_home(cats, feeds, pages):
       <p class="home-wt-cta btn-row"><a class="btn-out cta" href="{pg.rel('websitetools')}">Bekijk de rekentools en lees meer »</a>
         <a class="btn-out" href="{pg.rel('websitetools')}#video">▶ Bekijk de video</a></p>
       <p class="home-wt-note">De uitkomsten van de rekentools zijn indicatief en geen advies.</p>
+      <p class="home-wt-ook">Ook interessant: <a href="{pg.rel('mijnhuiszaken')}">MijnHuiszaken: het actuele woningaanbod voor jouw klanten</a> · <a href="{pg.rel('adviescoach')}">Quinn AdviesCoach: begeleid hypotheekadvies</a></p>
     </section>
     <section class="home-wt" id="home-mhz" aria-labelledby="home-mhz-h" hidden>
       <h2 id="home-mhz-h">MijnHuiszaken: blijf in beeld vanaf de eerste zoekopdracht – het actuele woningaanbod voor jouw klanten</h2>
@@ -1498,6 +1499,7 @@ def render_home(cats, feeds, pages):
       <div class="wtwhys">{"".join(f'<div class="wtwhy"><h3>{esc(t)}</h3><p>{esc(x)}</p></div>' for t, x in MHZ_KORT)}</div>
       <p class="home-wt-cta btn-row"><a class="btn-out cta" href="{pg.rel('mijnhuiszaken')}">Bekijk MijnHuiszaken en lees meer »</a>
         <a class="btn-out" href="{pg.rel('mijnhuiszaken')}#video">▶ Bekijk de video</a></p>
+      <p class="home-wt-ook">Ook interessant: <a href="{pg.rel('websitetools')}">Websitetools: rekentools voor je website</a> · <a href="{pg.rel('adviescoach')}">Quinn AdviesCoach: begeleid hypotheekadvies</a></p>
     </section>
     <section class="home-wt" id="home-coach" aria-labelledby="home-coach-h" hidden>
       <h2 id="home-coach-h">Quinn AdviesCoach: een coach die met je meekijkt en meedenkt</h2>
@@ -1505,7 +1507,15 @@ def render_home(cats, feeds, pages):
       <div class="wtwhys">{"".join(f'<div class="wtwhy"><h3>{esc(t)}</h3><p>{esc(x)}</p></div>' for t, x in COACH_KORT)}</div>
       <p class="home-wt-cta btn-row"><a class="btn-out cta" href="{pg.rel('adviescoach')}">Bekijk AdviesCoach en lees meer »</a></p>
       <p class="home-wt-note">Tot 1 februari gratis te proberen. Jij blijft eigenaar van het advies.</p>
+      <p class="home-wt-ook">Ook interessant: <a href="{pg.rel('websitetools')}">Websitetools: rekentools voor je website</a> · <a href="{pg.rel('mijnhuiszaken')}">MijnHuiszaken: het actuele woningaanbod voor jouw klanten</a></p>
     </section>
+    <script type="application/ld+json">{json.dumps({"@context": "https://schema.org", "@type": "ItemList", "name": "Uitgelichte oplossingen voor adviseurs",
+        "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": n, "url": SITE_URL + u, "description": o}
+                            for i, (n, u, o) in enumerate([
+                                ("Websitetools: rekentools voor je website", "websitetools/", "Rekentools op de website van je kantoor voor meer en betere leads."),
+                                ("MijnHuiszaken: het actuele woningaanbod voor jouw klanten", "mijnhuiszaken/", MHZ_INTRO),
+                                ("Quinn AdviesCoach: een coach die met je meekijkt en meedenkt", "adviescoach/", COACH_INTRO)])]},
+        ensure_ascii=False).replace("</", "<\\/")}</script>
     <script>
     /* Afwisselen bij elk bezoek aan de homepage: Websitetools, MijnHuiszaken en AdviesCoach (zonder JavaScript: Websitetools). */
     (function () {{
@@ -2983,6 +2993,21 @@ COACH_KORT = [
 ]
 
 
+def app_ld(naam, url, omschrijving, beeld, prijs=None, eenheid=None, extra=None):
+    """SoftwareApplication-gegevens (schema.org) voor productpagina's: beter begrepen door Google en AI-zoekmachines."""
+    d = {"@context": "https://schema.org", "@type": "SoftwareApplication", "name": naam, "url": SITE_URL + url,
+         "applicationCategory": "BusinessApplication", "operatingSystem": "Web", "inLanguage": "nl-NL", "description": omschrijving,
+         "image": SITE_URL + beeld, "publisher": {"@type": "Organization", "name": "Blinqx", "url": "https://verzekeringhypotheek.blinqx.tech/"},
+         "audience": {"@type": "BusinessAudience", "audienceType": "Hypotheekadviseurs en financieel adviseurs"}}
+    if prijs is not None:
+        d["offers"] = {"@type": "Offer", "price": prijs, "priceCurrency": "EUR",
+                       "priceSpecification": {"@type": "UnitPriceSpecification", "price": prijs, "priceCurrency": "EUR",
+                                              "unitText": eenheid or "per maand", "valueAddedTaxIncluded": False}}
+    if extra:
+        d.update(extra)
+    return '<script type="application/ld+json">' + json.dumps(d, ensure_ascii=False).replace("</", "<\\/") + "</script>"
+
+
 def render_adviescoach():
     """Quinn AdviesCoach (bron: verzekeringhypotheek.blinqx.tech/oplossingen/adviescoach, november 2026)."""
     pg = Page("adviescoach")
@@ -3036,6 +3061,8 @@ def render_adviescoach():
   <p>Lees ook: <a href="{pg.rel("releasenotes-hypotheekadvies")}">Releasenotes eBlinqx Hypotheekadvies</a>, <a href="{pg.rel("kennisbank/quinn-mail-koppelen-taken-aanmaken-en-reply")}">Quinn Mail</a> en <a href="{pg.rel("procesversneller")}">Proces-versneller</a>.</p>
   <p class="src">Bron: <a href="{COACH_URL}" target="_blank" rel="noopener">verzekeringhypotheek.blinqx.tech</a> (stand 5 november 2026). Prijzen en voorwaarden kunnen wijzigen.</p>
 </div></main>"""
+    body += app_ld("Quinn AdviesCoach", "adviescoach/", COACH_INTRO, "bronnen/adviescoach/header.webp", 25, "per unieke HDN-aanvraag in een adviesdossier",
+                   {"featureList": [t for t, _ in COACH_KORT], "isPartOf": {"@type": "SoftwareApplication", "name": "eBlinqx Hypotheekadvies"}})
     write("adviescoach", layout(pg, "Quinn AdviesCoach: een coach die met je meekijkt en meedenkt", body, None,
                                 "Quinn AdviesCoach in eBlinqx Hypotheekadvies: automatisch klantprofiel, ComplianceScan tijdens het advies en een "
                                 "klantspecifieke adviessamenvatting. Tot 1 februari gratis te proberen."))
@@ -3123,6 +3150,8 @@ def render_mijnhuiszaken():
   <p>Boek vrijblijvend een online demo; binnen 20 minuten weet je hoe alles werkt. Bel <a href="tel:+31365238455">036 523 8455</a>, mail <a href="mailto:info@mijnhuiszaken.nl">info@mijnhuiszaken.nl</a> of vraag een demo aan via <a href="{MHZ_URL}contact/" target="_blank" rel="noopener">aansluiten.mijnhuiszaken.nl</a>.</p>
   <p class="src">Bron: <a href="{MHZ_URL}" target="_blank" rel="noopener">aansluiten.mijnhuiszaken.nl</a> (stand 4 november 2026). Tarieven en voorwaarden kunnen wijzigen.</p>
 </div></main>"""
+    body += app_ld("MijnHuiszaken", "mijnhuiszaken/", MHZ_INTRO, "bronnen/mijnhuiszaken/images-hero-desktop.webp", 79, "per maand voor 1.000 klanten",
+                   {"alternateName": "Mijn Huiszaken", "featureList": [t for t, _ in MHZ_KORT]})
     write("mijnhuiszaken", layout(pg, "MijnHuiszaken: blijf in beeld vanaf de eerste zoekopdracht – het actuele woningaanbod voor jouw klanten", body, None,
                                   "MijnHuiszaken (Mijn Huiszaken): klantomgeving voor hypotheekadviseurs met realtime NVM-woningaanbod, e-mailalerts, "
                                   "rekentools en woningwaarde. Bind leads vanaf de oriëntatie en blijf in beeld bij aan- en verkoop."))
@@ -3275,6 +3304,10 @@ def render_websitetools():
   <p>De rekentools zijn in de huisstijl van je kantoor op je eigen website te plaatsen. Neem voor meer informatie contact op met {contact}.</p>
   <p class="src">Bron: <a href="{esc(data["bron"])}" target="_blank" rel="noopener">verzekeringhypotheek.blinqx.tech</a> (stand {fmt_date(date.fromisoformat(data["opgehaald"]))}).</p>
 </div></main>"""
+    body += app_ld("Websitetools (rekentools voor je website)", "websitetools/", "Rekentools voor de website van je advieskantoor: bezoekers "
+                   "berekenen zelf hun maximale hypotheek, maandlasten of de actuele rentes, en aanvragen komen binnen in de leadinbox van "
+                   "eBlinqx Connect en/of je mail.", "bronnen/websitetools/rekentools-video.webp", None, None,
+                   {"featureList": [t for t, _ in WT_KORT]})
     write("websitetools", layout(pg, "Websitetools: rekentools voor je website", body, None,
                                  "Rekentools voor de website van je advieskantoor: meer en betere leads, inzicht in bezoekers, een professionele "
                                  "uitstraling en betere vindbaarheid in Google en AI-zoekmachines. Hypotheek berekenen, rentes, aflossen en verduurzamen."))
