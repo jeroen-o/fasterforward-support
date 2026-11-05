@@ -2340,6 +2340,20 @@ def render_procesversneller():
            f'<span style="color:#bbb"> &nbsp;·&nbsp; </span><a href="{pg.rel("kennisbank/ockto-koppeling")}" style="color:#fff">Ockto-koppeling in de kennisbank</a></div>')
     i = doc.rfind("</style>", 0, doc.find("<main")) + len("</style>")
     doc = doc[:i] + "\n" + bar + doc[i:]
+    # alt-teksten voor de ingebedde afbeeldingen (niet de sjablonen in scripts)
+    teller = [0]
+
+    def alt(m):
+        t = m.group(0)
+        if re.search(r'\salt="[^"]+"', t) or "' +" in t:
+            return t
+        t = re.sub(r'\salt=""', "", t)
+        teller[0] += 1
+        a = ("Illustratie: brondata ophalen met de Procesversneller (Ockto) in eBlinqx" if "hero-art" in t else
+             "Adviseur verwerkt brondata met de Procesversneller in eBlinqx" if "how-foto" in t else
+             f"Procesversneller in eBlinqx, stap {teller[0]}: brongegevens digitaal aanleveren via Ockto")
+        return t.replace("<img", f'<img alt="{a}"', 1)
+    doc = re.sub(r"<img\b[^>]*>", alt, doc)
     title = "Procesversneller: alles op een rij"
     desc = "Hoe werkt de Procesversneller in eBlinqx: brondata ophalen via Ockto, wat het je kantoor oplevert en antwoorden op veelgestelde vragen."
     head = ('<!doctype html>\n<html lang="nl">\n<head>\n<meta charset="utf-8">\n'

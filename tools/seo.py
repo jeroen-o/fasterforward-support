@@ -114,6 +114,28 @@ def uitvoeren(root, site_url, overslaan=("bronnen", "tools", "assets", ".github"
                 if len(d) >= 110:
                     break
         i["desc_nieuw"] = kort(d)
+    # nog steeds dubbele beschrijvingen (bijv. hetzelfde artikel in meerdere kennisbanken): rubriek en titel ervoor
+    tel = collections.Counter(i["desc_nieuw"] for i in info.values())
+    for u, i in info.items():
+        if u and tel[i["desc_nieuw"]] > 1:
+            naam = i["h1"] or i["titel"].replace(SUFFIX, "")
+            sectie = i["kruimels"][1][0] if len(i["kruimels"]) >= 2 and i["kruimels"][1][0] != naam else u.split("/")[0]
+            d = i["desc_nieuw"]
+            d = d[len(naam) + 2:] if d.startswith(naam + ": ") else d
+            i["desc_nieuw"] = kort(f"{sectie} – {naam}: {d}")
+    # laatste redmiddel: de rubriek (voorlaatste kruimel) of het pad achteraan
+    tel = collections.Counter(i["desc_nieuw"] for i in info.values())
+    dubbel = [u for u, i in info.items() if u and tel[i["desc_nieuw"]] > 1]
+    basis_d = {u: kort(info[u]["desc_nieuw"].rstrip(".…"), 125) for u in dubbel}
+    for stap in (1, 2, 3):
+        tel = collections.Counter(i["desc_nieuw"] for i in info.values())
+        for u in dubbel:
+            i = info[u]
+            if tel[i["desc_nieuw"]] > 1:
+                slug = u.rstrip("/").split("/")[-1]
+                extra = (i["kruimels"][-2][0] if stap == 1 and len(i["kruimels"]) >= 3
+                         else kort(slug.replace("-", " "), 35) if stap == 2 else "nr. " + (re.findall(r"\d+", slug) or [slug[-12:]])[-1])
+                i["desc_nieuw"] = basis_d[u] + f" ({extra})"
 
     # titels
     def basis(i):
@@ -140,6 +162,10 @@ def uitvoeren(root, site_url, overslaan=("bronnen", "tools", "assets", ".github"
     for u, i in info.items():
         if tel[i["titel_nieuw"]] > 1:
             i["titel_nieuw"] = i["titel_nieuw"].replace(SUFFIX, "") + f" ({u.rstrip('/').split('/')[-1]})"
+    tel = collections.Counter(i["titel_nieuw"] for i in info.values())
+    for u, i in info.items():
+        if tel[i["titel_nieuw"]] > 1 and "/" in u:
+            i["titel_nieuw"] = f"{i['titel_nieuw']} – {u.split('/')[-2]}"
 
     # schrijven
     for u, (f, s) in paginas.items():
