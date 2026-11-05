@@ -1330,7 +1330,7 @@ def render_search(pages, cats):
                     "c": "Actiefbeheerscan", "k": "kennisbank", "x": ABS_INTRO + " actief beheer scan actiefbeheerscan nazorg klantbeheer "
                     "digitale formulieren webformulieren uitnodigingsmail reminder leads tarieven demo dutch media lab " +
                     " ".join(t + " " + x for t, _, _, x in ABS_FORMULIEREN)})
-        idx.append({"t": "MijnHuiszaken: realtime woningaanbod voor je klanten", "h": "mijnhuiszaken/index.html", "c": "MijnHuiszaken",
+        idx.append({"t": "MijnHuiszaken: blijf in beeld vanaf de eerste zoekopdracht – het actuele woningaanbod voor jouw klanten", "h": "mijnhuiszaken/index.html", "c": "MijnHuiszaken",
                     "k": "kennisbank", "x": MHZ_INTRO + " woningaanbod NVM makelaar e-mailalerts zoekprofiel woningwaarde woningaanbod op eigen website "
                     "leads tarieven demo mijn huiszaken mijnhuiszaken.nl video promovideo uitleg"})
         idx.append({"t": "Websitetools: rekentools voor op je website", "h": "websitetools/index.html", "c": "Websitetools", "k": "kennisbank",
@@ -2996,7 +2996,7 @@ def render_mijnhuiszaken():
     body = f"""{crumbs(pg, [("MijnHuiszaken", None)])}
 <main class="subpage mhz"><div class="wrap">
   <h1>MijnHuiszaken</h1>
-  <p class="lead">Voorzie huizenzoekers van realtime woningaanbod en blijf vanaf dag één in beeld met MijnHuiszaken (ook wel geschreven als Mijn Huiszaken).</p>
+  <p class="lead"><strong>Blijf in beeld vanaf de eerste zoekopdracht – het actuele woningaanbod voor jouw klanten.</strong> Voorzie huizenzoekers van realtime woningaanbod met MijnHuiszaken (ook wel geschreven als Mijn Huiszaken).</p>
   <div class="mhz-intro"><div><p>{esc(MHZ_INTRO)}</p>
     <p>Meer dan de helft van de mensen die bij je langskomen of je website bezoeken, oriënteert zich al op de woningmarkt. Met hypotheekvragen zijn ze bij jou aan het juiste adres. Met MijnHuiszaken help je ze voortaan ook met het vinden van een woning, en bouw je een voorsprong op ten opzichte van andere hypotheekadviseurs.</p>
     <p class="btn-row"><a class="btn-out cta" href="{MHZ_URL}" target="_blank" rel="noopener">Demo aanvragen of aansluiten</a>
@@ -3040,7 +3040,7 @@ def render_mijnhuiszaken():
   <p>Boek vrijblijvend een online demo; binnen 20 minuten weet je hoe alles werkt. Bel <a href="tel:+31365238455">036 523 8455</a>, mail <a href="mailto:info@mijnhuiszaken.nl">info@mijnhuiszaken.nl</a> of vraag een demo aan via <a href="{MHZ_URL}contact/" target="_blank" rel="noopener">aansluiten.mijnhuiszaken.nl</a>.</p>
   <p class="src">Bron: <a href="{MHZ_URL}" target="_blank" rel="noopener">aansluiten.mijnhuiszaken.nl</a> (stand 4 november 2026). Tarieven en voorwaarden kunnen wijzigen.</p>
 </div></main>"""
-    write("mijnhuiszaken", layout(pg, "MijnHuiszaken: realtime woningaanbod voor je klanten", body, None,
+    write("mijnhuiszaken", layout(pg, "MijnHuiszaken: blijf in beeld vanaf de eerste zoekopdracht – het actuele woningaanbod voor jouw klanten", body, None,
                                   "MijnHuiszaken (Mijn Huiszaken): klantomgeving voor hypotheekadviseurs met realtime NVM-woningaanbod, e-mailalerts, "
                                   "rekentools en woningwaarde. Bind leads vanaf de oriëntatie en blijf in beeld bij aan- en verkoop."))
 
