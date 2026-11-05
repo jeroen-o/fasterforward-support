@@ -1323,6 +1323,9 @@ def render_search(pages, cats):
         if os.path.exists(hf):
             ht = open(hf, encoding="utf8").read()
             ht = re.search(r'<main class="wrap">(.*?)</main>', ht, re.S).group(1)
+            for n_, r_ in HISTORIE_PERSONEN:
+                idx.append({"t": f"{n_} – {r_}", "h": "historie/index.html", "c": "Over Blinqx › Historie", "k": "overig",
+                            "x": f"{n_} {n_.split()[0]} {n_.split()[-1]} {r_} historie blinqx"})
             idx.append({"t": "Historie van Blinqx Verzekering & Hypotheek", "h": "historie/index.html", "c": "Over Blinqx", "k": "overig",
                         "x": "historie geschiedenis bedrijfshistorie tijdlijn overnames oprichting " + re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", ht)))})
         idx.append({"t": "Handige websites", "h": "sites/index.html", "c": "Handige websites", "k": "kennisbank",
@@ -2927,6 +2930,39 @@ def adviesbox_extra(pg):
   <p>Adviesbox (Blinqx), Harderwijkweg 5b, 2803 PW Gouda · <a href="tel:+31850180069">085 018 00 69</a> · <a href="mailto:secretariaat@blinqx.tech">secretariaat@blinqx.tech</a></p>"""
 
 
+HISTORIE_PERSONEN = [  # (naam, rol volgens de historiepagina)
+    ("Auke Dirkmaat", "Managing Director van Blinqx Verzekering & Hypotheek"),
+    ("Vince de Ruiter", "COO van Blinqx Verzekering & Hypotheek per juli 2026"),
+    ("Andre van der Doelen", "oprichter van VDD IQware, later Hyarchis (1985)"),
+    ("Adriaan Hoogduijn", "CEO van Hyarchis"),
+    ("Jos Verbeek", "directeur van Online Software (Online Pro)"),
+    ("Jan van den Neste", "leiding Intersoftware (Adviesbox) en FinData"),
+    ("Leon van Vliet", "leiding Intersoftware (Adviesbox) en FinData"),
+    ("André van Nieuwhuizen", "Faster Forward (Elements, nu eBlinqx Connect)"),
+    ("Mirjam van Kooten", "HippoLine (business intelligence)"),
+    ("Marco Hendrickx", "directeur van Aplaza"),
+    ("Joost Heijligers", "medeoprichter van Finly"),
+    ("René Molhoek", "medeoprichter van Finly"),
+    ("Rob van der Zwan", "oprichter van FinConnect"),
+    ("Marco Kok", "medeoprichter van FinRust"),
+    ("Robert-Jan Vugts", "medeoprichter van FinRust"),
+    ("Kees-Jan Evers", "medeoprichter van FinRust"),
+    ("Rick Mulderij", "oprichter van My TP (nu Premievergelijk)"),
+    ("Fred Lingg", "algemeen directeur van DIAS Software"),
+    ("Ruud van der Kruk", "medeoprichter van Dias Software"),
+    ("Ynze Sipkema", "medeoprichter van Dias Software"),
+    ("Jelke Jansen", "medeoprichter van Dias Software"),
+    ("Chris Ouwinga", "medeoprichter van Dias Software en oprichter van Unit4"),
+]
+HISTORIE_FAQ = [
+    ("Wanneer is Blinqx Verzekering & Hypotheek ontstaan?", "Officieel op 6 juli 2023, toen Blinqx de Nationale Hypotheekbond en Faster Forward overnam. De wortels gaan terug tot 1985."),
+    ("Uit welke bedrijven bestaat Blinqx Verzekering & Hypotheek?", "Onder meer DIAS Software, Aplaza, Online Groep (Online Pro), Hyarchis, Finly, FinConnect, My TP, Intersoftware (Adviesbox), FinData, de Nationale Hypotheekbond, Faster Forward, HippoLine en FinRust."),
+    ("Waar komt de naam Blinqx vandaan?", "In juni 2023 ging de Dias Group verder als Blinqx: een knipoog naar de diamant uit DIAS (Diamant Assurantie Software)."),
+    ("Wat is eBlinqx?", "Eén platform waarin onder meer DIAS, Elements (nu eBlinqx Connect), Adviesbox, Fastlane (nu eBlinqx Hypotheekadvies), Finly, PortefeuilleSignalen en My TP (nu Premievergelijk) samenkomen, met open koppelingen naar software van derden."),
+    ("Wie leidt Blinqx Verzekering & Hypotheek?", "Auke Dirkmaat is Managing Director. Per juli 2026 is Vince de Ruiter COO, en Dennes Roes is Directeur Hypotheekadvies."),
+]
+
+
 def render_historie():
     """De historie van Blinqx Verzekering & Hypotheek (bron: bronnen/historie-blinqx-vh.html, aangeleverd door Jeroen Oversteegen)."""
     f = os.path.join(SRC, "historie-blinqx-vh.html")
@@ -2942,6 +2978,13 @@ def render_historie():
           "description": "Blinqx Verzekering & Hypotheek ontstond op 6 juli 2023 uit de samenvoeging van softwarebedrijven voor het financieel intermediair, "
                          "waaronder DIAS, Aplaza, Online Groep, Hyarchis, Finly, FinConnect, My TP, Intersoftware (Adviesbox), FinData, de Nationale Hypotheekbond, "
                          "Faster Forward, HippoLine en FinRust."}
+    ld["employee"] = [{"@type": "Person", "name": n, "jobTitle": r} for n, r in HISTORIE_PERSONEN[:2]] + \
+        [{"@type": "Person", "name": "Dennes Roes", "jobTitle": "Directeur Hypotheekadvies"}]
+    ld["founder"] = [{"@type": "Person", "name": n, "description": r} for n, r in HISTORIE_PERSONEN[2:]]
+    ld_faq = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+        {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in HISTORIE_FAQ]}
+    faq_html = "".join(f'<details class="wtfaq"><summary>{esc(q)}</summary><p>{esc(a)}</p></details>' for q, a in HISTORIE_FAQ)
+    inhoud = inhoud.replace('<h2 class="wth">Bronnen</h2>', f'<h2 class="wth">Veelgestelde vragen</h2>{faq_html}<h2 class="wth">Bronnen</h2>')
     body = f"""{crumbs(pg, [("Historie", None)])}
 <main class="subpage historie"><div class="wrap">
   <p class="badge-gratis">Bedrijfshistorie</p>
@@ -2949,7 +2992,8 @@ def render_historie():
   <p class="lead">{esc(sub)}</p>
   {inhoud}
 </div></main>
-<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False).replace("</", "<\\/")}</script>"""
+<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False).replace("</", "<\\/")}</script>
+<script type="application/ld+json">{json.dumps(ld_faq, ensure_ascii=False).replace("</", "<\\/")}</script>"""
     write("historie", layout(pg, "Historie van Blinqx Verzekering & Hypotheek", body, None,
                              "Van dertien zelfstandige softwarelabels naar één platform: de historie van Blinqx Verzekering & Hypotheek, "
                              "van Hyarchis (1985), Adviesbox, de Nationale Hypotheekbond en Faster Forward tot eBlinqx."), kluis=False)
