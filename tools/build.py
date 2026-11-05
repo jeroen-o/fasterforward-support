@@ -1306,6 +1306,9 @@ def render_search(pages, cats):
             idx.append({"t": f"{st['naam']}: {st['ondertitel']}", "h": f"sites/{st['slug']}/index.html", "c": "Handige websites", "k": "kennisbank",
                         "x": st["naam"] + " " + st["naam"].replace(".nl", "").replace(".net", "") + " " + st["url"] + " " + " ".join(st["tekst"])
                         + " " + " ".join(k + " " + " ".join(it) for k, it in st.get("secties", []))})
+        for n_, r_, f_, tel_, telt_, m_ in TEAM_BANKING:
+            idx.append({"t": f"{n_} – {html.unescape(r_)}", "h": "banking-insurance/index.html#team", "c": "Banking & Insurance › Ons team", "k": "overig",
+                        "x": f"{n_} {n_.split()[0]} {html.unescape(r_)} {telt_} {m_} team contact Blinqx banking insurance"})
         idx.append({"t": "Banking & Insurance: Hypotheekcijfer.nl en Pensioencijfer.nl", "h": "banking-insurance/index.html", "c": "Banking & Insurance",
                     "k": "kennisbank", "x": "banking insurance bank verzekeraar geldverstrekker hypotheekcijfer pensioencijfer hypotheekcheck pensioen cijfer renteadministratie rentetool rente publicatie analyse hypotheekrente api webservices hypotheekvoorwaarden api voorwaarden hypotheek validatie engine validatie validation engine orv api overlijdensrisicoverzekering premie financiële api's api"})
         idx.append({"t": "Handige websites", "h": "sites/index.html", "c": "Handige websites", "k": "kennisbank",
@@ -2962,6 +2965,14 @@ def render_sites():
                           "Overzicht van alle websites rondom eBlinqx, de Nationale Hypotheekbond en Blinqx Verzekering & Hypotheek."), kluis=False)
 
 
+TEAM_BANKING = [("Igor Driessen", "Director Banking &amp; Financial Services", "igor-driessen", "+31620615614", "06 20 61 56 14", "igor.driessen@blinqx.tech"),
+             ("Bob van Dam", "Product Enablement Manager", "bob-van-dam", "+31643811940", "06 43 81 19 40", "bob.van.dam@blinqx.tech"),
+             ("Oscar Kuypers", "Business Development Manager", "oscar-kuypers", "+31628321881", "06 28 32 18 81", "oscar.kuypers@blinqx.tech"),
+             ("Jeroen Oversteegen", "Non Executive Director Business Partners", "jeroen-oversteegen", "+31621247257", "06 21 24 72 57", "jeroen.oversteegen@blinqx.tech"),
+             ("Jos van Driesum", "Directeur Products", "jos-van-driesum", "+31644081447", "06 44 08 14 47", "jos.van.driesum@blinqx.tech"),
+             ("Dennes Roes", "Directeur Hypotheken · Founder eBlinqx Hypotheekadvies", "dennes-roes", "+31651117893", "06 51 11 78 93", "dennes.roes@blinqx.tech")]
+
+
 def render_banking():
     """Tegel Banking & Insurance: Hypotheekcijfer.nl en Pensioencijfer.nl."""
     pg = Page("banking-insurance")
@@ -2976,12 +2987,7 @@ def render_banking():
            f'{chr(32) + "style=" + chr(34) + "max-width:340px;margin:0 auto;display:block" + chr(34) if s.get("logo") else ""}></figure>'
            if (s.get("logo") or s.get("afbeelding")) else "")
         + "</div>" for s in lijst)
-    leden = [("Igor Driessen", "Director Banking &amp; Financial Services", "igor-driessen", "+31620615614", "06 20 61 56 14", "igor.driessen@blinqx.tech"),
-             ("Bob van Dam", "Product Enablement Manager", "bob-van-dam", "+31643811940", "06 43 81 19 40", "bob.van.dam@blinqx.tech"),
-             ("Oscar Kuypers", "Business Development Manager", "oscar-kuypers", "+31628321881", "06 28 32 18 81", "oscar.kuypers@blinqx.tech"),
-             ("Jeroen Oversteegen", "Non Executive Director Business Partners", "jeroen-oversteegen", "+31621247257", "06 21 24 72 57", "jeroen.oversteegen@blinqx.tech"),
-             ("Jos van Driesum", "Directeur Products", "jos-van-driesum", "+31644081447", "06 44 08 14 47", "jos.van.driesum@blinqx.tech"),
-             ("Dennes Roes", "Directeur Hypotheken · Founder eBlinqx Hypotheekadvies", "dennes-roes", "+31651117893", "06 51 11 78 93", "dennes.roes@blinqx.tech")]
+    leden = TEAM_BANKING
     team = "".join(f'<div class="lid"><img src="{pg.rel("bronnen/team/" + f + ".webp")}" alt="{esc(n)}" loading="lazy">'
                    f'<h3>{esc(n)}</h3><p class="rol">{r}</p><p><a href="tel:{tel}">M: {telt}</a>{"<br><a href=" + chr(34) + "mailto:" + m + chr(34) + ">" + m + "</a>" if m else ""}</p></div>'
                    for n, r, f, tel, telt, m in leden)
@@ -2996,7 +3002,7 @@ def render_banking():
     <div class="wtwhy"><h3>Hypotheek validatie engine</h3><p>Met de hypotheek validatie engine controleer je hypotheekaanvragen en -gegevens geautomatiseerd, zodat je eerder ziet of een aanvraag compleet en juist is.</p></div>
   </div>
   <p class="mhz-tip"><strong>Naast deze API's hebben we nog veel meer financiële API's.</strong> Vraag een van onderstaande collega's naar de mogelijkheden, mail <a href="mailto:relatie-vh@blinqx.tech">relatie-vh@blinqx.tech</a> of bel <a href="tel:+31207582111">020 758 21 11</a>.</p>
-  <h2 class="wth">Ons team</h2>
+  <h2 class="wth" id="team">Ons team</h2>
   <div class="team">{team}</div>
 </div></main>"""
     # gestructureerde gegevens: aanbod (ItemList van diensten), team (Person) en veelgestelde vragen
