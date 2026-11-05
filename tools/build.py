@@ -1331,8 +1331,8 @@ def render_search(pages, cats):
                     "digitale formulieren webformulieren uitnodigingsmail reminder leads tarieven demo dutch media lab " +
                     " ".join(t + " " + x for t, _, _, x in ABS_FORMULIEREN)})
         idx.append({"t": "MijnHuiszaken: realtime woningaanbod voor je klanten", "h": "mijnhuiszaken/index.html", "c": "MijnHuiszaken",
-                    "k": "kennisbank", "x": MHZ_INTRO + " woningaanbod NVM makelaar e-mailalerts zoekprofiel woningwaarde Wwft "
-                    "aankoopdossier verkoopdossier digitaal ondertekenen leads tarieven demo mijn huiszaken mijnhuiszaken.nl video promovideo uitleg"})
+                    "k": "kennisbank", "x": MHZ_INTRO + " woningaanbod NVM makelaar e-mailalerts zoekprofiel woningwaarde woningaanbod op eigen website "
+                    "leads tarieven demo mijn huiszaken mijnhuiszaken.nl video promovideo uitleg"})
         idx.append({"t": "Websitetools: rekentools voor op je website", "h": "websitetools/index.html", "c": "Websitetools", "k": "kennisbank",
                     "x": " ".join(g["g"] + " " + " ".join(t["t"] for t in g["tools"]) for g in wt["groepen"]) + " rekentool rekentools website hypotheekbond leads video uitleg"})
     vhf = os.path.join(SRC, "vh-site", "index.json")
@@ -3009,7 +3009,7 @@ def render_mijnhuiszaken():
   <div class="mhz-duo">
     <figure>{img("image-daarommhz.webp", "Hypotheekadviseur voor woningen met te-koopborden")}</figure>
     <div><h2 class="wth">Neem de regie in eigen hand</h2>
-      <p>Van iedereen die bij je langskomt of je website bezoekt, oriënteert meer dan de helft zich al op de woningmarkt. Help hen voortaan ook met het vinden van een woning. Zo bouw je een grotere voorsprong op ten opzichte van andere hypotheekadviseurs, en is MijnHuiszaken ideaal om je klant bij aan- en verkoop te begeleiden.</p></div>
+      <p>Van iedereen die bij je langskomt of je website bezoekt, oriënteert meer dan de helft zich al op de woningmarkt. Help hen voortaan ook met het vinden van een woning. Zo bouw je een grotere voorsprong op ten opzichte van andere hypotheekadviseurs.</p></div>
   </div>
   <div class="mhz-duo">
     <div><h2 class="wth">Ook voor bestaande klanten</h2>
@@ -3024,7 +3024,7 @@ def render_mijnhuiszaken():
   <div class="mhz-duo">
     <figure>{img("image-klantreis.webp", "Woningen met te-koopborden van NVM-makelaars")}</figure>
     <div><h2 class="wth">Alles voor je klant op één plek</h2>
-      <p>In hun eigen online omgeving vinden je klanten alles wat ze nodig hebben: het Nederlandse woningaanbod van NVM-makelaars, filters voor hun voorkeuren, e-mailalerts, een aan- en verkoopdossier met digitaal ondertekenen, handige rekentools, hypotheeknieuws en de geschatte waarde van hun eigen woning.</p>
+      <p>In hun eigen online omgeving vinden je klanten alles wat ze nodig hebben: het Nederlandse woningaanbod van NVM-makelaars, filters voor hun voorkeuren, e-mailalerts, het woningaanbod via de website van hun adviseur, handige rekentools, hypotheeknieuws en de geschatte waarde van hun eigen woning.</p>
       <p>MijnHuiszaken koppelt woningzoekers, hun hypotheekadviseur en hun aan- of verkoopmakelaar aan elkaar, zodat ze met één klik met elkaar in contact zijn.</p></div>
   </div>
   <h2 class="wth">Tarieven</h2>
