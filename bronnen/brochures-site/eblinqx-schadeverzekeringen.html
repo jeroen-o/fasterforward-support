@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Schadeverzekeringen via de hypotheekadviseur — Blinqx Verzekering &amp; Hypotheek</title>
+<link rel="stylesheet" href="ds-styles.css">
+<script src="doc-page.js"></script>
+<style>
+html,body{margin:0}
+doc-page:not(:defined){visibility:hidden}
+a{color:inherit;text-decoration:none}
+a:hover{color:#7a6300}
+</style>
+<style>
+@media print{#am-bar,#am-open{display:none !important}}
+#am-open{position:fixed;right:12px;bottom:12px;z-index:9998;background:#1d2733;color:#ffcd00;border:0;padding:12px 16px;font:800 12px/1 Archivo,Helvetica,Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;display:none}
+@media (max-width:860px){
+  #am-bar{display:none !important;flex-direction:column;align-items:stretch;gap:8px;max-height:78vh;overflow:auto}
+  #am-bar.am-show{display:flex !important}
+  #am-bar label{min-width:0 !important}
+  #am-bar input{min-width:0 !important;width:100%;box-sizing:border-box;font-size:16px !important}
+  #am-open{display:block}
+}
+</style>
+<script>
+(function(){
+  var KEY='blinqx-accountmanager';
+  var DEFAULTS={name:'Jeroen Oversteegen',role:'Non Executive Director Business Partners',email:'jeroen.oversteegen@blinqx.tech',mobile:'+31 6 21 247 257',phone:'020 - 758 21 11',street:'Hullenbergweg 109',city:'1101 CL  Amsterdam'};
+  var FIELDS=[['name','Naam'],['role','Functie'],['email','E-mailadres'],['mobile','Mobiel'],['phone','Vast nummer'],['street','Adres'],['city','Postcode en plaats']];
+  function tel(s){var d=String(s||'').replace(/[^+0-9]/g,''); if(d.charAt(0)==='0') d='+31'+d.slice(1); return d;}
+  function read(){try{return JSON.parse(localStorage.getItem(KEY)||'{}')||{};}catch(e){return {};}}
+  function apply(d){
+    var mail=(d.email||'').trim()||DEFAULTS.email;
+    document.querySelectorAll('[data-am="mailto"]').forEach(function(el){
+      var q=(el.getAttribute('href')||'').split('?')[1];
+      el.setAttribute('href','mailto:'+mail+(q?'?'+q:''));
+    });
+    FIELDS.forEach(function(f){
+      var k=f[0], v=(d[k]||'').trim();
+      document.querySelectorAll('[data-am="'+k+'"]').forEach(function(el){
+        if(!el.dataset.amDefault) el.dataset.amDefault=el.textContent;
+        el.textContent=v||el.dataset.amDefault;
+        if(k==='email') el.setAttribute('href','mailto:'+(v||el.dataset.amDefault));
+
+        if(k==='mobile'||k==='phone') el.setAttribute('href','tel:'+tel(v||el.dataset.amDefault));
+      });
+    });
+  }
+  function panel(){
+    var d=read(); FIELDS.forEach(function(f){ if(!d[f[0]]) d[f[0]]=DEFAULTS[f[0]]; });
+    var bar=document.createElement('div');
+    bar.id='am-bar';
+    bar.setAttribute('data-om-no-print','');
+    bar.style.cssText='position:fixed;left:0;right:0;bottom:0;z-index:9999;background:#1d2733;color:#fff;font:13px/1.4 Archivo,Helvetica,Arial,sans-serif;padding:10px 14px;display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;box-shadow:0 -2px 14px rgba(0,0,0,.28)';
+    var html='<div style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:#ffcd00;align-self:center;margin-right:4px">Namens Blinqx V &amp; H</div>';
+    FIELDS.forEach(function(f){
+      html+='<label style="display:flex;flex-direction:column;gap:3px;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:#9fb0c2">'+f[1]+
+      '<input data-f="'+f[0]+'" value="'+String(d[f[0]]||'').replace(/"/g,'&quot;')+'" style="font:13px/1.3 Archivo,Helvetica,Arial,sans-serif;padding:7px 9px;border:0;min-width:'+(f[0]==='role'?'230px':'150px')+';background:#fff;color:#1d2733"></label>';
+    });
+    html+='<button data-a="save" style="font:800 12px/1 Archivo,Helvetica,Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:11px 16px;border:0;background:#ffcd00;color:#1d2733;cursor:pointer">Opslaan</button>'+
+    '<button data-a="reset" style="font:800 12px/1 Archivo,Helvetica,Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:11px 16px;border:2px solid #ffcd00;background:transparent;color:#ffcd00;cursor:pointer">Standaard</button>'+
+    '<button data-a="hide" title="Verbergen" style="font:800 12px/1 Archivo,Helvetica,Arial,sans-serif;padding:11px 14px;border:0;background:#2c3947;color:#fff;cursor:pointer">Verberg</button>';
+    bar.innerHTML=html;
+    bar.addEventListener('click',function(e){
+      var a=e.target.getAttribute&&e.target.getAttribute('data-a');
+      if(!a) return;
+      if(a==='save'){
+        var o={};
+        bar.querySelectorAll('input[data-f]').forEach(function(i){o[i.getAttribute('data-f')]=i.value;});
+        try{localStorage.setItem(KEY,JSON.stringify(o));}catch(err){}
+        apply(o);
+      } else if(a==='reset'){
+        try{localStorage.setItem(KEY,'{}');}catch(err){}
+        bar.querySelectorAll('input[data-f]').forEach(function(i){i.value=DEFAULTS[i.getAttribute('data-f')]||'';});
+        apply({});
+      } else if(a==='hide'){ bar.classList.remove('am-show'); bar.style.display='none'; var ob=document.getElementById('am-open'); if(ob) ob.textContent='Namens Blinqx V & H'; }
+    });
+    document.body.appendChild(bar);
+    var open=document.createElement('button');
+    open.id='am-open'; open.type='button'; open.textContent='Namens Blinqx V & H';
+    open.addEventListener('click',function(){
+      var showing=bar.classList.toggle('am-show');
+      bar.style.display='';
+      open.textContent=showing?'Sluiten':'Namens Blinqx V & H';
+    });
+    document.body.appendChild(open);
+  }
+  function init(){ apply(read()); if(!document.getElementById('am-bar')) panel(); }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',function(){setTimeout(init,300);});
+  else setTimeout(init,300);
+  window.addEventListener('storage',function(e){ if(e.key===KEY) apply(read()); });
+})();
+</script>
+</head>
+<body>
+<doc-page size="a4">
+
+
+
+<section class="page" data-screen-label="01 Cover" style="background:#fff;color:#1d2733;font-family:var(--font-body);display:flex;flex-direction:column;box-sizing:border-box">
+  <div style="background:#ffcd00;padding:50px 54px 44px">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start">
+      <img src="assets/blinqx-vh-logo.png" alt="Blinqx Verzekering &amp; Hypotheek" style="width:230px;height:auto;display:block">
+      <div style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;font-weight:800;text-align:right;line-height:1.7">Themabrochure<br>Editie 2026</div>
+    </div>
+    <div style="font-size:11px;letter-spacing:0.18em;text-transform:uppercase;font-weight:800;margin-top:40px">Schadeverzekeringen via de hypotheekadviseur</div>
+    <h1 style="font-family:var(--font-heading);font-size:54px;line-height:0.98;letter-spacing:-0.035em;font-weight:800;margin:12px 0 0;max-width:17ch;text-wrap:balance">Elke hypotheek is een verzekeringsgesprek.</h1>
+    <p style="font-size:16px;line-height:1.5;max-width:56ch;margin:20px 0 0;font-weight:500">Het hypotheektraject is hét natuurlijke moment om schadeverzekeringen te adviseren en te sluiten. Blinqx helpt je op te starten: een vaste workflow, premievergelijking in je eigen omgeving, en desgewenst een partner die de service overneemt.</p>
+  </div>
+  <div style="flex:1;display:flex;align-items:center;justify-content:center;padding:24px 54px;overflow:hidden">
+    <img src="assets/mytp-vergelijken.png" alt="Volledig vergelijken: dekking en premie per maatschappij naast elkaar" style="max-width:100%;max-height:100%;height:auto;display:block;border:1px solid #dfe3e9">
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#1d2733">
+    <div style="background:#1d2733;color:#fff;padding:20px"><div style="font-family:var(--font-heading);font-size:26px;font-weight:800;line-height:1;color:#ffcd00">Ja-moment</div><div style="font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;margin-top:6px">verzekeren op het rente- of bindend aanbod</div></div>
+    <div style="background:#1d2733;color:#fff;padding:20px"><div style="font-family:var(--font-heading);font-size:26px;font-weight:800;line-height:1;color:#ffcd00">Vóór passeren</div><div style="font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;margin-top:6px">vaste workflow, opstal verplicht benoemd</div></div>
+    <div style="background:#1d2733;color:#fff;padding:20px"><div style="font-family:var(--font-heading);font-size:26px;font-weight:800;line-height:1;color:#ffcd00">Portefeuille</div><div style="font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;margin-top:6px">schadeportefeuille groeit mee met je advies</div></div>
+  </div>
+</section>
+
+<section class="page" data-screen-label="02 Waarom" style="background:#fff;color:#1d2733;font-family:var(--font-body);padding:50px 54px 44px;display:flex;flex-direction:column;box-sizing:border-box">
+  <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #1d2733;padding-bottom:12px"><span style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:800">Waarom nu</span><span style="width:34px;height:38px;background:#ffcd00;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px">02</span></div>
+  <h2 style="font-family:var(--font-heading);font-size:38px;line-height:1.02;letter-spacing:-0.025em;font-weight:800;margin:26px 0 0;max-width:24ch">De klant zit al aan tafel. Het gesprek ligt er al.</h2>
+  <p style="font-size:14.5px;line-height:1.55;max-width:68ch;margin:14px 0 0">Bij elke hypotheek hoort een woning die verzekerd moet worden — de opstalverzekering is zelfs een voorwaarde van de geldverstrekker. Toch verdwijnt dat gesprek vaak in de drukte van het passeren, en sluit de klant zijn verzekeringen ergens anders. Zonde: het vertrouwen is er, de gegevens zijn er, en het moment is er.</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#dfe3e9;margin-top:22px;flex:1">
+    <div style="background:#f5f6f8;padding:15px 18px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">Het natuurlijke ja-moment</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Op het rente- of bindend aanbod koppel je verzekeringen aan ontzorging: “wij kijken kosteloos naar je totale verzekeringspakket — met jouw toestemming.”</p></div>
+    <div style="background:#f5f6f8;padding:15px 18px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">Verplicht benoemen vóór passeren</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">In de workflow worden de schadeverzekeringen vóór het passeren benoemd. De opstalverzekering benoemt de adviseur verplicht — zo mist geen enkel dossier dit gesprek.</p></div>
+    <div style="background:#f5f6f8;padding:15px 18px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">Gegevens zijn er al</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Woning, waarde, inboedelsituatie en gezinssamenstelling zitten al in het hypotheekdossier. Eén uitvraag extra — de huidige polisbladen — en je kunt vergelijken.</p></div>
+    <div style="background:#f5f6f8;padding:15px 18px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">Doorlopende inkomsten</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Elke gesloten polis bouwt aan een schadeportefeuille met doorlopende provisie — en aan een klant die vaker contact heeft met jouw kantoor.</p></div>
+    <div style="background:#f5f6f8;padding:15px 18px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">Retentie</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Wie hypotheek én verzekeringen bij jou heeft, stapt niet zomaar over. Elk contactmoment over een polis is een contactmoment onder jouw naam.</p></div>
+    <div style="background:#f5f6f8;padding:15px 18px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">Zonder extra werklast</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Vergelijken, sluiten en service hoeven niet op jouw bord: de software doet het rekenwerk en een uitbestedingspartner kan de rest doen.</p></div>
+  </div>
+  <div style="background:#ffcd00;padding:20px 26px;margin-top:20px"><p style="font-family:var(--font-heading);font-size:19px;line-height:1.25;font-weight:800;margin:0;max-width:56ch">Meer verzekeringen verkopen begint niet met harder verkopen — maar met het moment dat er al is.</p></div>
+</section>
+
+<section class="page" data-screen-label="03 De workflow" style="background:#fff;color:#1d2733;font-family:var(--font-body);padding:50px 54px 44px;display:flex;flex-direction:column;box-sizing:border-box">
+  <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #1d2733;padding-bottom:12px"><span style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:800">De workflow in eBlinqx</span><span style="width:34px;height:38px;background:#ffcd00;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px">03</span></div>
+  <h2 style="font-family:var(--font-heading);font-size:38px;line-height:1.02;letter-spacing:-0.025em;font-weight:800;margin:26px 0 0;max-width:24ch">Eén vaste route, in elk hypotheekdossier.</h2>
+  <p style="font-size:14.5px;line-height:1.55;max-width:68ch;margin:14px 0 0">De speciale workflow legt het verzekeringsgesprek vast als stap in je hypotheektraject. Geen losse notities of geheugenwerk: het dossier dwingt de route af en legt vast wat er is besproken.</p>
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:#dfe3e9;margin-top:22px;flex:1">
+    <div style="background:#f5f6f8;padding:18px 16px"><div style="width:36px;height:40px;background:#ffcd00;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:16px;font-weight:800">01</div><div style="font-size:13px;line-height:1.45;margin-top:10px"><b>Documentuitvraag.</b> “Huidige polisbladen schadeverzekeringen” staat standaard in de documentenchecklist van het klantportaal — de klant uploadt veilig, zonder losse mailtjes.</div></div>
+    <div style="background:#f5f6f8;padding:18px 16px"><div style="width:36px;height:40px;background:#ffcd00;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:16px;font-weight:800">02</div><div style="font-size:13px;line-height:1.45;margin-top:10px"><b>Trigger op het ja-moment.</b> Bij ‘Advies uitgebracht / Renteaanbod’ verschijnt automatisch de taak: “Toestemming vergelijking gegeven? (Ja/Nee)”. Toestemming eerst — pas dan komt de lead in beweging.</div></div>
+    <div style="background:#f5f6f8;padding:18px 16px"><div style="width:36px;height:40px;background:#ffcd00;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:16px;font-weight:800">03</div><div style="font-size:13px;line-height:1.45;margin-top:10px"><b>Benoemen vóór passeren.</b> Vóór het passeren worden de schadeverzekeringen in het dossier benoemd. De opstalverzekering is daarbij een verplichte stap voor de adviseur.</div></div>
+    <div style="background:#f5f6f8;padding:18px 16px"><div style="width:36px;height:40px;background:#ffcd00;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:16px;font-weight:800">04</div><div style="font-size:13px;line-height:1.45;margin-top:10px"><b>Vergelijken en sluiten.</b> Met Premievergelijk bereken je premies over de hele markt en sluit je direct — aan tafel, of de klant doet het zelf online onder jouw vlag.</div></div>
+    <div style="background:#f5f6f8;padding:18px 16px"><div style="width:36px;height:40px;background:#ffcd00;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:16px;font-weight:800">05</div><div style="font-size:13px;line-height:1.45;margin-top:10px"><b>Portefeuille in eBlinqx.</b> Polissen, provisie en prolongatie landen in dezelfde administratie als het hypotheekdossier — één klantbeeld.</div></div>
+    <div style="background:#f5f6f8;padding:18px 16px"><div style="width:36px;height:40px;background:#ffcd00;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:16px;font-weight:800">06</div><div style="font-size:13px;line-height:1.45;margin-top:10px"><b>Nazorg loopt door.</b> eBlinqx Signalen en het klantportaal houden de portefeuille actueel; elk signaal is een nieuw contactmoment.</div></div>
+  </div>
+  <div style="background:#ffcd00;padding:20px 26px;margin-top:20px"><p style="font-family:var(--font-heading);font-size:19px;line-height:1.25;font-weight:800;margin:0;max-width:56ch">De opstalverzekering wordt in elk dossier benoemd — de workflow bewaakt het, de adviseur voert het gesprek.</p></div>
+</section>
+
+<section class="page" data-screen-label="04 Premievergelijk" style="background:#fff;color:#1d2733;font-family:var(--font-body);padding:50px 54px 44px;display:flex;flex-direction:column;box-sizing:border-box">
+  <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #1d2733;padding-bottom:12px"><span style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:800">Vergelijken en sluiten</span><span style="width:34px;height:38px;background:#ffcd00;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px">04</span></div>
+  <h2 style="font-family:var(--font-heading);font-size:38px;line-height:1.02;letter-spacing:-0.025em;font-weight:800;margin:26px 0 0;max-width:24ch">Premie berekenen en direct afsluiten.</h2>
+  <p style="font-size:14.5px;line-height:1.55;max-width:68ch;margin:14px 0 0">Met Premievergelijk vergelijk je alle gangbare schadeverzekeringen — auto, woonhuis (opstal), inboedel, aansprakelijkheid, rechtsbijstand, reis en meer — en sluit je direct af. In het pakket zie je meteen de totaalpremie en de pakketkorting.</p>
+  <img src="assets/mytp-huidige-situatie.png" alt="Huidige situatie van de verzekeringnemer: bestaande polissen als vertrekpunt voor de vergelijking" style="width:100%;height:auto;display:block;border:1px solid #dfe3e9;margin-top:18px">
+  <div style="font-size:10.5px;line-height:1.4;margin-top:6px;color:#5a6675">De huidige situatie van de klant — bestaande maatschappijen, dekkingen en premies — wordt geïmporteerd en meegenomen als vertrekpunt van de vergelijking.</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#dfe3e9;margin-top:18px;flex:1">
+    <div style="background:#f5f6f8;padding:15px 18px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">Aan tafel of online</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Jij rekent mee tijdens het gesprek, of de klant vergelijkt en sluit zelf online — in jouw huisstijl, op jouw site.</p></div>
+    <div style="background:#f5f6f8;padding:15px 18px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">Pakket in één keer</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Losse polissen bundel je tot één pakket met één incasso; oude polissen worden opgezegd.</p></div>
+    <div style="background:#f5f6f8;padding:15px 18px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">Gekoppeld aan het dossier</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Gesloten polissen landen automatisch in eBlinqx — geen overtypen, geen losse administratie.</p></div>
+    <div style="background:#f5f6f8;padding:15px 18px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">Ook voor bestaande klanten</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Dezelfde vergelijking gebruik je bij prolongatie en actief klantbeheer: elk jaar een reden voor contact.</p></div>
+  </div>
+</section>
+
+<section class="page" data-screen-label="05 Uitbesteden" style="background:#fff;color:#1d2733;font-family:var(--font-body);padding:50px 54px 44px;display:flex;flex-direction:column;box-sizing:border-box">
+  <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #1d2733;padding-bottom:12px"><span style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:800">Geen eigen binnendienst? Besteed uit</span><span style="width:34px;height:38px;background:#ffcd00;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px">05</span></div>
+  <h2 style="font-family:var(--font-heading);font-size:38px;line-height:1.02;letter-spacing:-0.025em;font-weight:800;margin:26px 0 0;max-width:24ch">Jij informeert of adviseert. De rest kun je uit handen geven.</h2>
+  <p style="font-size:14.5px;line-height:1.55;max-width:68ch;margin:14px 0 0">Bang voor de servicelast van een schadeportefeuille? Niet zelf willen afsluiten? Via eBlinqx backoffice &amp; uitbesteden en de Wft-uitbestedingspartner M+ wordt je binnendienst geregeld — herkenbaar onder jouw naam, vastgelegd in jouw eigen eBlinqx-omgeving. Via de verzekeraar die jij wil.</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#dfe3e9;margin-top:22px;flex:1">
+    <div style="background:#f5f6f8;padding:15px 18px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">Telefoon onder jouw nummer</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Keuzemenu: toets 1 hypotheken, toets 2 verzekeringen en schademeldingen — binnen ± 20 seconden bij de servicedesk.</p></div>
+    <div style="background:#f5f6f8;padding:15px 18px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">E-mail volgens SLA</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">De klant mailt jouw mailbox; de afhandeling volgt de afgesproken SLA en wordt gerapporteerd op tijd, aantal, kanaal en reden.</p></div>
+    <div style="background:#f5f6f8;padding:15px 18px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">Sluiten en oversluiten</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Nieuwe verzekeringen afsluiten, bestaande polissen oversluiten en bundelen tot één pakket — inclusief opzeggen van de oude polissen.</p></div>
+    <div style="background:#f5f6f8;padding:15px 18px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">Schadeafhandeling</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Van registratie van de melding tot afronding van het claimproces — de klant merkt alleen dat het geregeld wordt.</p></div>
+    <div style="background:#f5f6f8;padding:15px 18px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">Actief klantbeheer</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Periodiek onderhoud op de portefeuille, zodat dekking en premie blijven passen bij de situatie van de klant.</p></div>
+    <div style="background:#f5f6f8;padding:15px 18px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">Alles in jouw CRM</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Elke vraag, polis en schademelding wordt vastgelegd in jouw eigen eBlinqx-omgeving — de portefeuille blijft van jou.</p></div>
+  </div>
+  <div style="border-top:2px solid #ffcd00;margin-top:20px;padding-top:12px;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;font-weight:800">Wft-gediplomeerd en flexibel</div>
+  <p style="font-size:12.5px;line-height:1.55;max-width:72ch;margin:8px 0 0">Je bepaalt zelf welke taken je uitbesteedt en wanneer. De medewerkers zijn Wft-gediplomeerd en kennen eBlinqx door en door — de overdracht sluit naadloos aan op jouw manier van werken.</p>
+</section>
+
+<section class="page" data-screen-label="06 Kennismaken" style="background:#1d2733;color:#fff;font-family:var(--font-body);padding:50px 54px 44px;display:flex;flex-direction:column;box-sizing:border-box">
+  <div style="border-bottom:2px solid #ffcd00;padding-bottom:12px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:800">Kennismaken</span><span style="width:34px;height:38px;background:#ffcd00;color:#1d2733;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px">06</span></div>
+  <h2 style="font-family:var(--font-heading);font-size:56px;line-height:0.98;letter-spacing:-0.03em;font-weight:800;margin:30px 0 0;max-width:16ch;color:#ffcd00">Start met je schadeportefeuille.</h2>
+  <p style="font-size:15px;line-height:1.5;max-width:48ch;margin:16px 0 0">We richten de workflow, de documentuitvraag en Premievergelijk samen met je in — en verbinden je desgewenst met de uitbestedingspartner.</p>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.2);margin-top:22px">
+    <div style="background:#1d2733;padding:18px 16px 20px"><div style="width:36px;height:40px;background:#ffcd00;color:#1d2733;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:16px;font-weight:800">01</div><div style="font-size:13.5px;line-height:1.45;margin-top:10px">Intake: je huidige traject en waar het verzekeringsgesprek nu blijft liggen</div></div>
+    <div style="background:#1d2733;padding:18px 16px 20px"><div style="width:36px;height:40px;background:#ffcd00;color:#1d2733;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:16px;font-weight:800">02</div><div style="font-size:13.5px;line-height:1.45;margin-top:10px">Inrichting van de workflow, de checklist en Premievergelijk in jouw omgeving</div></div>
+    <div style="background:#1d2733;padding:18px 16px 20px"><div style="width:36px;height:40px;background:#ffcd00;color:#1d2733;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:16px;font-weight:800">03</div><div style="font-size:13.5px;line-height:1.45;margin-top:10px">Live: eerste dossiers door de workflow, met training via de Blinqx Academy</div></div>
+  </div>
+  <a href="mailto:jeroen.oversteegen@blinqx.tech?subject=Schadeverzekeringen%20via%20de%20hypotheekadviseur" data-am="mailto" style="background:#ffcd00;color:#1d2733;display:inline-block;padding:13px 22px;margin-top:18px;align-self:flex-start;font-family:var(--font-heading);font-size:14px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none">Mail ons</a>
+  <div style="margin-top:auto;border-top:2px solid #ffcd00;padding-top:20px;display:flex;justify-content:space-between;align-items:flex-end;gap:30px">
+    <div>
+      <div style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;font-weight:800;color:#ffcd00">Contact</div>
+      <div style="font-family:var(--font-heading);font-size:21px;font-weight:800;line-height:1.3;margin-top:8px" data-am="name">Jeroen Oversteegen</div>
+      <div style="font-size:12.5px;font-weight:700;line-height:1.35" data-am="role">Non Executive Director Business Partners</div>
+      <div style="font-family:var(--font-heading);font-size:21px;font-weight:800;line-height:1.3;margin-top:8px">T: <a href="tel:+31207582111" style="color:inherit;text-decoration:none" data-am="phone">020 - 758 21 11</a></div>
+      <div style="font-family:var(--font-heading);font-size:21px;font-weight:800;line-height:1.3">M: <a href="tel:+31621247257" style="color:inherit;text-decoration:none" data-am="mobile">+31 6 21 247 257</a></div>
+      <div style="font-family:var(--font-heading);font-size:21px;font-weight:800;line-height:1.3">E: <a href="mailto:jeroen.oversteegen@blinqx.tech" style="color:inherit;text-decoration:none" data-am="email">jeroen.oversteegen@blinqx.tech</a></div>
+      <div style="font-family:var(--font-heading);font-size:22px;font-weight:800;line-height:1.3"><a href="https://verzekeringhypotheek.blinqx.tech" style="color:inherit;text-decoration:none">verzekeringhypotheek.blinqx.tech</a></div>
+      <div style="font-size:12.5px;line-height:1.5;margin-top:10px">Blinqx Verzekering &amp; Hypotheek<br><span data-am="street">Hullenbergweg 109</span>, <span data-am="city">1101 CL  Amsterdam</span></div>
+    </div>
+    <div style="background:#ffcd00;padding:14px 16px"><img src="assets/blinqx-vh-logo.png" alt="Blinqx Verzekering &amp; Hypotheek" style="width:180px;height:auto;display:block"></div>
+  </div>
+</section>
+
+</doc-page>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MijnHuiszaken — Blinqx Verzekering &amp; Hypotheek</title>
+<link rel="stylesheet" href="ds-styles.css">
+<script src="doc-page.js"></script>
+<style>
+html,body{margin:0}
+doc-page:not(:defined){visibility:hidden}
+a{color:inherit;text-decoration:none}
+a:hover{color:#7a6300}
+</style>
+<style>
+@media print{#am-bar,#am-open{display:none !important}}
+#am-open{position:fixed;right:12px;bottom:12px;z-index:9998;background:#1d2733;color:#ffcd00;border:0;padding:12px 16px;font:800 12px/1 Archivo,Helvetica,Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;display:none}
+@media (max-width:860px){
+  #am-bar{display:none !important;flex-direction:column;align-items:stretch;gap:8px;max-height:78vh;overflow:auto}
+  #am-bar.am-show{display:flex !important}
+  #am-bar label{min-width:0 !important}
+  #am-bar input{min-width:0 !important;width:100%;box-sizing:border-box;font-size:16px !important}
+  #am-open{display:block}
+}
+</style>
+<script>
+(function(){
+  var KEY='blinqx-accountmanager';
+  var DEFAULTS={name:'Jeroen Oversteegen',role:'Non Executive Director Business Partners',email:'jeroen.oversteegen@blinqx.tech',mobile:'+31 6 21 247 257',phone:'020 - 758 21 11',street:'Hullenbergweg 109',city:'1101 CL  Amsterdam'};
+  var FIELDS=[['name','Naam'],['role','Functie'],['email','E-mailadres'],['mobile','Mobiel'],['phone','Vast nummer'],['street','Adres'],['city','Postcode en plaats']];
+  function tel(s){var d=String(s||'').replace(/[^+0-9]/g,''); if(d.charAt(0)==='0') d='+31'+d.slice(1); return d;}
+  function read(){try{return JSON.parse(localStorage.getItem(KEY)||'{}')||{};}catch(e){return {};}}
+  function apply(d){
+    var mail=(d.email||'').trim()||DEFAULTS.email;
+    document.querySelectorAll('[data-am="mailto"]').forEach(function(el){
+      var q=(el.getAttribute('href')||'').split('?')[1];
+      el.setAttribute('href','mailto:'+mail+(q?'?'+q:''));
+    });
+    FIELDS.forEach(function(f){
+      var k=f[0], v=(d[k]||'').trim();
+      document.querySelectorAll('[data-am="'+k+'"]').forEach(function(el){
+        if(!el.dataset.amDefault) el.dataset.amDefault=el.textContent;
+        el.textContent=v||el.dataset.amDefault;
+        if(k==='email') el.setAttribute('href','mailto:'+(v||el.dataset.amDefault));
+
+        if(k==='mobile'||k==='phone') el.setAttribute('href','tel:'+tel(v||el.dataset.amDefault));
+      });
+    });
+  }
+  function panel(){
+    var d=read(); FIELDS.forEach(function(f){ if(!d[f[0]]) d[f[0]]=DEFAULTS[f[0]]; });
+    var bar=document.createElement('div');
+    bar.id='am-bar';
+    bar.setAttribute('data-om-no-print','');
+    bar.style.cssText='position:fixed;left:0;right:0;bottom:0;z-index:9999;background:#1d2733;color:#fff;font:13px/1.4 Archivo,Helvetica,Arial,sans-serif;padding:10px 14px;display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;box-shadow:0 -2px 14px rgba(0,0,0,.28)';
+    var html='<div style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:#ffcd00;align-self:center;margin-right:4px">Namens Blinqx V &amp; H</div>';
+    FIELDS.forEach(function(f){
+      html+='<label style="display:flex;flex-direction:column;gap:3px;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:#9fb0c2">'+f[1]+
+      '<input data-f="'+f[0]+'" value="'+String(d[f[0]]||'').replace(/"/g,'&quot;')+'" style="font:13px/1.3 Archivo,Helvetica,Arial,sans-serif;padding:7px 9px;border:0;min-width:'+(f[0]==='role'?'230px':'150px')+';background:#fff;color:#1d2733"></label>';
+    });
+    html+='<button data-a="save" style="font:800 12px/1 Archivo,Helvetica,Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:11px 16px;border:0;background:#ffcd00;color:#1d2733;cursor:pointer">Opslaan</button>'+
+    '<button data-a="reset" style="font:800 12px/1 Archivo,Helvetica,Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:11px 16px;border:2px solid #ffcd00;background:transparent;color:#ffcd00;cursor:pointer">Standaard</button>'+
+    '<button data-a="hide" title="Verbergen" style="font:800 12px/1 Archivo,Helvetica,Arial,sans-serif;padding:11px 14px;border:0;background:#2c3947;color:#fff;cursor:pointer">Verberg</button>';
+    bar.innerHTML=html;
+    bar.addEventListener('click',function(e){
+      var a=e.target.getAttribute&&e.target.getAttribute('data-a');
+      if(!a) return;
+      if(a==='save'){
+        var o={};
+        bar.querySelectorAll('input[data-f]').forEach(function(i){o[i.getAttribute('data-f')]=i.value;});
+        try{localStorage.setItem(KEY,JSON.stringify(o));}catch(err){}
+        apply(o);
+      } else if(a==='reset'){
+        try{localStorage.setItem(KEY,'{}');}catch(err){}
+        bar.querySelectorAll('input[data-f]').forEach(function(i){i.value=DEFAULTS[i.getAttribute('data-f')]||'';});
+        apply({});
+      } else if(a==='hide'){ bar.classList.remove('am-show'); bar.style.display='none'; var ob=document.getElementById('am-open'); if(ob) ob.textContent='Namens Blinqx V & H'; }
+    });
+    document.body.appendChild(bar);
+    var open=document.createElement('button');
+    open.id='am-open'; open.type='button'; open.textContent='Namens Blinqx V & H';
+    open.addEventListener('click',function(){
+      var showing=bar.classList.toggle('am-show');
+      bar.style.display='';
+      open.textContent=showing?'Sluiten':'Namens Blinqx V & H';
+    });
+    document.body.appendChild(open);
+  }
+  function init(){ apply(read()); if(!document.getElementById('am-bar')) panel(); }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',function(){setTimeout(init,300);});
+  else setTimeout(init,300);
+  window.addEventListener('storage',function(e){ if(e.key===KEY) apply(read()); });
+})();
+</script>
+</head>
+<body>
+<doc-page size="a4">
+
+
+
+<section class="page" data-screen-label="01 Cover" style="background:#fff;color:#1d2733;font-family:var(--font-body);display:flex;flex-direction:column;box-sizing:border-box">
+  <div style="background:#ffcd00;padding:50px 54px 44px">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start">
+      <img src="assets/blinqx-vh-logo.png" alt="Blinqx Verzekering &amp; Hypotheek" style="width:230px;height:auto;display:block">
+      <div style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;font-weight:800;text-align:right;line-height:1.7">Partnerbrochure<br>Editie 2026</div>
+    </div>
+    <div style="font-size:11px;letter-spacing:0.18em;text-transform:uppercase;font-weight:800;margin-top:40px">MijnHuiszaken</div>
+    <h1 style="font-family:var(--font-heading);font-size:56px;line-height:0.98;letter-spacing:-0.035em;font-weight:800;margin:12px 0 0;max-width:16ch;text-wrap:balance">Houd je klant bij je — van eerste zoektocht tot sleutel.</h1>
+    <p style="font-size:16px;line-height:1.5;max-width:54ch;margin:20px 0 0;font-weight:500">MijnHuiszaken is de online klantomgeving die woningzoekers, hun hypotheekadviseur en makelaar aan elkaar koppelt. Jouw klant ontvangt namens jou het realtime woningaanbod — en blijft dus bij jou, niet bij een ander.</p>
+  </div>
+  <div style="flex:1;display:flex;align-items:center;justify-content:center;padding:22px 54px;overflow:hidden">
+    <img src="assets/mhz-welkom.png" alt="MijnHuiszaken klantomgeving" style="max-width:82%;max-height:100%;height:auto;display:block;border:1px solid #dfe3e9">
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#1d2733">
+    <div style="background:#1d2733;color:#fff;padding:20px"><div style="font-family:var(--font-heading);font-size:26px;font-weight:800;line-height:1;color:#ffcd00">Realtime</div><div style="font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;margin-top:6px">NVM-woningaanbod, vaak vóór Funda</div></div>
+    <div style="background:#1d2733;color:#fff;padding:20px"><div style="font-family:var(--font-heading);font-size:26px;font-weight:800;line-height:1;color:#ffcd00">Jouw merk</div><div style="font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;margin-top:6px">in elke e-mailalert en elk scherm</div></div>
+    <div style="background:#1d2733;color:#fff;padding:20px"><div style="font-family:var(--font-heading);font-size:26px;font-weight:800;line-height:1;color:#ffcd00">1 klik</div><div style="font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;margin-top:6px">van zoekprofiel naar hypotheekafspraak</div></div>
+  </div>
+</section>
+
+<section class="page" data-screen-label="02 Waarom" style="background:#fff;color:#1d2733;font-family:var(--font-body);padding:50px 54px 44px;display:flex;flex-direction:column;box-sizing:border-box">
+  <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #1d2733;padding-bottom:12px"><span style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:800">Waarom MijnHuiszaken</span><span style="width:34px;height:38px;background:#ffcd00;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px">02</span></div>
+  <h2 style="font-family:var(--font-heading);font-size:38px;line-height:1.02;letter-spacing:-0.025em;font-weight:800;margin:26px 0 0;max-width:24ch">Grip op de klantreis begint vóór de hypotheekvraag.</h2>
+  <p style="font-size:14.5px;line-height:1.55;max-width:68ch;margin:14px 0 0">Meer dan de helft van je websitebezoekers en gesprekspartners oriënteert zich al op de woningmarkt — maanden voordat er een hypotheekvraag ligt. Die oriëntatiefase gaat nu naar Funda en grote platforms; precies daar raak je klanten kwijt aan banken, online partijen en andere adviseurs. Met MijnHuiszaken haal je die fase naar jouw kantoor.</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#dfe3e9;margin-top:22px;flex:1">
+    <div style="background:#f5f6f8;padding:15px 18px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">Je vangt de klant vóór het koopmoment</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Wie de zoekomgeving levert, zit vooraan als het concreet wordt. De klant zoekt onder jouw vlag, niet bij een platform dat hem doorverkoopt.</p></div>
+    <div style="background:#f5f6f8;padding:15px 18px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">Jouw merk in élk contactmoment</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Jouw logo en contactgegevens in de omgeving én in elke e-mailalert. Een zoektraject telt tientallen alerts — tientallen gratis contactmomenten waar een concurrent niet binnenkomt.</p></div>
+    <div style="background:#f5f6f8;padding:15px 18px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">Namens adviseur én makelaar</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">De klant ontvangt het realtime woningaanbod namens zijn hypotheekadviseur en zijn makelaar samen. Beide staan met naam en contact in zijn dossier.</p></div>
+    <div style="background:#f5f6f8;padding:15px 18px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">Je ziet wie in beweging komt</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Zoekgedrag is je vroegste leadsignaal. Een bestaande klant die opeens groter zoekt? Advieskans op verhuizing en overbrugging — vóórdat hij zelf belt, en vóórdat een ander hem belt.</p></div>
+    <div style="background:#f5f6f8;padding:15px 18px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">Ook je portefeuille wordt leadbron</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Bestaande klanten zien de geschatte waarde van hun woning en hoeveel zoekers erop azen. Willen ze verhuizen, dan weet jij dat als eerste.</p></div>
+    <div style="background:#f5f6f8;padding:15px 18px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">Advies is één klik verwijderd</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Wordt het concreet, dan komt contact met één klik tot stand — de hypotheekafspraak staat voordat de klant aan een ander denkt.</p></div>
+  </div>
+  <div style="background:#ffcd00;padding:20px 26px;margin-top:20px"><p style="font-family:var(--font-heading);font-size:19px;line-height:1.25;font-weight:800;margin:0;max-width:56ch">Elke klant die via jouw omgeving zoekt, is een klant die niet bij de concurrent, de bank of een online partij uitkomt.</p></div>
+</section>
+
+<section class="page" data-screen-label="03 Voor je klant" style="background:#fff;color:#1d2733;font-family:var(--font-body);padding:50px 54px 44px;display:flex;flex-direction:column;box-sizing:border-box">
+  <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #1d2733;padding-bottom:12px"><span style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:800">Voor je klant</span><span style="width:34px;height:38px;background:#ffcd00;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px">03</span></div>
+  <h2 style="font-family:var(--font-heading);font-size:38px;line-height:1.02;letter-spacing:-0.025em;font-weight:800;margin:26px 0 0;max-width:22ch">Alles voor de woningzoeker, onder jouw vlag.</h2>
+  <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:22px;margin-top:20px;flex:1;min-height:0">
+    <div style="display:flex;flex-direction:column;gap:0">
+      <div style="display:grid;grid-template-columns:150px 1fr;gap:12px;align-items:baseline;border-bottom:1px solid #dfe3e9;padding:8px 0;font-size:12.5px;line-height:1.4"><span style="font-weight:800">Realtime NVM-aanbod</span><span>Geverifieerde zoekopdracht via de samenwerking met een NVM-makelaar, vaak vóór de woningen op Funda staan</span></div>
+      <div style="display:grid;grid-template-columns:150px 1fr;gap:12px;align-items:baseline;border-bottom:1px solid #dfe3e9;padding:8px 0;font-size:12.5px;line-height:1.4"><span style="font-weight:800">Zoekprofielen</span><span>Plaats, prijs en voorkeuren; de klant kiest zelf de frequentie van alerts — realtime, dagelijks of wekelijks</span></div>
+      <div style="display:grid;grid-template-columns:150px 1fr;gap:12px;align-items:baseline;border-bottom:1px solid #dfe3e9;padding:8px 0;font-size:12.5px;line-height:1.4"><span style="font-weight:800">E-mailalerts</span><span>Nieuw en passend aanbod, in de huisstijl van adviseur en makelaar</span></div>
+      <div style="display:grid;grid-template-columns:150px 1fr;gap:12px;align-items:baseline;border-bottom:1px solid #dfe3e9;padding:8px 0;font-size:12.5px;line-height:1.4"><span style="font-weight:800">Eigen woningwaarde</span><span>De geschatte waarde van de huidige woning, plus het aantal zoekers dat er naar op zoek is</span></div>
+      <div style="display:grid;grid-template-columns:150px 1fr;gap:12px;align-items:baseline;border-bottom:1px solid #dfe3e9;padding:8px 0;font-size:12.5px;line-height:1.4"><span style="font-weight:800">Rekentools</span><span>Handige rekentools in dezelfde omgeving — die zorgen voor meer klantcontact en leads</span></div>
+      <div style="display:grid;grid-template-columns:150px 1fr;gap:12px;align-items:baseline;border-bottom:1px solid #dfe3e9;padding:8px 0;font-size:12.5px;line-height:1.4"><span style="font-weight:800">Contact in één klik</span><span>Vragen of advies op maat? Adviseur en makelaar staan met naam en nummer in het profiel</span></div>
+      <p style="font-size:12.5px;line-height:1.55;margin:14px 0 0;max-width:44ch">Klanten sturen de e-mailalerts bovendien vaak door naar familie, vrienden en bekenden — dan is jouw logo ook weer in beeld.</p>
+      <p style="font-size:12.5px;line-height:1.55;margin:10px 0 0;max-width:44ch">Dit is iets wat de klant zelf niet kan regelen — jij wel. Dat maakt uitnodigen makkelijk: een button op je site, een link in een e-mail, of gewoon aan tafel samen met jou — want jij weet wat een passende aankoop en financiering is. Zo creëer je eenvoudig nog meer toegevoegde waarde en grip op de klant.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;min-height:0">
+      <img src="assets/mhz-aanbod.png" alt="Realtime woningaanbod met zoekprofiel" style="width:100%;height:auto;display:block;border:1px solid #dfe3e9">
+      <img src="assets/mhz-email.png" alt="E-mailalert met nieuw woningaanbod" style="width:100%;flex:1;min-height:0;object-fit:cover;object-position:top;display:block;border:1px solid #dfe3e9">
+    </div>
+  </div>
+</section>
+
+<section class="page" data-screen-label="04 Voor jou" style="background:#fff;color:#1d2733;font-family:var(--font-body);padding:50px 54px 44px;display:flex;flex-direction:column;box-sizing:border-box">
+  <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #1d2733;padding-bottom:12px"><span style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:800">Voor jou als adviseur</span><span style="width:34px;height:38px;background:#ffcd00;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px">04</span></div>
+  <h2 style="font-family:var(--font-heading);font-size:38px;line-height:1.02;letter-spacing:-0.025em;font-weight:800;margin:26px 0 0;max-width:24ch">Een beheeromgeving waarmee je direct aan de slag kunt.</h2>
+  <p style="font-size:14.5px;line-height:1.55;max-width:68ch;margin:14px 0 0">Je ontvangt een eigen beheeromgeving waarin je het zoekprofiel voor je klant direct zelf aanmaakt. Geen wachten, geen drempel: de klant zit bij je aan tafel en verlaat het gesprek met een werkend zoekprofiel onder jouw vlag — met jou als hypotheekadviseur en de makelaar in beeld.</p>
+  <img src="assets/mhz-beheer.png" alt="Beheeromgeving met klantprofiel, adviseurs en zoekprofielen" style="width:100%;height:150px;object-fit:cover;object-position:top;display:block;border:1px solid #dfe3e9;margin-top:14px">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#dfe3e9;margin-top:18px;flex:1">
+    <div style="background:#f5f6f8;padding:15px 18px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">Klantprofielen in eigen beheer</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Zoekprofielen aanmaken, matches en frequentie per klant volgen, en zien wanneer een klant voor het laatst inlogde.</p></div>
+    <div style="background:#f5f6f8;padding:15px 18px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">Inzicht in zoekgedrag</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Weet vóór de markt uit wie er in beweging komt: actieve zoekers, matches en de woning die de klant nu bewoont.</p></div>
+    <div style="background:#f5f6f8;padding:15px 18px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">Gekoppeld aan het eBlinqx platform</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Door de koppeling met eBlinqx wordt het proces voor klant en intermediair beter en efficiënter.</p></div>
+    <div style="background:#f5f6f8;padding:15px 18px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">Klaar in dagen, niet maanden</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Eénmalige inrichting met je eigen logo en contactgegevens; uitnodigen kan direct daarna.</p></div>
+  </div>
+  <div style="border-top:2px solid #ffcd00;margin-top:18px;padding-top:12px;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;font-weight:800">Vrije makelaarskeuze</div>
+  <p style="font-size:12.5px;line-height:1.55;max-width:72ch;margin:8px 0 0">Als hypotheekadviseur werk je samen met elke makelaar die jij kiest. Daarnaast heeft Blinqx Verzekering &amp; Hypotheek een collectieve afspraak met <b>De Huizengids</b>, waar je als adviseur altijd voor kunt kiezen. Zo combineer je het beste van twee werelden: bij jou in de regio werk je samen met de lokale makelaar, en voor klanten die verder weg zoeken — waar je zelf geen makelaar kent — schakel je De Huizengids in.</p>
+  <div style="border-top:2px solid #ffcd00;margin-top:14px;padding-top:12px;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;font-weight:800">De rekensom</div>
+  <div style="font-size:12.5px;line-height:1.55;max-width:72ch;margin-top:8px">Eén extra hypotheekdossier per jaar betaalt het abonnement ruimschoots terug — het reële effect zit in retentie: elke klant die via jouw omgeving zoekt, blijft jouw klant. Vraag ons naar de actuele tarieven.</div>
+</section>
+
+<section class="page" data-screen-label="05 In de praktijk" style="background:#fff;color:#1d2733;font-family:var(--font-body);padding:50px 54px 44px;display:flex;flex-direction:column;box-sizing:border-box">
+  <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #1d2733;padding-bottom:12px"><span style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:800">In de praktijk</span><span style="width:34px;height:38px;background:#ffcd00;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px">05</span></div>
+  <h2 style="font-family:var(--font-heading);font-size:38px;line-height:1.02;letter-spacing:-0.025em;font-weight:800;margin:26px 0 0;max-width:24ch">Kantoren die het al zo doen.</h2>
+  <p style="font-size:14.5px;line-height:1.55;max-width:68ch;margin:14px 0 0">Advieskantoren en makelaars door heel Nederland bieden hun klanten vandaag het realtime woningaanbod aan via MijnHuiszaken — elk onder hun eigen naam, op hun eigen site.</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 34px;margin-top:18px">
+    <div style="display:grid;grid-template-columns:150px 1fr;gap:12px;align-items:baseline;border-bottom:1px solid #dfe3e9;padding:8px 0;font-size:12.5px;line-height:1.4"><span style="font-weight:800">Nobel Financieel Advies</span><span>Persoonlijke omgeving voor het vinden van je droomhuis — aanbod realtime per e-mail, vaak nog vóór Funda</span></div>
+    <div style="display:grid;grid-template-columns:150px 1fr;gap:12px;align-items:baseline;border-bottom:1px solid #dfe3e9;padding:8px 0;font-size:12.5px;line-height:1.4"><span style="font-weight:800">Steen Hypotheken</span><span>MijnHuiszaken als vaste stap in de aankoopbegeleiding</span></div>
+    <div style="display:grid;grid-template-columns:150px 1fr;gap:12px;align-items:baseline;border-bottom:1px solid #dfe3e9;padding:8px 0;font-size:12.5px;line-height:1.4"><span style="font-weight:800">Ten Hag</span><span>Makelaar én hypotheekadviseur in één klantomgeving</span></div>
+    
+    
+    
+    
+    
+    <div style="display:grid;grid-template-columns:150px 1fr;gap:12px;align-items:baseline;border-bottom:1px solid #dfe3e9;padding:8px 0;font-size:12.5px;line-height:1.4"><span style="font-weight:800">De Huizengids Nederland</span><span>Landelijk netwerk van aankoopmakelaars als partner in het klantdossier</span></div>
+  </div>
+  <div style="flex:1;display:flex;align-items:center;justify-content:center;padding:14px 0;min-height:0;overflow:hidden">
+    <img src="assets/mhz-dashboard.png" alt="Mijn woning: actuele waarde en zoekers" style="max-width:74%;max-height:100%;height:auto;display:block;border:1px solid #dfe3e9">
+  </div>
+  <div style="background:#ffcd00;padding:20px 26px"><p style="font-family:var(--font-heading);font-size:19px;line-height:1.25;font-weight:800;margin:0;max-width:56ch">De klant regelt zijn huiszaken bij jou — en zijn hypotheek dus ook.</p></div>
+</section>
+
+<section class="page" data-screen-label="06 Kennismaken" style="background:#1d2733;color:#fff;font-family:var(--font-body);padding:50px 54px 44px;display:flex;flex-direction:column;box-sizing:border-box">
+  <div style="border-bottom:2px solid #ffcd00;padding-bottom:12px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:800">Kennismaken</span><span style="width:34px;height:38px;background:#ffcd00;color:#1d2733;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px">06</span></div>
+  <h2 style="font-family:var(--font-heading);font-size:56px;line-height:0.98;letter-spacing:-0.03em;font-weight:800;margin:30px 0 0;max-width:16ch;color:#ffcd00">Binnen 20 minuten weet je alles.</h2>
+  <p style="font-size:15px;line-height:1.5;max-width:48ch;margin:16px 0 0">Boek vrijblijvend een online demo, of vraag direct een account aan via aansluiten.mijnhuiszaken.nl. Inrichten is éénmalig; daarna nodig je klanten uit via je site, een mail of aan tafel.</p>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.2);margin-top:22px">
+    <div style="background:#1d2733;padding:18px 16px 20px"><div style="width:36px;height:40px;background:#ffcd00;color:#1d2733;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:16px;font-weight:800">01</div><div style="font-size:13.5px;line-height:1.45;margin-top:10px">Vraag een demo of account aan via <a href="https://aansluiten.mijnhuiszaken.nl" style="color:#ffcd00">aansluiten.mijnhuiszaken.nl</a></div></div>
+    <div style="background:#1d2733;padding:18px 16px 20px"><div style="width:36px;height:40px;background:#ffcd00;color:#1d2733;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:16px;font-weight:800">02</div><div style="font-size:13.5px;line-height:1.45;margin-top:10px">Eénmalige inrichting met jouw logo en contactgegevens</div></div>
+    <div style="background:#1d2733;padding:18px 16px 20px"><div style="width:36px;height:40px;background:#ffcd00;color:#1d2733;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:16px;font-weight:800">03</div><div style="font-size:13.5px;line-height:1.45;margin-top:10px">Nodig klanten uit en maak zoekprofielen aan — vanaf dag één in beeld</div></div>
+  </div>
+  <div style="margin-top:20px;border-top:1px solid rgba(255,255,255,0.25);padding-top:14px;font-size:12.5px;line-height:1.6">Meer weten over de samenwerking met het eBlinqx platform? Neem contact op met <b>Diana Blom</b> (diana.blom@blinqx.tech), <b>Milan Akavia</b> (milan.akavia@blinqx.tech) of <b>Jeroen Oversteegen</b> (jeroen.oversteegen@blinqx.tech).</div>
+  <a href="mailto:jeroen.oversteegen@blinqx.tech?subject=Demo%20MijnHuiszaken" data-am="mailto" style="background:#ffcd00;color:#1d2733;display:inline-block;padding:13px 22px;margin-top:16px;align-self:flex-start;font-family:var(--font-heading);font-size:14px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none">Mail ons</a>
+  <div style="margin-top:auto;border-top:2px solid #ffcd00;padding-top:20px;display:flex;justify-content:space-between;align-items:flex-end;gap:30px">
+    <div>
+      <div style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;font-weight:800;color:#ffcd00">Contact</div>
+      <div style="font-family:var(--font-heading);font-size:21px;font-weight:800;line-height:1.3;margin-top:8px" data-am="name">Jeroen Oversteegen</div>
+      <div style="font-size:12.5px;font-weight:700;line-height:1.35" data-am="role">Non Executive Director Business Partners</div>
+      <div style="font-family:var(--font-heading);font-size:21px;font-weight:800;line-height:1.3;margin-top:8px">T: <a href="tel:+31207582111" style="color:inherit;text-decoration:none" data-am="phone">020 - 758 21 11</a></div>
+      <div style="font-family:var(--font-heading);font-size:21px;font-weight:800;line-height:1.3">M: <a href="tel:+31621247257" style="color:inherit;text-decoration:none" data-am="mobile">+31 6 21 247 257</a></div>
+      <div style="font-family:var(--font-heading);font-size:21px;font-weight:800;line-height:1.3">E: <a href="mailto:jeroen.oversteegen@blinqx.tech" style="color:inherit;text-decoration:none" data-am="email">jeroen.oversteegen@blinqx.tech</a></div>
+      <div style="font-family:var(--font-heading);font-size:22px;font-weight:800;line-height:1.3"><a href="https://aansluiten.mijnhuiszaken.nl" style="color:inherit;text-decoration:none">aansluiten.mijnhuiszaken.nl</a></div>
+      <div style="font-size:12.5px;line-height:1.5;margin-top:10px">MijnHuiszaken — onderdeel van het Blinqx-partnernetwerk<br><span data-am="street">Hullenbergweg 109</span>, <span data-am="city">1101 CL  Amsterdam</span> &middot; info@mijnhuiszaken.nl</div>
+    </div>
+    <div style="background:#ffcd00;padding:14px 16px"><img src="assets/blinqx-vh-logo.png" alt="Blinqx Verzekering &amp; Hypotheek" style="width:180px;height:auto;display:block"></div>
+  </div>
+</section>
+
+</doc-page>
+</body>
+</html>

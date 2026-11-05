@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blinqx Verzekering &amp; Hypotheek — Brochures 2026</title>
+<meta name="description" content="Alle brochures van Blinqx Verzekering &amp; Hypotheek 2026: bekijken, printen, los openen en delen.">
+<link rel="stylesheet" href="ds-styles.css">
+<style>
+:root{
+  --geel:#ffcd00;
+  --navy:#1d2733;
+  --navy-2:#27323f;
+  --navy-3:#344150;
+  --grijs:#f3f2f2;
+  --tekst:#1d2733;
+  --muted:#6b7480;
+  --side-w:300px;
+  --font-h:var(--font-heading, Archivo, Helvetica, Arial, sans-serif);
+  --font-b:var(--font-body, Archivo, Helvetica, Arial, sans-serif);
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{font-family:var(--font-b);color:var(--tekst);background:var(--grijs)}
+button{font-family:inherit}
+.app{height:100vh;height:100dvh;display:grid;grid-template-rows:auto 1fr;overflow:hidden}
+
+/* Kopbalk */
+.bar{background:var(--geel);padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:16px;min-width:0}
+.brand img{width:160px;height:auto;display:block}
+.kicker{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;white-space:nowrap}
+.count{font-size:12px;font-weight:600;white-space:nowrap}
+
+/* Werkruimte */
+.main{display:grid;grid-template-columns:var(--side-w) 1fr;min-height:0}
+
+/* Zijbalk */
+.side{background:var(--navy);color:#fff;display:flex;flex-direction:column;min-height:0}
+.search{padding:16px 16px 10px;flex:none}
+.search label{display:block;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;opacity:.65;margin-bottom:6px}
+.search input{width:100%;font:inherit;font-size:14px;padding:10px 12px;border:0;border-radius:0;background:var(--navy-3);color:#fff;outline:none;border-bottom:2px solid transparent}
+.search input::placeholder{color:#aab3bd}
+.search input::-webkit-search-cancel-button{-webkit-appearance:none}
+.search input:focus{border-bottom-color:var(--geel)}
+.list{flex:1;overflow-y:auto;padding:4px 0 18px;scrollbar-color:var(--navy-3) transparent}
+.group{margin-top:12px}
+.group h2{margin:0;padding:6px 18px;font-family:var(--font-h);font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:var(--geel)}
+.item{display:flex;align-items:center;gap:10px;width:100%;text-align:left;border:0;cursor:pointer;padding:9px 18px;background:transparent;color:#fff;border-left:4px solid transparent}
+.item:hover{background:var(--navy-2)}
+.item:focus-visible{outline:2px solid var(--geel);outline-offset:-2px}
+.item[aria-current="page"]{background:var(--geel);color:var(--navy);border-left-color:var(--navy)}
+.item .t{flex:1;min-width:0}
+.item small{display:block;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;opacity:.6}
+.item span{display:block;font-family:var(--font-h);font-size:14px;font-weight:800;line-height:1.25;margin-top:2px}
+.item .p{flex:none;font-size:11px;font-weight:600;opacity:.65;font-variant-numeric:tabular-nums}
+.empty{padding:14px 18px;font-size:13px;opacity:.7;display:none}
+.side-foot{flex:none;padding:12px 18px;font-size:11px;line-height:1.45;color:#aab3bd;border-top:1px solid var(--navy-3)}
+
+/* Viewer */
+.viewer{display:grid;grid-template-rows:auto 1fr;min-width:0;min-height:0}
+.tools{display:flex;align-items:center;gap:10px;padding:10px 16px;background:#fff;border-bottom:1px solid #dcdcdc;flex-wrap:wrap}
+.cur{flex:1;min-width:180px}
+.cur small{display:block;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--muted)}
+.cur h1{margin:2px 0 0;font-family:var(--font-h);font-size:18px;font-weight:800;line-height:1.2}
+.btns{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.btn{font-family:var(--font-h);font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;border:2px solid var(--navy);padding:9px 14px;cursor:pointer;background:var(--navy);color:var(--geel);text-decoration:none;display:inline-flex;align-items:center;gap:6px;line-height:1;white-space:nowrap}
+.btn:hover{background:#000;border-color:#000}
+.btn.ghost{background:transparent;color:var(--navy)}
+.btn.ghost:hover{background:var(--navy);color:var(--geel)}
+.btn.icon{padding:9px 11px}
+.btn:focus-visible{outline:2px solid var(--geel);outline-offset:2px;box-shadow:0 0 0 4px var(--navy)}
+.btn[disabled]{opacity:.35;cursor:default;pointer-events:none}
+.btn svg{width:14px;height:14px;flex:none}
+.menu-btn{display:none}
+.stage{position:relative;min-height:0;background:#e6e5e5}
+iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+.loader{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:#e6e5e5;transition:opacity .2s;pointer-events:none}
+.loader.off{opacity:0}
+.loader i{width:34px;height:34px;border:4px solid #c9c9c9;border-top-color:var(--navy);border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,20px);background:var(--navy);color:#fff;padding:10px 16px;font-size:13px;font-weight:600;opacity:0;transition:.2s;pointer-events:none;z-index:50}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.scrim{display:none}
+
+/* Mobiel en tablet */
+@media (max-width:860px){
+  .bar{padding:10px 16px}
+  .brand img{width:120px}
+  .count{display:none}
+  .main{grid-template-columns:1fr}
+  .side{position:fixed;top:0;bottom:0;left:0;width:min(86vw,320px);z-index:40;transform:translateX(-100%);transition:transform .22s ease;box-shadow:4px 0 24px rgba(0,0,0,.25)}
+  .app.open .side{transform:none}
+  .scrim{display:block;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:30;opacity:0;pointer-events:none;transition:opacity .2s}
+  .app.open .scrim{opacity:1;pointer-events:auto}
+  .menu-btn{display:inline-flex}
+  .tools{padding:8px 16px;gap:8px}
+  .cur{order:-1;flex-basis:100%}
+  .cur h1{font-size:16px}
+  .btns{width:100%;flex-wrap:nowrap;gap:6px}
+  .btn.icon,.btns .btn:not(.menu-btn){padding:9px 10px}
+  .btn .lbl{display:none}
+  .btn.menu-btn .lbl{display:inline}
+  .btn.menu-btn{flex:1;justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation-duration:2s!important}}
+</style>
+</head>
+<body>
+<div class="app" id="app">
+  <header class="bar">
+    <div class="brand">
+      <img src="assets/blinqx-vh-logo.png" alt="Blinqx Verzekering &amp; Hypotheek">
+      <span class="kicker">Brochures 2026</span>
+    </div>
+    <span class="count" id="count"></span>
+  </header>
+
+  <div class="main">
+    <aside class="side" id="side" aria-label="Brochures">
+      <div class="search">
+        <label for="q">Zoek een brochure</label>
+        <input id="q" type="search" placeholder="Bijv. hypotheek, beurs, VCN" autocomplete="off">
+      </div>
+      <nav class="list" id="list"></nav>
+      <p class="empty" id="empty">Geen brochure gevonden.</p>
+      <div class="side-foot">Alle brochures op A4. Print met marges op ‘geen’ en achtergrondafbeeldingen aan.</div>
+    </aside>
+    <div class="scrim" id="scrim"></div>
+
+    <section class="viewer">
+      <div class="tools">
+        <div class="cur" aria-live="polite">
+          <small id="curKind"></small>
+          <h1 id="curTitle"></h1>
+        </div>
+        <div class="btns">
+          <button class="btn ghost menu-btn" type="button" id="menuBtn" aria-controls="side" aria-expanded="false">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4h12M2 8h12M2 12h12"/></svg><span class="lbl">Brochures</span></button>
+          <button class="btn ghost icon" type="button" id="prevBtn" title="Vorige brochure" aria-label="Vorige brochure">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M10 3 5 8l5 5"/></svg></button>
+          <button class="btn ghost icon" type="button" id="nextBtn" title="Volgende brochure" aria-label="Volgende brochure">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 3 5 5-5 5"/></svg></button>
+          <button class="btn ghost" type="button" id="copyBtn" title="Kopieer link naar deze brochure">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.5 9.5a3 3 0 0 0 4.2 0l2.6-2.6a3 3 0 0 0-4.2-4.2l-.9.9M9.5 6.5a3 3 0 0 0-4.2 0L2.7 9.1a3 3 0 0 0 4.2 4.2l.9-.9"/></svg><span class="lbl">Link</span></button>
+          <a class="btn ghost" id="openBtn" href="productoverzicht.html" target="_blank" rel="noopener" title="Open in nieuw tabblad">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 2h5v5M14 2 7 9M12 10v4H2V4h4"/></svg><span class="lbl">Los openen</span></a>
+          <button class="btn" type="button" id="printBtn" title="Print of bewaar als PDF">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6V2h8v4M4 12H2V6h12v6h-2M4 9h8v5H4z"/></svg><span class="lbl">Print / PDF</span></button>
+        </div>
+      </div>
+      <div class="stage">
+        <iframe id="frame" title="Brochure"></iframe>
+        <div class="loader" id="loader"><i></i></div>
+      </div>
+    </section>
+  </div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(function(){
+  /* Volgorde en groepering: volgt het lagenmodel (propositie → product/variant). */
+  var GROUPS=[
+    {name:'Overzicht',items:[
+      {f:'productoverzicht',k:'Compleet',t:'Productoverzicht',p:38,s:'alles alle producten'}]},
+    {name:'Hypotheek',items:[
+      {f:'eblinqx-hypotheek',k:'Propositie',t:'eBlinqx Hypotheek',p:11},
+      {f:'eblinqx-hypotheek-advies',k:'Product',t:'eBlinqx Hypotheek Advies',p:13},
+      {f:'eblinqx-advies-bemiddeling-start',k:'Product',t:'Advies & Bemiddeling Start',p:12,s:'hypotheek starter'}]},
+    {name:'Verzekering',items:[
+      {f:'eblinqx-verzekering',k:'Product',t:'eBlinqx Verzekering Provinciaal',p:11},
+      {f:'eblinqx-volmacht',k:'Variant',t:'eBlinqx Verzekering Volmacht',p:11},
+      {f:'eblinqx-beurs',k:'Variant',t:'eBlinqx Verzekering Beurs',p:11},
+      {f:'eblinqx-schadeverzekeringen',k:'Thema',t:'Schadeverzekeringen verkopen',p:6,s:'hypotheekadviseur'}]},
+    {name:'Compleet & CRM',items:[
+      {f:'eblinqx-vh-compleet',k:'Propositie',t:'eBlinqx V&H Compleet',p:12,s:'verzekering hypotheek'},
+      {f:'eblinqx-connect-crm',k:'Product',t:'eBlinqx CRM',p:11,s:'connect'},
+      {f:'eblinqx-makelaardij',k:'Product',t:'eBlinqx Makelaardij',p:13,s:'makelaar'}]},
+    {name:'Partners',items:[
+      {f:'mijnhuiszaken',k:'Partnerformule',t:'MijnHuiszaken',p:6},
+      {f:'vcn-partner',k:'Partnerformule',t:'VCN Partner',p:13,s:'vcn hypotheken'},
+      {f:'blinqx-banking-insurance-partners',k:'Ketenpartners',t:'Banking, Insurance & Partners',p:13,s:'bank verzekeraar'}]}
+  ];
+  var ALL=[];GROUPS.forEach(function(g){g.items.forEach(function(it){it.g=g.name;ALL.push(it);});});
+
+  var $=function(id){return document.getElementById(id);};
+  var app=$('app'),list=$('list'),frame=$('frame'),loader=$('loader'),q=$('q');
+  var cur=-1,buttons=[];
+  var nf=new Intl.NumberFormat('nl-NL');
+
+  var totaal=ALL.reduce(function(s,it){return s+it.p;},0);
+  $('count').textContent=ALL.length+' brochures · '+nf.format(totaal)+' pagina\'s';
+
+  /* Lijst opbouwen */
+  GROUPS.forEach(function(g){
+    var sec=document.createElement('div');sec.className='group';
+    var h=document.createElement('h2');h.textContent=g.name;sec.appendChild(h);
+    g.items.forEach(function(it){
+      var b=document.createElement('button');
+      b.type='button';b.className='item';b.dataset.i=ALL.indexOf(it);
+      b.innerHTML='<span class="t"><small></small><span></span></span><span class="p"></span>';
+      b.querySelector('small').textContent=it.k;
+      b.querySelector('.t span').textContent=it.t;
+      b.querySelector('.p').textContent=it.p+' p.';
+      b.setAttribute('aria-label',it.t+', '+it.k+', '+it.p+' pagina\'s');
+      b.addEventListener('click',function(){go(+b.dataset.i);closeMenu();});
+      sec.appendChild(b);buttons.push(b);
+    });
+    list.appendChild(sec);
+  });
+
+  function idxFromHash(){
+    var h=decodeURIComponent(location.hash.replace(/^#/,'')).replace(/\.html$/,'');
+    for(var i=0;i<ALL.length;i++) if(ALL[i].f===h) return i;
+    return -1;
+  }
+
+  function show(i){
+    if(i===cur) return;
+    cur=i;var it=ALL[i],file=it.f+'.html';
+    buttons.forEach(function(b){
+      if(+b.dataset.i===i){b.setAttribute('aria-current','page');}else{b.removeAttribute('aria-current');}
+    });
+    $('curKind').textContent=it.g+' · '+it.k+' · '+it.p+' pagina\'s';
+    $('curTitle').textContent=it.t;
+    document.title=it.t+' — Brochures 2026 · Blinqx V&H';
+    $('openBtn').href=file;
+    $('prevBtn').disabled=i===0;
+    $('nextBtn').disabled=i===ALL.length-1;
+    loader.classList.remove('off');
+    /* replace() voorkomt extra stappen in de terugknop-geschiedenis */
+    try{frame.contentWindow.location.replace(file);}catch(e){frame.src=file;}
+    var act=buttons[ALL.indexOf(it)];
+    if(act&&act.scrollIntoView) act.scrollIntoView({block:'nearest'});
+  }
+  function go(i){
+    if(i<0||i>=ALL.length) return;
+    var h='#'+ALL[i].f;
+    if(location.hash!==h){history.pushState(null,'',h);}
+    show(i);
+  }
+  frame.addEventListener('load',function(){loader.classList.add('off');});
+  window.addEventListener('popstate',function(){var i=idxFromHash();show(i<0?0:i);});
+  window.addEventListener('hashchange',function(){var i=idxFromHash();if(i>=0)show(i);});
+
+  $('prevBtn').addEventListener('click',function(){go(cur-1);});
+  $('nextBtn').addEventListener('click',function(){go(cur+1);});
+
+  /* Printen via een nieuw venster: werkt ook als deze pagina zelf
+     in een iframe staat (bijv. Google Sites blokkeert print() in iframes). */
+  $('printBtn').addEventListener('click',function(){
+    var file=ALL[cur].f+'.html';
+    var w=window.open(file,'_blank');
+    if(!w){toast('Pop-up geblokkeerd — gebruik “Los openen” en print daar (Ctrl/Cmd + P).');return;}
+    var started=false;
+    function doPrint(){
+      if(started) return;started=true;
+      var ready=(w.document&&w.document.fonts&&w.document.fonts.ready)?w.document.fonts.ready:Promise.resolve();
+      ready.then(function(){setTimeout(function(){try{w.focus();w.print();}catch(e){}},500);});
+    }
+    try{
+      w.addEventListener('load',doPrint);
+      var t=setInterval(function(){
+        try{if(w.closed){clearInterval(t);return;}if(w.document.readyState==='complete'){clearInterval(t);doPrint();}}catch(e){clearInterval(t);}
+      },300);
+    }catch(e){}
+  });
+
+  /* Link kopiëren */
+  $('copyBtn').addEventListener('click',function(){
+    var url=location.href.split('#')[0]+'#'+ALL[cur].f;
+    function ok(){toast('Link gekopieerd');}
+    function fallback(){
+      var ta=document.createElement('textarea');ta.value=url;ta.setAttribute('readonly','');
+      ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();
+      try{document.execCommand('copy');ok();}catch(e){toast(url);}
+      document.body.removeChild(ta);
+    }
+    if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(url).then(ok,fallback);}else{fallback();}
+  });
+
+  var tt;
+  function toast(msg){var el=$('toast');el.textContent=msg;el.classList.add('on');clearTimeout(tt);tt=setTimeout(function(){el.classList.remove('on');},2600);}
+
+  /* Zoeken */
+  function norm(s){return (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');}
+  q.addEventListener('input',function(){
+    var v=norm(q.value.trim()),any=false;
+    [].forEach.call(list.querySelectorAll('.group'),function(sec){
+      var vis=0;
+      [].forEach.call(sec.querySelectorAll('.item'),function(b){
+        var it=ALL[+b.dataset.i];
+        var hit=!v||norm(it.t+' '+it.k+' '+it.g+' '+(it.s||'')).indexOf(v)>-1;
+        b.hidden=!hit;if(hit)vis++;
+      });
+      sec.hidden=!vis;if(vis)any=true;
+    });
+    $('empty').style.display=any?'none':'block';
+  });
+  q.addEventListener('keydown',function(e){
+    if(e.key==='Enter'||e.key==='ArrowDown'){
+      var first=list.querySelector('.item:not([hidden])');
+      if(first){e.preventDefault();if(e.key==='Enter'){first.click();}else{first.focus();}}
+    }
+    if(e.key==='Escape'){q.value='';q.dispatchEvent(new Event('input'));}
+  });
+
+  /* Pijltjestoetsen in de lijst */
+  list.addEventListener('keydown',function(e){
+    if(e.key!=='ArrowDown'&&e.key!=='ArrowUp'&&e.key!=='Home'&&e.key!=='End') return;
+    var vis=[].filter.call(list.querySelectorAll('.item'),function(b){return !b.hidden&&!b.parentNode.hidden;});
+    var p=vis.indexOf(document.activeElement);if(p<0)return;
+    e.preventDefault();
+    var n=e.key==='ArrowDown'?Math.min(p+1,vis.length-1):e.key==='ArrowUp'?Math.max(p-1,0):e.key==='Home'?0:vis.length-1;
+    if(e.key==='ArrowUp'&&p===0){q.focus();return;}
+    vis[n].focus();
+  });
+
+  /* Sneltoetsen: [ en ] voor vorige/volgende, / voor zoeken */
+  document.addEventListener('keydown',function(e){
+    var tag=(e.target.tagName||'').toLowerCase();
+    if(tag==='input'||tag==='textarea'||e.ctrlKey||e.metaKey||e.altKey) return;
+    if(e.key==='['){go(cur-1);}
+    else if(e.key===']'){go(cur+1);}
+    else if(e.key==='/'){e.preventDefault();openMenu();q.focus();}
+    else if(e.key==='Escape'){closeMenu();}
+  });
+
+  /* Mobiel menu */
+  var menuBtn=$('menuBtn');
+  function openMenu(){app.classList.add('open');menuBtn.setAttribute('aria-expanded','true');}
+  function closeMenu(){if(!app.classList.contains('open'))return;app.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');}
+  menuBtn.addEventListener('click',function(){
+    if(app.classList.contains('open')){closeMenu();}else{openMenu();var a=list.querySelector('[aria-current]');if(a)a.focus();}
+  });
+  $('scrim').addEventListener('click',closeMenu);
+
+  /* Start: brochure uit de URL (#bestandsnaam), anders het productoverzicht */
+  var start=idxFromHash();
+  if(start<0){start=0;history.replaceState(null,'','#'+ALL[0].f);}
+  show(start);
+})();
+</script>
+</body>
+</html>

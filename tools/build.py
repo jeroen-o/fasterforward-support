@@ -858,7 +858,7 @@ def layout(pg, title, body, active=None, description=""):
       <a href="{pg.rel('sites')}">Handige websites</a>
       <a href="{pg.rel('historie')}">Historie</a>
       <a href="{pg.rel('kennisbanken')}">Kennisbanken</a>
-      <a href="https://jeroen-o.github.io/blinqx-brochures/" target="_blank" rel="noopener">Brochures</a>
+      <a href="{pg.rel('brochures')}">Brochures</a>
       <a href="https://verzekeringhypotheek.blinqx.tech/" target="_blank" rel="noopener">eBlinqx website</a>
     </nav>
   </div>
@@ -1369,7 +1369,8 @@ def render_search(pages, cats):
                     "c": "Brochures", "k": "kennisbank", "x": "brochure brochures folder productbrochure partnerbrochure pdf printen "
                     + " ".join(b["naam"] + " " + b["soort"] for b in br)})
         for b in br:
-            idx.append({"t": f'Brochure {b["titel"]}', "h": b["url"], "ext": 1, "c": "Brochures › " + b["soort"], "k": "overig",
+            idx.append({"t": f'Brochure {b["titel"]}', "h": "brochures/viewer/index.html#" + b["bestand"][:-5],
+                        "c": "Brochures › " + (b.get("groep") or b["soort"]), "k": "kennisbank",
                         "x": "brochure " + b["soort"] + " " + b["naam"] + " " + b["tekst"]})
     hcs = [(c, hc_artikelen(c)) for c in HELPCENTERS]
     if any(a for _, a in hcs):
@@ -3466,33 +3467,50 @@ def hc_titel(c):
 
 
 def render_brochures():
-    """Overzicht van de Brochures 2026 (bronnen/brochures.json, tools/brochures_sync.py); elke brochure opent extern."""
+    """Brochures 2026 op het eigen domein: de brochure-viewer (gespiegeld door tools/brochures_sync.py naar
+    bronnen/brochures-site/) komt op brochures/viewer/, met daarboven een overzichtspagina brochures/ voor bezoekers en zoekmachines."""
     f = os.path.join(SRC, "brochures.json")
     if not os.path.exists(f):
         return
     br = json.load(open(f, encoding="utf8"))
+    spiegel = os.path.join(SRC, "brochures-site")
+    if os.path.isdir(spiegel):
+        doel = os.path.join(ROOT, "brochures", "viewer")
+        if os.path.isdir(doel):
+            shutil.rmtree(doel)
+        shutil.copytree(spiegel, doel)
     pg = Page("brochures")
+
     def oms(b):
         t = re.sub(r"^.*?Editie \d{4}\s*", "", b["tekst"])
         t = t[len(b["naam"]):].strip() if t.startswith(b["naam"]) else t
         return kort(t, 220)
-    kaarten = "".join(f'<div class="wtwhy"><p class="bron">{esc(b["soort"])}</p><h2><a href="{esc(b["url"])}" target="_blank" rel="noopener">{esc(b["titel"])}</a></h2>'
-                      f'<p>{esc(oms(b))}</p><p><a class="readmore" href="{esc(b["url"])}" target="_blank" rel="noopener">Bekijk de brochure<span class="sr-only"> (opent in nieuw tabblad)</span> ↗</a></p></div>' for b in br)
-    intro = (f"Alle {len(br)} brochures 2026 van Blinqx Verzekering & Hypotheek: het productoverzicht, productbrochures over "
-             "eBlinqx Hypotheek, Verzekering, CRM en Makelaardij, en partnerbrochures zoals MijnHuiszaken en VCN Partner. Bekijken, printen of als pdf bewaren.")
+    groepen = {}
+    for b in br:
+        groepen.setdefault(b.get("groep") or "Brochures", []).append(b)
+    v = lambda b: pg.rel("brochures/viewer/index.html") + "#" + b["bestand"][:-5]
+    blokken = "".join(
+        f'<h2 class="wth">{esc(g)}</h2><div class="wtwhys">'
+        + "".join(f'<div class="wtwhy"><p class="bron">{esc(b["soort"])}</p><h3><a href="{v(b)}">{esc(b["titel"])}</a></h3>'
+                  f'<p>{esc(oms(b))}</p><p><a class="readmore" href="{v(b)}">Bekijk de brochure »</a> · '
+                  f'<a href="{pg.rel("brochures/viewer/" + b["bestand"])}" target="_blank" rel="noopener">los openen of printen</a></p></div>' for b in lijst)
+        + "</div>" for g, lijst in groepen.items())
+    intro = (f"Alle {len(br)} brochures 2026 van Blinqx Verzekering & Hypotheek: het productoverzicht, brochures over eBlinqx Hypotheek, "
+             "Verzekering (provinciaal, volmacht en beurs), CRM en Makelaardij, en partnerbrochures zoals MijnHuiszaken en VCN Partner. "
+             "Bekijken, delen, printen of als pdf bewaren.")
     ld = {"@context": "https://schema.org", "@type": "CollectionPage", "name": "Brochures 2026", "url": SITE_URL + "brochures/", "description": intro,
           "mainEntity": {"@type": "ItemList", "numberOfItems": len(br), "itemListElement": [
-              {"@type": "ListItem", "position": i + 1, "url": b["url"], "name": b["titel"]} for i, b in enumerate(br)]}}
+              {"@type": "ListItem", "position": i + 1, "url": SITE_URL + "brochures/viewer/" + b["bestand"], "name": b["titel"]} for i, b in enumerate(br)]}}
     body = f"""{crumbs(pg, [("Brochures", None)])}
 <main class="subpage"><div class="wrap">
   <h1>Brochures 2026</h1>
   <p class="lead">{esc(intro)}</p>
-  <p><a class="btn-out cta" href="https://jeroen-o.github.io/blinqx-brochures/" target="_blank" rel="noopener">Open alle brochures ↗</a></p>
-  <div class="wtwhys">{kaarten}</div>
+  <p><a class="btn-out cta" href="{pg.rel("brochures/viewer")}">Open de brochure-viewer »</a></p>
+  {blokken}
+  <p class="note">Tip: print met marges op ‘geen’ en achtergrondafbeeldingen aan; alle brochures zijn op A4.</p>
 </div></main>
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False).replace("</", "<\\/")}</script>"""
     write("brochures", layout(pg, "Brochures 2026 Blinqx Verzekering & Hypotheek", body, None, intro))
-
 
 def render_helpcenters():
     """Kennisbanken uit de Intercom-helpcenters (tools/intercom_sync.py): per product een overzicht per rubriek en elk

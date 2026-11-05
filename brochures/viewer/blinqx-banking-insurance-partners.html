@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blinqx Banking, Insurance &amp; Partners — Blinqx Verzekering &amp; Hypotheek</title>
+<link rel="stylesheet" href="ds-styles.css">
+<script src="doc-page.js"></script>
+<style>
+html,body{margin:0}
+doc-page:not(:defined){visibility:hidden}
+a{color:inherit;text-decoration:none}
+a:hover{color:#7a6300}
+</style>
+<style>
+@media print{#am-bar,#am-open{display:none !important}}
+#am-open{position:fixed;right:12px;bottom:12px;z-index:9998;background:#1d2733;color:#ffcd00;border:0;padding:12px 16px;font:800 12px/1 Archivo,Helvetica,Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;display:none}
+@media (max-width:860px){
+  #am-bar{display:none !important;flex-direction:column;align-items:stretch;gap:8px;max-height:78vh;overflow:auto}
+  #am-bar.am-show{display:flex !important}
+  #am-bar label{min-width:0 !important}
+  #am-bar input{min-width:0 !important;width:100%;box-sizing:border-box;font-size:16px !important}
+  #am-open{display:block}
+}
+</style>
+<script>
+(function(){
+  var KEY='blinqx-accountmanager';
+  var DEFAULTS={name:'Jeroen Oversteegen',role:'Non Executive Director Business Partners',email:'jeroen.oversteegen@blinqx.tech',mobile:'+31 6 21 247 257',phone:'020 - 758 21 11',street:'Hullenbergweg 109',city:'1101 CL  Amsterdam'};
+  var FIELDS=[['name','Naam'],['role','Functie'],['email','E-mailadres'],['mobile','Mobiel'],['phone','Vast nummer'],['street','Adres'],['city','Postcode en plaats']];
+  function tel(s){var d=String(s||'').replace(/[^+0-9]/g,''); if(d.charAt(0)==='0') d='+31'+d.slice(1); return d;}
+  function read(){try{return JSON.parse(localStorage.getItem(KEY)||'{}')||{};}catch(e){return {};}}
+  function apply(d){
+    var mail=(d.email||'').trim()||DEFAULTS.email;
+    document.querySelectorAll('[data-am="mailto"]').forEach(function(el){
+      var q=(el.getAttribute('href')||'').split('?')[1];
+      el.setAttribute('href','mailto:'+mail+(q?'?'+q:''));
+    });
+    FIELDS.forEach(function(f){
+      var k=f[0], v=(d[k]||'').trim();
+      document.querySelectorAll('[data-am="'+k+'"]').forEach(function(el){
+        if(!el.dataset.amDefault) el.dataset.amDefault=el.textContent;
+        el.textContent=v||el.dataset.amDefault;
+        if(k==='email') el.setAttribute('href','mailto:'+(v||el.dataset.amDefault));
+
+        if(k==='mobile'||k==='phone') el.setAttribute('href','tel:'+tel(v||el.dataset.amDefault));
+      });
+    });
+  }
+  function panel(){
+    var d=read(); FIELDS.forEach(function(f){ if(!d[f[0]]) d[f[0]]=DEFAULTS[f[0]]; });
+    var bar=document.createElement('div');
+    bar.id='am-bar';
+    bar.setAttribute('data-om-no-print','');
+    bar.style.cssText='position:fixed;left:0;right:0;bottom:0;z-index:9999;background:#1d2733;color:#fff;font:13px/1.4 Archivo,Helvetica,Arial,sans-serif;padding:10px 14px;display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;box-shadow:0 -2px 14px rgba(0,0,0,.28)';
+    var html='<div style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:#ffcd00;align-self:center;margin-right:4px">Namens Blinqx V &amp; H</div>';
+    FIELDS.forEach(function(f){
+      html+='<label style="display:flex;flex-direction:column;gap:3px;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:#9fb0c2">'+f[1]+
+      '<input data-f="'+f[0]+'" value="'+String(d[f[0]]||'').replace(/"/g,'&quot;')+'" style="font:13px/1.3 Archivo,Helvetica,Arial,sans-serif;padding:7px 9px;border:0;min-width:'+(f[0]==='role'?'230px':'150px')+';background:#fff;color:#1d2733"></label>';
+    });
+    html+='<button data-a="save" style="font:800 12px/1 Archivo,Helvetica,Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:11px 16px;border:0;background:#ffcd00;color:#1d2733;cursor:pointer">Opslaan</button>'+
+    '<button data-a="reset" style="font:800 12px/1 Archivo,Helvetica,Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:11px 16px;border:2px solid #ffcd00;background:transparent;color:#ffcd00;cursor:pointer">Standaard</button>'+
+    '<button data-a="hide" title="Verbergen" style="font:800 12px/1 Archivo,Helvetica,Arial,sans-serif;padding:11px 14px;border:0;background:#2c3947;color:#fff;cursor:pointer">Verberg</button>';
+    bar.innerHTML=html;
+    bar.addEventListener('click',function(e){
+      var a=e.target.getAttribute&&e.target.getAttribute('data-a');
+      if(!a) return;
+      if(a==='save'){
+        var o={};
+        bar.querySelectorAll('input[data-f]').forEach(function(i){o[i.getAttribute('data-f')]=i.value;});
+        try{localStorage.setItem(KEY,JSON.stringify(o));}catch(err){}
+        apply(o);
+      } else if(a==='reset'){
+        try{localStorage.setItem(KEY,'{}');}catch(err){}
+        bar.querySelectorAll('input[data-f]').forEach(function(i){i.value=DEFAULTS[i.getAttribute('data-f')]||'';});
+        apply({});
+      } else if(a==='hide'){ bar.classList.remove('am-show'); bar.style.display='none'; var ob=document.getElementById('am-open'); if(ob) ob.textContent='Namens Blinqx V & H'; }
+    });
+    document.body.appendChild(bar);
+    var open=document.createElement('button');
+    open.id='am-open'; open.type='button'; open.textContent='Namens Blinqx V & H';
+    open.addEventListener('click',function(){
+      var showing=bar.classList.toggle('am-show');
+      bar.style.display='';
+      open.textContent=showing?'Sluiten':'Namens Blinqx V & H';
+    });
+    document.body.appendChild(open);
+  }
+  function init(){ apply(read()); if(!document.getElementById('am-bar')) panel(); }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',function(){setTimeout(init,300);});
+  else setTimeout(init,300);
+  window.addEventListener('storage',function(e){ if(e.key===KEY) apply(read()); });
+})();
+</script>
+</head>
+<body>
+<doc-page size="a4">
+
+
+<section class="page" data-screen-label="01 Cover" style="background:#fff;color:#1d2733;font-family:var(--font-body);display:flex;flex-direction:column;box-sizing:border-box">
+  <div style="background:#ffcd00;padding:50px 54px 44px">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start">
+      <img src="assets/blinqx-vh-logo.png" alt="Blinqx Verzekering &amp; Hypotheek" style="width:230px;height:auto;display:block">
+      <div style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;font-weight:800;text-align:right;line-height:1.7">Partnerbrochure<br>Editie 2026</div>
+    </div>
+    <div style="font-size:11px;letter-spacing:0.18em;text-transform:uppercase;font-weight:800;margin-top:40px">Banking, Insurance &amp; Partners</div>
+    <h1 style="font-family:var(--font-heading);font-size:54px;line-height:0.98;letter-spacing:-0.035em;font-weight:800;margin:12px 0 0;max-width:17ch;text-wrap:balance">Rechtstreeks aangesloten op het hart van de keten.</h1>
+    <p style="font-size:16px;line-height:1.5;max-width:56ch;margin:20px 0 0;font-weight:500">Blinqx Verzekering &amp; Hypotheek verbindt geldverstrekkers, verzekeraars, beleggingspartijen en toeleveranciers met een landelijk netwerk van financieel dienstverleners die dagelijks in eBlinqx werken.</p>
+  </div>
+  <div style="flex:1;display:flex;align-items:center;justify-content:center;padding:24px 54px;overflow:hidden">
+    <img src="assets/hex-check.png" alt="" style="max-width:72%;max-height:100%;height:auto;display:block">
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#1d2733">
+    <div style="background:#1d2733;color:#fff;padding:20px"><div style="font-family:var(--font-heading);font-size:26px;font-weight:800;line-height:1;color:#ffcd00">5.000+</div><div style="font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;margin-top:6px">financieel dienstverleners in het netwerk</div></div>
+    <div style="background:#1d2733;color:#fff;padding:20px"><div style="font-family:var(--font-heading);font-size:26px;font-weight:800;line-height:1;color:#ffcd00">1 platform</div><div style="font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;margin-top:6px">hypotheek, verzekering, volmacht en CRM</div></div>
+    <div style="background:#1d2733;color:#fff;padding:20px"><div style="font-family:var(--font-heading);font-size:26px;font-weight:800;line-height:1;color:#ffcd00">13</div><div style="font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;margin-top:6px">proposities voor ketenpartners</div></div>
+  </div>
+</section>
+
+<section class="page" data-screen-label="02 Waarom Blinqx" style="background:#fff;color:#1d2733;font-family:var(--font-body);padding:50px 54px 44px;display:flex;flex-direction:column;box-sizing:border-box">
+  <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #1d2733;padding-bottom:12px"><span style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:800">Waarom Blinqx</span><span style="width:34px;height:38px;background:#ffcd00;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px">02</span></div>
+  <h2 style="font-family:var(--font-heading);font-size:36px;line-height:1.03;letter-spacing:-0.025em;font-weight:800;margin:24px 0 0;max-width:26ch">Eén ingang naar het intermediaire kanaal.</h2>
+  <p style="font-size:14px;line-height:1.55;max-width:70ch;margin:12px 0 0">Financieel advieskantoren werken dagelijks in eBlinqx: van hypotheekaanvraag tot polisbeheer, van CRM tot actief klantbeheer. Wie zijn product, dienst of merk bij het intermediair wil laten landen, zit via Blinqx direct aan tafel — in het systeem, op events en in de vakinhoudelijke dialoog.</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#dfe3e9;margin-top:20px;flex:1">
+    <div style="background:#f5f6f8;padding:14px 17px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">In de workflow, niet ernaast</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Proposities worden zichtbaar op het moment dat de adviseur ze nodig heeft: in het adviesproces, bij signalen en in formulieren.</p></div>
+    <div style="background:#f5f6f8;padding:14px 17px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">Data en standaarden</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Integraties op HDN- en SIVI AFD-standaarden en API-koppelingen — koppelen zonder maatwerkketen per kantoor.</p></div>
+    <div style="background:#f5f6f8;padding:14px 17px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">Bereik én relatie</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Van partnerpagina en nieuwsbrief tot Academy, events en de Business Boost-podcast: meerdere kanalen naar dezelfde doelgroep.</p></div>
+    <div style="background:#f5f6f8;padding:14px 17px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">Het eBlinqx-platform</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Hypotheek, verzekering, volmacht en CRM in één omgeving, met de add-ons eromheen.</p></div>
+    <div style="background:#f5f6f8;padding:14px 17px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">Landelijk netwerk</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Advieskantoren, serviceproviders en volmachten die met onze software werken.</p></div>
+    <div style="background:#f5f6f8;padding:14px 17px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">Kennis en community</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Academy, trainingen, events en podcast — doorlopend contact met dezelfde doelgroep.</p></div>
+  </div>
+  <div style="background:#ffcd00;padding:18px 24px;margin-top:18px"><p style="font-family:var(--font-heading);font-size:18px;line-height:1.25;font-weight:800;margin:0;max-width:54ch">Doelgroepen: geldverstrekkers, levens-, AOV-, WW- en schadeverzekeraars, volmachten, pensioenuitvoerders, beleggingspartijen, consumptief krediet, bankgarantie, taxatie, keuring en verduurzaming.</p></div>
+</section>
+
+<section class="page" data-screen-label="03 De klantreis" style="background:#fff;color:#1d2733;font-family:var(--font-body);padding:50px 54px 44px;display:flex;flex-direction:column;box-sizing:border-box">
+  <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #1d2733;padding-bottom:12px"><span style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:800">De klantreis</span><span style="width:34px;height:38px;background:#ffcd00;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px">03</span></div>
+  <h2 style="font-family:var(--font-heading);font-size:36px;line-height:1.03;letter-spacing:-0.025em;font-weight:800;margin:24px 0 0;max-width:24ch">Elk product heeft zijn eigen moment.</h2>
+  <p style="font-size:14px;line-height:1.55;max-width:70ch;margin:12px 0 0">Van bieding tot doorlopend beheer kent de woonklantreis vaste beslismomenten. Wie op het juiste moment in de workflow zit, wint het dossier.</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 34px;margin-top:18px;flex:1;align-content:start">
+    <div style="display:flex;justify-content:space-between;gap:14px;border-bottom:1px solid #dfe3e9;padding:8px 0;font-size:12.5px"><span style="font-weight:800">Oriëntatie &amp; bieden</span><span style="text-align:right">Bieden met Comfort · Hypotheekcijfer.nl</span></div>
+    <div style="display:flex;justify-content:space-between;gap:14px;border-bottom:1px solid #dfe3e9;padding:8px 0;font-size:12.5px"><span style="font-weight:800">Koopovereenkomst</span><span style="text-align:right">Bankgarantie uit het dossier · taxatie en keuring via partnerkoppelingen</span></div>
+    <div style="display:flex;justify-content:space-between;gap:14px;border-bottom:1px solid #dfe3e9;padding:8px 0;font-size:12.5px"><span style="font-weight:800">Hypotheekadvies</span><span style="text-align:right">Hypotheek geldverstrekker · ORV op leningdelen · maandlasten- en woonlastenverzekering</span></div>
+    <div style="display:flex;justify-content:space-between;gap:14px;border-bottom:1px solid #dfe3e9;padding:8px 0;font-size:12.5px"><span style="font-weight:800">Inkomen &amp; vermogen</span><span style="text-align:right">AOV · WW-dekking · beleggen via Connect · Pensioencijfer.nl</span></div>
+    <div style="display:flex;justify-content:space-between;gap:14px;border-bottom:1px solid #dfe3e9;padding:8px 0;font-size:12.5px"><span style="font-weight:800">Beheer &amp; nazorg</span><span style="text-align:right">Renteadministratie.nl · Finconnect · herijking dekkingen · verduurzaming</span></div>
+    <div style="display:flex;justify-content:space-between;gap:14px;border-bottom:1px solid #dfe3e9;padding:8px 0;font-size:12.5px"><span style="font-weight:800">Doorlopend</span><span style="text-align:right">eBlinqx Signalen en actief klantbeheer houden het dossier in beweging</span></div>
+  </div>
+  <div style="background:#ffcd00;padding:18px 24px;margin-top:18px"><p style="font-family:var(--font-heading);font-size:18px;line-height:1.25;font-weight:800;margin:0;max-width:54ch">Op het juiste klantreismoment in de workflow zitten is het verschil tussen een portaal en een vanzelfsprekende stap.</p></div>
+</section>
+
+<section class="page" data-screen-label="04 Proposities 1–5" style="background:#fff;color:#1d2733;font-family:var(--font-body);padding:50px 54px 44px;display:flex;flex-direction:column;box-sizing:border-box">
+  <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #1d2733;padding-bottom:12px"><span style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:800">De catalogus · 1 tot 5</span><span style="width:34px;height:38px;background:#ffcd00;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px">04</span></div>
+  <h2 style="font-family:var(--font-heading);font-size:36px;line-height:1.03;letter-spacing:-0.025em;font-weight:800;margin:24px 0 0;max-width:20ch">Dertien proposities.</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#dfe3e9;margin-top:20px;flex:1">
+    <div style="background:#f5f6f8;padding:14px 17px"><div style="font-size:9.5px;letter-spacing:0.16em;text-transform:uppercase;font-weight:800">Consumentpropositie</div><div style="font-family:var(--font-heading);font-size:15px;font-weight:800;margin-top:3px">1. Bieden met Comfort</div><p style="font-size:12px;line-height:1.45;margin:5px 0 0">Bieders vooraf zekerheid over hun financierbaarheid: leencapaciteitstoetsing, documentherkenning en comfortverklaringen — onder eigen label of samen met uw acceptatieproces.</p><div style="font-size:10.5px;line-height:1.4;margin-top:7px;padding-top:6px;border-top:1px solid #dfe3e9"><b>Relevant voor</b> Geldverstrekkers, NHG-gerelateerde partijen, bankgarantiepartijen</div></div>
+    <div style="background:#f5f6f8;padding:14px 17px"><div style="font-size:9.5px;letter-spacing:0.16em;text-transform:uppercase;font-weight:800">Data &amp; content</div><div style="font-family:var(--font-heading);font-size:15px;font-weight:800;margin-top:3px">2. Hypotheekcijfer.nl</div><p style="font-size:12px;line-height:1.45;margin:5px 0 0">De consument krijgt één cijfer voor de betaalbaarheid van zijn hypotheek — nu en straks: bij pensioen, bij het einde van de renteaftrek en bij het naderen van de einddatum. Met een persoonlijk rapport met tips over besparingen en verbeteringen. Aanhaken met co-branded tools, contentsponsoring of datalevering.</p><div style="font-size:10.5px;line-height:1.4;margin-top:7px;padding-top:6px;border-top:1px solid #dfe3e9"><b>Relevant voor</b> Geldverstrekkers, toeleveranciers met een woonpropositie</div></div>
+    <div style="background:#f5f6f8;padding:14px 17px"><div style="font-size:9.5px;letter-spacing:0.16em;text-transform:uppercase;font-weight:800">Data &amp; content</div><div style="font-family:var(--font-heading);font-size:15px;font-weight:800;margin-top:3px">3. Pensioencijfer.nl</div><p style="font-size:12px;line-height:1.45;margin:5px 0 0">Hetzelfde principe voor pensioen: helder inzicht in de pensioensituatie, teruggebracht tot één cijfer dat iedereen begrijpt. Bestaande technieken gecombineerd met een cijfer — het nodigt de consument uit zich te verdiepen en past bij doorlopend beheer.</p><div style="font-size:10.5px;line-height:1.4;margin-top:7px;padding-top:6px;border-top:1px solid #dfe3e9"><b>Relevant voor</b> Verzekeraars, pensioenuitvoerders, beleggingspartijen</div></div>
+    <div style="background:#f5f6f8;padding:14px 17px"><div style="font-size:9.5px;letter-spacing:0.16em;text-transform:uppercase;font-weight:800">Onderzoek</div><div style="font-family:var(--font-heading);font-size:15px;font-weight:800;margin-top:3px">4. Marktonderzoek &amp; adviseurspanel</div><p style="font-size:12px;line-height:1.45;margin:5px 0 0">Toets uw propositie vóór lancering met panels, enquêtes en diepte-interviews. Resultaat: een rapport met draagvlakmeting en verbeterpunten.</p><div style="font-size:10.5px;line-height:1.4;margin-top:7px;padding-top:6px;border-top:1px solid #dfe3e9"><b>Relevant voor</b> Alle doelgroepen</div></div>
+    <div style="background:#f5f6f8;padding:14px 17px"><div style="font-size:9.5px;letter-spacing:0.16em;text-transform:uppercase;font-weight:800">Distributie</div><div style="font-family:var(--font-heading);font-size:15px;font-weight:800;margin-top:3px">5. Distributienetwerk beschikbaar stellen</div><p style="font-size:12px;line-height:1.45;margin:5px 0 0">Introductie bij advieskantoren, serviceproviders en volmachten, ondersteund door het platform waarin zij dagelijks werken — van kennismaking en pilotkantoren tot structurele opname.</p><div style="font-size:10.5px;line-height:1.4;margin-top:7px;padding-top:6px;border-top:1px solid #dfe3e9"><b>Relevant voor</b> Alle doelgroepen met een propositie voor het intermediair</div></div>
+    <div style="background:#f5f6f8;padding:14px 17px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">Hoe u kiest</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Elke propositie is los te nemen of te combineren. In de propositiefit bepalen we samen welk klantreismoment en welke bouwstenen bij uw doelstelling passen.</p></div>
+  </div>
+</section>
+
+<section class="page" data-screen-label="05 Proposities 6–9" style="background:#fff;color:#1d2733;font-family:var(--font-body);padding:50px 54px 44px;display:flex;flex-direction:column;box-sizing:border-box">
+  <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #1d2733;padding-bottom:12px"><span style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:800">De catalogus · 6 tot 9</span><span style="width:34px;height:38px;background:#ffcd00;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px">05</span></div>
+  <h2 style="font-family:var(--font-heading);font-size:36px;line-height:1.03;letter-spacing:-0.025em;font-weight:800;margin:24px 0 0;max-width:30ch">Beheer, marketing, technologie en vermogen.</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#dfe3e9;margin-top:20px;flex:1">
+    <div style="background:#f5f6f8;padding:14px 17px"><div style="font-size:9.5px;letter-spacing:0.16em;text-transform:uppercase;font-weight:800">Beheer</div><div style="font-family:var(--font-heading);font-size:15px;font-weight:800;margin-top:3px">6. Renteadministratie.nl</div><p style="font-size:12px;line-height:1.45;margin:5px 0 0">Grip op renteherzieningen en einde-rentevastperiodes: signalering naar adviseur en klant, met een gestroomlijnd proces voor verlengings- en oversluitmomenten. Retentie voor u, zorgplicht aantoonbaar voor de adviseur.</p><div style="font-size:10.5px;line-height:1.4;margin-top:7px;padding-top:6px;border-top:1px solid #dfe3e9"><b>Relevant voor</b> Geldverstrekkers, servicers, advieskantoren met portefeuille</div></div>
+    <div style="background:#f5f6f8;padding:14px 17px"><div style="font-size:9.5px;letter-spacing:0.16em;text-transform:uppercase;font-weight:800">Marketing</div><div style="font-family:var(--font-heading);font-size:15px;font-weight:800;margin-top:3px">7. Productpositionering &amp; launchprogramma</div><p style="font-size:12px;line-height:1.45;margin:5px 0 0">Partnerpagina, nieuwsbrief- en LinkedIn-bereik, webinars via de Academy, podium op events en een aflevering in de Business Boost-podcast — inclusief de vakinhoudelijke vertaling naar het adviesgesprek.</p><div style="font-size:10.5px;line-height:1.4;margin-top:7px;padding-top:6px;border-top:1px solid #dfe3e9"><b>Relevant voor</b> Alle partners met een propositie richting het intermediair</div></div>
+    <div style="background:#f5f6f8;padding:14px 17px"><div style="font-size:9.5px;letter-spacing:0.16em;text-transform:uppercase;font-weight:800">Technologie</div><div style="font-family:var(--font-heading);font-size:15px;font-weight:800;margin-top:3px">8. Integraties, Slimme Formulieren &amp; eBlinqx Signalen</div><p style="font-size:12px;line-height:1.45;margin:5px 0 0">API-koppelingen in eBlinqx, whitelabel rekentools en Slimme Formulieren in uw huisstijl, en eBlinqx Signalen voor gebeurtenisgestuurd klantcontact. Geen extra portaal, maar een stap in de workflow.</p><div style="font-size:10.5px;line-height:1.4;margin-top:7px;padding-top:6px;border-top:1px solid #dfe3e9"><b>Relevant voor</b> Bankgarantiepartijen, taxateurs, verduurzamers, softwarepartijen</div></div>
+    <div style="background:#f5f6f8;padding:14px 17px"><div style="font-size:9.5px;letter-spacing:0.16em;text-transform:uppercase;font-weight:800">Vermogen</div><div style="font-family:var(--font-heading);font-size:15px;font-weight:800;margin-top:3px">9. Connect &amp; Financiële Planner</div><p style="font-size:12px;line-height:1.45;margin:5px 0 0">Depot- en portefeuilledata stromen via Connect het klantbeeld in en voeden de planning. Uw propositie wordt rekenbaar in scenario&#39;s: doelvermogen, aflossen versus beleggen, inkomen voor later.</p><div style="font-size:10.5px;line-height:1.4;margin-top:7px;padding-top:6px;border-top:1px solid #dfe3e9"><b>Relevant voor</b> Beleggingsinstellingen, vermogensbeheerders, fondsaanbieders</div></div>
+  </div>
+</section>
+
+<section class="page" data-screen-label="06 Proposities 10–13" style="background:#fff;color:#1d2733;font-family:var(--font-body);padding:50px 54px 44px;display:flex;flex-direction:column;box-sizing:border-box">
+  <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #1d2733;padding-bottom:12px"><span style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:800">De catalogus · 10 tot 13</span><span style="width:34px;height:38px;background:#ffcd00;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px">06</span></div>
+  <h2 style="font-family:var(--font-heading);font-size:36px;line-height:1.03;letter-spacing:-0.025em;font-weight:800;margin:24px 0 0;max-width:30ch">Bescherming, schade, community en AI.</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#dfe3e9;margin-top:20px;flex:1">
+    <div style="background:#f5f6f8;padding:14px 17px"><div style="font-size:9.5px;letter-spacing:0.16em;text-transform:uppercase;font-weight:800">Inkomensbescherming</div><div style="font-family:var(--font-heading);font-size:15px;font-weight:800;margin-top:3px">10. ORV, AOV, WW &amp; maandlastenbescherming</div><p style="font-size:12px;line-height:1.45;margin:5px 0 0">Elk beschermingsproduct krijgt zijn vaste adviesmoment: ORV en woonlastenverzekering bij het hypotheekadvies, AOV en WW bij de inkomensanalyse. Scenario&#39;s worden doorgerekend op de werkelijke maandlast.</p><div style="font-size:10.5px;line-height:1.4;margin-top:7px;padding-top:6px;border-top:1px solid #dfe3e9"><b>Relevant voor</b> Levensverzekeraars, AOV-, WW- en maandlastenverzekeraars</div></div>
+    <div style="background:#f5f6f8;padding:14px 17px"><div style="font-size:9.5px;letter-spacing:0.16em;text-transform:uppercase;font-weight:800">Schade</div><div style="font-family:var(--font-heading);font-size:15px;font-weight:800;margin-top:3px">11. Finconnect — schadeafhandeling</div><p style="font-size:12px;line-height:1.45;margin:5px 0 0">Melding, dossieropbouw en statuscommunicatie in één digitale flow, aangesloten op eBlinqx. Lagere behandelkosten, kortere doorlooptijden en een consistente klantervaring over het kanaal.</p><div style="font-size:10.5px;line-height:1.4;margin-top:7px;padding-top:6px;border-top:1px solid #dfe3e9"><b>Relevant voor</b> Verzekeraars, volmachten, schadebehandelaars en expertisepartijen</div></div>
+    <div style="background:#f5f6f8;padding:14px 17px"><div style="font-size:9.5px;letter-spacing:0.16em;text-transform:uppercase;font-weight:800">Community</div><div style="font-family:var(--font-heading);font-size:15px;font-weight:800;margin-top:3px">12. Partnerprogramma, Academy &amp; events</div><p style="font-size:12px;line-height:1.45;margin:5px 0 0">Structurele zichtbaarheid en kennispositie: partnerpagina, trainingen en webinars, podium op events en in de podcast. Voor partijen die het intermediair doorlopend willen bereiken.</p><div style="font-size:10.5px;line-height:1.4;margin-top:7px;padding-top:6px;border-top:1px solid #dfe3e9"><b>Relevant voor</b> Alle doelgroepen</div></div>
+    <div style="background:#f5f6f8;padding:14px 17px"><div style="font-size:9.5px;letter-spacing:0.16em;text-transform:uppercase;font-weight:800">AI</div><div style="font-family:var(--font-heading);font-size:15px;font-weight:800;margin-top:3px">13. AI in de keten</div><p style="font-size:12px;line-height:1.45;margin:5px 0 0">Blinqx AI Mail, AI Core en Blurrify brengen documentherkenning, dossiercontrole en slimmere klantcommunicatie in de adviespraktijk. Voor ketenpartners: schonere aanleveringen, minder uitval, kortere doorlooptijden. We verkennen graag gezamenlijke toepassingen.</p><div style="font-size:10.5px;line-height:1.4;margin-top:7px;padding-top:6px;border-top:1px solid #dfe3e9"><b>Relevant voor</b> Alle doelgroepen, in het bijzonder partijen met volume</div></div>
+  </div>
+</section>
+
+<section class="page" data-screen-label="07 Per doelgroep" style="background:#fff;color:#1d2733;font-family:var(--font-body);padding:50px 54px 44px;display:flex;flex-direction:column;box-sizing:border-box">
+  <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #1d2733;padding-bottom:12px"><span style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:800">Per doelgroep</span><span style="width:34px;height:38px;background:#ffcd00;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px">07</span></div>
+  <h2 style="font-family:var(--font-heading);font-size:36px;line-height:1.03;letter-spacing:-0.025em;font-weight:800;margin:24px 0 0;max-width:18ch">Wat past bij wie?</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#dfe3e9;margin-top:20px;flex:1">
+    <div style="background:#f5f6f8;padding:14px 17px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">Geldverstrekkers</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Bieden met Comfort onder eigen label · distributie via het adviseursnetwerk · Renteadministratie.nl voor retentie · marktonderzoek naar acceptatiebeleid · positionering via Hypotheekcijfer.nl (betaalbaarheidscijfer plus rapport)</p></div>
+    <div style="background:#f5f6f8;padding:14px 17px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">Levens- &amp; inkomensverzekeraars</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Vast adviesmoment in de klantreis · scenario&#39;s rekenbaar in de Financiële Planner · Premievergelijk en Slimme Formulieren · eBlinqx Signalen voor herijking · adviseurspanel en Academy</p></div>
+    <div style="background:#f5f6f8;padding:14px 17px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">Schadeverzekeraars &amp; volmachten</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Finconnect voor schadeafhandeling · Premievergelijk en volmachtdistributie · naverrekenen en polisbeheer in eBlinqx · eBlinqx Signalen · launchprogramma</p></div>
+    <div style="background:#f5f6f8;padding:14px 17px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">Beleggingspartijen</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Datakoppeling via Connect · rekenbaar in de Financiële Planner · positionering via Pensioencijfer.nl · distributie via het netwerk · adviseurspanel</p></div>
+    <div style="background:#f5f6f8;padding:14px 17px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">Bankgarantiepartijen</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Aanvragen vanuit het hypotheekdossier · aanhaken bij Bieden met Comfort · Slimme Formulieren in eigen huisstijl · partnerprogramma en events</p></div>
+    <div style="background:#f5f6f8;padding:14px 17px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">Overige toeleveranciers</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Integratie in de workflow · signaalgestuurde inzet, bijvoorbeeld verduurzaming · partnerpagina · zichtbaarheid via events en podcast · introductie bij advieskantoren</p></div>
+  </div>
+  <div style="background:#ffcd00;padding:18px 24px;margin-top:18px"><p style="font-family:var(--font-heading);font-size:18px;line-height:1.25;font-weight:800;margin:0;max-width:54ch">Dezelfde bouwstenen zetten we in voor pensioenuitvoerders en PPI&#39;s, consumptief krediet, uitvaart- en rechtsbijstandverzekeraars, notarissen en serviceproviders.</p></div>
+</section>
+
+<section class="page" data-screen-label="08 Samenwerken" style="background:#fff;color:#1d2733;font-family:var(--font-body);padding:50px 54px 44px;display:flex;flex-direction:column;box-sizing:border-box">
+  <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #1d2733;padding-bottom:12px"><span style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:800">Samenwerken en proces</span><span style="width:34px;height:38px;background:#ffcd00;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px">08</span></div>
+  <h2 style="font-family:var(--font-heading);font-size:36px;line-height:1.03;letter-spacing:-0.025em;font-weight:800;margin:24px 0 0;max-width:26ch">Vier vormen, van licht naar intensief.</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#dfe3e9;margin-top:20px;flex:1">
+    <div style="background:#f5f6f8;padding:14px 17px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">1 · Partner</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Zichtbaarheid via het partnerprogramma: partnerpagina, nieuwsbrief en events.</p></div>
+    <div style="background:#f5f6f8;padding:14px 17px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">2 · Integratie</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Technische koppeling met eBlinqx: uw dienst als stap in de adviesworkflow.</p></div>
+    <div style="background:#f5f6f8;padding:14px 17px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">3 · Co-creatie</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Samen een propositie bouwen of toetsen: pilot, panel en doorontwikkeling.</p></div>
+    <div style="background:#f5f6f8;padding:14px 17px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">4 · Distributie</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Structurele marktbewerking via het adviseursnetwerk, met meetbare doelen.</p></div>
+  </div>
+  <div style="border-top:2px solid #ffcd00;margin-top:18px;padding-top:12px;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;font-weight:800">Van kennismaking naar uitrol</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 34px;margin-top:18px;flex:1;align-content:start">
+    <div style="display:flex;justify-content:space-between;gap:14px;border-bottom:1px solid #dfe3e9;padding:8px 0;font-size:12.5px"><span style="font-weight:800">01 Intake</span><span style="text-align:right">Kennismaking en doelstellingen; binnen twee weken een eerste gesprek</span></div>
+    <div style="display:flex;justify-content:space-between;gap:14px;border-bottom:1px solid #dfe3e9;padding:8px 0;font-size:12.5px"><span style="font-weight:800">02 Propositiefit</span><span style="text-align:right">Klantreismoment, bouwstenen, rolverdeling en compliance-kader in een voorstel</span></div>
+    <div style="display:flex;justify-content:space-between;gap:14px;border-bottom:1px solid #dfe3e9;padding:8px 0;font-size:12.5px"><span style="font-weight:800">03 Pilot</span><span style="text-align:right">Afgebakende groep pilotkantoren met vooraf afgesproken meetpunten</span></div>
+    <div style="display:flex;justify-content:space-between;gap:14px;border-bottom:1px solid #dfe3e9;padding:8px 0;font-size:12.5px"><span style="font-weight:800">04 Uitrol</span><span style="text-align:right">Bij bewezen resultaat opschalen, ondersteund door het launchprogramma</span></div>
+  </div>
+</section>
+
+<section class="page" data-screen-label="09 Compliance" style="background:#fff;color:#1d2733;font-family:var(--font-body);padding:50px 54px 44px;display:flex;flex-direction:column;box-sizing:border-box">
+  <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #1d2733;padding-bottom:12px"><span style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:800">Uitbesteding, DORA &amp; compliance</span><span style="width:34px;height:38px;background:#ffcd00;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px">09</span></div>
+  <h2 style="font-family:var(--font-heading);font-size:36px;line-height:1.03;letter-spacing:-0.025em;font-weight:800;margin:24px 0 0;max-width:24ch">In control, voordat we beginnen.</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#dfe3e9;margin-top:20px;flex:1">
+    <div style="background:#f5f6f8;padding:14px 17px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">DORA en uitbestedingsbeleid</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Banken en verzekeraars werken alleen met ICT-partijen die aantoonbaar in control zijn. Samenwerkingen worden daarop ingericht: contractuele afspraken over informatiebeveiliging, incidentprocedures, exit-regelingen en audit-rechten.</p></div>
+    <div style="background:#f5f6f8;padding:14px 17px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">Documentatie</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Documentatie ten behoeve van uw eigen uitbestedingsdossier en verantwoording.</p></div>
+    <div style="background:#f5f6f8;padding:14px 17px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">Wft-rolverdeling</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Per samenwerking wordt juridisch vastgelegd wie onder welke Wft-vergunning bemiddelt.</p></div>
+    <div style="background:#f5f6f8;padding:14px 17px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">Provisieverbod</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Hoe de propositie zich verhoudt tot het provisieverbod, onder meer bij ORV en betalingsbeschermers.</p></div>
+    <div style="background:#f5f6f8;padding:14px 17px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">MiFID II en Nationaal Regime</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Welke kaders gelden bij beleggingskoppelingen en welke rol de adviseur daarin heeft.</p></div>
+    <div style="background:#f5f6f8;padding:14px 17px"><div style="font-family:var(--font-heading);font-size:15px;font-weight:800">Wwft en gegevensbescherming</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Hoe cliëntenonderzoek wordt ondersteund, met de verwerkersovereenkomst en hosting binnen Nederland en Europa.</p></div>
+  </div>
+  <div style="background:#ffcd00;padding:18px 24px;margin-top:18px"><p style="font-family:var(--font-heading);font-size:18px;line-height:1.25;font-weight:800;margin:0;max-width:54ch">Verkennen wat er mogelijk is? Van een eerste kennismaking met het netwerk tot een volledig launch- en distributieprogramma.</p></div>
+</section>
+
+<section class="page" data-screen-label="10 Geschiedenis" style="background:#fff;color:#1d2733;font-family:var(--font-body);padding:50px 54px 44px;display:flex;flex-direction:column;box-sizing:border-box">
+  <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #1d2733;padding-bottom:12px"><span style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:800">Onze geschiedenis</span><span style="width:34px;height:38px;background:#ffcd00;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px">10</span></div>
+  <h2 style="font-family:var(--font-heading);font-size:38px;line-height:1.02;letter-spacing:-0.025em;font-weight:800;margin:26px 0 0;max-width:24ch">Veel merken. Eén platform. Dat is precies het punt.</h2>
+  <p style="font-size:14.5px;line-height:1.55;max-width:68ch;margin:14px 0 0">Blinqx Verzekering &amp; Hypotheek is niet in één keer bedacht. Het is het resultaat van softwarebedrijven die decennialang naast elkaar aan dezelfde adviespraktijk bouwden — en op enig moment concludeerden dat de adviseur meer heeft aan één keten dan aan acht losse pakketten.</p>
+  <div style="margin-top:20px;flex:1">
+    <div style="display:grid;grid-template-columns:82px 1fr;gap:16px;border-top:1px solid #dfe3e9;padding:11px 0">
+      <div style="font-family:var(--font-heading);font-size:16px;font-weight:800">Jaren 90</div>
+      <div><div style="font-family:var(--font-heading);font-size:15.5px;font-weight:800">Unit4 Financiële Intermediairs</div><p style="font-size:12.5px;line-height:1.5;margin:3px 0 0">De software voor het financieel intermediair begint als onderdeel van Unit4 — de basis waarop veel kantoren hun eerste geautomatiseerde polisadministratie draaiden.</p></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:82px 1fr;gap:16px;border-top:1px solid #dfe3e9;padding:11px 0">
+      <div style="font-family:var(--font-heading);font-size:16px;font-weight:800">2016</div>
+      <div><div style="font-family:var(--font-heading);font-size:15.5px;font-weight:800">HFBG</div><p style="font-size:12.5px;line-height:1.5;margin:3px 0 0">Faster Forward en de Nationale Hypotheekbond bundelen hun activiteiten. Daaruit groeien Fastlane, PortefeuilleSignalen, UwKluis, nazorg-formulieren en de rekentools van de Hypotheekbond.</p></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:82px 1fr;gap:16px;border-top:1px solid #dfe3e9;padding:11px 0">
+      <div style="font-family:var(--font-heading);font-size:16px;font-weight:800">2019</div>
+      <div><div style="font-family:var(--font-heading);font-size:15.5px;font-weight:800">DIAS Software</div><p style="font-size:12.5px;line-height:1.5;margin:3px 0 0">Unit4 Financiële Intermediairs gaat zelfstandig verder als DIAS Software, met ervaren tech-ondernemers als eigenaar. Adviesbox, Finly en Elements horen bij de familie.</p></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:82px 1fr;gap:16px;border-top:1px solid #dfe3e9;padding:11px 0">
+      <div style="font-family:var(--font-heading);font-size:16px;font-weight:800">2023</div>
+      <div><div style="font-family:var(--font-heading);font-size:15.5px;font-weight:800">DIAS Group wordt Blinqx</div><p style="font-size:12.5px;line-height:1.5;margin:3px 0 0">De groep neemt een nieuwe naam aan. Per 1 juli komen Faster Forward en de Nationale Hypotheekbond erbij: samen vormen zij het segment Verzekering &amp; Hypotheek.</p></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:82px 1fr;gap:16px;border-top:1px solid #dfe3e9;padding:11px 0">
+      <div style="font-family:var(--font-heading);font-size:16px;font-weight:800">Vandaag</div>
+      <div><div style="font-family:var(--font-heading);font-size:15.5px;font-weight:800">Eén huis, herkenbare merken</div><p style="font-size:12.5px;line-height:1.5;margin:3px 0 0">De vertrouwde namen krijgen hun plek in het portfolio — dezelfde mensen, dezelfde kennis, maar op één fundament en met één routekaart.</p></div>
+    </div>
+
+  </div>
+  <div style="border-top:2px solid #ffcd00;margin-top:16px;padding-top:12px;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;font-weight:800">De namen die je kent</div>
+  <div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:12px">
+    <div style="border:2px solid #1d2733;padding:7px 11px;font-family:var(--font-heading);font-size:12px;font-weight:800">DIAS Software</div>
+    <div style="border:2px solid #1d2733;padding:7px 11px;font-family:var(--font-heading);font-size:12px;font-weight:800">Adviesbox</div>
+    <div style="border:2px solid #1d2733;padding:7px 11px;font-family:var(--font-heading);font-size:12px;font-weight:800">Finly</div>
+    <div style="border:2px solid #1d2733;padding:7px 11px;font-family:var(--font-heading);font-size:12px;font-weight:800">eBlinqx Connect</div>
+    <div style="border:2px solid #1d2733;padding:7px 11px;font-family:var(--font-heading);font-size:12px;font-weight:800">Faster Forward</div>
+    <div style="border:2px solid #1d2733;padding:7px 11px;font-family:var(--font-heading);font-size:12px;font-weight:800">Nationale Hypotheekbond</div>
+    <div style="border:2px solid #1d2733;padding:7px 11px;font-family:var(--font-heading);font-size:12px;font-weight:800">Fastlane</div>
+    <div style="border:2px solid #1d2733;padding:7px 11px;font-family:var(--font-heading);font-size:12px;font-weight:800">PortefeuilleSignalen</div>
+    <div style="border:2px solid #1d2733;padding:7px 11px;font-family:var(--font-heading);font-size:12px;font-weight:800">UwKluis</div>
+    <div style="border:2px solid #1d2733;padding:7px 11px;font-family:var(--font-heading);font-size:12px;font-weight:800"><a href="https://nazorg-formulieren.nl" style="color:inherit;text-decoration:none">nazorg-formulieren.nl</a></div>
+    <div style="border:2px solid #1d2733;padding:7px 11px;font-family:var(--font-heading);font-size:12px;font-weight:800">FinRust</div>
+    <div style="border:2px solid #1d2733;padding:7px 11px;font-family:var(--font-heading);font-size:12px;font-weight:800">MyTP</div>
+    <div style="border:2px solid #1d2733;padding:7px 11px;font-family:var(--font-heading);font-size:12px;font-weight:800">FinData</div>
+    <div style="border:2px solid #1d2733;padding:7px 11px;font-family:var(--font-heading);font-size:12px;font-weight:800">FinConnect</div>
+    <div style="border:2px solid #1d2733;padding:7px 11px;font-family:var(--font-heading);font-size:12px;font-weight:800">Holland Webservices</div>
+    <div style="border:2px solid #1d2733;padding:7px 11px;font-family:var(--font-heading);font-size:12px;font-weight:800">Yes-co</div>
+  </div>
+</section>
+
+<section class="page" data-screen-label="11 Groeipad" style="background:#1d2733;color:#fff;font-family:var(--font-body);padding:50px 54px 44px;display:flex;flex-direction:column;box-sizing:border-box">
+  <div style="border-bottom:2px solid #ffcd00;padding-bottom:12px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:800;color:#ffcd00">Het groeipad tot nu toe</span><span style="width:34px;height:38px;background:#ffcd00;color:#1d2733;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px">11</span></div>
+  <h2 style="font-family:var(--font-heading);font-size:36px;line-height:1.03;letter-spacing:-0.025em;font-weight:800;margin:24px 0 0;max-width:22ch;color:#fff">Blinqx groeipad tot en met 2026.</h2>
+  <div style="margin-top:20px;flex:1">
+    <div style="display:grid;grid-template-columns:58px 26px 1fr;gap:0;align-items:start">
+      <div style="font-family:var(--font-heading);font-size:20px;font-weight:800;color:#ffcd00;line-height:1.1;padding-top:1px">2019</div>
+      <div style="position:relative;align-self:stretch;display:flex;justify-content:center"><div style="width:2px;background:#ffcd00;flex:none"></div><div style="position:absolute;top:4px;width:14px;height:16px;background:#ffcd00;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0 75%,0 25%)"></div></div>
+      <div style="padding:0 0 12px 20px"><div style="font-family:var(--font-heading);font-size:16px;font-weight:800;line-height:1.2">Start van de onderneming</div><p style="font-size:12.5px;line-height:1.5;margin:5px 0 0;max-width:56ch">Tech-ondernemers Ruud, Ynze, Jelke en Chris starten een nieuwe onderneming met de overname van DIAS Software en Aplaza — de basis van het segment Verzekering &amp; Hypotheek.</p></div>
+    </div>
+    <div style="display:grid;grid-template-columns:58px 26px 1fr;gap:0;align-items:start">
+      <div style="font-family:var(--font-heading);font-size:20px;font-weight:800;color:#ffcd00;line-height:1.1;padding-top:1px">2021</div>
+      <div style="position:relative;align-self:stretch;display:flex;justify-content:center"><div style="width:2px;background:#ffcd00;flex:none"></div><div style="position:absolute;top:4px;width:14px;height:16px;background:#ffcd00;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0 75%,0 25%)"></div></div>
+      <div style="padding:0 0 12px 20px"><div style="font-family:var(--font-heading);font-size:16px;font-weight:800;line-height:1.2">Online Groep en DIAS ÉÉN</div><p style="font-size:12.5px;line-height:1.5;margin:5px 0 0;max-width:56ch">Online Groep komt met een overname bij het portfolio, en het concept DIAS ÉÉN voor Hypotheek &amp; Verzekering gaat van start.</p></div>
+    </div>
+    <div style="display:grid;grid-template-columns:58px 26px 1fr;gap:0;align-items:start">
+      <div style="font-family:var(--font-heading);font-size:20px;font-weight:800;color:transparent;line-height:1.1;padding-top:1px">2021</div>
+      <div style="position:relative;align-self:stretch;display:flex;justify-content:center"><div style="width:2px;background:#ffcd00;flex:none"></div><div style="position:absolute;top:4px;width:14px;height:16px;background:#ffcd00;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0 75%,0 25%)"></div></div>
+      <div style="padding:0 0 12px 20px"><div style="font-family:var(--font-heading);font-size:16px;font-weight:800;line-height:1.2">MyTP</div><p style="font-size:12.5px;line-height:1.5;margin:5px 0 0;max-width:56ch">De premievergelijker MyTP wordt toegevoegd aan de software van DIAS — vandaag eBlinqx Premievergelijk.</p></div>
+    </div>
+    <div style="display:grid;grid-template-columns:58px 26px 1fr;gap:0;align-items:start">
+      <div style="font-family:var(--font-heading);font-size:20px;font-weight:800;color:#ffcd00;line-height:1.1;padding-top:1px">2022</div>
+      <div style="position:relative;align-self:stretch;display:flex;justify-content:center"><div style="width:2px;background:#ffcd00;flex:none"></div><div style="position:absolute;top:4px;width:14px;height:16px;background:#ffcd00;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0 75%,0 25%)"></div></div>
+      <div style="padding:0 0 12px 20px"><div style="font-family:var(--font-heading);font-size:16px;font-weight:800;line-height:1.2">Finly, Risicomanagement en Workflow</div><p style="font-size:12.5px;line-height:1.5;margin:5px 0 0;max-width:56ch">Overname van Finly CRM, Risicomanagement, slimme formulieren en Workflow-software.</p></div>
+    </div>
+    <div style="display:grid;grid-template-columns:58px 26px 1fr;gap:0;align-items:start">
+      <div style="font-family:var(--font-heading);font-size:20px;font-weight:800;color:transparent;line-height:1.1;padding-top:1px">2022</div>
+      <div style="position:relative;align-self:stretch;display:flex;justify-content:center"><div style="width:2px;background:#ffcd00;flex:none"></div><div style="position:absolute;top:4px;width:14px;height:16px;background:#ffcd00;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0 75%,0 25%)"></div></div>
+      <div style="padding:0 0 12px 20px"><div style="font-family:var(--font-heading);font-size:16px;font-weight:800;line-height:1.2">Adviesbox en FinData</div><p style="font-size:12.5px;line-height:1.5;margin:5px 0 0;max-width:56ch">Overname van Adviesbox en FinData.</p></div>
+    </div>
+    <div style="display:grid;grid-template-columns:58px 26px 1fr;gap:0;align-items:start">
+      <div style="font-family:var(--font-heading);font-size:20px;font-weight:800;color:#ffcd00;line-height:1.1;padding-top:1px">2023</div>
+      <div style="position:relative;align-self:stretch;display:flex;justify-content:center"><div style="width:2px;background:#ffcd00;flex:none"></div><div style="position:absolute;top:4px;width:14px;height:16px;background:#ffcd00;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0 75%,0 25%)"></div></div>
+      <div style="padding:0 0 12px 20px"><div style="font-family:var(--font-heading);font-size:16px;font-weight:800;line-height:1.2">Faster Forward en de Nationale Hypotheekbond</div><p style="font-size:12.5px;line-height:1.5;margin:5px 0 0;max-width:56ch">Overname van Faster Forward, de Nationale Hypotheekbond, Fastlane, Dutch Medialab en UwKluis.</p></div>
+    </div>
+    <div style="display:grid;grid-template-columns:58px 26px 1fr;gap:0;align-items:start">
+      <div style="font-family:var(--font-heading);font-size:20px;font-weight:800;color:transparent;line-height:1.1;padding-top:1px">2023</div>
+      <div style="position:relative;align-self:stretch;display:flex;justify-content:center"><div style="width:2px;background:#ffcd00;flex:none"></div><div style="position:absolute;top:4px;width:14px;height:16px;background:#ffcd00;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0 75%,0 25%)"></div></div>
+      <div style="padding:0 0 12px 20px"><div style="font-family:var(--font-heading);font-size:16px;font-weight:800;line-height:1.2">Lancering Blinqx Verzekering &amp; Hypotheek</div><p style="font-size:12.5px;line-height:1.5;margin:5px 0 0;max-width:56ch">Het segment wordt gelanceerd met de alles-in-één oplossing voor financieel dienstverleners: eBlinqx.</p></div>
+    </div>
+    <div style="display:grid;grid-template-columns:58px 26px 1fr;gap:0;align-items:start">
+      <div style="font-family:var(--font-heading);font-size:20px;font-weight:800;color:#ffcd00;line-height:1.1;padding-top:1px">2024</div>
+      <div style="position:relative;align-self:stretch;display:flex;justify-content:center"><div style="width:2px;background:#ffcd00;flex:none"></div><div style="position:absolute;top:4px;width:14px;height:16px;background:#ffcd00;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0 75%,0 25%)"></div></div>
+      <div style="padding:0 0 12px 20px"><div style="font-family:var(--font-heading);font-size:16px;font-weight:800;line-height:1.2">Hippoline</div><p style="font-size:12.5px;line-height:1.5;margin:5px 0 0;max-width:56ch">Overname van Hippoline.</p></div>
+    </div>
+    <div style="display:grid;grid-template-columns:58px 26px 1fr;gap:0;align-items:start">
+      <div style="font-family:var(--font-heading);font-size:20px;font-weight:800;color:transparent;line-height:1.1;padding-top:1px">2024</div>
+      <div style="position:relative;align-self:stretch;display:flex;justify-content:center"><div style="width:2px;background:#ffcd00;flex:none"></div><div style="position:absolute;top:4px;width:14px;height:16px;background:#ffcd00;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0 75%,0 25%)"></div></div>
+      <div style="padding:0 0 12px 20px"><div style="font-family:var(--font-heading);font-size:16px;font-weight:800;line-height:1.2">FinRust</div><p style="font-size:12.5px;line-height:1.5;margin:5px 0 0;max-width:56ch">Overname van FinRust — vandaag de add-on voor financiële planning.</p></div>
+    </div>
+    <div style="display:grid;grid-template-columns:58px 26px 1fr;gap:0;align-items:start">
+      <div style="font-family:var(--font-heading);font-size:20px;font-weight:800;color:#ffcd00;line-height:1.1;padding-top:1px">2026</div>
+      <div style="position:relative;align-self:stretch;display:flex;justify-content:center"><div style="width:2px;background:#ffcd00;flex:none"></div><div style="position:absolute;top:4px;width:14px;height:16px;background:#ffcd00;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0 75%,0 25%)"></div></div>
+      <div style="padding:0 0 12px 20px"><div style="font-family:var(--font-heading);font-size:16px;font-weight:800;line-height:1.2">Blinqx AI Mail &amp; AI Core</div><p style="font-size:12.5px;line-height:1.5;margin:5px 0 0;max-width:56ch">Inkomende e-mail wordt automatisch herkend en gekoppeld aan de juiste klant en het juiste dossier, acties en taken staan klaar en er ligt direct een conceptantwoord. AI Core beoordeelt daarnaast polissen en versnelt de schadeverwerking.</p></div>
+    </div>
+  </div>
+  <p style="font-size:12.5px;line-height:1.5;margin:0;max-width:74ch;color:#9fb0c2">Elke overname bracht kennis en software mee die vandaag op één fundament staat: dezelfde mensen, dezelfde vakkennis, één routekaart.</p>
+</section>
+
+<section class="page" data-screen-label="12 Samen verder" style="background:#fff;color:#1d2733;font-family:var(--font-body);padding:50px 54px 44px;display:flex;flex-direction:column;box-sizing:border-box">
+  <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #1d2733;padding-bottom:12px"><span style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:800">Wat het samengaan oplevert</span><span style="width:34px;height:38px;background:#ffcd00;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px">12</span></div>
+  <h2 style="font-family:var(--font-heading);font-size:38px;line-height:1.02;letter-spacing:-0.025em;font-weight:800;margin:26px 0 0;max-width:22ch">Dezelfde namen. Eén fundament.</h2>
+  <p style="font-size:14.5px;line-height:1.55;max-width:68ch;margin:14px 0 0">De merken waarmee het intermediair al jaren werkt zitten nu in dezelfde keten. Dat maakt één koppeling en één afspraak mogelijk waar dat eerder vier leveranciers waren.</p>
+  <div style="border-top:2px solid #ffcd00;margin-top:24px;padding-top:12px;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;font-weight:800">Hoe ze vandaag heten</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 34px;margin-top:4px">
+    <div style="display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #dfe3e9;padding:9px 0;font-size:13px"><span>Fastlane</span><span style="font-weight:800">eBlinqx Hypotheek Advies</span></div>
+    <div style="display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #dfe3e9;padding:9px 0;font-size:13px"><span>Faster Forward Elements</span><span style="font-weight:800">eBlinqx Connect</span></div>
+    <div style="display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #dfe3e9;padding:9px 0;font-size:13px"><span>UwKluis</span><span style="font-weight:800">eBlinqx Klantportaal</span></div>
+    <div style="display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #dfe3e9;padding:9px 0;font-size:13px"><span>FinRust</span><span style="font-weight:800">FinRust — financiële planning</span></div>
+    <div style="display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #dfe3e9;padding:9px 0;font-size:13px"><span>PortefeuilleSignalen</span><span style="font-weight:800">eBlinqx Signalen</span></div>
+    <div style="display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #dfe3e9;padding:9px 0;font-size:13px"><span>DIAS, Adviesbox, Elements</span><span style="font-weight:800">eBlinqx</span></div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#dfe3e9;margin-top:24px;flex:1">
+    <div style="background:#f5f6f8;padding:16px 18px"><div style="font-family:var(--font-heading);font-size:15.5px;font-weight:800">Geen dubbele invoer meer</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Wat vroeger drie systemen waren met drie keer dezelfde klant, is nu één dossier waar iedereen op kantoor uit werkt.</p></div>
+    <div style="background:#f5f6f8;padding:16px 18px"><div style="font-family:var(--font-heading);font-size:15.5px;font-weight:800">Best of both worlds</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">De rekenkracht van de Hypotheekbond, de procesdiscipline van Faster Forward en het CRM van DIAS in één propositie.</p></div>
+    <div style="background:#f5f6f8;padding:16px 18px"><div style="font-family:var(--font-heading);font-size:15.5px;font-weight:800">Connectief, niet gesloten</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Software van andere leveranciers blijft koppelbaar. Je kiest zelf wat je combineert en zit nooit vast.</p></div>
+    <div style="background:#f5f6f8;padding:16px 18px"><div style="font-family:var(--font-heading);font-size:15.5px;font-weight:800">Eén aanspreekpunt</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Eén contract, één supportlijn en één routekaart — in plaats van vier leveranciers die naar elkaar wijzen.</p></div>
+    <div style="background:#f5f6f8;padding:16px 18px"><div style="font-family:var(--font-heading);font-size:15.5px;font-weight:800">Sneller nieuwe functies</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">Wat één merk ontwikkelt, komt beschikbaar voor de rest. Denk aan eBlinqx Signalen in het adviespakket en Blinqx AI Mail in het CRM.</p></div>
+    <div style="background:#f5f6f8;padding:16px 18px"><div style="font-family:var(--font-heading);font-size:15.5px;font-weight:800">Dezelfde mensen</div><p style="font-size:12.5px;line-height:1.5;margin:4px 0 0">De consultants en supportmedewerkers die je kende, werken er nog steeds — nu met een breder portfolio achter zich.</p></div>
+  </div>
+  <div style="background:#ffcd00;padding:22px 26px;margin-top:22px"><p style="font-family:var(--font-heading);font-size:20px;line-height:1.25;font-weight:800;margin:0;max-width:52ch">Voor u betekent dat één ingang naar het kanaal: dezelfde propositie landt in het advies, in het beheer en in de communicatie eromheen.</p></div>
+</section>
+
+<section class="page" data-screen-label="13 Contact" style="background:#ffcd00;color:#1d2733;font-family:var(--font-body);padding:54px;display:flex;flex-direction:column;box-sizing:border-box">
+  <img src="assets/blinqx-vh-logo.png" alt="Blinqx Verzekering &amp; Hypotheek" style="width:270px;height:auto;display:block">
+  <div style="margin-top:auto">
+    <p style="font-family:var(--font-heading);font-size:42px;line-height:1.02;letter-spacing:-0.03em;font-weight:800;margin:0;max-width:17ch">Banking, Insurance &amp; Partners. Eén ingang naar het kanaal.</p>
+    <div style="border-top:2px solid #1d2733;margin-top:22px;padding-top:12px;font-size:12.5px;line-height:1.5;max-width:74ch">Aan deze brochure kunnen geen rechten worden ontleend. Genoemde proposities worden uitgewerkt in een individueel samenwerkingsvoorstel — zie verzekeringhypotheek.blinqx.tech/partners.</div>
+    <div style="border-top:2px solid #1d2733;margin-top:26px;padding-top:18px;display:grid;grid-template-columns:1.15fr 1fr;gap:30px;align-items:start">
+      <div>
+        <div style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;font-weight:800">Kennismaken</div>
+        <p style="font-family:var(--font-heading);font-size:19px;line-height:1.3;font-weight:800;margin:6px 0 0;max-width:30ch">Plan een gesprek en we brengen samen de kansen in kaart — binnen twee weken een eerste kennismaking.</p>
+        <a href="mailto:jeroen.oversteegen@blinqx.tech?subject=Gratis%20demo-account%20Blinqx" data-am="mailto" style="background:#1d2733;color:#ffcd00;display:inline-block;padding:11px 18px;margin-top:12px;font-family:var(--font-heading);font-size:13px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none">Mail ons of bel 020 - 758 21 11</a>
+      </div>
+      <div style="font-size:14px;line-height:1.6">
+        <div style="font-family:var(--font-heading);font-size:18px;font-weight:800;line-height:1.2" data-am="name">Jeroen Oversteegen</div>
+        <div style="font-size:12.5px;font-weight:700;line-height:1.35;margin-top:2px" data-am="role">Non Executive Director Business Partners</div>
+        <div style="margin-top:10px"><b>E</b> <a href="mailto:jeroen.oversteegen@blinqx.tech" style="color:inherit;text-decoration:none" data-am="email">jeroen.oversteegen@blinqx.tech</a><br><b>M</b> <a href="tel:+31621247257" style="color:inherit;text-decoration:none" data-am="mobile">+31 6 21 247 257</a> &nbsp;<b>T</b> <a href="tel:+31207582111" style="color:inherit;text-decoration:none" data-am="phone">020 - 758 21 11</a></div>
+        <div style="margin-top:10px"><b>Blinqx Verzekering &amp; Hypotheek</b><br><span data-am="street">Hullenbergweg 109</span><br><span data-am="city">1101 CL  Amsterdam</span><br><a href="https://verzekeringhypotheek.blinqx.tech" style="color:inherit;text-decoration:none">verzekeringhypotheek.blinqx.tech</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+</doc-page>
+</body>
+</html>

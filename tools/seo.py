@@ -49,7 +49,7 @@ def lees(root, overslaan):
     paginas = {}
     for dirpath, dirs, files in os.walk(root):
         rel = os.path.relpath(dirpath, root).replace(os.sep, "/")
-        if rel != "." and rel.split("/")[0] in overslaan:
+        if rel != "." and (rel.split("/")[0] in overslaan or rel.startswith("brochures/viewer")):
             dirs[:] = []
             continue
         if "index.html" in files:

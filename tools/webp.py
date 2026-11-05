@@ -66,7 +66,7 @@ def uitvoeren(root):
 
     for map_, dirs, files in os.walk(root):
         rel_map = os.path.relpath(map_, root)
-        if rel_map.split(os.sep)[0] in OVERSLAAN or rel_map.startswith("bronnen"):
+        if rel_map.split(os.sep)[0] in OVERSLAAN or rel_map.startswith(("bronnen", os.path.join("brochures", "viewer"))):
             dirs[:] = []
             continue
         for fn in files:
