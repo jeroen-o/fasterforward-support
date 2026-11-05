@@ -794,6 +794,7 @@ def layout(pg, title, body, active=None, description=""):
       <a href="{pg.rel('demo-kantoor')}">Demo-kantoor</a>
       <a href="{pg.rel('sites')}">Handige websites</a>
       <a href="{pg.rel('historie')}">Historie</a>
+      <a href="{pg.rel('finrust')}">FinRust-kennisbank</a>
       <a href="https://verzekeringhypotheek.blinqx.tech/" target="_blank" rel="noopener">eBlinqx website</a>
     </nav>
   </div>
@@ -1296,6 +1297,14 @@ def render_search(pages, cats):
         idx.append({"t": v["t"], "h": "video/" + v["slug"] + "/index.html", "c": "Video's › " + v["groep"], "k": "video",
                     "d": fmt_date(date.fromisoformat(v["datum"])) if re.fullmatch(r"\d{4}-\d{2}-\d{2}", v["datum"]) else "",
                     "x": " ".join(x for x in (v.get("ch"), v["groep"], v.get("x"), v["tekst"]) if x)})
+    kb = finrust_kb()
+    if kb:
+        idx.append({"t": "FinRust-kennisbank", "h": "finrust/index.html", "c": "FinRust", "k": "kennisbank",
+                    "x": "finrust kennisbank helpcenter handleiding handleidingen uitleg support " + " ".join(a["titel"] for a in kb)})
+        for a in kb:
+            idx.append({"t": a["titel"], "h": "finrust/" + a["slug"] + "/index.html", "c": "FinRust › " + " › ".join(a["rubriek"]), "k": "kennisbank",
+                        "d": fmt_date(date.fromisoformat(a["bijgewerkt"][:10])) if a.get("bijgewerkt") else "",
+                        "x": "finrust " + a["omschrijving"] + " " + a["tekst"]})
     frf = os.path.join(TOOLS, "finrust_videos.json")
     if os.path.exists(frf):
         idx.append({"t": "FinRust-video's", "h": "video/finrust/index.html", "c": "Video's", "k": "video",
@@ -3341,6 +3350,104 @@ def video_fig(pg, mp4, poster, naam, omschrijving, duur, bijschrift, anker="vide
             f'<a href="{pg.rel(mp4)}">Download de video (mp4)</a>.</video><figcaption>{esc(bijschrift)}</figcaption></figure>'
             f'<script type="application/ld+json">{ld}</script>')
 
+FR_HC = "https://support-finrust.vh.blinqx.tech/nl/"
+
+
+def finrust_kb():
+    f = os.path.join(SRC, "finrust", "helpcenter.json")
+    return sorted(json.load(open(f, encoding="utf8")), key=lambda a: a["volg"]) if os.path.exists(f) else []
+
+
+def render_finrust_kb():
+    """FinRust-kennisbank: overzicht per rubriek en elk artikel als eigen pagina (bron: tools/finrust_sync.py)."""
+    arts = finrust_kb()
+    if not arts:
+        return
+    urls = {a["url"].split("?")[0]: a["slug"] for a in arts}
+    rubrieken = {}
+    for a in arts:
+        rubrieken.setdefault(a["rubriek"][0], {}).setdefault(" › ".join(a["rubriek"][1:]), []).append(a)
+    pg = Page("finrust")
+    blokken = []
+    for r, subs in rubrieken.items():
+        delen = []
+        for sub, lijst in subs.items():
+            li = "".join(f'<li><a href="{pg.rel("finrust/" + a["slug"])}">{esc(a["titel"])}</a>'
+                         f'{f"<br><span class=\"oms\">{esc(a["omschrijving"])}</span>" if a["omschrijving"] else ""}</li>' for a in lijst)
+            delen.append(f'{f"<h3>{esc(sub)}</h3>" if sub else ""}<ul class="frlijst">{li}</ul>')
+        blokken.append(f'<section class="frrub" id="{slugify(r)}"><h2>{esc(r)}</h2>{"".join(delen)}</section>')
+    jump = " · ".join(f'<a href="#{slugify(r)}">{esc(r)}</a>' for r in rubrieken)
+    intro = (f"Alle {len(arts)} artikelen uit de kennisbank van FinRust: handleidingen en uitleg over brondata, klant aanmaken, "
+             "pensioen, overlijden, arbeidsongeschiktheid, koppelingen, finance en security & compliance.")
+    ld = {"@context": "https://schema.org", "@type": "CollectionPage", "name": "FinRust-kennisbank", "url": SITE_URL + "finrust/",
+          "description": intro, "about": {"@type": "SoftwareApplication", "name": "FinRust", "applicationCategory": "BusinessApplication",
+                                          "publisher": {"@type": "Organization", "name": "Blinqx Verzekering & Hypotheek"}},
+          "mainEntity": {"@type": "ItemList", "numberOfItems": len(arts), "itemListElement": [
+              {"@type": "ListItem", "position": i + 1, "url": SITE_URL + "finrust/" + a["slug"] + "/", "name": a["titel"]} for i, a in enumerate(arts)]}}
+    body = f"""{crumbs(pg, [("FinRust-kennisbank", None)])}
+<main class="subpage"><div class="wrap">
+  <h1>FinRust-kennisbank</h1>
+  <p class="lead">{esc(intro)} FinRust is adviessoftware van Blinqx Verzekering &amp; Hypotheek voor advies en onderhoud op de hypotheek- en verzekeringsportefeuille.</p>
+  <p class="jump">Ga naar: {jump}</p>
+  {"".join(blokken)}
+  <p class="mhz-tip">Bekijk ook de <a href="{pg.rel("video/finrust")}">FinRust-video's</a> en <a href="{pg.rel("sites/finrust-nl")}">meer over FinRust</a>.</p>
+  <p class="src">Bron: <a href="{FR_HC}" target="_blank" rel="noopener">helpcenter FinRust</a>. Nieuwe en gewijzigde artikelen komen er dagelijks automatisch bij.</p>
+</div></main>
+<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False).replace("</", "<\\/")}</script>"""
+    write("finrust", layout(pg, "FinRust-kennisbank: handleidingen en uitleg", body, None, intro))
+
+    def inhoud(pg, h):
+        h = re.sub(r'<img data-lokaal="([^"]+)" alt="">', lambda m: f'<img src="{pg.rel(m.group(1))}" alt="" loading="lazy">'
+                   if os.path.exists(os.path.join(ROOT, m.group(1))) else "", h)
+
+        def yt(m):
+            vid = m.group(1)
+            th = pg.rel("assets/video/" + vid + ".jpg") if os.path.exists(os.path.join(ROOT, "assets", "video", vid + ".jpg")) else f"https://i.ytimg.com/vi/{vid}/hqdefault.jpg"
+            return (f'<div class="video"><div class="frame" data-yt="{vid}"><img src="{th}" alt="" loading="lazy">'
+                    f'<button class="play" type="button" aria-label="Speel de video af"><svg class="ic"><use href="#i-play"/></svg></button></div></div>')
+        h = re.sub(r'<div class="yt" data-yt="([^"]+)"></div>', yt, h)
+
+        def link(m):
+            u = html.unescape(m.group(1)).split("#")[0].split("?")[0]
+            return f'href="{pg.rel("finrust/" + urls[u])}"' if u in urls else m.group(0)
+        h = re.sub(r'href="(https://support-finrust\.vh\.blinqx\.tech/nl/articles/[^"]+)"', link, h)
+        return h.replace('<a href="http', '<a target="_blank" rel="noopener" href="http')
+
+    for a in arts:
+        path = "finrust/" + a["slug"]
+        pg = Page(path)
+        rub = " › ".join(a["rubriek"])
+        verwant = "".join(f'<li><a href="{pg.rel("finrust/" + b["slug"])}">{esc(b["titel"])}</a></li>'
+                          for b in arts if b["rubriek"] == a["rubriek"] and b is not a)[:6000]
+        d = (a.get("bijgewerkt") or "")[:10]
+        oms = a["omschrijving"] or kort(a["tekst"], 155)
+        ld = {"@context": "https://schema.org", "@type": "TechArticle", "headline": a["titel"], "description": oms,
+              "url": SITE_URL + path + "/", "inLanguage": "nl", "articleSection": "FinRust › " + rub, "isBasedOn": a["url"],
+              "about": {"@type": "SoftwareApplication", "name": "FinRust"},
+              "publisher": {"@type": "Organization", "name": "Blinqx Verzekering & Hypotheek"}}
+        if d:
+            ld["dateModified"] = d
+        body = f"""{crumbs(pg, [("FinRust-kennisbank", "finrust"), (a["rubriek"][-1], None)])}
+<main class="article"><div class="wrap cols">
+  <article>
+    <h1>{esc(a["titel"])}</h1>
+    <p class="meta">FinRust › {esc(rub)}{f" · bijgewerkt {fmt_date(date.fromisoformat(d))}" if d else ""}</p>
+    {f'<p class="lead">{esc(a["omschrijving"])}</p>' if a["omschrijving"] else ""}
+    <div class="content">{inhoud(pg, a["html"])}</div>
+    <p class="src">Bron: <a href="{esc(a["url"])}" target="_blank" rel="noopener">helpcenter FinRust</a></p>
+  </article>
+  <aside class="related"><h2>Meer in {esc(a["rubriek"][-1])}:</h2><ul>{verwant}</ul><p><a href="{pg.rel("finrust")}">Hele FinRust-kennisbank »</a></p></aside>
+</div></main>
+<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False).replace("</", "<\\/")}</script>
+<script>
+document.addEventListener("click", e => {{
+  const b = e.target.closest("[data-yt] .play"); if (!b) return;
+  const f = b.closest("[data-yt]");
+  f.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${{f.dataset.yt}}?autoplay=1&rel=0" title="Video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+}});
+</script>"""
+        write(path, layout(pg, a["titel"] + " – FinRust", body, None, oms))
+
 
 def render_finrust():
     """Alle video's van het YouTube-kanaal FinRust (tools/finrust_videos.json, bijgewerkt door tools/yt_sync.py)."""
@@ -3358,7 +3465,7 @@ def render_finrust():
     body = f"""{crumbs(pg, [("Video's", "video"), ("FinRust", None)])}
 <main class="subpage"><div class="wrap">
   <h1>FinRust-video's</h1>
-  <p class="lead">Alle {len(d["videos"])} instructievideo's van <a href="https://finrust.nl/" target="_blank" rel="noopener">FinRust</a>: adviessoftware die adviseurs met een snel proces en heldere rapporten helpt klanten beter en completer te bedienen, ‘execution only’ te vermijden en onderhoud op de hypotheek- en verzekeringsportefeuille vorm te geven. Video's worden pas van YouTube geladen als je op afspelen klikt.</p>
+  <p class="lead">Alle {len(d["videos"])} instructievideo's van <a href="https://finrust.nl/" target="_blank" rel="noopener">FinRust</a>: adviessoftware die adviseurs met een snel proces en heldere rapporten helpt klanten beter en completer te bedienen, ‘execution only’ te vermijden en onderhoud op de hypotheek- en verzekeringsportefeuille vorm te geven. Video's worden pas van YouTube geladen als je op afspelen klikt. Handleidingen staan in de <a href="{pg.rel("finrust")}">FinRust-kennisbank</a>.</p>
   <p><label for="frfilter"><strong>Filter op onderwerp:</strong></label><br><input id="frfilter" type="search" placeholder="bijvoorbeeld lijfrente, ORV, pensioen" style="width:100%;max-width:420px;padding:10px;font:inherit;border:1px solid #999;border-radius:4px"> <span id="frtel" aria-live="polite"></span></p>
   <div class="vgrid">{kaarten}</div>
   <p class="src">Bron: <a href="{d["url"]}" target="_blank" rel="noopener">YouTube-kanaal FinRust</a>. Nieuwe video's komen er automatisch bij.</p>
@@ -3815,6 +3922,7 @@ def main():
     render_video()
     render_videopaginas(pages)
     render_finrust()
+    render_finrust_kb()
     render_elearning()
     render_fastlane()
     render_releasenotes_overig()
