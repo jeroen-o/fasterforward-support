@@ -53,6 +53,7 @@
 - [Finly CRM](https://support-eblinqx-connect.nl/finly-crm/): Finly CRM van Blinqx: klantgegevens, verzekeringen, workflows, documenten en signalen centraal, met koppelingen met DIAS, ANVA, Dstny, AWI en Adviesbox.
 - [Demo-kantoor: zo ziet een website met alles van Blinqx eruit](https://support-eblinqx-connect.nl/demo-kantoor/): Bekijk het demo-kantoor Steen Hypotheken en de demowebsite FierFinance: rekentools, actuele rentes, MijnHuiszaken en UwKluis / Online klantportaal op de…
 - [Banking & Insurance](https://support-eblinqx-connect.nl/banking-insurance/): Hypotheekcijfer.nl en Pensioencijfer.nl: klanten van banken en verzekeraars krijgen met één cijfer inzicht in de betaalbaarheid van hun hypotheek en in hun…
+- [Quinn AdviesCoach](https://support-eblinqx-connect.nl/adviescoach/): Quinn AdviesCoach in eBlinqx Hypotheekadvies: automatisch klantprofiel, ComplianceScan tijdens het advies en een klantspecifieke adviessamenvatting.
 - [Procesversneller: alles op een rij](https://support-eblinqx-connect.nl/procesversneller/): Hoe werkt de Procesversneller in eBlinqx: brondata ophalen via Ockto, wat het je kantoor oplevert en antwoorden op veelgestelde vragen.
 
 ## Handige websites

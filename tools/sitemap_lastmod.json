@@ -1,6 +1,6 @@
 {
 "": {
-"h": "eeeb00c9ecb57cec",
+"h": "f43a17a5b655bcbb",
 "d": "2026-11-05"
 },
 "14-nieuwe-features-en-verbeteringen": {
@@ -70,6 +70,10 @@
 "adres-verwijderd-worden": {
 "h": "e31c9a76f7157d0c",
 "d": "2026-11-04"
+},
+"adviescoach": {
+"h": "348e49a53f361f3b",
+"d": "2026-11-05"
 },
 "afspraakcollega": {
 "h": "6c2e36bdabbb46ad",

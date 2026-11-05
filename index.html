@@ -116,17 +116,25 @@
       <p class="home-wt-cta btn-row"><a class="btn-out cta" href="mijnhuiszaken/index.html">Bekijk MijnHuiszaken en lees meer »</a>
         <a class="btn-out" href="mijnhuiszaken/index.html#video">▶ Bekijk de video</a></p>
     </section>
+    <section class="home-wt" id="home-coach" aria-labelledby="home-coach-h" hidden>
+      <h2 id="home-coach-h">Quinn AdviesCoach: een coach die met je meekijkt en meedenkt</h2>
+      <p>Meer overzicht, meer controle, minder uitzoek- en herstelwerk. AdviesCoach werkt automatisch mee in je dossier in eBlinqx Hypotheekadvies: het signaleert tijdens het gesprek mogelijke fouten, jij oordeelt, en aan het eind ligt de adviessamenvatting al klaar.</p>
+      <div class="wtwhys"><div class="wtwhy"><h3>Klantprofiel, automatisch opgebouwd</h3><p>Uit de gegevens die je al vastlegt, inclusief Procesversneller, KYC en het klantportaal.</p></div><div class="wtwhy"><h3>ComplianceScan tijdens het advies</h3><p>Signaleert of klantprofiel, berekening en motivering logisch op elkaar aansluiten.</p></div><div class="wtwhy"><h3>Adviessamenvatting staat klaar</h3><p>Klantspecifiek opgebouwd; jij controleert, vult aan en rondt af.</p></div><div class="wtwhy"><h3>Eén doorlopende flow</h3><p>Van klantprofiel tot adviesrapport, vanuit dezelfde dossiergegevens.</p></div><div class="wtwhy"><h3>Jij blijft in controle</h3><p>Geen score of black box: AdviesCoach signaleert, jij beslist en ondertekent.</p></div><div class="wtwhy"><h3>Meer tijd voor je klant</h3><p>Minder uitzoek-, overtyp- en herstelwerk, elke dag opnieuw.</p></div></div>
+      <p class="home-wt-cta btn-row"><a class="btn-out cta" href="adviescoach/index.html">Bekijk AdviesCoach en lees meer »</a></p>
+      <p class="home-wt-note">Tot 1 februari gratis te proberen. Jij blijft eigenaar van het advies.</p>
+    </section>
     <script>
-    /* Afwisselen bij elk bezoek aan de homepage: Websitetools of MijnHuiszaken (zonder JavaScript: Websitetools). */
+    /* Afwisselen bij elk bezoek aan de homepage: Websitetools, MijnHuiszaken en AdviesCoach (zonder JavaScript: Websitetools). */
     (function () {
-      var keus;
+      var volg = ["wt", "mhz", "coach"], keus;
       try {
-        keus = localStorage.getItem("homeblok-laatst") === "mhz" ? "wt" : "mhz";
+        var i = volg.indexOf(localStorage.getItem("homeblok-laatst"));
+        keus = volg[(i + 1) % volg.length];
         localStorage.setItem("homeblok-laatst", keus);
-      } catch (e) { keus = Math.random() < 0.5 ? "wt" : "mhz"; }
-      if (keus === "mhz") {
-        var wt = document.querySelector('section.home-wt[aria-labelledby="home-wt-h"]'), mhz = document.getElementById("home-mhz");
-        if (wt && mhz) { wt.hidden = true; mhz.hidden = false; }
+      } catch (e) { keus = volg[Math.floor(Math.random() * volg.length)]; }
+      if (keus !== "wt") {
+        var wt = document.querySelector('section.home-wt[aria-labelledby="home-wt-h"]'), ander = document.getElementById("home-" + keus);
+        if (wt && ander) { wt.hidden = true; ander.hidden = false; }
       }
     })();
     </script>
