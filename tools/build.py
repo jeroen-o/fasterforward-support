@@ -793,6 +793,7 @@ def layout(pg, title, body, active=None, description=""):
       <a href="{pg.rel('privacy')}">Privacy</a>
       <a href="{pg.rel('demo-kantoor')}">Demo-kantoor</a>
       <a href="{pg.rel('sites')}">Handige websites</a>
+      <a href="{pg.rel('historie')}">Historie</a>
       <a href="https://verzekeringhypotheek.blinqx.tech/" target="_blank" rel="noopener">eBlinqx website</a>
     </nav>
   </div>
@@ -1318,6 +1319,12 @@ def render_search(pages, cats):
                         "x": f"{n_} {n_.split()[0]} {html.unescape(r_)} {telt_} {m_} team contact Blinqx banking insurance"})
         idx.append({"t": "Banking & Insurance: Hypotheekcijfer.nl en Pensioencijfer.nl", "h": "banking-insurance/index.html", "c": "Banking & Insurance",
                     "k": "kennisbank", "x": "banking insurance bank verzekeraar geldverstrekker hypotheekcijfer pensioencijfer hypotheekcheck pensioen cijfer renteadministratie rentetool rente publicatie analyse hypotheekrente api webservices hypotheekvoorwaarden api voorwaarden hypotheek validatie engine validatie validation engine orv api overlijdensrisicoverzekering premie financiële api's api"})
+        hf = os.path.join(SRC, "historie-blinqx-vh.html")
+        if os.path.exists(hf):
+            ht = open(hf, encoding="utf8").read()
+            ht = re.search(r'<main class="wrap">(.*?)</main>', ht, re.S).group(1)
+            idx.append({"t": "Historie van Blinqx Verzekering & Hypotheek", "h": "historie/index.html", "c": "Over Blinqx", "k": "overig",
+                        "x": "historie geschiedenis bedrijfshistorie tijdlijn overnames oprichting " + re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", ht)))})
         idx.append({"t": "Handige websites", "h": "sites/index.html", "c": "Handige websites", "k": "kennisbank",
                     "x": "websites domeinen links " + " ".join(st["naam"] for st in sites_laden())})
         idx.append({"t": "Finly CRM: klantgegevens, workflows en communicatie op één plek", "h": "finly-crm/index.html", "c": "Finly CRM",
@@ -2920,6 +2927,34 @@ def adviesbox_extra(pg):
   <p>Adviesbox (Blinqx), Harderwijkweg 5b, 2803 PW Gouda · <a href="tel:+31850180069">085 018 00 69</a> · <a href="mailto:secretariaat@blinqx.tech">secretariaat@blinqx.tech</a></p>"""
 
 
+def render_historie():
+    """De historie van Blinqx Verzekering & Hypotheek (bron: bronnen/historie-blinqx-vh.html, aangeleverd door Jeroen Oversteegen)."""
+    f = os.path.join(SRC, "historie-blinqx-vh.html")
+    if not os.path.exists(f):
+        return
+    src = open(f, encoding="utf8").read()
+    inhoud = re.search(r'<main class="wrap">(.*?)</main>', src, re.S).group(1)
+    inhoud = inhoud.replace("<h2>", '<h2 class="wth">')
+    sub = html.unescape(re.sub(r"<[^>]+>", "", re.search(r"<header>.*?<p>(.*?)</p>", src, re.S).group(1)))
+    pg = Page("historie")
+    ld = {"@context": "https://schema.org", "@type": "Organization", "name": "Blinqx Verzekering & Hypotheek",
+          "url": "https://verzekeringhypotheek.blinqx.tech/", "foundingDate": "2023-07-06", "parentOrganization": {"@type": "Organization", "name": "Blinqx"},
+          "description": "Blinqx Verzekering & Hypotheek ontstond op 6 juli 2023 uit de samenvoeging van softwarebedrijven voor het financieel intermediair, "
+                         "waaronder DIAS, Aplaza, Online Groep, Hyarchis, Finly, FinConnect, My TP, Intersoftware (Adviesbox), FinData, de Nationale Hypotheekbond, "
+                         "Faster Forward, HippoLine en FinRust."}
+    body = f"""{crumbs(pg, [("Historie", None)])}
+<main class="subpage historie"><div class="wrap">
+  <p class="badge-gratis">Bedrijfshistorie</p>
+  <h1>De historie van Blinqx Verzekering &amp; Hypotheek</h1>
+  <p class="lead">{esc(sub)}</p>
+  {inhoud}
+</div></main>
+<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False).replace("</", "<\\/")}</script>"""
+    write("historie", layout(pg, "Historie van Blinqx Verzekering & Hypotheek", body, None,
+                             "Van dertien zelfstandige softwarelabels naar één platform: de historie van Blinqx Verzekering & Hypotheek, "
+                             "van Hyarchis (1985), Adviesbox, de Nationale Hypotheekbond en Faster Forward tot eBlinqx."), kluis=False)
+
+
 def render_sites():
     """Per website uit tools/sites.json een pagina sites/<slug>/ met beschrijving, afbeelding en knop (geen tegel)."""
     lijst = sites_laden()
@@ -3716,6 +3751,7 @@ def main():
     render_finly()
     render_demokantoor()
     render_sites()
+    render_historie()
     render_banking()
     render_downloads()
     render_nieuwsbrief()
@@ -3732,6 +3768,7 @@ def main():
         ("Partners", ["partners"] + sorted(u for u in info if u.startswith("partners/"))),
         ("Productinformatie", ["websitetools", "mijnhuiszaken", "yes-co", "tools-voor-vastgoed", "woningwaarderapport",
                                "actiefbeheerscan", "hypotheekrente-app", "finly-crm", "demo-kantoor", "banking-insurance", "adviescoach", "procesversneller"]),
+        ("Over Blinqx", ["historie"]),
         ("Handige websites", ["sites"] + sorted(u for u in info if u.startswith("sites/"))),
         ("Video's", ["video", "video/finrust"] + sorted(u for u in info if u.startswith("video/") and u != "video/finrust")),
         ("Releasenotes", ["releasenotes", "releasenotes-hypotheekadvies", "releasenotes-finconnect", "releasenotes-dias"]),

@@ -56,6 +56,10 @@
 - [AdviesCoach](https://support-eblinqx-connect.nl/adviescoach/): AdviesCoach in eBlinqx Hypotheekadvies: automatisch klantprofiel, ComplianceScan tijdens het advies en een klantspecifieke adviessamenvatting.
 - [Procesversneller: alles op een rij](https://support-eblinqx-connect.nl/procesversneller/): Hoe werkt de Procesversneller in eBlinqx: brondata ophalen via Ockto, wat het je kantoor oplevert en antwoorden op veelgestelde vragen.
 
+## Over Blinqx
+
+- [De historie van Blinqx Verzekering & Hypotheek](https://support-eblinqx-connect.nl/historie/): Van dertien zelfstandige softwarelabels naar één platform: de historie van Blinqx Verzekering & Hypotheek, van Hyarchis (1985), Adviesbox, de Nationale…
+
 ## Handige websites
 
 - [Handige websites](https://support-eblinqx-connect.nl/sites/): Overzicht van alle websites rondom eBlinqx, de Nationale Hypotheekbond en Blinqx Verzekering & Hypotheek.
