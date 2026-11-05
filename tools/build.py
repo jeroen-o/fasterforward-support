@@ -1156,13 +1156,49 @@ FEED_META = {
 }
 
 
+def kort(t, n):
+    t = re.sub(r"\s+", " ", t).strip()
+    return t if len(t) <= n else t[:n].rsplit(" ", 1)[0].rstrip(",.;:–-") + "…"
+
+
+def vh_nieuws():
+    """Blogs en nieuws van verzekeringhypotheek.blinqx.tech (bronnen/vh-site/index.json, dagelijks bijgewerkt door vh_sync.py)."""
+    f = os.path.join(SRC, "vh-site", "index.json")
+    if not os.path.exists(f):
+        return []
+    uit = []
+    for v in json.load(open(f, encoding="utf8")):
+        d = v.get("gepubliceerd") or v.get("datum") or ""
+        if v.get("soort") != "Blogs & nieuws" or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", d):
+            continue
+        mini = v.get("miniatuur") if v.get("miniatuur") and os.path.exists(os.path.join(ROOT, v["miniatuur"])) else ""
+        uit.append({"t": html.unescape(v["titel"]), "posted": date.fromisoformat(d), "updated": None, "url": v["url"], "ext": 1,
+                    "mini": mini, "excerpt": kort(html.unescape(v.get("omschrijving") or ""), 220)})
+    uit.sort(key=lambda x: x["posted"], reverse=True)
+    return uit
+
+
 def render_feed(name, items):
     path = FEEDS[name]
     pg = Page(path)
     h2, intro, img = FEED_META[name]
+    extern = vh_nieuws() if name == "Nieuws" else []
+    if extern:
+        def dag(x):
+            d = x["posted"] or x["updated"]
+            return date.min if not d else d.date() if hasattr(d, "date") else d
+        items = sorted(list(items) + extern, key=dag, reverse=True)
 
     def card(x):
         d = x["posted"] or x["updated"]
+        if x.get("ext"):
+            u = esc(x["url"])
+            fig = (f'<a class="card-img" href="{u}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">'
+                   f'<img src="{pg.rel(x["mini"])}" alt="" loading="lazy" width="640" height="360"></a>') if x["mini"] else ""
+            return (f'<article class="card ext{" has-img" if fig else ""}">{fig}<div class="card-body"><p class="bron">Blinqx Verzekering &amp; Hypotheek</p>'
+                    f'<h3><a href="{u}" target="_blank" rel="noopener">{esc(x["t"])}</a></h3><p class="date">{fmt_date(d)}</p>'
+                    f'{f"<p>{esc(x["excerpt"])}</p>" if x["excerpt"] else ""}'
+                    f'<a class="readmore" href="{u}" target="_blank" rel="noopener">Lees verder<span class="sr-only"> (opent in nieuw tabblad)</span> ↗</a></div></article>')
         img = ""
         if x.get("thumb") and not resolve_img(pg, x["thumb"]).startswith("http"):
             img = (f'<a class="card-img" href="{pg.rel(x["path"])}" tabindex="-1" aria-hidden="true">'
@@ -1187,7 +1223,7 @@ def render_feed(name, items):
 <main class="feed"><div class="wrap">
   {rn_tabs(pg, "connect") if name == "Release notes" else ""}
   <h2 class="feed-h">{esc(h2)}</h2>
-  <p>{esc(intro)} {len(items)} berichten.</p>
+  <p>{esc(intro)} {len(items)} berichten{f", waarvan {len(extern)} van verzekeringhypotheek.blinqx.tech (dagelijks bijgewerkt; het nieuwste bericht is van {fmt_date(extern[0]['posted'])})" if extern else ""}.</p>
   {f'<p class="jump">Ga naar: {jump}</p>' if len(keys) > 1 else ""}
   {f'<p class="note">Oudere releasenotes uit 2016 en 2017 staan als pdf bij de <a href="{pg.rel("downloads")}">downloads</a>.</p>' if name == "Release notes" else ""}
   {blocks}
@@ -1487,7 +1523,8 @@ def render_home(cats, feeds, pages):
     fl_latest = "".join(f'<li><a href="{pg.rel("releasenotes-hypotheekadvies/" + m["slug"])}">Releasenotes {esc(m["label"])}'
                         f'{f" ({m["count"]} verbeteringen)" if m["count"] else ""} »</a></li>'
                         for m in fastlane_months()[0][:5])
-    nieuws_li = "".join(f'<li>{a(p, esc(l) + " »")}</li>' for p, l in nieuws_home)
+    nieuws_li = "".join(f'<li><a href="{esc(x["url"])}" target="_blank" rel="noopener">{esc(x["t"])} <span class="date">({fmt_date(x["posted"])})</span> ↗</a></li>'
+                        for x in vh_nieuws()[:5]) or "".join(f'<li>{a(p, esc(l) + " »")}</li>' for p, l in nieuws_home)
 
     body = f"""<main class="home">
   <div class="wrap">

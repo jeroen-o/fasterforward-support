@@ -50,7 +50,30 @@ def pagina(url, s):
             b = i
     t = tekst(s[a:b])
     return {"url": url, "titel": titel, "omschrijving": meta(s, "og:description") or meta(s, "description"),
-            "tekst": t[:MAX_TEKST], "datum": meta(s, "article:modified_time")[:10] or meta(s, "article:published_time")[:10]}
+            "tekst": t[:MAX_TEKST], "datum": meta(s, "article:modified_time")[:10] or meta(s, "article:published_time")[:10],
+            "gepubliceerd": meta(s, "article:published_time")[:10], "afbeelding": meta(s, "og:image")}
+
+
+def miniatuur(p):
+    """Kleine afbeelding voor het nieuwsoverzicht: bronnen/vh-site/img/<slug>.webp (alleen voor blogs en nieuws)."""
+    if not p.get("afbeelding"):
+        return
+    slug = re.sub(r"[^a-z0-9]+", "-", p["url"].rstrip("/").rsplit("/", 1)[-1].lower()).strip("-")[:80]
+    doel = os.path.join(os.path.dirname(UIT), "img", slug + ".webp")
+    p["miniatuur"] = "bronnen/vh-site/img/" + slug + ".webp"
+    if os.path.exists(doel):
+        return
+    try:
+        import io
+        from PIL import Image
+        with urllib.request.urlopen(urllib.request.Request(p["afbeelding"], headers=UA), timeout=60) as r:
+            im = Image.open(io.BytesIO(r.read())).convert("RGB")
+        im.thumbnail((640, 640))
+        os.makedirs(os.path.dirname(doel), exist_ok=True)
+        im.save(doel, quality=80)
+    except Exception as e:  # noqa: BLE001
+        print("miniatuur mislukt:", p["url"], e)
+        p.pop("miniatuur", None)
 
 
 def main():
@@ -68,7 +91,8 @@ def main():
             gezien[url] = (soort, lm)
     for url, (soort, lm) in gezien.items():
         o = oud.get(url)
-        if o and o.get("lastmod") == lm and o.get("tekst"):
+        blog = SOORT.get(soort, soort) == "Blogs & nieuws"
+        if o and o.get("lastmod") == lm and o.get("tekst") and (not blog or "gepubliceerd" in o):
             nieuw.append(o)
             continue
         if gewijzigd >= maxn:
@@ -81,6 +105,8 @@ def main():
                 raise RuntimeError("wachtscherm")
             p = pagina(url, s)
             p.update({"soort": SOORT.get(soort, soort), "lastmod": lm})
+            if blog:
+                miniatuur(p)
             nieuw.append(p)
             gewijzigd += 1
         except Exception as e:  # noqa: BLE001

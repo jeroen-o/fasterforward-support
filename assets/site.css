@@ -533,3 +533,5 @@ form.search{min-width:0}
 .historie th{background:#14213D;color:#fff;text-align:left;padding:9px}
 .historie td{padding:9px;border-bottom:1px solid #e3e6ea;vertical-align:top}
 .historie .bronnen{font-size:14px;color:#5B6573}
+.card.ext .bron{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;margin:0 0 4px}
+.panel li .date{color:var(--muted);font-size:.9em}
