@@ -1408,6 +1408,16 @@ WT_KORT = [
 ]
 
 
+MHZ_KORT = [
+    ("Realtime woningaanbod", "Je klant ziet direct het nieuwste NVM-aanbod dat past bij zijn zoekwensen, met e-mailalerts."),
+    ("Voortdurend in beeld", "Je logo en contactgegevens staan in de omgeving van de klant én in elke e-mailalert."),
+    ("Inzicht in zoekgedrag", "Weet eerder dan de markt wie er in beweging komt en neem op het juiste moment contact op."),
+    ("Begeleiding bij aan- en verkoop", "Met Wwft-check, aan- en verkoopdossier en digitaal ondertekenen."),
+    ("Ook voor bestaande klanten", "Klanten zien de geschatte waarde van hun woning; wil iemand verhuizen, dan weet jij het als eerste."),
+    ("Contact met één klik", "Worden de plannen concreet, dan neemt je klant met één klik contact met je op."),
+]
+
+
 def render_home(cats, feeds, pages):
     pg = Page("")
 
@@ -1479,6 +1489,31 @@ def render_home(cats, feeds, pages):
         <a class="btn-out" href="{pg.rel('websitetools')}#video">▶ Bekijk de video</a></p>
       <p class="home-wt-note">De uitkomsten van de rekentools zijn indicatief en geen advies.</p>
     </section>
+    <section class="home-wt" id="home-mhz" aria-labelledby="home-mhz-h" hidden>
+      <h2 id="home-mhz-h">MijnHuiszaken: blijf in beeld vanaf de eerste zoekopdracht</h2>
+      <p>Meer dan de helft van de mensen die je website bezoeken, oriënteert zich al op de woningmarkt. Met MijnHuiszaken (Mijn Huiszaken) geef je ze realtime woningaanbod in een eigen omgeving met jouw naam, en bouw je een voorsprong op ten opzichte van andere hypotheekadviseurs.</p>
+      <div class="wtwhys">{"".join(f'<div class="wtwhy"><h3>{esc(t)}</h3><p>{esc(x)}</p></div>' for t, x in MHZ_KORT)}</div>
+      <p class="home-wt-cta btn-row"><a class="btn-out cta" href="{pg.rel('mijnhuiszaken')}">Bekijk MijnHuiszaken en lees meer »</a>
+        <a class="btn-out" href="{pg.rel('mijnhuiszaken')}#video">▶ Bekijk de video</a></p>
+    </section>
+    <script>
+    /* Afwisselen per sessie: Websitetools of MijnHuiszaken (zonder JavaScript: Websitetools). */
+    (function () {{
+      var keus;
+      try {{
+        keus = sessionStorage.getItem("homeblok");
+        if (!keus) {{
+          keus = localStorage.getItem("homeblok-laatst") === "wt" ? "mhz" : (localStorage.getItem("homeblok-laatst") === "mhz" ? "wt" : (Math.random() < 0.5 ? "wt" : "mhz"));
+          sessionStorage.setItem("homeblok", keus);
+          localStorage.setItem("homeblok-laatst", keus);
+        }}
+      }} catch (e) {{ keus = Math.random() < 0.5 ? "wt" : "mhz"; }}
+      if (keus === "mhz") {{
+        var wt = document.querySelector('section.home-wt[aria-labelledby="home-wt-h"]'), mhz = document.getElementById("home-mhz");
+        if (wt && mhz) {{ wt.hidden = true; mhz.hidden = false; }}
+      }}
+    }})();
+    </script>
 
     <h2>Actualiteiten</h2>
     <div class="news-bars">
@@ -2663,7 +2698,7 @@ def MHZ_VIDEO(pg):
                      "thumbnailUrl": SITE_URL + "bronnen/mijnhuiszaken/mijnhuiszaken-promo.webp",
                      "contentUrl": SITE_URL + "bronnen/mijnhuiszaken/mijnhuiszaken-promo.mp4",
                      "uploadDate": "2026-11-04", "duration": "PT3M6S", "inLanguage": "nl-NL"}, ensure_ascii=False)
-    return (f'<figure class="mhz-video"><video controls preload="none" playsinline poster="{poster}" width="1920" height="1080">'
+    return (f'<figure class="mhz-video" id="video"><video controls preload="none" playsinline poster="{poster}" width="1920" height="1080">'
             f'<source src="{mp4}" type="video/mp4">Je browser kan deze video niet afspelen. '
             f'<a href="{mp4}">Download de video (mp4)</a>.</video>'
             f'<figcaption>MijnHuiszaken voor hypotheekadviseurs: de propositie, de klantreis, de online omgeving van je klant en de tarieven (3 minuten).</figcaption></figure>'
