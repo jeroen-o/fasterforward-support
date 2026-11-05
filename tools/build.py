@@ -1490,7 +1490,7 @@ def render_home(cats, feeds, pages):
       <p class="home-wt-note">De uitkomsten van de rekentools zijn indicatief en geen advies.</p>
     </section>
     <section class="home-wt" id="home-mhz" aria-labelledby="home-mhz-h" hidden>
-      <h2 id="home-mhz-h">MijnHuiszaken: blijf in beeld vanaf de eerste zoekopdracht</h2>
+      <h2 id="home-mhz-h">MijnHuiszaken: blijf in beeld vanaf de eerste zoekopdracht – het actuele woningaanbod voor jouw klanten</h2>
       <p>Meer dan de helft van de mensen die je website bezoeken, oriënteert zich al op de woningmarkt. Met MijnHuiszaken (Mijn Huiszaken) geef je ze realtime woningaanbod in een eigen omgeving met jouw naam, en bouw je een voorsprong op ten opzichte van andere hypotheekadviseurs.</p>
       <div class="wtwhys">{"".join(f'<div class="wtwhy"><h3>{esc(t)}</h3><p>{esc(x)}</p></div>' for t, x in MHZ_KORT)}</div>
       <p class="home-wt-cta btn-row"><a class="btn-out cta" href="{pg.rel('mijnhuiszaken')}">Bekijk MijnHuiszaken en lees meer »</a>
