@@ -2971,7 +2971,6 @@ def render_mijnhuiszaken():
          "klanten en kunt op het juiste moment contact opnemen."),
         ("Het woningaanbod via je eigen website", "Toon het actuele woningaanbod op de website van je kantoor. Woningzoekers zoeken bij jou, zien jouw "
          "naam en blijven bij jou in beeld."),
-        ("Begeleiding bij aan- en verkoop", "Inclusief een Wwft-check, een aan- en verkoopdossier en digitaal ondertekenen."),
         ("Ook voor bestaande klanten", "Je klanten zien de geschatte waarde van hun woning en hoeveel mensen er op zoek zijn naar "
          "een woning zoals de hunne. Willen ze verhuizen? Dan weet jij het als eerste."),
         ("Contact met één klik", "Worden de plannen concreet en is advies op maat nodig, dan neemt je klant met één klik contact "
