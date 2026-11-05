@@ -1326,7 +1326,7 @@ def render_search(pages, cats):
                     "c": "Hypotheekrente-app", "k": "kennisbank", "x": HRA_INTRO + " hypotheekrente app renteapp rentetarieven "
                     "rente overzicht geldverstrekkers app store google play android iphone eigen huisstijl white label hypotheekbond " +
                     " ".join(t for t, _ in HRA_TOOLS)})
-        idx.append({"t": "Quinn AdviesCoach: een coach die met je meekijkt en meedenkt", "h": "adviescoach/index.html", "c": "AdviesCoach", "k": "kennisbank",
+        idx.append({"t": "AdviesCoach: een coach die met je meekijkt en meedenkt", "h": "adviescoach/index.html", "c": "AdviesCoach", "k": "kennisbank",
                     "x": COACH_INTRO + " adviescoach advies coach quinn compliancescan compliance scan adviessamenvatting adviesrapport klantprofiel "
                     "afm leidraad eBlinqx hypotheekadvies ai " + " ".join(t + " " + x for t, x in COACH_KORT)})
         idx.append({"t": "Actiefbeheerscan: digitale formulieren voor nazorg en beheer", "h": "actiefbeheerscan/index.html",
@@ -1491,7 +1491,7 @@ def render_home(cats, feeds, pages):
       <p class="home-wt-cta btn-row"><a class="btn-out cta" href="{pg.rel('websitetools')}">Bekijk de rekentools en lees meer »</a>
         <a class="btn-out" href="{pg.rel('websitetools')}#video">▶ Bekijk de video</a></p>
       <p class="home-wt-note">De uitkomsten van de rekentools zijn indicatief en geen advies.</p>
-      <p class="home-wt-ook">Ook interessant: <a href="{pg.rel('mijnhuiszaken')}">MijnHuiszaken: het actuele woningaanbod voor jouw klanten</a> · <a href="{pg.rel('adviescoach')}">Quinn AdviesCoach: begeleid hypotheekadvies</a></p>
+      <p class="home-wt-ook">Ook interessant: <a href="{pg.rel('mijnhuiszaken')}">MijnHuiszaken: het actuele woningaanbod voor jouw klanten</a> · <a href="{pg.rel('adviescoach')}">AdviesCoach: begeleid hypotheekadvies</a></p>
     </section>
     <section class="home-wt" id="home-mhz" aria-labelledby="home-mhz-h" hidden>
       <h2 id="home-mhz-h">MijnHuiszaken: blijf in beeld vanaf de eerste zoekopdracht – het actuele woningaanbod voor jouw klanten</h2>
@@ -1499,14 +1499,15 @@ def render_home(cats, feeds, pages):
       <div class="wtwhys">{"".join(f'<div class="wtwhy"><h3>{esc(t)}</h3><p>{esc(x)}</p></div>' for t, x in MHZ_KORT)}</div>
       <p class="home-wt-cta btn-row"><a class="btn-out cta" href="{pg.rel('mijnhuiszaken')}">Bekijk MijnHuiszaken en lees meer »</a>
         <a class="btn-out" href="{pg.rel('mijnhuiszaken')}#video">▶ Bekijk de video</a></p>
-      <p class="home-wt-ook">Ook interessant: <a href="{pg.rel('websitetools')}">Websitetools: rekentools voor je website</a> · <a href="{pg.rel('adviescoach')}">Quinn AdviesCoach: begeleid hypotheekadvies</a></p>
+      <p class="home-wt-ook">Ook interessant: <a href="{pg.rel('websitetools')}">Websitetools: rekentools voor je website</a> · <a href="{pg.rel('adviescoach')}">AdviesCoach: begeleid hypotheekadvies</a></p>
     </section>
     <section class="home-wt" id="home-coach" aria-labelledby="home-coach-h" hidden>
-      <h2 id="home-coach-h">Quinn AdviesCoach: een coach die met je meekijkt en meedenkt</h2>
+      <p class="badge-gratis">Tot 1-2-2027 gratis proberen</p>
+      <h2 id="home-coach-h">AdviesCoach: een coach die met je meekijkt en meedenkt</h2>
       <p>Meer overzicht, meer controle, minder uitzoek- en herstelwerk. AdviesCoach werkt automatisch mee in je dossier in eBlinqx Hypotheekadvies: het signaleert tijdens het gesprek mogelijke fouten, jij oordeelt, en aan het eind ligt de adviessamenvatting al klaar.</p>
       <div class="wtwhys">{"".join(f'<div class="wtwhy"><h3>{esc(t)}</h3><p>{esc(x)}</p></div>' for t, x in COACH_KORT)}</div>
       <p class="home-wt-cta btn-row"><a class="btn-out cta" href="{pg.rel('adviescoach')}">Bekijk AdviesCoach en lees meer »</a></p>
-      <p class="home-wt-note">Tot 1 februari gratis te proberen. Jij blijft eigenaar van het advies.</p>
+      <p class="home-wt-note">Jij blijft eigenaar van het advies.</p>
       <p class="home-wt-ook">Ook interessant: <a href="{pg.rel('websitetools')}">Websitetools: rekentools voor je website</a> · <a href="{pg.rel('mijnhuiszaken')}">MijnHuiszaken: het actuele woningaanbod voor jouw klanten</a></p>
     </section>
     <script type="application/ld+json">{json.dumps({"@context": "https://schema.org", "@type": "ItemList", "name": "Uitgelichte oplossingen voor adviseurs",
@@ -1514,7 +1515,7 @@ def render_home(cats, feeds, pages):
                             for i, (n, u, o) in enumerate([
                                 ("Websitetools: rekentools voor je website", "websitetools/", "Rekentools op de website van je kantoor voor meer en betere leads."),
                                 ("MijnHuiszaken: het actuele woningaanbod voor jouw klanten", "mijnhuiszaken/", MHZ_INTRO),
-                                ("Quinn AdviesCoach: een coach die met je meekijkt en meedenkt", "adviescoach/", COACH_INTRO)])]},
+                                ("AdviesCoach: een coach die met je meekijkt en meedenkt", "adviescoach/", COACH_INTRO)])]},
         ensure_ascii=False).replace("</", "<\\/")}</script>
     <script>
     /* Afwisselen bij elk bezoek aan de homepage: Websitetools, MijnHuiszaken en AdviesCoach (zonder JavaScript: Websitetools). */
@@ -2980,7 +2981,7 @@ def render_banking():
 
 
 COACH_URL = "https://verzekeringhypotheek.blinqx.tech/oplossingen/adviescoach"
-COACH_INTRO = ("Quinn AdviesCoach is een coach die met je meekijkt en meedenkt in eBlinqx Hypotheekadvies. AdviesCoach werkt "
+COACH_INTRO = ("AdviesCoach is een coach die met je meekijkt en meedenkt in eBlinqx Hypotheekadvies. AdviesCoach werkt "
                "automatisch mee in het dossier dat je al gebruikt: geen nieuw scherm, geen dubbele invoer. Het signaleert tijdens "
                "het gesprek mogelijke fouten, jij oordeelt, en aan het eind ligt de adviessamenvatting al klaar.")
 COACH_KORT = [
@@ -3009,7 +3010,7 @@ def app_ld(naam, url, omschrijving, beeld, prijs=None, eenheid=None, extra=None)
 
 
 def render_adviescoach():
-    """Quinn AdviesCoach (bron: verzekeringhypotheek.blinqx.tech/oplossingen/adviescoach, november 2026)."""
+    """AdviesCoach (bron: verzekeringhypotheek.blinqx.tech/oplossingen/adviescoach, november 2026)."""
     pg = Page("adviescoach")
     kort = "".join(f'<div class="wtwhy"><h3>{esc(t)}</h3><p>{esc(x)}</p></div>' for t, x in COACH_KORT)
     stappen = [
@@ -3025,9 +3026,9 @@ def render_adviescoach():
                 "Geen giswerk van een AI-model: wat wordt gesignaleerd komt uit de gegevens in je eigen dossier; AI helpt bij de toelichting.",
                 "Als kantoorhouder zet je AdviesCoach zelf aan of uit. Staat het uit, dan verandert er niets aan hoe je nu werkt."]
     faq = [
-        ("Wat is Quinn AdviesCoach?", COACH_INTRO),
+        ("Wat is AdviesCoach?", COACH_INTRO),
         ("Werkt AdviesCoach in een apart programma?", "Nee. AdviesCoach zit middenin eBlinqx Hypotheekadvies, waar je dossier al staat: geen nieuw scherm, geen dubbele invoer en geen exportstap. Je hoeft dus ook geen dossiergegevens naar ChatGPT of andere losse tools te kopiëren."),
-        ("Wat kost AdviesCoach?", "Je kunt AdviesCoach tot 1 februari gratis proberen. Wil je daarna doorgaan, dan kost het € 25 (exclusief btw) per unieke HDN-aanvraag in een adviesdossier (volgens verzekeringhypotheek.blinqx.tech, november 2026)."),
+        ("Wat kost AdviesCoach?", "Je kunt AdviesCoach tot 1 februari 2027 gratis proberen. Wil je daarna doorgaan, dan kost het € 25 (exclusief btw) per unieke HDN-aanvraag in een adviesdossier (volgens verzekeringhypotheek.blinqx.tech, november 2026)."),
         ("Beslist AdviesCoach over het advies?", "Nee. AdviesCoach signaleert, jij beslist en jij ondertekent. Jij blijft eigenaar van het advies."),
     ]
     faq_html = "".join(f'<details class="wtfaq"><summary>{esc(q)}</summary><p>{esc(a)}</p></details>' for q, a in faq)
@@ -3036,7 +3037,8 @@ def render_adviescoach():
         ensure_ascii=False).replace("</", "<\\\\/")
     body = f"""{crumbs(pg, [("AdviesCoach", None)])}
 <main class="subpage mhz"><div class="wrap">
-  <h1>Quinn AdviesCoach</h1>
+  <h1>AdviesCoach</h1>
+  <p class="badge-gratis">Tot 1-2-2027 gratis proberen</p>
   <p class="lead"><strong>Een coach die met je meekijkt en meedenkt.</strong> Meer overzicht, meer controle, minder uitzoek- en herstelwerk.</p>
   <div class="mhz-intro"><div><p>{esc(COACH_INTRO)}</p>
     <p>Van handmatig advies naar begeleid advies: geen gegevens meer verzamelen die al in het dossier staan, geen motivering die je dossier na dossier opnieuw schrijft, en geen twijfel aan het eind of de onderbouwing overeind blijft.</p>
@@ -3052,7 +3054,7 @@ def render_adviescoach():
   <h2 class="wth">Je blijft in controle</h2>
   <ul>{"".join(f"<li>{esc(x)}</li>" for x in controle)}</ul>
   <h2 class="wth">Probeer AdviesCoach gratis</h2>
-  <p>Je kunt AdviesCoach tot 1 februari gratis en vrijblijvend proberen. Daarna kost het € 25 (exclusief btw) per unieke HDN-aanvraag in een adviesdossier. Het aantal gebruikers wordt stap voor stap uitgebreid (eerst maximaal 100 kantoren) en de onboarding verloopt in fases: je hoort het zodra je aan de beurt bent.</p>
+  <p>Je kunt AdviesCoach tot 1 februari 2027 gratis en vrijblijvend proberen. Daarna kost het € 25 (exclusief btw) per unieke HDN-aanvraag in een adviesdossier. Het aantal gebruikers wordt stap voor stap uitgebreid (eerst maximaal 100 kantoren) en de onboarding verloopt in fases: je hoort het zodra je aan de beurt bent.</p>
   <p class="btn-row"><a class="btn-out cta" href="{COACH_URL}" target="_blank" rel="noopener">Meld je aan ↗</a></p>
   <p class="mhz-tip">Let op: AdviesCoach ondersteunt de adviseur, maar het advies en de verantwoordelijkheid daarvoor blijven bij jou. De adviessamenvatting volgt volgens Blinqx de AFM-leidraad; controleer die altijd voordat je afrondt.</p>
   <h2 class="wth">Veelgestelde vragen</h2>
@@ -3061,11 +3063,11 @@ def render_adviescoach():
   <p>Lees ook: <a href="{pg.rel("releasenotes-hypotheekadvies")}">Releasenotes eBlinqx Hypotheekadvies</a>, <a href="{pg.rel("kennisbank/quinn-mail-koppelen-taken-aanmaken-en-reply")}">Quinn Mail</a> en <a href="{pg.rel("procesversneller")}">Proces-versneller</a>.</p>
   <p class="src">Bron: <a href="{COACH_URL}" target="_blank" rel="noopener">verzekeringhypotheek.blinqx.tech</a> (stand 5 november 2026). Prijzen en voorwaarden kunnen wijzigen.</p>
 </div></main>"""
-    body += app_ld("Quinn AdviesCoach", "adviescoach/", COACH_INTRO, "bronnen/adviescoach/header.webp", 25, "per unieke HDN-aanvraag in een adviesdossier",
+    body += app_ld("AdviesCoach", "adviescoach/", COACH_INTRO, "bronnen/adviescoach/header.webp", 25, "per unieke HDN-aanvraag in een adviesdossier",
                    {"featureList": [t for t, _ in COACH_KORT], "isPartOf": {"@type": "SoftwareApplication", "name": "eBlinqx Hypotheekadvies"}})
-    write("adviescoach", layout(pg, "Quinn AdviesCoach: een coach die met je meekijkt en meedenkt", body, None,
-                                "Quinn AdviesCoach in eBlinqx Hypotheekadvies: automatisch klantprofiel, ComplianceScan tijdens het advies en een "
-                                "klantspecifieke adviessamenvatting. Tot 1 februari gratis te proberen."))
+    write("adviescoach", layout(pg, "AdviesCoach: een coach die met je meekijkt en meedenkt", body, None,
+                                "AdviesCoach in eBlinqx Hypotheekadvies: automatisch klantprofiel, ComplianceScan tijdens het advies en een "
+                                "klantspecifieke adviessamenvatting. Tot 1-2-2027 gratis te proberen."))
 
 
 def render_mijnhuiszaken():
