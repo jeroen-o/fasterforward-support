@@ -18,7 +18,8 @@
     "Hypotheekrente-app"
    ]
   ],
-  "afbeelding": "bronnen/sites/hypotheekbond-nl.webp"
+  "afbeelding": "bronnen/sites/hypotheekbond-nl.webp",
+  "titel": "Hypotheekbond.nl: de Nationale Hypotheekbond"
  },
  {
   "slug": "fasterforward-nl",
@@ -40,7 +41,8 @@
    ]
   ],
   "afbeelding": "bronnen/sites/fasterforward-nl.webp",
-  "logo": "bronnen/sites/logo-fasterforward-nl.webp"
+  "logo": "bronnen/sites/logo-fasterforward-nl.webp",
+  "titel": "Fasterforward.nl: Faster Forward en eBlinqx"
  },
  {
   "slug": "uwkluis-nl",
@@ -83,7 +85,8 @@
     "Video: Uwkluis – Veilig Ophalen"
    ]
   ],
-  "afbeelding": "bronnen/sites/veiligophalen-nl.webp"
+  "afbeelding": "bronnen/sites/veiligophalen-nl.webp",
+  "titel": "VeiligOphalen.nl: financiële gegevens veilig ophalen"
  },
  {
   "slug": "fastlane-hypotheekadvies-nl",
@@ -104,7 +107,8 @@
     "E-learning"
    ]
   ],
-  "afbeelding": "bronnen/sites/fastlane-hypotheekadvies-nl.webp"
+  "afbeelding": "bronnen/sites/fastlane-hypotheekadvies-nl.webp",
+  "titel": "Fastlane-hypotheekadvies.nl: hypotheekadviessoftware"
  },
  {
   "slug": "dias-nl",
@@ -122,7 +126,8 @@
    ]
   ],
   "afbeelding": "bronnen/sites/dias-nl.webp",
-  "logo": "bronnen/sites/logo-dias-nl.webp"
+  "logo": "bronnen/sites/logo-dias-nl.webp",
+  "titel": "Dias.nl: DIAS Software van Blinqx"
  },
  {
   "slug": "adviesbox-nl",
@@ -141,7 +146,8 @@
    ]
   ],
   "afbeelding": "bronnen/sites/adviesbox-nl.webp",
-  "logo": "bronnen/sites/adviesbox-nl.webp"
+  "logo": "bronnen/sites/adviesbox-nl.webp",
+  "titel": "Adviesbox.nl: software voor financieel advies"
  },
  {
   "slug": "findata-nl",
@@ -176,7 +182,8 @@
    ]
   ],
   "afbeelding": "bronnen/sites/my-tp-net.webp",
-  "logo": "bronnen/sites/logo-my-tp-net.webp"
+  "logo": "bronnen/sites/logo-my-tp-net.webp",
+  "titel": "My-TP.net: My TP van Blinqx"
  },
  {
   "slug": "finrust-nl",
@@ -198,7 +205,8 @@
    ]
   ],
   "afbeelding": "bronnen/sites/finrust-nl.webp",
-  "logo": "bronnen/sites/logo-finrust-nl.webp"
+  "logo": "bronnen/sites/logo-finrust-nl.webp",
+  "titel": "Finrust.nl: FinRust van Blinqx"
  },
  {
   "slug": "finly-nl",
@@ -312,7 +320,8 @@
     "Tools voor vastgoed"
    ]
   ],
-  "afbeelding": "bronnen/sites/duurzaamheidsprofiel-nl.webp"
+  "afbeelding": "bronnen/sites/duurzaamheidsprofiel-nl.webp",
+  "titel": "Duurzaamheidsprofiel.nl: gratis duurzaamheidsrapport"
  },
  {
   "slug": "finconnect-nl",
@@ -330,7 +339,8 @@
    ]
   ],
   "afbeelding": "bronnen/sites/finconnect-nl.webp",
-  "logo": "bronnen/sites/logo-finconnect-nl.webp"
+  "logo": "bronnen/sites/logo-finconnect-nl.webp",
+  "titel": "Finconnect.nl: FinConnect van Blinqx"
  },
  {
   "slug": "rwwr-nl",
@@ -421,7 +431,8 @@
     "Digitale formulieren versturen"
    ]
   ],
-  "afbeelding": "bronnen/sites/nazorg-formulieren-nl.webp"
+  "afbeelding": "bronnen/sites/nazorg-formulieren-nl.webp",
+  "titel": "Nazorg-formulieren.nl: complete nazorgscans"
  },
  {
   "slug": "beheer-mijnhuiszaken-nl",
@@ -514,7 +525,8 @@
    ]
   ],
   "afbeelding": null,
-  "logo": "bronnen/sites/logo-aplaza-nl.webp"
+  "logo": "bronnen/sites/logo-aplaza-nl.webp",
+  "titel": "Aplaza.nl: koppeling met verzekeraars en serviceproviders"
  },
  {
   "slug": "renteadministratie-nl",
@@ -536,7 +548,8 @@
     "Hypotheekrente-app"
    ]
   ],
-  "afbeelding": "bronnen/sites/renteadministratie-nl.webp"
+  "afbeelding": "bronnen/sites/renteadministratie-nl.webp",
+  "titel": "Renteadministratie.nl: rentetool voor geldverstrekkers"
  },
  {
   "slug": "actiefbeheerscan-nl",
@@ -557,7 +570,8 @@
     "Nazorg-formulieren.nl"
    ]
   ],
-  "afbeelding": "bronnen/actiefbeheerscan/header.webp"
+  "afbeelding": "bronnen/actiefbeheerscan/header.webp",
+  "titel": "Actiefbeheerscan.nl: nazorg, beheer en leads"
  },
  {
   "slug": "nhg-nl",
@@ -701,7 +715,8 @@
     "Aplaza.nl"
    ]
   ],
-  "afbeelding": "bronnen/sites/sivi-nl.webp"
+  "afbeelding": "bronnen/sites/sivi-nl.webp",
+  "titel": "SIVI: standaarden voor de financiële dienstverlening"
  },
  {
   "slug": "hippoline-nl",
@@ -758,7 +773,8 @@
    ]
   ],
   "afbeelding": "bronnen/sites/toetsinkomenberekenen-nl.webp",
-  "logo": "bronnen/sites/logo-toetsinkomenberekenen-nl.webp"
+  "logo": "bronnen/sites/logo-toetsinkomenberekenen-nl.webp",
+  "titel": "Toetsinkomenberekenen.nl: toetsinkomen voor IBL"
  },
  {
   "slug": "verzekeringhypotheek-blinqx-tech",
@@ -810,7 +826,8 @@
    ]
   ],
   "afbeelding": "bronnen/sites/verzekeringhypotheek-blinqx-tech.webp",
-  "logo": "bronnen/sites/logo-verzekeringhypotheek-blinqx-tech.webp"
+  "logo": "bronnen/sites/logo-verzekeringhypotheek-blinqx-tech.webp",
+  "titel": "Blinqx Verzekering & Hypotheek: website en eBlinqx"
  },
  {
   "slug": "hyarchis-com",
@@ -1069,6 +1086,7 @@
     "Websitetools"
    ]
   ],
-  "afbeelding": "bronnen/sites/orv-api-nl.webp"
+  "afbeelding": "bronnen/sites/orv-api-nl.webp",
+  "titel": "ORV-API.nl: ORV-premies berekenen en vergelijken"
  }
 ]

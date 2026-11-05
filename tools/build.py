@@ -2613,6 +2613,8 @@ PARTNER_EIGEN = {  # partner-slug -> eigen pagina op deze site
     "gratis-woningwaarde-rapport": ("woningwaarderapport", "Woningwaarderapport"),
     "rekentools-voor-op-de-website": ("websitetools", "Websitetools"),
 }
+PARTNER_TITEL = {"duurzaamheidsprofiel-gratis-duurzaamheidsrapport": "Duurzaamheidsprofiel: gratis duurzaamheidsrapport",
+                 "hypothecair-planner-nvhp": "Hypothecair planner (NVHP): partner van Blinqx"}
 PARTNER_SAMENVATTING = {"rekentools-voor-op-de-website": "Rekentools van Hypotheekbond voor op de website van je advieskantoor: "
                         "hypotheek berekenen, rentes vergelijken, aflossen, verduurzamen en klantinzicht."}
 
@@ -2704,7 +2706,7 @@ document.querySelectorAll('.ptag').forEach(function(b){{b.addEventListener('clic
   <p><a href="{pp.rel("partners")}">← Alle partners</a></p>
   <p class="src">Bron: <a href="{esc(p["bron"])}" target="_blank" rel="noopener">verzekeringhypotheek.blinqx.tech</a> (stand 4 november 2026).</p>
 </div></main>"""
-        write("partners/" + p["slug"], layout(pp, f"{p['titel']} | Partner van Blinqx", body, None, p["kort"]))
+        write("partners/" + p["slug"], layout(pp, PARTNER_TITEL.get(p["slug"]) or (titel_kort(p["titel"], "partner van Blinqx") if len(p["titel"]) < 40 else p["titel"].split(" – ")[0].split(" | ")[0] + ": partner van Blinqx"), body, None, p["kort"]))
 
 
 def MHZ_VIDEO(pg):
@@ -2839,6 +2841,22 @@ def render_demokantoor():
                                  "MijnHuiszaken en UwKluis op de website van een adviseur. Wil je dit ook? Laat het ons weten."))
 
 
+def titel_kort(naam, sub, maxl=60):
+    """Titel voor <title>: naam + ondertitel, ingekort op een woordgrens zodat Google hem niet afkapt."""
+    t = f"{naam}: {sub}"
+    if len(t) <= maxl + 5:
+        return t
+    for teken in (":", " – ", " - "):  # eerst afbreken op een natuurlijk punt
+        deel = sub.split(teken)[0].strip()
+        if 12 <= len(deel) and len(f"{naam}: {deel}") <= maxl + 5:
+            return f"{naam}: {deel}"
+    rest = maxl - len(naam) - 2
+    if rest < 15:
+        return naam
+    kort = sub[:rest].rsplit(" ", 1)[0].rstrip(",:;–- ")
+    return f"{naam}: {kort}"
+
+
 def sites_laden():
     f = os.path.join(TOOLS, "sites.json")
     return json.load(open(f, encoding="utf8")) if os.path.exists(f) else []
@@ -2919,7 +2937,12 @@ def render_sites():
   <p><a href="{pg.rel("sites")}">← Alle handige websites</a></p>
   <p class="src">Bron: <a href="{esc(s["url"])}" target="_blank" rel="noopener">{esc(s["naam"].lower())}</a> (stand 4 november 2026).</p>
 </div></main>"""
-        write("sites/" + s["slug"], layout(pg, f"{s['naam']}: {s['ondertitel']}", body, None, " ".join(s["tekst"])), kluis=False)
+        ld_site = {"@context": "https://schema.org", "@type": "WebSite", "name": s["naam"], "url": s["url"], "description": s["ondertitel"],
+                   "inLanguage": "nl-NL", "about": " ".join(s["tekst"])[:500]}
+        if beeld:
+            ld_site["image"] = SITE_URL + beeld
+        body += '<script type="application/ld+json">' + json.dumps(ld_site, ensure_ascii=False).replace("</", "<\\/") + "</script>"
+        write("sites/" + s["slug"], layout(pg, s.get("titel") or titel_kort(s["naam"], s["ondertitel"]), body, None, " ".join(s["tekst"])), kluis=False)
     # overzicht (alleen via footer en zoeker bereikbaar, geen tegel)
     pg = Page("sites")
     kaarten = "".join(
@@ -2976,8 +2999,28 @@ def render_banking():
   <h2 class="wth">Ons team</h2>
   <div class="team">{team}</div>
 </div></main>"""
-    write("banking-insurance", layout(pg, "Banking & Insurance: Hypotheekcijfer.nl, Pensioencijfer.nl en Renteadministratie.nl", body, None,
-                                      "Hypotheekcijfer.nl en Pensioencijfer.nl: klanten van banken en verzekeraars krijgen met één cijfer inzicht in de betaalbaarheid van hun hypotheek en in hun pensioen."))
+    # gestructureerde gegevens: aanbod (ItemList van diensten), team (Person) en veelgestelde vragen
+    aanbod = [{"@type": "ListItem", "position": i + 1, "item": {"@type": "Service", "name": s_["naam"], "url": s_["url"],
+                                                              "description": " ".join(s_["tekst"])[:300], "provider": {"@type": "Organization", "name": "Blinqx"}}}
+              for i, s_ in enumerate(lijst)]
+    aanbod += [{"@type": "ListItem", "position": len(aanbod) + 1, "item": {"@type": "Service", "name": "Hypotheekvoorwaarden-API", "provider": {"@type": "Organization", "name": "Blinqx"},
+                "description": "De hypotheekvoorwaarden van geldverstrekkers via een API, voor gebruik in eigen systemen, tools en vergelijkingen."}},
+               {"@type": "ListItem", "position": len(aanbod) + 2, "item": {"@type": "Service", "name": "Hypotheek validatie engine", "provider": {"@type": "Organization", "name": "Blinqx"},
+                "description": "Geautomatiseerde controle van hypotheekaanvragen en -gegevens op volledigheid en juistheid."}}]
+    personen = [{"@type": "Person", "name": n, "jobTitle": html.unescape(r), "image": SITE_URL + "bronnen/team/" + f + ".webp", "telephone": tel,
+                 **({"email": m} if m else {}), "worksFor": {"@type": "Organization", "name": "Blinqx"}} for n, r, f, tel, telt, m in leden]
+    faq_b = [("Welke oplossingen biedt Blinqx voor banken en verzekeraars?",
+              "Onder meer Hypotheekcijfer.nl en Pensioencijfer.nl (klanten inzicht geven met één cijfer), Renteadministratie.nl (rentetool van analyse "
+              "tot publicatie), de hypotheekrente-API, de ORV-API, de hypotheekvoorwaarden-API en de hypotheek validatie engine."),
+             ("Zijn er meer financiële API's?", "Ja. Naast deze API's zijn er nog veel meer financiële API's. Vraag een van de collega's op deze pagina naar de mogelijkheden."),
+             ("Met wie neem ik contact op?", "Met een van de teamleden op deze pagina, via relatie-vh@blinqx.tech of 020 758 21 11.")]
+    ld_b = [{"@context": "https://schema.org", "@type": "ItemList", "name": "Banking & Insurance: oplossingen en API's van Blinqx", "itemListElement": aanbod},
+            {"@context": "https://schema.org", "@type": "Organization", "name": "Blinqx – Banking & Insurance", "url": SITE_URL + "banking-insurance/", "member": personen},
+            {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq_b]}]
+    body += "".join('<script type="application/ld+json">' + json.dumps(x, ensure_ascii=False).replace("</", "<\\/") + "</script>" for x in ld_b)
+    write("banking-insurance", layout(pg, "Banking & Insurance: API's en tools voor banken", body, None,
+                                      "Oplossingen en financiële API's van Blinqx voor banken, geldverstrekkers en verzekeraars: Hypotheekcijfer.nl, "
+                                      "Pensioencijfer.nl, Renteadministratie.nl, de hypotheekrente-API, ORV-API, hypotheekvoorwaarden-API en validatie engine."))
 
 
 COACH_URL = "https://verzekeringhypotheek.blinqx.tech/oplossingen/adviescoach"
@@ -3154,7 +3197,7 @@ def render_mijnhuiszaken():
 </div></main>"""
     body += app_ld("MijnHuiszaken", "mijnhuiszaken/", MHZ_INTRO, "bronnen/mijnhuiszaken/images-hero-desktop.webp", 79, "per maand voor 1.000 klanten",
                    {"alternateName": "Mijn Huiszaken", "featureList": [t for t, _ in MHZ_KORT]})
-    write("mijnhuiszaken", layout(pg, "MijnHuiszaken: blijf in beeld vanaf de eerste zoekopdracht – het actuele woningaanbod voor jouw klanten", body, None,
+    write("mijnhuiszaken", layout(pg, "MijnHuiszaken: het actuele woningaanbod voor jouw klanten", body, None,
                                   "MijnHuiszaken (Mijn Huiszaken): klantomgeving voor hypotheekadviseurs met realtime NVM-woningaanbod, e-mailalerts, "
                                   "rekentools en woningwaarde. Bind leads vanaf de oriëntatie en blijf in beeld bij aan- en verkoop."))
 

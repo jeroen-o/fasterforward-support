@@ -213,7 +213,7 @@ def uitvoeren(root, site_url, overslaan=("bronnen", "tools", "assets", ".github"
             nieuw_main = re.sub(r"<img\b[^>]*>", alt, main)
             rest = rest.replace(main, nieuw_main, 1)
             # eigen deelafbeelding voor video-, websites-, partner- en productpagina's
-            if u.startswith(("video/", "sites/", "partners/", "banking-insurance", "mijnhuiszaken", "yes-co", "tools-voor-vastgoed",
+            if u in ("sites", "partners", "adviescoach") or u.startswith(("video/", "sites/", "partners/", "banking-insurance", "adviescoach", "mijnhuiszaken", "yes-co", "tools-voor-vastgoed",
                              "woningwaarderapport", "actiefbeheerscan", "hypotheekrente-app", "finly-crm", "demo-kantoor", "websitetools")):
                 eerste = re.search(r'<(?:img[^>]*\ssrc|video[^>]*\sposter)="([^"]+\.(?:webp|jpe?g|png))"', nieuw_main)
                 if eerste:
