@@ -1365,8 +1365,8 @@ def render_search(pages, cats):
     brf = os.path.join(SRC, "brochures.json")
     if os.path.exists(brf):
         br = json.load(open(brf, encoding="utf8"))
-        idx.append({"t": "Brochures 2026 Blinqx Verzekering & Hypotheek", "h": "https://jeroen-o.github.io/blinqx-brochures/", "ext": 1,
-                    "c": "Brochures", "k": "overig", "x": "brochure brochures folder productbrochure partnerbrochure pdf printen "
+        idx.append({"t": "Brochures 2026 Blinqx Verzekering & Hypotheek", "h": "brochures/index.html",
+                    "c": "Brochures", "k": "kennisbank", "x": "brochure brochures folder productbrochure partnerbrochure pdf printen "
                     + " ".join(b["naam"] + " " + b["soort"] for b in br)})
         for b in br:
             idx.append({"t": f'Brochure {b["titel"]}', "h": b["url"], "ext": 1, "c": "Brochures › " + b["soort"], "k": "overig",
@@ -3465,6 +3465,35 @@ def hc_titel(c):
     return f'Kennisbank {c["naam"]}'
 
 
+def render_brochures():
+    """Overzicht van de Brochures 2026 (bronnen/brochures.json, tools/brochures_sync.py); elke brochure opent extern."""
+    f = os.path.join(SRC, "brochures.json")
+    if not os.path.exists(f):
+        return
+    br = json.load(open(f, encoding="utf8"))
+    pg = Page("brochures")
+    def oms(b):
+        t = re.sub(r"^.*?Editie \d{4}\s*", "", b["tekst"])
+        t = t[len(b["naam"]):].strip() if t.startswith(b["naam"]) else t
+        return kort(t, 220)
+    kaarten = "".join(f'<div class="wtwhy"><p class="bron">{esc(b["soort"])}</p><h2><a href="{esc(b["url"])}" target="_blank" rel="noopener">{esc(b["titel"])}</a></h2>'
+                      f'<p>{esc(oms(b))}</p><p><a class="readmore" href="{esc(b["url"])}" target="_blank" rel="noopener">Bekijk de brochure<span class="sr-only"> (opent in nieuw tabblad)</span> ↗</a></p></div>' for b in br)
+    intro = (f"Alle {len(br)} brochures 2026 van Blinqx Verzekering & Hypotheek: het productoverzicht, productbrochures over "
+             "eBlinqx Hypotheek, Verzekering, CRM en Makelaardij, en partnerbrochures zoals MijnHuiszaken en VCN Partner. Bekijken, printen of als pdf bewaren.")
+    ld = {"@context": "https://schema.org", "@type": "CollectionPage", "name": "Brochures 2026", "url": SITE_URL + "brochures/", "description": intro,
+          "mainEntity": {"@type": "ItemList", "numberOfItems": len(br), "itemListElement": [
+              {"@type": "ListItem", "position": i + 1, "url": b["url"], "name": b["titel"]} for i, b in enumerate(br)]}}
+    body = f"""{crumbs(pg, [("Brochures", None)])}
+<main class="subpage"><div class="wrap">
+  <h1>Brochures 2026</h1>
+  <p class="lead">{esc(intro)}</p>
+  <p><a class="btn-out cta" href="https://jeroen-o.github.io/blinqx-brochures/" target="_blank" rel="noopener">Open alle brochures ↗</a></p>
+  <div class="wtwhys">{kaarten}</div>
+</div></main>
+<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False).replace("</", "<\\/")}</script>"""
+    write("brochures", layout(pg, "Brochures 2026 Blinqx Verzekering & Hypotheek", body, None, intro))
+
+
 def render_helpcenters():
     """Kennisbanken uit de Intercom-helpcenters (tools/intercom_sync.py): per product een overzicht per rubriek en elk
     artikel als eigen pagina, plus een verzamelpagina kennisbanken/."""
@@ -4102,6 +4131,7 @@ def main():
     render_videopaginas(pages)
     render_finrust()
     render_helpcenters()
+    render_brochures()
     render_elearning()
     render_fastlane()
     render_releasenotes_overig()
@@ -4136,7 +4166,7 @@ def main():
         ("Partners", ["partners"] + sorted(u for u in info if u.startswith("partners/"))),
         ("Productinformatie", ["websitetools", "mijnhuiszaken", "yes-co", "tools-voor-vastgoed", "woningwaarderapport",
                                "actiefbeheerscan", "hypotheekrente-app", "finly-crm", "demo-kantoor", "banking-insurance", "adviescoach", "procesversneller"]),
-        ("Over Blinqx", ["historie"]),
+        ("Over Blinqx", ["historie", "brochures"]),
         ("Kennisbanken per product", ["kennisbanken"] + [c["pad"] for c in HELPCENTERS]),
         *[(hc_titel(c), [u for u in (c["pad"] + "/" + a["slug"] for a in hc_artikelen(c)) if u in info]) for c in HELPCENTERS],
         ("Handige websites", ["sites"] + sorted(u for u in info if u.startswith("sites/"))),
@@ -4146,6 +4176,8 @@ def main():
         ("Beleid", ["supportbeleid", "opdrachtenbeleid", "klachtenbeleid", "wensenbeleid", "privacy"]),
         ("Kennisbank-artikelen", kb),
     ])
+    import webp
+    webp.uitvoeren(ROOT)
     render_sitemap(pages)
 
     # markeer root-mappen met gegenereerde inhoud zodat een volgende build ze kan opruimen
