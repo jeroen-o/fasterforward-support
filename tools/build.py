@@ -1655,17 +1655,28 @@ def render_home(cats, feeds, pages):
       <p class="home-wt-note">Jij blijft eigenaar van het advies.</p>
       <p class="home-wt-ook">Ook interessant: <a href="{pg.rel('websitetools')}">Websitetools: rekentools voor je website</a> · <a href="{pg.rel('mijnhuiszaken')}">MijnHuiszaken: het actuele woningaanbod voor jouw klanten</a></p>
     </section>
+    <section class="home-wt" id="home-pv" aria-labelledby="home-pv-h" hidden>
+      <p class="badge-gratis">Besparen met brondata</p>
+      <h2 id="home-pv-h">Start met besparen met de Procesversneller</h2>
+      <p><strong>Hypotheekdossiers compleet met brondata, zonder handmatig werk.</strong></p>
+      <p>Klanten leveren hun brongegevens digitaal aan via de Blinqx Ockto Proces&shy;versneller; jij laadt ze met een paar klikken in eBlinqx. Eén brondataleverancier, volledig geïntegreerd in je software.</p>
+      <p class="home-wt-cta btn-row"><a class="btn-out cta" href="https://verzekeringhypotheek.blinqx.tech/oplossingen/procesversneller" target="_blank" rel="noopener">Bepaal snel jouw besparing »</a>
+        <a class="btn-out" href="{pg.rel('procesversneller')}">Meer over de Procesversneller</a></p>
+      <p class="home-wt-ook">Ook interessant: <a href="{pg.rel('websitetools')}">Websitetools: rekentools voor je website</a> · <a href="{pg.rel('adviescoach')}">AdviesCoach: begeleid hypotheekadvies</a></p>
+    </section>
     <script type="application/ld+json">{json.dumps({"@context": "https://schema.org", "@type": "ItemList", "name": "Uitgelichte oplossingen voor adviseurs",
         "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": n, "url": SITE_URL + u, "description": o}
                             for i, (n, u, o) in enumerate([
                                 ("Websitetools: rekentools voor je website", "websitetools/", "Rekentools op de website van je kantoor voor meer en betere leads."),
                                 ("MijnHuiszaken: het actuele woningaanbod voor jouw klanten", "mijnhuiszaken/", MHZ_INTRO),
-                                ("AdviesCoach: een coach die met je meekijkt en meedenkt", "adviescoach/", COACH_INTRO)])]},
+                                ("AdviesCoach: een coach die met je meekijkt en meedenkt", "adviescoach/", COACH_INTRO),
+                                ("Procesversneller: hypotheekdossiers compleet met brondata", "procesversneller/",
+                                 "Klanten leveren hun brongegevens digitaal aan via de Blinqx Ockto Procesversneller; jij laadt ze met een paar klikken in eBlinqx.")])]},
         ensure_ascii=False).replace("</", "<\\/")}</script>
     <script>
-    /* Afwisselen bij elk bezoek aan de homepage: Websitetools, MijnHuiszaken en AdviesCoach (zonder JavaScript: Websitetools). */
+    /* Afwisselen bij elk bezoek aan de homepage: Websitetools, MijnHuiszaken, AdviesCoach en Procesversneller (zonder JavaScript: Websitetools). */
     (function () {{
-      var volg = ["wt", "mhz", "coach"], keus;
+      var volg = ["wt", "mhz", "coach", "pv"], keus;
       try {{
         var i = volg.indexOf(localStorage.getItem("homeblok-laatst"));
         keus = volg[(i + 1) % volg.length];
