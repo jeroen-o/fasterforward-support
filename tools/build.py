@@ -1412,6 +1412,7 @@ MHZ_KORT = [
     ("Realtime woningaanbod", "Je klant ziet direct het nieuwste NVM-aanbod dat past bij zijn zoekwensen, met e-mailalerts."),
     ("Voortdurend in beeld", "Je logo en contactgegevens staan in de omgeving van de klant én in elke e-mailalert."),
     ("Inzicht in zoekgedrag", "Weet eerder dan de markt wie er in beweging komt en neem op het juiste moment contact op."),
+    ("Het woningaanbod via je eigen website", "Toon het actuele woningaanbod op de website van je kantoor: woningzoekers zoeken bij jou en blijven bij jou in beeld."),
     ("Ook voor bestaande klanten", "Klanten zien de geschatte waarde van hun woning; wil iemand verhuizen, dan weet jij het als eerste."),
     ("Contact met één klik", "Worden de plannen concreet, dan neemt je klant met één klik contact met je op."),
 ]
@@ -2968,6 +2969,8 @@ def render_mijnhuiszaken():
          "de omgeving van de klant én in de e-mailalerts. Zo houd je mogelijke concurrentie buiten de deur."),
         ("Inzicht in zoekgedrag", "Weet eerder dan de markt wie er in beweging komt. Je krijgt inzicht in het zoekgedrag van je "
          "klanten en kunt op het juiste moment contact opnemen."),
+        ("Het woningaanbod via je eigen website", "Toon het actuele woningaanbod op de website van je kantoor. Woningzoekers zoeken bij jou, zien jouw "
+         "naam en blijven bij jou in beeld."),
         ("Begeleiding bij aan- en verkoop", "Inclusief een Wwft-check, een aan- en verkoopdossier en digitaal ondertekenen."),
         ("Ook voor bestaande klanten", "Je klanten zien de geschatte waarde van hun woning en hoeveel mensen er op zoek zijn naar "
          "een woning zoals de hunne. Willen ze verhuizen? Dan weet jij het als eerste."),
