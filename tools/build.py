@@ -728,6 +728,61 @@ def asset_versie(naam):
     return _VERSIES[naam]
 
 
+def wistje(pg):
+    """Blok 'Wist je dat:' boven de footer op elke pagina behalve de homepage: wisselt bij elk bezoek tussen Websitetools,
+    MijnHuiszaken en AdviesCoach (inhoud in assets/wistje.js; zonder JavaScript drie gewone links)."""
+    if not pg.path:
+        return ""
+    r = "../" * pg.depth
+    zelf = pg.path.split("/")[0]
+    links = " · ".join(f'<a href="{pg.rel(u)}">{n}</a>' for u, n in (("websitetools", "Websitetools: meer leads uit je eigen website"),
+                       ("mijnhuiszaken", "MijnHuiszaken: het actuele woningaanbod voor jouw klanten"),
+                       ("adviescoach", "AdviesCoach: een coach die met je meekijkt en meedenkt")) if u != zelf)
+    return (f'<aside class="wistje" aria-labelledby="wistje-h" data-root="{r}" data-zelf="{esc(zelf)}"><div class="wrap">'
+            f'<h2 id="wistje-h">Wist je dat:</h2><div class="wistje-in"><p>{links}</p></div></div></aside>'
+            f'<script src="{r}assets/wistje.js?v={WISTJE_V}" defer></script>')
+
+
+def wistje_js():
+    """Schrijft assets/wistje.js met de drie blokken (zelfde inhoud als het wisselblok op de homepage)."""
+    kaart = lambda lijst: "".join(f'<div class="wtwhy"><h3>{esc(t)}</h3><p>{esc(x)}</p></div>' for t, x in lijst)
+    blokken = {
+        "wt": ('<h3 class="wistje-t">Websitetools: meer leads uit je eigen website</h3>'
+               "<p>Een hypotheek begint online. Met 22 rekentools op de website van je kantoor berekenen bezoekers zelf hun maximale hypotheek, maandlasten of de actuele rentes, en ben jij het kantoor dat ze als eerste verder helpt.</p>"
+               f'<div class="wtwhys">{kaart(WT_KORT)}</div>'
+               '<p class="home-wt-cta btn-row"><a class="btn-out cta" href="{R}websitetools/index.html">Bekijk de rekentools en lees meer »</a> '
+               '<a class="btn-out" href="{R}websitetools/index.html#video">▶ Bekijk de video</a></p>'
+               '<p class="home-wt-note">De uitkomsten van de rekentools zijn indicatief en geen advies.</p>', "websitetools"),
+        "mhz": ('<h3 class="wistje-t">MijnHuiszaken: blijf in beeld vanaf de eerste zoekopdracht – het actuele woningaanbod voor jouw klanten</h3>'
+                "<p>Meer dan de helft van de mensen die je website bezoeken, oriënteert zich al op de woningmarkt. Met MijnHuiszaken (Mijn Huiszaken) geef je ze realtime woningaanbod in een eigen omgeving met jouw naam, en bouw je een voorsprong op ten opzichte van andere hypotheekadviseurs.</p>"
+                f'<div class="wtwhys">{kaart(MHZ_KORT)}</div>'
+                '<p class="home-wt-cta btn-row"><a class="btn-out cta" href="{R}mijnhuiszaken/index.html">Bekijk MijnHuiszaken en lees meer »</a> '
+                '<a class="btn-out" href="{R}mijnhuiszaken/index.html#video">▶ Bekijk de video</a></p>', "mijnhuiszaken"),
+        "coach": ('<p class="badge-gratis">Tot 1-2-2027 gratis proberen</p><h3 class="wistje-t">AdviesCoach: een coach die met je meekijkt en meedenkt</h3>'
+                  "<p>Meer overzicht, meer controle, minder uitzoek- en herstelwerk. AdviesCoach werkt automatisch mee in je dossier in eBlinqx Hypotheekadvies: het signaleert tijdens het gesprek mogelijke fouten, jij oordeelt, en aan het eind ligt de adviessamenvatting al klaar.</p>"
+                  f'<div class="wtwhys">{kaart(COACH_KORT)}</div>'
+                  '<p class="home-wt-cta btn-row"><a class="btn-out cta" href="{R}adviescoach/index.html">Bekijk AdviesCoach en lees meer »</a></p>'
+                  '<p class="home-wt-note">Jij blijft eigenaar van het advies.</p>', "adviescoach"),
+    }
+    js = ("/* Blok 'Wist je dat:' boven de footer (gegenereerd door tools/build.py). Wisselt bij elk bezoek, samen met de homepage. */\n"
+          "(function () {\n  var B = " + json.dumps({k: {"h": h, "p": p} for k, (h, p) in blokken.items()}, ensure_ascii=False) + ";\n"
+          """  var el = document.querySelector("aside.wistje"); if (!el) return;
+  var R = el.getAttribute("data-root") || "", zelf = el.getAttribute("data-zelf");
+  var volg = ["wt", "mhz", "coach"].filter(function (k) { return B[k].p !== zelf; }), keus;
+  try {
+    var i = volg.indexOf(localStorage.getItem("homeblok-laatst"));
+    keus = volg[(i + 1) % volg.length];
+    localStorage.setItem("homeblok-laatst", keus);
+  } catch (e) { keus = volg[Math.floor(Math.random() * volg.length)]; }
+  el.querySelector(".wistje-in").innerHTML = B[keus].h.split("{R}").join(R);
+})();
+""")
+    open(os.path.join(ROOT, "assets", "wistje.js"), "w", encoding="utf8").write(js)
+
+
+WISTJE_V = "1"
+
+
 def layout(pg, title, body, active=None, description=""):
     nav = "".join(
         (f'<li class="ext"><a href="{t}" target="_blank" rel="noopener">{esc(n)}</a></li>'
@@ -778,6 +833,7 @@ def layout(pg, title, body, active=None, description=""):
 </header>
 <div id="inhoud" tabindex="-1"></div>
 {body}
+{wistje(pg)}
 {share_block(pg, title, description)}
 <footer>
   <div class="wrap">
@@ -3994,6 +4050,7 @@ def main():
     cats, feeds = build_structure(pages)
 
     shutil.copytree(os.path.join(TOOLS, "assets"), os.path.join(ROOT, "assets"))
+    wistje_js()
 
     n = {"article": 0, "cat": 0, "sub": 0}
     for p in pages.values():

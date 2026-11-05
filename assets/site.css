@@ -545,3 +545,8 @@ details.frrub>summary h2{display:inline-block;margin:0}details.frrub>summary::be
 details.frrub .tel{font-weight:400;color:var(--muted);font-size:.8em}
 .article .content table.hc{border-collapse:collapse;width:100%;margin:12px 0}.article .content table.hc td{border:1px solid #d5dbe1;padding:6px 8px;vertical-align:top}
 .article .content table.hc td p{margin:0}.article .content ul.bijlagen{padding-left:20px}
+.wistje{margin:40px 0 0}.wistje .wrap{background:#F7F8FA;border-radius:10px;padding:24px 24px 18px}
+.wistje h2{margin:0 0 6px}.wistje .wistje-t{font-size:20px;margin:4px 0 8px}
+.wistje .wtwhy h3{font-size:16px}.wistje .wtwhy p{font-size:14.5px}
+@media (max-width:640px){.wistje .wrap{padding:18px 14px 14px;margin:0 16px}}
+@media (max-width:640px){.wistje .wtwhy:nth-child(n+4){display:none}}
