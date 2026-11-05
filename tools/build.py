@@ -3455,6 +3455,7 @@ def render_helpcenter(c, arts, urls, vtitel):
     document.querySelectorAll(".frrub").forEach(d => {{
       let m = 0;
       d.querySelectorAll(".frlijst li").forEach(li => {{ const ok = !q || q.split(/\\s+/).every(w => li.textContent.toLowerCase().includes(w)); li.hidden = !ok; if (ok) m++; }});
+      d.querySelectorAll("h3").forEach(h => {{ const ul = h.nextElementSibling; h.hidden = !!ul && ![...ul.children].some(li => !li.hidden); }});
       d.hidden = !m; if (q && m) d.open = true; n += m;
     }});
     tel.textContent = q ? n + " artikelen" : "";
