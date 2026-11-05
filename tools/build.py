@@ -851,6 +851,7 @@ def layout(pg, title, body, active=None, description=""):
       <a href="{pg.rel('sites')}">Handige websites</a>
       <a href="{pg.rel('historie')}">Historie</a>
       <a href="{pg.rel('kennisbanken')}">Kennisbanken</a>
+      <a href="https://jeroen-o.github.io/blinqx-brochures/" target="_blank" rel="noopener">Brochures</a>
       <a href="https://verzekeringhypotheek.blinqx.tech/" target="_blank" rel="noopener">eBlinqx website</a>
     </nav>
   </div>
@@ -1354,6 +1355,15 @@ def render_search(pages, cats):
         idx.append({"t": v["t"], "h": "video/" + v["slug"] + "/index.html", "c": "Video's › " + v["groep"], "k": "video",
                     "d": fmt_date(date.fromisoformat(v["datum"])) if re.fullmatch(r"\d{4}-\d{2}-\d{2}", v["datum"]) else "",
                     "x": " ".join(x for x in (v.get("ch"), v["groep"], v.get("x"), v["tekst"]) if x)})
+    brf = os.path.join(SRC, "brochures.json")
+    if os.path.exists(brf):
+        br = json.load(open(brf, encoding="utf8"))
+        idx.append({"t": "Brochures 2026 Blinqx Verzekering & Hypotheek", "h": "https://jeroen-o.github.io/blinqx-brochures/", "ext": 1,
+                    "c": "Brochures", "k": "overig", "x": "brochure brochures folder productbrochure partnerbrochure pdf printen "
+                    + " ".join(b["naam"] + " " + b["soort"] for b in br)})
+        for b in br:
+            idx.append({"t": f'Brochure {b["titel"]}', "h": b["url"], "ext": 1, "c": "Brochures › " + b["soort"], "k": "overig",
+                        "x": "brochure " + b["soort"] + " " + b["naam"] + " " + b["tekst"]})
     hcs = [(c, hc_artikelen(c)) for c in HELPCENTERS]
     if any(a for _, a in hcs):
         idx.append({"t": "Kennisbanken van Blinqx Verzekering & Hypotheek", "h": "kennisbanken/index.html", "c": "Kennisbanken", "k": "kennisbank",
