@@ -1497,16 +1497,12 @@ def render_home(cats, feeds, pages):
         <a class="btn-out" href="{pg.rel('mijnhuiszaken')}#video">▶ Bekijk de video</a></p>
     </section>
     <script>
-    /* Afwisselen per sessie: Websitetools of MijnHuiszaken (zonder JavaScript: Websitetools). */
+    /* Afwisselen bij elk bezoek aan de homepage: Websitetools of MijnHuiszaken (zonder JavaScript: Websitetools). */
     (function () {{
       var keus;
       try {{
-        keus = sessionStorage.getItem("homeblok");
-        if (!keus) {{
-          keus = localStorage.getItem("homeblok-laatst") === "wt" ? "mhz" : (localStorage.getItem("homeblok-laatst") === "mhz" ? "wt" : (Math.random() < 0.5 ? "wt" : "mhz"));
-          sessionStorage.setItem("homeblok", keus);
-          localStorage.setItem("homeblok-laatst", keus);
-        }}
+        keus = localStorage.getItem("homeblok-laatst") === "mhz" ? "wt" : "mhz";
+        localStorage.setItem("homeblok-laatst", keus);
       }} catch (e) {{ keus = Math.random() < 0.5 ? "wt" : "mhz"; }}
       if (keus === "mhz") {{
         var wt = document.querySelector('section.home-wt[aria-labelledby="home-wt-h"]'), mhz = document.getElementById("home-mhz");
