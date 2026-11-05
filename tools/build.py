@@ -1306,6 +1306,13 @@ def render_search(pages, cats):
             idx.append({"t": f"{st['naam']}: {st['ondertitel']}", "h": f"sites/{st['slug']}/index.html", "c": "Handige websites", "k": "kennisbank",
                         "x": st["naam"] + " " + st["naam"].replace(".nl", "").replace(".net", "") + " " + st["url"] + " " + " ".join(st["tekst"])
                         + " " + " ".join(k + " " + " ".join(it) for k, it in st.get("secties", []))})
+        for n_, r_, h_, m_, x_ in [
+                ("Milan Akavia", "contactpersoon voor de websitetools, Actiefbeheerscan en partners", "websitetools/index.html", "milan.akavia@blinqx.tech",
+                 "rekentools websitetools actiefbeheerscan demo-kantoor partners mijnhuiszaken yes-co"),
+                ("Diana Blom", "contactpersoon voor MijnHuiszaken en Yes-co", "partners/mijnhuiszaken/index.html", "diana.blom@blinqx.tech",
+                 "mijnhuiszaken mijn huiszaken yes-co makelaar partners")]:
+            idx.append({"t": f"{n_} – {r_}", "h": h_, "c": "Contactpersonen", "k": "overig",
+                        "x": f"{n_} {n_.split()[0]} {m_} {r_} {x_} contact Blinqx"})
         for n_, r_, f_, tel_, telt_, m_ in TEAM_BANKING:
             idx.append({"t": f"{n_} – {html.unescape(r_)}", "h": "banking-insurance/index.html#team", "c": "Banking & Insurance › Ons team", "k": "overig",
                         "x": f"{n_} {n_.split()[0]} {html.unescape(r_)} {telt_} {m_} team contact Blinqx banking insurance"})
