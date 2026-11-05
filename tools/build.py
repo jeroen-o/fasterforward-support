@@ -1412,7 +1412,6 @@ MHZ_KORT = [
     ("Realtime woningaanbod", "Je klant ziet direct het nieuwste NVM-aanbod dat past bij zijn zoekwensen, met e-mailalerts."),
     ("Voortdurend in beeld", "Je logo en contactgegevens staan in de omgeving van de klant én in elke e-mailalert."),
     ("Inzicht in zoekgedrag", "Weet eerder dan de markt wie er in beweging komt en neem op het juiste moment contact op."),
-    ("Begeleiding bij aan- en verkoop", "Met Wwft-check, aan- en verkoopdossier en digitaal ondertekenen."),
     ("Ook voor bestaande klanten", "Klanten zien de geschatte waarde van hun woning; wil iemand verhuizen, dan weet jij het als eerste."),
     ("Contact met één klik", "Worden de plannen concreet, dan neemt je klant met één klik contact met je op."),
 ]
