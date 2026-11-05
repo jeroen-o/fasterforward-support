@@ -3012,7 +3012,7 @@ TEAM_BANKING = [("Igor Driessen", "Director Banking &amp; Financial Services", "
              ("Oscar Kuypers", "Business Development Manager", "oscar-kuypers", "+31628321881", "06 28 32 18 81", "oscar.kuypers@blinqx.tech"),
              ("Jeroen Oversteegen", "Non Executive Director Business Partners", "jeroen-oversteegen", "+31621247257", "06 21 24 72 57", "jeroen.oversteegen@blinqx.tech"),
              ("Jos van Driesum", "Directeur Products", "jos-van-driesum", "+31644081447", "06 44 08 14 47", "jos.van.driesum@blinqx.tech"),
-             ("Dennes Roes", "Directeur Hypotheken · Founder eBlinqx Hypotheekadvies", "dennes-roes", "+31651117893", "06 51 11 78 93", "dennes.roes@blinqx.tech")]
+             ("Dennes Roes", "Directeur Hypotheekadvies · Founder eBlinqx Hypotheekadvies", "dennes-roes", "+31651117893", "06 51 11 78 93", "dennes.roes@blinqx.tech")]
 
 
 def render_banking():
