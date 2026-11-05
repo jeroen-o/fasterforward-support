@@ -539,3 +539,4 @@ form.search{min-width:0}
 .frrub{margin-top:26px}.frrub h3{margin:18px 0 4px}
 .article .content .video{margin:16px 0}.article .content .callout{background:#F3F6F9;border-left:4px solid var(--accent,#2B6C8E);padding:10px 14px;margin:14px 0}
 .article .content .tabel{overflow-x:auto}
+.video .vcap{font-size:14px;color:var(--muted);margin:6px 0 0}

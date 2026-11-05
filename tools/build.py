@@ -3396,16 +3396,42 @@ def render_finrust_kb():
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False).replace("</", "<\\/")}</script>"""
     write("finrust", layout(pg, "FinRust-kennisbank: handleidingen en uitleg", body, None, intro))
 
-    def inhoud(pg, h):
-        h = re.sub(r'<img data-lokaal="([^"]+)" alt="">', lambda m: f'<img src="{pg.rel(m.group(1))}" alt="" loading="lazy">'
-                   if os.path.exists(os.path.join(ROOT, m.group(1))) else "", h)
+    frv = os.path.join(TOOLS, "finrust_videos.json")
+    vtitel = {v["id"]: v for v in json.load(open(frv, encoding="utf8"))["videos"]} if os.path.exists(frv) else {}
+
+    def inhoud(pg, h, a):
+        teller = [0]
+        videos = []
+
+        def img(m):
+            rel = m.group(1)
+            if not os.path.exists(os.path.join(ROOT, rel)):
+                return ""
+            teller[0] += 1
+            voor = re.findall(r"<(?:p|h2|h3|li)>((?:(?!<img).)*?)</(?:p|h2|h3|li)>", h[max(0, m.start() - 1500):m.start()], re.S)
+            ctx = next((x for x in (re.sub(r"<[^>]+>", "", html.unescape(v)).strip() for v in reversed(voor)) if len(x) > 3), "")
+            alt = f'{a["titel"]}, stap {teller[0]}' + (f": {kort(ctx, 110)}" if ctx else "")
+            return f'<img src="{pg.rel(rel)}" alt="{esc(alt)}" loading="lazy">'
+        h = re.sub(r'<img data-lokaal="([^"]+)" alt="">', img, h)
 
         def yt(m):
             vid = m.group(1)
-            th = pg.rel("assets/video/" + vid + ".jpg") if os.path.exists(os.path.join(ROOT, "assets", "video", vid + ".jpg")) else f"https://i.ytimg.com/vi/{vid}/hqdefault.jpg"
-            return (f'<div class="video"><div class="frame" data-yt="{vid}"><img src="{th}" alt="" loading="lazy">'
-                    f'<button class="play" type="button" aria-label="Speel de video af"><svg class="ic"><use href="#i-play"/></svg></button></div></div>')
+            lokaal = os.path.exists(os.path.join(ROOT, "assets", "video", vid + ".jpg"))
+            th = pg.rel("assets/video/" + vid + ".jpg") if lokaal else f"https://i.ytimg.com/vi/{vid}/hqdefault.jpg"
+            naam = vtitel.get(vid, {}).get("t") or f'Video: {a["titel"]}'
+            vo = {"@context": "https://schema.org", "@type": "VideoObject", "name": naam,
+                  "description": f'FinRust-instructievideo bij het artikel "{a["titel"]}". ' + (a["omschrijving"] or ""),
+                  "thumbnailUrl": (SITE_URL + "assets/video/" + vid + ".jpg") if lokaal else th,
+                  "embedUrl": f"https://www.youtube-nocookie.com/embed/{vid}", "url": f"https://www.youtube.com/watch?v={vid}", "inLanguage": "nl"}
+            d = vtitel.get(vid, {}).get("datum") or (a.get("bijgewerkt") or "")[:10]
+            if d:
+                vo["uploadDate"] = d
+            videos.append(vo)
+            return (f'<div class="video"><div class="frame" data-yt="{vid}"><img src="{th}" alt="{esc("Videominiatuur: " + naam)}" loading="lazy">'
+                    f'<button class="play" type="button" aria-label="Speel {esc(naam)} af"><svg class="ic"><use href="#i-play"/></svg></button></div>'
+                    f'<p class="vcap">{esc(naam)}</p></div>')
         h = re.sub(r'<div class="yt" data-yt="([^"]+)"></div>', yt, h)
+        inhoud.videos = videos
 
         def link(m):
             u = html.unescape(m.group(1)).split("#")[0].split("?")[0]
@@ -3421,24 +3447,20 @@ def render_finrust_kb():
                           for b in arts if b["rubriek"] == a["rubriek"] and b is not a)[:6000]
         d = (a.get("bijgewerkt") or "")[:10]
         oms = a["omschrijving"] or kort(a["tekst"], 155)
-        ld = {"@context": "https://schema.org", "@type": "TechArticle", "headline": a["titel"], "description": oms,
-              "url": SITE_URL + path + "/", "inLanguage": "nl", "articleSection": "FinRust › " + rub, "isBasedOn": a["url"],
-              "about": {"@type": "SoftwareApplication", "name": "FinRust"},
-              "publisher": {"@type": "Organization", "name": "Blinqx Verzekering & Hypotheek"}}
-        if d:
-            ld["dateModified"] = d
+        tekst_html = inhoud(pg, a["html"], a)
+        ld_extra = "".join(f'<script type="application/ld+json">{json.dumps(v, ensure_ascii=False).replace("</", "<\\/")}</script>' for v in inhoud.videos)
         body = f"""{crumbs(pg, [("FinRust-kennisbank", "finrust"), (a["rubriek"][-1], None)])}
 <main class="article"><div class="wrap cols">
   <article>
     <h1>{esc(a["titel"])}</h1>
     <p class="meta">FinRust › {esc(rub)}{f" · bijgewerkt {fmt_date(date.fromisoformat(d))}" if d else ""}</p>
     {f'<p class="lead">{esc(a["omschrijving"])}</p>' if a["omschrijving"] else ""}
-    <div class="content">{inhoud(pg, a["html"])}</div>
+    <div class="content">{tekst_html}</div>
     <p class="src">Bron: <a href="{esc(a["url"])}" target="_blank" rel="noopener">helpcenter FinRust</a></p>
   </article>
   <aside class="related"><h2>Meer in {esc(a["rubriek"][-1])}:</h2><ul>{verwant}</ul><p><a href="{pg.rel("finrust")}">Hele FinRust-kennisbank »</a></p></aside>
 </div></main>
-<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False).replace("</", "<\\/")}</script>
+{ld_extra}
 <script>
 document.addEventListener("click", e => {{
   const b = e.target.closest("[data-yt] .play"); if (!b) return;
@@ -3958,6 +3980,7 @@ def main():
         ("Productinformatie", ["websitetools", "mijnhuiszaken", "yes-co", "tools-voor-vastgoed", "woningwaarderapport",
                                "actiefbeheerscan", "hypotheekrente-app", "finly-crm", "demo-kantoor", "banking-insurance", "adviescoach", "procesversneller"]),
         ("Over Blinqx", ["historie"]),
+        ("FinRust-kennisbank", ["finrust"] + [u for u in ("finrust/" + a["slug"] for a in finrust_kb()) if u in info]),
         ("Handige websites", ["sites"] + sorted(u for u in info if u.startswith("sites/"))),
         ("Video's", ["video", "video/finrust"] + sorted(u for u in info if u.startswith("video/") and u != "video/finrust")),
         ("Releasenotes", ["releasenotes", "releasenotes-hypotheekadvies", "releasenotes-finconnect", "releasenotes-dias"]),
