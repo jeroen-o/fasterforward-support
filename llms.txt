@@ -5,7 +5,7 @@
 ## Start
 
 - [Blinqx Support: kennisbank en handleidingen voor eBlinqx Connect](https://support-eblinqx-connect.nl/): Support voor eBlinqx (Faster Forward / Elements): kennisbank, releasenotes, e-learning en video's van Blinqx Verzekering & Hypotheek.
-- [Kennisbank](https://support-eblinqx-connect.nl/kennisbank/): Kennisbank in eBlinqx Connect: handleidingen en uitleg, waaronder Beginnen met eBlinqx, Takenlijst, Track and Trace, Campagnemanager.
+- [Kennisbank](https://support-eblinqx-connect.nl/kennisbank/): Kennisbank in eBlinqx Connect: handleidingen en uitleg, waaronder kennisbanken per product, Beginnen met eBlinqx, Takenlijst, Track and Trace.
 - [Contact](https://support-eblinqx-connect.nl/contact/): Om je vraag zo snel mogelijk in behandeling te nemen, is het van belang dat je
 - [Zoeken](https://support-eblinqx-connect.nl/zoeken/): Zoeken in eBlinqx Connect: handleidingen en uitleg.
 
@@ -60,9 +60,13 @@
 
 - [De historie van Blinqx Verzekering & Hypotheek](https://support-eblinqx-connect.nl/historie/): Van dertien zelfstandige softwarelabels naar één platform: de historie van Blinqx Verzekering & Hypotheek, van Hyarchis (1985), Adviesbox, de Nationale…
 
-## FinRust-kennisbank
+## Kennisbanken per product
 
-- [FinRust-kennisbank](https://support-eblinqx-connect.nl/finrust/): Alle 68 artikelen uit de kennisbank van FinRust: handleidingen en uitleg over brondata, klant aanmaken, pensioen, overlijden, arbeidsongeschiktheid…
+- [Kennisbanken van Blinqx Verzekering & Hypotheek](https://support-eblinqx-connect.nl/kennisbanken/): Alle 68 handleidingen en uitlegartikelen uit de kennisbanken van Blinqx Verzekering & Hypotheek: FinRust. Dagelijks bijgewerkt en volledig doorzoekbaar.
+- [Kennisbank FinRust](https://support-eblinqx-connect.nl/finrust/): Alle 68 artikelen uit de kennisbank van FinRust: handleidingen en uitleg over algemeen, training & educatie, koppelingen, security & compliance.
+
+## Kennisbank FinRust
+
 - [Zo gebruik je de aandachtspunten en aantekeningen in FinRust](https://support-eblinqx-connect.nl/finrust/zo-gebruik-je-de-aandachtspunten-en-aantekeningen-in-finrust/): Zo gebruik je aandachtspunten en aantekeningen om je advies te schrijven in FinRust.
 - [Zo kopieer je een berekening in FinRust](https://support-eblinqx-connect.nl/finrust/zo-kopieer-je-een-berekening-in-finrust/): In dit artikel leggen we in een paar eenvoudige stappen uit hoe een berekening dupliceert binnen FinRust.
 - [Zo geef je scheiden weer in FinRust](https://support-eblinqx-connect.nl/finrust/zo-geef-je-scheiden-weer-in-finrust/): In dit artikel leggen we in een paar eenvoudige stappen uit hoe je een scheiding verwerkt binnen FinRust.
@@ -130,7 +134,7 @@
 - [Zo werkt de koppeling met Accelerate!](https://support-eblinqx-connect.nl/finrust/zo-werkt-de-koppeling-met-accelerate/): In dit artikel leggen we in een paar eenvoudige stappen uit hoe je brondata uit Accelerate haalt en toevoegt binnen FinRust en dit artikel beschikt over een…
 - [Brondata vanuit Faster Forward Elements / Eblinqx naar FinRust](https://support-eblinqx-connect.nl/finrust/brondata-vanuit-faster-forward-elements-eblinqx-naar-finrust/): In dit artikel leggen we in een paar eenvoudige stappen uit hoe je brondata van Ockto vanuit Faster Forward Elements oftwel eBlinqx toevoegt binnen FinRust.
 - [Brondata exporteren vanuit DossierData naar FinRust](https://support-eblinqx-connect.nl/finrust/brondata-exporteren-vanuit-dossierdata-naar-finrust/): In dit artikel leggen we in een paar eenvoudige stappen uit hoe je brondata exporteert vanuit DossierData en toevoegt binnen FinRust.
-- [ISO 27001 certificaat](https://support-eblinqx-connect.nl/finrust/iso-27001-certificaat/): ISO 27001 certificaat in eBlinqx Connect: handleidingen en uitleg, waaronder helpcenter FinRust, Hele FinRust-kennisbank ».
+- [ISO 27001 certificaat](https://support-eblinqx-connect.nl/finrust/iso-27001-certificaat/): ISO 27001 certificaat: uitleg uit de kennisbank van FinRust. FinRust › Security & Compliance › Certificeringen · bijgewerkt 27 februari 2026
 
 ## Handige websites
 

@@ -1,0 +1,14 @@
+[
+ {"key": "finrust", "host": "support-finrust.vh.blinqx.tech", "pad": "finrust", "naam": "FinRust",
+  "over": "FinRust is adviessoftware van Blinqx Verzekering & Hypotheek voor advies en onderhoud op de hypotheek- en verzekeringsportefeuille, met brondata, pensioen-, overlijdens- en arbeidsongeschiktheidsanalyses."},
+ {"key": "adviesbox", "host": "support-adviesbox.vh.blinqx.tech", "pad": "adviesbox-classic", "naam": "Adviesbox Classic",
+  "over": "Adviesbox Classic is het adviespakket van Blinqx voor hypotheek-, verzekerings- en financieel planningsadvies volgens de Wft, met klantdossier, rapporten en elektronisch aanvragen via HDN."},
+ {"key": "adviesbox-online", "host": "support-adviesbox-online.vh.blinqx.tech", "pad": "adviesbox-online", "naam": "Adviesbox Online",
+  "over": "Adviesbox Online is de webversie van Adviesbox: hypotheek- en verzekeringsadvies volgens de Wft in de browser, met modules, instellingen en productupdates."},
+ {"key": "fastlane", "host": "support-fastlane.vh.blinqx.tech", "pad": "hypotheekadvies-helpcenter", "naam": "eBlinqx Hypotheekadvies",
+  "over": "eBlinqx Hypotheekadvies (voorheen Fastlane) is de hypotheekadviessoftware van Blinqx: van inventarisatie en berekening tot aanvraag, met toetsrentes, modules en instellingen."},
+ {"key": "finconnect", "host": "support-finconnect.vh.blinqx.tech", "pad": "finconnect", "naam": "FinConnect",
+  "over": "FinConnect van Blinqx biedt slimme formulieren en naverrekenen voor financieel dienstverleners."},
+ {"key": "finly", "host": "support-finly.vh.blinqx.tech", "pad": "finly", "naam": "Finly",
+  "over": "Finly is het CRM van Blinqx voor financieel adviseurs: relatiebeheer, taken, documenten en koppelingen, voor gebruikers en beheerders."}
+]

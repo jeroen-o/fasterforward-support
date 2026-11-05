@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
-"""Adviesbox: haalt (1) de pagina's van www.adviesbox.nl en (2) alle artikelen van het Adviesbox-helpcenter
-(support-adviesbox.vh.blinqx.tech, Intercom) op. Bijlagen (pdf-handleidingen) worden gedownload naar downloads/adviesbox/.
-Resultaat: bronnen/adviesbox/site.json en bronnen/adviesbox/helpcenter.json, gebruikt door build.py (pagina
-sites/adviesbox-nl en de zoeker).
+"""Adviesbox: haalt de pagina's van www.adviesbox.nl op. Resultaat: bronnen/adviesbox/site.json, gebruikt door build.py
+(pagina sites/adviesbox-nl en de zoeker). Het Adviesbox-helpcenter (Intercom) haalt tools/intercom_sync.py op; de functie
+helpcenter() hieronder is alleen nog voor losse controles.
 
 Gebruik: python3 tools/adviesbox_sync.py
 """
@@ -106,9 +105,7 @@ def main():
     os.makedirs(UIT, exist_ok=True)
     os.makedirs(DL, exist_ok=True)
     json.dump(site(), open(os.path.join(UIT, "site.json"), "w", encoding="utf8"), ensure_ascii=False, indent=0)
-    hc = helpcenter()
-    json.dump(hc, open(os.path.join(UIT, "helpcenter.json"), "w", encoding="utf8"), ensure_ascii=False, indent=0)
-    print(f"Adviesbox: {len(hc)} helpcenter-artikelen")
+    print("Adviesbox: website bijgewerkt (het helpcenter haalt tools/intercom_sync.py op)")
 
 
 if __name__ == "__main__":

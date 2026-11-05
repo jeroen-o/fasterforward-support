@@ -794,7 +794,7 @@ def layout(pg, title, body, active=None, description=""):
       <a href="{pg.rel('demo-kantoor')}">Demo-kantoor</a>
       <a href="{pg.rel('sites')}">Handige websites</a>
       <a href="{pg.rel('historie')}">Historie</a>
-      <a href="{pg.rel('finrust')}">FinRust-kennisbank</a>
+      <a href="{pg.rel('kennisbanken')}">Kennisbanken</a>
       <a href="https://verzekeringhypotheek.blinqx.tech/" target="_blank" rel="noopener">eBlinqx website</a>
     </nav>
   </div>
@@ -1247,6 +1247,7 @@ def render_kennisbank(cats):
     body = f"""{crumbs(pg, [("Kennisbank", None)])}
 <main class="catpage"><div class="wrap">
   <h1>Kennisbank</h1>
+  <p class="lead">Handleidingen voor eBlinqx Connect. Zoek je uitleg over FinRust, Adviesbox, eBlinqx Hypotheekadvies, FinConnect of Finly? Kijk dan bij de <a href="{pg.rel("kennisbanken")}">kennisbanken per product</a>.</p>
   <div class="subgrid">{"".join(blocks)}</div>
 </div></main>"""
     write("kennisbank", layout(pg, "Kennisbank", body))
@@ -1297,14 +1298,19 @@ def render_search(pages, cats):
         idx.append({"t": v["t"], "h": "video/" + v["slug"] + "/index.html", "c": "Video's › " + v["groep"], "k": "video",
                     "d": fmt_date(date.fromisoformat(v["datum"])) if re.fullmatch(r"\d{4}-\d{2}-\d{2}", v["datum"]) else "",
                     "x": " ".join(x for x in (v.get("ch"), v["groep"], v.get("x"), v["tekst"]) if x)})
-    kb = finrust_kb()
-    if kb:
-        idx.append({"t": "FinRust-kennisbank", "h": "finrust/index.html", "c": "FinRust", "k": "kennisbank",
-                    "x": "finrust kennisbank helpcenter handleiding handleidingen uitleg support " + " ".join(a["titel"] for a in kb)})
+    hcs = [(c, hc_artikelen(c)) for c in HELPCENTERS]
+    if any(a for _, a in hcs):
+        idx.append({"t": "Kennisbanken van Blinqx Verzekering & Hypotheek", "h": "kennisbanken/index.html", "c": "Kennisbanken", "k": "kennisbank",
+                    "x": "kennisbank kennisbanken helpcenter handleidingen " + " ".join(c["naam"] for c, _ in hcs)})
+    for c, kb in hcs:
+        if not kb:
+            continue
+        idx.append({"t": hc_titel(c), "h": c["pad"] + "/index.html", "c": "Kennisbanken", "k": "kennisbank",
+                    "x": f'{c["naam"]} kennisbank helpcenter handleiding handleidingen uitleg support {c["over"]}'})
         for a in kb:
-            idx.append({"t": a["titel"], "h": "finrust/" + a["slug"] + "/index.html", "c": "FinRust › " + " › ".join(a["rubriek"]), "k": "kennisbank",
+            idx.append({"t": a["titel"], "h": c["pad"] + "/" + a["slug"] + "/index.html", "c": c["naam"] + " › " + " › ".join(a["rubriek"]), "k": "kennisbank",
                         "d": fmt_date(date.fromisoformat(a["bijgewerkt"][:10])) if a.get("bijgewerkt") else "",
-                        "x": "finrust " + a["omschrijving"] + " " + a["tekst"]})
+                        "x": (c["naam"] + " " + a["omschrijving"] + " " + a["tekst"])[:4000]})
     frf = os.path.join(TOOLS, "finrust_videos.json")
     if os.path.exists(frf):
         idx.append({"t": "FinRust-video's", "h": "video/finrust/index.html", "c": "Video's", "k": "video",
@@ -1341,7 +1347,7 @@ def render_search(pages, cats):
         if os.path.exists(nhgf):
             for v in json.load(open(nhgf, encoding="utf8")):
                 idx.append({"t": v["titel"] + " (NHG)", "h": v["url"], "ext": 1, "c": "NHG.nl", "k": "overig", "x": "nhg nationale hypotheek garantie " + v["tekst"]})
-        for fn, label in (("site.json", "Adviesbox › Website"), ("helpcenter.json", "Adviesbox › Helpcenter")):
+        for fn, label in (("site.json", "Adviesbox › Website"),):
             abf = os.path.join(SRC, "adviesbox", fn)
             if os.path.exists(abf):
                 for v in json.load(open(abf, encoding="utf8")):
@@ -2930,8 +2936,7 @@ def sites_laden():
 
 def adviesbox_extra(pg):
     """Extra inhoud voor sites/adviesbox-nl: functies, modules, ondersteuning, handleidingen en het helpcenter."""
-    hcf = os.path.join(SRC, "adviesbox", "helpcenter.json")
-    hc = json.load(open(hcf, encoding="utf8")) if os.path.exists(hcf) else []
+    hcs = {c["key"]: (c, hc_artikelen(c)) for c in HELPCENTERS if c["key"] in ("adviesbox", "adviesbox-online")}
     blokken = [
         ("Klantprofiel volgens de Wft", "Aan de hand van de adviesaanleiding stel je een volledig klantprofiel op, met de richtlijnen van de Wft als basis. Dat profiel gebruik je bij het vormen en motiveren van het advies."),
         ("Scenario's en tekorten", "Vanuit de inventarisatie en het klantprofiel zie je direct of er tekorten ontstaan, met scenario's voor aflossen, overlijden, arbeidsongeschiktheid, werkloosheid en pensioen."),
@@ -2941,18 +2946,11 @@ def adviesbox_extra(pg):
         ("Hypotheekvergelijker", "Vergelijkt alle hypotheeklabels over de hele looptijd op rente, voorwaarden en maximale verstrekking, inclusief automatische rentedaling. Zo vergelijk je op totale kosten in plaats van alleen op de beginrente."),
     ]
     wt = "".join(f'<div class="wtwhy"><h3>{esc(t)}</h3><p>{esc(x)}</p></div>' for t, x in blokken)
-    bijlagen = {}
-    for a in hc:
-        for b in a.get("bijlagen", []):
-            bijlagen[b["bestand"]] = b["naam"]
-    dl = "".join(f'<li><a href="{pg.rel(f)}">{esc(n)}</a> (pdf)</li>' for f, n in sorted(bijlagen.items(), key=lambda x: x[1]))
-    coll = {}
-    for a in hc:
-        coll.setdefault(a["collectie"], []).append(a)
-    hc_html = "".join(
-        f'<details class="wtfaq"><summary>{esc(c)} ({len(lst)})</summary><ul>'
-        + "".join(f'<li><a href="{esc(a["url"])}" target="_blank" rel="noopener">{esc(a["titel"])}</a></li>' for a in sorted(lst, key=lambda x: x["titel"].lower()))
-        + "</ul></details>" for c, lst in coll.items())
+    dld = os.path.join(ROOT, "downloads", "adviesbox")
+    dl = "".join(f'<li><a href="{pg.rel("downloads/adviesbox/" + f)}">{esc(os.path.splitext(f)[0])}</a> (pdf)</li>'
+                 for f in sorted(os.listdir(dld), key=str.lower) if f.lower().endswith(".pdf")) if os.path.isdir(dld) else ""
+    hc_html = "".join(f'<li><a href="{pg.rel(c["pad"])}">{esc(hc_titel(c))}</a>: {len(a)} handleidingen en uitlegartikelen</li>'
+                      for c, a in hcs.values() if a)
     return f"""
   <h2 class="wth">Wat kun je met Adviesbox?</h2>
   <div class="wtwhys">{wt}</div>
@@ -2969,9 +2967,9 @@ def adviesbox_extra(pg):
   <h2 class="wth">Ondersteuning</h2>
   <p>Voor Adviesbox heb je een licentiecode nodig; die ontvang je na een proeflicentie of bestelling. Een vraag, probleem of suggestie meld je in Adviesbox via <strong>Help &gt; Melding maken</strong>; daarna wordt contact met je opgenomen. Er zijn trainingen, waaronder een gratis starttraining, en je kunt een persoonlijk consult inplannen.</p>
   {f'<h3>Handleidingen</h3><ul>{dl}</ul>' if dl else ""}
-  <h2 class="wth">Helpcenter Adviesbox</h2>
-  <p>Alle {len(hc)} artikelen uit het <a href="https://support-adviesbox.vh.blinqx.tech/nl/" target="_blank" rel="noopener">Adviesbox-helpcenter</a>, per rubriek. Ze zijn ook doorzoekbaar via de zoekfunctie van deze site.</p>
-  {hc_html}
+  <h2 class="wth">Kennisbanken Adviesbox</h2>
+  <p>Alle artikelen uit de helpcenters van Adviesbox staan als eigen pagina's op deze site en zijn doorzoekbaar via de zoekfunctie:</p>
+  <ul>{hc_html}</ul>
   <h2 class="wth">Contact</h2>
   <p>Adviesbox (Blinqx), Harderwijkweg 5b, 2803 PW Gouda · <a href="tel:+31850180069">085 018 00 69</a> · <a href="mailto:secretariaat@blinqx.tech">secretariaat@blinqx.tech</a></p>"""
 
@@ -3350,54 +3348,120 @@ def video_fig(pg, mp4, poster, naam, omschrijving, duur, bijschrift, anker="vide
             f'<a href="{pg.rel(mp4)}">Download de video (mp4)</a>.</video><figcaption>{esc(bijschrift)}</figcaption></figure>'
             f'<script type="application/ld+json">{ld}</script>')
 
-FR_HC = "https://support-finrust.vh.blinqx.tech/nl/"
+HELPCENTERS = json.load(open(os.path.join(TOOLS, "helpcenters.json"), encoding="utf8"))
+HC_LINKS = {  # extra verwijzingen onder het overzicht van een kennisbank
+    "finrust": [("video/finrust", "FinRust-video's"), ("sites/finrust-nl", "Meer over FinRust")],
+    "adviesbox": [("sites/adviesbox-nl", "Meer over Adviesbox"), ("adviesbox-online", "Kennisbank Adviesbox Online")],
+    "adviesbox-online": [("sites/adviesbox-nl", "Meer over Adviesbox"), ("adviesbox-classic", "Kennisbank Adviesbox Classic")],
+    "fastlane": [("releasenotes-hypotheekadvies", "Releasenotes eBlinqx Hypotheekadvies")],
+    "finconnect": [("releasenotes-finconnect", "Releasenotes FinConnect")],
+    "finly": [("finly-crm", "Meer over Finly CRM")],
+}
 
 
-def finrust_kb():
-    f = os.path.join(SRC, "finrust", "helpcenter.json")
+def hc_artikelen(c):
+    f = os.path.join(SRC, "helpcenters", c["key"], "helpcenter.json")
     return sorted(json.load(open(f, encoding="utf8")), key=lambda a: a["volg"]) if os.path.exists(f) else []
 
 
-def render_finrust_kb():
-    """FinRust-kennisbank: overzicht per rubriek en elk artikel als eigen pagina (bron: tools/finrust_sync.py)."""
-    arts = finrust_kb()
-    if not arts:
-        return
-    urls = {a["url"].split("?")[0]: a["slug"] for a in arts}
+def finrust_kb():
+    return hc_artikelen(HELPCENTERS[0])
+
+
+def hc_url_map():
+    """Intercom-artikel-URL -> pad op deze site, over alle kennisbanken heen (voor links tussen artikelen)."""
+    m = {}
+    for c in HELPCENTERS:
+        for a in hc_artikelen(c):
+            m[a["url"].split("?")[0]] = c["pad"] + "/" + a["slug"]
+    return m
+
+
+def hc_titel(c):
+    return f'Kennisbank {c["naam"]}'
+
+
+def render_helpcenters():
+    """Kennisbanken uit de Intercom-helpcenters (tools/intercom_sync.py): per product een overzicht per rubriek en elk
+    artikel als eigen pagina, plus een verzamelpagina kennisbanken/."""
+    urls = hc_url_map()
+    frv = os.path.join(TOOLS, "finrust_videos.json")
+    vtitel = {v["id"]: v for v in json.load(open(frv, encoding="utf8"))["videos"]} if os.path.exists(frv) else {}
+    hub = []
+    for c in HELPCENTERS:
+        arts = hc_artikelen(c)
+        if not arts:
+            continue
+        hub.append((c, arts))
+        render_helpcenter(c, arts, urls, vtitel)
+    pg = Page("kennisbanken")
+    tot = sum(len(a) for _, a in hub)
+    kaarten = "".join(f'<div class="wtwhy"><h2><a href="{pg.rel(c["pad"])}">{esc(hc_titel(c))}</a></h2><p>{esc(c["over"])}</p>'
+                      f'<p><a class="readmore" href="{pg.rel(c["pad"])}">{len(a)} artikelen bekijken »</a></p></div>' for c, a in hub)
+    intro = (f"Alle {tot} handleidingen en uitlegartikelen uit de kennisbanken van Blinqx Verzekering & Hypotheek: "
+             + ", ".join(c["naam"] for c, _ in hub) + ". Dagelijks bijgewerkt en volledig doorzoekbaar.")
+    ld = {"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kennisbanken Blinqx Verzekering & Hypotheek",
+          "url": SITE_URL + "kennisbanken/", "description": intro, "hasPart": [
+              {"@type": "CollectionPage", "name": hc_titel(c), "url": SITE_URL + c["pad"] + "/", "description": c["over"]} for c, _ in hub]}
+    body = f"""{crumbs(pg, [("Kennisbanken", None)])}
+<main class="subpage"><div class="wrap">
+  <h1>Kennisbanken van Blinqx Verzekering &amp; Hypotheek</h1>
+  <p class="lead">{esc(intro)} Voor eBlinqx Connect staat alles in de <a href="{pg.rel("kennisbank")}">kennisbank eBlinqx Connect</a>.</p>
+  <div class="wtwhys">{kaarten}</div>
+</div></main>
+<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False).replace("</", "<\\/")}</script>"""
+    write("kennisbanken", layout(pg, "Kennisbanken: handleidingen per product", body, None, intro))
+
+
+def render_helpcenter(c, arts, urls, vtitel):
+    P, naam = c["pad"], c["naam"]
     rubrieken = {}
     for a in arts:
         rubrieken.setdefault(a["rubriek"][0], {}).setdefault(" › ".join(a["rubriek"][1:]), []).append(a)
-    pg = Page("finrust")
+    pg = Page(P)
     blokken = []
     for r, subs in rubrieken.items():
         delen = []
         for sub, lijst in subs.items():
-            li = "".join(f'<li><a href="{pg.rel("finrust/" + a["slug"])}">{esc(a["titel"])}</a>'
-                         f'{f"<br><span class=\"oms\">{esc(a["omschrijving"])}</span>" if a["omschrijving"] else ""}</li>' for a in lijst)
+            li = "".join(f'<li><a href="{pg.rel(P + "/" + a["slug"])}">{esc(a["titel"])}</a>'
+                         f'{f"<br><span class=\"oms\">{esc(kort(a["omschrijving"], 160))}</span>" if a["omschrijving"] else ""}</li>' for a in lijst)
             delen.append(f'{f"<h3>{esc(sub)}</h3>" if sub else ""}<ul class="frlijst">{li}</ul>')
-        blokken.append(f'<section class="frrub" id="{slugify(r)}"><h2>{esc(r)}</h2>{"".join(delen)}</section>')
+        n = sum(len(x) for x in subs.values())
+        blokken.append(f'<details class="frrub" id="{slugify(r)}"{" open" if len(arts) < 120 else ""}><summary><h2>{esc(r)} <span class="tel">({n})</span></h2></summary>{"".join(delen)}</details>')
     jump = " · ".join(f'<a href="#{slugify(r)}">{esc(r)}</a>' for r in rubrieken)
-    intro = (f"Alle {len(arts)} artikelen uit de kennisbank van FinRust: handleidingen en uitleg over brondata, klant aanmaken, "
-             "pensioen, overlijden, arbeidsongeschiktheid, koppelingen, finance en security & compliance.")
-    ld = {"@context": "https://schema.org", "@type": "CollectionPage", "name": "FinRust-kennisbank", "url": SITE_URL + "finrust/",
-          "description": intro, "about": {"@type": "SoftwareApplication", "name": "FinRust", "applicationCategory": "BusinessApplication",
+    intro = f"Alle {len(arts)} artikelen uit de kennisbank van {naam}: handleidingen en uitleg over " + ", ".join(r.lower() for r in rubrieken) + "."
+    ld = {"@context": "https://schema.org", "@type": "CollectionPage", "name": hc_titel(c), "url": SITE_URL + P + "/",
+          "description": intro, "about": {"@type": "SoftwareApplication", "name": naam, "applicationCategory": "BusinessApplication",
                                           "publisher": {"@type": "Organization", "name": "Blinqx Verzekering & Hypotheek"}},
           "mainEntity": {"@type": "ItemList", "numberOfItems": len(arts), "itemListElement": [
-              {"@type": "ListItem", "position": i + 1, "url": SITE_URL + "finrust/" + a["slug"] + "/", "name": a["titel"]} for i, a in enumerate(arts)]}}
-    body = f"""{crumbs(pg, [("FinRust-kennisbank", None)])}
+              {"@type": "ListItem", "position": i + 1, "url": SITE_URL + P + "/" + a["slug"] + "/", "name": a["titel"]} for i, a in enumerate(arts[:300])]}}
+    ook = " · ".join(f'<a href="{pg.rel(u)}">{esc(t)}</a>' for u, t in HC_LINKS.get(c["key"], []))
+    body = f"""{crumbs(pg, [("Kennisbanken", "kennisbanken"), (hc_titel(c), None)])}
 <main class="subpage"><div class="wrap">
-  <h1>FinRust-kennisbank</h1>
-  <p class="lead">{esc(intro)} FinRust is adviessoftware van Blinqx Verzekering &amp; Hypotheek voor advies en onderhoud op de hypotheek- en verzekeringsportefeuille.</p>
+  <h1>{esc(hc_titel(c))}</h1>
+  <p class="lead">{esc(intro)} {esc(c["over"])}</p>
+  <p><label for="hcfilter"><strong>Zoek in deze kennisbank:</strong></label><br><input id="hcfilter" type="search" placeholder="bijvoorbeeld rapport, koppeling, rente" style="width:100%;max-width:420px;padding:10px;font:inherit;border:1px solid #999;border-radius:4px"> <span id="hctel" aria-live="polite"></span></p>
   <p class="jump">Ga naar: {jump}</p>
   {"".join(blokken)}
-  <p class="mhz-tip">Bekijk ook de <a href="{pg.rel("video/finrust")}">FinRust-video's</a> en <a href="{pg.rel("sites/finrust-nl")}">meer over FinRust</a>.</p>
-  <p class="src">Bron: <a href="{FR_HC}" target="_blank" rel="noopener">helpcenter FinRust</a>. Nieuwe en gewijzigde artikelen komen er dagelijks automatisch bij.</p>
+  {f'<p class="mhz-tip">Zie ook: {ook}</p>' if ook else ""}
+  <p class="src">Bron: <a href="https://{c["host"]}/nl/" target="_blank" rel="noopener">helpcenter {esc(naam)}</a>. Nieuwe en gewijzigde artikelen komen er dagelijks automatisch bij.</p>
 </div></main>
-<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False).replace("</", "<\\/")}</script>"""
-    write("finrust", layout(pg, "FinRust-kennisbank: handleidingen en uitleg", body, None, intro))
-
-    frv = os.path.join(TOOLS, "finrust_videos.json")
-    vtitel = {v["id"]: v for v in json.load(open(frv, encoding="utf8"))["videos"]} if os.path.exists(frv) else {}
+<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False).replace("</", "<\\/")}</script>
+<script>
+(function () {{
+  const fi = document.getElementById("hcfilter"), tel = document.getElementById("hctel");
+  fi.addEventListener("input", () => {{
+    const q = fi.value.toLowerCase().trim(); let n = 0;
+    document.querySelectorAll(".frrub").forEach(d => {{
+      let m = 0;
+      d.querySelectorAll(".frlijst li").forEach(li => {{ const ok = !q || q.split(/\\s+/).every(w => li.textContent.toLowerCase().includes(w)); li.hidden = !ok; if (ok) m++; }});
+      d.hidden = !m; if (q && m) d.open = true; n += m;
+    }});
+    tel.textContent = q ? n + " artikelen" : "";
+  }});
+}})();
+</script>"""
+    write(P, layout(pg, f"{hc_titel(c)}: handleidingen en uitleg", body, None, intro))
 
     def inhoud(pg, h, a):
         teller = [0]
@@ -3413,62 +3477,69 @@ def render_finrust_kb():
             alt = f'{a["titel"]}, stap {teller[0]}' + (f": {kort(ctx, 110)}" if ctx else "")
             return f'<img src="{pg.rel(rel)}" alt="{esc(alt)}" loading="lazy">'
         h = re.sub(r'<img data-lokaal="([^"]+)" alt="">', img, h)
+        h = re.sub(r'<a data-lokaal-bestand="([^"]+)">', lambda m: f'<a href="{pg.rel(m.group(1))}" download>'
+                   if os.path.exists(os.path.join(ROOT, m.group(1))) else "<a>", h)
 
         def yt(m):
             vid = m.group(1)
             lokaal = os.path.exists(os.path.join(ROOT, "assets", "video", vid + ".jpg"))
             th = pg.rel("assets/video/" + vid + ".jpg") if lokaal else f"https://i.ytimg.com/vi/{vid}/hqdefault.jpg"
-            naam = vtitel.get(vid, {}).get("t") or f'Video: {a["titel"]}'
-            vo = {"@context": "https://schema.org", "@type": "VideoObject", "name": naam,
-                  "description": f'FinRust-instructievideo bij het artikel "{a["titel"]}". ' + (a["omschrijving"] or ""),
+            vnaam = vtitel.get(vid, {}).get("t") or f'Video: {a["titel"]}'
+            vo = {"@context": "https://schema.org", "@type": "VideoObject", "name": vnaam,
+                  "description": f'{naam}-instructievideo bij het artikel "{a["titel"]}". ' + (a["omschrijving"] or ""),
                   "thumbnailUrl": (SITE_URL + "assets/video/" + vid + ".jpg") if lokaal else th,
                   "embedUrl": f"https://www.youtube-nocookie.com/embed/{vid}", "url": f"https://www.youtube.com/watch?v={vid}", "inLanguage": "nl"}
             d = vtitel.get(vid, {}).get("datum") or (a.get("bijgewerkt") or "")[:10]
             if d:
                 vo["uploadDate"] = d
             videos.append(vo)
-            return (f'<div class="video"><div class="frame" data-yt="{vid}"><img src="{th}" alt="{esc("Videominiatuur: " + naam)}" loading="lazy">'
-                    f'<button class="play" type="button" aria-label="Speel {esc(naam)} af"><svg class="ic"><use href="#i-play"/></svg></button></div>'
-                    f'<p class="vcap">{esc(naam)}</p></div>')
+            return (f'<div class="video"><div class="frame" data-yt="{vid}"><img src="{th}" alt="{esc("Videominiatuur: " + vnaam)}" loading="lazy">'
+                    f'<button class="play" type="button" aria-label="Speel {esc(vnaam)} af"><svg class="ic"><use href="#i-play"/></svg></button></div>'
+                    f'<p class="vcap">{esc(vnaam)}</p></div>')
         h = re.sub(r'<div class="yt" data-yt="([^"]+)"></div>', yt, h)
         inhoud.videos = videos
 
         def link(m):
             u = html.unescape(m.group(1)).split("#")[0].split("?")[0]
-            return f'href="{pg.rel("finrust/" + urls[u])}"' if u in urls else m.group(0)
-        h = re.sub(r'href="(https://support-finrust\.vh\.blinqx\.tech/nl/articles/[^"]+)"', link, h)
+            return f'href="{pg.rel(urls[u])}"' if u in urls else m.group(0)
+        h = re.sub(r'href="(https://support-[a-z-]+\.vh\.blinqx\.tech/nl/articles/[^"]+)"', link, h)
+        h = re.sub(r"<table>", '<table class="hc">', h)
         return h.replace('<a href="http', '<a target="_blank" rel="noopener" href="http')
 
-    for a in arts:
-        path = "finrust/" + a["slug"]
+    for i, a in enumerate(arts):
+        path = P + "/" + a["slug"]
         pg = Page(path)
         rub = " › ".join(a["rubriek"])
-        verwant = "".join(f'<li><a href="{pg.rel("finrust/" + b["slug"])}">{esc(b["titel"])}</a></li>'
-                          for b in arts if b["rubriek"] == a["rubriek"] and b is not a)[:6000]
+        zelfde = [b for b in arts if b["rubriek"] == a["rubriek"] and b is not a]
+        if len(zelfde) > 15:  # grote rubriek: de dichtstbijzijnde artikelen
+            zelfde = sorted(zelfde, key=lambda b: abs(b["volg"] - a["volg"]))[:15]
+            zelfde.sort(key=lambda b: b["volg"])
+        verwant = "".join(f'<li><a href="{pg.rel(P + "/" + b["slug"])}">{esc(b["titel"])}</a></li>' for b in zelfde)
         d = (a.get("bijgewerkt") or "")[:10]
-        oms = a["omschrijving"] or kort(a["tekst"], 155)
+        oms = a["omschrijving"] or kort(a["tekst"], 155) or f'{a["titel"]}: uitleg uit de kennisbank van {naam}.'
         tekst_html = inhoud(pg, a["html"], a)
         ld_extra = "".join(f'<script type="application/ld+json">{json.dumps(v, ensure_ascii=False).replace("</", "<\\/")}</script>' for v in inhoud.videos)
-        body = f"""{crumbs(pg, [("FinRust-kennisbank", "finrust"), (a["rubriek"][-1], None)])}
+        yt_js = """<script>
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-yt] .play"); if (!b) return;
+  const f = b.closest("[data-yt]");
+  f.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${f.dataset.yt}?autoplay=1&rel=0" title="Video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+});
+</script>""" if inhoud.videos else ""
+        body = f"""{crumbs(pg, [("Kennisbanken", "kennisbanken"), (hc_titel(c), P), (a["rubriek"][-1], None)])}
 <main class="article"><div class="wrap cols">
   <article>
     <h1>{esc(a["titel"])}</h1>
-    <p class="meta">FinRust › {esc(rub)}{f" · bijgewerkt {fmt_date(date.fromisoformat(d))}" if d else ""}</p>
+    <p class="meta">{esc(naam)} › {esc(rub)}{f" · bijgewerkt {fmt_date(date.fromisoformat(d))}" if d else ""}</p>
     {f'<p class="lead">{esc(a["omschrijving"])}</p>' if a["omschrijving"] else ""}
     <div class="content">{tekst_html}</div>
-    <p class="src">Bron: <a href="{esc(a["url"])}" target="_blank" rel="noopener">helpcenter FinRust</a></p>
+    <p class="src">Bron: <a href="{esc(a["url"])}" target="_blank" rel="noopener">helpcenter {esc(naam)}</a></p>
   </article>
-  <aside class="related"><h2>Meer in {esc(a["rubriek"][-1])}:</h2><ul>{verwant}</ul><p><a href="{pg.rel("finrust")}">Hele FinRust-kennisbank »</a></p></aside>
+  <aside class="related">{f'<h2>Meer in {esc(a["rubriek"][-1])}:</h2><ul>{verwant}</ul>' if verwant else ""}<p><a href="{pg.rel(P)}">Hele {esc(hc_titel(c))} »</a></p><p><a href="{pg.rel("kennisbanken")}">Alle kennisbanken »</a></p></aside>
 </div></main>
 {ld_extra}
-<script>
-document.addEventListener("click", e => {{
-  const b = e.target.closest("[data-yt] .play"); if (!b) return;
-  const f = b.closest("[data-yt]");
-  f.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${{f.dataset.yt}}?autoplay=1&rel=0" title="Video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
-}});
-</script>"""
-        write(path, layout(pg, a["titel"] + " – FinRust", body, None, oms))
+{yt_js}"""
+        write(path, layout(pg, f'{a["titel"]} – {naam}', body, None, oms))
 
 
 def render_finrust():
@@ -3944,7 +4015,7 @@ def main():
     render_video()
     render_videopaginas(pages)
     render_finrust()
-    render_finrust_kb()
+    render_helpcenters()
     render_elearning()
     render_fastlane()
     render_releasenotes_overig()
@@ -3980,7 +4051,8 @@ def main():
         ("Productinformatie", ["websitetools", "mijnhuiszaken", "yes-co", "tools-voor-vastgoed", "woningwaarderapport",
                                "actiefbeheerscan", "hypotheekrente-app", "finly-crm", "demo-kantoor", "banking-insurance", "adviescoach", "procesversneller"]),
         ("Over Blinqx", ["historie"]),
-        ("FinRust-kennisbank", ["finrust"] + [u for u in ("finrust/" + a["slug"] for a in finrust_kb()) if u in info]),
+        ("Kennisbanken per product", ["kennisbanken"] + [c["pad"] for c in HELPCENTERS]),
+        *[(hc_titel(c), [u for u in (c["pad"] + "/" + a["slug"] for a in hc_artikelen(c)) if u in info]) for c in HELPCENTERS],
         ("Handige websites", ["sites"] + sorted(u for u in info if u.startswith("sites/"))),
         ("Video's", ["video", "video/finrust"] + sorted(u for u in info if u.startswith("video/") and u != "video/finrust")),
         ("Releasenotes", ["releasenotes", "releasenotes-hypotheekadvies", "releasenotes-finconnect", "releasenotes-dias"]),
