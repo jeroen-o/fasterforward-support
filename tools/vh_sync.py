@@ -55,7 +55,7 @@ def pagina(url, s):
 
 
 def miniatuur(p):
-    """Kleine afbeelding voor het nieuwsoverzicht: bronnen/vh-site/img/<slug>.webp (alleen voor blogs en nieuws)."""
+    """Kleine afbeelding voor het nieuws- en tipsoverzicht: bronnen/vh-site/img/<slug>.webp (blogs, nieuws, kennisbank, toolkits)."""
     if not p.get("afbeelding"):
         return
     slug = re.sub(r"[^a-z0-9]+", "-", p["url"].rstrip("/").rsplit("/", 1)[-1].lower()).strip("-")[:80]
@@ -91,7 +91,7 @@ def main():
             gezien[url] = (soort, lm)
     for url, (soort, lm) in gezien.items():
         o = oud.get(url)
-        blog = SOORT.get(soort, soort) == "Blogs & nieuws"
+        blog = SOORT.get(soort, soort) in ("Blogs & nieuws", "Kennisbank", "Toolkits")  # nieuws en tips: datum en miniatuur
         if o and o.get("lastmod") == lm and o.get("tekst") and (not blog or "gepubliceerd" in o):
             nieuw.append(o)
             continue

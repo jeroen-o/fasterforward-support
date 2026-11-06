@@ -1239,15 +1239,30 @@ def kort(t, n):
     return t if len(t) <= n else t[:n].rsplit(" ", 1)[0].rstrip(",.;:–-") + "…"
 
 
-def vh_nieuws():
-    """Blogs en nieuws van verzekeringhypotheek.blinqx.tech (bronnen/vh-site/index.json, dagelijks bijgewerkt door vh_sync.py)."""
+VH_TIPS = ("Kennisbank", "Toolkits")
+
+
+def hc_tips():
+    """Best practices uit de kennisbanken (Intercom-helpcenters) als tips."""
+    uit = []
+    for c in HELPCENTERS:
+        for a in hc_artikelen(c):
+            if any(re.search(r"best practice|tips", r, re.I) for r in a["rubriek"]) and a.get("bijgewerkt"):
+                uit.append({"t": a["titel"], "posted": date.fromisoformat(a["bijgewerkt"][:10]), "updated": None, "int": c["pad"] + "/" + a["slug"],
+                            "bron": hc_titel(c), "mini": "", "excerpt": kort(a["omschrijving"] or a["tekst"], 220)})
+    return uit
+
+
+def vh_nieuws(soorten=("Blogs & nieuws",)):
+    """Blogs en nieuws (of met soorten=VH_TIPS: kennisbank en toolkits) van verzekeringhypotheek.blinqx.tech
+    (bronnen/vh-site/index.json, dagelijks bijgewerkt door vh_sync.py)."""
     f = os.path.join(SRC, "vh-site", "index.json")
     if not os.path.exists(f):
         return []
     uit = []
     for v in json.load(open(f, encoding="utf8")):
         d = v.get("gepubliceerd") or v.get("datum") or ""
-        if v.get("soort") != "Blogs & nieuws" or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", d):
+        if v.get("soort") not in soorten or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", d) or "/toolkits_categorie/" in v["url"]:
             continue
         mini = v.get("miniatuur") if v.get("miniatuur") and os.path.exists(os.path.join(ROOT, v["miniatuur"])) else ""
         uit.append({"t": html.unescape(v["titel"]), "posted": date.fromisoformat(d), "updated": None, "url": v["url"], "ext": 1,
@@ -1260,7 +1275,7 @@ def render_feed(name, items):
     path = FEEDS[name]
     pg = Page(path)
     h2, intro, img = FEED_META[name]
-    extern = vh_nieuws() if name == "Nieuws" else []
+    extern = vh_nieuws() if name == "Nieuws" else (vh_nieuws(VH_TIPS) + hc_tips()) if name == "Tips" else []
     if extern:
         def dag(x):
             d = x["posted"] or x["updated"]
@@ -1269,6 +1284,11 @@ def render_feed(name, items):
 
     def card(x):
         d = x["posted"] or x["updated"]
+        if x.get("int"):
+            u = pg.rel(x["int"])
+            return (f'<article class="card ext"><div class="card-body"><p class="bron">{esc(x["bron"])}</p>'
+                    f'<h3><a href="{u}">{esc(x["t"])}</a></h3><p class="date">{fmt_date(d)}</p>'
+                    f'{f"<p>{esc(x["excerpt"])}</p>" if x["excerpt"] else ""}<a class="readmore" href="{u}">Lees verder</a></div></article>')
         if x.get("ext"):
             u = esc(x["url"])
             fig = (f'<a class="card-img" href="{u}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">'
@@ -1301,7 +1321,7 @@ def render_feed(name, items):
 <main class="feed"><div class="wrap">
   {rn_tabs(pg, "connect") if name == "Release notes" else ""}
   <h2 class="feed-h">{esc(h2)}</h2>
-  <p>{esc(intro)} {len(items)} berichten{f", waarvan {len(extern)} van verzekeringhypotheek.blinqx.tech (dagelijks bijgewerkt; het nieuwste bericht is van {fmt_date(extern[0]['posted'])})" if extern else ""}.</p>
+  <p>{esc(intro)} {len(items)} berichten{f", waarvan {sum(1 for x in extern if x.get('ext'))} van verzekeringhypotheek.blinqx.tech (dagelijks bijgewerkt; het nieuwste bericht is van {fmt_date(max(x['posted'] for x in extern))})" if extern else ""}.</p>
   {f'<p class="jump">Ga naar: {jump}</p>' if len(keys) > 1 else ""}
   {f'<p class="note">Oudere releasenotes uit 2016 en 2017 staan als pdf bij de <a href="{pg.rel("downloads")}">downloads</a>.</p>' if name == "Release notes" else ""}
   {blocks}
@@ -1625,6 +1645,8 @@ def render_home(cats, feeds, pages):
     fl_latest = "".join(f'<li><a href="{pg.rel("releasenotes-hypotheekadvies/" + m["slug"])}">Releasenotes {esc(m["label"])}'
                         f'{f" ({m["count"]} verbeteringen)" if m["count"] else ""} »</a></li>'
                         for m in fastlane_months()[0][:5])
+    tips_li = "".join(f'<li><a href="{esc(x["url"])}" target="_blank" rel="noopener">{esc(x["t"])} <span class="date">({fmt_date(x["posted"])})</span> ↗</a></li>'
+                      for x in vh_nieuws(VH_TIPS)[:5])
     nieuws_li = "".join(f'<li><a href="{esc(x["url"])}" target="_blank" rel="noopener">{esc(x["t"])} <span class="date">({fmt_date(x["posted"])})</span> ↗</a></li>'
                         for x in vh_nieuws()[:5]) or "".join(f'<li>{a(p, esc(l) + " »")}</li>' for p, l in nieuws_home)
 
@@ -1733,7 +1755,7 @@ def render_home(cats, feeds, pages):
         </section>
         <section class="panel" id="p-tips" role="tabpanel" aria-labelledby="tab-tips" hidden>
           <h3>Laatste 5 tips</h3>
-          <ul>{latest("Tips")}<li class="all"><a href="{pg.rel('tips')}">Alle tips »</a></li></ul>
+          <ul>{tips_li or latest("Tips")}<li class="all"><a href="{pg.rel('tips')}">Alle tips »</a></li></ul>
         </section>
       </div>
     </div>
