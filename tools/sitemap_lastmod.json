@@ -5484,7 +5484,7 @@
 "d": "2026-11-06"
 },
 "hypotheekadvies-helpcenter": {
-"h": "ca925eaf70710169",
+"h": "d8d13b96300f8fe2",
 "d": "2026-11-06"
 },
 "hypotheekadvies-helpcenter/aanvraagproces-voor-een-woning-zonder-huidige-hypotheek": {
@@ -5492,7 +5492,7 @@
 "d": "2026-11-06"
 },
 "hypotheekadvies-helpcenter/advies-omzetten-naar-huidige-situatie-in-blinqx-verzekering-hypotheek": {
-"h": "06755fce1e6782ee",
+"h": "8dec4871ac9a8a78",
 "d": "2026-11-06"
 },
 "hypotheekadvies-helpcenter/applicatiewachtwoord-aanmaken-in-eblinqx-hypotheekadvies": {
@@ -5501,6 +5501,14 @@
 },
 "hypotheekadvies-helpcenter/betaalrekening-toevoegen-bij-vermogen-in-eblinqx-hypotheekadvies": {
 "h": "2f4304ac3a2233cb",
+"d": "2026-11-06"
+},
+"hypotheekadvies-helpcenter/de-ai-adviessamenvatting": {
+"h": "81b31d7b9414785e",
+"d": "2026-11-06"
+},
+"hypotheekadvies-helpcenter/de-compliancescan": {
+"h": "714345247b239424",
 "d": "2026-11-06"
 },
 "hypotheekadvies-helpcenter/draagplichtovereenkomst-verwerken-in-eblinqx-hypotheekadvies": {
@@ -5537,6 +5545,10 @@
 },
 "hypotheekadvies-helpcenter/hdn-berichten-van-geldverstrekkers-komen-niet-of-vertraagd-binnen": {
 "h": "f797257413cafe89",
+"d": "2026-11-06"
+},
+"hypotheekadvies-helpcenter/het-vooringevulde-klantprofiel": {
+"h": "14b0045dab371746",
 "d": "2026-11-06"
 },
 "hypotheekadvies-helpcenter/hoe-activeer-ik-een-geldverstrekker-in-eblinqx-hypotheekadvies": {
@@ -5584,7 +5596,7 @@
 "d": "2026-11-06"
 },
 "hypotheekadvies-helpcenter/hoe-download-ik-een-klantprofiel": {
-"h": "6a151abdc5e6eed6",
+"h": "bdd90965aedfd92c",
 "d": "2026-11-06"
 },
 "hypotheekadvies-helpcenter/hoe-download-ik-een-vergelijking-van-hypotheekberekeningen": {
@@ -5624,7 +5636,7 @@
 "d": "2026-11-06"
 },
 "hypotheekadvies-helpcenter/hoe-importeer-ik-inkomensgegevens-uit-elements-eblinqx": {
-"h": "f6b17a031d1c8ece",
+"h": "3c0a21bf59184e4b",
 "d": "2026-11-06"
 },
 "hypotheekadvies-helpcenter/hoe-importeer-ik-klantgegevens-in-bulk-via-eblinqx-hypotheekadvies": {
@@ -5664,7 +5676,7 @@
 "d": "2026-11-06"
 },
 "hypotheekadvies-helpcenter/hoe-leg-ik-eigendomsverdeling-en-doelstelling-vast-bij-toetredende-partner": {
-"h": "0753a82cd2d72860",
+"h": "1a15b2369c987e1e",
 "d": "2026-11-06"
 },
 "hypotheekadvies-helpcenter/hoe-leg-ik-het-verantwoord-hypotheekbedrag-uit-aan-klanten": {
@@ -5704,7 +5716,7 @@
 "d": "2026-11-06"
 },
 "hypotheekadvies-helpcenter/hoe-los-ik-de-verplichte-ingangsdatum-foutmelding-bij-pensioenopvoer-op": {
-"h": "b5b552a13faa9551",
+"h": "e59b54bb6fac5ec2",
 "d": "2026-11-06"
 },
 "hypotheekadvies-helpcenter/hoe-los-ik-een-afrondingsverschil-in-het-financieringsopzet-op": {
@@ -5724,7 +5736,7 @@
 "d": "2026-11-06"
 },
 "hypotheekadvies-helpcenter/hoe-los-ik-een-foutmelding-op-bij-het-wijzigen-van-adresgegevens-in-fastlane": {
-"h": "a82838c8cc342f3b",
+"h": "dd968f3423678dc4",
 "d": "2026-11-06"
 },
 "hypotheekadvies-helpcenter/hoe-los-ik-foutcode-19391-op-bij-hdn-aanvraag-identificatie-voor-natuurlijk-persoon": {
@@ -5976,7 +5988,7 @@
 "d": "2026-11-06"
 },
 "hypotheekadvies-helpcenter/hoe-verwerk-je-een-woningkorting-in-eblinqx-hypotheekadvies": {
-"h": "d4b98e231b6f2d84",
+"h": "07b50b0724e0ea2d",
 "d": "2026-11-06"
 },
 "hypotheekadvies-helpcenter/hoe-verwijder-ik-een-onderpand-woning-in-eblinqx-hypotheekadvies": {
@@ -6024,11 +6036,11 @@
 "d": "2026-11-06"
 },
 "hypotheekadvies-helpcenter/hoe-voer-ik-een-afgeloste-hypotheek-in-eblinqx-hypotheekadvies-in": {
-"h": "84f5c66fa62b2eb6",
+"h": "a9a0081394aee096",
 "d": "2026-11-06"
 },
 "hypotheekadvies-helpcenter/hoe-voer-ik-een-afgeloste-hypotheek-op-met-meeneemregeling-in-eblinqx-hypotheekadvies": {
-"h": "a5453de76a479ca0",
+"h": "a4c51c7398eef963",
 "d": "2026-11-06"
 },
 "hypotheekadvies-helpcenter/hoe-voer-ik-een-derde-of-hogere-hypotheek-op": {
@@ -6104,7 +6116,7 @@
 "d": "2026-11-06"
 },
 "hypotheekadvies-helpcenter/hoe-vul-ik-een-inkomensgarantie-verzekering-in-eblinqx-hypotheekadvies-correct-in": {
-"h": "1eace8060bf4d748",
+"h": "10d2940f56562e49",
 "d": "2026-11-06"
 },
 "hypotheekadvies-helpcenter/hoe-vul-ik-het-afm-nummer-in": {
@@ -6144,7 +6156,7 @@
 "d": "2026-11-06"
 },
 "hypotheekadvies-helpcenter/hoe-wissel-ik-de-aanvrager-en-partner-in-eblinqx-hypotheekadvies": {
-"h": "de0bf4112f2e250f",
+"h": "614b8c07a416704d",
 "d": "2026-11-06"
 },
 "hypotheekadvies-helpcenter/hoe-wissel-ik-de-rollen-van-aanvrager-en-partner-in-het-klantdossier": {
@@ -6188,7 +6200,7 @@
 "d": "2026-11-06"
 },
 "hypotheekadvies-helpcenter/hoe-wordt-vakantiegeld-herberekend-bij-wijzigen-maandinkomen": {
-"h": "9d4a81e367e90c2c",
+"h": "b135b37bcebb19aa",
 "d": "2026-11-06"
 },
 "hypotheekadvies-helpcenter/hoe-wordt-wga-inkomen-verwerkt-bij-de-toetsing-in-eblinqx-hypotheekadvies": {
@@ -6208,11 +6220,11 @@
 "d": "2026-11-06"
 },
 "hypotheekadvies-helpcenter/hoe-zorg-ik-dat-een-lijfrente-uitkering-meetelt-in-het-toetsinkomen": {
-"h": "fb91417e8c320325",
+"h": "ae622305bcd543ba",
 "d": "2026-11-06"
 },
 "hypotheekadvies-helpcenter/hoe-zorg-ik-dat-een-ww-uitkering-wordt-meegerekend-als-inkomen": {
-"h": "66a66a91906660e9",
+"h": "8d94edef299b1753",
 "d": "2026-11-06"
 },
 "hypotheekadvies-helpcenter/hoe-zorg-ik-ervoor-dat-leningdelen-bij-oha-automatisch-worden-gesplitst": {
@@ -6248,7 +6260,7 @@
 "d": "2026-11-06"
 },
 "hypotheekadvies-helpcenter/kan-ik-het-klantprofiel-digitaal-door-de-klant-laten-invullen": {
-"h": "8a1d90b827320c45",
+"h": "bdcd14d675b5409d",
 "d": "2026-11-06"
 },
 "hypotheekadvies-helpcenter/kan-ik-mijn-aanvraag-tussentijds-opslaan-in-eblinqx-hypotheekadvies": {
@@ -6436,7 +6448,7 @@
 "d": "2026-11-06"
 },
 "hypotheekadvies-helpcenter/waarom-kan-ik-geen-partner-invoeren-in-een-klantdossier": {
-"h": "ece76b9c98ae6fef",
+"h": "d6e8fe86eae86f47",
 "d": "2026-11-06"
 },
 "hypotheekadvies-helpcenter/waarom-kan-ik-in-eblinqx-hypotheekadvies-alleen-ongehuwd-kiezen-als-burgerlijke-staat": {
@@ -6444,11 +6456,11 @@
 "d": "2026-11-06"
 },
 "hypotheekadvies-helpcenter/waarom-kan-ik-mijn-berekening-niet-downloaden-in-eblinqx-hypotheekadvies": {
-"h": "a91271ffa7cb9a3c",
+"h": "0df1db14f4331c00",
 "d": "2026-11-06"
 },
 "hypotheekadvies-helpcenter/waarom-kan-ik-partnergegevens-niet-aanpassen-in-blinqx-verzekering-hypotheek": {
-"h": "8b63e6c0f44176cd",
+"h": "06ae36a97614fe30",
 "d": "2026-11-06"
 },
 "hypotheekadvies-helpcenter/waarom-komt-de-rente-van-mijn-nieuwe-ing-leningdeel-niet-in-het-voorstel-en-kan-ik-de-opti": {
@@ -6572,7 +6584,7 @@
 "d": "2026-11-06"
 },
 "hypotheekadvies-helpcenter/waarom-wordt-loondoorbetaling-bij-ziekte-niet-aangepast-na-wijziging-van-inkomen": {
-"h": "eea291b66deb1ffc",
+"h": "f96ecf9a051d03e3",
 "d": "2026-11-06"
 },
 "hypotheekadvies-helpcenter/waarom-wordt-mijn-bestaande-orv-niet-meegenomen-in-de-overlijdensberekening": {
@@ -8404,7 +8416,7 @@
 "d": "2026-11-06"
 },
 "kennisbanken": {
-"h": "521e2ed8daacb222",
+"h": "3cfee0b6e21efb4a",
 "d": "2026-11-06"
 },
 "kent-digimap-tips-al": {
@@ -8916,11 +8928,15 @@
 "d": "2026-11-06"
 },
 "releasenotes-dias": {
-"h": "467728156af90e1a",
+"h": "fa27fbcbfcb94642",
 "d": "2026-11-06"
 },
 "releasenotes-dias/4-1-3-5": {
-"h": "2019e33ad88da611",
+"h": "358f210ba63216ff",
+"d": "2026-11-06"
+},
+"releasenotes-dias/4-1-5-1": {
+"h": "6c6d91b2c6b82d72",
 "d": "2026-11-06"
 },
 "releasenotes-finconnect": {
