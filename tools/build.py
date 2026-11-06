@@ -728,6 +728,19 @@ def asset_versie(naam):
     return _VERSIES[naam]
 
 
+OOK = [("wt", "websitetools", "Websitetools: rekentools voor je website"),
+       ("mhz", "mijnhuiszaken", "MijnHuiszaken: het actuele woningaanbod voor jouw klanten"),
+       ("coach", "adviescoach", "AdviesCoach: begeleid hypotheekadvies"),
+       ("pv", "procesversneller", "Procesversneller: hypotheekdossiers compleet met brondata")]
+
+
+def ook_interessant(pg, zelf):
+    """Regel 'Ook interessant' onder een wisselblok: de drie andere thema's (pg=None: met {R} voor wistje.js)."""
+    rel = (lambda u: pg.rel(u)) if pg else (lambda u: "{R}" + u + "/index.html")
+    return '<p class="home-wt-ook">Ook interessant: ' + " · ".join(
+        f'<a href="{rel(u)}">{esc(n)}</a>' for k, u, n in OOK if k != zelf) + "</p>"
+
+
 def wistje(pg):
     """Blok 'Wist je dat:' boven de footer op elke pagina behalve de homepage: wisselt bij elk bezoek tussen Websitetools,
     MijnHuiszaken, AdviesCoach en de Procesversneller (inhoud in assets/wistje.js; zonder JavaScript drie gewone links)."""
@@ -771,6 +784,7 @@ def wistje_js():
                '<p class="home-wt-cta btn-row"><a class="btn-out cta" href="https://verzekeringhypotheek.blinqx.tech/oplossingen/procesversneller" target="_blank" rel="noopener">Bepaal snel jouw besparing »</a> '
                '<a class="btn-out" href="{R}procesversneller/index.html">Meer over de Procesversneller</a></p>', "procesversneller"),
     }
+    blokken = {k: (h + ook_interessant(None, k), p) for k, (h, p) in blokken.items()}
     js = ("/* Blok 'Wist je dat:' boven de footer (gegenereerd door tools/build.py). Wisselt bij elk bezoek, samen met de homepage. */\n"
           "(function () {\n  var B = " + json.dumps({k: {"h": h, "p": p} for k, (h, p) in blokken.items()}, ensure_ascii=False) + ";\n"
           """  var el = document.querySelector("aside.wistje"); if (!el) return;
@@ -786,7 +800,7 @@ def wistje_js():
     open(os.path.join(ROOT, "assets", "wistje.js"), "w", encoding="utf8").write(js)
 
 
-WISTJE_V = "3"
+WISTJE_V = "4"
 
 
 def layout(pg, title, body, active=None, description=""):
@@ -1637,7 +1651,7 @@ def render_home(cats, feeds, pages):
       <p class="home-wt-cta btn-row"><a class="btn-out cta" href="{pg.rel('websitetools')}">Bekijk de rekentools en lees meer »</a>
         <a class="btn-out" href="{pg.rel('websitetools')}#video">▶ Bekijk de video</a></p>
       <p class="home-wt-note">De uitkomsten van de rekentools zijn indicatief en geen advies.</p>
-      <p class="home-wt-ook">Ook interessant: <a href="{pg.rel('mijnhuiszaken')}">MijnHuiszaken: het actuele woningaanbod voor jouw klanten</a> · <a href="{pg.rel('adviescoach')}">AdviesCoach: begeleid hypotheekadvies</a></p>
+      {ook_interessant(pg, "wt")}
     </section>
     <section class="home-wt" id="home-mhz" aria-labelledby="home-mhz-h" hidden>
       <h2 id="home-mhz-h">MijnHuiszaken: blijf in beeld vanaf de eerste zoekopdracht – het actuele woningaanbod voor jouw klanten</h2>
@@ -1645,7 +1659,7 @@ def render_home(cats, feeds, pages):
       <div class="wtwhys">{"".join(f'<div class="wtwhy"><h3>{esc(t)}</h3><p>{esc(x)}</p></div>' for t, x in MHZ_KORT)}</div>
       <p class="home-wt-cta btn-row"><a class="btn-out cta" href="{pg.rel('mijnhuiszaken')}">Bekijk MijnHuiszaken en lees meer »</a>
         <a class="btn-out" href="{pg.rel('mijnhuiszaken')}#video">▶ Bekijk de video</a></p>
-      <p class="home-wt-ook">Ook interessant: <a href="{pg.rel('websitetools')}">Websitetools: rekentools voor je website</a> · <a href="{pg.rel('adviescoach')}">AdviesCoach: begeleid hypotheekadvies</a></p>
+      {ook_interessant(pg, "mhz")}
     </section>
     <section class="home-wt" id="home-coach" aria-labelledby="home-coach-h" hidden>
       <p class="badge-gratis">Tot 1-2-2027 gratis proberen</p>
@@ -1654,7 +1668,7 @@ def render_home(cats, feeds, pages):
       <div class="wtwhys">{"".join(f'<div class="wtwhy"><h3>{esc(t)}</h3><p>{esc(x)}</p></div>' for t, x in COACH_KORT)}</div>
       <p class="home-wt-cta btn-row"><a class="btn-out cta" href="{pg.rel('adviescoach')}">Bekijk AdviesCoach en lees meer »</a></p>
       <p class="home-wt-note">Jij blijft eigenaar van het advies.</p>
-      <p class="home-wt-ook">Ook interessant: <a href="{pg.rel('websitetools')}">Websitetools: rekentools voor je website</a> · <a href="{pg.rel('mijnhuiszaken')}">MijnHuiszaken: het actuele woningaanbod voor jouw klanten</a></p>
+      {ook_interessant(pg, "coach")}
     </section>
     <section class="home-wt" id="home-pv" aria-labelledby="home-pv-h" hidden>
       <p class="badge-gratis">Besparen met brondata</p>
@@ -1663,7 +1677,7 @@ def render_home(cats, feeds, pages):
       <p>Klanten leveren hun brongegevens digitaal aan via de Blinqx Ockto Proces&shy;versneller; jij laadt ze met een paar klikken in eBlinqx. Eén brondataleverancier, volledig geïntegreerd in je software.</p>
       <p class="home-wt-cta btn-row"><a class="btn-out cta" href="https://verzekeringhypotheek.blinqx.tech/oplossingen/procesversneller" target="_blank" rel="noopener">Bepaal snel jouw besparing »</a>
         <a class="btn-out" href="{pg.rel('procesversneller')}">Meer over de Procesversneller</a></p>
-      <p class="home-wt-ook">Ook interessant: <a href="{pg.rel('websitetools')}">Websitetools: rekentools voor je website</a> · <a href="{pg.rel('adviescoach')}">AdviesCoach: begeleid hypotheekadvies</a> · <a href="{pg.rel('mijnhuiszaken')}">MijnHuiszaken: het actuele woningaanbod voor jouw klanten</a></p>
+      {ook_interessant(pg, "pv")}
     </section>
     <script type="application/ld+json">{json.dumps({"@context": "https://schema.org", "@type": "ItemList", "name": "Uitgelichte oplossingen voor adviseurs",
         "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": n, "url": SITE_URL + u, "description": o}
