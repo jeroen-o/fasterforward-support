@@ -3552,7 +3552,7 @@
 "d": "2026-11-06"
 },
 "categorien/aplaza": {
-"h": "3af4fccf2e73f7fe",
+"h": "19a69f6fac00930b",
 "d": "2026-11-06"
 },
 "categorien/artikelen-imap-pop3": {
@@ -6764,7 +6764,7 @@
 "d": "2026-11-06"
 },
 "kennisbank": {
-"h": "1f21b8efaeadd67f",
+"h": "ed576fbb30f13ad4",
 "d": "2026-11-06"
 },
 "kennisbank/1-prolongatie-import": {
@@ -8045,6 +8045,10 @@
 },
 "kennisbank/scannen-naar-elements": {
 "h": "2f00d931e6854462",
+"d": "2026-11-06"
+},
+"kennisbank/schade-doormelden-via-aplaza-en-finconnect": {
+"h": "adb5450ed5ff6440",
 "d": "2026-11-06"
 },
 "kennisbank/schade-en-levensverzekeringen-omnummeren": {
