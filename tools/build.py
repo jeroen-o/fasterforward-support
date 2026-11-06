@@ -775,19 +775,18 @@ def wistje_js():
           "(function () {\n  var B = " + json.dumps({k: {"h": h, "p": p} for k, (h, p) in blokken.items()}, ensure_ascii=False) + ";\n"
           """  var el = document.querySelector("aside.wistje"); if (!el) return;
   var R = el.getAttribute("data-root") || "", zelf = el.getAttribute("data-zelf");
-  var volg = ["wt", "mhz", "coach", "pv"].filter(function (k) { return B[k].p !== zelf; }), keus;
-  try {
-    var i = volg.indexOf(localStorage.getItem("homeblok-laatst"));
-    keus = volg[(i + 1) % volg.length];
-    localStorage.setItem("homeblok-laatst", keus);
-  } catch (e) { keus = volg[Math.floor(Math.random() * volg.length)]; }
+  var volg = ["wt", "mhz", "coach", "pv"].filter(function (k) { return B[k].p !== zelf; }), laatst = null, keus;
+  try { laatst = localStorage.getItem("homeblok-laatst"); } catch (e) {}
+  var kans = volg.filter(function (k) { return k !== laatst; });
+  keus = kans[Math.floor(Math.random() * kans.length)];
+  try { localStorage.setItem("homeblok-laatst", keus); } catch (e) {}
   el.querySelector(".wistje-in").innerHTML = B[keus].h.split("{R}").join(R);
 })();
 """)
     open(os.path.join(ROOT, "assets", "wistje.js"), "w", encoding="utf8").write(js)
 
 
-WISTJE_V = "2"
+WISTJE_V = "3"
 
 
 def layout(pg, title, body, active=None, description=""):
@@ -1630,6 +1629,7 @@ def render_home(cats, feeds, pages):
     </div>
     <div class="tiles">{tiles}</div>
 
+    <h2 class="home-wistje">Wist je dat:</h2>
     <section class="home-wt" aria-labelledby="home-wt-h">
       <h2 id="home-wt-h">Websitetools: meer leads uit je eigen website</h2>
       <p>Een hypotheek begint online. Met 22 rekentools op de website van je kantoor berekenen bezoekers zelf hun maximale hypotheek, maandlasten of de actuele rentes, en ben jij het kantoor dat ze als eerste verder helpt.</p>
@@ -1677,12 +1677,11 @@ def render_home(cats, feeds, pages):
     <script>
     /* Afwisselen bij elk bezoek aan de homepage: Websitetools, MijnHuiszaken, AdviesCoach en Procesversneller (zonder JavaScript: Websitetools). */
     (function () {{
-      var volg = ["wt", "mhz", "coach", "pv"], keus;
-      try {{
-        var i = volg.indexOf(localStorage.getItem("homeblok-laatst"));
-        keus = volg[(i + 1) % volg.length];
-        localStorage.setItem("homeblok-laatst", keus);
-      }} catch (e) {{ keus = volg[Math.floor(Math.random() * volg.length)]; }}
+      var volg = ["wt", "mhz", "coach", "pv"], laatst = null, keus;
+      try {{ laatst = localStorage.getItem("homeblok-laatst"); }} catch (e) {{}}
+      var kans = volg.filter(function (k) {{ return k !== laatst; }});
+      keus = kans[Math.floor(Math.random() * kans.length)];
+      try {{ localStorage.setItem("homeblok-laatst", keus); }} catch (e) {{}}
       if (keus !== "wt") {{
         var wt = document.querySelector('section.home-wt[aria-labelledby="home-wt-h"]'), ander = document.getElementById("home-" + keus);
         if (wt && ander) {{ wt.hidden = true; ander.hidden = false; }}
