@@ -870,6 +870,7 @@ def layout(pg, title, body, active=None, description=""):
       <a href="{pg.rel('demo-kantoor')}">Demo-kantoor</a>
       <a href="{pg.rel('sites')}">Handige websites</a>
       <a href="{pg.rel('historie')}">Historie</a>
+      <a href="{pg.rel('waar-kan-ik-terecht')}">Waar kan ik terecht?</a>
       <a href="{pg.rel('kennisbanken')}">Kennisbanken</a>
       <a href="{pg.rel('brochures')}">Brochures</a>
       <a href="https://verzekeringhypotheek.blinqx.tech/" target="_blank" rel="noopener">eBlinqx website</a>
@@ -1153,6 +1154,7 @@ def render_article(cats, feeds, p):
                 '<p>E-mail:<br><a href="mailto:support-eblinqx@blinqx.tech">support-eblinqx@blinqx.tech</a></p>'
                 '<p>Telefoonnummer:<br><a href="tel:+31850180069">085 018 00 69</a></p>'
                 '<p>Wij zijn bereikbaar op werkdagen van 8:30 tot 17:00</p>'
+                f'<p><a class="btn-out" href="{pg.rel("waar-kan-ik-terecht")}">Waar kan ik terecht met mijn vraag? »</a></p>'
                 '<h2 class="isl-h">Scherm delen</h2>'
                 '<form id="isl-connect-form" class="isl" autocomplete="off"><label for="isl-code">Vul de sessiecode in die je van support hebt gekregen:</label>'
                 '<input id="isl-code" name="code" type="text" inputmode="numeric" required>'
@@ -1486,6 +1488,10 @@ def render_search(pages, cats):
                             "x": f"{n_} {n_.split()[0]} {n_.split()[-1]} {r_} historie blinqx"})
             idx.append({"t": "Historie van Blinqx Verzekering & Hypotheek", "h": "historie/index.html", "c": "Over Blinqx", "k": "overig",
                         "x": "historie geschiedenis bedrijfshistorie tijdlijn overnames oprichting " + re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", ht)))})
+        idx.append({"t": "Waar kan ik terecht met mijn vraag? (wegwijzer)", "h": "waar-kan-ik-terecht/index.html", "c": "Contact", "k": "kennisbank",
+                    "x": "wegwijzer contact loket wie waar vraag storing bellen datalek security wens productverbetering contract licentie facturatie "
+                         "accountmanager inrichting implementatie wijziging opdrachten workflow project support conversie training academy e-learning fin quinn "
+                         + " ".join(f"{r} {o} " + " ".join(re.sub(r"<[^>]+>", " ", f"{a} {b} {c}") for a, b, c in rij) for r, o, rij in WEGWIJZER)})
         idx.append({"t": "Handige websites", "h": "sites/index.html", "c": "Handige websites", "k": "kennisbank",
                     "x": "websites domeinen links " + " ".join(st["naam"] for st in sites_laden())})
         idx.append({"t": "Finly CRM: klantgegevens, workflows en communicatie op één plek", "h": "finly-crm/index.html", "c": "Finly CRM",
@@ -3515,6 +3521,77 @@ def hc_titel(c):
     return f'Kennisbank {c["naam"]}'
 
 
+WEGWIJZER = [  # (rubriek, loket, [(situatie, wat te doen (html), contact (html))]) – klantversie van de interne wegwijzer
+    ("Software & gebruik", "Een fout, storing of vraag over de werking van eBlinqx", [
+        ("Blokkerende fout of storing: je kunt niet verder werken", "Bel direct met Support. Mail in dit geval niet eerst.",
+         '<a href="tel:+31850180069">085 018 00 69</a>'),
+        ("Vraag of probleem dat je werk niet blokkeert", "Vraag het eerst aan Fin in eBlinqx, daarna aan Quinn hier op de supportsite. Nog niet opgelost? Mail Support.",
+         'Fin → Quinn → <a href="mailto:support-eblinqx@blinqx.tech">support-eblinqx@blinqx.tech</a>'),
+        ("Er loopt al een ticket", "Vraag de status na of vul je melding aan. Vermeld altijd het ticketnummer.",
+         '<a href="mailto:support-eblinqx@blinqx.tech">support-eblinqx@blinqx.tech</a>'),
+        ("Datalek of gelekte inloggegevens", "Meld het direct.", '<a href="mailto:security@blinqx.tech">security@blinqx.tech</a>'),
+    ]),
+    ("Wensen & ontwikkeling", "Nieuwe mogelijkheden of productverbeteringen", [
+        ("Wens of productverbetering", 'Geef je wens door aan Support; Support legt hem voor aan de product owners. Lees ook het <a href="{R}wensenbeleid/index.html">wensenbeleid</a>.',
+         '<a href="mailto:support-eblinqx@blinqx.tech">support-eblinqx@blinqx.tech</a>'),
+    ]),
+    ("Contract & commercie", "Offertes, licenties, facturatie of afspraken", [
+        ("Contract, extra licenties, add-ons, diensten of facturatie", "Neem contact op met je accountmanager.", "Je accountmanager"),
+    ]),
+    ("Inrichting & implementatie", "Een nieuwe omgeving of een wijziging", [
+        ("Wijziging in configuratie of koppeling", "Mail je verzoek zelf. Daarna volgen inventarisatie, impact, akkoord en planning.",
+         '<a href="mailto:opdrachten@blinqx.tech">opdrachten@blinqx.tech</a>'),
+        ("Aanpassingen in workflows", "Meld het direct bij Project support van Blinqx.", "Project support"),
+        ("Nieuwe klant, implementatie loopt nog", "Project support verzorgt de inventarisatie (indien van toepassing), planning en coördinatie van implementatie en training.", "Project support"),
+        ("Nieuwe klant, omgeving opgeleverd", "Support is je eerste aanspreekpunt. De eerste 6 weken heb je een vaste klantmanager.",
+         '<a href="mailto:support-eblinqx@blinqx.tech">support-eblinqx@blinqx.tech</a>'),
+    ]),
+    ("Data & conversie", "Gegevens migreren, overzetten of controleren", [
+        ("Planning, inventarisatie en impact, of bevindingen na oplevering", "Bij meerdere bronnen maken we altijd eerst een inventarisatie. Je projectmanager Conversie begeleidt je.",
+         "Je projectmanager Conversie"),
+    ]),
+    ("Training & advies", "Uitleg, begeleiding of beter gebruik van eBlinqx", [
+        ("Zelf leren", 'Volg de <a href="{R}elearning/index.html">e-learnings</a> per onderwerp.', '<a href="{R}elearning/index.html">E-learning</a>'),
+        ("Je wilt een training volgen", "Bekijk het actuele aanbod in de Blinqx Academy en schrijf je daar in.",
+         '<a href="https://verzekeringhypotheek.blinqx.tech/academy" target="_blank" rel="noopener">Blinqx Academy</a>'),
+        ("Training op maat", "Je accountmanager stemt je wensen af en biedt een passende training aan.", "Je accountmanager"),
+        ("Advies over beter gebruik (health check of doorontwikkeling)", "Mail je verzoek zelf.", '<a href="mailto:opdrachten@blinqx.tech">opdrachten@blinqx.tech</a>'),
+    ]),
+]
+
+
+def render_wegwijzer():
+    """Klantgerichte wegwijzer 'Waar kan ik terecht met mijn vraag?' (klantversie van de interne Wegwijzer eBlinqx V&H)."""
+    pg = Page("waar-kan-ik-terecht")
+    R = "../" * pg.depth
+    blokken = ""
+    faq = []
+    for rub, oms, rijen in WEGWIJZER:
+        tr = "".join(f'<tr><th scope="row">{esc(sit)}</th><td>{wat.replace("{R}", R)}</td><td>{waar.replace("{R}", R)}</td></tr>' for sit, wat, waar in rijen)
+        blokken += (f'<h2 class="wth" id="{slugify(rub)}">{esc(rub)}</h2><p>{esc(oms)}</p>'
+                    f'<div class="tabel"><table class="wegwijzer"><thead><tr><th>Situatie</th><th>Wat te doen</th><th>Waar</th></tr></thead><tbody>{tr}</tbody></table></div>')
+        for sit, wat, waar in rijen:
+            schoon = lambda x: re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", "", x))).strip()
+            faq.append({"@type": "Question", "name": f"Waar kan ik terecht bij: {sit.lower()}?",
+                        "acceptedAnswer": {"@type": "Answer", "text": f"{schoon(wat)} Contact: {schoon(waar)}."}})
+    intro = ("Waar kun je terecht met je vraag over eBlinqx Verzekering & Hypotheek? Bij een blokkerende storing bel je direct Support. "
+             "Andere vragen stel je eerst aan Fin in eBlinqx, dan aan Quinn op de supportsite en daarna aan Support. Zo komt elke vraag goed "
+             "geregistreerd binnen, gekoppeld aan jouw klantgegevens en dossier.")
+    jump = " · ".join(f'<a href="#{slugify(r)}">{esc(r)}</a>' for r, _, _ in WEGWIJZER)
+    body = f"""{crumbs(pg, [("Contact", "contact"), ("Waar kan ik terecht?", None)])}
+<main class="subpage"><div class="wrap">
+  <h1>Waar kan ik terecht met mijn vraag?</h1>
+  <p class="lead">{esc(intro)}</p>
+  <div class="callout letop"><p><strong>Kun je niet verder werken?</strong> Bel direct met Support: <a href="tel:+31850180069">085 018 00 69</a>.</p></div>
+  <p class="jump">Ga naar: {jump}</p>
+  {blokken}
+  <p class="note">Wegwijzer eBlinqx Verzekering &amp; Hypotheek, stand oktober 2026. Zie ook <a href="{pg.rel("contact")}">Contact</a> en het <a href="{pg.rel("supportbeleid")}">supportbeleid</a>.</p>
+</div></main>
+<script type="application/ld+json">{json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faq}, ensure_ascii=False).replace("</", "<\\/")}</script>"""
+    write("waar-kan-ik-terecht", layout(pg, "Waar kan ik terecht met mijn vraag? Wegwijzer eBlinqx", body, None,
+                                         "Wegwijzer eBlinqx V&H: bij een storing direct bellen, vragen eerst aan Fin en Quinn, en wie je helpt bij wensen, contract, inrichting, conversie en training."))
+
+
 def render_brochures():
     """Brochures 2026 op het eigen domein: de brochure-viewer (gespiegeld door tools/brochures_sync.py naar
     bronnen/brochures-site/) komt op brochures/viewer/, met daarboven een overzichtspagina brochures/ voor bezoekers en zoekmachines."""
@@ -4199,6 +4276,7 @@ def main():
     render_finrust()
     render_helpcenters()
     render_brochures()
+    render_wegwijzer()
     render_elearning()
     render_fastlane()
     render_releasenotes_overig()
@@ -4233,7 +4311,7 @@ def main():
         ("Partners", ["partners"] + sorted(u for u in info if u.startswith("partners/"))),
         ("Productinformatie", ["websitetools", "mijnhuiszaken", "yes-co", "tools-voor-vastgoed", "woningwaarderapport",
                                "actiefbeheerscan", "hypotheekrente-app", "finly-crm", "demo-kantoor", "banking-insurance", "adviescoach", "procesversneller"]),
-        ("Over Blinqx", ["historie", "brochures"]),
+        ("Over Blinqx", ["historie", "brochures", "waar-kan-ik-terecht"]),
         ("Kennisbanken per product", ["kennisbanken"] + [c["pad"] for c in HELPCENTERS]),
         *[(hc_titel(c), [u for u in (c["pad"] + "/" + a["slug"] for a in hc_artikelen(c)) if u in info]) for c in HELPCENTERS],
         ("Handige websites", ["sites"] + sorted(u for u in info if u.startswith("sites/"))),

@@ -553,3 +553,10 @@ details.frrub .tel{font-weight:400;color:var(--muted);font-size:.8em}
 :where(img[height]){height:auto}
 .home-wistje{margin:34px 0 -22px}
 .wistje{margin:-24px 0 36px}
+table.wegwijzer{border-collapse:collapse;width:100%;margin:6px 0 18px;font-size:14.5px}
+table.wegwijzer th,table.wegwijzer td{border-bottom:1px solid #E3E8EE;padding:10px 10px;text-align:left;vertical-align:top}
+table.wegwijzer thead th{background:#F7F8FA;font-size:13px;text-transform:uppercase;letter-spacing:.03em;color:#5B6573}
+table.wegwijzer tbody th{width:32%;font-weight:600}table.wegwijzer td:last-child{width:26%}
+@media (max-width:640px){table.wegwijzer thead{display:none}table.wegwijzer tr{display:block;border-bottom:1px solid #E3E8EE;padding:8px 0}
+table.wegwijzer th,table.wegwijzer td{display:block;border:0;padding:3px 0;width:auto!important}}
+.callout.letop{background:#FFF7D6;border-left:4px solid #FFCD00;padding:10px 14px;margin:14px 0}
