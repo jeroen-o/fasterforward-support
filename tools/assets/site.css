@@ -552,3 +552,4 @@ details.frrub .tel{font-weight:400;color:var(--muted);font-size:.8em}
 @media (max-width:640px){.wistje .wtwhy:nth-child(n+4){display:none}}
 :where(img[height]){height:auto}
 .home-wistje{margin:34px 0 -22px}
+.wistje{margin:-24px 0 36px}

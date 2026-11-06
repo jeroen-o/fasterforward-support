@@ -51,7 +51,30 @@ def pagina(url, s):
     t = tekst(s[a:b])
     return {"url": url, "titel": titel, "omschrijving": meta(s, "og:description") or meta(s, "description"),
             "tekst": t[:MAX_TEKST], "datum": meta(s, "article:modified_time")[:10] or meta(s, "article:published_time")[:10],
-            "gepubliceerd": meta(s, "article:published_time")[:10], "afbeelding": meta(s, "og:image")}
+            "gepubliceerd": meta(s, "article:published_time")[:10], "afbeelding": meta(s, "og:image"), "h1": kop(s)}
+
+
+def kop(s):
+    m = re.search(r"<h1[^>]*>(.*?)</h1>", s, re.S)
+    return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", m.group(1)))).strip() if m else ""
+
+
+def ontdubbel(paginas):
+    """Sommige pagina's hebben op de bronsite de titel van een andere pagina (bijv. een gekopieerde toolkit). Bij dubbele
+    titels de eigen h1 van de pagina gebruiken (met 'Toolkit - ' ervoor bij toolkits)."""
+    from collections import Counter
+    tel = Counter(p["titel"] for p in paginas)
+    for p in paginas:
+        if tel[p["titel"]] < 2 or p["soort"] not in ("Blogs & nieuws", "Kennisbank", "Toolkits"):
+            continue
+        if "h1" not in p:
+            try:
+                p["h1"] = kop(haal(p["url"]))
+            except Exception:  # noqa: BLE001
+                p["h1"] = ""
+        h = p["h1"].rstrip("!").strip()
+        if h and h.lower() not in p["titel"].lower():
+            p["titel"] = ("Toolkit - " + h) if p["soort"] == "Toolkits" else h
 
 
 def miniatuur(p):
@@ -79,6 +102,7 @@ def miniatuur(p):
 def main():
     maxn = int(sys.argv[sys.argv.index("--max") + 1]) if "--max" in sys.argv else 10 ** 6
     oud = {p["url"]: p for p in json.load(open(UIT, encoding="utf8"))} if os.path.exists(UIT) else {}
+    oud_lijst = json.loads(json.dumps(sorted(oud.values(), key=lambda p: p["url"])))  # ongewijzigde kopie om mee te vergelijken
     index = haal(BASIS + "sitemap_index.xml")
     gezien, nieuw, gewijzigd, mislukt = {}, [], 0, 0
     for sm in re.findall(r"<loc>([^<]+)</loc>", index):
@@ -115,15 +139,16 @@ def main():
             if o:
                 nieuw.append(o)
         time.sleep(1)
+    ontdubbel(nieuw)
     weg = len(set(oud) - set(gezien))
     nieuw.sort(key=lambda p: p["url"])
     os.makedirs(os.path.dirname(UIT), exist_ok=True)
-    if nieuw != sorted(oud.values(), key=lambda p: p["url"]):
+    if nieuw != oud_lijst:
         with open(UIT, "w", encoding="utf8") as fh:
             json.dump(nieuw, fh, ensure_ascii=False, indent=0)
             fh.write("\n")
     print(f"eBlinqx-website: {len(nieuw)} pagina's, {gewijzigd} opgehaald, {weg} verwijderd, {mislukt} mislukt")
-    print("Gewijzigd:", f"eBlinqx-website ({gewijzigd + weg})" if gewijzigd or weg else "niets")
+    print("Gewijzigd:", f"eBlinqx-website ({gewijzigd + weg})" if gewijzigd or weg or nieuw != oud_lijst else "niets")
 
 
 if __name__ == "__main__":
