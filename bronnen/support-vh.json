@@ -1,0 +1,120 @@
+{
+ "bron": "https://verzekeringhypotheek.blinqx.tech/support",
+ "intro": [
+  "Hulp nodig? Je vindt het hier",
+  "Heb je een vraag over één van onze softwareplatformen? Grote kans dat je het antwoord direct vindt op de supportpagina van jouw product. Daar staan veelgestelde vragen, duidelijke instructies en praktische uitleg overzichtelijk bij elkaar.",
+  "Kom je er toch niet uit? Dan staan we natuurlijk voor je klaar.",
+  "Je kunt ons mailen via het juiste supportadres of bellen.",
+  "Scroll naar beneden en kies het platform dat je gebruikt. Dan helpen we je zo snel mogelijk verder."
+ ],
+ "contacten": [
+  {
+   "product": "eBlinqx Connect",
+   "email": [
+    "support-eblinqx@blinqx.tech"
+   ],
+   "telefoon": "085 018 00 69",
+   "keuze": "toets 1 en 2"
+  },
+  {
+   "product": "Adviesbox",
+   "email": [
+    "support-adviesbox@blinqx.tech"
+   ],
+   "telefoon": "085 018 00 69",
+   "keuze": "toets 1 en 1"
+  },
+  {
+   "product": "eBlinqx Hypotheekadvies (Fastlane)",
+   "email": [
+    "support-hypotheekadvies@blinqx.tech"
+   ],
+   "telefoon": "085 018 00 69",
+   "keuze": "toets 1 en 1"
+  },
+  {
+   "product": "Volmacht",
+   "email": [
+    "support-volmacht@blinqx.tech"
+   ],
+   "telefoon": "085 018 00 69",
+   "keuze": "toets 1 en 6"
+  },
+  {
+   "product": "CRM",
+   "email": [
+    "support-crm@blinqx.tech"
+   ],
+   "telefoon": "085 018 00 69",
+   "keuze": "toets 1 en 3"
+  },
+  {
+   "product": "FinConnect",
+   "email": [
+    "support-finconnect@blinqx.tech"
+   ],
+   "telefoon": "085 018 00 69",
+   "keuze": "toets 1 en 3"
+  },
+  {
+   "product": "Findata",
+   "email": [
+    "portaal@findata.nl"
+   ],
+   "telefoon": "085 018 00 69",
+   "keuze": "toets 1 en 4"
+  },
+  {
+   "product": "Yes-co",
+   "email": [
+    "info@yes-co.nl"
+   ],
+   "telefoon": "085 018 00 69",
+   "keuze": "toets 1 en 3"
+  }
+ ],
+ "supportsites": [
+  {
+   "product": "eBlinqx platform",
+   "omschrijving": "Maak je gebruik van ons eBlinqx platform en heb je hierover vragen? Neem dan gerust contact met ons op.",
+   "url": "http://support.fasterforward.nl",
+   "label": "Support eBlinqx",
+   "bereikbaar": true
+  },
+  {
+   "product": "DIAS",
+   "omschrijving": "Wij staan graag voor je klaar om je te helpen met het gebruik van je hypotheek- en volmacht software.",
+   "url": "https://support.dias.nl/s/login/",
+   "label": "Support DIAS software",
+   "bereikbaar": true
+  },
+  {
+   "product": "Adviesbox",
+   "omschrijving": "Voor hulp bij Adviesbox of Adviesbox Online kun je uiteraard bij ons terecht. We helpen je graag verder.",
+   "url": "http://support-adviesbox.vh.blinqx.tech",
+   "label": "Support Adviesbox",
+   "bereikbaar": true
+  },
+  {
+   "product": "Fastlane / eBlinqx Hypotheekadvies",
+   "omschrijving": "Meer info over het gebruik van Fastlane, bijvoorbeeld hoe je een aanvraag samenstelt, vind je op deze pagina.",
+   "url": "http://support-fastlane.vh.blinqx.tech",
+   "label": "Support Fastlane",
+   "bereikbaar": true
+  },
+  {
+   "product": "Finly",
+   "omschrijving": "We hebben de meest gestelde vragen over onze slimme formulieren, het schermdelen en workflows verzameld.",
+   "url": "http://support-finly.vh.blinqx.tech",
+   "label": "Support Finly",
+   "bereikbaar": true
+  },
+  {
+   "product": "Elements",
+   "omschrijving": "Op onze supportpagina vind je Release notes, Nieuws en heel veel informatie over onze software.",
+   "url": "https://support.fasterforward.nl/",
+   "label": "Support Elements",
+   "bereikbaar": true
+  }
+ ]
+}

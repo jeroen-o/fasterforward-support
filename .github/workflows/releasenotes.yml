@@ -41,7 +41,8 @@ jobs:
           python3 tools/yt_sync.py | tee -a uitvoer.txt
           python3 tools/intercom_sync.py | tee -a uitvoer.txt
           python3 tools/brochures_sync.py | tee -a uitvoer.txt
-          if [ "$(grep -c "Gewijzigd: niets" uitvoer.txt)" = "6" ]; then echo "Geen nieuwe releasenotes."; exit 0; fi
+          python3 tools/support_sync.py | tee -a uitvoer.txt
+          if [ "$(grep -c "Gewijzigd: niets" uitvoer.txt)" = "7" ]; then echo "Geen nieuwe releasenotes."; exit 0; fi
           wat=$(sed -n 's/^Gewijzigd: //p' uitvoer.txt | grep -v '^niets$' | paste -sd ', ')
           rm uitvoer.txt
           for i in 1 2 3 4 5; do
@@ -58,6 +59,7 @@ jobs:
             python3 tools/yt_sync.py > /dev/null
             python3 tools/intercom_sync.py > /dev/null
             python3 tools/brochures_sync.py > /dev/null
+            python3 tools/support_sync.py > /dev/null
           done
           echo "::error::Pushen mislukt"; exit 1
 

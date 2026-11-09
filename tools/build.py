@@ -1492,6 +1492,10 @@ def render_search(pages, cats):
                     "x": "wegwijzer contact loket wie waar vraag storing bellen datalek security wens productverbetering contract licentie facturatie "
                          "accountmanager inrichting implementatie wijziging opdrachten workflow project support conversie training academy e-learning fin quinn "
                          + " ".join(f"{r} {o} " + " ".join(re.sub(r"<[^>]+>", " ", f"{a} {b} {c}") for a, b, c in rij) for r, o, rij in WEGWIJZER)})
+        for c in (support_vh() or {}).get("contacten", []):
+            idx.append({"t": f'Support {c["product"]}: {", ".join(c["email"])}', "h": "waar-kan-ik-terecht/index.html#support-per-product",
+                        "c": "Contact › Support per product", "k": "kennisbank",
+                        "x": f'support contact helpdesk e-mail mailen bellen telefoon {c["product"]} {" ".join(c["email"])} {c["telefoon"]} {c["keuze"]} keuzemenu'})
         idx.append({"t": "Handige websites", "h": "sites/index.html", "c": "Handige websites", "k": "kennisbank",
                     "x": "websites domeinen links " + " ".join(st["naam"] for st in sites_laden())})
         idx.append({"t": "Finly CRM: klantgegevens, workflows en communicatie op één plek", "h": "finly-crm/index.html", "c": "Finly CRM",
@@ -3560,6 +3564,11 @@ WEGWIJZER = [  # (rubriek, loket, [(situatie, wat te doen (html), contact (html)
 ]
 
 
+def support_vh():
+    f = os.path.join(SRC, "support-vh.json")
+    return json.load(open(f, encoding="utf8")) if os.path.exists(f) else None
+
+
 def render_wegwijzer():
     """Klantgerichte wegwijzer 'Waar kan ik terecht met mijn vraag?' (klantversie van de interne Wegwijzer eBlinqx V&H)."""
     pg = Page("waar-kan-ik-terecht")
@@ -3577,7 +3586,27 @@ def render_wegwijzer():
     intro = ("Waar kun je terecht met je vraag over eBlinqx Verzekering & Hypotheek? Bij een blokkerende storing bel je direct Support. "
              "Andere vragen stel je eerst aan Fin in eBlinqx, dan aan Quinn op de supportsite en daarna aan Support. Zo komt elke vraag goed "
              "geregistreerd binnen, gekoppeld aan jouw klantgegevens en dossier.")
-    jump = " · ".join(f'<a href="#{slugify(r)}">{esc(r)}</a>' for r, _, _ in WEGWIJZER)
+    jump = " · ".join(f'<a href="#{slugify(r)}">{esc(r)}</a>' for r, _, _ in WEGWIJZER) + ' · <a href="#support-per-product">Support per product</a>'
+    sv = support_vh()
+    per_product = ""
+    if sv:
+        KB = {"eblinqx connect": "kennisbank", "adviesbox": "adviesbox-classic", "eblinqx hypotheekadvies (fastlane)": "hypotheekadvies-helpcenter",
+              "finconnect": "finconnect", "yes-co": "yes-co"}
+        rij = ""
+        for c in sv["contacten"]:
+            kb = KB.get(c["product"].lower())
+            rij += (f'<tr><th scope="row">{esc(c["product"])}</th><td>' + "<br>".join(f'<a href="mailto:{esc(m)}">{esc(m)}</a>' for m in c["email"])
+                    + f'</td><td><a href="tel:+31{re.sub(r"\D", "", c["telefoon"])[1:]}">{esc(c["telefoon"])}</a>{f" ({esc(c["keuze"])})" if c["keuze"] else ""}</td>'
+                    f'<td>{f"<a href=\"{pg.rel(kb)}\">Kennisbank</a>" if kb else "–"}</td></tr>')
+        sites = "".join(f'<li><strong>{esc(x["product"])}</strong>: {esc(x["omschrijving"])} '
+                        f'<a href="{esc(x["url"])}" target="_blank" rel="noopener">{esc(x["label"] or x["url"])} ↗</a></li>'
+                        for x in sv["supportsites"] if "fasterforward.nl" not in x["url"])
+        per_product = (f'<h2 class="wth" id="support-per-product">Support per product</h2>'
+                       f'<p>Elk product heeft een eigen supportadres. Bel je 085 018 00 69, kies dan in het keuzemenu de juiste toetsen.</p>'
+                       f'<div class="tabel"><table class="wegwijzer"><thead><tr><th>Product</th><th>E-mail</th><th>Telefoon (keuzemenu)</th><th>Uitleg</th></tr></thead>'
+                       f'<tbody>{rij}</tbody></table></div>'
+                       f'<h3>Supportsites per product</h3><ul>{sites}</ul>'
+                       f'<p class="note">Bron: <a href="{esc(sv["bron"])}" target="_blank" rel="noopener">supportpagina Blinqx Verzekering &amp; Hypotheek</a>, dagelijks gecontroleerd.</p>')
     body = f"""{crumbs(pg, [("Contact", "contact"), ("Waar kan ik terecht?", None)])}
 <main class="subpage"><div class="wrap">
   <h1>Waar kan ik terecht met mijn vraag?</h1>
@@ -3585,6 +3614,7 @@ def render_wegwijzer():
   <div class="callout letop"><p><strong>Kun je niet verder werken?</strong> Bel direct met Support: <a href="tel:+31850180069">085 018 00 69</a>.</p></div>
   <p class="jump">Ga naar: {jump}</p>
   {blokken}
+  {per_product}
   <p class="note">Wegwijzer eBlinqx Verzekering &amp; Hypotheek, stand oktober 2026. Zie ook <a href="{pg.rel("contact")}">Contact</a> en het <a href="{pg.rel("supportbeleid")}">supportbeleid</a>.</p>
 </div></main>
 <script type="application/ld+json">{json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faq}, ensure_ascii=False).replace("</", "<\\/")}</script>"""
