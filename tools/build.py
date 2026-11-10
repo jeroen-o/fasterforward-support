@@ -976,6 +976,7 @@ OUD_CONTACT = [
 
 
 def kluis_tekst(t):
+    t = nieuw_domein(t)
     for pat, nieuw in OUD_CONTACT:
         t = pat.sub(nieuw, t)
     return KLUIS_RE.sub(KLUIS, t)
@@ -993,8 +994,25 @@ def kluis_html(doc):
     return out
 
 
+OUD_DOMEIN = re.compile(r'(?<![/\w.-])(?:https?://)?support\.fasterforward\.nl(/[^\s"\'<>)]*)?')
+
+
+def nieuw_domein(t):
+    """support.fasterforward.nl (de oude naam van deze site) -> support-eblinqx-connect.nl. Archieflinks
+    (web.archive.org/.../support.fasterforward.nl) en de bronvermelding van afbeeldingen (data-origineel) blijven staan."""
+    def vervang(m):
+        pad = (m.group(1) or "/").lstrip("/")
+        if m.group(0).startswith("http"):
+            return SITE_URL + pad
+        return "support-eblinqx-connect.nl" + ("/" + pad if pad else "")
+    delen = re.split(r'(data-origineel="[^"]*")', t)
+    return "".join(d if i % 2 else OUD_DOMEIN.sub(vervang, d) for i, d in enumerate(delen))
+
+
 def write(path, content, kluis=True):
     full = os.path.join(ROOT, path) if path.endswith((".html", ".xml")) else os.path.join(ROOT, path, "index.html")
+    if full.endswith(".html"):
+        content = nieuw_domein(content)
     if full.endswith(".html") and kluis:
         content = kluis_html(content)
     os.makedirs(os.path.dirname(full), exist_ok=True)
