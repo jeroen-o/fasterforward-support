@@ -72,8 +72,8 @@
 "d": "2026-11-06"
 },
 "adviesbox-classic": {
-"h": "f70e5bbf76b1f9e8",
-"d": "2026-11-09"
+"h": "75a511d7ca2a10c1",
+"d": "2026-11-11"
 },
 "adviesbox-classic/aanvraagproces-voor-een-abn-amro-of-florius-verhuurhypotheek": {
 "h": "97885a6976b980dc",
@@ -340,8 +340,8 @@
 "d": "2026-11-06"
 },
 "adviesbox-classic/hoe-exporteer-ik-klantgegevens-naar-excel-of-batch-bestanden": {
-"h": "f7dc3cb1b10695e8",
-"d": "2026-11-06"
+"h": "b0715568e48e7827",
+"d": "2026-11-11"
 },
 "adviesbox-classic/hoe-gebruik-ik-de-hypotheekvergelijker": {
 "h": "66902dc3335646d0",
@@ -544,8 +544,8 @@
 "d": "2026-11-06"
 },
 "adviesbox-classic/hoe-los-ik-de-foutmelding-bij-het-openen-van-een-offerte-op": {
-"h": "49e1a1ab38d0c0ad",
-"d": "2026-11-06"
+"h": "e5bc67b625d73100",
+"d": "2026-11-11"
 },
 "adviesbox-classic/hoe-los-ik-de-foutmelding-er-is-al-een-exemplaar-van-teamviewer-actief-op": {
 "h": "e335817741f04a52",
@@ -588,8 +588,12 @@
 "d": "2026-11-06"
 },
 "adviesbox-classic/hoe-los-ik-de-melding-adviesbox-al-geopend-op-als-er-geen-actieve-sessie-zichtbaar-is": {
-"h": "f618d6582f39af19",
-"d": "2026-11-06"
+"h": "11e37b814eeeb471",
+"d": "2026-11-11"
+},
+"adviesbox-classic/hoe-los-ik-de-melding-could-not-create-ssl-tls-secure-channel-op-bij-versturen-naar-elemen": {
+"h": "0ac8e57c288ce47f",
+"d": "2026-11-11"
 },
 "adviesbox-classic/hoe-los-ik-de-melding-geen-acceptatienormen-beschikbaar-op-bij-een-geldverstrekker": {
 "h": "fa9a41cc0b6399e2",
@@ -600,8 +604,8 @@
 "d": "2026-11-06"
 },
 "adviesbox-classic/hoe-los-ik-de-melding-klasse-niet-geregistreerd-op": {
-"h": "c11fa974df8330b0",
-"d": "2026-11-06"
+"h": "5b7a7e8e255aae79",
+"d": "2026-11-11"
 },
 "adviesbox-classic/hoe-los-ik-de-mscomctl-ocx-imagelist-foutmelding-op": {
 "h": "be0ae62e71023dd9",
@@ -628,12 +632,12 @@
 "d": "2026-11-06"
 },
 "adviesbox-classic/hoe-los-ik-een-bijna-volle-adviezen-database-op": {
-"h": "bb96eb3a4105f4f9",
-"d": "2026-11-06"
+"h": "2ab631818aeda6ad",
+"d": "2026-11-11"
 },
 "adviesbox-classic/hoe-los-ik-een-foutmelding-bij-verbinding-met-de-adviezendatabase-op": {
-"h": "42385085466b26de",
-"d": "2026-11-06"
+"h": "6eba4614624d9bae",
+"d": "2026-11-11"
 },
 "adviesbox-classic/hoe-los-ik-een-foutmelding-over-de-bedrijfsnaam-op-bij-het-aanvragen-van-een-orv": {
 "h": "3e2a537ccc087395",
@@ -728,8 +732,8 @@
 "d": "2026-11-06"
 },
 "adviesbox-classic/hoe-los-ik-het-probleem-node-kon-niet-worden-geactiveerd-op": {
-"h": "c35000d5d75a83db",
-"d": "2026-11-06"
+"h": "bdd49561a28bff9e",
+"d": "2026-11-11"
 },
 "adviesbox-classic/hoe-los-ik-op-dat-bij-hdn-aanvraag-alleen-aanvraag-naar-notaris-mogelijk-is": {
 "h": "190201a4ea5f9069",
@@ -1084,8 +1088,8 @@
 "d": "2026-11-06"
 },
 "adviesbox-classic/hoe-update-ik-een-verouderde-adviezendatabase": {
-"h": "01c3905d6cafdaf2",
-"d": "2026-11-06"
+"h": "24f86cc489af7540",
+"d": "2026-11-11"
 },
 "adviesbox-classic/hoe-update-ik-het-hdn-node-nummer-voor-een-licentie": {
 "h": "b9d1cd1bd7ce8f94",
@@ -2896,8 +2900,8 @@
 "d": "2026-11-06"
 },
 "adviesbox-classic/welke-windows-versie-heb-ik-nodig-voor-adviesbox": {
-"h": "2b27dcc07c18a85a",
-"d": "2026-11-06"
+"h": "81cbd735267960d6",
+"d": "2026-11-11"
 },
 "adviesbox-classic/wij-zijn-momenteel-niet-telefonisch-bereikbaar-i-v-m-een-storing-bij-onze-telefoondienstve": {
 "h": "b9028cd14876512a",
@@ -4132,8 +4136,8 @@
 "d": "2026-11-06"
 },
 "finconnect/eigen-e-maildomein-instellen-voor-verzending-vanuit-finconnect": {
-"h": "9a6133d1e04338da",
-"d": "2026-11-06"
+"h": "74fa78ddf88264c8",
+"d": "2026-11-11"
 },
 "finconnect/excelbestand-voorbereiden-voor-import-van-wrv-dossiercontroles-in-finconnect": {
 "h": "51e4eb33c1639852",
@@ -8432,8 +8436,8 @@
 "d": "2026-11-06"
 },
 "kennisbanken": {
-"h": "96287b5af7d917f2",
-"d": "2026-11-10"
+"h": "6f306a596d9db499",
+"d": "2026-11-11"
 },
 "kent-digimap-tips-al": {
 "h": "18553855177c058f",
@@ -9168,8 +9172,8 @@
 "d": "2026-11-06"
 },
 "sites/adviesbox-nl": {
-"h": "0e3054e2c83903e8",
-"d": "2026-11-09"
+"h": "adc5af2056ba47d0",
+"d": "2026-11-11"
 },
 "sites/aplaza-nl": {
 "h": "f82ac30a41bb6c47",
