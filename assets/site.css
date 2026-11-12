@@ -560,3 +560,4 @@ table.wegwijzer tbody th{width:32%;font-weight:600}table.wegwijzer td:last-child
 @media (max-width:640px){table.wegwijzer thead{display:none}table.wegwijzer tr{display:block;border-bottom:1px solid #E3E8EE;padding:8px 0}
 table.wegwijzer th,table.wegwijzer td{display:block;border:0;padding:3px 0;width:auto!important}}
 .callout.letop{background:#FFF7D6;border-left:4px solid #FFCD00;padding:10px 14px;margin:14px 0}
+.nieuws-fig{margin:6px 0 18px}.nieuws-fig img{max-width:100%;height:auto;border-radius:8px}

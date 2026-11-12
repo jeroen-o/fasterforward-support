@@ -1262,6 +1262,46 @@ def kort(t, n):
 VH_TIPS = ("Kennisbank", "Toolkits")
 
 
+def eigen_nieuws():
+    """Eigen nieuwsberichten van de supportsite (bronnen/nieuws-eigen/*.json)."""
+    uit = []
+    for f in sorted(glob.glob(os.path.join(SRC, "nieuws-eigen", "*.json"))):
+        d = json.load(open(f, encoding="utf8"))
+        uit.append(dict(d, t=d["titel"], posted=date.fromisoformat(d["datum"]), updated=None, int=d["slug"],
+                        bron="Blinqx Support", mini=d.get("afbeelding", ""), excerpt=d["samenvatting"]))
+    return sorted(uit, key=lambda x: x["posted"], reverse=True)
+
+
+def render_eigen_nieuws():
+    for d in eigen_nieuws():
+        pg = Page(d["slug"])
+        img = (f'<figure class="nieuws-fig"><img src="{pg.rel(d["afbeelding"])}" alt="{esc(d.get("afbeelding_alt", d["titel"]))}"></figure>'
+               if d.get("afbeelding") else "")
+        lds = []  # het artikel zelf krijgt Article-gegevens via tools/seo.py
+        for e in d.get("events", []):
+            lds.append({"@context": "https://schema.org", "@type": "Event", "name": e["naam"], "startDate": e["start"], "endDate": e["eind"],
+                        "eventStatus": "https://schema.org/EventScheduled", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+                        "location": {"@type": "Place", "name": e["locatie"], "address": {"@type": "PostalAddress", "streetAddress": e["adres"],
+                                                                                          "addressLocality": e["plaats"], "addressCountry": "NL"}},
+                        "organizer": {"@type": "Organization", "name": d.get("organisator", "")},
+                        "performer": [{"@type": "Person", "name": "Dennes Roes"}, {"@type": "Person", "name": "Rob Timmermans"}, {"@type": "Person", "name": "Mark de Bruijn"}],
+                        "offers": {"@type": "Offer", "price": d.get("prijs"), "priceCurrency": "EUR", "url": d.get("event_url"), "availability": "https://schema.org/InStock"},
+                        "description": d["samenvatting"], "url": d.get("event_url")})
+        ld = "".join(f'<script type="application/ld+json">{json.dumps({k: v for k, v in x.items() if v is not None}, ensure_ascii=False).replace("</", "<\\/")}</script>' for x in lds)
+        body = f"""{crumbs(pg, [("Nieuws", "nieuws"), (d["titel"], None)])}
+<main class="article"><div class="wrap cols">
+  <article>
+    <h1>{esc(d["titel"])}</h1>
+    <p class="meta">Geplaatst op {fmt_date(date.fromisoformat(d["datum"]))}</p>
+    {img}
+    <div class="content">{d["html"]}</div>
+  </article>
+  <aside class="related"><h2>Meer nieuws</h2><ul>{"".join(f'<li><a href="{esc(x["url"])}" target="_blank" rel="noopener">{esc(x["t"])}</a></li>' for x in vh_nieuws()[:5])}</ul><p><a href="{pg.rel("nieuws")}">Alle nieuwsberichten »</a></p></aside>
+</div></main>
+{ld}"""
+        write(d["slug"], layout(pg, d["titel"], body, "nieuws", d["samenvatting"]))
+
+
 def hc_tips():
     """Best practices uit de kennisbanken (Intercom-helpcenters) als tips."""
     uit = []
@@ -1295,7 +1335,7 @@ def render_feed(name, items):
     path = FEEDS[name]
     pg = Page(path)
     h2, intro, img = FEED_META[name]
-    extern = vh_nieuws() if name == "Nieuws" else (vh_nieuws(VH_TIPS) + hc_tips()) if name == "Tips" else []
+    extern = (vh_nieuws() + eigen_nieuws()) if name == "Nieuws" else (vh_nieuws(VH_TIPS) + hc_tips()) if name == "Tips" else []
     if extern:
         def dag(x):
             d = x["posted"] or x["updated"]
@@ -1306,7 +1346,9 @@ def render_feed(name, items):
         d = x["posted"] or x["updated"]
         if x.get("int"):
             u = pg.rel(x["int"])
-            return (f'<article class="card ext"><div class="card-body"><p class="bron">{esc(x["bron"])}</p>'
+            fig = (f'<a class="card-img" href="{u}" tabindex="-1" aria-hidden="true"><img src="{pg.rel(x["mini"])}" alt="" loading="lazy"></a>'
+                   if x.get("mini") else "")
+            return (f'<article class="card ext{" has-img" if fig else ""}">{fig}<div class="card-body"><p class="bron">{esc(x["bron"])}</p>'
                     f'<h3><a href="{u}">{esc(x["t"])}</a></h3><p class="date">{fmt_date(d)}</p>'
                     f'{f"<p>{esc(x["excerpt"])}</p>" if x["excerpt"] else ""}<a class="readmore" href="{u}">Lees verder</a></div></article>')
         if x.get("ext"):
@@ -1510,6 +1552,9 @@ def render_search(pages, cats):
                     "x": "wegwijzer contact loket wie waar vraag storing bellen datalek security wens productverbetering contract licentie facturatie "
                          "accountmanager inrichting implementatie wijziging opdrachten workflow project support conversie training academy e-learning fin quinn "
                          + " ".join(f"{r} {o} " + " ".join(re.sub(r"<[^>]+>", " ", f"{a} {b} {c}") for a, b, c in rij) for r, o, rij in WEGWIJZER)})
+        for d in eigen_nieuws():
+            idx.append({"t": d["titel"], "h": d["slug"] + "/index.html", "c": "Nieuws", "k": "nieuws", "d": fmt_date(d["posted"]),
+                        "x": d["samenvatting"] + " " + re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", d["html"])))})
         for c in (support_vh() or {}).get("contacten", []):
             idx.append({"t": f'Support {c["product"]}: {", ".join(c["email"])}', "h": "waar-kan-ik-terecht/index.html#support-per-product",
                         "c": "Contact › Support per product", "k": "kennisbank",
@@ -1675,8 +1720,9 @@ def render_home(cats, feeds, pages):
                         for m in fastlane_months()[0][:5])
     tips_li = "".join(f'<li><a href="{esc(x["url"])}" target="_blank" rel="noopener">{esc(x["t"])} <span class="date">({fmt_date(x["posted"])})</span> ↗</a></li>'
                       for x in vh_nieuws(VH_TIPS)[:5])
-    nieuws_li = "".join(f'<li><a href="{esc(x["url"])}" target="_blank" rel="noopener">{esc(x["t"])} <span class="date">({fmt_date(x["posted"])})</span> ↗</a></li>'
-                        for x in vh_nieuws()[:5]) or "".join(f'<li>{a(p, esc(l) + " »")}</li>' for p, l in nieuws_home)
+    nieuws_li = "".join((f'<li><a href="{pg.rel(x["int"])}">{esc(x["t"])} <span class="date">({fmt_date(x["posted"])})</span> »</a></li>' if x.get("int") else
+                         f'<li><a href="{esc(x["url"])}" target="_blank" rel="noopener">{esc(x["t"])} <span class="date">({fmt_date(x["posted"])})</span> ↗</a></li>')
+                        for x in sorted(vh_nieuws() + eigen_nieuws(), key=lambda x: x["posted"], reverse=True)[:5]) or "".join(f'<li>{a(p, esc(l) + " »")}</li>' for p, l in nieuws_home)
 
     body = f"""<main class="home">
   <div class="wrap">
@@ -4325,6 +4371,7 @@ def main():
     render_helpcenters()
     render_brochures()
     render_wegwijzer()
+    render_eigen_nieuws()
     render_elearning()
     render_fastlane()
     render_releasenotes_overig()
