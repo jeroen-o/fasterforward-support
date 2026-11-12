@@ -1275,6 +1275,13 @@ def eigen_nieuws():
 def render_eigen_nieuws():
     for d in eigen_nieuws():
         pg = Page(d["slug"])
+        einde = max((date.fromisoformat(e["eind"][:10]) for e in d.get("events", [])), default=None)
+        if einde and date.today() > einde:
+            # na de laatste bijeenkomst: geen aanmeldknop meer (de dagelijkse workflow bouwt de site elke dag opnieuw)
+            d = dict(d, html=re.sub(r'<p class="btn-row aanmelden">.*?</p>',
+                                    f'<p class="note"><strong>Deze bijeenkomsten hebben plaatsgevonden</strong> (laatste op {fmt_date(einde)}). Aanmelden is niet meer mogelijk.</p>',
+                                    d["html"], flags=re.S))
+            d["html"] = re.sub(r"<h2>Kosten en aanmelden</h2>\s*<p>.*?</p>", "", d["html"], flags=re.S)
         img = (f'<figure class="nieuws-fig"><img src="{pg.rel(d["afbeelding"])}" alt="{esc(d.get("afbeelding_alt", d["titel"]))}"></figure>'
                if d.get("afbeelding") else "")
         lds = []  # het artikel zelf krijgt Article-gegevens via tools/seo.py
@@ -1672,6 +1679,47 @@ MHZ_KORT = [
 ]
 
 
+def home_popup(pg):
+    """Pop-up op de homepage, per bezoeker maximaal één keer per dag (bronnen/popup.json: inhoud en periode van/tot)."""
+    f = os.path.join(SRC, "popup.json")
+    if not os.path.exists(f):
+        return ""
+    c = json.load(open(f, encoding="utf8"))
+    if not c.get("actief") or date.today() > date.fromisoformat(c["tot"]) or date.today() < date.fromisoformat(c.get("van", "2000-01-01")):
+        return ""
+    link = c["link"] if c["link"].startswith("http") else pg.rel(c["link"])
+    ext = ' target="_blank" rel="noopener"' if c["link"].startswith("http") else ""
+    img = f'<img src="{pg.rel(c["afbeelding"])}" alt="{esc(c.get("afbeelding_alt", ""))}">' if c.get("afbeelding") else ""
+    return f"""
+<dialog id="dagpopup" class="dagpopup" aria-labelledby="dagpopup-h">
+  <button type="button" class="dagpopup-x" aria-label="Sluiten">×</button>
+  {img}
+  <div class="dagpopup-in">
+    {f'<p class="badge-gratis">{esc(c["label"])}</p>' if c.get("label") else ""}
+    <h2 id="dagpopup-h">{esc(c["titel"])}</h2>
+    <p>{esc(c["tekst"])}</p>
+    <p class="btn-row"><a class="btn-out cta" href="{link}"{ext}>{esc(c["knop"])} »</a> <button type="button" class="btn-out dagpopup-sluit">Sluiten</button></p>
+  </div>
+</dialog>
+<script>
+(function () {{
+  var d = document.getElementById("dagpopup"); if (!d || !d.showModal) return;
+  var vandaag = new Date().toISOString().slice(0, 10);
+  if (vandaag > "{c["tot"]}" || vandaag < "{c.get("van", "2000-01-01")}") return;
+  var sleutel = "dagpopup-gezien";
+  try {{ if (localStorage.getItem(sleutel) === vandaag) return; }} catch (e) {{ return; }}
+  function dicht() {{ d.close(); }}
+  d.querySelector(".dagpopup-x").addEventListener("click", dicht);
+  d.querySelector(".dagpopup-sluit").addEventListener("click", dicht);
+  d.addEventListener("click", function (e) {{ if (e.target === d) dicht(); }});
+  setTimeout(function () {{
+    try {{ localStorage.setItem(sleutel, vandaag); }} catch (e) {{}}
+    d.showModal();
+  }}, 1200);
+}})();
+</script>"""
+
+
 def render_home(cats, feeds, pages):
     pg = Page("")
 
@@ -1739,6 +1787,7 @@ def render_home(cats, feeds, pages):
     </div>
     <div class="tiles">{tiles}</div>
 
+    {home_popup(pg)}
     <h2 class="home-wistje">Wist je dat:</h2>
     <section class="home-wt" aria-labelledby="home-wt-h">
       <h2 id="home-wt-h">Websitetools: meer leads uit je eigen website</h2>

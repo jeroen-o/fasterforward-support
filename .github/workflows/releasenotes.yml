@@ -42,8 +42,10 @@ jobs:
           python3 tools/intercom_sync.py | tee -a uitvoer.txt
           python3 tools/brochures_sync.py | tee -a uitvoer.txt
           python3 tools/support_sync.py | tee -a uitvoer.txt
-          if [ "$(grep -c "Gewijzigd: niets" uitvoer.txt)" = "7" ]; then echo "Geen nieuwe releasenotes."; exit 0; fi
+          # ook zonder nieuwe inhoud elke dag bouwen: datumafhankelijke onderdelen (zoals een aanmeldknop die na een
+          # evenement verdwijnt) worden zo bijgewerkt; er wordt alleen gecommit als er echt iets verandert
           wat=$(sed -n 's/^Gewijzigd: //p' uitvoer.txt | grep -v '^niets$' | paste -sd ', ')
+          [ -n "$wat" ] || wat="dagelijkse herbouw"
           rm uitvoer.txt
           for i in 1 2 3 4 5; do
             python3 tools/build.py

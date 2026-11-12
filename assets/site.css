@@ -561,3 +561,10 @@ table.wegwijzer tbody th{width:32%;font-weight:600}table.wegwijzer td:last-child
 table.wegwijzer th,table.wegwijzer td{display:block;border:0;padding:3px 0;width:auto!important}}
 .callout.letop{background:#FFF7D6;border-left:4px solid #FFCD00;padding:10px 14px;margin:14px 0}
 .nieuws-fig{margin:6px 0 18px}.nieuws-fig img{max-width:100%;height:auto;border-radius:8px}
+.dagpopup{border:0;border-radius:12px;padding:0;max-width:520px;width:calc(100% - 32px);box-shadow:0 20px 60px rgba(0,0,0,.35);overflow:hidden}
+.dagpopup::backdrop{background:rgba(17,24,39,.55)}
+.dagpopup img{display:block;width:100%;height:auto;max-height:260px;object-fit:cover}
+.dagpopup-in{padding:18px 22px 20px}.dagpopup-in h2{margin:6px 0 8px;font-size:22px}.dagpopup-in p{margin:0 0 12px}
+.dagpopup-x{position:absolute;top:8px;right:10px;width:36px;height:36px;border:0;border-radius:50%;background:rgba(255,255,255,.92);font-size:24px;line-height:1;cursor:pointer}
+.dagpopup .btn-row{display:flex;flex-wrap:wrap;gap:10px;margin:4px 0 0}
+.dagpopup-sluit{font:inherit;background:#fff;cursor:pointer}
