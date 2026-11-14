@@ -4428,8 +4428,8 @@
 "d": "2026-11-12"
 },
 "finly": {
-"h": "9109165ba17333d0",
-"d": "2026-11-12"
+"h": "42822771d1c5cb15",
+"d": "2026-11-14"
 },
 "finly-crm": {
 "h": "6ba12d2fe9baaf53",
@@ -4688,8 +4688,8 @@
 "d": "2026-11-12"
 },
 "finly/foutmelding-bij-exporteren-van-een-relatie-naar-anva-kvk-nummer-ontbreekt": {
-"h": "a7d975ea7746ec53",
-"d": "2026-11-12"
+"h": "0ef6c881f8054596",
+"d": "2026-11-14"
 },
 "finly/foutmelding-bij-het-productenoverzicht-product-niet-gekoppeld-aan-een-team": {
 "h": "323844e38736ce93",
@@ -5054,6 +5054,10 @@
 "finly/wachtpolis-aanmaken-via-anva": {
 "h": "a3ede9a9e321e725",
 "d": "2026-11-12"
+},
+"finly/wat-betekent-de-anva-melding-verplicht-naw-label-ontbreekt-bij-het-aanmaken-van-een-relati": {
+"h": "869845c7c99b096f",
+"d": "2026-11-14"
 },
 "finly/wat-doet-een-finly-consultant": {
 "h": "fa187e22f26da4dd",
@@ -8448,8 +8452,8 @@
 "d": "2026-11-12"
 },
 "kennisbanken": {
-"h": "89873d9a9cc83a5f",
-"d": "2026-11-12"
+"h": "14af2c0d6a28e878",
+"d": "2026-11-14"
 },
 "kent-digimap-tips-al": {
 "h": "ddda53b5aadc41a8",
