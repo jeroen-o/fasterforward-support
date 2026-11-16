@@ -72,16 +72,16 @@
 "d": "2026-11-12"
 },
 "adviesbox-classic": {
-"h": "3a36d7e199297c1b",
-"d": "2026-11-12"
+"h": "0255f28768ae9696",
+"d": "2026-11-16"
 },
 "adviesbox-classic/aanvraagproces-voor-een-abn-amro-of-florius-verhuurhypotheek": {
 "h": "25aef0981db5fac1",
 "d": "2026-11-12"
 },
 "adviesbox-classic/adviesbox-2026-3-is-beschikbaar": {
-"h": "57a87d0f5a26550c",
-"d": "2026-11-12"
+"h": "510bf2100829e033",
+"d": "2026-11-16"
 },
 "adviesbox-classic/adviesbox-kan-blijven-hangen": {
 "h": "aedb7107810691c6",
@@ -150,6 +150,10 @@
 "adviesbox-classic/box-3-inkomenstoets-uitvoeren": {
 "h": "a5870ec1f07160d6",
 "d": "2026-11-12"
+},
+"adviesbox-classic/draagplichtovereenkomst": {
+"h": "e1794f60fda38c9f",
+"d": "2026-11-16"
 },
 "adviesbox-classic/duokoop-invoeren-in-adviesbox": {
 "h": "b7a0c4e201f1dc58",
@@ -1320,8 +1324,8 @@
 "d": "2026-11-12"
 },
 "adviesbox-classic/hoe-voer-ik-een-nabestaandenlijfrente-met-hoge-en-lage-uitkering-in": {
-"h": "55467bd656af474a",
-"d": "2026-11-12"
+"h": "fd170f07d63f95d0",
+"d": "2026-11-16"
 },
 "adviesbox-classic/hoe-voer-ik-een-nabestaandenpensioen-of-erfrente-in": {
 "h": "696527d3cea35f13",
@@ -1356,8 +1360,8 @@
 "d": "2026-11-12"
 },
 "adviesbox-classic/hoe-voer-ik-een-spaarrekening-met-enkel-kapitaal-in": {
-"h": "19b70861c6743ec9",
-"d": "2026-11-12"
+"h": "a50a055bf9691a92",
+"d": "2026-11-16"
 },
 "adviesbox-classic/hoe-voer-ik-een-starterslening-zonder-aflossing-van-3-jaar-in": {
 "h": "3c3ec130b0a5551f",
@@ -1396,8 +1400,8 @@
 "d": "2026-11-12"
 },
 "adviesbox-classic/hoe-voer-ik-het-bouwjaar-van-een-pand-in": {
-"h": "2c90d65b84eca917",
-"d": "2026-11-12"
+"h": "f7fd7ee65439bd76",
+"d": "2026-11-16"
 },
 "adviesbox-classic/hoe-voer-ik-het-inkomen-van-een-flexwerker-in": {
 "h": "e865e0531525cbe2",
@@ -1468,8 +1472,8 @@
 "d": "2026-11-12"
 },
 "adviesbox-classic/hoe-voorkom-ik-gegevensverlies-bij-het-wijzigen-van-de-geboortedatum-in-een-bestaand-advie": {
-"h": "0e779c59f1682865",
-"d": "2026-11-12"
+"h": "bd858ba9c93d1ba8",
+"d": "2026-11-16"
 },
 "adviesbox-classic/hoe-voorkom-je-dat-adviesbox-om-een-administrator-wachtwoord-vraagt-bij-het-openen-van-exp": {
 "h": "8fb97616ffb9faa2",
@@ -1676,8 +1680,8 @@
 "d": "2026-11-12"
 },
 "adviesbox-classic/hoe-wordt-het-toetsinkomen-voor-de-woonquote-bepaald": {
-"h": "1fcb0495bc1fce9c",
-"d": "2026-11-12"
+"h": "378e11278fe17129",
+"d": "2026-11-16"
 },
 "adviesbox-classic/hoe-wordt-overdrachtsbelasting-berekend-bij-erfpacht": {
 "h": "4a3641c4d0728144",
@@ -1827,9 +1831,17 @@
 "h": "3036c2593f021fb9",
 "d": "2026-11-12"
 },
+"adviesbox-classic/nhg-en-hypotheeknormen-2027": {
+"h": "dc379089b64112b0",
+"d": "2026-11-16"
+},
+"adviesbox-classic/nieuw-in-adviesbox-duale-toetsing-nhg-en-trhk-2027-en-draagplichtovereenkomst": {
+"h": "881fb2348636cc21",
+"d": "2026-11-16"
+},
 "adviesbox-classic/nieuwsoverzicht-adviesbox": {
-"h": "7b405457e687ccd1",
-"d": "2026-11-12"
+"h": "7e06516b34653cca",
+"d": "2026-11-16"
 },
 "adviesbox-classic/obvion-woon-verhuur-hypotheek-invoeren-in-adviesbox": {
 "h": "ac1bad773716e2f6",
@@ -2112,8 +2124,8 @@
 "d": "2026-11-12"
 },
 "adviesbox-classic/verduurzamingstoolbox-van-hdn-nu-beschikbaar-in-adviesbox": {
-"h": "eb681556fe67fce5",
-"d": "2026-11-12"
+"h": "ad93a75af615e3e5",
+"d": "2026-11-16"
 },
 "adviesbox-classic/verschil-in-leencapaciteit-bij-nieuwbouwwoningen-door-energielabel": {
 "h": "a23522b33ecc19d3",
@@ -2140,8 +2152,8 @@
 "d": "2026-11-12"
 },
 "adviesbox-classic/vrijdag-29-mei-2026-geen-update-mogelijk-vanaf-10-00-uur-uitrol-release-2026-3": {
-"h": "d123e053d564e08e",
-"d": "2026-11-12"
+"h": "9a761e60ea576ae6",
+"d": "2026-11-16"
 },
 "adviesbox-classic/waar-controleer-ik-of-een-hdn-bericht-is-verzonden": {
 "h": "5c1bd3274f1bf23e",
@@ -2296,8 +2308,8 @@
 "d": "2026-11-12"
 },
 "adviesbox-classic/waarom-is-het-ao-en-ww-inkomen-te-laag-bij-de-berekening": {
-"h": "e61afc766a012a65",
-"d": "2026-11-12"
+"h": "92750ac5468e0a8c",
+"d": "2026-11-16"
 },
 "adviesbox-classic/waarom-is-het-fiscaal-nadeel-bij-eigen-woning-groter-sinds-2018": {
 "h": "4cb39ef9dab54a74",
@@ -2452,8 +2464,8 @@
 "d": "2026-11-12"
 },
 "adviesbox-classic/waarom-verschijnt-er-een-negatieve-woonlast-in-het-snel-overzicht": {
-"h": "88fd4c713fc4aa52",
-"d": "2026-11-12"
+"h": "34f12e1b7d40c414",
+"d": "2026-11-16"
 },
 "adviesbox-classic/waarom-verschijnt-er-een-opnamebedrag-van-spaarrekeningen-in-het-overzicht-netto-besteedba": {
 "h": "9851a2e341d55b5b",
@@ -2676,8 +2688,8 @@
 "d": "2026-11-12"
 },
 "adviesbox-classic/wanneer-worden-voorwaarden-en-normen-voor-het-nieuwe-jaar-in-adviesbox-aangepast": {
-"h": "5270b9b3e3c4b089",
-"d": "2026-11-12"
+"h": "2ba8065dcae2dc33",
+"d": "2026-11-16"
 },
 "adviesbox-classic/wanneer-wordt-bij-krediettoetsing-de-normatieve-last-van-2-toegepast": {
 "h": "ff2f041ead2c77af",
@@ -8452,8 +8464,8 @@
 "d": "2026-11-12"
 },
 "kennisbanken": {
-"h": "14af2c0d6a28e878",
-"d": "2026-11-14"
+"h": "6c997ad42d23fadc",
+"d": "2026-11-16"
 },
 "kent-digimap-tips-al": {
 "h": "ddda53b5aadc41a8",
@@ -9188,8 +9200,8 @@
 "d": "2026-11-12"
 },
 "sites/adviesbox-nl": {
-"h": "dfa23fbd2f1e34fa",
-"d": "2026-11-12"
+"h": "97bd5eb97593ec07",
+"d": "2026-11-16"
 },
 "sites/aplaza-nl": {
 "h": "83dec328c2a34bf1",
