@@ -1,7 +1,7 @@
 {
 "": {
-"h": "d33e3e91edc89387",
-"d": "2026-11-12"
+"h": "482984f1c15e14b1",
+"d": "2026-11-17"
 },
 "14-nieuwe-features-en-verbeteringen": {
 "h": "5601066b771c0ce7",
@@ -4040,16 +4040,16 @@
 "d": "2026-11-12"
 },
 "finconnect": {
-"h": "5b5a3def34595ae1",
-"d": "2026-11-12"
+"h": "3b0aa56887702f0f",
+"d": "2026-11-17"
 },
 "finconnect/afsluiten-in-laatste-categorie-instellen-bij-een-slim-formulier": {
-"h": "7cfd160fd144996d",
-"d": "2026-11-12"
+"h": "5c62ab0a3f8dec47",
+"d": "2026-11-17"
 },
 "finconnect/agent-e-mailadres-automatisch-aanpassen-in-een-slim-formulier": {
-"h": "cedf4987f35fb98d",
-"d": "2026-11-12"
+"h": "52fa99fe1931ec39",
+"d": "2026-11-17"
 },
 "finconnect/agent-toevoegen-in-finconnect": {
 "h": "1ead336ca408cd22",
@@ -4064,16 +4064,16 @@
 "d": "2026-11-12"
 },
 "finconnect/automatisch-een-schade-aanmaken-in-anva-via-een-slim-formulier": {
-"h": "44c9403974b6f709",
-"d": "2026-11-12"
+"h": "91816c006bad0d5a",
+"d": "2026-11-17"
 },
 "finconnect/automatisch-rappelleren-instellen-bij-een-slim-formulier": {
-"h": "1bdae58e6e10999f",
-"d": "2026-11-12"
+"h": "875b265615c178e2",
+"d": "2026-11-17"
 },
 "finconnect/bevestigingsmail-en-cc-bcc-e-mailadressen-instellen-bij-formuliergegevens": {
-"h": "4058b735ca413551",
-"d": "2026-11-12"
+"h": "f5bdf2d970997739",
+"d": "2026-11-17"
 },
 "finconnect/bezorgfout-bij-polissen-in-finconnect": {
 "h": "a1bfdb3f0a8a60aa",
@@ -4108,24 +4108,24 @@
 "d": "2026-11-12"
 },
 "finconnect/controlepagina-bevestiging-instellen-in-een-smartformulier": {
-"h": "8cb68e263f9bb057",
-"d": "2026-11-12"
+"h": "432fbcfa765450ff",
+"d": "2026-11-17"
 },
 "finconnect/controlepagina-melding-instellen-in-een-slim-formulier": {
-"h": "894e68ad4fcb25e6",
-"d": "2026-11-12"
+"h": "51a60b343c3fc5cc",
+"d": "2026-11-17"
 },
 "finconnect/demo-aanvragen-of-kantoorgegevens-wijzigen": {
 "h": "5c19112aa7a3cd38",
 "d": "2026-11-12"
 },
 "finconnect/digitaal-handtekening-zetten-inschakelen-bij-een-slim-formulier": {
-"h": "53cf3c090b2939cc",
-"d": "2026-11-12"
+"h": "e922e204e8f0ea92",
+"d": "2026-11-17"
 },
 "finconnect/e-mail-button-tekst-aanpassen-bij-een-slim-formulier": {
-"h": "a990c88cc1008d41",
-"d": "2026-11-12"
+"h": "3265ade5f6b2de85",
+"d": "2026-11-17"
 },
 "finconnect/e-mailadressen-instellen-voor-kantoor-agent-en-slimme-formulieren": {
 "h": "986efa6dc1336cfa",
@@ -4164,28 +4164,28 @@
 "d": "2026-11-12"
 },
 "finconnect/formulier-button-tekst-aanpassen-bij-een-slim-formulier": {
-"h": "9d76de059b0aaa4e",
-"d": "2026-11-12"
+"h": "7824b4595e230cd9",
+"d": "2026-11-17"
 },
 "finconnect/formulier-toevoegen-aanmaken": {
-"h": "5c00d27f98d7758f",
-"d": "2026-11-12"
+"h": "ffee1ef721f80693",
+"d": "2026-11-17"
 },
 "finconnect/formulier-type-kiezen-bij-het-aanmaken-van-een-slim-formulier": {
-"h": "9854b446994d0fc7",
-"d": "2026-11-12"
+"h": "6abc679acafcf2af",
+"d": "2026-11-17"
 },
 "finconnect/formulier-verzending-blokkeren-of-toestaan-in-een-slim-formulier": {
-"h": "6863521c95d818aa",
-"d": "2026-11-12"
+"h": "cb02d467c04f922c",
+"d": "2026-11-17"
 },
 "finconnect/formulier-verzending-de-blokkeren-in-slimme-formulieren": {
-"h": "c24ad068d3acb18a",
-"d": "2026-11-12"
+"h": "4192e199c14e15e9",
+"d": "2026-11-17"
 },
 "finconnect/formulieren-automatisch-doorsturen-naar-aplaza-via-aplaza-instellingen": {
-"h": "ca6c4116340cf5ec",
-"d": "2026-11-12"
+"h": "04f59e8af1bce94a",
+"d": "2026-11-17"
 },
 "finconnect/formulieren-voor-dossiercontrole-versturen-naar-auditors": {
 "h": "cbd705c557927fac",
@@ -4196,12 +4196,12 @@
 "d": "2026-11-12"
 },
 "finconnect/formuliergegevens": {
-"h": "8c496dfeb1fb3596",
-"d": "2026-11-12"
+"h": "7083d0aca4744040",
+"d": "2026-11-17"
 },
 "finconnect/formuliergroepen-beheren-voor-slimme-formulieren": {
-"h": "61af41e91118f73b",
-"d": "2026-11-12"
+"h": "861a3fea7c2ccdb6",
+"d": "2026-11-17"
 },
 "finconnect/foutmelding-bij-invullen-of-inregelen-van-een-formulier": {
 "h": "a5af3c80fcea06e2",
@@ -4224,12 +4224,12 @@
 "d": "2026-11-12"
 },
 "finconnect/iframe-formulieren-instellen-en-activeren-in-slimme-formulieren": {
-"h": "51b6f0b749a038ee",
-"d": "2026-11-12"
+"h": "14d17c47970f8464",
+"d": "2026-11-17"
 },
 "finconnect/iframe-instellingen-voor-slimme-formulieren-beheren": {
-"h": "d04949fd1ce25f1a",
-"d": "2026-11-12"
+"h": "80b26f547dcc99fe",
+"d": "2026-11-17"
 },
 "finconnect/ik-heb-een-bedrijf-overgenomen-en-wil-het-lopende-contract-direct-opzeggen-kan-dat": {
 "h": "728f360e84fba738",
@@ -4268,12 +4268,12 @@
 "d": "2026-11-12"
 },
 "finconnect/koppelen-van-een-slim-formulier-aan-een-ander-formulier-met-vraagtype-formulier-vraag": {
-"h": "a6b85ae574c105de",
-"d": "2026-11-12"
+"h": "022f0b6897807b8c",
+"d": "2026-11-17"
 },
 "finconnect/link-naar-een-slim-formulier-automatisch-opslaan-in-het-anva-dossier": {
-"h": "e44e7e9fcc160e3b",
-"d": "2026-11-12"
+"h": "501106daf6a07133",
+"d": "2026-11-17"
 },
 "finconnect/machtiging-ontbreekt-in-formulier-of-tekst-toevoegen-aan-schadeformulier": {
 "h": "74c5416dcb61c023",
@@ -4284,8 +4284,8 @@
 "d": "2026-11-12"
 },
 "finconnect/meerdere-handtekeningen-toevoegen-in-een-slim-formulier": {
-"h": "d76cbab7034fe451",
-"d": "2026-11-12"
+"h": "9dd8461e087c23ec",
+"d": "2026-11-17"
 },
 "finconnect/mijn-factuur-is-meer-gestegen-dan-het-gecommuniceerde-indexatiepercentage-waarom": {
 "h": "8953088c8b9be740",
@@ -4308,12 +4308,12 @@
 "d": "2026-11-12"
 },
 "finconnect/niveaus-en-gebruik": {
-"h": "9e02cc059e993094",
-"d": "2026-11-12"
+"h": "d25918cd7c2a6aac",
+"d": "2026-11-17"
 },
 "finconnect/ondertitel-instellen-bij-het-aanmaken-van-een-slim-formulier": {
-"h": "f9d2c1b1eb9ea7d9",
-"d": "2026-11-12"
+"h": "f243a9b66bb87429",
+"d": "2026-11-17"
 },
 "finconnect/opties-binnen-finconnect-modules-nav-en-sf": {
 "h": "914f0cbb5895bd28",
@@ -4336,8 +4336,8 @@
 "d": "2026-11-12"
 },
 "finconnect/respondent-type-bij-het-toevoegen-van-een-slim-formulier": {
-"h": "5a63b2d0f19d5be6",
-"d": "2026-11-12"
+"h": "c081b5b0153c7310",
+"d": "2026-11-17"
 },
 "finconnect/respondenten-in-bulk-verwijderen-in-slimme-formulieren": {
 "h": "c446eb343dc1d3a5",
@@ -4352,16 +4352,16 @@
 "d": "2026-11-12"
 },
 "finconnect/slim-formulier-naar-een-ander-e-mailadres-sturen-met-aanpassen-respondent-e-mail": {
-"h": "3724ff4f278cb298",
-"d": "2026-11-12"
+"h": "12009cbc4631d901",
+"d": "2026-11-17"
 },
 "finconnect/slim-formulier-repliceren-kopieren": {
-"h": "51299e39229dbc23",
-"d": "2026-11-12"
+"h": "04ea237569bb8c4d",
+"d": "2026-11-17"
 },
 "finconnect/slimme-formulieren-koppelen-met-anva": {
-"h": "d45c191626316c69",
-"d": "2026-11-12"
+"h": "ce902c7dc13ba0c9",
+"d": "2026-11-17"
 },
 "finconnect/startscherm-van-slimme-formulieren-als-een-pagina-one-page-gebruiken": {
 "h": "815df2d6efe1bc75",
@@ -4372,20 +4372,24 @@
 "d": "2026-11-12"
 },
 "finconnect/statusbalk-in-een-slim-formulier-verbergen": {
-"h": "14837d4e398512b9",
-"d": "2026-11-12"
+"h": "50676160cbad63e2",
+"d": "2026-11-17"
 },
 "finconnect/storingenpagina": {
 "h": "090fdb56b885720f",
 "d": "2026-11-12"
 },
+"finconnect/taal-van-het-formulier": {
+"h": "1bcdec6b5d0c214c",
+"d": "2026-11-17"
+},
 "finconnect/titel-instellen-bij-het-aanmaken-van-een-slim-formulier": {
-"h": "f118466fa88c0ef8",
-"d": "2026-11-12"
+"h": "d19e4b7591865e98",
+"d": "2026-11-17"
 },
 "finconnect/uiterste-invuldatum-instellen-bij-een-slim-formulier": {
-"h": "575900347c21687f",
-"d": "2026-11-12"
+"h": "88b1cc2ee0bef832",
+"d": "2026-11-17"
 },
 "finconnect/uw-abonnement-opzeggen": {
 "h": "55847f66781fcecf",
@@ -4396,28 +4400,28 @@
 "d": "2026-11-12"
 },
 "finconnect/vaste-bijlagen-toevoegen-en-beheren-in-een-slim-formulier": {
-"h": "5783dd8403b3c1df",
-"d": "2026-11-12"
+"h": "b76104f3972a7e02",
+"d": "2026-11-17"
 },
 "finconnect/verplichte-vragen-negeren-bij-het-verzenden-van-een-slim-formulier": {
-"h": "a6d9091281fc6915",
-"d": "2026-11-12"
+"h": "f380951412687600",
+"d": "2026-11-17"
 },
 "finconnect/verschil-tussen-kantoor-en-agent-in-finconnect": {
 "h": "e732ad0d3736df94",
 "d": "2026-11-12"
 },
 "finconnect/voorpagina-tekst-toevoegen-in-een-slim-formulier": {
-"h": "f128a8571696999f",
-"d": "2026-11-12"
+"h": "37ef0d9813b753fe",
+"d": "2026-11-17"
 },
 "finconnect/voorwaarden-instellen-voor-categorieen-en-vragen-in-finconnect": {
 "h": "a6ac2c3f086a6df3",
 "d": "2026-11-12"
 },
 "finconnect/wat-betekent-de-naam-van-een-slim-formulier-in-finconnect": {
-"h": "2006e065f7da4fc9",
-"d": "2026-11-12"
+"h": "4f508d6a9a0720f1",
+"d": "2026-11-17"
 },
 "finconnect/wat-staat-er-in-de-agentmail-na-het-versturen-van-een-slim-formulier": {
 "h": "c148ba3b2318ec56",
@@ -4432,8 +4436,8 @@
 "d": "2026-11-12"
 },
 "finconnect/xml-instellingen-van-een-slim-formulier-aanpassen": {
-"h": "fed41178df573c6b",
-"d": "2026-11-12"
+"h": "ee06a3c915991095",
+"d": "2026-11-17"
 },
 "findesk-uitbreiding-en-meer": {
 "h": "30b8e6ab4806f02f",
@@ -5508,12 +5512,12 @@
 "d": "2026-11-12"
 },
 "hypotheekadvies-helpcenter": {
-"h": "b8cee1c67d095f00",
-"d": "2026-11-12"
+"h": "47b39cec58705111",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/aanvraagproces-voor-een-woning-zonder-huidige-hypotheek": {
-"h": "6b3c15385b4cbad0",
-"d": "2026-11-12"
+"h": "4856b72083d638f2",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/advies-omzetten-naar-huidige-situatie-in-blinqx-verzekering-hypotheek": {
 "h": "061cce9dac9edf2f",
@@ -5548,12 +5552,12 @@
 "d": "2026-11-12"
 },
 "hypotheekadvies-helpcenter/elearning-eblinqx-hypotheekadvies": {
-"h": "1d5b697dd271e1b4",
-"d": "2026-11-12"
+"h": "76ebd91cc5f0f581",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/engelse-samenvatting-toevoegen-aan-adviesrapport-voor-internationale-klanten": {
-"h": "21879ced3683bbfe",
-"d": "2026-11-12"
+"h": "a651811b3062c572",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/feedback-geven-hoe-werkt-de-nieuwe-feedbackknop": {
 "h": "aa3d18a9203f1636",
@@ -5580,48 +5584,48 @@
 "d": "2026-11-12"
 },
 "hypotheekadvies-helpcenter/hoe-activeer-ik-een-geldverstrekker-in-eblinqx-hypotheekadvies": {
-"h": "03c6f4389818906b",
-"d": "2026-11-12"
+"h": "7cd31c7ec135cd6f",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/hoe-beheer-ik-een-binnengekomen-hdn-advies-in-eblinqx-hypotheekadvies": {
-"h": "9da3b58056b2168e",
-"d": "2026-11-12"
+"h": "c7c676bdbf96f2f7",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/hoe-bereken-ik-mijn-maximale-hypotheek-met-de-rekentool": {
 "h": "95db2e581344120c",
 "d": "2026-11-12"
 },
 "hypotheekadvies-helpcenter/hoe-combineer-ik-een-familiehypotheek-met-een-reguliere-hypotheek-in-eblinqx-hypotheekadvi": {
-"h": "fb7d15599bacdcc8",
-"d": "2026-11-12"
+"h": "5ce4933b70a8a404",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/hoe-controleer-en-verwijder-je-een-hdn-aanvraag-bij-afwijkende-titel": {
-"h": "9e0c8a16a1064876",
-"d": "2026-11-12"
+"h": "7be456b7ccf8942c",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/hoe-controleer-ik-de-financiele-haalbaarheid-van-het-hypotheekadvies-met-eblinqx-hypotheek": {
 "h": "d849a4095624e845",
 "d": "2026-11-12"
 },
 "hypotheekadvies-helpcenter/hoe-controleer-ik-het-hdn-certificaat-in-nhb-voor-aanvragen": {
-"h": "5b9a08af66c0b425",
-"d": "2026-11-12"
+"h": "eb9774880c0ec4d7",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/hoe-controleer-ik-of-mijn-hypotheekaanvraag-via-een-serviceprovider-of-direct-is-verzonden": {
-"h": "b3f6718edf2ee084",
-"d": "2026-11-12"
+"h": "09ec98757f93c0f9",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/hoe-deel-ik-het-klantprofiel-via-uwkluis": {
 "h": "5b073d03ce148658",
 "d": "2026-11-12"
 },
 "hypotheekadvies-helpcenter/hoe-dien-ik-een-oha-aanvraag-in-bij-ing-via-fastlane": {
-"h": "4abade192d0b660a",
-"d": "2026-11-12"
+"h": "7ae6868c589b340c",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/hoe-dien-ik-een-ontslag-hoofdelijke-aansprakelijkheid-via-hdn-in": {
-"h": "6a744cec28ecb56d",
-"d": "2026-11-12"
+"h": "95dc7a85d496b2bd",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/hoe-download-ik-een-klantprofiel": {
 "h": "d43209e5f4bf7f35",
@@ -5650,6 +5654,10 @@
 "hypotheekadvies-helpcenter/hoe-geef-ik-de-juiste-eigenaar-per-leningdeel-weer-bij-ontslag-hoofdelijke-aansprakelijkhe": {
 "h": "da14aeaa3e7ac4f7",
 "d": "2026-11-12"
+},
+"hypotheekadvies-helpcenter/hoe-geef-ik-de-oorspronkelijke-aankoopprijs-mee-bij-oversluiten-naar-een-verhuurhypotheek": {
+"h": "fe5536e408378681",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/hoe-hergebruik-je-een-bestaand-advies-in-eblinqx-hypotheekadvies": {
 "h": "79abdcd63d1794cb",
@@ -5684,8 +5692,8 @@
 "d": "2026-11-12"
 },
 "hypotheekadvies-helpcenter/hoe-kan-ik-een-aangevraagde-hypotheek-toevoegen-aan-een-bestaand-dossier": {
-"h": "5e0f12968f983fce",
-"d": "2026-11-12"
+"h": "debdb737d47d6a33",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/hoe-kies-ik-tussen-verzekerd-kapitaal-en-maandbedrag-bij-orv-in-fastlane-bij-cbi": {
 "h": "dd40696fb65a655f",
@@ -5712,28 +5720,28 @@
 "d": "2026-11-12"
 },
 "hypotheekadvies-helpcenter/hoe-los-ik-de-box-1-box-3-leningdeel-melding-op-bij-aanvragen": {
-"h": "3ef5c58e6c670893",
-"d": "2026-11-12"
+"h": "eb292d00e88c5fb8",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/hoe-los-ik-de-foutmelding-10000-zakelijke-aanvraag-alleen-via-inkomensverklaring-onderneme": {
-"h": "9d8455d81bcc84e2",
-"d": "2026-11-12"
+"h": "c2b42680c44e9265",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/hoe-los-ik-de-foutmelding-extra-afgelost-bedrag-is-noodzakelijk-op-bij-studielening-in-hdn": {
-"h": "ac0297e625484fe7",
-"d": "2026-11-12"
+"h": "e7b1de1037e85e39",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/hoe-los-ik-de-foutmelding-niet-betaalbaar-gedurende-de-looptijd-op-bij-hypotheekberekening": {
 "h": "6d4b5ad0d47b84cf",
 "d": "2026-11-12"
 },
 "hypotheekadvies-helpcenter/hoe-los-ik-de-foutmelding-op-bij-woonfonds-hypotheken": {
-"h": "d522301be0000544",
-"d": "2026-11-12"
+"h": "c154da9668057c2a",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/hoe-los-ik-de-foutmelding-veld-moet-tussen-1-en-4-items-bevatten-op-bij-ing-leningdelen": {
-"h": "237777c08d4823b4",
-"d": "2026-11-12"
+"h": "8833a122c1c3d4be",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/hoe-los-ik-de-melding-0-01-of-0-01-bij-leningdeel-op": {
 "h": "69b35e4d4d19cfb5",
@@ -5756,8 +5764,8 @@
 "d": "2026-11-12"
 },
 "hypotheekadvies-helpcenter/hoe-los-ik-een-algemene-foutmelding-bij-hdn-aanvragen-met-studielening-op": {
-"h": "8242a0d66f06751d",
-"d": "2026-11-12"
+"h": "115724b6362b17b2",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/hoe-los-ik-een-foutmelding-op-bij-bestaande-lening-en-afwijkende-toetsrente": {
 "h": "ce53975fbff6fb0f",
@@ -5768,16 +5776,16 @@
 "d": "2026-11-12"
 },
 "hypotheekadvies-helpcenter/hoe-los-ik-foutcode-19391-op-bij-hdn-aanvraag-identificatie-voor-natuurlijk-persoon": {
-"h": "5023ed9376a3b713",
-"d": "2026-11-12"
+"h": "a972069dab61c04a",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/hoe-los-ik-foutcode-efs1000-op-bij-het-verzenden-van-mijn-aanvraag": {
 "h": "7220e8aaadb923a8",
 "d": "2026-11-12"
 },
 "hypotheekadvies-helpcenter/hoe-los-ik-foutcode-hdn-16391-op-bij-het-verzenden-van-een-aanvraag": {
-"h": "9eef8658c0cdfef5",
-"d": "2026-11-12"
+"h": "081848c0391d38e7",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/hoe-los-ik-fouten-bij-invoer-van-een-bestaand-leningdeel-op": {
 "h": "2eb853fd776ac042",
@@ -5792,72 +5800,72 @@
 "d": "2026-11-12"
 },
 "hypotheekadvies-helpcenter/hoe-los-ik-foutmelding-10000-bij-interne-ikv-aanvraag-voor-rabobank-op": {
-"h": "154d505ddb3daa65",
-"d": "2026-11-12"
+"h": "e80b1461f5762ca3",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/hoe-los-ik-foutmelding-10000-op-bij-oha-aanvraag-nationale-nederlanden": {
-"h": "f30224767c98bfa2",
-"d": "2026-11-12"
+"h": "c693b8d906a189da",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/hoe-los-ik-foutmelding-10000-op-bij-zakelijke-hdn-aanvraag": {
-"h": "c69aeb129ef6049c",
-"d": "2026-11-12"
+"h": "89d27753893af594",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/hoe-los-ik-foutmelding-16391-bij-een-hypotheekaanvraag-op": {
-"h": "b7a4480fd8ddaa0d",
-"d": "2026-11-12"
+"h": "439da2c7f37f7377",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/hoe-los-ik-foutmelding-16391-bij-studielening-op": {
 "h": "ef057f1fc6a2a322",
 "d": "2026-11-12"
 },
 "hypotheekadvies-helpcenter/hoe-los-ik-foutmelding-16391-op-bij-hdn-aanvraag-met-meeneemhypotheek": {
-"h": "77ac2af2c591f65f",
-"d": "2026-11-12"
+"h": "cb01a306760ab9f7",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/hoe-los-ik-foutmelding-16391-op-bij-huurwoning-aanvraag": {
 "h": "885af6d71dd9c949",
 "d": "2026-11-12"
 },
 "hypotheekadvies-helpcenter/hoe-los-ik-hdn-foutcode-10000-op-bij-een-zakelijke-aanvraag": {
-"h": "82b35e938222d94e",
-"d": "2026-11-12"
+"h": "031b36cc54fdf057",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/hoe-los-ik-hdn-foutcode-16391-identificatie-verplicht-op-in-blinqx": {
 "h": "d07f4c9a7df1e4ff",
 "d": "2026-11-12"
 },
 "hypotheekadvies-helpcenter/hoe-los-ik-hdn-foutmelding-16391-op-bij-te-veel-inkomstenregels": {
-"h": "0e1083fef164bf03",
-"d": "2026-11-12"
+"h": "de09e718c4255cc0",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/hoe-los-ik-hdn-melding-8402-op-bij-ongeldige-datums": {
-"h": "8bd2802c96c71091",
-"d": "2026-11-12"
+"h": "0d7633498ed844e6",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/hoe-los-ik-hdn-poortwachter-foutcodes-op-bij-tp-nummers": {
-"h": "905499678fda37d0",
-"d": "2026-11-12"
+"h": "bd9e7d02c62311d1",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/hoe-los-ik-het-probleem-op-waarbij-een-bestaande-hypotheek-niet-automatisch-wordt-meegenom": {
 "h": "4cda1766d7f59f48",
 "d": "2026-11-12"
 },
 "hypotheekadvies-helpcenter/hoe-los-ik-verplichte-hdn-velden-en-meenemen-naar-hdn-bij-oude-leningdelen-op": {
-"h": "26eee35607fd4611",
-"d": "2026-11-12"
+"h": "216991eb4e72adf2",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/hoe-maak-ik-een-adreswijziging-zichtbaar-in-het-klantdossieroverzicht": {
 "h": "5921120aaaca7bc2",
 "d": "2026-11-12"
 },
 "hypotheekadvies-helpcenter/hoe-maak-ik-een-apart-annuiteitenschema-en-controleer-verzendstatus-via-hdn": {
-"h": "afdad1e85fec8caa",
-"d": "2026-11-12"
+"h": "bc3d859749e05512",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/hoe-maak-ik-een-nieuw-dossier-aan-bij-doorstroming-van-bestaande-klanten": {
-"h": "14e311be0ae440d3",
-"d": "2026-11-12"
+"h": "ea6d31cffe1f8175",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/hoe-maak-ik-een-ontbrekende-aanbieder-zichtbaar-in-eblinqx-hypotheekadvies": {
 "h": "e2b3653655651a2c",
@@ -5964,16 +5972,16 @@
 "d": "2026-11-12"
 },
 "hypotheekadvies-helpcenter/hoe-verstuur-ik-een-aanvraag-via-een-andere-serviceprovider": {
-"h": "73d077121a617843",
-"d": "2026-11-12"
+"h": "bf1b74492f988075",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/hoe-verstuur-ik-een-hypotheekaanvraag-opnieuw-via-hdn": {
-"h": "eabc56e85f5d6e42",
-"d": "2026-11-12"
+"h": "e6f2c8d0455cf674",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/hoe-verstuur-ik-een-hypotheekaanvraag-via-een-service-provider": {
-"h": "9956765421599659",
-"d": "2026-11-12"
+"h": "8930049fedde9cd9",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/hoe-verwerk-ik-de-aankoop-van-een-recreatiewoning-zonder-hypotheek-op-de-huidige-woning": {
 "h": "2ea1c72dac3244da",
@@ -6020,8 +6028,8 @@
 "d": "2026-11-12"
 },
 "hypotheekadvies-helpcenter/hoe-verwijder-ik-een-onderpand-woning-in-eblinqx-hypotheekadvies": {
-"h": "657b54cf0a09ec88",
-"d": "2026-11-12"
+"h": "6ccf22c4eb5ac479",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/hoe-vind-ik-acceptatievoorwaarden-van-geldverstrekkers-in-eblinqx-hypotheekadvies": {
 "h": "9667b1191a1f0503",
@@ -6052,8 +6060,8 @@
 "d": "2026-11-12"
 },
 "hypotheekadvies-helpcenter/hoe-voeg-ik-een-woonlastenbeschermer-toe-en-wat-zijn-de-maximale-bedragen": {
-"h": "4260d7b069bbea5b",
-"d": "2026-11-12"
+"h": "f414c6bd9273be48",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/hoe-voeg-ik-extra-jaarlijkse-aflossingen-toe-aan-een-leningdeel": {
 "h": "ab533ee9056b4a0a",
@@ -6072,12 +6080,12 @@
 "d": "2026-11-12"
 },
 "hypotheekadvies-helpcenter/hoe-voer-ik-een-derde-of-hogere-hypotheek-op": {
-"h": "56929384e3b2066b",
-"d": "2026-11-12"
+"h": "57a2ce0020bffadd",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/hoe-voer-ik-een-familiebankhypotheek-op-in-eblinqx-hypotheekadvies": {
-"h": "a966619aad7c8560",
-"d": "2026-11-12"
+"h": "e97c5221e7895bee",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/hoe-voer-ik-een-overbruggingshypotheek-in-eblinqx-hypotheekadvies-in": {
 "h": "ebfd1b4b9f3a4405",
@@ -6104,8 +6112,8 @@
 "d": "2026-11-12"
 },
 "hypotheekadvies-helpcenter/hoe-voer-ik-meer-dan-twee-aanvragers-in-bij-een-hypotheekaanvraag": {
-"h": "7b187e028908c5de",
-"d": "2026-11-12"
+"h": "9ef0792adc46aa04",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/hoe-voer-ik-meerdere-hypotheken-handmatig-samen-in-eblinqx-hypotheekadvies": {
 "h": "3be084ca1a60d70a",
@@ -6128,20 +6136,20 @@
 "d": "2026-11-12"
 },
 "hypotheekadvies-helpcenter/hoe-vraag-ik-een-interne-omzetting-van-florius-levenhypotheek-aan-via-eblinqx-hypotheekadv": {
-"h": "f494a91499287392",
-"d": "2026-11-12"
+"h": "069866213735d2e1",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/hoe-vraag-ik-een-knab-hypotheek-aan-in-eblinqx-hypotheekadvies": {
 "h": "95914d2401107278",
 "d": "2026-11-12"
 },
 "hypotheekadvies-helpcenter/hoe-vul-ik-advies-en-bemiddelingskosten-correct-in-bij-eblinqx-hypotheekadvies": {
-"h": "30d40080587b6bd0",
-"d": "2026-11-12"
+"h": "0203c5b7571300c5",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/hoe-vul-ik-de-einddatum-in-bij-meeneemhypotheken": {
-"h": "c890efc7884cca15",
-"d": "2026-11-12"
+"h": "52ae8740684a5d66",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/hoe-vul-ik-een-inkomensgarantie-verzekering-in-eblinqx-hypotheekadvies-correct-in": {
 "h": "173f616aa8bd3ba5",
@@ -6172,8 +6180,8 @@
 "d": "2026-11-12"
 },
 "hypotheekadvies-helpcenter/hoe-werkt-de-rekendatum-in-eblinqx-hypotheekadvies-voor-hypotheekberekeningen": {
-"h": "530934a6987c5b21",
-"d": "2026-11-12"
+"h": "cf6a6297f371c7a8",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/hoe-werkt-de-toetsing-van-aflossingsvrije-hypotheken-bij-lloyds-bank-in-fastlane": {
 "h": "f927fa1a3682bd0e",
@@ -6200,8 +6208,8 @@
 "d": "2026-11-12"
 },
 "hypotheekadvies-helpcenter/hoe-wordt-aow-berekend-bij-ontslag-hoofdelijke-aansprakelijkheid-oha": {
-"h": "fe4cdd73af437b4a",
-"d": "2026-11-12"
+"h": "1297a78da4972767",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/hoe-wordt-de-toetslast-berekend-bij-scenario-10-jaar-voor-aow-met-meerdere-aanvragers": {
 "h": "05c9627dcbcbd84d",
@@ -6292,8 +6300,8 @@
 "d": "2026-11-12"
 },
 "hypotheekadvies-helpcenter/kan-ik-mijn-aanvraag-tussentijds-opslaan-in-eblinqx-hypotheekadvies": {
-"h": "b1817f672127d7dd",
-"d": "2026-11-12"
+"h": "3f1fa0c197bbceba",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/kan-ik-mijn-eigen-huisstijl-toepassen-in-eblinqx-hypotheekadvies-rapportages": {
 "h": "d0bbcd9a90d1ac67",
@@ -6320,8 +6328,8 @@
 "d": "2026-11-12"
 },
 "hypotheekadvies-helpcenter/oplossing-voor-foutmelding-geboortedatum-is-verplicht-bij-gezamenlijke-aanvraag": {
-"h": "4677aab9fc8f1963",
-"d": "2026-11-12"
+"h": "333f97c9f6d85406",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/oplossing-voor-het-ontbreken-van-hdn-tp-nummers-in-eblinqx-hypotheekadvies": {
 "h": "d0e3e128dc39af4e",
@@ -6332,40 +6340,44 @@
 "d": "2026-11-12"
 },
 "hypotheekadvies-helpcenter/productnaam-wordt-niet-opgeslagen-bij-leningdeel-verklaring-en-acties": {
-"h": "b52484e5216eec7b",
-"d": "2026-11-12"
+"h": "e47a77e5b604af49",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/rekeninkomen-wordt-niet-meegenomen-bij-het-adviseren": {
-"h": "32b77f0c6a1a49fb",
-"d": "2026-11-12"
+"h": "c074f5d735f423b6",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/release-eblinqx-hypotheekadvies-24-september-2026": {
-"h": "127dac631a400aca",
-"d": "2026-11-12"
+"h": "28658d9b6884b6e2",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/release-eblinqx-hypotheekadvies-26-augustus-2026": {
-"h": "4be498e812fa56f3",
-"d": "2026-11-12"
+"h": "e4b6ee7919b7aae9",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/release-eblinqx-hypotheekadvies-8-oktober-2026": {
-"h": "b75f8019dc111997",
-"d": "2026-11-12"
+"h": "3b6a5687a22a5f26",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/release-eblinqx-hypotheekadvies-9-september-2026": {
-"h": "ea91ce03ab1aa542",
-"d": "2026-11-12"
+"h": "bbfdcbff466a8926",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/release-eblinqx-hypotheekadvies-dinsdag-10-november-2026": {
-"h": "76a6ef3ce03f1baa",
-"d": "2026-11-12"
+"h": "12f4f7285314a5d6",
+"d": "2026-11-17"
+},
+"hypotheekadvies-helpcenter/release-eblinqx-hypotheekadvies-woensdag-18-november-2026": {
+"h": "138d7e295a0fcb6c",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/release-eblinqx-hypotheekadvies-woensdag-4-november-2026": {
-"h": "12657696ea0dacc8",
-"d": "2026-11-12"
+"h": "e744eb643385359a",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/release-eblinqx-hypotheekadvies-zondag-25-oktober-2026": {
-"h": "e2d98ba746adcce0",
-"d": "2026-11-12"
+"h": "ee6f1b646fb2e9fd",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/rente-wijkt-af-van-actuele-rente": {
 "h": "eef46c1fc5f108b1",
@@ -6436,8 +6448,8 @@
 "d": "2026-11-12"
 },
 "hypotheekadvies-helpcenter/waarom-is-de-aanvraagknop-niet-zichtbaar-in-eblinqx-hypotheekadvies": {
-"h": "b9b80c506ed5e784",
-"d": "2026-11-12"
+"h": "7d748c67547144cb",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/waarom-is-de-gezamenlijke-leencapaciteit-laag-bij-twee-aanvragers": {
 "h": "388104d20d17bf6c",
@@ -6460,8 +6472,8 @@
 "d": "2026-11-12"
 },
 "hypotheekadvies-helpcenter/waarom-is-vandaag-hypotheken-niet-beschikbaar-in-eblinqx-hypotheekadvies": {
-"h": "1ca2c5ed63686178",
-"d": "2026-11-12"
+"h": "d869834ea38eced3",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/waarom-kan-de-toetsrente-afwijken-bij-aflossingsvrije-hypotheken-in-eblinqx-hypotheekadvie": {
 "h": "48cfbdfc9c247191",
@@ -6483,9 +6495,17 @@
 "h": "0ae9f541f6ba26d9",
 "d": "2026-11-12"
 },
+"hypotheekadvies-helpcenter/waarom-kan-ik-bij-nieuwbouw-voor-florius-niet-kiezen-voor-waardebepaling-op-basis-van-de-k": {
+"h": "77387ac4f8284073",
+"d": "2026-11-17"
+},
+"hypotheekadvies-helpcenter/waarom-kan-ik-de-eigenwoningreserve-in-het-tabblad-woning-niet-aanpassen-of-verwijderen": {
+"h": "0ec5f6f3520bfb86",
+"d": "2026-11-17"
+},
 "hypotheekadvies-helpcenter/waarom-kan-ik-geen-hypotheekaanvraag-doen-bij-westlandutrecht-bank-via-hdn": {
-"h": "a83f23029da158a9",
-"d": "2026-11-12"
+"h": "13df633f5fb0691e",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/waarom-kan-ik-geen-partner-invoeren-in-een-klantdossier": {
 "h": "d08622f13310a4c2",
@@ -6532,8 +6552,8 @@
 "d": "2026-11-12"
 },
 "hypotheekadvies-helpcenter/waarom-staat-er-soms-inkomen-in-eblinqx-hypotheekadvies-zonder-invoer-door-de-adviseur": {
-"h": "2881d52f8eeed354",
-"d": "2026-11-12"
+"h": "3728b7d5fabd1520",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/waarom-staat-het-rentepercentage-bij-een-nieuw-leningdeel-op-0": {
 "h": "a21593c71216a276",
@@ -6592,8 +6612,8 @@
 "d": "2026-11-12"
 },
 "hypotheekadvies-helpcenter/waarom-worden-vinkjes-voor-meerekenen-in-maandlasten-niet-opgeslagen": {
-"h": "b7744cef67609a46",
-"d": "2026-11-12"
+"h": "48184aae27d39226",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/waarom-wordt-alleen-de-laatste-hypotheek-meegenomen-bij-de-berekening-in-fastlane": {
 "h": "ba8c8301b6a3c3f2",
@@ -6604,12 +6624,16 @@
 "d": "2026-11-12"
 },
 "hypotheekadvies-helpcenter/waarom-wordt-borgtochtprovisie-automatisch-toegevoegd-aan-inbreng-eigen-geld-bij-nhg": {
-"h": "130bac7e1673600f",
-"d": "2026-11-12"
+"h": "a908a3c7089ef195",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/waarom-wordt-de-geldverstrekker-niet-getoond-in-de-financieringsopzet": {
 "h": "ba9f8377a28793ed",
 "d": "2026-11-12"
+},
+"hypotheekadvies-helpcenter/waarom-wordt-de-maandlastenbeschermer-zelfstandigen-van-taf-niet-getoond": {
+"h": "4f1764feed16ca38",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/waarom-wordt-de-obvion-rentekorting-van-0-05-niet-getoond-in-eblinqx-hypotheekadvies": {
 "h": "388559adb5c6e506",
@@ -6636,16 +6660,16 @@
 "d": "2026-11-12"
 },
 "hypotheekadvies-helpcenter/waarom-zie-ik-ao-ww-tekstblokken-bij-clienten-zonder-normaal-inkomen": {
-"h": "ab8d11100aa1f161",
-"d": "2026-11-12"
+"h": "60c5e488037ec169",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/waarom-zijn-bestaande-leningdelen-niet-volledig-zichtbaar-bij-hypotheek-samenstellen-in-ee": {
 "h": "a797bb859cd8695b",
 "d": "2026-11-12"
 },
 "hypotheekadvies-helpcenter/waarom-zijn-er-geen-opties-zichtbaar-bij-het-toevoegen-van-een-abonnement": {
-"h": "76d533f7b4791ce0",
-"d": "2026-11-12"
+"h": "55962ed1a91f9b4a",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/waarom-zijn-er-verschillen-in-het-cbi-bij-invoer-en-bij-verantwoord-blijven-wonen": {
 "h": "350f61417aa57084",
@@ -6704,24 +6728,24 @@
 "d": "2026-11-12"
 },
 "hypotheekadvies-helpcenter/welke-achternaam-vul-ik-in-bij-hypotheekaanvraag": {
-"h": "297d84e536b70b36",
-"d": "2026-11-12"
+"h": "cfb95148d2e3d48e",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/welke-looptijd-kan-ik-kiezen-bij-een-orv-vergelijking-in-eblinqx-hypotheekadvies": {
 "h": "b3442a61806fdef9",
 "d": "2026-11-12"
 },
 "hypotheekadvies-helpcenter/welke-maximale-looptijden-en-ingangsdatums-gelden-voor-woonlastenbeschermers-van-taf-en-cr": {
-"h": "866d0e0bc12f61c7",
-"d": "2026-11-12"
+"h": "03bd2f8a60b9b476",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/welke-opties-zijn-er-voor-het-aankopen-van-erfpachtgrond": {
 "h": "4080ea89443664aa",
 "d": "2026-11-12"
 },
 "hypotheekadvies-helpcenter/welke-serviceproviders-mag-ik-gebruiken-voor-hypotrust-aanvragen": {
-"h": "e0a0ff40b010baeb",
-"d": "2026-11-12"
+"h": "b8ac77dbcdcd0cbf",
+"d": "2026-11-17"
 },
 "hypotheekadvies-helpcenter/welke-toetsingskaders-gelden-voor-oha-en-ebv-bij-hypotheekberekening": {
 "h": "605677dec77c0ef3",
@@ -8464,8 +8488,8 @@
 "d": "2026-11-12"
 },
 "kennisbanken": {
-"h": "6c997ad42d23fadc",
-"d": "2026-11-16"
+"h": "8ee7e56e6b4cc236",
+"d": "2026-11-17"
 },
 "kent-digimap-tips-al": {
 "h": "ddda53b5aadc41a8",
@@ -9000,8 +9024,8 @@
 "d": "2026-11-12"
 },
 "releasenotes-hypotheekadvies": {
-"h": "cbae2c410d6022f3",
-"d": "2026-11-12"
+"h": "00e92da573a42d5b",
+"d": "2026-11-17"
 },
 "releasenotes-hypotheekadvies/2023-08": {
 "h": "383193509f336ff1",
@@ -9156,8 +9180,8 @@
 "d": "2026-11-12"
 },
 "releasenotes-hypotheekadvies/2026-11": {
-"h": "773f3033e631c967",
-"d": "2026-11-12"
+"h": "0dc2c59e885ba08b",
+"d": "2026-11-17"
 },
 "releasenotes/kleine-aanpassingen": {
 "h": "13de2e778e4395a2",
@@ -9920,8 +9944,8 @@
 "d": "2026-11-12"
 },
 "waar-kan-ik-terecht": {
-"h": "ef9e6d3391904052",
-"d": "2026-11-12"
+"h": "25f98c90d23fc0ae",
+"d": "2026-11-17"
 },
 "waar-vind-ik-mijn-handtekening": {
 "h": "cc7d3a0c618dd5f8",

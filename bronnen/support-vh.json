@@ -77,7 +77,7 @@
   {
    "product": "eBlinqx platform",
    "omschrijving": "Maak je gebruik van ons eBlinqx platform en heb je hierover vragen? Neem dan gerust contact met ons op.",
-   "url": "http://support.fasterforward.nl",
+   "url": "https://intercom-help.eu/eblinqx/nl/",
    "label": "Support eBlinqx",
    "bereikbaar": true
   },
@@ -110,9 +110,9 @@
    "bereikbaar": true
   },
   {
-   "product": "Elements",
+   "product": "eBlinqx Connect (Elements)",
    "omschrijving": "Op onze supportpagina vind je Release notes, Nieuws en heel veel informatie over onze software.",
-   "url": "https://support.fasterforward.nl/",
+   "url": "https://intercom-help.eu/eblinqx/nl/",
    "label": "Support Elements",
    "bereikbaar": true
   }
