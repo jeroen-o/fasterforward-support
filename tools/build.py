@@ -395,7 +395,7 @@ def load_sources():
             p["t"], p["kind"], p["c"] = d["titel"], "Artikel", "kennisbank"
             p["crumb"] = [c.strip() for c in d["categorie"].split(">")]
             p["summary"] = d.get("samenvatting", "")
-            p["raw"] = {"title": d["titel"], "html": d["html"], "posted": "", "updated": HANDLEIDING_DATUM,
+            p["raw"] = {"title": d["titel"], "html": d["html"], "posted": "", "updated": d.get("datum", HANDLEIDING_DATUM),
                         "hero": None, "ogimg": None, "crumbs": []}
             p["rawsrc"] = "handleiding"
         elif d.get("type") == "aanvulling":
