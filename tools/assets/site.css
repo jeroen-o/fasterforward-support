@@ -568,3 +568,4 @@ table.wegwijzer th,table.wegwijzer td{display:block;border:0;padding:3px 0;width
 .dagpopup-x{position:absolute;top:8px;right:10px;width:36px;height:36px;border:0;border-radius:50%;background:rgba(255,255,255,.92);font-size:24px;line-height:1;cursor:pointer}
 .dagpopup .btn-row{display:flex;flex-wrap:wrap;gap:10px;margin:4px 0 0}
 .dagpopup-sluit{font:inherit;background:#fff;cursor:pointer}
+.callout.nieuwer{background:#EAF4FB;border-left:4px solid #2B6C8E;padding:10px 14px;margin:0 0 16px}

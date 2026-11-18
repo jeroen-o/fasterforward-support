@@ -70,6 +70,8 @@ def blok(b):
         return f'<p><img data-lokaal="{rel}" alt=""></p>' if rel else ""
     if tp == "video" and b.get("provider") == "youtube" and b.get("id"):
         return f'<div class="yt" data-yt="{html.escape(b["id"])}"></div>'
+    if tp == "video" and b.get("provider") == "storylane" and b.get("id"):
+        return f'<div class="sl" data-sl="{html.escape(b["id"])}"></div>'
     if tp == "video" and b.get("id"):
         u = {"vimeo": "https://vimeo.com/", "loom": "https://www.loom.com/share/", "wistia": "https://fast.wistia.net/embed/iframe/"}.get(b.get("provider"))
         return f'<p><a href="{u}{html.escape(b["id"])}">Bekijk de video</a></p>' if u else ""

@@ -1342,7 +1342,7 @@ def render_feed(name, items):
     path = FEEDS[name]
     pg = Page(path)
     h2, intro, img = FEED_META[name]
-    extern = (vh_nieuws() + eigen_nieuws()) if name == "Nieuws" else (vh_nieuws(VH_TIPS) + hc_tips()) if name == "Tips" else []
+    extern = connect_rn_extra(items) if name == "Release notes" else (vh_nieuws() + eigen_nieuws()) if name == "Nieuws" else (vh_nieuws(VH_TIPS) + hc_tips()) if name == "Tips" else []
     if extern:
         def dag(x):
             d = x["posted"] or x["updated"]
@@ -3618,7 +3618,78 @@ HC_LINKS = {  # extra verwijzingen onder het overzicht van een kennisbank
 
 def hc_artikelen(c):
     f = os.path.join(SRC, "helpcenters", c["key"], "helpcenter.json")
-    return sorted(json.load(open(f, encoding="utf8")), key=lambda a: a["volg"]) if os.path.exists(f) else []
+    arts = sorted(json.load(open(f, encoding="utf8")), key=lambda a: a["volg"]) if os.path.exists(f) else []
+    if c["key"] == "eblinqx":  # helpcenter van eBlinqx Connect: alleen wat nog niet (of veel korter) in onze kennisbank staat
+        eigen = eigen_kb_titels()
+        uit = []
+        for a in arts:
+            if a["rubriek"][0] == "Releasenotes":
+                continue  # releasenotes gaan naar Releasenotes Connect (connect_rn_extra)
+            m = eigen.get(titel_sleutel(a["titel"]))
+            if not m:
+                uit.append(a)
+            elif a["tekst"]:
+                nieuw = woorden(a["tekst"]) - m[1]
+                if len(nieuw) > 0.25 * max(1, len(woorden(a["tekst"]))):
+                    uit.append(dict(a, vervangt=m[0]))
+        arts = uit
+    return arts
+
+
+def connect_rn_extra(bestaand):
+    """Releasenotes van eBlinqx Connect uit het helpcenter (intercom-help.eu/eblinqx) die nog niet in de feed staan."""
+    import difflib
+    f = os.path.join(SRC, "helpcenters", "eblinqx", "helpcenter.json")
+    if not os.path.exists(f):
+        return []
+    sleutels = [titel_sleutel(re.sub(r"UwKluis / Online klantportaal|Online klantportaal", "uwkluis", x["t"], flags=re.I)) for x in bestaand]
+    uit = []
+    for a in json.load(open(f, encoding="utf8")):
+        if a["rubriek"][0] != "Releasenotes":
+            continue
+        k = titel_sleutel(re.sub(r"UwKluis / Online klantportaal|Online klantportaal", "uwkluis", a["titel"], flags=re.I))
+        if k in sleutels or difflib.get_close_matches(k, sleutels, 1, 0.8):
+            continue
+        m = re.search(r"Op \w+dag (\d{1,2}) (\w+)", a["tekst"])
+        d = None
+        if m and m.group(2).lower() in MONTHS:
+            jaar = int((a.get("bijgewerkt") or "2026")[:4])
+            d = date(jaar, list(MONTHS).index(m.group(2).lower()) + 1, int(m.group(1)))
+        uit.append({"t": a["titel"], "posted": d or date.fromisoformat(a["bijgewerkt"][:10]), "updated": None, "url": a["url"], "ext": 1,
+                    "mini": "", "excerpt": kort(a["tekst"], 220)})
+    return uit
+
+
+def titel_sleutel(t):
+    import unicodedata
+    t = unicodedata.normalize("NFKD", html.unescape(t)).encode("ascii", "ignore").decode().lower()
+    t = t.replace("elements", "eblinqx").replace("eblinqx connect", "eblinqx")
+    return re.sub(r"[^a-z0-9 ]+", " ", t).strip()
+
+
+def woorden(t):
+    return {w for w in titel_sleutel(t).split() if len(w) > 3}
+
+
+_EIGEN_KB = None
+
+
+def eigen_kb_titels():
+    """Titel -> (pad, woorden) van de eigen kennisbankartikelen (de gebouwde pagina's)."""
+    global _EIGEN_KB
+    if _EIGEN_KB is None:
+        _EIGEN_KB = {}
+        for f in glob.glob(os.path.join(ROOT, "kennisbank", "*", "index.html")) + glob.glob(os.path.join(ROOT, "*", "index.html")):
+            s = open(f, encoding="utf8").read()
+            if '<main class="article"' not in s:
+                continue
+            m = re.search(r"<h1[^>]*>(.*?)</h1>", s, re.S)
+            if m:
+                i = s.find('<div class="content">')
+                tekst = re.sub(r"<[^>]+>", " ", s[i:s.find("</article>", i)]) if i > 0 else ""
+                pad = os.path.relpath(os.path.dirname(f), ROOT).replace(os.sep, "/")
+                _EIGEN_KB[titel_sleutel(re.sub(r"<[^>]+>", "", m.group(1)))] = (pad, woorden(tekst))
+    return _EIGEN_KB
 
 
 def finrust_kb():
@@ -3629,6 +3700,12 @@ def hc_url_map():
     """Intercom-artikel-URL -> pad op deze site, over alle kennisbanken heen (voor links tussen artikelen)."""
     m = {}
     for c in HELPCENTERS:
+        if c["key"] == "eblinqx":  # artikelen die we niet dubbel tonen: naar het eigen kennisbankartikel
+            f = os.path.join(SRC, "helpcenters", c["key"], "helpcenter.json")
+            for a in (json.load(open(f, encoding="utf8")) if os.path.exists(f) else []):
+                e = eigen_kb_titels().get(titel_sleutel(a["titel"]))
+                if e:
+                    m[a["url"].split("?")[0]] = e[0]
         for a in hc_artikelen(c):
             m[a["url"].split("?")[0]] = c["pad"] + "/" + a["slug"]
     return m
@@ -3815,6 +3892,8 @@ def render_helpcenters():
 
 def render_helpcenter(c, arts, urls, vtitel):
     P, naam = c["pad"], c["naam"]
+    if os.path.isdir(os.path.join(ROOT, P)):  # opnieuw opbouwen: verwijderde of uitgesloten artikelen verdwijnen
+        shutil.rmtree(os.path.join(ROOT, P))
     rubrieken = {}
     for a in arts:
         rubrieken.setdefault(a["rubriek"][0], {}).setdefault(" › ".join(a["rubriek"][1:]), []).append(a)
@@ -3898,6 +3977,12 @@ def render_helpcenter(c, arts, urls, vtitel):
                     f'<button class="play" type="button" aria-label="Speel {esc(vnaam)} af"><svg class="ic"><use href="#i-play"/></svg></button></div>'
                     f'<p class="vcap">{esc(vnaam)}</p></div>')
         h = re.sub(r'<div class="yt" data-yt="([^"]+)"></div>', yt, h)
+        h = re.sub(r'<div class="sl" data-sl="([^"]+)"></div>', lambda m: (
+            f'<p>In deze interactieve demo zie je stap voor stap hoe het werkt: <strong>{esc(a["titel"])}</strong>.</p>'
+            f'<div class="video demo"><div class="frame" data-sl="https://blinqx.storylane.io/demo/{m.group(1)}?embed=inline">'
+            f'<button class="play" type="button" aria-label="Start de interactieve demo {esc(a["titel"])}"><svg class="ic"><use href="#i-play"/></svg>'
+            f'<span>Start de interactieve demo</span></button></div>'
+            f'<p><a href="https://blinqx.storylane.io/demo/{m.group(1)}" target="_blank" rel="noopener">Open de demo in een nieuw tabblad</a></p></div>'), h)
         inhoud.videos = videos
 
         def link(m):
@@ -3917,16 +4002,17 @@ def render_helpcenter(c, arts, urls, vtitel):
             zelfde.sort(key=lambda b: b["volg"])
         verwant = "".join(f'<li><a href="{pg.rel(P + "/" + b["slug"])}">{esc(b["titel"])}</a></li>' for b in zelfde)
         d = (a.get("bijgewerkt") or "")[:10]
-        oms = a["omschrijving"] or kort(a["tekst"], 155) or f'{a["titel"]}: uitleg uit de kennisbank van {naam}.'
+        oms = a["omschrijving"] or kort(a["tekst"], 155) or (f'Interactieve demo: {a["titel"]} in eBlinqx Connect, stap voor stap.' if "data-sl=" in a["html"] else f'{a["titel"]}: uitleg uit de kennisbank van {naam}.')
         tekst_html = inhoud(pg, a["html"], a)
         ld_extra = "".join(f'<script type="application/ld+json">{json.dumps(v, ensure_ascii=False).replace("</", "<\\/")}</script>' for v in inhoud.videos)
         yt_js = """<script>
 document.addEventListener("click", e => {
-  const b = e.target.closest("[data-yt] .play"); if (!b) return;
-  const f = b.closest("[data-yt]");
-  f.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${f.dataset.yt}?autoplay=1&rel=0" title="Video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+  const b = e.target.closest("[data-yt] .play, [data-sl] .play"); if (!b) return;
+  const f = b.closest("[data-yt],[data-sl]");
+  const src = f.dataset.sl || `https://www.youtube-nocookie.com/embed/${f.dataset.yt}?autoplay=1&rel=0`;
+  f.innerHTML = `<iframe src="${src}" title="Video of demo" allow="autoplay; fullscreen; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
 });
-</script>""" if inhoud.videos else ""
+</script>""" if inhoud.videos or "data-sl=" in tekst_html else ""
         body = f"""{crumbs(pg, [("Kennisbanken", "kennisbanken"), (hc_titel(c), P), (a["rubriek"][-1], None)])}
 <main class="article"><div class="wrap cols">
   <article>
@@ -3941,6 +4027,15 @@ document.addEventListener("click", e => {
 {ld_extra}
 {yt_js}"""
         write(path, layout(pg, f'{a["titel"]} – {naam}', body, None, oms))
+        if a.get("vervangt"):  # ons oudere artikel wijst naar de uitgebreidere versie uit het helpcenter
+            of = os.path.join(ROOT, a["vervangt"], "index.html")
+            if os.path.exists(of):
+                s_ = open(of, encoding="utf8").read()
+                if 'class="callout nieuwer"' not in s_ and '<div class="content">' in s_:
+                    rel = "../" * (a["vervangt"].count("/") + 1) + path + "/index.html"
+                    s_ = s_.replace('<div class="content">', f'<div class="callout nieuwer"><p><strong>Er is een uitgebreidere, actuele versie van dit artikel:</strong> '
+                                    f'<a href="{rel}">{esc(a["titel"])}</a></p></div><div class="content">', 1)
+                    open(of, "w", encoding="utf8").write(s_)
 
 
 def render_finrust():

@@ -64,13 +64,14 @@
 
 ## Kennisbanken per product
 
-- [Kennisbanken van Blinqx Verzekering & Hypotheek](https://support-eblinqx-connect.nl/kennisbanken/): Alle 1489 handleidingen en uitlegartikelen uit de kennisbanken van Blinqx Verzekering & Hypotheek: FinRust, Adviesbox Classic, Adviesbox Online, eBlinqx…
+- [Kennisbanken van Blinqx Verzekering & Hypotheek](https://support-eblinqx-connect.nl/kennisbanken/): Alle 1535 handleidingen en uitlegartikelen uit de kennisbanken van Blinqx Verzekering & Hypotheek: FinRust, Adviesbox Classic, Adviesbox Online, eBlinqx…
 - [Kennisbank FinRust](https://support-eblinqx-connect.nl/finrust/): Alle 68 artikelen uit de kennisbank van FinRust: handleidingen en uitleg over algemeen, training & educatie, koppelingen, security & compliance.
 - [Kennisbank Adviesbox Classic](https://support-eblinqx-connect.nl/adviesbox-classic/): Alle 714 artikelen uit de kennisbank van Adviesbox Classic: handleidingen en uitleg over algemeen, implementatie & onboarding, training & educatie, storingen…
 - [Kennisbank Adviesbox Online](https://support-eblinqx-connect.nl/adviesbox-online/): Alle 132 artikelen uit de kennisbank van Adviesbox Online: handleidingen en uitleg over algemeen, implementatie & onboarding, training & educatie, storingen…
 - [Kennisbank eBlinqx Hypotheekadvies](https://support-eblinqx-connect.nl/hypotheekadvies-helpcenter/): Alle 309 artikelen uit de kennisbank van eBlinqx Hypotheekadvies: handleidingen en uitleg over algemeen, implementatie & onboarding, storingen, productupdates…
 - [Kennisbank FinConnect](https://support-eblinqx-connect.nl/finconnect/): Alle 99 artikelen uit de kennisbank van FinConnect: handleidingen en uitleg over algemeen, modules en functionaliteiten, instellingen en configuratie…
 - [Kennisbank Finly](https://support-eblinqx-connect.nl/finly/): Alle 167 artikelen uit de kennisbank van Finly: handleidingen en uitleg over algemeen, implementatie & onboarding, training & educatie, storingen, modules en…
+- [Kennisbank eBlinqx Connect: starten en demo's](https://support-eblinqx-connect.nl/eblinqx-helpcenter/): Alle 46 artikelen uit de kennisbank van eBlinqx Connect: starten en demo's: handleidingen en uitleg over starten met eblinqx connect, facturatie, eblinqx…
 
 ## Kennisbank FinRust
 
@@ -1579,6 +1580,55 @@
 - [Rechten en sub-account toegang instellen](https://support-eblinqx-connect.nl/finly/rechten-en-sub-account-toegang-instellen/): Hoe je rechten en toegang tot sub-accounts instelt voor medewerkers in het CRM.
 - [Rollen aanmaken](https://support-eblinqx-connect.nl/finly/rollen-aanmaken/): Uitleg over het aanmaken van rollen, het instellen van rechten per onderdeel, en het toewijzen van een rol aan een medewerker via Instellingen.
 
+## Kennisbank eBlinqx Connect: starten en demo's
+
+- [Opstarten, inloggen, instellingen](https://support-eblinqx-connect.nl/eblinqx-helpcenter/opstarten-inloggen-instellingen/): Hoe moet je inloggen, hoe ziet het dashboard eruit en hoe kun je dit zelf instellen, waar kun je zoeken naar klanten, waar kun je de verschillende modules…
+- [Klant zoeken](https://support-eblinqx-connect.nl/eblinqx-helpcenter/klant-zoeken/): Hoe zoek je een klantdossier op, hoe gebruik je de uitgebreide filters als emailadres, kvk-nummer, geboortedatum en polisnummer.
+- [Klant aanmaken](https://support-eblinqx-connect.nl/eblinqx-helpcenter/klant-aanmaken/): Hoe maak ik een nieuw klantdossier inclusief eventuele partner aan en sla ik deze op. Hoe voorkom ik duplicaten in het klantdossier.
+- [Email](https://support-eblinqx-connect.nl/eblinqx-helpcenter/email/): Maak een email aan vanuit je inbox of het klantdossier en verstuur deze. Koppel een email aan taak of product.
+- [Overige instellingen van de mailbox](https://support-eblinqx-connect.nl/eblinqx-helpcenter/overige-instellingen-van-de-mailbox/): Maak mappen en mailingregels aan in je inbox, maar beter nog koppel je een email aan een dossier
+- [Speciale instellingen van de mailbox](https://support-eblinqx-connect.nl/eblinqx-helpcenter/speciale-instellingen-van-de-mailbox/): Overrule de synchronisatie,. Plan een mail voor de werkvoorraad. Koppel deze aan een product, dienst of schademelding. Beperk zichtbaarheid van een mail
+- [Email koppelen](https://support-eblinqx-connect.nl/eblinqx-helpcenter/email-koppelen/): Hoe koppelt eBlinqx Connect automatisch een mail. Hoe koppel je zelf een mail aan het huidige of een ander dossier.
+- [Kolom of lijstweergave email](https://support-eblinqx-connect.nl/eblinqx-helpcenter/kolom-of-lijstweergave-email/): Verander de lijst en kolomweergave van je mailbox. eBlinqx Connect: starten en demo's › Starten met eBlinqx Connect · bijgewerkt 19 oktober 2026
+- [Kalender en kalenderinstellingen](https://support-eblinqx-connect.nl/eblinqx-helpcenter/kalender-en-kalenderinstellingen/): Stel de weergave van je kalender in en synchroniseer deze met Office 365. Stel de kalender voor je collega's in. Plan een afspraak voor een klant in
+- [Taken](https://support-eblinqx-connect.nl/eblinqx-helpcenter/taken/): Hoe maak je taken aan, ook voor anderen. Hoe handel je deze af. Hoe gebruik je het snelmenu.
+- [Aanmaken en opvoeren schadeverzekering](https://support-eblinqx-connect.nl/eblinqx-helpcenter/aanmaken-en-opvoeren-schadeverzekering/): Hoe registreer je een schadeverzekering, verstuur je een offerte en leg je de polis definitief vast.
+- [Schademelding registreren en verwerken](https://support-eblinqx-connect.nl/eblinqx-helpcenter/schademelding-registreren-en-verwerken/): Hoe registreer en verwerk je snel een schademelding vanuit het dossier.
+- [Hypotheekaanvraag verwerken en versturen](https://support-eblinqx-connect.nl/eblinqx-helpcenter/hypotheekaanvraag-verwerken-en-versturen/): Hoe verwerk je een hypotheekaanvraag en verstuur je deze. eBlinqx Connect: starten en demo's › Starten met eBlinqx Connect · bijgewerkt 26 oktober 2026
+- [Activatie Klantportaal](https://support-eblinqx-connect.nl/eblinqx-helpcenter/activatie-klantportaal/): Hoe maak je een klantportaaal aan en verstuur je de activatiemail. eBlinqx Connect: starten en demo's › Starten met eBlinqx Connect · bijgewerkt 21 oktober 2026
+- [Werking Klantportaal](https://support-eblinqx-connect.nl/eblinqx-helpcenter/werking-klantportaal/): Hoe leveren klanten op één plek doumenten aan, krijgen ze berichten en beheren ze hun producten.
+- [SMART](https://support-eblinqx-connect.nl/eblinqx-helpcenter/smart/): Hoe filter je met SMART snel de juiste klantgroepen en onderneem je direct actie.
+- [Dossier splitsen of samenvoegen](https://support-eblinqx-connect.nl/eblinqx-helpcenter/dossier-splitsen-of-samenvoegen/): Interactieve demo: Dossier splitsen of samenvoegen in eBlinqx Connect, stap voor stap.
+- [Aanmaken dienst](https://support-eblinqx-connect.nl/eblinqx-helpcenter/aanmaken-dienst/): Hoe maak je een dienst aan, configureer je deze en koppel je deze aan een klantdossier.
+- [Personen toevoegen](https://support-eblinqx-connect.nl/eblinqx-helpcenter/personen-toevoegen/): Hoe koppel je een betrokkene aan een dossier. eBlinqx Connect: starten en demo's › Starten met eBlinqx Connect · bijgewerkt 21 oktober 2026
+- [Beheer van documenten](https://support-eblinqx-connect.nl/eblinqx-helpcenter/beheer-van-documenten/): Hoe voeg je documenten toe, hoe voeg je ze samen en hoe organiseer je ze.
+- [Tips en handigheden](https://support-eblinqx-connect.nl/eblinqx-helpcenter/tips-en-handigheden/): Zoeken met het %-teken geeft betere resultaten, werken met dossier- en taaknotities, spellingscontrole.
+- [Toewijzingsregels definiëren en gebruiken](https://support-eblinqx-connect.nl/eblinqx-helpcenter/toewijzingsregels-definieren-en-gebruiken/): Hoe kun je gebruik maken van de toewijzingregelsfunctionaliteit zodat het systeem betalingen beter kan herkennen en toewijzen op de juiste grootboekregel.
+- [Starten met de boekhouding, rechten](https://support-eblinqx-connect.nl/eblinqx-helpcenter/starten-met-de-boekhouding-rechten/): Check de rechten die je nodig hebt om te kunnen starten. eBlinqx Connect: starten en demo's › Starten met eBlinqx Connect › Boekhouding · bijgewerkt 16…
+- [Basisinstellingen boekhouding](https://support-eblinqx-connect.nl/eblinqx-helpcenter/basisinstellingen-boekhouding/): Hier vind je de eerste eenmalige instellingen en de basisinstellingen.
+- [Importeren bankafschrift](https://support-eblinqx-connect.nl/eblinqx-helpcenter/importeren-bankafschrift/): Hoe kun je een bankafschrift importeren. eBlinqx Connect: starten en demo's › Starten met eBlinqx Connect › Boekhouding · bijgewerkt 16 november 2026
+- [Aanmaken leveranciersdossier](https://support-eblinqx-connect.nl/eblinqx-helpcenter/aanmaken-leveranciersdossier/): Hoe maak je een leveranciersdossier aan om deze later te gebruiken voor het verwerken van inkoopfacturen.
+- [Factuurnummers inrichten](https://support-eblinqx-connect.nl/eblinqx-helpcenter/factuurnummers-inrichten/): Hoe stel je factuurnummers zo in dat je aansluiting hebt met eerdere factuurnummers
+- [Boekjaar afsluiten en/of heropenen](https://support-eblinqx-connect.nl/eblinqx-helpcenter/boekjaar-afsluiten-en-of-heropenen/): Hoe sluit je een boekjaar af en heropenen je deze als dat nodig is. eBlinqx Connect: starten en demo's › Starten met eBlinqx Connect › Boekhouding ·…
+- [Handmatig boekingen invoeren](https://support-eblinqx-connect.nl/eblinqx-helpcenter/handmatig-boekingen-invoeren/): Hoe kun je handmatig een boeking invoeren in je financiële administratie
+- [Openingsbalans invoeren](https://support-eblinqx-connect.nl/eblinqx-helpcenter/openingsbalans-invoeren/): Hoe voer je de beginbalans in op basis van cijfers uit je vorige boekhoudpakket
+- [Factuur aanmaken onder een klantdossier](https://support-eblinqx-connect.nl/eblinqx-helpcenter/factuur-aanmaken-onder-een-klantdossier/): Hoe kun je snel een factuur in een klantdossier aanmaken, boeken, versturen en afronden
+- [Factuur aanmaken vanuit de Dienst](https://support-eblinqx-connect.nl/eblinqx-helpcenter/factuur-aanmaken-vanuit-de-dienst/): Hoe maak je een factuur aan vanuit de Dienst. eBlinqx Connect: starten en demo's › Starten met eBlinqx Connect › Facturatie · bijgewerkt 16 november 2026
+- [Aanmaking creditfactuur](https://support-eblinqx-connect.nl/eblinqx-helpcenter/aanmaking-creditfactuur/): Hoe maak je snel een credifactuur aan. eBlinqx Connect: starten en demo's › Starten met eBlinqx Connect › Facturatie · bijgewerkt 16 november 2026
+- [Betalingsoverzicht aanmaken](https://support-eblinqx-connect.nl/eblinqx-helpcenter/betalingsoverzicht-aanmaken/): Hoe maak je snel een betalingsoverzicht aan. eBlinqx Connect: starten en demo's › Starten met eBlinqx Connect › Facturatie · bijgewerkt 16 november 2026
+- [Rapportagemanager](https://support-eblinqx-connect.nl/eblinqx-helpcenter/rapportagemanager/): Hoe kun je in en paar klikken je eigen selecties maken en hoe bekijk je rapporten
+- [Hoe kan ik facturen zoeken?](https://support-eblinqx-connect.nl/eblinqx-helpcenter/hoe-kan-ik-facturen-zoeken/): Lees hier hoe je facturen zoekt in het factuuroverzicht. eBlinqx Connect: starten en demo's › Facturatie › Facturatie · bijgewerkt 30 oktober 2026
+- [Wat is Faster Forward Elements?](https://support-eblinqx-connect.nl/eblinqx-helpcenter/wat-is-faster-forward-elements/): Lees hier wat Faster Forward Elements is: een BPMS- en CRM-systeem ineen.
+- [Ga veilig om met je wachtwoorden](https://support-eblinqx-connect.nl/eblinqx-helpcenter/ga-veilig-om-met-je-wachtwoorden/): Hier lees je meer hoe je veilig om kunt gaan met jouw wachtwoord voor eBlinqx Connect.
+- [AFM marktmonitor invullen](https://support-eblinqx-connect.nl/eblinqx-helpcenter/afm-marktmonitor-invullen/): Hier lees je hoe je informatie uit eBlinqx Connect kunt halen om de AFM marktmonitor in te vullen.
+- [Is Faster Forward Elements veilig?](https://support-eblinqx-connect.nl/eblinqx-helpcenter/is-faster-forward-elements-veilig/): Lees hier hoe Faster Forward je data en die van je klanten beschermt. eBlinqx Connect: starten en demo's › eBlinqx › Beveiliging in eBlinqx · bijgewerkt 30…
+- [Beveiliging Faster Forward Elements](https://support-eblinqx-connect.nl/eblinqx-helpcenter/beveiliging-faster-forward-elements/): Lees hier hoe het zit met de beschikbaarheid, de netwerkbeveiliging, de procedures en de screening van medewerkers.
+- [Trainingen](https://support-eblinqx-connect.nl/eblinqx-helpcenter/trainingen/): Lees hier hoe je je inschrijft voor de basistraining van eBlinqx Connect, met de focus op hypotheken of verzekeren.
+- [LX apart van de AX versturen](https://support-eblinqx-connect.nl/eblinqx-helpcenter/lx-apart-van-de-ax-versturen/): Lees hier hoe je instelt of een AX-bericht een levensverzekering in het dossier aanmaakt, zodat je die niet dubbel ontvangt.
+- [Welke maatschappij koppelt met HDN?](https://support-eblinqx-connect.nl/eblinqx-helpcenter/welke-maatschappij-koppelt-met-hdn/): Lees hier waar je het overzicht van HDN vindt met per partij de ondersteunde HDN-berichten en het aansluitnummer.
+- [Schade- uitvaart- en levensverzekeringen omnummeren](https://support-eblinqx-connect.nl/eblinqx-helpcenter/schade-uitvaart-en-levensverzekeringen-omnummeren/): In dit artikel lees je hoe je in eBlinqx Connect gemakkelijk schade- uitvaart en levensverzekeringen kan omnummeren.
+- [Nodig klanten uit voor de belastingaangifte](https://support-eblinqx-connect.nl/eblinqx-helpcenter/nodig-klanten-uit-voor-de-belastingaangifte/): Kennisbank eBlinqx Connect: starten en demo's – Nodig klanten uit voor de belastingaangifte: Wist je dat we een workflow hebben voor fiscale abonnementen?
+
 ## Handige websites
 
 - [Handige websites](https://support-eblinqx-connect.nl/sites/): Overzicht van alle websites rondom eBlinqx, de Nationale Hypotheekbond en Blinqx Verzekering & Hypotheek.
@@ -1710,7 +1760,7 @@
 ## Nieuws, tips en leren
 
 - [Nieuws](https://support-eblinqx-connect.nl/nieuws/): Nieuws: Hieronder vind je onze laatste nieuwsberichten. Ga naar: 2026 · 2025 · 2024 · 2023 · 2022 · 2021 · 2020 · 2019 · 2018 · 2017 · 2016
-- [Tips](https://support-eblinqx-connect.nl/tips/): Tips: Hieronder vind je onze laatste tips. Hieronder vind je onze laatste tips. 37 berichten, waarvan 18 van verzekeringhypotheek.blinqx.tech (dagelijks…
+- [Tips](https://support-eblinqx-connect.nl/tips/): Tips: Hieronder vind je onze laatste tips. Hieronder vind je onze laatste tips. 39 berichten, waarvan 18 van verzekeringhypotheek.blinqx.tech (dagelijks…
 - [E-learning](https://support-eblinqx-connect.nl/elearning/): Interactieve e-learnings voor eBlinqx Connect en eBlinqx Hypotheekadvies.
 - [Video's](https://support-eblinqx-connect.nl/video/): Video's in eBlinqx Connect: handleidingen en uitleg, waaronder YouTube: Blinqx Verzekering & Hypotheek ↗, YouTube: Blinqx ↗, YouTube: FasterForwardTV ↗…
 - [Trainingen](https://support-eblinqx-connect.nl/trainingen/): Trainingen voor eBlinqx, Adviesbox en Financiële Planner bij de Blinqx Academy.
@@ -1736,8 +1786,8 @@
 - [ADN batch financieel verwerken](https://support-eblinqx-connect.nl/kennisbank/4-financieel-verwerken/): In dit artikel lees je hoe je de ADN batch financieel kunt verwerken en hoe je een handmatige boeking aan kunt maken.
 - [ADN batch verwerken](https://support-eblinqx-connect.nl/kennisbank/adn-batch-verwerken-met-mutatievoorstellen/): Lees hier hoe je ADN batch met mutatievoorstellen verwerkt. In dit artikel leggen we uit hoe je een ADN batch verwerkt.
 - [ADN batch verwerken zonder mutatievoorstellen](https://support-eblinqx-connect.nl/kennisbank/adn-batch-verwerken-met-zonder-tussenrekening/): In dit artikel leggen we uit hoe je een ADN batch met mutaties van verzekeringen verwerkt.
-- [ADN berichten ontvangen (inrichten)](https://support-eblinqx-connect.nl/kennisbank/adn-berichten-ontvangen/): Om ADN berichten te kunnen ontvangen in eBlinqx dien je een aantal zaken aan te vragen.
 - [ADN berichten ontvangen (inrichten)](https://support-eblinqx-connect.nl/kennisbank/adn-berichten-ontvangen-elements/): Om ADN berichten te kunnen ontvangen in eBlinqx Connect dien je een aantal zaken aan te vragen.
+- [ADN berichten ontvangen (inrichten)](https://support-eblinqx-connect.nl/kennisbank/adn-berichten-ontvangen/): Om ADN berichten te kunnen ontvangen in eBlinqx dien je een aantal zaken aan te vragen.
 - [ADN inrichten: Al een postbus maar nog geen bedrijfscertificaat](https://support-eblinqx-connect.nl/kennisbank/adn-inrichten-bedrijfscertificaat/): Wanneer je al een postbus hebt maar geen bedrijfscertificaat vraag je bij Solera een bedrijfscertificaat aan.
 - [ADN inrichten: je hebt al een postbus en bedrijfscertificaat](https://support-eblinqx-connect.nl/kennisbank/adn-bestaand-doorsturen/): Op het moment dat je al een I09 Postbus en bedrijfscertificaat hebt bij Solera dien je deze naar ons door te sturen.
 - [ADN inrichten: Nog geen postbus en nog geen bedrijfscertificaat](https://support-eblinqx-connect.nl/kennisbank/adn-inrichten-postbus-bedrijfscertificaat/): Wanneer er nog niks bekend is bij Solera, vraag je een nieuw pakket aan. Het TIME pakket combineert de berichtendienst van Solera met de documenten service…
