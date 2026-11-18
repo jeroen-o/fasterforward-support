@@ -3912,7 +3912,7 @@
 "d": "2026-11-18"
 },
 "eblinqx-helpcenter": {
-"h": "4ff276bb44d55561",
+"h": "9898878c98d1bef6",
 "d": "2026-11-18"
 },
 "eblinqx-helpcenter/aanmaken-dienst": {
@@ -4087,10 +4087,6 @@
 "h": "8579cda23001f0bd",
 "d": "2026-11-18"
 },
-"eblinqx-helpcenter/wat-is-faster-forward-elements": {
-"h": "3704115799d7b8d4",
-"d": "2026-11-18"
-},
 "eblinqx-helpcenter/welke-maatschappij-koppelt-met-hdn": {
 "h": "0e2c317e1b0152d0",
 "d": "2026-11-18"
@@ -4228,7 +4224,11 @@
 "d": "2026-11-18"
 },
 "finconnect": {
-"h": "4ee4a7b5df9eaf32",
+"h": "117edc05e0b2c257",
+"d": "2026-11-18"
+},
+"finconnect/2fa-inloggen-finconnect": {
+"h": "012bb43c6dad0c09",
 "d": "2026-11-18"
 },
 "finconnect/afsluiten-in-laatste-categorie-instellen-bij-een-slim-formulier": {
@@ -4240,7 +4240,7 @@
 "d": "2026-11-18"
 },
 "finconnect/agent-toevoegen-in-finconnect": {
-"h": "be6acd2579cadfe9",
+"h": "024f9314db93cd53",
 "d": "2026-11-18"
 },
 "finconnect/anva-agenda-aanpassen-bij-naverrekenen-via-het-importbestand": {
@@ -4288,7 +4288,7 @@
 "d": "2026-11-18"
 },
 "finconnect/cname-en-domeinconfiguratie-instellen-in-finconnect": {
-"h": "c702c22398bcccaf",
+"h": "515b0367a82e0478",
 "d": "2026-11-18"
 },
 "finconnect/communicatie-met-de-klant-bij-naverrekenen-in-finconnect": {
@@ -4304,7 +4304,7 @@
 "d": "2026-11-18"
 },
 "finconnect/demo-aanvragen-of-kantoorgegevens-wijzigen": {
-"h": "1643de11e802df09",
+"h": "948409eff2467c41",
 "d": "2026-11-18"
 },
 "finconnect/digitaal-handtekening-zetten-inschakelen-bij-een-slim-formulier": {
@@ -4316,7 +4316,7 @@
 "d": "2026-11-18"
 },
 "finconnect/e-mailadressen-instellen-voor-kantoor-agent-en-slimme-formulieren": {
-"h": "41d867b05b0cce14",
+"h": "ac577552885079e5",
 "d": "2026-11-18"
 },
 "finconnect/e-mails-niet-afgeleverd-via-slimme-formulieren": {
@@ -4396,11 +4396,11 @@
 "d": "2026-11-18"
 },
 "finconnect/foutmelding-bij-module-emaildomein-in-finconnect": {
-"h": "24baa08f87d5ecf0",
+"h": "411b6d581cfde4d4",
 "d": "2026-11-18"
 },
 "finconnect/gebruiker-toevoegen-of-wijzigen-in-finconnect": {
-"h": "6b7de5fe5e0ae827",
+"h": "b312a1dc349f939f",
 "d": "2026-11-18"
 },
 "finconnect/gegevens-importeren-voor-werkprogramma-volmachten-in-finconnect": {
@@ -4440,11 +4440,11 @@
 "d": "2026-11-18"
 },
 "finconnect/inloggen-in-finconnect-met-2fa": {
-"h": "d5b5df76534c6b30",
+"h": "d37fd87c5d04df59",
 "d": "2026-11-18"
 },
 "finconnect/kantoorinstellingen-aanpassen-in-finconnect": {
-"h": "8facd5ac24583264",
+"h": "cc8c63aecc5a972a",
 "d": "2026-11-18"
 },
 "finconnect/klantenbestand-voor-naverrekenen-verwijderen": {
@@ -4452,7 +4452,7 @@
 "d": "2026-11-18"
 },
 "finconnect/klantgegevens-koppelen-of-importeren-voor-formulieren-en-naverrekenen": {
-"h": "b3e41c11551c6375",
+"h": "86c5c65cff82dcd7",
 "d": "2026-11-18"
 },
 "finconnect/koppelen-van-een-slim-formulier-aan-een-ander-formulier-met-vraagtype-formulier-vraag": {
@@ -4492,7 +4492,7 @@
 "d": "2026-11-18"
 },
 "finconnect/nieuwe-agent-aanmaken-en-agent-id-instellen": {
-"h": "d33829c0afdf1260",
+"h": "4d20eec4e1ad6a01",
 "d": "2026-11-18"
 },
 "finconnect/niveaus-en-gebruik": {
@@ -4584,7 +4584,7 @@
 "d": "2026-11-18"
 },
 "finconnect/vanuit-welke-e-mailadressen-worden-slimme-formulieren-verzonden-in-finconnect": {
-"h": "843245f57ae54c6d",
+"h": "b38e2d31e8a93335",
 "d": "2026-11-18"
 },
 "finconnect/vaste-bijlagen-toevoegen-en-beheren-in-een-slim-formulier": {
@@ -4632,7 +4632,7 @@
 "d": "2026-11-18"
 },
 "finly": {
-"h": "36e5919d3313f590",
+"h": "beaedad84c6922dd",
 "d": "2026-11-18"
 },
 "finly-crm": {
@@ -4688,7 +4688,7 @@
 "d": "2026-11-18"
 },
 "finly/anva-klanten-importeren-op-relatienummer": {
-"h": "4d708868dd3128ee",
+"h": "3200afb89b88c986",
 "d": "2026-11-18"
 },
 "finly/anva-koppeling-instellen": {
@@ -4708,7 +4708,7 @@
 "d": "2026-11-18"
 },
 "finly/audioopname-via-finly-niet-teruggevonden-troubleshooting-in-browser": {
-"h": "f36b7a958da4f296",
+"h": "dec76cba9bc66430",
 "d": "2026-11-18"
 },
 "finly/automatisch-uitloggen-in-finly": {
@@ -4776,7 +4776,7 @@
 "d": "2026-11-18"
 },
 "finly/dashboard-instellen-voor-medewerkers-in-het-crm": {
-"h": "09418a34e927feea",
+"h": "b2e4559c76ebf7cf",
 "d": "2026-11-18"
 },
 "finly/de-agendamodule-introduceren-bij-je-adviseurs-best-practices-voor-adoptie": {
@@ -4919,6 +4919,10 @@
 "h": "0f1caba52f86b1a8",
 "d": "2026-11-18"
 },
+"finly/het-klantscherm-indelen-layout-voor-particulier-en-zakelijk": {
+"h": "e059aca99c4dd1de",
+"d": "2026-11-18"
+},
 "finly/hoe-bepaalt-finly-of-een-anva-factuur-afgerond-is": {
 "h": "3d8ded80be1d4f64",
 "d": "2026-11-18"
@@ -4988,11 +4992,11 @@
 "d": "2026-11-18"
 },
 "finly/klanten-importeren-via-een-csv-bestand": {
-"h": "7c4622a710bde3fe",
+"h": "d3142b41e32c7722",
 "d": "2026-11-18"
 },
 "finly/klanten-instellingen-configureren": {
-"h": "ff2a70fce32237e8",
+"h": "c99b5ee4e4392b64",
 "d": "2026-11-18"
 },
 "finly/klanten-verwijderen-of-samenvoegen-bij-een-anva-koppeling": {
@@ -5008,7 +5012,7 @@
 "d": "2026-11-18"
 },
 "finly/klantrelaties-dashboard-in-het-crm-instellen-en-gebruiken": {
-"h": "82c1e9918fda8797",
+"h": "7dba84254021bbc2",
 "d": "2026-11-18"
 },
 "finly/klantvelden-bij-afspraaktype": {
@@ -5132,7 +5136,7 @@
 "d": "2026-11-18"
 },
 "finly/postcode-buitenland-instellen-als-klantveld-en-koppelen-aan-anva": {
-"h": "f9c06f4bfee5fe9c",
+"h": "20f29f107e7eadba",
 "d": "2026-11-18"
 },
 "finly/postcode-gebieden-instellen": {
@@ -5208,7 +5212,7 @@
 "d": "2026-11-18"
 },
 "finly/supportbeleid": {
-"h": "596d9790e829843d",
+"h": "28940c9190967dc1",
 "d": "2026-11-18"
 },
 "finly/tags-toevoegen-aan-een-formulier-via-de-beginwaarde": {
@@ -8676,7 +8680,7 @@
 "d": "2026-11-18"
 },
 "kennisbanken": {
-"h": "76f5ddc1582aea00",
+"h": "5fdf4f9b47de829e",
 "d": "2026-11-18"
 },
 "kent-digimap-tips-al": {
