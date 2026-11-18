@@ -1096,5 +1096,56 @@
   ],
   "afbeelding": "bronnen/sites/orv-api-nl.webp",
   "titel": "ORV-API.nl: ORV-premies berekenen en vergelijken"
+ },
+ {
+  "slug": "opnemengesprek-nl",
+  "naam": "Opnemengesprek.nl",
+  "url": "https://www.opnemengesprek.nl/",
+  "ondertitel": "Gesprek opnemen en transcriberen voor de hypotheek- en financieel adviseur",
+  "tekst": [
+   "Met Opnemengesprek.nl neem je een klantgesprek op, laat je het live of achteraf uitschrijven en leg je het vast met een checklist op basis van de AFM Leidraad Hypotheekadvisering 2026. Daarna maak je in vier stappen een gespreksverslag: gesprek, checklist, verslag en rapport.",
+   "De tool is gratis en werkt lokaal in je browser: de opname en de audio verlaten je apparaat niet. Het is een conceptversie."
+  ],
+  "secties": [
+   [
+    "Wat kun je ermee?",
+    [
+     "Opnemen via de microfoon, ook een Teams- of online gesprek (geluid van een gedeeld tabblad of scherm samen met je eigen microfoon).",
+     "Live transcriberen in Chrome of Edge, of een opname achteraf uitschrijven met het spraakmodel Whisper in je browser.",
+     "Een bestaand transcript (.txt, .vtt, .srt, .docx) of een audiobestand (.mp3, .m4a, .wav, .webm, .mp4) inlezen.",
+     "Een checklist per type gesprek: onderwerpen die in het transcript worden herkend, kun je laten afvinken.",
+     "Klantdocumenten (pdf) zoals een werkgeversverklaring, loonstrook of WOZ-beschikking in je browser laten uitlezen.",
+     "Een verslag met samenvatting, kernpunten met tijdstempel, afspraken, afwijkingen van het advies en aannames, in je eigen huisstijl."
+    ]
+   ],
+   [
+    "Delen en eBlinqx",
+    [
+     "Een conceptmail aan de klant openen in Gmail, Outlook of je eigen mailprogramma, een vervolgafspraak in Google Agenda of Outlook (.ics) en een samenvatting delen in Teams. De tool verstuurt zelf niets.",
+     "Voor eBlinqx: kies bij “PDF voor dossier” de optie Opslaan als PDF en upload het bestand in het klantdossier. Je kunt het eBlinqx-relatienummer van de klant opgeven."
+    ]
+   ],
+   [
+    "Goed om te weten",
+    [
+     "Informeer de klant vooraf dat het gesprek wordt opgenomen en uitgeschreven en vraag om akkoord; de tool heeft hiervoor een voorleestekst.",
+     "Controleer het verslag altijd zelf: zolang je het niet hebt goedgekeurd, staat er CONCEPT op. Het adviesrapport blijft leidend.",
+     "Voor het uitschrijven wordt het spraakmodel eenmalig gedownload (40 tot 250 MB, afhankelijk van de gekozen nauwkeurigheid)."
+    ]
+   ]
+  ],
+  "gerelateerd": [
+   [
+    "kennisbank/gespreksopname-omzetten-naar-acties",
+    "Gespreksopname omzetten naar acties in eBlinqx Connect"
+   ],
+   [
+    "adviescoach",
+    "AdviesCoach"
+   ]
+  ],
+  "afbeelding": "bronnen/sites/opnemengesprek-nl.webp",
+  "logo": "bronnen/sites/logo-opnemengesprek-nl.webp",
+  "titel": "Opnemengesprek.nl: gesprek opnemen en transcriberen"
  }
 ]
