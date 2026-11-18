@@ -9408,7 +9408,7 @@
 "d": "2026-11-18"
 },
 "sites": {
-"h": "5367350c40d179a8",
+"h": "fc59424a2576ca5a",
 "d": "2026-11-18"
 },
 "sites/accountancy-blinqx-ai": {
@@ -9467,6 +9467,10 @@
 "h": "0bdd9cb8a45f4bcf",
 "d": "2026-11-18"
 },
+"sites/funderingscijfer-nl": {
+"h": "8425d7c95704a239",
+"d": "2026-11-18"
+},
 "sites/hdn-nl": {
 "h": "f15ba8e9bbb6f7f5",
 "d": "2026-11-18"
@@ -9488,7 +9492,7 @@
 "d": "2026-11-18"
 },
 "sites/hypotheekcijfer-nl": {
-"h": "d55e2db0804afbce",
+"h": "62b8367f61227222",
 "d": "2026-11-18"
 },
 "sites/hypotheekrente-api-nl": {
@@ -9497,6 +9501,10 @@
 },
 "sites/hypotheekservicegesprek-nl": {
 "h": "70c88fa47b07ad00",
+"d": "2026-11-18"
+},
+"sites/klimaatcijfer-nl": {
+"h": "0a56f6354df7884b",
 "d": "2026-11-18"
 },
 "sites/looptijdrente-nl": {
@@ -9527,12 +9535,16 @@
 "h": "38024111f46904d9",
 "d": "2026-11-18"
 },
+"sites/pandwise-nl": {
+"h": "3315368a9589814c",
+"d": "2026-11-18"
+},
 "sites/pensioen-life-event-advies": {
 "h": "90bef008b8a52684",
 "d": "2026-11-18"
 },
 "sites/pensioencijfer-nl": {
-"h": "bb9f54ca4e4887f3",
+"h": "f069b94cc65273ef",
 "d": "2026-11-18"
 },
 "sites/renteadministratie-nl": {
@@ -9573,6 +9585,10 @@
 },
 "sites/webdelen-nl": {
 "h": "8a988345aff389d2",
+"d": "2026-11-18"
+},
+"sites/woningcijfer-nl": {
+"h": "3eefba123f2430a1",
 "d": "2026-11-18"
 },
 "sites/yes-co-nl": {

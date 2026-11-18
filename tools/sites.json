@@ -287,6 +287,26 @@
    [
     "banking-insurance",
     "Banking & Insurance"
+   ],
+   [
+    "sites/woningcijfer-nl",
+    "Woningcijfer.nl"
+   ],
+   [
+    "sites/klimaatcijfer-nl",
+    "Klimaatcijfer.nl"
+   ],
+   [
+    "sites/funderingscijfer-nl",
+    "Funderingscijfer.nl"
+   ],
+   [
+    "sites/pandwise-nl",
+    "PandWise"
+   ],
+   [
+    "sites/pensioencijfer-nl",
+    "Pensioencijfer.nl"
    ]
   ],
   "afbeelding": "bronnen/sites/hypotheekcijfer-nl.webp"
@@ -304,6 +324,26 @@
    [
     "banking-insurance",
     "Banking & Insurance"
+   ],
+   [
+    "sites/woningcijfer-nl",
+    "Woningcijfer.nl"
+   ],
+   [
+    "sites/klimaatcijfer-nl",
+    "Klimaatcijfer.nl"
+   ],
+   [
+    "sites/funderingscijfer-nl",
+    "Funderingscijfer.nl"
+   ],
+   [
+    "sites/pandwise-nl",
+    "PandWise"
+   ],
+   [
+    "sites/hypotheekcijfer-nl",
+    "Hypotheekcijfer.nl"
    ]
   ],
   "afbeelding": "bronnen/sites/pensioencijfer-nl.webp",
@@ -1147,5 +1187,214 @@
   "afbeelding": "bronnen/sites/opnemengesprek-nl.webp",
   "logo": "bronnen/sites/logo-opnemengesprek-nl.webp",
   "titel": "Opnemengesprek.nl: gesprek opnemen en transcriberen"
+ },
+ {
+  "slug": "woningcijfer-nl",
+  "naam": "Woningcijfer.nl",
+  "url": "https://www.woningcijfer.nl/",
+  "ondertitel": "Welk cijfer scoort een woning? Bouw- en omgevingsscore",
+  "tekst": [
+   "Woningcijfer.nl geeft een woning een cijfer voor bouwkundige kwaliteit, fundering, omgevingsrisico's, levensloopbestendigheid en mantelzorg. Je zoekt een adres en de woningdata wordt automatisch geladen uit openbare bronnen zoals BAG, Kadaster, BRO, AHN4, RVO, EP-Online en OpenStreetMap.",
+   "Per onderdeel (woning, bouwkundig, grond en recht, omgeving, voorzieningen, levensloop en verduurzaming) zie je een deelscore en een totaalcijfer, met een indicatie van de databetrouwbaarheid."
+  ],
+  "secties": [
+   [
+    "Voor adviseurs",
+    [
+     "Met de adviseursmodus zet je je kantoornaam en je eigen naam op het printrapport. Die gegevens worden niet opgeslagen of verzonden.",
+     "Ontbrekende of afwijkende gegevens, zoals het energielabel uit het definitieve certificaat, vul je zelf aan of corrigeer je."
+    ]
+   ],
+   [
+    "Goed om te weten",
+    [
+     "De uitkomst is een indicatie op basis van openbare gegevens, geen taxatie of bouwkundig rapport."
+    ]
+   ]
+  ],
+  "gerelateerd": [
+   [
+    "sites/klimaatcijfer-nl",
+    "Klimaatcijfer.nl"
+   ],
+   [
+    "sites/funderingscijfer-nl",
+    "Funderingscijfer.nl"
+   ],
+   [
+    "sites/pandwise-nl",
+    "PandWise"
+   ],
+   [
+    "sites/hypotheekcijfer-nl",
+    "Hypotheekcijfer.nl"
+   ],
+   [
+    "sites/pensioencijfer-nl",
+    "Pensioencijfer.nl"
+   ],
+   [
+    "woningwaarderapport",
+    "Woningwaarde rapport"
+   ]
+  ],
+  "afbeelding": "bronnen/sites/woningcijfer-nl.webp",
+  "titel": "Woningcijfer.nl: bouw- en omgevingsscore van een woning"
+ },
+ {
+  "slug": "klimaatcijfer-nl",
+  "naam": "Klimaatcijfer.nl",
+  "url": "https://www.klimaatcijfer.nl/",
+  "ondertitel": "Klimaatrisico van een woning in één cijfer",
+  "tekst": [
+   "Klimaatcijfer.nl berekent het klimaatrisico van een woning op basis van postcode en huisnummer. De tool haalt live data op uit BAG, BRO (bodem en grondwater), AHN4, de RVO Funderingsviewer en de Klimaateffectatlas.",
+   "Je krijgt een klimaatcijfer van 1 tot 10 met een funderingsanalyse, het klimaatprofiel, de ontwikkeling naar 2030 en 2050 (KNMI'23-scenario's), het waterschap, financieringsmogelijkheden, het gemeentelijke klimaatadaptatieplan en aanbevelingen."
+  ],
+  "secties": [
+   [
+    "Wat kun je ermee?",
+    [
+     "Een adres analyseren, op de kaart bekijken of adressen vergelijken.",
+     "Een adviseursweergave en een rapport om af te drukken of te kopiëren.",
+     "Een doorverwijzing naar Duurzaamheidsprofiel.nl als verduurzaming loont."
+    ]
+   ],
+   [
+    "Goed om te weten",
+    [
+     "Gegevens worden niet opgeslagen; alle data komt live uit publieke registers. De uitkomst is indicatief. Klimaatcijfer.nl is een conceptversie (2026)."
+    ]
+   ]
+  ],
+  "gerelateerd": [
+   [
+    "sites/woningcijfer-nl",
+    "Woningcijfer.nl"
+   ],
+   [
+    "sites/funderingscijfer-nl",
+    "Funderingscijfer.nl"
+   ],
+   [
+    "sites/pandwise-nl",
+    "PandWise"
+   ],
+   [
+    "sites/hypotheekcijfer-nl",
+    "Hypotheekcijfer.nl"
+   ],
+   [
+    "sites/pensioencijfer-nl",
+    "Pensioencijfer.nl"
+   ],
+   [
+    "sites/duurzaamheidsprofiel-nl",
+    "Duurzaamheidsprofiel.nl"
+   ]
+  ],
+  "afbeelding": "bronnen/sites/klimaatcijfer-nl.webp",
+  "titel": "Klimaatcijfer.nl: klimaatrisico van een woning"
+ },
+ {
+  "slug": "funderingscijfer-nl",
+  "naam": "Funderingscijfer.nl",
+  "url": "https://funderingscijfer.nl/",
+  "ondertitel": "Indicatief funderingsrisico van een woning",
+  "tekst": [
+   "Funderingscijfer.nl berekent het indicatieve funderingsrisico van een woning. Op basis van postcode en huisnummer combineert de tool bouwjaar, bodemtype, maaiveldhoogte, grondwaterstand en de RVO-kaart met aandachtsgebieden voor funderingsproblematiek tot een cijfer van 1 tot en met 10: hoe hoger, hoe beter de verwachte funderingskwaliteit.",
+   "De tool is gratis, zonder account, opslag of advertenties. Alle data wordt live opgehaald uit publieke registers (PDOK, BAG, BRO, AHN4 en RVO)."
+  ],
+  "secties": [
+   [
+    "Voor adviseurs",
+    [
+     "Met de adviseursmodus zet je je kantoornaam en je eigen naam op de printversie. Die gegevens worden niet opgeslagen of verzonden."
+    ]
+   ],
+   [
+    "Goed om te weten",
+    [
+     "Het funderingscijfer is een geautomatiseerde inschatting zonder inspectie van het pand. Het is geen taxatie, geen funderingsrisicorapport of KCAF-label, geen QuickScan of bouwkundig oordeel en geen financieel, juridisch of hypotheekadvies."
+    ]
+   ]
+  ],
+  "gerelateerd": [
+   [
+    "sites/woningcijfer-nl",
+    "Woningcijfer.nl"
+   ],
+   [
+    "sites/klimaatcijfer-nl",
+    "Klimaatcijfer.nl"
+   ],
+   [
+    "sites/pandwise-nl",
+    "PandWise"
+   ],
+   [
+    "sites/hypotheekcijfer-nl",
+    "Hypotheekcijfer.nl"
+   ],
+   [
+    "sites/pensioencijfer-nl",
+    "Pensioencijfer.nl"
+   ]
+  ],
+  "afbeelding": "bronnen/sites/funderingscijfer-nl.webp",
+  "titel": "Funderingscijfer.nl: funderingsrisico van een woning"
+ },
+ {
+  "slug": "pandwise-nl",
+  "naam": "PandWise",
+  "url": "https://pandwise.nl/",
+  "ondertitel": "Compleet woningdossier en woningwaarderapport",
+  "tekst": [
+   "PandWise maakt een gratis feitencheck van elke woning: fundering, klimaat, geluid en een herleidbare waarde-indicatie, op basis van open data. Je vult een adres in of plakt een Funda-link; het adres wordt uit de link gelezen.",
+   "Met de gegevens uit de woningadvertentie (vraagprijs, bod, oppervlakten, bouwjaar) berekent PandWise de afwijking en de prijs per m², ook op een uitgebracht bod."
+  ],
+  "secties": [
+   [
+    "Voor adviseurs",
+    [
+     "Een adviseursrapport met je kantoornaam, je naam, je logo en een eigen toelichting.",
+     "PandWise insluiten op je eigen website of in Google Sites met een stukje code; met parameters vul je bijvoorbeeld een adres of je kantoorgegevens vooraf in."
+    ]
+   ],
+   [
+    "Goed om te weten",
+    [
+     "Gratis, zonder account en zonder cookies; de tool draait in de browser en slaat niets op.",
+     "Het is een feitencheck: geen taxatie, waardebepaling of financieel advies."
+    ]
+   ]
+  ],
+  "gerelateerd": [
+   [
+    "sites/woningcijfer-nl",
+    "Woningcijfer.nl"
+   ],
+   [
+    "sites/klimaatcijfer-nl",
+    "Klimaatcijfer.nl"
+   ],
+   [
+    "sites/funderingscijfer-nl",
+    "Funderingscijfer.nl"
+   ],
+   [
+    "sites/hypotheekcijfer-nl",
+    "Hypotheekcijfer.nl"
+   ],
+   [
+    "sites/pensioencijfer-nl",
+    "Pensioencijfer.nl"
+   ],
+   [
+    "woningwaarderapport",
+    "Woningwaarde rapport"
+   ]
+  ],
+  "afbeelding": "bronnen/sites/pandwise-nl.webp",
+  "titel": "PandWise: woningdossier en woningwaarderapport"
  }
 ]
