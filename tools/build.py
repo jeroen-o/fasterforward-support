@@ -3759,6 +3759,47 @@ def support_vh():
     return json.load(open(f, encoding="utf8")) if os.path.exists(f) else None
 
 
+def alleen_hier():
+    """Kennisbankartikelen van de supportsite die niet in het helpcenter van eBlinqx staan (intercom-help.eu/eblinqx):
+    [(categorie, [(pad, titel), ...])], op basis van de gebouwde pagina's. Gelijk = (bijna) dezelfde titel of >60% dezelfde woorden."""
+    import difflib
+    f = os.path.join(SRC, "helpcenters", "eblinqx", "helpcenter.json")
+    if not os.path.exists(f):
+        return []
+    hc = json.load(open(f, encoding="utf8"))
+    sleutel = lambda t: titel_sleutel(re.sub(r"UwKluis / Online klantportaal|Online klantportaal", "uwkluis", t, flags=re.I))
+    hk = [sleutel(a["titel"]) for a in hc]
+    hw = [woorden(a["tekst"]) for a in hc]
+    groepen = {}
+    for fn_ in sorted(glob.glob(os.path.join(ROOT, "kennisbank", "*", "index.html")) + glob.glob(os.path.join(ROOT, "*", "index.html"))):
+        s_ = open(fn_, encoding="utf8").read()
+        if '<main class="article"' not in s_:
+            continue
+        cr = re.search(r'<nav aria-label="Kruimelpad">(.*?)</nav>', s_, re.S)
+        delen = [html.unescape(re.sub(r"<[^>]+>", "", x)).strip() for x in re.split(r'<span class="sep"[^>]*>›</span>', cr.group(1))] if cr else []
+        in_kb = os.path.basename(os.path.dirname(os.path.dirname(fn_))) == "kennisbank"
+        if not (delen and delen[0] == "Kennisbank" and len(delen) >= 3) and not in_kb:
+            continue
+        if not (delen and delen[0] == "Kennisbank" and len(delen) >= 3):  # artikel met een eigen kop i.p.v. kruimelpad
+            m_ = re.search(r"<h1[^>]*>(.*?)</h1>", s_, re.S)
+            if not m_:
+                continue
+            delen = ["Kennisbank", "Overige handleidingen", html.unescape(re.sub(r"<[^>]+>", "", m_.group(1))).strip()]
+        titel = delen[-1]
+        k = sleutel(titel)
+        if k in hk or difflib.get_close_matches(k, hk, 1, 0.85):
+            continue
+        i = s_.find('<div class="content">')
+        w = woorden(re.sub(r"<[^>]+>", " ", s_[i:s_.find("</article>", i)]) if i > 0 else "")
+        if any(len(w & x) / max(1, len(w | x)) > 0.6 for x in hw):
+            continue
+        cat = " › ".join(delen[1:-1])
+        if cat.lower().startswith("overig"):
+            cat = "Overige handleidingen"
+        groepen.setdefault(cat, []).append((os.path.relpath(os.path.dirname(fn_), ROOT).replace(os.sep, "/"), titel))
+    return sorted(groepen.items(), key=lambda x: (x[0] == "Overige handleidingen", -len(x[1]), x[0]))
+
+
 def render_wegwijzer():
     """Klantgerichte wegwijzer 'Waar kan ik terecht met mijn vraag?' (klantversie van de interne Wegwijzer eBlinqx V&H)."""
     pg = Page("waar-kan-ik-terecht")
@@ -3777,6 +3818,16 @@ def render_wegwijzer():
              "Andere vragen stel je eerst aan Fin in eBlinqx, dan aan Quinn op de supportsite en daarna aan Support. Zo komt elke vraag goed "
              "geregistreerd binnen, gekoppeld aan jouw klantgegevens en dossier.")
     jump = " · ".join(f'<a href="#{slugify(r)}">{esc(r)}</a>' for r, _, _ in WEGWIJZER) + ' · <a href="#support-per-product">Support per product</a>'
+    alleen = alleen_hier()
+    alleen_blok = ""
+    if alleen:
+        n = sum(len(l) for _, l in alleen)
+        alleen_blok = (f'<h2 class="wth" id="alleen-op-de-supportsite">Handleidingen die je alleen op deze supportsite vindt</h2>'
+                       f'<p>Deze {n} handleidingen staan (nog) niet in het helpcenter van eBlinqx, dus Fin vindt ze mogelijk niet. Zoek je een van deze onderwerpen? Kijk dan hier.</p>'
+                       + "".join(f'<details class="wtfaq"><summary>{esc(c)} ({len(l)})</summary><ul>'
+                                 + "".join(f'<li><a href="{pg.rel(p_)}">{esc(t)}</a></li>' for p_, t in sorted(l, key=lambda x: x[1].lower())) + "</ul></details>"
+                                 for c, l in alleen))
+    jump += ' · <a href="#alleen-op-de-supportsite">Alleen op deze supportsite</a>' if alleen else ""
     sv = support_vh()
     per_product = ""
     if sv:
@@ -3805,6 +3856,7 @@ def render_wegwijzer():
   <p class="jump">Ga naar: {jump}</p>
   {blokken}
   {per_product}
+  {alleen_blok}
   <p class="note">Wegwijzer eBlinqx Verzekering &amp; Hypotheek, stand oktober 2026. Zie ook <a href="{pg.rel("contact")}">Contact</a> en het <a href="{pg.rel("supportbeleid")}">supportbeleid</a>.</p>
 </div></main>
 <script type="application/ld+json">{json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faq}, ensure_ascii=False).replace("</", "<\\/")}</script>"""
