@@ -835,7 +835,7 @@ def layout(pg, title, body, active=None, description=""):
     <div class="head-row">
       <a class="brand" href="{pg.rel('')}" aria-label="Blinqx support — home">
         <img src="{pg.rel('assets/logo-mark.png')}" alt="Blinqx" width="470" height="119">
-        <span>powered by Faster Forward</span>
+        <span>Alles over Verzekering &amp; Hypotheek</span>
       </a>
       <nav class="main" aria-label="Hoofdmenu"><ul>{nav}</ul></nav>
     </div>
