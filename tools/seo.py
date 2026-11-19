@@ -61,6 +61,40 @@ def lees(root, overslaan):
     return paginas
 
 
+def deelplaatje(root, bron):
+    """Deelafbeelding voor LinkedIn en WhatsApp: 1200x630 JPG (die tonen geen WebP), het beeld volledig zichtbaar op een
+    witte achtergrond. Bewaard in og-afbeeldingen/ en alleen opnieuw gemaakt als het origineel nieuwer is."""
+    import hashlib
+    pad = os.path.join(root, bron)
+    if not os.path.exists(pad):
+        return None
+    naam = re.sub(r"[^a-z0-9]+", "-", os.path.splitext(bron)[0].lower()).strip("-")[-60:] + "-" + hashlib.md5(bron.encode()).hexdigest()[:6] + ".jpg"
+    rel = "og-afbeeldingen/" + naam
+    doel = os.path.join(root, rel)
+    if os.path.exists(doel) and os.path.getmtime(doel) >= os.path.getmtime(pad):
+        return rel
+    try:
+        from PIL import Image
+        im = Image.open(pad)
+        im.seek(0)
+        im = im.convert("RGBA")
+        canvas = Image.new("RGB", (1200, 630), (255, 255, 255))
+        schaal = min(1200 / im.width, 630 / im.height)
+        if im.width >= 1000 and im.height >= 500 and abs(im.width / im.height - 1200 / 630) < 0.35:
+            schaal = max(1200 / im.width, 630 / im.height)  # bijna de juiste verhouding: vullend
+        elif im.width < 600 and im.height < 315:
+            schaal = min(schaal, 2.0)  # kleine logo's niet opblazen
+        w, h = max(1, int(im.width * schaal)), max(1, int(im.height * schaal))
+        im = im.resize((w, h), Image.LANCZOS)
+        canvas.paste(im, ((1200 - w) // 2, (630 - h) // 2), im)
+        os.makedirs(os.path.dirname(doel), exist_ok=True)
+        canvas.save(doel, "JPEG", quality=82, optimize=True, progressive=True)
+        return rel
+    except Exception as e:  # noqa: BLE001
+        print("deelplaatje mislukt:", bron, e)
+        return None
+
+
 def uitvoeren(root, site_url, overslaan=("bronnen", "tools", "assets", ".github")):
     ORG["logo"] = site_url + "assets/logo-mark.png"
     paginas = lees(root, overslaan)
@@ -241,13 +275,20 @@ def uitvoeren(root, site_url, overslaan=("bronnen", "tools", "assets", ".github"
             # eigen deelafbeelding voor video-, websites-, partner- en productpagina's
             if 'class="nieuws-fig"' in nieuw_main or u in ("sites", "partners", "adviescoach") or u.startswith(("video/", "sites/", "partners/", "finrust/", "adviesbox-classic/", "adviesbox-online/", "hypotheekadvies-helpcenter/", "finconnect/", "finly/", "banking-insurance", "adviescoach", "mijnhuiszaken", "yes-co", "tools-voor-vastgoed",
                              "woningwaarderapport", "actiefbeheerscan", "hypotheekrente-app", "finly-crm", "demo-kantoor", "websitetools")):
-                eerste = re.search(r'<(?:img[^>]*\ssrc|video[^>]*\sposter)="([^"]+\.(?:webp|jpe?g|png))"', nieuw_main)
+                eerste = re.search(r'<(?:img[^>]*\ssrc|video[^>]*\sposter)="(?!https?:|//)([^"]+\.(?:webp|jpe?g|png))"', nieuw_main)
                 if eerste:
-                    absu = site_url + os.path.normpath(os.path.join(os.path.dirname(os.path.relpath(f, root)), eerste.group(1))).replace(os.sep, "/")
+                    bron = os.path.normpath(os.path.join(os.path.dirname(os.path.relpath(f, root)), eerste.group(1))).replace(os.sep, "/")
+                    deel = deelplaatje(root, bron)
+                    absu = site_url + (deel or bron)
                     head = re.sub(r'<meta property="og:image" content="[^"]*">', f'<meta property="og:image" content="{absu}">', head)
                     head = re.sub(r'<meta name="twitter:image" content="[^"]*">', f'<meta name="twitter:image" content="{absu}">', head)
-                    head = re.sub(r'<meta property="og:image:width" content="\d+"><meta property="og:image:height" content="\d+">\n?', "", head)
-                    head = re.sub(r'<meta property="og:image:type" content="[^"]*">\n?', "", head)
+                    if deel:  # vaste maat en type: LinkedIn en WhatsApp tonen dan een grote kaart
+                        head = re.sub(r'<meta property="og:image:width" content="\d+">', '<meta property="og:image:width" content="1200">', head)
+                        head = re.sub(r'<meta property="og:image:height" content="\d+">', '<meta property="og:image:height" content="630">', head)
+                        head = re.sub(r'<meta property="og:image:type" content="[^"]*">', '<meta property="og:image:type" content="image/jpeg">', head)
+                    else:
+                        head = re.sub(r'<meta property="og:image:width" content="\d+"><meta property="og:image:height" content="\d+">\n?', "", head)
+                        head = re.sub(r'<meta property="og:image:type" content="[^"]*">\n?', "", head)
                     head = re.sub(r'<meta property="og:image:alt" content="[^"]*">', f'<meta property="og:image:alt" content="{esc(naam_pg)}">', head)
         # h1
         zonder_script = re.sub(r"<script\b.*?</script>", "", rest, flags=re.S)
