@@ -571,3 +571,4 @@ table.wegwijzer th,table.wegwijzer td{display:block;border:0;padding:3px 0;width
 .callout.nieuwer{background:#EAF4FB;border-left:4px solid #2B6C8E;padding:10px 14px;margin:0 0 16px}
 .content figure.smal img{max-width:320px;width:100%;height:auto}
 .brand span{white-space:nowrap}@media (max-width:420px){.brand span{font-size:12px}}
+.content figure.logo-klein img{max-width:96px;height:auto;border:0}
