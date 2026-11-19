@@ -857,7 +857,7 @@ def layout(pg, title, body, active=None, description=""):
 {share_block(pg, title, description)}
 <footer>
   <div class="wrap">
-    <span>Copyright © 2024 Blinqx powered by Faster Forward</span>
+    <span>Copyright © {date.today().year} Blinqx Verzekering &amp; Hypotheek</span>
     <nav aria-label="Beleid">
       <a href="{pg.rel('supportbeleid')}">Supportbeleid</a>
       <a href="{pg.rel('opdrachtenbeleid')}">Opdrachtenbeleid</a>
@@ -1168,7 +1168,7 @@ def render_article(cats, feeds, p):
     if p["path"] == "contact":
         head = hero(pg, "Contact", "hero-contact.jpg")
         side = ('<aside class="related contactbox"><h2>Contactgegevens</h2>'
-                '<p>Blinqx powered by Faster Forward</p>'
+                '<p>Blinqx Verzekering &amp; Hypotheek</p>'
                 '<p>E-mail:<br><a href="mailto:support-eblinqx@blinqx.tech">support-eblinqx@blinqx.tech</a></p>'
                 '<p>Telefoonnummer:<br><a href="tel:+31850180069">085 018 00 69</a></p>'
                 '<p>Wij zijn bereikbaar op werkdagen van 8:30 tot 17:00</p>'
