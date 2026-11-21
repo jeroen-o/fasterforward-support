@@ -3912,8 +3912,8 @@
 "d": "2026-11-19"
 },
 "eblinqx-helpcenter": {
-"h": "58d45cf8642b98ad",
-"d": "2026-11-19"
+"h": "7d9ecd470a34b79e",
+"d": "2026-11-21"
 },
 "eblinqx-helpcenter/aanmaken-dienst": {
 "h": "c259be4389d0c3f2",
@@ -3933,10 +3933,6 @@
 },
 "eblinqx-helpcenter/activatie-klantportaal": {
 "h": "bb4064ea87fd2bc4",
-"d": "2026-11-19"
-},
-"eblinqx-helpcenter/afm-marktmonitor-invullen": {
-"h": "0ca96e59c34121a0",
 "d": "2026-11-19"
 },
 "eblinqx-helpcenter/basisinstellingen-boekhouding": {
@@ -3984,8 +3980,8 @@
 "d": "2026-11-19"
 },
 "eblinqx-helpcenter/ga-veilig-om-met-je-wachtwoorden": {
-"h": "efdfa89c5e1e2fda",
-"d": "2026-11-19"
+"h": "01437bfbc9e3dd0a",
+"d": "2026-11-21"
 },
 "eblinqx-helpcenter/handmatig-boekingen-invoeren": {
 "h": "201a98327a1de238",
@@ -4632,8 +4628,8 @@
 "d": "2026-11-19"
 },
 "finly": {
-"h": "5f35e7477f57699d",
-"d": "2026-11-19"
+"h": "81b3e4d032d6295e",
+"d": "2026-11-21"
 },
 "finly-crm": {
 "h": "fb0cc93fd8266842",
@@ -4816,8 +4812,8 @@
 "d": "2026-11-19"
 },
 "finly/dossiers-in-e-blinqx-crm-wat-is-een-dossier-en-hoe-werkt-het": {
-"h": "54c5b5c2f527a492",
-"d": "2026-11-19"
+"h": "fe5d147fc992f53c",
+"d": "2026-11-21"
 },
 "finly/dossierstatus-en-voortgang-track-and-trace-bekijken-en-aanpassen": {
 "h": "c0ddf8d1050de033",
@@ -4872,8 +4868,8 @@
 "d": "2026-11-19"
 },
 "finly/formulier-inrichting-problemen-verplichte-velden-slotvragen-en-naw-gegevens": {
-"h": "c7edece9f45ec53e",
-"d": "2026-11-19"
+"h": "e9ec1a48aa671e90",
+"d": "2026-11-21"
 },
 "finly/formulier-invullen-actiepunten-aanmaken-en-pdf-bekijken": {
 "h": "65772ade4c3a27f2",
@@ -4884,12 +4880,16 @@
 "d": "2026-11-19"
 },
 "finly/formulieren-bouwen-en-aanpassen": {
-"h": "377f2243f032ab07",
-"d": "2026-11-19"
+"h": "da6132da1edacd93",
+"d": "2026-11-21"
 },
 "finly/formulieren-gebruiken-in-finly": {
 "h": "0a958b2b68c0a69e",
 "d": "2026-11-19"
+},
+"finly/formulierinstellingen-het-tabblad-gegevens-uitgelegd": {
+"h": "e54006a76b26e714",
+"d": "2026-11-21"
 },
 "finly/foutmelding-bij-exporteren-van-een-relatie-naar-anva-kvk-nummer-ontbreekt": {
 "h": "14b34d2954694097",
@@ -5036,8 +5036,8 @@
 "d": "2026-11-19"
 },
 "finly/logo-verschijnt-niet-correct-op-nieuw-formuliertype": {
-"h": "605ab4ffdf2591be",
-"d": "2026-11-19"
+"h": "24827db957978bce",
+"d": "2026-11-21"
 },
 "finly/mail-indexeren-naar-anva": {
 "h": "512acd908e8f7e2e",
@@ -5124,8 +5124,8 @@
 "d": "2026-11-19"
 },
 "finly/pdf-layout-instellen-voor-een-formulier": {
-"h": "fda8584f23c0b5c6",
-"d": "2026-11-19"
+"h": "4ac440a93888fac5",
+"d": "2026-11-21"
 },
 "finly/persoonlijke-booking-link-per-adviseur-instellen": {
 "h": "54c8b9a22cefe998",
@@ -5216,8 +5216,8 @@
 "d": "2026-11-19"
 },
 "finly/tags-toevoegen-aan-een-formulier-via-de-beginwaarde": {
-"h": "275af4475a8ec9a4",
-"d": "2026-11-19"
+"h": "dda1af95d0785d43",
+"d": "2026-11-21"
 },
 "finly/telefoniekoppeling-via-bubble-redcactus": {
 "h": "48e67bd33862eb72",
@@ -7120,8 +7120,8 @@
 "d": "2026-11-19"
 },
 "kennisbank/afm-marktmonitor-invullen": {
-"h": "3b34d540f16b914c",
-"d": "2026-11-19"
+"h": "90f3c4900264c0d0",
+"d": "2026-11-21"
 },
 "kennisbank/afm-marktmonitor-invullen-2": {
 "h": "ecb7f9b7d034b767",
@@ -8692,8 +8692,8 @@
 "d": "2026-11-19"
 },
 "kennisbanken": {
-"h": "d41fcb3bcadb053b",
-"d": "2026-11-20"
+"h": "6e1b0f41d2908299",
+"d": "2026-11-21"
 },
 "kent-digimap-tips-al": {
 "h": "acfdb6c4c7a88273",
@@ -9668,8 +9668,8 @@
 "d": "2026-11-19"
 },
 "tips": {
-"h": "33a04f9991ed2cb2",
-"d": "2026-11-19"
+"h": "28839ddd61571c9e",
+"d": "2026-11-21"
 },
 "tips-voor-het-verwerken-van-adn-berichten": {
 "h": "f9ea0c8e03500b6e",

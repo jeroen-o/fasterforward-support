@@ -70,8 +70,8 @@
 - [Kennisbank Adviesbox Online](https://support-eblinqx-connect.nl/adviesbox-online/): Alle 132 artikelen uit de kennisbank van Adviesbox Online: handleidingen en uitleg over algemeen, implementatie & onboarding, training & educatie, storingen…
 - [Kennisbank eBlinqx Hypotheekadvies](https://support-eblinqx-connect.nl/hypotheekadvies-helpcenter/): Alle 310 artikelen uit de kennisbank van eBlinqx Hypotheekadvies: handleidingen en uitleg over algemeen, implementatie & onboarding, storingen, productupdates…
 - [Kennisbank FinConnect](https://support-eblinqx-connect.nl/finconnect/): Alle 100 artikelen uit de kennisbank van FinConnect: handleidingen en uitleg over algemeen, modules en functionaliteiten, instellingen en configuratie…
-- [Kennisbank Finly](https://support-eblinqx-connect.nl/finly/): Alle 168 artikelen uit de kennisbank van Finly: handleidingen en uitleg over algemeen, implementatie & onboarding, training & educatie, storingen, modules en…
-- [Kennisbank eBlinqx Connect: starten en demo's](https://support-eblinqx-connect.nl/eblinqx-helpcenter/): Alle 45 artikelen uit de kennisbank van eBlinqx Connect: starten en demo's: handleidingen en uitleg over starten met eblinqx connect, facturatie, eblinqx…
+- [Kennisbank Finly](https://support-eblinqx-connect.nl/finly/): Alle 169 artikelen uit de kennisbank van Finly: handleidingen en uitleg over algemeen, implementatie & onboarding, training & educatie, storingen, modules en…
+- [Kennisbank eBlinqx Connect: starten en demo's](https://support-eblinqx-connect.nl/eblinqx-helpcenter/): Alle 44 artikelen uit de kennisbank van eBlinqx Connect: starten en demo's: handleidingen en uitleg over starten met eblinqx connect, facturatie, eblinqx…
 
 ## Kennisbank FinRust
 
@@ -1459,7 +1459,7 @@
 - [Notificaties bekijken en beheren in het CRM-dashboard](https://support-eblinqx-connect.nl/finly/notificaties-bekijken-en-beheren-in-het-crm-dashboard/): Zo opent u notificaties, ziet u waar ze over gaan en beheert u ze (gelezen/ongelezen of verwijderen) via de klantkaart.
 - [Notificaties in het CRM bekijken en begrijpen](https://support-eblinqx-connect.nl/finly/notificaties-in-het-crm-bekijken-en-begrijpen/): Uitleg van de soorten CRM-notificaties en hoe u meldingen opent, zoekt, markeert als gelezen of verwijdert.
 - [Notificaties bekijken en filteren in het CRM](https://support-eblinqx-connect.nl/finly/notificaties-bekijken-en-filteren-in-het-crm/): Bekijk CRM-notificaties via het bel-icoon en filter op collega, leesstatus, prioriteit, datum en zoekterm.
-- [Dossiers in e-Blinqx CRM: wat is een dossier en hoe werkt het?](https://support-eblinqx-connect.nl/finly/dossiers-in-e-blinqx-crm-wat-is-een-dossier-en-hoe-werkt-het/): Uitleg over de bouwstenen klant, activiteit, dossier en product, en het verschil tussen een dossier met en zonder workflow.
+- [Dossiers in e-Blinqx CRM: wat is een dossier en hoe werkt het?](https://support-eblinqx-connect.nl/finly/dossiers-in-e-blinqx-crm-wat-is-een-dossier-en-hoe-werkt-het/): Wat een dossier is, het verschil met en zonder workflow, en hoe je ermee werkt: dossiertypes, onderdelen, activiteiten toevoegen, dossier vinden en afronden.
 - [Dossier gebruiken voor een klantworkflow in CRM](https://support-eblinqx-connect.nl/finly/dossier-gebruiken-voor-een-klantworkflow-in-crm/): Wat een dossier is, hoe het is opgebouwd en welke toegang en rechten u nodig heeft om dossiers te gebruiken.
 - [Hypotheektraject starten via eBlinqx Connect](https://support-eblinqx-connect.nl/finly/hypotheektraject-starten-via-eblinqx-connect/): Hoe Finly automatisch een hypotheektraject in eBlinqx Connect start wanneer je een dossier opslaat.
 - [Nieuw dossier starten](https://support-eblinqx-connect.nl/finly/nieuw-dossier-starten/): Start een nieuw dossier vanuit het dossieroverzicht of vanuit een klantdossier, inclusief vereisten en veelgestelde vragen.
@@ -1546,6 +1546,7 @@
 - [Beheer: Track and Trace inrichten met stappen en condities](https://support-eblinqx-connect.nl/finly/beheer-track-and-trace-inrichten-met-stappen-en-condities/): Track and Trace inrichten voor een dossiertype: stappen aanmaken, condities koppelen aan activiteiten en de klantbeleving van het proces vormgeven.
 - [Werken met de exportmodule](https://support-eblinqx-connect.nl/finly/werken-met-de-exportmodule/): Stap voor stap een export aanmaken in Finly via Instellingen > Export. Kies je onderwerp, stel een datumfilter in, selecteer de gewenste velden en download…
 - [Formulieren bouwen en aanpassen](https://support-eblinqx-connect.nl/finly/formulieren-bouwen-en-aanpassen/): Stap-voor-stap uitleg voor beheerders over het aanmaken, instellen en ontwerpen van formulieren, inclusief componenten, groepen, logica, berekeningen en…
+- [Formulierinstellingen: het tabblad Gegevens uitgelegd](https://support-eblinqx-connect.nl/finly/formulierinstellingen-het-tabblad-gegevens-uitgelegd/): Alle instellingen op het tabblad Gegevens van een formulier: vormgeving, logo rapport, voorpagina met tags, mails bij afronden, digitaal ondertekenen en…
 - [Logo verschijnt niet correct op nieuw formuliertype](https://support-eblinqx-connect.nl/finly/logo-verschijnt-niet-correct-op-nieuw-formuliertype/): Hoe je het logo correct instelt op een nieuw formuliertype en wat te doen als het logo niet of vervormd verschijnt.
 - [Formulier inrichting problemen: verplichte velden, slotvragen en NAW-gegevens](https://support-eblinqx-connect.nl/finly/formulier-inrichting-problemen-verplichte-velden-slotvragen-en-naw-gegevens/): Veelvoorkomende inrichtingsproblemen bij formulieren, zoals verplichte velden die niet werken, ontbrekende slotvragen in de PDF of NAW-gegevens die niet…
 - [Tags toevoegen aan een formulier via de beginwaarde](https://support-eblinqx-connect.nl/finly/tags-toevoegen-aan-een-formulier-via-de-beginwaarde/): Hoe je met tags in het component 'Meerdere regels opgemaakte tekst' automatisch klant- of relatiegegevens vooraf invult in een formulier.
@@ -1622,7 +1623,6 @@
 - [Rapportagemanager](https://support-eblinqx-connect.nl/eblinqx-helpcenter/rapportagemanager/): Hoe kun je in en paar klikken je eigen selecties maken en hoe bekijk je rapporten
 - [Hoe kan ik facturen zoeken?](https://support-eblinqx-connect.nl/eblinqx-helpcenter/hoe-kan-ik-facturen-zoeken/): Lees hier hoe je facturen zoekt in het factuuroverzicht. eBlinqx Connect: starten en demo's › Facturatie › Facturatie · bijgewerkt 30 oktober 2026
 - [Ga veilig om met je wachtwoorden](https://support-eblinqx-connect.nl/eblinqx-helpcenter/ga-veilig-om-met-je-wachtwoorden/): Hier lees je meer hoe je veilig om kunt gaan met jouw wachtwoord voor eBlinqx Connect.
-- [AFM marktmonitor invullen](https://support-eblinqx-connect.nl/eblinqx-helpcenter/afm-marktmonitor-invullen/): Hier lees je hoe je informatie uit eBlinqx Connect kunt halen om de AFM marktmonitor in te vullen.
 - [Is Faster Forward Elements veilig?](https://support-eblinqx-connect.nl/eblinqx-helpcenter/is-faster-forward-elements-veilig/): Lees hier hoe Faster Forward je data en die van je klanten beschermt. eBlinqx Connect: starten en demo's › eBlinqx › Beveiliging in eBlinqx · bijgewerkt 30…
 - [Beveiliging Faster Forward Elements](https://support-eblinqx-connect.nl/eblinqx-helpcenter/beveiliging-faster-forward-elements/): Lees hier hoe het zit met de beschikbaarheid, de netwerkbeveiliging, de procedures en de screening van medewerkers.
 - [Trainingen](https://support-eblinqx-connect.nl/eblinqx-helpcenter/trainingen/): Lees hier hoe je je inschrijft voor de basistraining van eBlinqx Connect, met de focus op hypotheken of verzekeren.
@@ -1767,7 +1767,7 @@
 ## Nieuws, tips en leren
 
 - [Nieuws](https://support-eblinqx-connect.nl/nieuws/): Nieuws: Hieronder vind je onze laatste nieuwsberichten. Ga naar: 2026 · 2025 · 2024 · 2023 · 2022 · 2021 · 2020 · 2019 · 2018 · 2017 · 2016
-- [Tips](https://support-eblinqx-connect.nl/tips/): Tips: Hieronder vind je onze laatste tips. Hieronder vind je onze laatste tips. 39 berichten, waarvan 18 van verzekeringhypotheek.blinqx.tech (dagelijks…
+- [Tips](https://support-eblinqx-connect.nl/tips/): Tips: Hieronder vind je onze laatste tips. Hieronder vind je onze laatste tips. 38 berichten, waarvan 18 van verzekeringhypotheek.blinqx.tech (dagelijks…
 - [E-learning](https://support-eblinqx-connect.nl/elearning/): Interactieve e-learnings voor eBlinqx Connect en eBlinqx Hypotheekadvies.
 - [Video's](https://support-eblinqx-connect.nl/video/): Video's in eBlinqx Connect: handleidingen en uitleg, waaronder YouTube: Blinqx Verzekering & Hypotheek ↗, YouTube: Blinqx ↗, YouTube: FasterForwardTV ↗…
 - [Trainingen](https://support-eblinqx-connect.nl/trainingen/): Trainingen voor eBlinqx, Adviesbox en Financiële Planner bij de Blinqx Academy.
@@ -1807,8 +1807,8 @@
 - [Adviespakketten welke koppelen met eBlinqx Connect](https://support-eblinqx-connect.nl/kennisbank/welke-adviespakketten-koppelt-elements/): Het hypotheek advies wordt niet in eBlinqx Connect gemaakt maar in een adviespakket.
 - [Advisor support relatie](https://support-eblinqx-connect.nl/kennisbank/advisor-support-relatie/): Lees hier hoe je het kunt instellen dat de velden adviseur, acceptant en behandelaar in een product gekoppeld worden.
 - [Afletteren](https://support-eblinqx-connect.nl/kennisbank/afletteren/): Vind hier meer informatie over afletteren in eBlinqx Connect, waaronder afletteren op debiteurenkaarten en afletteren via dagboek en memoriaal.
-- [AFM marktmonitor invullen](https://support-eblinqx-connect.nl/kennisbank/afm-marktmonitor-invullen-2/): is weer gestart met de jaarlijkse marktmonitor voor adviseurs en bemiddelaars. Met behulp van eBlinqx kan je deze vragenlijst invullen.
 - [AFM marktmonitor invullen](https://support-eblinqx-connect.nl/kennisbank/afm-marktmonitor-invullen/): Ieder jaar vraagt de AFM aan adviseurs en bemiddelaars om de Marktmonitor adviseurs & bemiddelaars (MMAB) in te vullen.
+- [AFM marktmonitor invullen](https://support-eblinqx-connect.nl/kennisbank/afm-marktmonitor-invullen-2/): is weer gestart met de jaarlijkse marktmonitor voor adviseurs en bemiddelaars. Met behulp van eBlinqx kan je deze vragenlijst invullen.
 - [AFM vergunningen beheren](https://support-eblinqx-connect.nl/kennisbank/afm-vergunningen-beheren/): In de module Gewijzigde AFM vergunningen kan je in één oogopslag zien welke vergunningen gewijzigd zijn.
 - [Afspraak maken en uitnodigingen](https://support-eblinqx-connect.nl/kennisbank/hoe-maak-en-afspraak-agenda/): Lees hier hoe je een afspraak maakt, wijzigt en herhaalt in de agenda.
 - [Afwijkende RC Maatschappij instellen](https://support-eblinqx-connect.nl/kennisbank/afwijkende-rc-maatschappij-instellen/): Gezien het soms voorkomt dat de maatschappij van de polis niet de rekening courant maatschappij is is het belangrijk dit goed in te stellen in eBlinqx voor de…
