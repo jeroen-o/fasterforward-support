@@ -207,7 +207,7 @@ def uitvoeren(root, site_url, overslaan=("bronnen", "tools", "assets", ".github"
         head, rest = s.split("</head>", 1)
         head = re.sub(r'\s*<script type="application/ld\+json" id="seo-ld">.*?</script>', "", head, flags=re.S)
         head = re.sub(r"<title>.*?</title>", lambda m: f"<title>{esc(i['titel_nieuw'])}</title>", head, count=1, flags=re.S)
-        head = re.sub(r'(<meta (?:name="description"|property="og:description") content=")[^"]*(")',
+        head = re.sub(r'(<meta (?:name="description"|property="og:description"|name="twitter:description") content=")[^"]*(")',
                       lambda m: m.group(1) + esc(i["desc_nieuw"]) + m.group(2), head)
         url = site_url + (u + "/" if u else "")
         graaf = []
@@ -282,6 +282,8 @@ def uitvoeren(root, site_url, overslaan=("bronnen", "tools", "assets", ".github"
                     absu = site_url + (deel or bron)
                     head = re.sub(r'<meta property="og:image" content="[^"]*">', f'<meta property="og:image" content="{absu}">', head)
                     head = re.sub(r'<meta name="twitter:image" content="[^"]*">', f'<meta name="twitter:image" content="{absu}">', head)
+                    head = re.sub(r'<meta property="og:image:secure_url" content="[^"]*">', f'<meta property="og:image:secure_url" content="{absu}">', head)
+                    head = re.sub(r'<meta itemprop="image" content="[^"]*">', f'<meta itemprop="image" content="{absu}">', head)
                     if deel:  # vaste maat en type: LinkedIn en WhatsApp tonen dan een grote kaart
                         head = re.sub(r'<meta property="og:image:width" content="\d+">', '<meta property="og:image:width" content="1200">', head)
                         head = re.sub(r'<meta property="og:image:height" content="\d+">', '<meta property="og:image:height" content="630">', head)

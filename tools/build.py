@@ -708,11 +708,15 @@ def head_meta(pg, title, description):
         f'<meta property="og:description" content="{esc(d)}">',
         f'<meta property="og:url" content="{esc(u)}">',
         f'<meta property="og:image" content="{img}">',
+        f'<meta property="og:image:secure_url" content="{img}">',
         '<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">',
         '<meta property="og:image:type" content="image/png">',
         '<meta property="og:image:alt" content="Blinqx Verzekering &amp; Hypotheek – Alles over Blinqx Verzekering &amp; Hypotheek - Support">',
         f'<meta name="twitter:image" content="{img}">',
         '<meta name="twitter:card" content="summary_large_image">',
+        f'<meta name="twitter:title" content="{esc(t)}">',
+        f'<meta name="twitter:description" content="{esc(d)}">',
+        f'<meta itemprop="image" content="{img}">',
     ])
 
 
