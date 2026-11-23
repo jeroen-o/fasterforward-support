@@ -3325,6 +3325,7 @@ def render_sites():
   <div class="mhz-intro"><div>{"".join(f"<p>{esc(t)}</p>" for t in s["tekst"])}</div>
     {fig}</div>
   {"".join(f'<h2 class="wth">{esc(kop)}</h2>' + ("<ul>" + "".join(f"<li>{esc(x)}</li>" for x in items) + "</ul>" if len(items) > 1 else f"<p>{esc(items[0])}</p>") for kop, items in s.get("secties", []))}
+  {('<p class="btn-row">' + " ".join(f'<a class="btn-out" href="{esc(u)}" target="_blank" rel="noopener">{esc(t)} ↗</a>' for t, u in s["links"]) + "</p>") if s.get("links") else ""}
   {adviesbox_extra(pg) if s["slug"] == "adviesbox-nl" else ""}
   {f'<h2 class="wth">Lees ook</h2><ul>{rel}</ul>' if rel else ""}
   <p class="btn-row bezoek"><a class="btn-out cta" href="{esc(s["url"])}" target="_blank" rel="noopener" aria-label="Bezoek website {esc(s["naam"])}">Bezoek website ↗</a></p>

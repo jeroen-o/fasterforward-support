@@ -707,12 +707,16 @@
   "slug": "hdn-nl",
   "naam": "HDN.nl",
   "url": "https://www.hdn.nl/",
-  "ondertitel": "Hypotheken Data Netwerk: alle partijen in de financiële keten verbonden",
+  "ondertitel": "Hypotheken Data Netwerk: alle partijen in de financiële keten verbonden, met Inkomensbepaling Loondienst (IBL)",
   "tekst": [
    "HDN (Hypotheken Data Netwerk) zorgt voor veilige, zorgvuldige en slimme informatie-uitwisseling in het financiële woondomein. Via HDN wisselen adviseurs, geldverstrekkers, serviceproviders, taxateurs en notarissen gegevens uit volgens één standaard.",
    "Met eBlinqx Connect verstuur en ontvang je HDN-berichten, zoals hypotheekaanvragen, offertes en statusmeldingen. Hoe je HDN inricht (HDN-codes, de HDN-inbox en de inlogmethode) en wat er verandert met de HDN-releases, lees je in de kennisbank en de releasenotes."
   ],
   "gerelateerd": [
+   [
+    "sites/toetsinkomenberekenen-nl",
+    "Toetsinkomenberekenen.nl (IBL-rekentool)"
+   ],
    [
     "kennisbank/hoe-verstuur-hdn-bericht",
     "Hoe verstuur ik een HDN-bericht?"
@@ -738,7 +742,53 @@
     "Releasenotes eBlinqx Connect (HDN-releases)"
    ]
   ],
-  "afbeelding": "bronnen/sites/hdn-nl.webp"
+  "afbeelding": "bronnen/sites/hdn-nl.webp",
+  "secties": [
+   [
+    "Inkomensbepaling Loondienst (IBL)",
+    [
+     "Met Inkomensbepaling Loondienst (IBL) bereken je het toetsinkomen van een klant in loondienst op basis van het UWV-verzekeringsbericht. Voor mensen in loondienst is IBL een beter, sneller en betrouwbaarder alternatief voor de werkgeversverklaring. IBL kan bij alle geldverstrekkers en is opgenomen in de Voorwaarden & Normen van NHG; de werkgeversverklaring blijft ook mogelijk."
+    ]
+   ],
+   [
+    "Zo werkt IBL",
+    [
+     "Stap 1: de klant downloadt het verzekeringsbericht van de website van het UWV en stelt het digitaal beschikbaar aan de adviseur, bijvoorbeeld via een upload in zijn klantportaal.",
+     "Stap 2: de adviseur berekent het toetsinkomen met de online rekentool (Toetsinkomenberekenen.nl) of via de webservice als het adviespakket daarop is aangesloten. Bij de hypotheekaanvraag via HDN vult de adviseur het toetsinkomen in en geeft aan dat de beoordeling plaatsvindt op basis van het UWV-verzekeringsbericht.",
+     "Stap 3: de geldverstrekker vraagt op basis van de aanvraag het UWV-verzekeringsbericht op in plaats van de werkgeversverklaring; de adviseur verstuurt het bericht via HDN. Bij finaal akkoord volgt het definitieve hypotheekaanbod."
+    ]
+   ],
+   [
+    "Nieuwe rekenregels 9.0.0 per 23 november 2026",
+    [
+     "Op 23 november 2026 zijn de nieuwe IBL-rekenregels 9.0.0 in werking getreden; tot en met 22 november 2026 gold versie 8.1.1. HDN heeft er een Quickscan Onepager (versie 9.0.0) en een webinar over gemaakt. Bekijk de actuele rekenregels en het overzicht met wijzigingen op de IBL-pagina van HDN."
+    ]
+   ],
+   [
+    "Tip: foutmelding bij het uploaden van het UWV-verzekeringsbericht",
+    [
+     "Een origineel UWV-verzekeringsbericht bevat een waarmerk. Laat de klant het bericht downloaden en opslaan met 'opslaan' (niet 'opslaan als' of afdrukken als pdf), anders vervalt het waarmerk. Een geldig bericht toont in Adobe Acrobat Reader linksboven 'Signed and all signatures are valid'."
+    ]
+   ]
+  ],
+  "links": [
+   [
+    "Inkomensbepaling Loondienst op hdn.nl",
+    "https://hdn.nl/diensten/inkomensbepalingloondienst/"
+   ],
+   [
+    "IBL-rekentool",
+    "https://www.toetsinkomenberekenen.nl/"
+   ],
+   [
+    "Rekenregels IBL 9.0.0 (pdf)",
+    "https://hdn.nl/wp-content/uploads/2026/10/Rekenregels-IBL-9.0.0-20261123.pdf"
+   ],
+   [
+    "Quickscan Onepager 9.0.0 (pdf)",
+    "https://hdn.nl/wp-content/uploads/2026/11/Onepager-Rekenregels-IBL-9.0.0.pdf"
+   ]
+  ]
  },
  {
   "slug": "sivi-nl",
@@ -805,6 +855,7 @@
    [
     "Goed om te weten",
     [
+     "Per 23 november 2026 gelden de IBL-rekenregels 9.0.0 (daarvoor 8.1.1). Meer uitleg staat op de IBL-pagina van HDN.",
      "Meer informatie over IBL en de actuele rekenregels vind je op de website van HDN. Vragen? Mail servicedesk@hdn.nl.",
      "Volgens de juridische mededeling op de site gebruik je de tool voor eigen rekening en risico: de gebruiker is zelf verantwoordelijk voor het controleren van de berekeningen en uitkomsten."
     ]
