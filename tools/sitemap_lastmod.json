@@ -3912,8 +3912,8 @@
 "d": "2026-11-19"
 },
 "eblinqx-helpcenter": {
-"h": "7d9ecd470a34b79e",
-"d": "2026-11-21"
+"h": "58d45cf8642b98ad",
+"d": "2026-11-23"
 },
 "eblinqx-helpcenter/aanmaken-dienst": {
 "h": "c259be4389d0c3f2",
@@ -3934,6 +3934,10 @@
 "eblinqx-helpcenter/activatie-klantportaal": {
 "h": "bb4064ea87fd2bc4",
 "d": "2026-11-19"
+},
+"eblinqx-helpcenter/afm-marktmonitor-invullen": {
+"h": "0ca96e59c34121a0",
+"d": "2026-11-23"
 },
 "eblinqx-helpcenter/basisinstellingen-boekhouding": {
 "h": "7e73523304d118bd",
@@ -3980,8 +3984,8 @@
 "d": "2026-11-19"
 },
 "eblinqx-helpcenter/ga-veilig-om-met-je-wachtwoorden": {
-"h": "01437bfbc9e3dd0a",
-"d": "2026-11-21"
+"h": "efdfa89c5e1e2fda",
+"d": "2026-11-23"
 },
 "eblinqx-helpcenter/handmatig-boekingen-invoeren": {
 "h": "201a98327a1de238",
@@ -7120,8 +7124,8 @@
 "d": "2026-11-19"
 },
 "kennisbank/afm-marktmonitor-invullen": {
-"h": "90f3c4900264c0d0",
-"d": "2026-11-21"
+"h": "3b34d540f16b914c",
+"d": "2026-11-23"
 },
 "kennisbank/afm-marktmonitor-invullen-2": {
 "h": "ecb7f9b7d034b767",
@@ -8692,8 +8696,8 @@
 "d": "2026-11-19"
 },
 "kennisbanken": {
-"h": "6e1b0f41d2908299",
-"d": "2026-11-21"
+"h": "806254c7e175b7fd",
+"d": "2026-11-23"
 },
 "kent-digimap-tips-al": {
 "h": "acfdb6c4c7a88273",
@@ -9416,8 +9420,12 @@
 "d": "2026-11-19"
 },
 "sites": {
-"h": "fe2ed45b515a8153",
-"d": "2026-11-19"
+"h": "9854cde077a45412",
+"d": "2026-11-23"
+},
+"sites/acception-nl": {
+"h": "c9688a25298290f8",
+"d": "2026-11-23"
 },
 "sites/accountancy-blinqx-ai": {
 "h": "1f365855dc4c06bf",
@@ -9668,8 +9676,8 @@
 "d": "2026-11-19"
 },
 "tips": {
-"h": "28839ddd61571c9e",
-"d": "2026-11-21"
+"h": "33a04f9991ed2cb2",
+"d": "2026-11-23"
 },
 "tips-voor-het-verwerken-van-adn-berichten": {
 "h": "f9ea0c8e03500b6e",

@@ -1396,5 +1396,60 @@
   ],
   "afbeelding": "bronnen/sites/pandwise-nl.webp",
   "titel": "PandWise: woningdossier en woningwaarderapport"
+ },
+ {
+  "slug": "acception-nl",
+  "naam": "Acception",
+  "url": "https://acception.nl/",
+  "ondertitel": "Acceptatievoorwaarden van geldverstrekkers vergelijken, altijd met bron",
+  "tekst": [
+   "Acception zet de acceptatiegidsen, voorwaarden en rentelijsten van 37 Nederlandse geldverstrekkers naast elkaar. Bij elk antwoord zie je uit welk document het komt, welke versie en op welke pagina, met het letterlijke citaat. Zo controleer je in seconden wat anders minuten zoeken kost.",
+   "Acception is gemaakt voor hypotheekadviseurs en mogelijk gemaakt door Blinqx Verzekering & Hypotheek."
+  ],
+  "secties": [
+   [
+    "Wat kun je ermee?",
+    [
+     "Vergelijken: voorwaarden en acceptatiecriteria van geldverstrekkers naast elkaar, met de NHG Voorwaarden & Normen 2026 als referentiekolom.",
+     "Keuzehulp en zoeken in bronnen: elk resultaat toont geldverstrekker, document, versie en paginanummer.",
+     "Per doelgroep: starters, doorstromers, verzilveren, ondernemers en zzp, senioren, box 3-beleggers (verhuurhypotheek) en nieuwbouw.",
+     "Rentes en rentes per doelgroep, met per rentevaste periode de laagste rente gemarkeerd, en marktcijfers van HDN.",
+     "Een ORV- en AOV-vergelijker met voorwaarden en acceptatiegrenzen van overlijdensrisico- en arbeidsongeschiktheidsverzekeringen.",
+     "Achtergrond bij de AFM Leidraad Hypotheekadvisering 2026 en de AFM-sectorbrief over acceptatiebeleid."
+    ]
+   ],
+   [
+    "Goed om te weten",
+    [
+     "Rentes zijn indicatief: alleen het renteaanbod van de geldverstrekker is bindend. De actuele voorwaarden van de geldverstrekker zijn altijd leidend.",
+     "Acception is een hulpmiddel voor de adviseur en geeft geen advies."
+    ]
+   ]
+  ],
+  "gerelateerd": [
+   [
+    "sites/looptijdrente-nl",
+    "Looptijdrente.nl"
+   ],
+   [
+    "sites/hypotheekcijfer-nl",
+    "Hypotheekcijfer.nl"
+   ],
+   [
+    "sites/nhg-nl",
+    "NHG.nl"
+   ],
+   [
+    "adviescoach",
+    "AdviesCoach"
+   ],
+   [
+    "websitetools",
+    "Websitetools"
+   ]
+  ],
+  "afbeelding": "bronnen/sites/acception-nl.webp",
+  "logo": "bronnen/sites/logo-acception-nl.webp",
+  "titel": "Acception: acceptatievoorwaarden hypotheek vergelijken"
  }
 ]
