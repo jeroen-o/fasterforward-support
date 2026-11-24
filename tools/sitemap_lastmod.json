@@ -1,7 +1,7 @@
 {
 "": {
-"h": "35f852b1b036cb66",
-"d": "2026-11-23"
+"h": "517e17d79f2c24c7",
+"d": "2026-11-24"
 },
 "14-nieuwe-features-en-verbeteringen": {
 "h": "f82315b928882826",
@@ -3912,8 +3912,8 @@
 "d": "2026-11-23"
 },
 "eblinqx-helpcenter": {
-"h": "a5eaab792dd5cdca",
-"d": "2026-11-23"
+"h": "41748f98c96d265f",
+"d": "2026-11-24"
 },
 "eblinqx-helpcenter/aanmaken-dienst": {
 "h": "0cf2181be5ce15d7",
@@ -4086,6 +4086,10 @@
 "eblinqx-helpcenter/trainingen": {
 "h": "80a85b5e6518a251",
 "d": "2026-11-23"
+},
+"eblinqx-helpcenter/verbeteringen-klantportaal-quinn-mail-en-boekhoudkundige-optimalisaties": {
+"h": "91522b17451e3936",
+"d": "2026-11-24"
 },
 "eblinqx-helpcenter/welke-maatschappij-koppelt-met-hdn": {
 "h": "67555fa3b7f8216a",
@@ -8728,8 +8732,8 @@
 "d": "2026-11-23"
 },
 "kennisbanken": {
-"h": "c6a0fdf574ae346c",
-"d": "2026-11-23"
+"h": "abc933f7dca36c87",
+"d": "2026-11-24"
 },
 "kent-digimap-tips-al": {
 "h": "e2657955f6323fc0",
@@ -9232,8 +9236,8 @@
 "d": "2026-11-23"
 },
 "releasenotes": {
-"h": "673a6743edebd57e",
-"d": "2026-11-23"
+"h": "4a7de4781dd9a2d5",
+"d": "2026-11-24"
 },
 "releasenotes-adviesbox": {
 "h": "b7c5526cb6a097b7",

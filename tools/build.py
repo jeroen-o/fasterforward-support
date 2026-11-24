@@ -1758,7 +1758,12 @@ def render_home(cats, feeds, pages):
         return f'<a href="{href or "#"}">{label}</a>'
 
     def latest(feed, n=5):
-        return "".join(f'<li><a href="{pg.rel(x["path"])}">{esc(x["t"])} »</a></li>' for x in feeds[feed][:n])
+        items = list(feeds[feed])
+        if feed == "Release notes":  # ook nieuwe Connect-releasenotes uit het helpcenter (eigen pagina's)
+            dag = lambda x: (x.get("posted") or x.get("updated") or date.min)
+            dag2 = lambda x: dag(x).date() if hasattr(dag(x), "date") else dag(x)
+            items = sorted(items + [x for x in connect_rn_extra(items) if x.get("int")], key=dag2, reverse=True)
+        return "".join(f'<li><a href="{pg.rel(x.get("int") or x["path"])}">{esc(x["t"])} »</a></li>' for x in items[:n])
 
     nieuws_home = [
         ("webinar-efficient-risicos-inventariseren-met-finly-formulieren", "Webinar: efficiënt risico’s inventariseren met Finly formulieren"),
@@ -3611,6 +3616,7 @@ def video_fig(pg, mp4, poster, naam, omschrijving, duur, bijschrift, anker="vide
             f'<script type="application/ld+json">{ld}</script>')
 
 HELPCENTERS = json.load(open(os.path.join(TOOLS, "helpcenters.json"), encoding="utf8"))
+HELPCENTERS_BY = {c["key"]: c for c in HELPCENTERS}
 HC_LINKS = {  # extra verwijzingen onder het overzicht van een kennisbank
     "finrust": [("video/finrust", "FinRust-video's"), ("sites/finrust-nl", "Meer over FinRust")],
     "adviesbox": [("sites/adviesbox-nl", "Meer over Adviesbox"), ("adviesbox-online", "Kennisbank Adviesbox Online")],
@@ -3628,8 +3634,6 @@ def hc_artikelen(c):
         eigen = eigen_kb_titels()
         uit = []
         for a in arts:
-            if a["rubriek"][0] == "Releasenotes":
-                continue  # releasenotes gaan naar Releasenotes Connect (connect_rn_extra)
             m = eigen.get(titel_sleutel(a["titel"]))
             if not m:
                 uit.append(a)
@@ -3655,19 +3659,24 @@ def connect_rn_extra(bestaand):
         k = titel_sleutel(re.sub(r"UwKluis / Online klantportaal|Online klantportaal", "uwkluis", a["titel"], flags=re.I))
         if k in sleutels or difflib.get_close_matches(k, sleutels, 1, 0.8):
             continue
-        m = re.search(r"Op \w+dag (\d{1,2}) (\w+)", a["tekst"])
+        m = re.search(r"Op \w+dag (\d{1,2}) (\w+)", (a.get("omschrijving") or "") + " " + a["tekst"])
         d = None
         if m and m.group(2).lower() in MONTHS:
             jaar = int((a.get("bijgewerkt") or "2026")[:4])
             d = date(jaar, list(MONTHS).index(m.group(2).lower()) + 1, int(m.group(1)))
-        uit.append({"t": a["titel"], "posted": d or date.fromisoformat(a["bijgewerkt"][:10]), "updated": None, "url": a["url"], "ext": 1,
-                    "mini": "", "excerpt": kort(a["tekst"], 220)})
+        item = {"t": a["titel"], "posted": d or date.fromisoformat(a["bijgewerkt"][:10]), "updated": None, "url": a["url"], "ext": 1,
+                "mini": "", "excerpt": kort(a["tekst"], 220)}
+        eigen = next((x for x in hc_artikelen(HELPCENTERS_BY["eblinqx"]) if x["url"] == a["url"]), None)
+        if eigen:  # volledige releasenote staat als eigen pagina op de supportsite
+            item.update({"int": "eblinqx-helpcenter/" + eigen["slug"], "bron": "Releasenotes eBlinqx Connect"})
+        uit.append(item)
     return uit
 
 
 def titel_sleutel(t):
     import unicodedata
-    t = unicodedata.normalize("NFKD", html.unescape(t)).encode("ascii", "ignore").decode().lower()
+    t = re.sub(r"UwKluis / Online klantportaal|Online klantportaal", "uwkluis", html.unescape(t), flags=re.I)
+    t = unicodedata.normalize("NFKD", t).encode("ascii", "ignore").decode().lower()
     t = t.replace("elements", "eblinqx").replace("eblinqx connect", "eblinqx")
     return re.sub(r"[^a-z0-9 ]+", " ", t).strip()
 
@@ -4070,7 +4079,9 @@ document.addEventListener("click", e => {
   f.innerHTML = `<iframe src="${src}" title="Video of demo" allow="autoplay; fullscreen; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
 });
 </script>""" if inhoud.videos or "data-sl=" in tekst_html else ""
-        body = f"""{crumbs(pg, [("Kennisbanken", "kennisbanken"), (hc_titel(c), P), (a["rubriek"][-1], None)])}
+        kruimel = ([("Releasenotes", "releasenotes"), (a["titel"], None)] if a["rubriek"][0] == "Releasenotes"
+                   else [("Kennisbanken", "kennisbanken"), (hc_titel(c), P), (a["rubriek"][-1], None)])
+        body = f"""{crumbs(pg, kruimel)}
 <main class="article"><div class="wrap cols">
   <article>
     <h1>{esc(a["titel"])}</h1>
