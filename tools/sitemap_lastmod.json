@@ -9464,7 +9464,7 @@
 "d": "2026-11-23"
 },
 "sites": {
-"h": "f1c972ca2b5e631a",
+"h": "244e5c64440f6c2b",
 "d": "2026-11-25"
 },
 "sites/acception-nl": {
@@ -9493,6 +9493,10 @@
 },
 "sites/creditlife-nl": {
 "h": "6300f67e6a818697",
+"d": "2026-11-25"
+},
+"sites/dennes-roes-nl": {
+"h": "36195f492590cf01",
 "d": "2026-11-25"
 },
 "sites/dias-nl": {

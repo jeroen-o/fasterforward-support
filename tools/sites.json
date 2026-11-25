@@ -1636,5 +1636,96 @@
   ],
   "logo": "bronnen/sites/logo-creditlife-nl.webp",
   "titel": "Credit Life: arbeidsongeschiktheid en woonlasten verzekeren"
+ },
+ {
+  "slug": "dennes-roes-nl",
+  "naam": "Dennes-roes.nl",
+  "url": "https://dennes-roes.nl/",
+  "ondertitel": "Hypotheek vanaf 52: van regelwijziging naar kantoorproces",
+  "tekst": [
+   "Banken kijken eerder naar het pensioen. Op Dennes-roes.nl vind je de presentatie van Dennes Roes (Directeur Hypotheekadvies bij Blinqx en lid van de Commissie Masterclasses van de NVHP) bij de informatieronde acceptatievoorwaarden hypotheken 2026, en een gratis adviseurstoolkit. Het advies: begin bij je eerste doelgroep, klanten van 50 tot en met 57 jaar.",
+   "De informatierondes waren op 24, 25 en 26 november 2026 in Oostzaan, Ridderkerk en Houten, georganiseerd door DFO BV."
+  ],
+  "secties": [
+   [
+    "Presentatie",
+    [
+     "Dennes Roes over bedrijfsvoering: de zeven vragen die elk advieskantoor nu moet beantwoorden. Met de doelgroep in cijfers (naar schatting 680.000 huishoudens van 50 tot en met 57 jaar), het kader rond onderhoud en nazorg, en prioriteren, taken verdelen, vastleggen en vergoeding. Beschikbaar online, als PowerPoint (19 dia's) en als pdf."
+    ]
+   ],
+   [
+    "Gratis adviseurstoolkit",
+    [
+     "Marketing- en klantmaterialen met je eigen logo, naam, website, telefoon en e-mail: een LinkedIn-campagne met 7 posts en beelden, een jaarlijkse update en nazorgscan, de klanttekst “Hypotheek vanaf 52 jaar” en een nieuwsbrief in 3 versies, plus een kalender en checklist."
+    ]
+   ],
+   [
+    "Wat verandert er?",
+    [
+     "Een aantal geldverstrekkers houdt eerder rekening met het pensioeninkomen. Volgens de site doen Rabobank en Obvion dat vanaf maart 2027 al 15 jaar vóór de AOW-leeftijd in plaats van 10 jaar: bij een AOW-leeftijd van 67 dus vanaf 52 jaar. Omdat het pensioen meestal lager is dan het huidige inkomen, kan de maximale hypotheek lager uitvallen.",
+     "Voor een bestaande hypotheek verandert niets zolang die niet wordt aangepast; de regels gelden bij een nieuwe hypotheek of een aanpassing zoals verhuizen, verhogen of oversluiten. Elke geldverstrekker bepaalt zijn eigen beleid en dat kan wijzigen."
+    ]
+   ],
+   [
+    "Wat kun je als adviseur nu doen?",
+    [
+     "Breng je klanten van 50 tot en met 57 jaar in beeld, prioriteer op plannen, rentevaste periode en aflossingsvrij deel, benader klanten met een korte hypotheekscan en leg alle contact vast, ook als de klant niet reageert.",
+     "De hypotheekscan 52+ is ook beschikbaar als slim formulier in het Actiefbeheerscan-toolpakket, voor op je website, in een mailing of nieuwsbrief, met de resultaten direct zichtbaar."
+    ]
+   ],
+   [
+    "Goed om te weten",
+    [
+     "De informatie op Dennes-roes.nl is algemene informatie (stand van zaken 18 november 2026), geen advies. Controleer het actuele beleid van de geldverstrekker."
+    ]
+   ]
+  ],
+  "links": [
+   [
+    "Presentatie",
+    "https://dennes-roes.nl/presentatie.html"
+   ],
+   [
+    "Adviseurstoolkit",
+    "https://dennes-roes.nl/adviseurstoolkit.html"
+   ],
+   [
+    "Presentatie (pdf)",
+    "https://dennes-roes.nl/presentatie-dennes-roes.pdf"
+   ],
+   [
+    "Hypotheek straks: gesprekshulp voor de klant",
+    "https://dennes-roes.nl/hypotheek-straks/"
+   ]
+  ],
+  "contact": {
+   "naam": "Dennes Roes",
+   "rol": "Directeur Hypotheekadvies, Blinqx",
+   "intro": "Vragen over de presentatie, de toolkit of hypotheekadvies vanaf 52 jaar? Neem contact op met Dennes Roes.",
+   "telefoon": "06 51 11 78 93",
+   "email": "dennes.roes@blinqx.tech",
+   "foto": "bronnen/team/dennes-roes.webp"
+  },
+  "zoekwoorden": "hypotheek vanaf 52 pensioentoets 52 jaar 50 57 acceptatievoorwaarden informatieronde dfo nvhp toolkit linkedin-campagne nazorg onderhoud rabobank obvion aow",
+  "gerelateerd": [
+   [
+    "informatieronde-acceptatievoorwaarden-hypotheken-2026",
+    "Nieuws: Dennes Roes op de informatieronde acceptatievoorwaarden"
+   ],
+   [
+    "actiefbeheerscan",
+    "Actiefbeheerscan"
+   ],
+   [
+    "sites/acception-nl",
+    "Acception: acceptatievoorwaarden vergelijken"
+   ],
+   [
+    "sites/hypotheekcijfer-nl",
+    "Hypotheekcijfer.nl"
+   ]
+  ],
+  "afbeelding": "bronnen/sites/dennes-roes-nl.webp",
+  "titel": "Dennes-roes.nl: hypotheek vanaf 52, presentatie en adviseurstoolkit"
  }
 ]
