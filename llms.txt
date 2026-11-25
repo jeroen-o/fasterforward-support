@@ -64,14 +64,14 @@
 
 ## Kennisbanken per product
 
-- [Kennisbanken van Blinqx Verzekering & Hypotheek](https://support-eblinqx-connect.nl/kennisbanken/): Alle 1548 handleidingen en uitlegartikelen uit de kennisbanken van Blinqx Verzekering & Hypotheek: FinRust, Adviesbox Classic, Adviesbox Online, eBlinqx…
+- [Kennisbanken van Blinqx Verzekering & Hypotheek](https://support-eblinqx-connect.nl/kennisbanken/): Alle 1547 handleidingen en uitlegartikelen uit de kennisbanken van Blinqx Verzekering & Hypotheek: FinRust, Adviesbox Classic, Adviesbox Online, eBlinqx…
 - [Kennisbank FinRust](https://support-eblinqx-connect.nl/finrust/): Alle 68 artikelen uit de kennisbank van FinRust: handleidingen en uitleg over algemeen, training & educatie, koppelingen, security & compliance.
 - [Kennisbank Adviesbox Classic](https://support-eblinqx-connect.nl/adviesbox-classic/): Alle 714 artikelen uit de kennisbank van Adviesbox Classic: handleidingen en uitleg over algemeen, implementatie & onboarding, training & educatie, storingen…
 - [Kennisbank Adviesbox Online](https://support-eblinqx-connect.nl/adviesbox-online/): Alle 132 artikelen uit de kennisbank van Adviesbox Online: handleidingen en uitleg over algemeen, implementatie & onboarding, training & educatie, storingen…
 - [Kennisbank eBlinqx Hypotheekadvies](https://support-eblinqx-connect.nl/hypotheekadvies-helpcenter/): Alle 310 artikelen uit de kennisbank van eBlinqx Hypotheekadvies: handleidingen en uitleg over algemeen, implementatie & onboarding, storingen, productupdates…
 - [Kennisbank FinConnect](https://support-eblinqx-connect.nl/finconnect/): Alle 100 artikelen uit de kennisbank van FinConnect: handleidingen en uitleg over algemeen, modules en functionaliteiten, instellingen en configuratie…
 - [Kennisbank Finly](https://support-eblinqx-connect.nl/finly/): Alle 177 artikelen uit de kennisbank van Finly: handleidingen en uitleg over algemeen, implementatie & onboarding, training & educatie, storingen, modules en…
-- [Kennisbank eBlinqx Connect: starten en demo's](https://support-eblinqx-connect.nl/eblinqx-helpcenter/): Alle 47 artikelen uit de kennisbank van eBlinqx Connect: starten en demo's: handleidingen en uitleg over starten met eblinqx connect, facturatie, eblinqx…
+- [Kennisbank eBlinqx Connect: starten en demo's](https://support-eblinqx-connect.nl/eblinqx-helpcenter/): Alle 46 artikelen uit de kennisbank van eBlinqx Connect: starten en demo's: handleidingen en uitleg over starten met eblinqx connect, facturatie, eblinqx…
 
 ## Kennisbank FinRust
 
@@ -1632,7 +1632,6 @@
 - [Hoe kan ik facturen zoeken?](https://support-eblinqx-connect.nl/eblinqx-helpcenter/hoe-kan-ik-facturen-zoeken/): Lees hier hoe je facturen zoekt in het factuuroverzicht. eBlinqx Connect: starten en demo's › Facturatie › Facturatie · bijgewerkt 30 oktober 2026
 - [Storing alle omgevingen](https://support-eblinqx-connect.nl/eblinqx-helpcenter/storing-alle-omgevingen/): Storing alle omgevingen: Storing. eBlinqx Connect: starten en demo's › eBlinqx Connect › Gebruikers · bijgewerkt 24 november 2026
 - [Ga veilig om met je wachtwoorden](https://support-eblinqx-connect.nl/eblinqx-helpcenter/ga-veilig-om-met-je-wachtwoorden/): Hier lees je meer hoe je veilig om kunt gaan met jouw wachtwoord voor eBlinqx Connect.
-- [AFM marktmonitor invullen](https://support-eblinqx-connect.nl/eblinqx-helpcenter/afm-marktmonitor-invullen/): Hier lees je hoe je informatie uit eBlinqx Connect kunt halen om de AFM marktmonitor in te vullen.
 - [Is Faster Forward Elements veilig?](https://support-eblinqx-connect.nl/eblinqx-helpcenter/is-faster-forward-elements-veilig/): Lees hier hoe Faster Forward je data en die van je klanten beschermt. eBlinqx Connect: starten en demo's › eBlinqx Connect › Beveiliging in eBlinqx ·…
 - [Beveiliging Faster Forward Elements](https://support-eblinqx-connect.nl/eblinqx-helpcenter/beveiliging-faster-forward-elements/): Lees hier hoe het zit met de beschikbaarheid, de netwerkbeveiliging, de procedures en de screening van medewerkers.
 - [Trainingen](https://support-eblinqx-connect.nl/eblinqx-helpcenter/trainingen/): Lees hier hoe je je inschrijft voor de basistraining van eBlinqx Connect, met de focus op hypotheken of verzekeren.
@@ -1781,7 +1780,7 @@
 ## Nieuws, tips en leren
 
 - [Nieuws](https://support-eblinqx-connect.nl/nieuws/): Nieuws: Hieronder vind je onze laatste nieuwsberichten. Ga naar: 2026 · 2025 · 2024 · 2023 · 2022 · 2021 · 2020 · 2019 · 2018 · 2017 · 2016
-- [Tips](https://support-eblinqx-connect.nl/tips/): Tips: Hieronder vind je onze laatste tips. Hieronder vind je onze laatste tips. 39 berichten, waarvan 18 van verzekeringhypotheek.blinqx.tech (dagelijks…
+- [Tips](https://support-eblinqx-connect.nl/tips/): Tips: Hieronder vind je onze laatste tips. Hieronder vind je onze laatste tips. 38 berichten, waarvan 18 van verzekeringhypotheek.blinqx.tech (dagelijks…
 - [E-learning](https://support-eblinqx-connect.nl/elearning/): Interactieve e-learnings voor eBlinqx Connect en eBlinqx Hypotheekadvies.
 - [Video's](https://support-eblinqx-connect.nl/video/): Video's in eBlinqx Connect: handleidingen en uitleg, waaronder YouTube: Blinqx Verzekering & Hypotheek ↗, YouTube: Blinqx ↗, YouTube: FasterForwardTV ↗…
 - [Trainingen](https://support-eblinqx-connect.nl/trainingen/): Trainingen voor eBlinqx, Adviesbox en Financiële Planner bij de Blinqx Academy.
@@ -1807,8 +1806,8 @@
 - [ADN batch financieel verwerken](https://support-eblinqx-connect.nl/kennisbank/4-financieel-verwerken/): In dit artikel lees je hoe je de ADN batch financieel kunt verwerken en hoe je een handmatige boeking aan kunt maken.
 - [ADN batch verwerken](https://support-eblinqx-connect.nl/kennisbank/adn-batch-verwerken-met-mutatievoorstellen/): Lees hier hoe je ADN batch met mutatievoorstellen verwerkt. In dit artikel leggen we uit hoe je een ADN batch verwerkt.
 - [ADN batch verwerken zonder mutatievoorstellen](https://support-eblinqx-connect.nl/kennisbank/adn-batch-verwerken-met-zonder-tussenrekening/): In dit artikel leggen we uit hoe je een ADN batch met mutaties van verzekeringen verwerkt.
-- [ADN berichten ontvangen (inrichten)](https://support-eblinqx-connect.nl/kennisbank/adn-berichten-ontvangen-elements/): Om ADN berichten te kunnen ontvangen in eBlinqx Connect dien je een aantal zaken aan te vragen.
 - [ADN berichten ontvangen (inrichten)](https://support-eblinqx-connect.nl/kennisbank/adn-berichten-ontvangen/): Om ADN berichten te kunnen ontvangen in eBlinqx dien je een aantal zaken aan te vragen.
+- [ADN berichten ontvangen (inrichten)](https://support-eblinqx-connect.nl/kennisbank/adn-berichten-ontvangen-elements/): Om ADN berichten te kunnen ontvangen in eBlinqx Connect dien je een aantal zaken aan te vragen.
 - [ADN inrichten: Al een postbus maar nog geen bedrijfscertificaat](https://support-eblinqx-connect.nl/kennisbank/adn-inrichten-bedrijfscertificaat/): Wanneer je al een postbus hebt maar geen bedrijfscertificaat vraag je bij Solera een bedrijfscertificaat aan.
 - [ADN inrichten: je hebt al een postbus en bedrijfscertificaat](https://support-eblinqx-connect.nl/kennisbank/adn-bestaand-doorsturen/): Op het moment dat je al een I09 Postbus en bedrijfscertificaat hebt bij Solera dien je deze naar ons door te sturen.
 - [ADN inrichten: Nog geen postbus en nog geen bedrijfscertificaat](https://support-eblinqx-connect.nl/kennisbank/adn-inrichten-postbus-bedrijfscertificaat/): Wanneer er nog niks bekend is bij Solera, vraag je een nieuw pakket aan. Het TIME pakket combineert de berichtendienst van Solera met de documenten service…
@@ -1821,8 +1820,8 @@
 - [Adviespakketten welke koppelen met eBlinqx Connect](https://support-eblinqx-connect.nl/kennisbank/welke-adviespakketten-koppelt-elements/): Het hypotheek advies wordt niet in eBlinqx Connect gemaakt maar in een adviespakket.
 - [Advisor support relatie](https://support-eblinqx-connect.nl/kennisbank/advisor-support-relatie/): Lees hier hoe je het kunt instellen dat de velden adviseur, acceptant en behandelaar in een product gekoppeld worden.
 - [Afletteren](https://support-eblinqx-connect.nl/kennisbank/afletteren/): Vind hier meer informatie over afletteren in eBlinqx Connect, waaronder afletteren op debiteurenkaarten en afletteren via dagboek en memoriaal.
-- [AFM marktmonitor invullen](https://support-eblinqx-connect.nl/kennisbank/afm-marktmonitor-invullen-2/): is weer gestart met de jaarlijkse marktmonitor voor adviseurs en bemiddelaars. Met behulp van eBlinqx kan je deze vragenlijst invullen.
 - [AFM marktmonitor invullen](https://support-eblinqx-connect.nl/kennisbank/afm-marktmonitor-invullen/): Ieder jaar vraagt de AFM aan adviseurs en bemiddelaars om de Marktmonitor adviseurs & bemiddelaars (MMAB) in te vullen.
+- [AFM marktmonitor invullen](https://support-eblinqx-connect.nl/kennisbank/afm-marktmonitor-invullen-2/): is weer gestart met de jaarlijkse marktmonitor voor adviseurs en bemiddelaars. Met behulp van eBlinqx kan je deze vragenlijst invullen.
 - [AFM vergunningen beheren](https://support-eblinqx-connect.nl/kennisbank/afm-vergunningen-beheren/): In de module Gewijzigde AFM vergunningen kan je in één oogopslag zien welke vergunningen gewijzigd zijn.
 - [Afspraak maken en uitnodigingen](https://support-eblinqx-connect.nl/kennisbank/hoe-maak-en-afspraak-agenda/): Lees hier hoe je een afspraak maakt, wijzigt en herhaalt in de agenda.
 - [Afwijkende RC Maatschappij instellen](https://support-eblinqx-connect.nl/kennisbank/afwijkende-rc-maatschappij-instellen/): Gezien het soms voorkomt dat de maatschappij van de polis niet de rekening courant maatschappij is is het belangrijk dit goed in te stellen in eBlinqx voor de…
