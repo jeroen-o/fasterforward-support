@@ -277,11 +277,11 @@
  {
   "slug": "hypotheekcijfer-nl",
   "naam": "Hypotheekcijfer.nl",
-  "url": "https://www.hypotheekcijfer.nl/",
-  "ondertitel": "Wat is uw hypotheekcijfer?",
+  "url": "https://hypotheekcijfer.nl/",
+  "ondertitel": "Kun je je hypotheek blijven betalen? De hypotheekcheck met een cijfer van 1 tot 10",
   "tekst": [
-   "Met de hypotheekcheck op Hypotheekcijfer.nl bepaalt de consument zijn hypotheekcijfer en krijgt hij direct inzicht in de betaalbaarheid van zijn hypotheek, nu en in de toekomst: bijvoorbeeld als hij met pensioen gaat, als de hypotheekrenteaftrek eindigt of als de einddatum van de hypotheek nadert.",
-   "De consument ontvangt van zijn geldverstrekker een brief met een persoonlijke code en start daarmee de check. Daarna volgen tips en een rapport. Vragen? Hypotheekcijfer.nl is bereikbaar op werkdagen van 09:00 tot 17:00 uur via 020 758 21 11 of info@hypotheekcijfer.nl."
+   "Met de gratis hypotheekcheck op Hypotheekcijfer.nl zie je in een paar stappen of een hypotheek betaalbaar blijft, nu en later. Je krijgt een hypotheekcijfer van 1 tot 10, een cijfer per belangrijk moment en per life event, en een persoonlijk rapport met tips om de betaalbaarheid te verbeteren. De check rekent volgens de leennormen 2027 (Tijdelijke regeling hypothecair krediet).",
+   "Hypotheekcijfer is een oplossing van Blinqx voor consumenten, hypotheekadviseurs en geldverstrekkers."
   ],
   "gerelateerd": [
    [
@@ -309,7 +309,91 @@
     "Pensioencijfer.nl"
    ]
   ],
-  "afbeelding": "bronnen/sites/hypotheekcijfer-nl.webp"
+  "afbeelding": "bronnen/sites/hypotheekcijfer-nl.webp",
+  "titel": "Hypotheekcijfer.nl: de hypotheekcheck met een cijfer van 1 tot 10",
+  "secties": [
+   [
+    "Wat laat het cijfer zien?",
+    [
+     "Of de hypotheek past bij het inkomen op momenten die ertoe doen: het einde van de rentevaste periode, het einde van de hypotheekrenteaftrek, de AOW-leeftijd van de klant en zijn partner, en het einde van de looptijd.",
+     "Wat er gebeurt bij een life event: arbeidsongeschiktheid, werkloosheid, overlijden van de klant of de partner, en scheiding."
+    ]
+   ],
+   [
+    "Voor consumenten",
+    [
+     "Vul je gegevens in (inkomen nu en na pensioen, eigen geld, verplichtingen en hypotheek; ongeveer 15 minuten), bekijk je hypotheekcijfer en download je rapport. Bespreek het daarna met je adviseur.",
+     "Handig om bij de hand te hebben: de brief met je persoonlijke code (als je die hebt ontvangen), je pensioenoverzicht van mijnpensioenoverzicht.nl, de WOZ-waarde, een overzicht van je vermogen, een recente loonstrook, het adviesrapport of jaaroverzicht van je hypotheek en het jaaroverzicht van je verzekeraar of beleggingsinstelling.",
+     "De check rekent in je eigen browser: je gegevens worden niet verstuurd of opgeslagen."
+    ]
+   ],
+   [
+    "Voor hypotheekadviseurs",
+    [
+     "Breng snel in beeld welke klanten een betaalbaarheidsrisico hebben en gebruik het rapport als start van het gesprek: het laat zien waar het knelt en welke mogelijkheden er zijn, zoals extra aflossen, sparen, omzetten of de looptijd verlengen.",
+     "Ondersteunt actief klantbeheer, bijvoorbeeld bij klanten met een aflossingsvrije hypotheek of een naderend pensioen.",
+     "Wat zit erin: de financieringslastpercentages 2027, een toetsrente van 5% bij een rentevaste periode korter dan 10 jaar, pensioenmenging als de AOW binnen 10 jaar valt, renteaftrek per inkomen (tarieven 2027), life events, wat-als-berekeningen en een persoonlijk rapport.",
+     "Met een Blinqx-account haal je gegevens op via Ockto of laat je documenten uploaden en uitlezen. Zonder account vult de klant de check handmatig in."
+    ]
+   ],
+   [
+    "Voor geldverstrekkers",
+    [
+     "De AFM verwacht dat aanbieders hun aanpak voor het beheer van hypotheken, en vooral van aflossingsvrije hypotheken, herijken: alle klanten moeten zorgeloos kunnen blijven wonen. Hypotheekcijfer ondersteunt aanbieders daarbij, van uitnodiging (een brief met persoonlijke code) en klantcheck tot persoonlijk rapport en de rapportages voor de AFM en DNB.",
+     "Geldverstrekkers bouwen de hypotheekcheck in op hun eigen website; de use cases en een voorbeeldrapport staan op Hypotheekcijfer.nl. Stem de inzet af met je eigen compliance-afdeling."
+    ]
+   ],
+   [
+    "Goed om te weten",
+    [
+     "De hypotheekcheck geeft een indicatie op basis van de ingevulde gegevens en de leennormen 2027. Het is geen hypotheekadvies.",
+     "Hypotheekcijfer.nl is bereikbaar via 020 758 21 11 (Blinqx, Hullenbergweg 109, Amsterdam)."
+    ]
+   ]
+  ],
+  "links": [
+   [
+    "Doe de hypotheekcheck",
+    "https://hypotheekcijfer.nl/bepaal-uw-hypotheekcijfer/"
+   ],
+   [
+    "Voor hypotheekadviseurs",
+    "https://hypotheekcijfer.nl/voor-hypotheekadviseurs/"
+   ],
+   [
+    "Voor geldverstrekkers",
+    "https://hypotheekcijfer.nl/voor-geldverstrekkers/"
+   ],
+   [
+    "Use cases",
+    "https://hypotheekcijfer.nl/voor-geldverstrekkers/use-cases/"
+   ]
+  ],
+  "contact": [
+   {
+    "naam": "Igor Driessen",
+    "rol": "Director Banking & Financial Services",
+    "telefoon": "+31 6 20 615 614",
+    "email": "igor.driessen@blinqx.tech",
+    "foto": "bronnen/team/igor-driessen.webp"
+   },
+   {
+    "naam": "Oscar Kuypers",
+    "rol": "Business Development Manager Blinqx V&H",
+    "telefoon": "+31 6 28 321 881",
+    "email": "oscar.kuypers@blinqx.tech",
+    "foto": "bronnen/team/oscar-kuypers.webp"
+   },
+   {
+    "naam": "Jeroen Oversteegen",
+    "rol": "Non Executive Director Business Partners",
+    "telefoon": "+31 6 21 247 257",
+    "email": "jeroen.oversteegen@blinqx.tech",
+    "foto": "bronnen/team/jeroen-oversteegen.webp"
+   }
+  ],
+  "contact_intro": "Wil je het hypotheekcijfer inzetten in je adviespraktijk of als geldverstrekker? Neem contact op:",
+  "zoekwoorden": "hypotheekcijfer hypotheekcheck betaalbaarheid aflossingsvrij klantbeheer leennormen 2027 life events pensioen renteaftrek"
  },
  {
   "slug": "pensioencijfer-nl",

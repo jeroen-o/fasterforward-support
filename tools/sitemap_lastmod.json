@@ -3504,8 +3504,8 @@
 "d": "2026-11-23"
 },
 "banking-insurance": {
-"h": "25bf882bb8a5e905",
-"d": "2026-11-23"
+"h": "393421ba932d8e12",
+"d": "2026-11-25"
 },
 "bedank-je-klanten-na-betaling-via-mollie": {
 "h": "b947b19819946776",
@@ -9464,7 +9464,7 @@
 "d": "2026-11-23"
 },
 "sites": {
-"h": "2d5c1759ddddae43",
+"h": "f1c972ca2b5e631a",
 "d": "2026-11-25"
 },
 "sites/acception-nl": {
@@ -9492,7 +9492,7 @@
 "d": "2026-11-25"
 },
 "sites/creditlife-nl": {
-"h": "1195c86a4a4360e0",
+"h": "6300f67e6a818697",
 "d": "2026-11-25"
 },
 "sites/dias-nl": {
@@ -9556,7 +9556,7 @@
 "d": "2026-11-25"
 },
 "sites/hypotheekcijfer-nl": {
-"h": "ce40ddb23ca42001",
+"h": "3c6c3424c57ac5b3",
 "d": "2026-11-25"
 },
 "sites/hypotheekrente-api-nl": {
