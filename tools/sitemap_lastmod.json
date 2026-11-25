@@ -3792,8 +3792,8 @@
 "d": "2026-11-23"
 },
 "categorien/koppelingen-verzekeringen": {
-"h": "6724687481b076c4",
-"d": "2026-11-23"
+"h": "b93b51d9be64b68c",
+"d": "2026-11-25"
 },
 "categorien/mijnomgeving": {
 "h": "0804c61fac5c27e0",
@@ -3864,8 +3864,8 @@
 "d": "2026-11-23"
 },
 "categorien/verzekeringen": {
-"h": "9f11d52b9f44afdf",
-"d": "2026-11-23"
+"h": "9e9c3ef88963437f",
+"d": "2026-11-25"
 },
 "categorien/verzekeringen/producten": {
 "h": "c31d826410d55562",
@@ -7072,8 +7072,8 @@
 "d": "2026-11-23"
 },
 "kennisbank": {
-"h": "2546fb814f68bc7c",
-"d": "2026-11-23"
+"h": "4e04dd8127e7d68c",
+"d": "2026-11-25"
 },
 "kennisbank/1-prolongatie-import": {
 "h": "5ee9cf3e20f397cf",
@@ -7183,6 +7183,10 @@
 "h": "ec8edbf424abe307",
 "d": "2026-11-23"
 },
+"kennisbank/aov-vergelijken-in-premievergelijk-mytp": {
+"h": "ec60b19507941ac6",
+"d": "2026-11-25"
+},
 "kennisbank/api-koppeling": {
 "h": "f89431dc7829b613",
 "d": "2026-11-23"
@@ -7248,8 +7252,8 @@
 "d": "2026-11-23"
 },
 "kennisbank/awi": {
-"h": "ed130bf5b2ddf69f",
-"d": "2026-11-23"
+"h": "eeb6921402ba3423",
+"d": "2026-11-25"
 },
 "kennisbank/bank-inrichten-importeren-bankafschriften": {
 "h": "8148c3fd1acdd379",
@@ -7440,8 +7444,8 @@
 "d": "2026-11-23"
 },
 "kennisbank/differ-koppeling": {
-"h": "d05205322f1199dd",
-"d": "2026-11-23"
+"h": "df58ddcd4812e880",
+"d": "2026-11-25"
 },
 "kennisbank/digimap": {
 "h": "7ec2f3a912506898",
@@ -7988,8 +7992,8 @@
 "d": "2026-11-23"
 },
 "kennisbank/houdt-risk-koppeling": {
-"h": "f2391ff99f9e8bf1",
-"d": "2026-11-23"
+"h": "fd5e4224c8ee461e",
+"d": "2026-11-25"
 },
 "kennisbank/huisstijl-van-dossieroverzichten-instellen": {
 "h": "6e5b9fb0a76ef6a3",
@@ -8348,8 +8352,8 @@
 "d": "2026-11-23"
 },
 "kennisbank/risk-berichten-verwerken": {
-"h": "c4ba7adf6b9cce11",
-"d": "2026-11-23"
+"h": "587df5749f1edc4c",
+"d": "2026-11-25"
 },
 "kennisbank/scannen": {
 "h": "fed7d83b9425b2ed",
@@ -10080,8 +10084,8 @@
 "d": "2026-11-23"
 },
 "video/in-een-klik-verzekeringen-vergelijken-met-my-tp": {
-"h": "94f483985b3df0c5",
-"d": "2026-11-23"
+"h": "90d99fc929917901",
+"d": "2026-11-25"
 },
 "video/introductie-in-het-elements-dashboard": {
 "h": "ff0c604a3ac07a98",
@@ -10220,8 +10224,8 @@
 "d": "2026-11-23"
 },
 "waar-kan-ik-terecht": {
-"h": "4173cbc470f38c0f",
-"d": "2026-11-23"
+"h": "68c1650df09551ef",
+"d": "2026-11-25"
 },
 "waar-vind-ik-mijn-handtekening": {
 "h": "008410f8e331a802",
