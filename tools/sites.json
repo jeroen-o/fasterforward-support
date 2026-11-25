@@ -1502,5 +1502,55 @@
   "afbeelding": "bronnen/sites/acception-nl.webp",
   "logo": "bronnen/sites/logo-acception-nl.webp",
   "titel": "Acception: acceptatievoorwaarden hypotheek vergelijken"
+ },
+ {
+  "slug": "creditlife-nl",
+  "naam": "Credit Life",
+  "url": "https://www.creditlife.nl/",
+  "ondertitel": "Verzekeraar voor arbeidsongeschiktheid, woonlasten en overlijdensrisico, aan te vragen via eBlinqx Hypotheekadvies",
+  "tekst": [
+   "Credit Life is een verzekeraar die samenwerkt met financieel adviseurs. Credit Life verzekert het inkomen en de woonlasten bij arbeidsongeschiktheid (AO) of werkloosheid, en biedt een overlijdensrisicoverzekering.",
+   "In eBlinqx Hypotheekadvies breng je bij het advies de risico's bij arbeidsongeschiktheid (AO) in kaart, en de verzekeringen van Credit Life vraag je ook rechtstreeks aan via eBlinqx Hypotheekadvies."
+  ],
+  "secties": [
+   [
+    "Verzekeringen van Credit Life",
+    [
+     "Woonlastenverzekering: wordt de klant arbeidsongeschikt, dan betaalt Credit Life de woonlasten (hypotheek of huur).",
+     "Inkomensgarantie: vult het inkomen aan als dat door ziekte of werkloosheid onder het minimum komt; de klant kiest de eigenrisicoperiode, de duur en de hoogte.",
+     "ArbeidsongeschiktheidsRisicoVerzekering: bij volledige en blijvende arbeidsongeschiktheid wordt in één keer een bedrag uitgekeerd.",
+     "Overlijdensrisicoverzekering: keert bij overlijden een bedrag uit aan de nabestaanden.",
+     "Kredietbeschermer."
+    ]
+   ],
+   [
+    "Contact Credit Life",
+    [
+     "Credit Life, Prof. J.H. Bavincklaan 2, 1183 AT Amstelveen · 020 426 6000 · administratie@creditlife.nl."
+    ]
+   ]
+  ],
+  "contact": {
+   "naam": "Matthijs Lottgering",
+   "rol": "Credit Life",
+   "intro": "Vragen over hoe de risico's bij arbeidsongeschiktheid (AO) werken in eBlinqx Hypotheekadvies, en over de verzekeringen van Credit Life? Neem contact op met Matthijs Lottgering.",
+   "telefoon": "+31 6 15859651",
+   "email": "Matthijs.Lottgering@creditlife.nl",
+   "linkedin": "https://www.linkedin.com/in/matthijs-lottgering-cfp%C2%AE-47909416/",
+   "foto": "bronnen/team/matthijs-lottgering.webp"
+  },
+  "zoekwoorden": "creditlife credit life ao arbeidsongeschiktheid woonlastenverzekering inkomensgarantie aov orv overlijdensrisicoverzekering kredietbeschermer matthijs lottgering aanvragen aanvraag via ebLinqx hypotheekadvies fastlane",
+  "gerelateerd": [
+   [
+    "hypotheekadvies-helpcenter",
+    "Kennisbank eBlinqx Hypotheekadvies"
+   ],
+   [
+    "sites/finrust-nl",
+    "FinRust"
+   ]
+  ],
+  "logo": "bronnen/sites/logo-creditlife-nl.webp",
+  "titel": "Credit Life: arbeidsongeschiktheid en woonlasten verzekeren"
  }
 ]

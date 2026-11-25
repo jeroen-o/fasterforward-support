@@ -1537,7 +1537,12 @@ def render_search(pages, cats):
         for st in sites_laden():
             idx.append({"t": f"{st['naam']}: {st['ondertitel']}", "h": f"sites/{st['slug']}/index.html", "c": "Handige websites", "k": "kennisbank",
                         "x": st["naam"] + " " + st["naam"].replace(".nl", "").replace(".net", "") + " " + st["url"] + " " + " ".join(st["tekst"])
-                        + " " + " ".join(k + " " + " ".join(it) for k, it in st.get("secties", []))})
+                        + " " + " ".join(k + " " + " ".join(it) for k, it in st.get("secties", [])) + " " + st.get("zoekwoorden", "")})
+            if st.get("contact"):
+                c_ = st["contact"]
+                idx.append({"t": f'{c_["naam"]} ({c_["rol"]}): contactpersoon {st["naam"]}', "h": f"sites/{st['slug']}/index.html#contact",
+                            "c": "Handige websites › " + st["naam"], "k": "kennisbank",
+                            "x": f'{c_["naam"]} {c_["naam"].split()[0]} {c_["naam"].split()[-1]} {c_["rol"]} {c_["intro"]} {c_["telefoon"]} {c_["email"]} contact contactpersoon {st.get("zoekwoorden", "")}'})
         for n_, r_, h_, m_, x_ in [
                 ("Milan Akavia", "contactpersoon voor de websitetools, Actiefbeheerscan en partners", "websitetools/index.html", "milan.akavia@blinqx.tech",
                  "rekentools websitetools actiefbeheerscan demo-kantoor partners mijnhuiszaken yes-co"),
@@ -3195,6 +3200,19 @@ def titel_kort(naam, sub, maxl=60):
     return f"{naam}: {kort}"
 
 
+def contactblok(pg, c):
+    """Contactpersoon op een pagina bij Handige websites, met foto en Person-gegevens voor zoekmachines."""
+    tel = re.sub(r"[^\d+]", "", c["telefoon"])
+    ld = {"@context": "https://schema.org", "@type": "Person", "name": c["naam"], "worksFor": {"@type": "Organization", "name": c["rol"]},
+          "telephone": c["telefoon"], "email": c["email"], "image": SITE_URL + c["foto"], "sameAs": [c["linkedin"]] if c.get("linkedin") else []}
+    return (f'<h2 class="wth" id="contact">Vragen? Neem contact op</h2><p>{esc(c["intro"])}</p>'
+            f'<div class="team"><div class="lid"><img src="{pg.rel(c["foto"])}" alt="{esc(c["naam"])}" loading="lazy">'
+            f'<div><strong>{esc(c["naam"])}</strong><br><span class="rol">{esc(c["rol"])}</span><br>'
+            f'<a href="tel:{tel}">{esc(c["telefoon"])}</a><br><a href="mailto:{esc(c["email"])}">{esc(c["email"])}</a>'
+            + (f'<br><a href="{esc(c["linkedin"])}" target="_blank" rel="noopener">LinkedIn ↗</a>' if c.get("linkedin") else "")
+            + f'</div></div></div><script type="application/ld+json">{json.dumps(ld, ensure_ascii=False).replace("</", "<\\/")}</script>')
+
+
 def sites_laden():
     f = os.path.join(TOOLS, "sites.json")
     return json.load(open(f, encoding="utf8")) if os.path.exists(f) else []
@@ -3331,6 +3349,7 @@ def render_sites():
     {fig}</div>
   {"".join(f'<h2 class="wth">{esc(kop)}</h2>' + ("<ul>" + "".join(f"<li>{esc(x)}</li>" for x in items) + "</ul>" if len(items) > 1 else f"<p>{esc(items[0])}</p>") for kop, items in s.get("secties", []))}
   {('<p class="btn-row">' + " ".join(f'<a class="btn-out" href="{esc(u)}" target="_blank" rel="noopener">{esc(t)} ↗</a>' for t, u in s["links"]) + "</p>") if s.get("links") else ""}
+  {contactblok(pg, s["contact"]) if s.get("contact") else ""}
   {adviesbox_extra(pg) if s["slug"] == "adviesbox-nl" else ""}
   {f'<h2 class="wth">Lees ook</h2><ul>{rel}</ul>' if rel else ""}
   <p class="btn-row bezoek"><a class="btn-out cta" href="{esc(s["url"])}" target="_blank" rel="noopener" aria-label="Bezoek website {esc(s["naam"])}">Bezoek website ↗</a></p>
