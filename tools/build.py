@@ -3141,6 +3141,7 @@ def render_finly():
 
 
 DEMO_STEEN = "https://www.steenhypotheken.nl/"
+DEMO_DHK = "https://demo-hypotheek-kantoor.nl/"
 DEMO_FIER = "https://app.mach3blocks.io/preview/?wid=112166&pid=3075367&pkey=8z2fs9ihio62x559t26ksewyz15r5peo&language=nl"
 
 
@@ -3154,6 +3155,10 @@ def render_demokantoor():
     fier_onderdelen = ["Maximale hypotheek en ‘Kan ik deze woning kopen?’", "Mijn hypotheek nu & straks en ‘Kan ik besparen?’",
                        "Rentekorting door topafslag", "Huren of kopen?", "Wat is deze woning waard?", "Overlijdensrisicopremie",
                        "Actuele rentes, looptijdrente en spaarrente top 10", "Duurzaamheidsprofiel"]
+    dhk_onderdelen = ["Per situatie wat het kantoor doet en wat het kost: eerste woning, doorstromen, oversluiten, verduurzamen, scheiding, ondernemer en pensioen",
+                      "Werkwijze en adviesproces in drie stappen, met een gratis kennismaking", "Tarieven vooraf, zonder provisie van aanbieders",
+                      "Risico's, fiscale risico's en woningrisico's (erfpacht, VvE, fundering)", "Rekenhulpen van Hypotheekbond", "Nazorg, documenten en veelgestelde vragen",
+                      "Beschikbaar in het Nederlands, Engels, Duits, Pools, Spaans en Frans"]
     li = lambda xs: "".join(f"<li>{esc(x)}</li>" for x in xs)
     body = f"""{crumbs(pg, [("Demo-kantoor", None)])}
 <main class="subpage mhz"><div class="wrap">
@@ -3173,6 +3178,13 @@ def render_demokantoor():
       <ul>{li(fier_onderdelen)}</ul>
       <p class="btn-row"><a class="btn-out cta" href="{DEMO_FIER}" target="_blank" rel="noopener">Bekijk de demowebsite ↗</a></p></div>
   </div>
+  <div class="mhz-duo">
+    <div><h2 class="wth">Demo Hypotheek kantoor</h2>
+      <p>Een derde voorbeeldwebsite, voor een onafhankelijk hypotheekadvieskantoor met een vaste prijs. Hier zie je hoe een kantoor zijn werkwijze, tarieven en risico's transparant uitlegt, in zes talen:</p>
+      <ul>{li(dhk_onderdelen)}</ul>
+      <p class="btn-row"><a class="btn-out cta" href="{DEMO_DHK}" target="_blank" rel="noopener">Bekijk Demo Hypotheek kantoor ↗</a></p></div>
+    <figure><a href="{DEMO_DHK}" target="_blank" rel="noopener">{img("demo-hypotheek-kantoor.webp", "Homepage van de voorbeeldwebsite Demo Hypotheek kantoor")}</a></figure>
+  </div>
   <p class="mhz-tip">Let op: dit zijn demowebsites. Namen, adressen en wettelijke gegevens zijn voorbeelden, en de uitkomsten van de rekentools zijn indicatief en geen advies.</p>
   <h2 class="wth">Wil je ook een website met alles van Blinqx?</h2>
   <p>Laat het ons weten. We vertellen je graag welke onderdelen je op je eigen website kunt inzetten en hoe ze aansluiten op eBlinqx. Neem contact op met Milan Akavia (<a href="mailto:milan.akavia@blinqx.tech">milan.akavia@blinqx.tech</a>) of Jeroen Oversteegen (<a href="mailto:jeroen.oversteegen@blinqx.tech">jeroen.oversteegen@blinqx.tech</a>), of mail <a href="mailto:relatie-vh@blinqx.tech?subject=Website%20met%20alles%20van%20Blinqx">relatie-vh@blinqx.tech</a>.</p>
@@ -3180,7 +3192,7 @@ def render_demokantoor():
   <p>Lees ook: <a href="{pg.rel("websitetools")}">Websitetools</a>, <a href="{pg.rel("mijnhuiszaken")}">MijnHuiszaken</a>, <a href="{pg.rel("actiefbeheerscan")}">Actiefbeheerscan</a> en <a href="{pg.rel("hypotheekrente-app")}">Hypotheekrente-app</a>.</p>
 </div></main>"""
     write("demo-kantoor", layout(pg, "Demo-kantoor: een website met alles van Blinqx", body, None,
-                                 "Bekijk het demo-kantoor Steen Hypotheken en de demowebsite FierFinance: rekentools, actuele rentes, "
+                                 "Bekijk het demo-kantoor Steen Hypotheken en de demowebsites FierFinance en Demo Hypotheek kantoor: rekentools, actuele rentes, "
                                  "MijnHuiszaken en UwKluis op de website van een adviseur. Wil je dit ook? Laat het ons weten."))
 
 

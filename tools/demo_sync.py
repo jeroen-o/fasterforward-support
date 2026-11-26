@@ -43,8 +43,36 @@ def steen():
     return out
 
 
+def demo_hypotheek_kantoor():
+    """Alle Nederlandstalige pagina's van Demo-hypotheek-kantoor.nl (voorbeeldwebsite, fictieve gegevens)."""
+    basis = "https://demo-hypotheek-kantoor.nl/"
+    out = []
+    start = haal(basis)
+    paginas = ["index.html"] + [p for p in dict.fromkeys(re.findall(r'href="([a-z0-9-]+\.html)"', start))
+                                if p not in ("index.html", "en.html", "de.html", "pl.html", "es.html", "fr.html")]
+    for pad in paginas:
+        url = basis if pad == "index.html" else basis + pad
+        try:
+            s = haal(url)
+        except Exception as e:  # noqa: BLE001
+            print("mislukt:", url, e)
+            continue
+        titel = html.unescape((re.search(r"<title>(.*?)</title>", s, re.S) or [None, url])[1]).strip()
+        titel = re.sub(r"\s*[—-]\s*Demo Hypotheek kantoor(\s*\(demo\))?\s*$", "", titel)
+        titel = re.sub(r"^Demo Hypotheek kantoor\s*[—-]\s*", "", titel)
+        d = re.search(r'<meta name="description" content="([^"]*)"', s)
+        out.append({"site": "Demo Hypotheek kantoor", "url": url, "titel": titel, "omschrijving": html.unescape(d.group(1)) if d else "",
+                    "tekst": tekst(s)[:12000]})
+        time.sleep(0.3)
+    return out
+
+
 def main():
     alle = steen()
+    try:
+        alle += demo_hypotheek_kantoor()
+    except Exception as e:  # noqa: BLE001
+        print("Demo Hypotheek kantoor mislukt:", e)
     ff = os.path.join(ROOT, "tools", "demo_fierfinance.json")
     if os.path.exists(ff):
         for x in json.load(open(ff, encoding="utf8")):
