@@ -3912,8 +3912,8 @@
 "d": "2026-11-23"
 },
 "eblinqx-helpcenter": {
-"h": "f0a933b86a9fd496",
-"d": "2026-11-25"
+"h": "0834050a5785b65a",
+"d": "2026-11-26"
 },
 "eblinqx-helpcenter/aanmaken-dienst": {
 "h": "0cf2181be5ce15d7",
@@ -3934,10 +3934,6 @@
 "eblinqx-helpcenter/activatie-klantportaal": {
 "h": "655644b13694b33a",
 "d": "2026-11-23"
-},
-"eblinqx-helpcenter/afm-marktmonitor-invullen": {
-"h": "4b8d18b29ce5723f",
-"d": "2026-11-25"
 },
 "eblinqx-helpcenter/basisinstellingen-boekhouding": {
 "h": "2ae7b308a946a1bd",
@@ -3984,8 +3980,8 @@
 "d": "2026-11-23"
 },
 "eblinqx-helpcenter/ga-veilig-om-met-je-wachtwoorden": {
-"h": "e4ba0d507fde115d",
-"d": "2026-11-25"
+"h": "0da592caf21eee94",
+"d": "2026-11-26"
 },
 "eblinqx-helpcenter/handmatig-boekingen-invoeren": {
 "h": "f4ebc3306b2f7129",
@@ -4640,8 +4636,8 @@
 "d": "2026-11-23"
 },
 "finly": {
-"h": "e5ee2d18cecd6bff",
-"d": "2026-11-24"
+"h": "f06081d7ba842090",
+"d": "2026-11-26"
 },
 "finly-crm": {
 "h": "d409d312a51548a2",
@@ -4675,6 +4671,10 @@
 "h": "fe4dab3ff1b11737",
 "d": "2026-11-23"
 },
+"finly/activiteitsoorten-beheren": {
+"h": "b84c0e9337cdadfe",
+"d": "2026-11-26"
+},
 "finly/afspraak-met-een-klant-plannen-via-het-crm-dashboard": {
 "h": "68e5efa22f1c669f",
 "d": "2026-11-23"
@@ -4692,8 +4692,8 @@
 "d": "2026-11-23"
 },
 "finly/agenda-items-uit-anva-komen-niet-door-naar-finly-agendareden-ontbreekt": {
-"h": "7abc709c1750cdeb",
-"d": "2026-11-23"
+"h": "1712288302a47fc3",
+"d": "2026-11-26"
 },
 "finly/anva-klanten-importeren-op-relatienummer": {
 "h": "72426b04267870e2",
@@ -4712,8 +4712,8 @@
 "d": "2026-11-23"
 },
 "finly/api-documentatie-finly-integreren-met-de-finly-api": {
-"h": "6f07780c7341af0f",
-"d": "2026-11-23"
+"h": "67e3d0e473138dfb",
+"d": "2026-11-26"
 },
 "finly/audioopname-via-finly-niet-teruggevonden-troubleshooting-in-browser": {
 "h": "319d17384aa98af1",
@@ -4736,20 +4736,32 @@
 "d": "2026-11-23"
 },
 "finly/beheer-dossiertype-aanmaken-bewerken-of-verwijderen": {
-"h": "8d5f506abd161db8",
-"d": "2026-11-23"
+"h": "82c435e4f3c30021",
+"d": "2026-11-26"
 },
 "finly/beheer-tabblad-algemeen-instellen-statussen-dashboard-en-extra-velden": {
-"h": "b940cea556a8febc",
-"d": "2026-11-23"
+"h": "b28a1a82733bc3f8",
+"d": "2026-11-26"
 },
 "finly/beheer-track-and-trace-inrichten-met-stappen-en-condities": {
-"h": "4cfeedb0664f637c",
-"d": "2026-11-23"
+"h": "85843269f4b91c07",
+"d": "2026-11-26"
 },
 "finly/beheer-workflow-opbouwen-activiteiten-en-verbindingen": {
-"h": "ccb4ce37e86f39b3",
-"d": "2026-11-23"
+"h": "defd1f283a0f7ba3",
+"d": "2026-11-26"
+},
+"finly/beoordelingsvragen-instellen": {
+"h": "00bb366267487b1c",
+"d": "2026-11-26"
+},
+"finly/bepalen-wat-een-medewerker-ziet-bij-het-afronden-van-een-activiteit": {
+"h": "40971c4707bc7e01",
+"d": "2026-11-26"
+},
+"finly/berichtsjablonen-terugvinden-dupliceren-en-verwijderen": {
+"h": "f7593fa7398839ce",
+"d": "2026-11-26"
 },
 "finly/berichtsjablonen-voor-teams-afspraken-instellen": {
 "h": "5cf111df0763c9bf",
@@ -4772,12 +4784,12 @@
 "d": "2026-11-23"
 },
 "finly/contactgegevens": {
-"h": "9ca2dd27656e6a55",
-"d": "2026-11-23"
+"h": "619f7675f5319290",
+"d": "2026-11-26"
 },
 "finly/crm-implementatie-en-onboarding": {
-"h": "8207abd90c3baaac",
-"d": "2026-11-23"
+"h": "d44c8e941d966d36",
+"d": "2026-11-26"
 },
 "finly/crm-koppelen-met-anva-klantgegevens-importeren-en-rapporten-exporteren": {
 "h": "be0372814f1794e9",
@@ -4786,6 +4798,62 @@
 "finly/dashboard-instellen-voor-medewerkers-in-het-crm": {
 "h": "d5352a9b3e8da53a",
 "d": "2026-11-23"
+},
+"finly/de-activiteit-afspraak-inplannen-instellen": {
+"h": "500ebb9312702f4f",
+"d": "2026-11-26"
+},
+"finly/de-activiteit-bellen-instellen": {
+"h": "c05fa9366ec7eeae",
+"d": "2026-11-26"
+},
+"finly/de-activiteit-brondata-ophalen-instellen": {
+"h": "6a78c566eb27faad",
+"d": "2026-11-26"
+},
+"finly/de-activiteit-controle-uitvoeren-instellen": {
+"h": "44f4312b57c8d59f",
+"d": "2026-11-26"
+},
+"finly/de-activiteit-document-downloaden-instellen": {
+"h": "d8c2a865c956f03e",
+"d": "2026-11-26"
+},
+"finly/de-activiteit-document-ondertekenen-instellen": {
+"h": "77ec1ad560377f4a",
+"d": "2026-11-26"
+},
+"finly/de-activiteit-e-mail-versturen-instellen": {
+"h": "12add256134b5f61",
+"d": "2026-11-26"
+},
+"finly/de-activiteit-formulier-invullen-instellen": {
+"h": "ed6592d5117c5d56",
+"d": "2026-11-26"
+},
+"finly/de-activiteit-http-request-instellen": {
+"h": "1a63459665ee92a8",
+"d": "2026-11-26"
+},
+"finly/de-activiteit-losse-activiteit-uitvoeren-instellen": {
+"h": "ff3c5e484baea5ac",
+"d": "2026-11-26"
+},
+"finly/de-activiteit-nieuw-dossier-starten-instellen": {
+"h": "6f947a06cc4fbc57",
+"d": "2026-11-26"
+},
+"finly/de-activiteit-rappelleren-documenten-instellen": {
+"h": "82eaf688d1f8a839",
+"d": "2026-11-26"
+},
+"finly/de-activiteit-screen-share-instellen": {
+"h": "7e1d65a4f3cf4c75",
+"d": "2026-11-26"
+},
+"finly/de-agenda-bekijken-en-afspraken-terugvinden": {
+"h": "676cec952d282489",
+"d": "2026-11-26"
 },
 "finly/de-agendamodule-introduceren-bij-je-adviseurs-best-practices-voor-adoptie": {
 "h": "38b148047f4691a4",
@@ -4800,36 +4868,44 @@
 "d": "2026-11-23"
 },
 "finly/documenten-bekijken-en-beheren-in-dossiers-912867": {
-"h": "d45bbcd288629a95",
-"d": "2026-11-23"
+"h": "fad511d0bf3235dd",
+"d": "2026-11-26"
 },
 "finly/documenten-bekijken-en-beheren-in-dossiers-912872": {
-"h": "e2a679d19488d471",
-"d": "2026-11-23"
+"h": "4cb62ead24b00849",
+"d": "2026-11-26"
 },
 "finly/documenten-digitaal-laten-ondertekenen-in-crm": {
-"h": "31ee03672002fe42",
-"d": "2026-11-23"
+"h": "8fa72d13a355fed1",
+"d": "2026-11-26"
 },
 "finly/documenten-openen-of-downloaden-mislukt": {
 "h": "236eb26503b0a751",
 "d": "2026-11-23"
 },
 "finly/dossier-gebruiken-voor-een-klantworkflow-in-crm": {
-"h": "8da38be058ef8e23",
-"d": "2026-11-23"
+"h": "14f048bcc28de21e",
+"d": "2026-11-26"
 },
 "finly/dossier-loopt-vast-is-niet-bereikbaar-of-kan-niet-worden-afgesloten": {
 "h": "1562dc232323fc5e",
 "d": "2026-11-23"
 },
 "finly/dossiers-in-e-blinqx-crm-wat-is-een-dossier-en-hoe-werkt-het": {
-"h": "b361f6eb0cc08fa7",
-"d": "2026-11-23"
+"h": "440e2d87be6bc5e8",
+"d": "2026-11-26"
+},
+"finly/dossiers-van-een-dossiertype-bekijken-filteren-en-in-bulk-wijzigen": {
+"h": "de8e6e4894262c6b",
+"d": "2026-11-26"
 },
 "finly/dossierstatus-en-voortgang-track-and-trace-bekijken-en-aanpassen": {
-"h": "0aadf3cab1fe75ed",
-"d": "2026-11-23"
+"h": "16a25d8fd4d0c526",
+"d": "2026-11-26"
+},
+"finly/dossiervelden-per-activiteit-tonen-laten-wijzigen-of-verplicht-maken": {
+"h": "6716a8d2adbdc8df",
+"d": "2026-11-26"
 },
 "finly/dubbele-klanten-samenvoegen-in-finly": {
 "h": "8e9337f2893604e2",
@@ -4847,6 +4923,10 @@
 "h": "79914483b4a3df33",
 "d": "2026-11-24"
 },
+"finly/een-afspraak-verzetten-of-annuleren": {
+"h": "2313fd0feb9e2d13",
+"d": "2026-11-26"
+},
 "finly/een-afspraaktype-kopieren-in-de-agendamodule": {
 "h": "e528a41cc26a7c81",
 "d": "2026-11-23"
@@ -4863,13 +4943,33 @@
 "h": "a0390ea39db272f9",
 "d": "2026-11-23"
 },
+"finly/een-dossier-wijzigen-of-verwijderen": {
+"h": "b68809aa051a5dcb",
+"d": "2026-11-26"
+},
 "finly/een-extra-gebruiker-is-duurder-dan-verwacht-hoe-zit-dat": {
 "h": "a09cf83454e7f34a",
 "d": "2026-11-23"
 },
+"finly/een-notitie-toevoegen-bij-een-klant": {
+"h": "a6192c5480aae80c",
+"d": "2026-11-26"
+},
+"finly/een-relatie-toevoegen-bij-een-klant": {
+"h": "cb8044a6e9773753",
+"d": "2026-11-26"
+},
+"finly/einddatum-herinneringen-en-automatische-mail-instellen-bij-een-activiteit": {
+"h": "f46bcd30c253fec3",
+"d": "2026-11-26"
+},
+"finly/extra-velden-toevoegen-aan-activiteiten": {
+"h": "86f08758ce2ea454",
+"d": "2026-11-26"
+},
 "finly/fin-ai-chat-zo-werkt-het": {
-"h": "c978b3197cfc89d6",
-"d": "2026-11-23"
+"h": "43b7097274d4250f",
+"d": "2026-11-26"
 },
 "finly/finly-afspraakwidget-versus-een-eigen-agendamodule-wat-is-het-verschil": {
 "h": "997bf2a34cfc82d4",
@@ -4880,36 +4980,36 @@
 "d": "2026-11-23"
 },
 "finly/formulier-inrichting-problemen-verplichte-velden-slotvragen-en-naw-gegevens": {
-"h": "2c504a72e0f9f5c2",
-"d": "2026-11-23"
+"h": "5dc86bfaf788a9e4",
+"d": "2026-11-26"
 },
 "finly/formulier-invullen-actiepunten-aanmaken-en-pdf-bekijken": {
-"h": "0f9297e8dd2d2032",
-"d": "2026-11-23"
+"h": "e5d1b95ec6e20af6",
+"d": "2026-11-26"
 },
 "finly/formulier-wordt-niet-verzonden-of-blijft-laden": {
 "h": "4b26c0d2bcee4a0a",
 "d": "2026-11-23"
 },
 "finly/formulieren-bouwen-en-aanpassen": {
-"h": "437f842dcf611beb",
-"d": "2026-11-23"
+"h": "3571540d119dc6bb",
+"d": "2026-11-26"
 },
 "finly/formulieren-gebruiken-in-finly": {
-"h": "ec4112941437be54",
-"d": "2026-11-23"
+"h": "bdfd257306448dbc",
+"d": "2026-11-26"
 },
 "finly/formulierinstellingen-het-tabblad-gegevens-uitgelegd": {
-"h": "499a5daee9eb7212",
-"d": "2026-11-23"
+"h": "4478e51f8253f829",
+"d": "2026-11-26"
 },
 "finly/foutmelding-bij-exporteren-van-een-relatie-naar-anva-kvk-nummer-ontbreekt": {
 "h": "982896f793b1f71c",
 "d": "2026-11-23"
 },
 "finly/foutmelding-bij-het-productenoverzicht-product-niet-gekoppeld-aan-een-team": {
-"h": "258229ea290b60c2",
-"d": "2026-11-23"
+"h": "963f1daf07dfbe97",
+"d": "2026-11-26"
 },
 "finly/foutmelding-bij-versturen-e-mail-of-mails-komen-aan-als-spam": {
 "h": "3eb09e4430b55559",
@@ -4935,13 +5035,33 @@
 "h": "b23028dcbb91e46c",
 "d": "2026-11-23"
 },
+"finly/het-menu-van-een-klant-wat-vind-je-waar": {
+"h": "c1f0f88ab78960a6",
+"d": "2026-11-26"
+},
+"finly/het-overzicht-formulieren-filteren-wijzigen-en-verwijderen": {
+"h": "a5541b5c5dae4211",
+"d": "2026-11-26"
+},
+"finly/het-tabblad-afmelden-van-een-dossiertype-instellen": {
+"h": "2d783d129df61a47",
+"d": "2026-11-26"
+},
+"finly/het-tabblad-dashboard-van-een-dossiertype-kolommen-filters-en-vrije-velden": {
+"h": "38c99a7e079ffaba",
+"d": "2026-11-26"
+},
+"finly/het-tabblad-medewerkers-van-een-formulier": {
+"h": "1a5770c6e2469827",
+"d": "2026-11-26"
+},
 "finly/hoe-bepaalt-finly-of-een-anva-factuur-afgerond-is": {
 "h": "a138245b85d8914e",
 "d": "2026-11-23"
 },
 "finly/hoe-haalt-finly-gegevens-op-uit-anva-anva-hub-en-anva-dataplatform": {
-"h": "f2184c7ee2f5a07d",
-"d": "2026-11-23"
+"h": "3bea5ccab0ee16cf",
+"d": "2026-11-26"
 },
 "finly/hoe-komt-een-afspraak-in-outlook-inhoud-en-opbouw-voor-medewerker-en-klant": {
 "h": "fc0f1a7c172734da",
@@ -4956,16 +5076,24 @@
 "d": "2026-11-24"
 },
 "finly/hoofd-en-subaccounts-wat-wordt-centraal-beheerd": {
-"h": "09968e5804db7773",
-"d": "2026-11-23"
+"h": "cd7e9c59bfdfb193",
+"d": "2026-11-26"
+},
+"finly/hoofdbranches-van-producten-beheren": {
+"h": "2548003cc13ef937",
+"d": "2026-11-26"
 },
 "finly/hypotheekbemiddeling-via-eblinqx-connect": {
 "h": "a475f9d0edf0bda8",
 "d": "2026-11-23"
 },
 "finly/hypotheektraject-starten-via-eblinqx-connect": {
-"h": "68d590a9eab73d9e",
-"d": "2026-11-23"
+"h": "8da69173aa143bc7",
+"d": "2026-11-26"
+},
+"finly/iconen-en-kleuren-van-notificaties-instellen": {
+"h": "8e6d2b8cd4d6d0b9",
+"d": "2026-11-26"
 },
 "finly/ik-heb-een-bedrijf-overgenomen-en-wil-het-lopende-contract-direct-opzeggen-kan-dat": {
 "h": "53f8e4fc75e6a286",
@@ -4983,13 +5111,21 @@
 "h": "f47e7daff8b0bd43",
 "d": "2026-11-23"
 },
+"finly/instellingen-van-een-hoofdgroep-en-subgroep-in-een-formulier": {
+"h": "3774ab3c3b25a727",
+"d": "2026-11-26"
+},
 "finly/is-eblinqx-crm-altijd-beschikbaar": {
-"h": "df088e82a320f078",
-"d": "2026-11-23"
+"h": "ace73f7782c387f2",
+"d": "2026-11-26"
+},
+"finly/je-eigen-profiel-bekijken-en-aanpassen": {
+"h": "af773f1491776033",
+"d": "2026-11-26"
 },
 "finly/klachtenbeleid": {
-"h": "f4a239d695907dd4",
-"d": "2026-11-23"
+"h": "c590bec783deed16",
+"d": "2026-11-26"
 },
 "finly/klant-aanmaken": {
 "h": "02945235dd6348b1",
@@ -5006,6 +5142,10 @@
 "finly/klant-zoeken-in-het-crm-vanuit-een-e-mail-in-de-mailbox": {
 "h": "a3c7bcac79294f8f",
 "d": "2026-11-23"
+},
+"finly/klanten-filteren-en-in-bulk-wijzigen-in-het-klantenoverzicht": {
+"h": "88b1bb18387a350d",
+"d": "2026-11-26"
 },
 "finly/klanten-importeren-via-een-csv-bestand": {
 "h": "c734fa826d6d6f36",
@@ -5027,6 +5167,10 @@
 "h": "647a2c8153b5e42d",
 "d": "2026-11-23"
 },
+"finly/klantgegevens-wijzigen-en-een-klant-op-vervallen-zetten": {
+"h": "8e3930b5344a8eed",
+"d": "2026-11-26"
+},
 "finly/klantrelaties-dashboard-in-het-crm-instellen-en-gebruiken": {
 "h": "69141d1985914cee",
 "d": "2026-11-23"
@@ -5043,6 +5187,10 @@
 "h": "b01dbd2b9ff08b82",
 "d": "2026-11-23"
 },
+"finly/kolommen-en-filters-van-het-activiteitenoverzicht-instellen": {
+"h": "792f39864145c69b",
+"d": "2026-11-26"
+},
 "finly/kvk-labels-koppelen-aan-klantvelden": {
 "h": "52808f19a66c8448",
 "d": "2026-11-23"
@@ -5051,9 +5199,17 @@
 "h": "cf0b89bed6a1399c",
 "d": "2026-11-23"
 },
+"finly/leveranciers-beheren": {
+"h": "2980fe30569e1869",
+"d": "2026-11-26"
+},
+"finly/logo-kleuren-en-handtekening-van-je-account-instellen": {
+"h": "13b81d1e94110b2d",
+"d": "2026-11-26"
+},
 "finly/logo-verschijnt-niet-correct-op-nieuw-formuliertype": {
-"h": "59a23bca57d0cfde",
-"d": "2026-11-23"
+"h": "1e74d711e49b6351",
+"d": "2026-11-26"
 },
 "finly/mail-indexeren-naar-anva": {
 "h": "3ee1c9e0dd461ae0",
@@ -5068,8 +5224,8 @@
 "d": "2026-11-23"
 },
 "finly/medewerkers-aanmaken-wijzigen-en-beheren": {
-"h": "07306e6b18a2c565",
-"d": "2026-11-23"
+"h": "ca39e3ad218a0d27",
+"d": "2026-11-26"
 },
 "finly/meerdere-mailboxen-toevoegen-via-outlook-365-instellingen": {
 "h": "d00d1d215307caaa",
@@ -5078,6 +5234,10 @@
 "finly/meerdere-omgevingen-en-outlook-synchronisatie": {
 "h": "8d88ab539d8862ce",
 "d": "2026-11-23"
+},
+"finly/melding-de-uitvoerende-van-deze-activiteit-ontbreekt": {
+"h": "9ce59ebb9eb0729d",
+"d": "2026-11-26"
 },
 "finly/mijn-activiteiten-in-het-dashboard-bekijken-en-afhandelen": {
 "h": "4bcdd27f99c82228",
@@ -5088,8 +5248,8 @@
 "d": "2026-11-23"
 },
 "finly/nieuw-dossier-starten": {
-"h": "060980544f9150c3",
-"d": "2026-11-23"
+"h": "1ef5fd814a2a10de",
+"d": "2026-11-26"
 },
 "finly/nieuwe-activiteit-aanmaken-in-het-crm-905895": {
 "h": "fcf72ec011d0339f",
@@ -5143,9 +5303,13 @@
 "h": "59af35b0b5246fde",
 "d": "2026-11-23"
 },
+"finly/pakketten-beheren-onder-instellingen": {
+"h": "69e7dde8d45bbd10",
+"d": "2026-11-26"
+},
 "finly/pdf-layout-instellen-voor-een-formulier": {
-"h": "285256d76d51e212",
-"d": "2026-11-23"
+"h": "47d370dbaf76446a",
+"d": "2026-11-26"
 },
 "finly/persoonlijke-booking-link-per-adviseur-instellen": {
 "h": "5b55176550b175e3",
@@ -5175,6 +5339,14 @@
 "h": "9eb851141da2fd25",
 "d": "2026-11-23"
 },
+"finly/prioriteiten-van-activiteiten-instellen": {
+"h": "7bfea6e429b1813f",
+"d": "2026-11-26"
+},
+"finly/producten-beheren-onder-instellingen": {
+"h": "7d5ff925d36a9b4d",
+"d": "2026-11-26"
+},
 "finly/producten-bekijken-en-beheren-bij-een-klant": {
 "h": "2af383230dffc422",
 "d": "2026-11-23"
@@ -5184,8 +5356,8 @@
 "d": "2026-11-23"
 },
 "finly/publieke-link-van-een-formulier-toevoegen-aan-een-mailsjabloon-in-de-workflow": {
-"h": "e001ab9bfd3b44ef",
-"d": "2026-11-23"
+"h": "952143ed393c4104",
+"d": "2026-11-26"
 },
 "finly/quinn-mail-mail-koppelen-taken-aanmaken-en-conceptmails-opstellen-met-ai": {
 "h": "e9ac8e4b87aeac19",
@@ -5223,33 +5395,49 @@
 "h": "58b2f2273e7453ed",
 "d": "2026-11-24"
 },
+"finly/signalen-alle-keuzes-bij-voorwaarden-en-acties": {
+"h": "65433acdb35e24f9",
+"d": "2026-11-26"
+},
 "finly/snelkoppelingen-in-crm-gebruiken-om-een-klant-activiteit-of-formulier-aan-te-maken": {
 "h": "4e46129a89a0fa38",
 "d": "2026-11-23"
 },
+"finly/snelkoppelingen-instellen-voor-schermdelen": {
+"h": "26a9ec5a4850aeaa",
+"d": "2026-11-26"
+},
 "finly/standaard-dossiersegment-voor-e-mails-naar-anva-instellen": {
-"h": "fc0fcd76c3b46745",
-"d": "2026-11-23"
+"h": "372321dec1c65fea",
+"d": "2026-11-26"
 },
 "finly/standaard-teksten-instellen-via-sjablonen": {
 "h": "97ad43f65c71d18f",
 "d": "2026-11-23"
+},
+"finly/standaardvelden-van-producten-bekijken": {
+"h": "a6126484cd4abcd9",
+"d": "2026-11-26"
 },
 "finly/storingen-en-beschikbaarheid-van-finly-controleren-via-de-statuspagina": {
 "h": "e397f2a95bb65ea5",
 "d": "2026-11-23"
 },
 "finly/supportbeleid": {
-"h": "0292f90746f6cabd",
-"d": "2026-11-23"
+"h": "4fb0461276548804",
+"d": "2026-11-26"
 },
 "finly/taak-is-in-anva-afgehandeld-maar-staat-in-finly-nog-open": {
 "h": "a8ea07eef3b0a4f0",
 "d": "2026-11-24"
 },
 "finly/tags-toevoegen-aan-een-formulier-via-de-beginwaarde": {
-"h": "61e1a45c5d1f5251",
-"d": "2026-11-23"
+"h": "88ddc04d3a3a99af",
+"d": "2026-11-26"
+},
+"finly/teams-aanmaken-en-beheren": {
+"h": "76e0843f1bc39b05",
+"d": "2026-11-26"
 },
 "finly/telefoniekoppeling-via-bubble-redcactus": {
 "h": "26a30893358c811b",
@@ -5275,6 +5463,10 @@
 "h": "ecbf56eae962a9c9",
 "d": "2026-11-23"
 },
+"finly/uitvoerende-en-verantwoordelijke-kiezen-bij-een-activiteit": {
+"h": "6324fb7c99032d37",
+"d": "2026-11-26"
+},
 "finly/veelgestelde-vragen-over-de-agendamodule": {
 "h": "079e74763fdad3a3",
 "d": "2026-11-23"
@@ -5291,6 +5483,10 @@
 "h": "f14c6f46a6eeac4c",
 "d": "2026-11-23"
 },
+"finly/waarom-kun-je-een-activiteit-in-een-dossiertype-niet-bewerken": {
+"h": "b9aeb4a84500cf39",
+"d": "2026-11-26"
+},
 "finly/waarom-zie-ik-een-slotje-bij-een-klant-dossier-of-activiteit": {
 "h": "fc510e99f5cb6b03",
 "d": "2026-11-23"
@@ -5299,13 +5495,17 @@
 "h": "32f430c07f8136f6",
 "d": "2026-11-23"
 },
+"finly/wachtwoordbeleid-van-je-account-verlooptijd-en-lockout": {
+"h": "2a31f994cc5dfd22",
+"d": "2026-11-26"
+},
 "finly/wat-betekent-de-anva-melding-verplicht-naw-label-ontbreekt-bij-het-aanmaken-van-een-relati": {
 "h": "503239b140e8da8e",
 "d": "2026-11-23"
 },
 "finly/wat-doet-een-finly-consultant": {
-"h": "5628a44dbb7f2501",
-"d": "2026-11-23"
+"h": "c0518e712d08ea9e",
+"d": "2026-11-26"
 },
 "finly/wat-is-een-afspraaktype-in-de-agendamodule": {
 "h": "21584e16a39e715d",
@@ -5324,8 +5524,8 @@
 "d": "2026-11-23"
 },
 "finly/welke-informatie-heeft-support-nodig-om-je-melding-te-onderzoeken": {
-"h": "a552fd922d397f8f",
-"d": "2026-11-23"
+"h": "ed6a102d8ae09747",
+"d": "2026-11-26"
 },
 "finly/werken-met-de-exportmodule": {
 "h": "b8ecb92bf98f60d9",
@@ -7164,8 +7364,8 @@
 "d": "2026-11-23"
 },
 "kennisbank/afm-marktmonitor-invullen": {
-"h": "3e1a165bb82e09e8",
-"d": "2026-11-25"
+"h": "467ade69558a0fd6",
+"d": "2026-11-26"
 },
 "kennisbank/afm-marktmonitor-invullen-2": {
 "h": "d2dbe8d4c4e9dac2",
@@ -8736,8 +8936,8 @@
 "d": "2026-11-23"
 },
 "kennisbanken": {
-"h": "048dd2fd30dce04d",
-"d": "2026-11-25"
+"h": "f63c567fc20e0ea9",
+"d": "2026-11-26"
 },
 "kent-digimap-tips-al": {
 "h": "e2657955f6323fc0",
@@ -9728,8 +9928,8 @@
 "d": "2026-11-23"
 },
 "tips": {
-"h": "a9e05fc2a41a2a5d",
-"d": "2026-11-25"
+"h": "661f901a3d1eb66c",
+"d": "2026-11-26"
 },
 "tips-voor-het-verwerken-van-adn-berichten": {
 "h": "b086cc2e8da50fc2",
