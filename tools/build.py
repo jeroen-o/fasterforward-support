@@ -4081,6 +4081,8 @@ def render_helpcenter(c, arts, urls, vtitel):
             return f'href="{pg.rel(urls[u])}"' if u in urls else m.group(0)
         h = re.sub(r'href="(https://support-[a-z-]+\.vh\.blinqx\.tech/nl/articles/[^"]+)"', link, h)
         h = re.sub(r"<table>", '<table class="hc">', h)
+        # links met een eBlinqx-tag (bijv. [algemeen->persoon->afbeelding|url]) als adres zijn geen echte links
+        h = re.sub(r'<a [^>]*href="\[[^"]*"[^>]*>(.*?)</a>', r"<code>\1</code>", h, flags=re.S)
         return h.replace('<a href="http', '<a target="_blank" rel="noopener" href="http')
 
     for i, a in enumerate(arts):
