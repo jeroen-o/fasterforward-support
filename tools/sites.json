@@ -1727,5 +1727,83 @@
   ],
   "afbeelding": "bronnen/sites/dennes-roes-nl.webp",
   "titel": "Dennes-roes.nl: hypotheek vanaf 52, presentatie en adviseurstoolkit"
+ },
+ {
+  "slug": "marketingbieb-nl",
+  "naam": "Marketingbieb.nl",
+  "url": "https://marketingbieb.nl/",
+  "ondertitel": "De marketingbibliotheek voor de financieel adviseur",
+  "tekst": [
+   "Marketingbieb.nl is de marketingbibliotheek van Blinqx Verzekering & Hypotheek voor financieel adviseurs: nieuwsbrieven, campagnes, klanttools en rekentools van Blinqx en partners. Het grootste deel is gratis, een deel freemium. Je verstuurt het materiaal vanuit je eigen mail, zet het op je website of gebruikt het via eBlinqx Connect, en je downloadt het als Word of kopieert het met één klik.",
+   "Op het moment van toevoegen bevat de bibliotheek ruim 100 items in acht categorieën."
+  ],
+  "secties": [
+   [
+    "Zo werkt het",
+    [
+     "Kies je materiaal: zoek op onderwerp of kies een categorie, zoals nieuwsbrief, campagne, klanttool of kennisbankartikel.",
+     "Maak het van jou: vul je kantoornaam, contactgegevens en huisstijlkleur in. Alles blijft in je browser.",
+     "Verstuur of plaats het via je eigen mail, je website of eBlinqx Connect, of download het als Word of pdf."
+    ]
+   ],
+   [
+    "Categorieën",
+    [
+     "Content & campagnes: nieuwsbrieven, klantteksten en LinkedIn-campagnes.",
+     "Campagnes & selecties: kant-en-klare campagnes met mailsjablonen en selecties uit PortefeuilleSignalen.",
+     "Klantscans & vragenlijsten: nazorgscans, jaarlijkse updates en slimme formulieren voor actief klantbeheer.",
+     "Klanttools: gratis cijfers en checks voor je klanten over hypotheek, woning, fundering, klimaat en duurzaamheid.",
+     "Adviseurstools: rekentools en vergelijkers voor je eigen adviespraktijk.",
+     "Leads & vindbaarheid, Kantoor, compliance & opleiding, en Bronnen & klantlinks."
+    ]
+   ],
+   [
+    "Voorbeelden",
+    [
+     "De woontoekomst-check voor 55-plussers, een social-postbank met posts voor elke maand, de nieuwsbrief Hypotheekbeleid 2027, de Kansentool voor je portefeuille, de campagne Betaalbaarheid bij pensioen voor klanten van 50–57 jaar, en de marketing- en klantactiviteitenkalender 2027.",
+     "Ook de adviseurstoolkit 52+ (LinkedIn-campagne “Hypotheek vanaf 52”, nieuwsbrief en klanttekst) staat erin."
+    ]
+   ],
+   [
+    "Goed om te weten",
+    [
+     "Alle materialen worden kosteloos en zonder garantie ter beschikking gesteld; gebruik is voor eigen rekening en risico. Als adviseur blijf je zelf verantwoordelijk voor juistheid en actualiteit en voor naleving van de Wft, de AFM-regels (wervende communicatie, zorgplicht) en de AVG. Laat teksten toetsen door je compliance officer.",
+     "Tarieven van premium-onderdelen zijn op aanvraag, tenzij anders vermeld."
+    ]
+   ]
+  ],
+  "contact": {
+   "naam": "Jeroen Oversteegen",
+   "rol": "Blinqx Verzekering & Hypotheek",
+   "intro": "Mis je iets in Marketingbieb.nl, heb je een vraag of een wens voor nieuw materiaal, of wil je je als partner aanmelden met eigen content? Neem contact op met Jeroen Oversteegen.",
+   "telefoon": "06 21 24 72 57",
+   "email": "jeroen.oversteegen@blinqx.tech",
+   "foto": "bronnen/team/jeroen-oversteegen.webp"
+  },
+  "zoekwoorden": "marketingbieb marketing bibliotheek nieuwsbrief campagne linkedin social posts klanttools rekentools content huisstijl kalender 2027 woontoekomst kansentool",
+  "gerelateerd": [
+   [
+    "sites/dennes-roes-nl",
+    "Dennes-roes.nl: hypotheek vanaf 52"
+   ],
+   [
+    "websitetools",
+    "Websitetools"
+   ],
+   [
+    "sites/hypotheekcijfer-nl",
+    "Hypotheekcijfer.nl"
+   ],
+   [
+    "sites/acception-nl",
+    "Acception"
+   ],
+   [
+    "kennisbank/hoe-maak-campagne-aan",
+    "Campagne aanmaken in eBlinqx Connect"
+   ]
+  ],
+  "afbeelding": "bronnen/sites/marketingbieb-nl.webp",
+  "titel": "Marketingbieb.nl: marketingbibliotheek voor de financieel adviseur"
  }
 ]

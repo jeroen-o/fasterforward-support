@@ -9460,8 +9460,8 @@
 "d": "2026-11-23"
 },
 "sites": {
-"h": "244e5c64440f6c2b",
-"d": "2026-11-25"
+"h": "063e5f8720689f47",
+"d": "2026-11-26"
 },
 "sites/acception-nl": {
 "h": "3ae0b25ca2b2a199",
@@ -9574,6 +9574,10 @@
 "sites/looptijdrente-nl": {
 "h": "e0a0a30ef959547e",
 "d": "2026-11-25"
+},
+"sites/marketingbieb-nl": {
+"h": "89cf9137fb48f172",
+"d": "2026-11-26"
 },
 "sites/mijnhuiszaken-nl": {
 "h": "c3595f2839486fa5",
