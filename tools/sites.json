@@ -730,6 +730,14 @@
    [
     "kennisbank/hoe-verstuur-hdn-bericht",
     "Kennisbank: hoe verstuur ik een HDN-bericht?"
+   ],
+   [
+    "sites/funderingscijfer-nl",
+    "Funderingscijfer.nl"
+   ],
+   [
+    "sites/duurzaamheidsprofiel-nl",
+    "Duurzaamheidsprofiel.nl"
    ]
   ],
   "afbeelding": "bronnen/sites/nhg-nl.webp",
@@ -754,12 +762,20 @@
     ]
    ],
    [
-    "Wat verandert er in 2027?",
+    "Voorwaarden en normen 2027: wat verandert er?",
     [
-     "Vanaf 1 januari 2027 gelden nieuwe Voorwaarden en normen (persbericht NHG, 30 oktober 2026).",
-     "De NHG-grens stijgt naar € 500.000; met energiebesparende maatregelen kan tot maximaal € 530.000 geleend worden.",
-     "Bij woningen met energielabel E, F of G wordt standaard € 20.000 extra meegefinancierd voor energiebesparende maatregelen; de koper zet het budget binnen twee jaar in.",
-     "Bij een woning met een hoog funderingsrisico moeten geldverstrekkers de verwachte herstelkosten meewegen."
+     "Vanaf 1 januari 2027 gelden nieuwe Voorwaarden en normen (V&N) van NHG. De NHG-grens stijgt naar € 500.000; met energiebesparende maatregelen kan tot maximaal € 530.000 geleend worden.",
+     "Toetskader funderingsrisico: het geldt bij de aankoop van een bestaande woning, het verhogen van een hypotheek en het oversluiten (behalve zuiver oversluiten van NHG naar NHG zonder verhoging). Bij risico-inschatting A, B of C in het taxatierapport, of zonder inschatting, hoef je geen rekening te houden met funderingsrisico. Bij D of E is een verkennend funderingsonderzoek verplicht, ook bij Ontslag Hoofdelijke Aansprakelijkheid (OHA) zonder verhoging.",
+     "Blijkt uit het onderzoek een hoog funderingsrisico (of is een uitgebreid onderzoek 'onvoldoende' of 'slecht'), dan neem je de indicatieve herstelkosten uit het taxatierapport mee bij de toegestane financieringslast: bereken de financieringslast van dat bedrag als annuïtaire lening van maximaal 30 jaar tegen de AFM-toetsrente en breng die in mindering. Eigen middelen boven € 25.000 voor funderingsherstel mogen de herstelkosten verlagen. Er gelden uitzonderingen, onder meer bij direct herstel, noodzakelijke kwaliteitsverbetering, schuldconsolidatie en OHA.",
+     "Hybride taxatie: bij risico-inschatting A, B of C kan die worden afgerond; bij D of E is eerst een verkennend funderingsonderzoek nodig, en bij een hoge risicoscore is een fysieke taxatie nodig.",
+     "Standaard Energiebespaarbudget bij energielabel E, F of G (geen appartementsrecht): de lening bevat dan minimaal € 20.000 voor energiebesparende maatregelen, als Energiebespaarbudget (EBB) of voor concrete Energie Besparende Voorzieningen (EBV). Past dat niet binnen de LTI- en LTV-kaders, dan geldt het lagere maximum. De consument kiest binnen 2 jaar zelf wanneer en hoe hij verduurzaamt; niet benut budget wordt afgelost. Wil de consument niet lenen, dan legt hij dat vast in de 'Verklaring geen gebruik verduurzamingsbudget'.",
+     "Bouwvormen: een nieuwbouw- of transformatiewoning die bij levering volledig is afgebouwd, direct bewoonbaar is en met een koopovereenkomst wordt gekocht, valt voortaan onder de regels voor bestaande bouw. Een waarborgcertificaat is dan niet nodig; de waarde moet blijken uit een taxatierapport."
+    ]
+   ],
+   [
+    "V&N 2027 en bijlagen",
+    [
+     "Op de pagina Voorwaarden en normen 2027 van NHG staan de V&N 2027, de checklist dossier, de werkprocessen, de checklist brondata, het model bouwkundig rapport, de beheertabellen, het model werkgeversverklaring, het wijzigingsoverzicht (2026 naar 2027), de verklaring geen gebruik verduurzamingsbudget, de Q&A van de ketenpartnerbijeenkomst en een webinar over de wijzigingen."
     ]
    ],
    [
@@ -785,7 +801,34 @@
      "Let op: bedragen en voorwaarden zijn overgenomen van nhg.nl (stand november 2026). Raadpleeg altijd de actuele Voorwaarden en normen."
     ]
    ]
-  ]
+  ],
+  "links": [
+   [
+    "Voorwaarden en normen 2027",
+    "https://www.nhg.nl/kennis-innovatie/voorwaarden-en-normen-2027/"
+   ],
+   [
+    "V&N 2027 (pdf)",
+    "https://www.nhg.nl/media/niyjzin0/vn-nhg-2027.pdf"
+   ],
+   [
+    "Wijzigingsoverzicht 2026-2027 (pdf)",
+    "https://www.nhg.nl/media/qkdaqwp3/vn-nhg-2027-wijzigingenoverzicht-vn-2026-naar-2027.pdf"
+   ],
+   [
+    "Checklist dossier (pdf)",
+    "https://www.nhg.nl/media/ihuecp2b/vn-nhg-2027-bijlage-1-checklist-dossier.pdf"
+   ],
+   [
+    "Verklaring geen gebruik verduurzamingsbudget (pdf)",
+    "https://www.nhg.nl/media/45qcfuxa/vn-nhg-2027-bijlage-6-verklaring-geen-gebruik-verduurzamingsbudget.pdf"
+   ],
+   [
+    "Q&A ketenpartnerbijeenkomst (pdf)",
+    "https://www.nhg.nl/media/zo3mukk2/qa-ketenpartnerbijeenkomst-vn-2027.pdf"
+   ]
+  ],
+  "zoekwoorden": "voorwaarden en normen 2027 v&n funderingsrisico toetskader herstelkosten energiebespaarbudget ebb ebv energielabel e f g hybride taxatie nieuwbouw transformatie waarborgcertificaat nhg-grens 500.000"
  },
  {
   "slug": "hdn-nl",
