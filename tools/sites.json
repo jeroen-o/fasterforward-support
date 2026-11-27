@@ -1848,5 +1848,76 @@
   ],
   "afbeelding": "bronnen/sites/marketingbieb-nl.webp",
   "titel": "Marketingbieb.nl: marketingbibliotheek voor de financieel adviseur"
+ },
+ {
+  "slug": "werkgeversverklaring-nl",
+  "naam": "Werkgeversverklaring.nl",
+  "url": "https://werkgeversverklaring.nl/",
+  "ondertitel": "Werkgeversverklaring (model NHG 2027) gratis online invullen en downloaden als pdf",
+  "tekst": [
+   "Op Werkgeversverklaring.nl vul je het officiële model werkgeversverklaring van NHG (bijlage 4 bij de Voorwaarden & Normen NHG 2027) gratis online in, en download je direct een ingevulde pdf om te laten ondertekenen en bij de hypotheekaanvraag aan te leveren. Zonder account: de gegevens blijven in de browser en worden niet verstuurd of opgeslagen. Het lege, invulbare model is ook als blanco pdf te downloaden."
+  ],
+  "secties": [
+   [
+    "Hoe werkt het?",
+    [
+     "Werkgever: vul het formulier volledig in, download en print de pdf en onderteken met naam, plaats en datum. Bij een tijdelijk contract onderteken je ook de verklaring voortzetting dienstverband. Vermeld een contactpersoon met telefoonnummer en geef het ondertekende origineel aan je werknemer.",
+     "Werknemer: stuur de link door naar je werkgever en lever het ondertekende origineel in bij je hypotheekadviseur.",
+     "Hypotheekadviseur: stuur je klant de link, controleer of de verklaring compleet en juist is volgens de NHG-voorwaarden, upload hem via HDN of de omgeving van de geldverstrekker en bewaar het origineel in het klantdossier."
+    ]
+   ],
+   [
+    "Voor adviseurs: met je eigen kantoorgegevens",
+    [
+     "Zet je logo, adres, telefoonnummer, e-mailadres en website bovenaan het NHG-model. Download een invulbare pdf met je kantoorkop voor je klanten, of een HTML-bestand met het invulformulier voor je eigen website, zonder server of koppeling.",
+     "Controleer bij de geldverstrekkers waarmee je werkt of zij een werkgeversverklaring met kantoorkop accepteren."
+    ]
+   ],
+   [
+    "Aandachtspunten bij het invullen",
+    [
+     "Eén persoon vult de verklaring in en ondertekent hem; beantwoord elke vraag, ook als het antwoord nee is. Geen doorhalingen of correcties: pas het formulier aan en download een nieuwe pdf.",
+     "Vul de volledige statutaire naam van de werkgever in. Datum in dienst en functie moeten overeenkomen met de arbeidsovereenkomst en de loonstrook.",
+     "Bruto jaarsalaris = 12 × het maandsalaris (of 13 × bij een 4-wekensalaris); bij parttime het werkelijke parttime salaris. Onregelmatigheid, provisie en overwerk alleen als ze structureel zijn; een 13e maand of eindejaarsuitkering telt alleen mee als die onvoorwaardelijk is vastgelegd."
+    ]
+   ],
+   [
+    "Goed om te weten",
+    [
+     "Een onvolledige of onjuiste werkgeversverklaring is een veelvoorkomende reden voor vertraging bij een hypotheekaanvraag. Voor mensen in loondienst is ook Inkomensbepaling Loondienst (IBL) met het UWV-verzekeringsbericht mogelijk."
+    ]
+   ]
+  ],
+  "links": [
+   [
+    "Online invullen",
+    "https://werkgeversverklaring.nl/"
+   ],
+   [
+    "Blanco werkgeversverklaring NHG 2027 (pdf)",
+    "https://werkgeversverklaring.nl/assets/werkgeversverklaring-nhg-2027.pdf"
+   ],
+   [
+    "Voor adviseurs: met kantoorgegevens",
+    "https://werkgeversverklaring.nl/adviseurs.html"
+   ]
+  ],
+  "zoekwoorden": "werkgeversverklaring werkgevers verklaring nhg 2027 model bijlage 4 invullen downloaden pdf blanco voortzetting dienstverband kantoorkop",
+  "gerelateerd": [
+   [
+    "sites/nhg-nl",
+    "NHG.nl (Voorwaarden en normen 2027)"
+   ],
+   [
+    "sites/toetsinkomenberekenen-nl",
+    "Toetsinkomenberekenen.nl (IBL)"
+   ],
+   [
+    "sites/hdn-nl",
+    "HDN.nl"
+   ]
+  ],
+  "afbeelding": "bronnen/sites/werkgeversverklaring-nl.webp",
+  "titel": "Werkgeversverklaring.nl: model NHG 2027 online invullen"
  }
 ]
