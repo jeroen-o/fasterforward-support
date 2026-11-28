@@ -3912,8 +3912,8 @@
 "d": "2026-11-23"
 },
 "eblinqx-helpcenter": {
-"h": "f0a933b86a9fd496",
-"d": "2026-11-27"
+"h": "0834050a5785b65a",
+"d": "2026-11-28"
 },
 "eblinqx-helpcenter/aanmaken-dienst": {
 "h": "0cf2181be5ce15d7",
@@ -3934,10 +3934,6 @@
 "eblinqx-helpcenter/activatie-klantportaal": {
 "h": "655644b13694b33a",
 "d": "2026-11-23"
-},
-"eblinqx-helpcenter/afm-marktmonitor-invullen": {
-"h": "4b8d18b29ce5723f",
-"d": "2026-11-27"
 },
 "eblinqx-helpcenter/basisinstellingen-boekhouding": {
 "h": "2ae7b308a946a1bd",
@@ -3984,8 +3980,8 @@
 "d": "2026-11-23"
 },
 "eblinqx-helpcenter/ga-veilig-om-met-je-wachtwoorden": {
-"h": "e4ba0d507fde115d",
-"d": "2026-11-27"
+"h": "0da592caf21eee94",
+"d": "2026-11-28"
 },
 "eblinqx-helpcenter/handmatig-boekingen-invoeren": {
 "h": "f4ebc3306b2f7129",
@@ -5592,8 +5588,8 @@
 "d": "2026-11-27"
 },
 "finrust": {
-"h": "159ff8ac5e350b5c",
-"d": "2026-11-23"
+"h": "624c53b38dfeed55",
+"d": "2026-11-28"
 },
 "finrust/aanbieders-lijfrente-banksparen-in-finrust": {
 "h": "6c640d4a6a360f9f",
@@ -5612,8 +5608,8 @@
 "d": "2026-11-23"
 },
 "finrust/betaalrekening-toevoegen-bij-vermogen-in-eblinqx-hypotheekadvies": {
-"h": "e77c6b544fa19637",
-"d": "2026-11-23"
+"h": "6265b7d1d21ba4c5",
+"d": "2026-11-28"
 },
 "finrust/box-3-vermogensrendementsheffing": {
 "h": "62b29c666ad657e2",
@@ -5628,8 +5624,8 @@
 "d": "2026-11-23"
 },
 "finrust/brondata-exporteren-vanuit-dossierdata-naar-finrust": {
-"h": "d11b805203fbeff3",
-"d": "2026-11-23"
+"h": "2186168502150871",
+"d": "2026-11-28"
 },
 "finrust/brondata-uit-brondata-pdf-importeren": {
 "h": "408391aa13dfca06",
@@ -5640,8 +5636,12 @@
 "d": "2026-11-23"
 },
 "finrust/brondata-vanuit-faster-forward-elements-eblinqx-naar-finrust": {
-"h": "a63712143c50103d",
-"d": "2026-11-23"
+"h": "de77d2fccc1f32d5",
+"d": "2026-11-28"
+},
+"finrust/data-van-eblinqx-naar-finrust": {
+"h": "8b78faf4c77ad2db",
+"d": "2026-11-28"
 },
 "finrust/een-extra-gebruiker-is-duurder-dan-verwacht-hoe-zit-dat": {
 "h": "8476bdd6d08d9cc8",
@@ -5672,16 +5672,16 @@
 "d": "2026-11-23"
 },
 "finrust/handleiding-url-inzichttool-genereren": {
-"h": "1e41292ac7dc004b",
-"d": "2026-11-23"
+"h": "6becbd82af25fa37",
+"d": "2026-11-28"
 },
 "finrust/hoe-bepaal-je-het-gewenste-inkomen-nbi-na-overlijden-van-een-partner": {
 "h": "418f61affd0936f7",
 "d": "2026-11-23"
 },
 "finrust/hoe-verwerk-je-in-finrust-een-auto-van-de-zaak": {
-"h": "e08d62af6b21215c",
-"d": "2026-11-23"
+"h": "353b420e972c6ead",
+"d": "2026-11-28"
 },
 "finrust/hoe-verwerk-je-ontslag-en-vervroegen-pensioen": {
 "h": "fc6be3ed3c0c3eaf",
@@ -5728,8 +5728,12 @@
 "d": "2026-11-23"
 },
 "finrust/uitruil-pp-ten-gunste-van-op": {
-"h": "8d7bbb42961057cc",
-"d": "2026-11-23"
+"h": "8c2f3b92537b97a2",
+"d": "2026-11-28"
+},
+"finrust/uploaden-naw-gegevens-salaris-en-ao-voorzieningen-in-finrust": {
+"h": "922db57bb9c3331b",
+"d": "2026-11-28"
 },
 "finrust/uw-abonnement-opzeggen": {
 "h": "294932a6877f3a3b",
@@ -5744,8 +5748,8 @@
 "d": "2026-11-23"
 },
 "finrust/voorbeeldcasus-inzichttool": {
-"h": "442c67d698354d7b",
-"d": "2026-11-23"
+"h": "2c1c97c42142e1cf",
+"d": "2026-11-28"
 },
 "finrust/voorbeeldcasus-lijfrente-expiratie": {
 "h": "fe17b6af205b70f6",
@@ -5776,36 +5780,40 @@
 "d": "2026-11-23"
 },
 "finrust/voorbeeldoplossingen-box-1-en-box-3": {
-"h": "32755ae970b2f73b",
-"d": "2026-11-23"
+"h": "149358f8babea05a",
+"d": "2026-11-28"
 },
 "finrust/zo-bepaal-je-het-nabestaandenpensioen-bij-uitdiensttreding": {
 "h": "5707542deebf46ef",
 "d": "2026-11-23"
 },
+"finrust/zo-bereken-je-het-pensioentekort-in-finrust": {
+"h": "835a0f7a6200e8d2",
+"d": "2026-11-28"
+},
 "finrust/zo-breng-je-eerder-stoppen-in-kaart-met-finrust": {
-"h": "6ef84d95c8ecc681",
-"d": "2026-11-23"
+"h": "d2463ac5685dc559",
+"d": "2026-11-28"
 },
 "finrust/zo-gebruik-je-de-aandachtspunten-en-aantekeningen-in-finrust": {
-"h": "55b10adbf302de03",
-"d": "2026-11-23"
+"h": "f8c54dc93281235e",
+"d": "2026-11-28"
 },
 "finrust/zo-gebruik-je-inflatie-in-finrust": {
-"h": "0a828fed05c6b6b1",
-"d": "2026-11-23"
+"h": "4d2d375e78bd0f0c",
+"d": "2026-11-28"
 },
 "finrust/zo-geef-je-rvu-weer-in-finrust": {
-"h": "cb2f9d4e829de5c0",
-"d": "2026-11-23"
+"h": "1f14ad26a1d4d27e",
+"d": "2026-11-28"
 },
 "finrust/zo-geef-je-scheiden-weer-in-finrust": {
-"h": "1a836d4b6f0d7b24",
-"d": "2026-11-23"
+"h": "bff6ba7d6c9fa47e",
+"d": "2026-11-28"
 },
 "finrust/zo-kopieer-je-een-berekening-in-finrust": {
-"h": "d0263b228ac17686",
-"d": "2026-11-23"
+"h": "a4cf53eba51c3719",
+"d": "2026-11-28"
 },
 "finrust/zo-maak-je-arbeidsongeschiktheid-inzichtelijk-voor-de-ondernemer": {
 "h": "a4ee272fa1db71ce",
@@ -5820,52 +5828,52 @@
 "d": "2026-11-23"
 },
 "finrust/zo-pas-je-de-inzichtdatum-aan-in-finrust": {
-"h": "630445234cb7c66f",
-"d": "2026-11-23"
+"h": "f18027020364bfd0",
+"d": "2026-11-28"
 },
 "finrust/zo-voeg-je-bijsparen-pensioenregeling-toe-in-finrust": {
-"h": "2feb13cad201c9d3",
-"d": "2026-11-23"
+"h": "5c14f2f6bbf3da2a",
+"d": "2026-11-28"
 },
 "finrust/zo-voeg-je-een-hypotheek-toe-in-finrust": {
-"h": "bdbf22121ab49cd2",
-"d": "2026-11-23"
+"h": "0cb6cc5bf5c53910",
+"d": "2026-11-28"
 },
 "finrust/zo-voeg-je-een-indicatief-pensioen-toe-in-finrust": {
-"h": "ec0ed0faca7007d3",
-"d": "2026-11-23"
+"h": "0b0565f9fe643d31",
+"d": "2026-11-28"
 },
 "finrust/zo-voeg-je-een-lijfrente-toe": {
-"h": "3f75535bbb925f9e",
-"d": "2026-11-23"
+"h": "d354d4ea3cd46402",
+"d": "2026-11-28"
 },
 "finrust/zo-voeg-je-handmatig-pensioen-toe-in-finrust": {
-"h": "68c490ba91bb1c69",
-"d": "2026-11-23"
+"h": "7622f93b90e55514",
+"d": "2026-11-28"
 },
 "finrust/zo-voeg-je-huidig-inkomen-toe": {
 "h": "e2189b72c4b534f6",
 "d": "2026-11-23"
 },
 "finrust/zo-voeg-je-veranderende-uitgaven-en-sparen-toe": {
-"h": "e8ce606bda37e6dd",
-"d": "2026-11-23"
+"h": "e3c077bfa5339088",
+"d": "2026-11-28"
 },
 "finrust/zo-voeg-je-vermogen-toe-aan-finrust": {
-"h": "62b7204060a54e2f",
-"d": "2026-11-23"
+"h": "e86115371402ec98",
+"d": "2026-11-28"
 },
 "finrust/zo-werkt-de-dexxi-koppeling-in-finrust": {
-"h": "0b953fc4e4e0051c",
-"d": "2026-11-23"
+"h": "cb1f72db367c457a",
+"d": "2026-11-28"
 },
 "finrust/zo-werkt-de-koppeling-met-accelerate": {
-"h": "4fdc2a2bad0317cb",
-"d": "2026-11-23"
+"h": "18a203be5292ae72",
+"d": "2026-11-28"
 },
 "finrust/zo-werkt-de-koppeling-met-adviesbox": {
-"h": "2e37e0e2c6c66bf0",
-"d": "2026-11-23"
+"h": "e7dac436244d0272",
+"d": "2026-11-28"
 },
 "ga-veilig-om-met-je-klantgegevens": {
 "h": "19e1781f1e812eb2",
@@ -7400,8 +7408,8 @@
 "d": "2026-11-23"
 },
 "kennisbank/afm-marktmonitor-invullen": {
-"h": "3e1a165bb82e09e8",
-"d": "2026-11-27"
+"h": "467ade69558a0fd6",
+"d": "2026-11-28"
 },
 "kennisbank/afm-marktmonitor-invullen-2": {
 "h": "d2dbe8d4c4e9dac2",
@@ -8972,8 +8980,8 @@
 "d": "2026-11-23"
 },
 "kennisbanken": {
-"h": "ee3b0d3e9c5e6f93",
-"d": "2026-11-27"
+"h": "4ca2ef30bcb70039",
+"d": "2026-11-28"
 },
 "kent-digimap-tips-al": {
 "h": "e2657955f6323fc0",
@@ -9968,8 +9976,8 @@
 "d": "2026-11-23"
 },
 "tips": {
-"h": "a9e05fc2a41a2a5d",
-"d": "2026-11-27"
+"h": "661f901a3d1eb66c",
+"d": "2026-11-28"
 },
 "tips-voor-het-verwerken-van-adn-berichten": {
 "h": "b086cc2e8da50fc2",
